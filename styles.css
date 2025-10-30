@@ -16,10 +16,22 @@ body {
   letter-spacing: .01em;
 }
 
+.brand {
+  font-size: 1.07rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.brand .role {
+  font-size: 1.01rem;
+  font-weight: 400;
+  color: #555;
+  margin-left: 8px;
+}
+
+
 .main-wrap { max-width: 800px; margin: 0 auto; padding: 40px 18px 32px 18px;}
 .top-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px;}
-.brand { font-size: 1rem; font-weight: 500; color: #222; }
-.role { font-size: 1rem; color: #555; font-weight: 400;}
 .social a { margin: 0 8px; color: #F21783; text-decoration: none; font-size: 1.05em;}
 .social a:hover, a.accent-link:hover { text-decoration: underline; opacity:.65;}
 .section { margin-bottom: 44px;}
