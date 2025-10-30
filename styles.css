@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Mark Pro';
+  src: url('MarkPro.woff2') format('woff2'),
+       url('MarkPro.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Mark Pro', Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  margin: 0;
+  padding: 0;
+  font-size: 1.05rem;
+  letter-spacing: .01em;
+}
+
+.main-wrap { max-width: 800px; margin: 0 auto; padding: 40px 18px 32px 18px;}
+.top-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px;}
+.brand { font-size: 1rem; font-weight: 500; color: #222; }
+.role { font-size: 1rem; color: #555; font-weight: 400;}
+.social a { margin: 0 8px; color: #F21783; text-decoration: none; font-size: 1.05em;}
+.social a:hover, a.accent-link:hover { text-decoration: underline; opacity:.65;}
+.section { margin-bottom: 44px;}
+.section-title { font-size: 1.03rem; color: #222; font-weight: 700; margin-bottom: 10px; letter-spacing: 1.2px;}
+.divider { border: none; border-top: 1.3px solid #efefef; margin: 24px 0 28px 0;}
+a.accent-link { color: #F21783; text-decoration: none; font-weight: 500;}
+.experience-list, .testimonial-list, .personal-list { padding:0; margin:0; list-style:none;}
+.experience-item, .personal-list li { margin-bottom: 16px; line-height: 1.5;}
+.exp-role { color: #F21783; font-weight: 500;}
+.selected-work { display: grid; grid-template-columns: repeat(auto-fit,minmax(170px,1fr)); gap: 24px; margin-top: 16px; }
+.work-item { display: flex; flex-direction: column; align-items: flex-start;}
+.work-thumb { width:56px; height:56px; object-fit:cover; border-radius:8px; margin-bottom:11px; }
+.work-title { font-size: 1rem; margin-bottom: 3px;}
+.work-link { color:#F21783; font-weight:500; font-size:.95em; text-decoration:none;}
+.work-link:hover { text-decoration: underline; opacity:.7;}
+.testimonial { font-style: italic; color: #444; margin-bottom:14px;}
+.testimonial b { color:#F21783;}
+.contact-block { margin-top:8px; color:#222;}
+@media (max-width:600px) { .main-wrap{padding:10px 6px;} .selected-work{grid-template-columns:1fr 1fr;} .work-thumb{width:38px;height:38px;} }
