@@ -8,38 +8,32 @@ body {
   color: #111;
   font-size: 1.05rem;
   letter-spacing: .01em;
-  scroll-behavior: smooth; /* enables smooth scroll */
+  scroll-behavior: smooth;
 }
 
-/* Container for two columns */
-.container {
+.layout {
   display: flex;
-  height: 100vh;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .sidebar {
-  width: 320px;
+  flex: 0 0 340px;
+  margin-left: 40px;
+  margin-right: 32px; /* Gutter between columns */
   background: #fff;
-  /* Remove or comment out the following line to eliminate divider: */
-  /* border-right: 1px solid #ebebeb; */
   box-sizing: border-box;
-  padding: 32px 24px;
+  padding: 44px 24px;
   display: flex;
   align-items: flex-start;
-  position: sticky;
-  top: 0;
-  height: 100vh;
   min-height: 100vh;
-  margin-left: 40px;     /* This adds spacing from the left edge of the screen */
-  margin-right: 40px;    /* Spacing between sidebar and main content remains */
 }
 
 .sidebar-inner {
   width: 100%;
-}
-
-.name-title {
-  margin-bottom: 14px;
 }
 
 .brand {
@@ -47,13 +41,14 @@ body {
   font-weight: 600;
   color: #222;
   display: block;
+  margin-bottom: 2px;
 }
 
 .role {
   font-size: 1.07rem;
   font-weight: 400;
   color: #F21783;
-  margin-top: 3px;
+  margin-bottom: 16px;
   display: block;
 }
 
@@ -84,20 +79,18 @@ body {
   opacity: .65;
 }
 
-/* Main content styling */
+/* Main content column */
 .main-content {
-  flex: 1;
-  padding: 60px 0 60px 40px;   /* top, right, bottom, left */
-  background: #fff;
-  box-sizing: border-box;
+  flex: 1 1 700px;
   max-width: 900px;
-  margin: 0 auto;
-  overflow-y: auto;
+  padding: 60px 40px 60px 0;
+  box-sizing: border-box;
+  margin: 0;
+  /* Centers content if screen is very wide */
 }
 
-/* Sections and content */
 .section {
-  margin-bottom: 56px;   /* generous gap between groups for clean visual separation */
+  margin-bottom: 56px;
 }
 
 .section-title {
@@ -108,7 +101,7 @@ body {
   letter-spacing: 1.2px;
 }
 
-/* Lists */
+/* Lists and Projects */
 .experience-list,
 .testimonial-list,
 .personal-list {
@@ -181,37 +174,39 @@ body {
   color: #222;
 }
 
-/* Responsive (mobile) */
+/* Responsive styles */
 @media (max-width: 1000px) {
-  .main-content {
+  .layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sidebar {
+    margin: 0;
+    min-height: unset;
     padding: 32px 12px;
+    flex: 0 0 auto;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+  }
+  .main-content {
     max-width: 100%;
+    padding: 32px 12px;
   }
   .section {
     margin-bottom: 36px;
   }
 }
 
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-  }
+@media (max-width: 600px) {
   .sidebar {
-    width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid #eee;
-    position: static;
-    padding: 24px 12px;
-    min-height: unset;
-    margin-right: 0;
+    padding: 18px 4px;
   }
   .main-content {
-    padding: 24px 8px;
+    padding: 16px 4px;
   }
   .selected-work {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   .work-thumb {
     width: 38px;
