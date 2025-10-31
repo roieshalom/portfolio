@@ -6,6 +6,33 @@
   font-style: normal;
 }
 
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 0 8px 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.main-nav a {
+  color: #F21783;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: .98em;
+  transition: opacity .2s;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+  opacity: .7;
+}
+
 body {
   font-family: 'Mark Pro', Arial, sans-serif;
   background: #fff;
