@@ -7,7 +7,7 @@
   --color-muted: #444;
   --color-border: #eee;
 
-   /* Dark mode colors */
+  /* Dark mode colors */
   --color-bg-dark: #202426;
   --color-text-main-dark: #d4d4d4;
   --color-text-dark: #9c9c9c;
@@ -17,23 +17,28 @@
   --color-border-dark: #232627;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Mark Pro', Arial, sans-serif;
+/* Make html fill all the space and set background! */
+html {
+  min-height: 100%;
+  width: 100%;
   background: var(--color-bg);
-  color: var(--color-text);
-  font-size: 1.05rem;
-  letter-spacing: .01em;
-  scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
+  width: 100%;
   box-sizing: border-box;
   padding-left: 160px;
   padding-right: 160px;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-family: 'Mark Pro', Arial, sans-serif;
+  color: var(--color-text);
+  font-size: 1.05rem;
+  letter-spacing: .01em;
+  scroll-behavior: smooth;
+  background: transparent; /* So html's background shows through */
 }
 
 .layout {
@@ -267,9 +272,14 @@ body {
     height: 38px;
   }
 }
+
+/* DARK MODE OVERRIDES */
 body.dark-mode {
-  background: var(--color-bg-dark);
   color: var(--color-text-dark);
+  background: transparent;
+}
+html.dark-mode {
+  background: var(--color-bg-dark) !important;
 }
 
 body.dark-mode .brand,
