@@ -17,20 +17,14 @@
   --color-border-dark: #232627;
 }
 
-/* Make html fill all the space and set background! */
-html {
-  min-height: 100%;
-  width: 100%;
-  background: var(--color-bg);
-}
-
+/* Background body fix: only set on body (not html) */
 body {
   min-height: 100vh;
-  width: 100%;
+  background: var(--color-bg);
   box-sizing: border-box;
+  margin: 0;
   padding-left: 160px;
   padding-right: 160px;
-  margin: 0;
   padding-top: 0;
   padding-bottom: 0;
   font-family: 'Mark Pro', Arial, sans-serif;
@@ -38,7 +32,11 @@ body {
   font-size: 1.05rem;
   letter-spacing: .01em;
   scroll-behavior: smooth;
-  background: transparent; /* So html's background shows through */
+}
+
+html {
+  min-height: 100%;
+  width: 100%;
 }
 
 .layout {
@@ -133,6 +131,7 @@ body {
   padding-right: 0;
   box-sizing: border-box;
   min-height: 100vh;
+  background: transparent;
 }
 
 .section {
@@ -275,49 +274,38 @@ body {
 
 /* DARK MODE OVERRIDES */
 body.dark-mode {
+  background: var(--color-bg-dark);
   color: var(--color-text-dark);
-  background: transparent;
 }
-html.dark-mode {
-  background: var(--color-bg-dark) !important;
-}
-
 body.dark-mode .brand,
 body.dark-mode .section-title,
 body.dark-mode .contact-block {
   color: var(--color-text-main-dark);
 }
-
 body.dark-mode .role {
   color: var(--color-link-dark);
 }
-
 body.dark-mode .sidebar,
 body.dark-mode .main-content {
   background: var(--color-bg-dark);
 }
-
 body.dark-mode .social a,
 body.dark-mode .exp-role,
 body.dark-mode .work-link,
 body.dark-mode .testimonial b {
   color: var(--color-link-dark);
 }
-
 body.dark-mode .testimonial {
   color: var(--color-muted-dark);
 }
-
 body.dark-mode .work-thumb {
   background: var(--color-grey-light-dark);
 }
-
 body.dark-mode .sidebar-bio,
 body.dark-mode .experience-item,
 body.dark-mode .personal-list li {
   color: var(--color-text-dark);
 }
-
 body.dark-mode .main-content,
 body.dark-mode .sidebar {
   border-color: var(--color-border-dark);
