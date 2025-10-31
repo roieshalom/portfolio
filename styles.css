@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -11,27 +10,34 @@ body {
   scroll-behavior: smooth;
 }
 
-.layout {
-  display: flex;
+body {
   min-height: 100vh;
-  width: 100%;
+  /* Equal gap (outer margin) on both sides */
   box-sizing: border-box;
-  /* Unified page margins/gutters */
-  padding: 0 40px;
-  gap: 32px; /* gutter between columns */
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-/* Sidebar: static on desktop, always visible on the left */
+.layout {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1360px; /* Optional: keeps content centered on huge screens */
+  margin: 0 auto;
+}
+
 .sidebar {
   flex: 0 0 320px;
   background: #fff;
   box-sizing: border-box;
-  padding: 44px 0;    /* vertical only; horizontal margin from layout container */
-  position: static;   /* stays in same position as user scrolls right content */
-  align-self: flex-start;
-  /* remove all margin/padding not needed for gutters */
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-right: 32px;            /* gutter between columns */
   height: 100vh;
-  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  display: flex;
 }
 
 .sidebar-inner {
@@ -81,19 +87,20 @@ body {
   opacity: .65;
 }
 
-/* Main content column: right side scrollable */
+/* Main content */
 .main-content {
   flex: 1 1 700px;
   max-width: 900px;
-  background: #fff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  /* outer side matches sidebar's outer padding, right padding = outer gap */
+  padding-left: 0;
+  padding-right: 0;
   box-sizing: border-box;
-  /* vertical and right/left padding ONLY for content comfort */
-  padding: 60px 0;
-  margin: 0;
-  overflow-y: auto;
   min-height: 100vh;
 }
 
+/* Sections and content */
 .section {
   margin-bottom: 56px;
 }
@@ -106,7 +113,6 @@ body {
   letter-spacing: 1.2px;
 }
 
-/* Lists and Projects */
 .experience-list,
 .testimonial-list,
 .personal-list {
@@ -180,34 +186,47 @@ body {
 }
 
 /* Responsive styles */
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+  .layout {
+    max-width: 100%;
+  }
+  body {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+@media (max-width: 900px) {
   .layout {
     flex-direction: column;
-    padding: 0 18px;
-    gap: 0;
+    align-items: stretch;
   }
   .sidebar {
-    padding: 32px 0;
-    min-height: unset;
+    position: static;
     width: 100%;
-    border-bottom: 1px solid #eee;
     height: auto;
+    min-height: unset;
+    padding: 32px 0 16px 0;
+    border-bottom: 1px solid #eee;
+    padding-right: 0;
   }
   .main-content {
     max-width: 100%;
-    padding: 32px 0;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
   .section {
     margin-bottom: 36px;
   }
 }
-
 @media (max-width: 600px) {
   .sidebar {
-    padding: 18px 0;
+    padding-top: 18px;
+    padding-bottom: 12px;
   }
   .main-content {
-    padding: 16px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .selected-work {
     grid-template-columns: 1fr;
