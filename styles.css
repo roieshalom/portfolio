@@ -1,10 +1,20 @@
+:root {
+  --color-bg: #fff;
+  --color-text-main: #404040;
+  --color-text-paragraph: #555;
+  --color-link: #F21783;
+  --color-grey-light: #ebebeb;
+  --color-muted: #444;
+  --color-border: #eee;
+}
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Mark Pro', Arial, sans-serif;
-  background: #fff;
-  color: #111;
+  background: var(--color-bg);
+  color: var(--color-text);
   font-size: 1.05rem;
   letter-spacing: .01em;
   scroll-behavior: smooth;
@@ -12,7 +22,6 @@ html, body {
 
 body {
   min-height: 100vh;
-  /* Equal gap (outer margin) on both sides */
   box-sizing: border-box;
   padding-left: 160px;
   padding-right: 160px;
@@ -22,17 +31,17 @@ body {
   display: flex;
   align-items: flex-start;
   width: 100%;
-  max-width: 1360px; /* Optional: keeps content centered on huge screens */
+  max-width: 1360px;
   margin: 0 auto;
 }
 
 .sidebar {
   flex: 0 0 400px;
-  background: #fff;
+  background: var(--color-bg);
   box-sizing: border-box;
   padding-top: 60px;
   padding-bottom: 60px;
-  padding-right: 150px;            /* gutter between columns */
+  padding-right: 150px;
   height: 100vh;
   position: sticky;
   top: 0;
@@ -47,7 +56,7 @@ body {
 .brand {
   font-size: 1.28rem;
   font-weight: 600;
-  color: #222;
+  color: var(--color-text-main);
   display: block;
   margin-bottom: 2px;
 }
@@ -55,14 +64,14 @@ body {
 .role {
   font-size: 1.07rem;
   font-weight: 400;
-  color: #F21783;
+  color: var(--color-link);
   margin-bottom: 16px;
   display: block;
 }
 
 .sidebar-bio {
   margin-bottom: 18px;
-  color: #444;
+  color: var(--color-muted);
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -73,7 +82,7 @@ body {
 
 .social a {
   margin-right: 10px;
-  color: #F21783;
+  color: var(--color-link);
   text-decoration: none;
   font-weight: 500;
 }
@@ -87,27 +96,24 @@ body {
   opacity: .65;
 }
 
-/* Main content */
 .main-content {
   flex: 1 1 700px;
   max-width: 900px;
   padding-top: 60px;
   padding-bottom: 60px;
-  /* outer side matches sidebar's outer padding, right padding = outer gap */
   padding-left: 0;
   padding-right: 0;
   box-sizing: border-box;
   min-height: 100vh;
 }
 
-/* Sections and content */
 .section {
   margin-bottom: 56px;
 }
 
 .section-title {
   font-size: 1.03rem;
-  color: #222;
+  color: var(--color-text-main);
   font-weight: 700;
   margin-bottom: 10px;
   letter-spacing: 1.2px;
@@ -128,7 +134,7 @@ body {
 }
 
 .exp-role {
-  color: #F21783;
+  color: var(--color-link);
   font-weight: 500;
 }
 
@@ -159,7 +165,7 @@ body {
 }
 
 .work-link {
-  color: #F21783;
+  color: var(--color-link);
   font-weight: 500;
   font-size: .95em;
   text-decoration: none;
@@ -172,17 +178,17 @@ body {
 
 .testimonial {
   font-style: italic;
-  color: #444;
+  color: var(--color-muted);
   margin-bottom: 14px;
 }
 
 .testimonial b {
-  color: #F21783;
+  color: var(--color-link);
 }
 
 .contact-block {
   margin-top: 8px;
-  color: #222;
+  color: var(--color-text-paragraph);
 }
 
 /* Responsive styles */
@@ -207,7 +213,7 @@ body {
     height: auto;
     min-height: unset;
     padding: 32px 0 16px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-border);
     padding-right: 0;
   }
   .main-content {
