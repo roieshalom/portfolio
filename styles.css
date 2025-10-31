@@ -13,22 +13,24 @@ body {
 
 .layout {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
+  /* Unified page margins/gutters */
+  padding: 0 40px;
+  gap: 32px; /* gutter between columns */
 }
 
+/* Sidebar: static on desktop, always visible on the left */
 .sidebar {
-  flex: 0 0 340px;
-  margin-left: 40px;
-  margin-right: 32px; /* Gutter between columns */
+  flex: 0 0 320px;
   background: #fff;
   box-sizing: border-box;
-  padding: 44px 24px;
-  display: flex;
-  align-items: flex-start;
+  padding: 44px 0;    /* vertical only; horizontal margin from layout container */
+  position: static;   /* stays in same position as user scrolls right content */
+  align-self: flex-start;
+  /* remove all margin/padding not needed for gutters */
+  height: 100vh;
   min-height: 100vh;
 }
 
@@ -79,14 +81,17 @@ body {
   opacity: .65;
 }
 
-/* Main content column */
+/* Main content column: right side scrollable */
 .main-content {
   flex: 1 1 700px;
   max-width: 900px;
-  padding: 60px 40px 60px 0;
+  background: #fff;
   box-sizing: border-box;
+  /* vertical and right/left padding ONLY for content comfort */
+  padding: 60px 0;
   margin: 0;
-  /* Centers content if screen is very wide */
+  overflow-y: auto;
+  min-height: 100vh;
 }
 
 .section {
@@ -178,19 +183,19 @@ body {
 @media (max-width: 1000px) {
   .layout {
     flex-direction: column;
-    align-items: stretch;
+    padding: 0 18px;
+    gap: 0;
   }
   .sidebar {
-    margin: 0;
+    padding: 32px 0;
     min-height: unset;
-    padding: 32px 12px;
-    flex: 0 0 auto;
     width: 100%;
     border-bottom: 1px solid #eee;
+    height: auto;
   }
   .main-content {
     max-width: 100%;
-    padding: 32px 12px;
+    padding: 32px 0;
   }
   .section {
     margin-bottom: 36px;
@@ -199,10 +204,10 @@ body {
 
 @media (max-width: 600px) {
   .sidebar {
-    padding: 18px 4px;
+    padding: 18px 0;
   }
   .main-content {
-    padding: 16px 4px;
+    padding: 16px 0;
   }
   .selected-work {
     grid-template-columns: 1fr;
