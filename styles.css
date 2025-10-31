@@ -1,7 +1,7 @@
 :root {
   --color-bg: #fff;
   --color-text-main: #404040;
-  --color-text-paragraph: #555;
+  --color-text: #555;
   --color-link: #F21783;
   --color-grey-light: #ebebeb;
   --color-muted: #444;
@@ -188,7 +188,7 @@ body {
 
 .contact-block {
   margin-top: 8px;
-  color: var(--color-text-paragraph);
+  color: var(--color-text);
 }
 
 /* Responsive styles */
