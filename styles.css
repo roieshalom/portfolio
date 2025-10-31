@@ -76,6 +76,7 @@ body {
   line-height: 1.5;
 }
 
+/* SOCIAL ICONS & LINKS */
 .social {
   margin-bottom: 12px;
 }
@@ -96,6 +97,19 @@ body {
   opacity: .65;
 }
 
+.social a svg {
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.3em;
+  width: 1.3em;
+  fill: var(--color-link);
+  transition: opacity 0.2s;
+}
+.social a:hover svg {
+  opacity: .65;
+}
+
+/* MAIN CONTENT */
 .main-content {
   flex: 1 1 700px;
   max-width: 900px;
@@ -225,6 +239,7 @@ body {
     margin-bottom: 36px;
   }
 }
+
 @media (max-width: 600px) {
   .sidebar {
     padding-top: 18px;
