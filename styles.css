@@ -14,8 +14,8 @@ body {
   min-height: 100vh;
   /* Equal gap (outer margin) on both sides */
   box-sizing: border-box;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 120px;
+  padding-right: 120px;
 }
 
 .layout {
