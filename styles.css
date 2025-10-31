@@ -17,11 +17,11 @@ body {
   height: 100vh;
 }
 
-/* Sidebar styling */
 .sidebar {
   width: 320px;
   background: #fff;
-  border-right: 1px solid #ebebeb;
+  /* Remove or comment out the following line to eliminate divider: */
+  /* border-right: 1px solid #ebebeb; */
   box-sizing: border-box;
   padding: 32px 24px;
   display: flex;
@@ -30,8 +30,8 @@ body {
   top: 0;
   height: 100vh;
   min-height: 100vh;
-  margin-left: 0;        /* flush with left side of screen */
-  margin-right: 40px;    /* matches right padding/margin of main content */
+  margin-left: 40px;     /* This adds spacing from the left edge of the screen */
+  margin-right: 40px;    /* Spacing between sidebar and main content remains */
 }
 
 .sidebar-inner {
