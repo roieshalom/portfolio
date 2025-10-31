@@ -267,3 +267,48 @@ body {
     height: 38px;
   }
 }
+body.dark-mode {
+  background: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+body.dark-mode .brand,
+body.dark-mode .section-title,
+body.dark-mode .contact-block {
+  color: var(--color-text-main-dark);
+}
+
+body.dark-mode .role {
+  color: var(--color-link-dark);
+}
+
+body.dark-mode .sidebar,
+body.dark-mode .main-content {
+  background: var(--color-bg-dark);
+}
+
+body.dark-mode .social a,
+body.dark-mode .exp-role,
+body.dark-mode .work-link,
+body.dark-mode .testimonial b {
+  color: var(--color-link-dark);
+}
+
+body.dark-mode .testimonial {
+  color: var(--color-muted-dark);
+}
+
+body.dark-mode .work-thumb {
+  background: var(--color-grey-light-dark);
+}
+
+body.dark-mode .sidebar-bio,
+body.dark-mode .experience-item,
+body.dark-mode .personal-list li {
+  color: var(--color-text-dark);
+}
+
+body.dark-mode .main-content,
+body.dark-mode .sidebar {
+  border-color: var(--color-border-dark);
+}
