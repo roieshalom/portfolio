@@ -6,6 +6,15 @@
   --color-grey-light: #ebebeb;
   --color-muted: #444;
   --color-border: #eee;
+
+   /* Dark mode colors */
+  --color-bg-dark: #202426;
+  --color-text-main-dark: #d4d4d4;
+  --color-text-dark: #9c9c9c;
+  --color-link-dark: #951254;
+  --color-grey-light-dark: #232627;
+  --color-muted-dark: #999;
+  --color-border-dark: #232627;
 }
 
 html, body {
@@ -64,7 +73,7 @@ body {
 .role {
   font-size: 1.07rem;
   font-weight: 400;
-  color: var(--color-link);
+  color: var(--color-text);
   margin-bottom: 16px;
   display: block;
 }
