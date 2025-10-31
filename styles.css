@@ -27,12 +27,12 @@ body {
 }
 
 .sidebar {
-  flex: 0 0 320px;
+  flex: 0 0 400px;
   background: #fff;
   box-sizing: border-box;
   padding-top: 60px;
   padding-bottom: 60px;
-  padding-right: 32px;            /* gutter between columns */
+  padding-right: 150px;            /* gutter between columns */
   height: 100vh;
   position: sticky;
   top: 0;
