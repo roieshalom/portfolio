@@ -58,15 +58,8 @@
       </section>
       <section id="experience" class="section">
         <div class="section-title">Experience</div>
-        <ul class="experience-list">
-          <li class="experience-item">
-            <span class="exp-role">Product Design Lead</span>, AmazingCorp (2022–Present)<br>
-            Leading product vision and design teams for advanced platforms and consumer-facing apps.
-          </li>
-          <li class="experience-item">
-            <span class="exp-role">Senior UX Designer</span>, CreativeWorks (2019–2022)<br>
-            Responsible for product launches, prototyping, research, and operationalizing design.
-          </li>
+        <ul id="experience-list" class="experience-list">
+          <!-- Dynamic experience items will be loaded here -->
         </ul>
       </section>
       <section id="work" class="section">
@@ -126,6 +119,24 @@
     </div>
   </div>
   <script>
+    // Only dynamically populate experience section, nothing else changed
+    fetch('content/experience.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('experience-list');
+        container.innerHTML = data.map(item => `
+          <li class="experience-item">
+            <span class="exp-role">${item.position}</span>, ${item.company} (${item.years})<br>
+            ${item.description}
+          </li>
+        `).join('');
+      })
+      .catch(error => {
+        document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
+        console.error(error);
+      });
+
+    // All original scripts below (unchanged)
     function toggleMobileVisibility() {
       if (window.matchMedia('(max-width: 600px)').matches) {
         document.querySelector('.mobile-header').style.display = 'flex';
