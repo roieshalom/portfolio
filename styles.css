@@ -6,7 +6,6 @@
   --color-grey-light: #ebebeb;
   --color-muted: #444;
   --color-border: #eee;
-
   /* Dark mode colors */
   --color-bg-dark: #202426;
   --color-text-main-dark: #d4d4d4;
@@ -288,7 +287,7 @@ html {
   color: var(--color-text);
 }
 
-/* ONE responsive block for all needs */
+/* Responsive adjustments */
 @media (max-width: 900px) {
   body {
     padding-left: 14px;
@@ -384,4 +383,10 @@ body.dark-mode .personal-list li {
 body.dark-mode .main-content,
 body.dark-mode .sidebar {
   border-color: var(--color-border-dark);
+}
+
+/* Ensure background covers all sides in dark mode */
+body.dark-mode,
+body.dark-mode html {
+  background-color: var(--color-bg-dark) !important;
 }
