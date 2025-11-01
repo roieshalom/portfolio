@@ -229,7 +229,7 @@ html {
 }
 
 .exp-role {
-  color: var(--color-text-main);
+  color: var(--color-text);
   font-weight: bold;
 }
 
