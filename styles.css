@@ -392,6 +392,7 @@ body.dark-mode html {
 }
 
 .exp-role {
+  color: var(--color-text-main);
   font-weight: bold;
 }
 
