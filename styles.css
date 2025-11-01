@@ -390,3 +390,19 @@ body.dark-mode,
 body.dark-mode html {
   background-color: var(--color-bg-dark) !important;
 }
+
+.exp-role {
+  font-weight: bold;
+}
+
+.exp-company {
+  color: var(--color-link);
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.exp-desc {
+  font-weight: normal;
+  display: block;
+  margin-top: 3px;
+}

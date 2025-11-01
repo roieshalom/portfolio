@@ -121,20 +121,23 @@
   <script>
     // Only dynamically populate experience section, nothing else changed
     fetch('content/experience.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('experience-list');
-        container.innerHTML = data.map(item => `
-          <li class="experience-item">
-            <span class="exp-role">${item.position}</span>, ${item.company} (${item.years})<br>
-            ${item.description}
-          </li>
-        `).join('');
-      })
-      .catch(error => {
-        document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
-        console.error(error);
-      });
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('experience-list');
+    container.innerHTML = data.map(item => `
+      <li class="experience-item">
+        <strong class="exp-role">${item.position}</strong>, 
+        <a href="${item.link}" class="exp-company" target="_blank">${item.company}</a>
+        <span class="exp-years">(${item.years})</span><br>
+        <span class="exp-desc">${item.description}</span>
+      </li>
+    `).join('');
+  })
+  .catch(error => {
+    document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
+    console.error(error);
+  });
+
 
     // All original scripts below (unchanged)
     function toggleMobileVisibility() {
