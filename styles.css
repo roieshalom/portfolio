@@ -25,7 +25,7 @@ body {
   padding-right: 160px;
   font-family: 'Mark Pro', Arial, sans-serif;
   color: var(--color-text);
-  font-size: 1.05rem;
+  font-size: .75rem;
   letter-spacing: .01em;
   scroll-behavior: smooth;
 }
