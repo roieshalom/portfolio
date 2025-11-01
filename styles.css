@@ -310,3 +310,58 @@ body.dark-mode .main-content,
 body.dark-mode .sidebar {
   border-color: var(--color-border-dark);
 }
+.sidebar-nav {
+  margin: 28px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-link {
+  color: var(--color-link);
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  font-size: 1.05em;
+  padding: 6px 0;
+  transition: color 0.2s, border 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.nav-link.active,
+.nav-link:focus {
+  color: var(--color-link);
+  border-left: 3px solid var(--color-link);
+  background: rgba(242, 23, 131, 0.04);
+}
+
+.sidebar-fun {
+  margin-top: 18px;
+}
+
+.fun-title {
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: 6px;
+  font-size: 1.05em;
+}
+
+.fun-links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fun-link {
+  color: var(--color-link);
+  opacity: .72;
+  font-size: 0.97em;
+  text-decoration: none;
+  padding: 3px 0;
+  transition: opacity 0.2s;
+}
+
+.fun-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}

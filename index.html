@@ -19,6 +19,23 @@
         <p class="sidebar-bio">
           Hello! I'm an experienced and creative designer with an eye for detail and a passion for coherent, innovative digital products.
         </p>
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar-nav">
+          <a href="#about" class="nav-link active">About</a>
+          <a href="#work" class="nav-link">Projects</a>
+          <a href="#experience" class="nav-link">Experience</a>
+        </nav>
+        <!-- Space and Fun Section -->
+        <div style="margin-top:42px;"></div>
+        <section class="sidebar-fun">
+          <div class="fun-title">Fun</div>
+          <div class="fun-links">
+            <a href="#" class="fun-link">Placeholder 1</a>
+            <a href="#" class="fun-link">Placeholder 2</a>
+            <a href="#" class="fun-link">Placeholder 3</a>
+          </div>
+        </section>
+        <!-- Social links remain as before -->
         <nav class="social">
           <a href="https://www.instagram.com/roie_s/" target="_blank" aria-label="Instagram">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -39,6 +56,7 @@
       </div>
     </aside>
     <main class="main-content">
+      <!-- unchanged main content below -->
       <section id="about" class="section">
         <div class="section-title">About</div>
         <p>
@@ -105,12 +123,10 @@
   <script>
     const toggleBtn = document.getElementById('theme-toggle');
     const iconSpan = document.getElementById('theme-toggle-icon');
-
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark-mode');
       iconSpan.textContent = '☀️';
     }
-
     toggleBtn.onclick = function() {
       document.body.classList.toggle('dark-mode');
       const darkModeOn = document.body.classList.contains('dark-mode');
