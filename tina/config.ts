@@ -17,34 +17,42 @@ export default defineConfig({
 
   build: {
     outputFolder: "admin",
-    publicFolder: "public",
+    publicFolder: "public", // change to "images" or "." if that matches your assets setup
   },
   media: {
     tina: {
       mediaRoot: "",
-      publicFolder: "public",
+      publicFolder: "public", // also change here if not using "public"
     },
   },
-  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/r/content-modelling-collections/
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
+        name: "experience",
+        label: "Experience",
+        path: "content/experience",
         fields: [
           {
             type: "string",
-            name: "title",
-            label: "Title",
+            name: "position",
+            label: "Position",
             isTitle: true,
             required: true,
           },
           {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
+            type: "string",
+            name: "company",
+            label: "Company",
+          },
+          {
+            type: "string",
+            name: "years",
+            label: "Years",
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
           },
         ],
       },
