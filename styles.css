@@ -283,7 +283,7 @@ body.dark-mode .contact-block {
   color: var(--color-text-main-dark);
 }
 body.dark-mode .role {
-  color: var(--color-link-dark);
+  color: var(--color-text-dark);
 }
 body.dark-mode .sidebar,
 body.dark-mode .main-content {
