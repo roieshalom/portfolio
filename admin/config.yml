@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: roieshalom/portfolio
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "experience"
+    label: "Experience"
+    folder: "content/experience"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Company", name: "company", widget: "string"}
+      - {label: "Years", name: "years", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
