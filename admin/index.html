@@ -1,10 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
     <title>Content Manager</title>
-    <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
   </head>
   <body>
+    <!-- Netlify CMS requires this mounting div! -->
+    <script src="https://unpkg.com/netlify-cms@2.15.72/dist/netlify-cms.js"></script>
+    <script>
+      // Render Netlify CMS manually to avoid mounting errors
+      if (window.CMS_MANUAL_INIT) {
+        window.CMS_MANUAL_INIT();
+      }
+    </script>
   </body>
 </html>
