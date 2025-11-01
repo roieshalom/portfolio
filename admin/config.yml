@@ -2,6 +2,8 @@ backend:
   name: github
   repo: roieshalom/portfolio
   branch: main
+  client_id: Ov23liP2JM7Q2oqWBb0i
+  client_secret: 7c505ae74806c72938cbfa091acae4ecef5934b1
 
 media_folder: "images"
 public_folder: "/images"
