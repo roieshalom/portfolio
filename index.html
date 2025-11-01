@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <title>Roie Shalom · Product Design Lead</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Font: Mark Pro (host or update path as needed) -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-inner">
-        <button id="theme-toggle" aria-label="Toggle dark mode" style="margin-bottom:18px;background:none;border:none;cursor:pointer;font-size:1.2em;">
-          <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
-        </button>
         <span class="brand">Roie Shalom</span>
         <span class="role">Product Design Lead</span>
         <p class="sidebar-bio">
           Hello! I'm an experienced and creative designer with an eye for detail and a passion for coherent, innovative digital products.
         </p>
-        <!-- Sidebar Navigation -->
+
         <nav class="sidebar-nav">
           <a href="#about" class="nav-link active">About</a>
-          <a href="#work" class="nav-link">Projects</a>
           <a href="#experience" class="nav-link">Experience</a>
+          <a href="#work" class="nav-link">Projects</a>
         </nav>
-        <!-- Space and Fun Section -->
+
         <div style="margin-top:42px;"></div>
         <section class="sidebar-fun">
           <div class="fun-title">Fun</div>
@@ -34,20 +30,29 @@
             <a href="#" class="fun-link">Placeholder 2</a>
             <a href="#" class="fun-link">Placeholder 3</a>
           </div>
+          <!-- Dark/Light Theme Toggle -->
+          <button id="theme-toggle" aria-label="Toggle dark mode" style="margin-top: 18px; margin-bottom:18px; background:none;border:none;cursor:pointer;font-size:1.2em;">
+            <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
+          </button>
         </section>
-        <!-- Social links remain as before -->
+
+        <div style="margin-bottom: 24px;"></div>
+        <!-- Social links at the bottom with padding below -->
         <nav class="social">
           <a href="https://www.instagram.com/roie_s/" target="_blank" aria-label="Instagram">
+            <!-- SVG icon unchanged -->
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M7 2c-2.76 0-5 2.24-5 5v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm6.3-.5a1 1 0 100 2 1 1 0 000-2z" fill="var(--color-link)"/>
             </svg>
           </a>
           <a href="https://github.com/roieshalom" target="_blank" aria-label="GitHub">
+            <!-- SVG icon unchanged -->
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path fill="var(--color-link)" d="M12 2a10 10 0 00-3.16 19.48c.5.09.68-.22.68-.48v-1.68c-2.78.61-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.45-1.1-1.45-.9-.61.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.64.36-1.08.65-1.33-2.22-.25-4.56-1.11-4.56-4.95a3.88 3.88 0 011.04-2.7 3.6 3.6 0 01.1-2.66s.84-.26 2.75 1.02a9.5 9.5 0 015 0c1.91-1.28 2.75-1.02 2.75-1.02.19.9.22 2.01.1 2.66a3.88 3.88 0 011.04 2.7c0 3.85-2.34 4.7-4.57 4.95.37.32.7.94.7 1.9v2.8c0 .26.18.57.7.48A10 10 0 0012 2z"/>
             </svg>
           </a>
           <a href="https://linkedin.com/in/roiesh" target="_blank" aria-label="LinkedIn">
+            <!-- SVG icon unchanged -->
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path fill="var(--color-link)" d="M19 3A2 2 0 0121 5v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-8.5 14v-6H8V17h2.5zm-1.25-6.75a1.25 1.25 0 10-.01-2.51A1.25 1.25 0 009.25 10.25zm9.25 6.75v-3.22c0-1.94-1.03-2.83-2.4-2.83-1.11 0-1.61.61-1.89 1.04V11h-2.5V17H14v-3.14c0-.15.01-.3.04-.41.09-.28.3-.59.65-.59.61 0 .85.44.85 1.09V17H18.5z"/>
             </svg>
@@ -56,7 +61,6 @@
       </div>
     </aside>
     <main class="main-content">
-      <!-- unchanged main content below -->
       <section id="about" class="section">
         <div class="section-title">About</div>
         <p>
@@ -121,6 +125,31 @@
     </main>
   </div>
   <script>
+    /** Smooth scroll and nav highlight **/
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        window.scrollTo({top: target.offsetTop - 60, behavior: 'smooth'});
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    /** Auto highlight nav on scroll **/
+    const sections = ['about', 'experience', 'work'];
+    window.addEventListener('scroll', () => {
+      let currentSection = sections[0];
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (window.scrollY >= el.offsetTop - 110) currentSection = id;
+      });
+      document.querySelectorAll('.nav-link').forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + currentSection);
+      });
+    });
+
+    /** Dark mode toggle **/
     const toggleBtn = document.getElementById('theme-toggle');
     const iconSpan = document.getElementById('theme-toggle-icon');
     if (localStorage.getItem('theme') === 'dark') {
