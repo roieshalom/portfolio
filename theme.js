@@ -28,6 +28,9 @@ function setThemeByTime() {
 window.addEventListener('DOMContentLoaded', function() {
   setThemeByTime();
   const themeToggle = document.getElementById('theme-toggle');
+  window.addEventListener('DOMContentLoaded', function() {
+  setThemeByTime();
+  const themeToggle = document.getElementById('theme-toggle');
   themeToggle.addEventListener('click', function(event) {
     event.preventDefault();
     document.body.classList.toggle('dark-mode');
@@ -35,4 +38,6 @@ window.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     console.log('Manual toggle, now', isDark ? 'dark' : 'light');
   });
+});
+
 });
