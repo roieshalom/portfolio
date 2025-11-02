@@ -29,6 +29,28 @@ body {
   letter-spacing: .01em;
   scroll-behavior: smooth;
 }
+body {
+  /* Default: mobile-friendly spacing */
+  padding-left: clamp(20px, 5vw, 32px);
+  padding-right: clamp(20px, 5vw, 32px);
+}
+
+/* Tablet: more space */
+@media (min-width: 600px) {
+  body {
+    padding-left: clamp(32px, 8vw, 64px);
+    padding-right: clamp(32px, 8vw, 64px);
+  }
+}
+
+/* Desktop: wide spacing */
+@media (min-width: 1200px) {
+  body {
+    padding-left: clamp(80px, 12vw, 200px);
+    padding-right: clamp(80px, 12vw, 200px);
+  }
+}
+
 
 html {
   min-height: 100%;
