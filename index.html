@@ -14,7 +14,6 @@
     <span class="mobile-role" id="mobile-role">Product Design Lead</span>
     <div class="mobile-social">
       <!-- Social SVG icons here (same as sidebar) -->
-      <!-- ...copy your full SVG blocks from sidebar social here... -->
     </div>
   </div>
   <div class="layout">
@@ -43,7 +42,6 @@
         <div style="margin-bottom: 24px;"></div>
         <nav class="social">
           <!-- Full SVG social icons here -->
-          <!-- ...same as above... -->
         </nav>
       </div>
     </aside>
@@ -57,26 +55,38 @@
       <section id="experience" class="section">
         <div class="section-title">Experience</div>
         <ul id="experience-list" class="experience-list">
-          <!-- Dynamic experience items will be loaded here -->
         </ul>
       </section>
       <section id="work" class="section">
         <div class="section-title">Projects</div>
         <div class="selected-work">
+          <!-- Example static markup, you can duplicate .work-item for more projects or generate from data -->
           <div class="work-item">
-            <img class="work-thumb" src="content/images/placeholder.png" alt="Project thumbnail">
-            <div class="work-title">Project One</div>
-            <a href="#" class="work-link">View Project</a>
+            <a href="project1.html">
+              <img class="work-thumb" src="content/images/placeholder.png" alt="Project One thumbnail">
+            </a>
+            <div class="work-details">
+              <div class="work-title">Project name</div>
+              <div class="work-subtitle">Description</div>
+            </div>
           </div>
           <div class="work-item">
-            <img class="work-thumb" src="content/images/placeholder.png" alt="Project thumbnail">
-            <div class="work-title">Project Two</div>
-            <a href="#" class="work-link">View Project</a>
+            <a href="project2.html">
+              <img class="work-thumb" src="content/images/placeholder.png" alt="Project Two thumbnail">
+            </a>
+            <div class="work-details">
+              <div class="work-title">Project name</div>
+              <div class="work-subtitle">Description</div>
+            </div>
           </div>
           <div class="work-item">
-            <img class="work-thumb" src="content/images/placeholder.png" alt="Project thumbnail">
-            <div class="work-title">Project Three</div>
-            <a href="#" class="work-link">View Project</a>
+            <a href="project3.html">
+              <img class="work-thumb" src="content/images/placeholder.png" alt="Project Three thumbnail">
+            </a>
+            <div class="work-details">
+              <div class="work-title">Project name</div>
+              <div class="work-subtitle">Description</div>
+            </div>
           </div>
         </div>
       </section>
@@ -98,17 +108,8 @@
       </section>
     </main>
   </div>
-  <!-- MOBILE FUN at the bottom (will be hidden on mobile/tablet via CSS) -->
   <div class="mobile-fun" style="display:none;">
-    <div class="fun-title">Fun</div>
-    <button id="theme-toggle-mobile" aria-label="Toggle dark mode" style="margin-top: 8px;margin-bottom: 16px;background:none;border:none;cursor:pointer;font-size:1.2em;">
-      <span id="theme-toggle-mobile-icon" aria-hidden="true">🌙</span>
-    </button>
-    <div class="fun-links">
-      <a href="#" class="fun-link">Placeholder 1</a>
-      <a href="#" class="fun-link">Placeholder 2</a>
-      <a href="#" class="fun-link">Placeholder 3</a>
-    </div>
+    <!-- Fun section will remain hidden on mobile/tablet -->
   </div>
   <script>
     fetch('content/experience.json')
@@ -167,22 +168,15 @@
       if (dark) {
         document.body.classList.add('dark-mode');
         document.getElementById('theme-toggle-text').textContent = '☀️ Change theme ';
-        document.getElementById('theme-toggle-mobile-icon').textContent = '☀️';
-        localStorage.setItem('theme', 'dark');
       } else {
         document.body.classList.remove('dark-mode');
         document.getElementById('theme-toggle-text').textContent = '🌙 Change theme';
-        document.getElementById('theme-toggle-mobile-icon').textContent = '🌙';
-        localStorage.setItem('theme', 'light');
       }
     }
     if (localStorage.getItem('theme') === 'dark') setMode(true);
 
     document.getElementById('theme-toggle').onclick = function (e) {
       e.preventDefault();
-      setMode(!document.body.classList.contains('dark-mode'));
-    }
-    document.getElementById('theme-toggle-mobile').onclick = function () {
       setMode(!document.body.classList.contains('dark-mode'));
     }
   </script>
