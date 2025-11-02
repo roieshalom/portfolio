@@ -256,7 +256,6 @@ html {
   font-weight: bold;
 }
 
-/* PROJECTS: flex responsive, fill column, prepare spacing for multi-rows */
 .selected-work {
   display: flex;
   flex-wrap: wrap;
@@ -269,31 +268,24 @@ html {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: calc(100% - 2px);
-  background: var(--color-grey-light);
-  border-radius: 14px;
-  padding: 20px;
+  width: 100%;
+  background: none;
+  border-radius: 0;
+  padding: 10px 0;
   margin: 0;
   box-sizing: border-box;
-  transition: background 0.2s;
 }
 
 .work-thumb {
-  width: 82px;
-  height: 62px;
+  width: 110px;
+  height: 110px;
   object-fit: cover;
   border-radius: 8px;
-  margin-right: 28px;
+  margin-right: 32px;
   margin-bottom: 0;
-  background: #fff;
-  box-shadow: 0 1px 5px rgba(60,60,60,0.08);
-  transition: box-shadow .15s;
+  background: none;
+  box-shadow: none;
   cursor: pointer;
-}
-
-.work-thumb:hover,
-.work-thumb:focus {
-  box-shadow: 0 2px 10px rgba(120,30,100,0.08);
 }
 
 .work-details {
@@ -302,6 +294,7 @@ html {
   flex-direction: column;
 }
 
+/* Use same as .work-title for project titles */
 .work-title {
   font-size: 1.19rem;
   font-weight: bold;
@@ -310,30 +303,27 @@ html {
   letter-spacing: 0.7px;
 }
 
-.work-subtitle {
-  font-size: .96rem;
-  color: var(--color-text);
-  margin-bottom: 0;
+/* Use default paragraph styles for description */
+.work-desc {
+  font-size: inherit;
+  color: inherit;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
 }
 
-/* Remove background, create grouping/divider for mobile */
+/* Remove background on mobile, keep divider for grouping */
 @media (max-width: 750px) {
-  .selected-work {
-    flex-direction: column;
-    gap: 24px;
-  }
   .work-item {
-    width: 100%;
-    background: transparent;
+    background: none;
     border-radius: 0;
     border-bottom: 1.5px solid var(--color-grey-light);
-    box-sizing: border-box;
     padding: 14px 0 10px 0;
     margin: 0;
   }
   .work-thumb {
-    width: 62px;
-    height: 46px;
+    width: 90px;
+    height: 90px;
     margin-right: 16px;
   }
   .work-title {
@@ -341,11 +331,10 @@ html {
     margin-bottom: 5px;
   }
 }
-
 @media (max-width: 500px) {
   .work-thumb {
-    width: 47px;
-    height: 39px;
+    width: 64px;
+    height: 64px;
     margin-right: 10px;
   }
   .work-title {
