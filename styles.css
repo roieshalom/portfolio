@@ -83,7 +83,7 @@ html {
 }
 .brand,
 #desktop-brand {
-  font-size: 1.28rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--color-text-main);
   display: block;
@@ -91,7 +91,7 @@ html {
   transition: font-size 0.2s;
 }
 #mobile-brand {
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-text-main);
   transition: font-size 0.2s;
