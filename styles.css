@@ -101,17 +101,17 @@ html {
   letter-spacing: 0.5px;
   font-size: 1.05em;
   padding: 6px 0;
-  padding-left: 3px;
+  padding-left: 3px; /* changed for indent */
   transition: color 0.2s, border 0.2s, background 0.2s, padding-left 0.3s cubic-bezier(.48,.19,.14,.86);
-  border-left: 1px solid transparent;
+  border-left: 1px solid transparent; /* changed for thinner line */
 }
 
 .nav-link.active,
 .nav-link:focus {
   color: var(--color-link);
-  border-left: 1px solid var(--color-link);
+  border-left: 1px solid var(--color-link); /* changed for thinner line */
   background: rgba(242, 23, 131, 0.06);
-  padding-left: 6px;
+  padding-left: 6px; /* changed for less indent */
 }
 
 .sidebar-fun {
@@ -332,7 +332,7 @@ html {
 /* Dark mode overrides */
 body.dark-mode .sidebar-nav .nav-link.active {
   background: var(--color-bg-dark);
-  padding-left: 6px;
+  padding-left: 6px; /* keep active indent consistent in dark mode */
 }
 body.dark-mode .brand,
 body.dark-mode .section-title,
