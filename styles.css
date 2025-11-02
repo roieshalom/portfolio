@@ -158,7 +158,7 @@ html {
 }
 
 .fun-link {
-  color: var(--color-link);
+  color: var(--color-text-main);
   opacity: .72;
   font-size: 0.97em;
   text-decoration: none;
