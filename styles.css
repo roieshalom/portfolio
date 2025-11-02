@@ -22,8 +22,8 @@ body {
   background: var(--color-bg);
   box-sizing: border-box;
   margin: 0;
-  padding-left: clamp(20px, 8vw, 200px);
-  padding-right: clamp(20px, 8vw, 200px);
+  padding-left: clamp(20px, 14vw, 200px);
+  padding-right: clamp(20px, 14vw, 200px);
   font-family: 'Mark Pro', Arial, sans-serif;
   color: var(--color-text);
   font-size: .75rem;
