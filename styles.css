@@ -101,17 +101,17 @@ html {
   letter-spacing: 0.5px;
   font-size: 1.05em;
   padding: 6px 0;
-  padding-left: 0;
+  padding-left: 4px;
   transition: color 0.2s, border 0.2s, background 0.2s, padding-left 0.3s cubic-bezier(.48,.19,.14,.86);
-  border-left: 3px solid transparent;
+  border-left: 1px solid transparent;
 }
 
 .nav-link.active,
 .nav-link:focus {
   color: var(--color-link);
-  border-left: 3px solid var(--color-link);
+  border-left: 1px solid var(--color-link);
   background: rgba(242, 23, 131, 0.06);
-  padding-left: 18px;
+  padding-left: 10px;
 }
 
 .sidebar-fun {
