@@ -17,14 +17,13 @@
 }
 
 /* ----------- Responsive layout flow ----------- */
-
 body {
   min-height: 100vh;
   background: var(--color-bg);
   box-sizing: border-box;
   margin: 0;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: clamp(20px, 8vw, 200px);
+  padding-right: clamp(20px, 8vw, 200px);
   font-family: 'Mark Pro', Arial, sans-serif;
   color: var(--color-text);
   font-size: .75rem;
@@ -67,20 +66,78 @@ html {
   height: 100%;
 }
 
-.brand {
+.brand,
+#desktop-brand {
   font-size: 1.28rem;
   font-weight: 600;
   color: var(--color-text-main);
   display: block;
   margin-bottom: 2px;
+  transition: font-size 0.2s;
 }
 
-.role {
+#mobile-brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  transition: font-size 0.2s;
+}
+
+.role,
+#desktop-role {
   font-size: 1.07rem;
   font-weight: 400;
   color: var(--color-text);
   margin-bottom: 16px;
   display: block;
+  transition: font-size 0.2s;
+}
+
+#mobile-role {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: font-size 0.2s;
+}
+
+/* Proportional font reduction mobile/tablet */
+@media (max-width: 500px) {
+  .brand, #desktop-brand, #mobile-brand {
+    font-size: 1.08rem;
+  }
+  .role, #desktop-role, #mobile-role {
+    font-size: 0.92rem;
+  }
+}
+
+/* Only show fun section in mobile-fun on mobile not at top! */
+#desktop-fun { display: block; }
+@media (max-width: 900px) {
+  #desktop-fun { display: none !important; }
+  .mobile-fun {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 18px 0 14px 0;
+    background: transparent;
+    position: static;
+  }
+}
+@media (max-width: 600px) {
+  .mobile-fun {
+    padding-bottom: 18px;
+  }
+}
+
+/* Padding tweaks for narrower screens: keep some side space always */
+@media (max-width: 900px) {
+  body {
+    padding-left: clamp(14px, 4vw, 32px);
+    padding-right: clamp(14px, 4vw, 32px);
+  }
 }
 
 .sidebar-bio {
@@ -104,9 +161,9 @@ html {
   letter-spacing: 0.5px;
   font-size: 1.05em;
   padding: 6px 0;
-  padding-left: 3px; /* indent for non-active nav */
+  padding-left: 3px;
   transition: color 0.2s, border 0.2s, background 0.2s, padding-left 0.3s cubic-bezier(.48,.19,.14,.86);
-  border-left: 1px solid transparent; /* thinner line */
+  border-left: 1px solid transparent;
 }
 
 .nav-link.active,
@@ -114,14 +171,8 @@ html {
   color: var(--color-link);
   border-left: 1px solid var(--color-link);
   background: rgba(242, 23, 131, 0.06);
-  padding-left: 6px; /* active indent */
+  padding-left: 6px;
 }
-
-.sidebar-fun {
-  margin-top: 42px;
-  margin-bottom: 24px;
-}
-#desktop-fun { display: block; }
 
 .fun-title {
   font-weight: 600;
@@ -150,7 +201,6 @@ html {
   text-decoration: underline;
 }
 
-/* Theme toggle as link */
 #theme-toggle {
   background: none;
   border: none;
@@ -198,7 +248,6 @@ html {
   opacity: .65;
 }
 
-/* Main content styling and alignment */
 .main-content {
   flex: 1 1 700px;
   max-width: 900px;
@@ -239,7 +288,6 @@ html {
   font-weight: bold;
 }
 
-/* Selected Work: show 3 items in one line; mobile: horizontal rectangles */
 .selected-work {
   display: flex;
   flex-direction: row;
@@ -292,14 +340,6 @@ html {
 }
 
 /* ----------- Responsive adjustments ----------- */
-
-/* Smooth side padding reduction using clamp for all widths */
-body {
-  padding-left: clamp(12px, 8vw, 200px);
-  padding-right: clamp(12px, 8vw, 200px);
-}
-
-/* Gutter between columns & sidebar shrink at breakpoints */
 @media (max-width: 1200px) {
   .sidebar {
     padding-right: 60px;
@@ -319,6 +359,8 @@ body {
     gap: 36px;
   }
 }
+
+/* Adaptive padding, mobile fun at bottom only, proportional title */
 @media (max-width: 900px) {
   .layout {
     flex-direction: column;
@@ -335,8 +377,8 @@ body {
     padding-bottom: 24px;
   }
   body {
-    padding-left: clamp(8px, 4vw, 28px);
-    padding-right: clamp(8px, 4vw, 28px);
+    padding-left: clamp(14px, 4vw, 32px);
+    padding-right: clamp(14px, 4vw, 32px);
   }
   .section {
     margin-bottom: 36px;
@@ -345,12 +387,41 @@ body {
   #desktop-fun {
     display: none !important;
   }
-  .mobile-header,
+  .mobile-header {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    width: 100%;
+  }
+  .mobile-brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 7px;
+    margin-bottom: 4px;
+  }
+  .mobile-role {
+    font-size: 1.0rem;
+    font-weight: 500;
+    margin-bottom: 11px;
+  }
+  .mobile-social {
+    margin-bottom: 10px;
+  }
   .mobile-fun {
     display: flex !important;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100vw;
+    margin: 0 0 0 0;
+    padding: 18px 0 14px 0;
+    background: transparent;
+    position: static;
   }
 }
 
+/* PROJECTS: Stack at <750px, compact at <500px */
 @media (max-width: 750px) {
   .selected-work {
     flex-direction: column;
@@ -399,6 +470,12 @@ body {
   body {
     padding-left: 8px;
     padding-right: 8px;
+  }
+  .brand, #desktop-brand, #mobile-brand {
+    font-size: .96rem;
+  }
+  .role, #desktop-role, #mobile-role {
+    font-size: .85rem;
   }
 }
 

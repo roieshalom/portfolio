@@ -10,8 +10,8 @@
 <body>
   <!-- MOBILE HEADER (shown only on mobile by CSS) -->
   <div class="mobile-header" style="display:none;">
-    <span class="mobile-brand">Roie Shalom</span>
-    <span class="mobile-role">Product Design Lead</span>
+    <span class="mobile-brand" id="mobile-brand">Roie Shalom</span>
+    <span class="mobile-role" id="mobile-role">Product Design Lead</span>
     <div class="mobile-social">
       <!-- Social SVG icons here (same as sidebar) -->
       <!-- ...copy your full SVG blocks from sidebar social here... -->
@@ -20,8 +20,8 @@
   <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-inner">
-        <span class="brand">Roie Shalom</span>
-        <span class="role">Product Design Lead</span>
+        <span class="brand" id="desktop-brand">Roie Shalom</span>
+        <span class="role" id="desktop-role">Product Design Lead</span>
         <p class="sidebar-bio">
           Welcome to my personal website! Here you can find my projects, past experience, and some other experiments I'm running.
         </p>
@@ -31,7 +31,6 @@
           <a href="#work" class="nav-link">Projects</a>
         </nav>
         <div style="margin-top:42px;"></div>
-        <!-- Move sidebar-fun out of sidebar for mobile stacking, so do not display here on mobile -->
         <section class="sidebar-fun" id="desktop-fun">
           <div class="fun-title">Fun</div>
           <a href="#" id="theme-toggle" class="fun-link" aria-label="Change theme" style="margin-top: 8px; margin-bottom:18px;">
@@ -51,7 +50,6 @@
       </div>
     </aside>
     <main class="main-content">
-      <!-- Main content sections—these must be present, do not truncate! -->
       <section id="about" class="section">
         <div class="section-title">About</div>
         <p>
@@ -139,7 +137,6 @@
         document.querySelector('.mobile-header').style.display = 'flex';
         document.querySelector('.mobile-fun').style.display = 'flex';
         document.querySelector('.sidebar').style.display = 'none';
-        // Hide sidebar fun, mobile fun at bottom is visible via CSS
         document.getElementById('desktop-fun').style.display = 'none';
       } else {
         document.querySelector('.mobile-header').style.display = 'none';
