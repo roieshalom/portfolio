@@ -1,15 +1,27 @@
 function setThemeByTime() {
-  // Use stored preference if set
+  // DEBUG: Log for troubleshooting
+  console.log('Theme script running...');
   const storedTheme = localStorage.getItem('theme');
-  if (storedTheme) {
-    document.body.classList.toggle('dark-mode', storedTheme === 'dark');
+  console.log('Stored theme:', storedTheme);
+
+  if (storedTheme === 'light') {
+    document.body.classList.remove('dark-mode');
+    console.log('Applying stored light');
+    return;
+  } else if (storedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    console.log('Applying stored dark');
     return;
   }
   const hour = new Date().getHours();
+  console.log('Hour is:', hour);
+
   if (hour >= 7 && hour < 19) {
     document.body.classList.remove('dark-mode');
+    console.log('Auto day (light)');
   } else {
     document.body.classList.add('dark-mode');
+    console.log('Auto night (dark)');
   }
 }
 
@@ -17,9 +29,10 @@ window.addEventListener('DOMContentLoaded', function() {
   setThemeByTime();
   const themeToggle = document.getElementById('theme-toggle');
   themeToggle.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevents the # from scrolling to top
+    event.preventDefault();
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    console.log('Manual toggle, now', isDark ? 'dark' : 'light');
   });
 });
