@@ -182,10 +182,10 @@
     function setMode(dark) {
       if (dark) {
         document.body.classList.add('dark-mode');
-        document.getElementById('theme-toggle-text').textContent = '☀️ Change theme ';
+        document.getElementById('theme-toggle-text').textContent = 'Change theme ';
       } else {
         document.body.classList.remove('dark-mode');
-        document.getElementById('theme-toggle-text').textContent = '🌙 Change theme';
+        document.getElementById('theme-toggle-text').textContent = 'Change theme';
       }
     }
     if (localStorage.getItem('theme') === 'dark') setMode(true);
