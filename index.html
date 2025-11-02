@@ -176,12 +176,12 @@
     function setMode(dark) {
       if (dark) {
         document.body.classList.add('dark-mode');
-        document.getElementById('theme-toggle-text').textContent = 'Change theme ☀️';
+        document.getElementById('theme-toggle-text').textContent = '☀️ Change theme ';
         document.getElementById('theme-toggle-mobile-icon').textContent = '☀️';
         localStorage.setItem('theme', 'dark');
       } else {
         document.body.classList.remove('dark-mode');
-        document.getElementById('theme-toggle-text').textContent = 'Change theme 🌙';
+        document.getElementById('theme-toggle-text').textContent = '🌙 Change theme';
         document.getElementById('theme-toggle-mobile-icon').textContent = '🌙';
         localStorage.setItem('theme', 'light');
       }
