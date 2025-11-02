@@ -114,7 +114,7 @@ html {
 /* Proportional font reduction mobile/tablet */
 @media (max-width: 500px) {
   .brand, #desktop-brand, #mobile-brand {
-    font-size: 1.08rem;
+    font-size: 2rem;
   }
   .role, #desktop-role, #mobile-role {
     font-size: 0.92rem;
