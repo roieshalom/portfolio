@@ -369,3 +369,22 @@ html {
   display: block;
   margin-top: 3px;
 }
+/* Applies to both desktop and mobile */
+.identity-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.mobile-brand, #mobile-brand,
+.mobile-role, #mobile-role {
+  display: block;
+  margin: 0;
+}
+.mobile-role, #mobile-role {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-top: 0.15em;
+  margin-bottom: 16px;
+  transition: font-size 0.2s;
+}
