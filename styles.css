@@ -121,6 +121,7 @@ html {
   margin-top: 42px;
   margin-bottom: 24px;
 }
+#desktop-fun { display: block; }
 
 .fun-title {
   font-weight: 600;
@@ -285,15 +286,6 @@ html {
   opacity: .7;
 }
 
-.testimonial {
-  font-style: italic;
-  color: var(--color-muted);
-  margin-bottom: 14px;
-}
-.testimonial b {
-  color: var(--color-link);
-}
-
 .contact-block {
   margin-top: 8px;
   color: var(--color-text);
@@ -301,12 +293,14 @@ html {
 
 /* ----------- Responsive adjustments ----------- */
 
-/* Side padding steps as screen narrows */
+/* Smooth side padding reduction using clamp for all widths */
+body {
+  padding-left: clamp(12px, 8vw, 200px);
+  padding-right: clamp(12px, 8vw, 200px);
+}
+
+/* Gutter between columns & sidebar shrink at breakpoints */
 @media (max-width: 1200px) {
-  body {
-    padding-left: 80px;
-    padding-right: 80px;
-  }
   .sidebar {
     padding-right: 60px;
   }
@@ -318,10 +312,6 @@ html {
   }
 }
 @media (max-width: 1024px) {
-  body {
-    padding-left: 28px;
-    padding-right: 28px;
-  }
   .sidebar {
     padding-right: 24px;
   }
@@ -329,7 +319,6 @@ html {
     gap: 36px;
   }
 }
-
 @media (max-width: 900px) {
   .layout {
     flex-direction: column;
@@ -340,28 +329,28 @@ html {
   .sidebar {
     display: none !important;
   }
-  .mobile-header,
-  .mobile-fun {
-    display: flex !important;
-  }
   .main-content {
     max-width: 100%;
     padding-top: 24px;
     padding-bottom: 24px;
   }
   body {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: clamp(8px, 4vw, 28px);
+    padding-right: clamp(8px, 4vw, 28px);
   }
   .section {
     margin-bottom: 36px;
   }
-  .sidebar-nav {
+  .sidebar-nav,
+  #desktop-fun {
     display: none !important;
+  }
+  .mobile-header,
+  .mobile-fun {
+    display: flex !important;
   }
 }
 
-/* PROJECTS: Stack as horizontal rectangles at <750px, compact at <500px */
 @media (max-width: 750px) {
   .selected-work {
     flex-direction: column;
@@ -408,8 +397,8 @@ html {
     font-size: 0.96em;
   }
   body {
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 
@@ -446,15 +435,11 @@ body.dark-mode .fun-link {
 }
 body.dark-mode .social a,
 body.dark-mode .exp-role,
-body.dark-mode .work-link,
-body.dark-mode .testimonial b {
+body.dark-mode .work-link {
   color: var(--color-text-main-dark);
 }
 body.dark-mode .social a svg {
   fill: var(--color-link-dark);
-}
-body.dark-mode .testimonial {
-  color: var(--color-muted-dark);
 }
 body.dark-mode .work-thumb {
   background: var(--color-grey-light-dark);

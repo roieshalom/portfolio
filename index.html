@@ -30,7 +30,8 @@
           <a href="#work" class="nav-link">Projects</a>
         </nav>
         <div style="margin-top:42px;"></div>
-        <section class="sidebar-fun">
+        <!-- Move sidebar-fun out of sidebar for mobile stacking, so do not display here on mobile -->
+        <section class="sidebar-fun" id="desktop-fun">
           <div class="fun-title">Fun</div>
           <a href="#" id="theme-toggle" class="fun-link" aria-label="Change theme" style="margin-top: 8px; margin-bottom:18px;">
             <span id="theme-toggle-text">Change theme 🌙</span>
@@ -80,12 +81,6 @@
             <div class="work-title">Project Three</div>
             <a href="#" class="work-link">View Project</a>
           </div>
-        </div>
-      </section>
-      <section id="testimonials" class="section">
-        <div class="section-title">Testimonials</div>
-        <div class="testimonial-list">
-          <div class="testimonial">“Balances creativity with strategic product thinking—always calm and focused, even on impossible deadlines.” <b>Anna Lee, CTO, AmazingCorp</b></div>
         </div>
       </section>
       <section id="contact" class="section">
@@ -141,12 +136,15 @@
     function toggleMobileVisibility() {
       if (window.matchMedia('(max-width: 900px)').matches) {
         document.querySelector('.mobile-header').style.display = 'flex';
-        document.querySelector('.mobile-fun').style.display = 'block';
+        document.querySelector('.mobile-fun').style.display = 'flex';
         document.querySelector('.sidebar').style.display = 'none';
+        // Hide sidebar fun, mobile fun at bottom is visible via CSS
+        document.getElementById('desktop-fun').style.display = 'none';
       } else {
         document.querySelector('.mobile-header').style.display = 'none';
         document.querySelector('.mobile-fun').style.display = 'none';
         document.querySelector('.sidebar').style.display = 'flex';
+        document.getElementById('desktop-fun').style.display = 'block';
       }
     }
     window.addEventListener('resize', toggleMobileVisibility);
