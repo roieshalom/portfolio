@@ -327,8 +327,8 @@ html {
     margin-right: 16px;
   }
   .work-title {
-    font-size: 1.07rem;
-    margin-bottom: 5px;
+    color: var(--color-text);
+    font-weight: bold;
   }
 }
 @media (max-width: 500px) {
