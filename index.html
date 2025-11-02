@@ -34,10 +34,12 @@
         <section class="sidebar-fun" id="desktop-fun">
           <div class="fun-title">Fun</div>
           <a href="#" id="theme-toggle" class="fun-link" aria-label="Change theme" style="margin-top: 8px; margin-bottom:18px;">
-            <span id="theme-toggle-text">🌙 Change theme</span>
+            <span id="theme-toggle-text">Change theme 🌙</span>
           </a>
           <div class="fun-links">
-            <a href="#" class="exp-desc">More coming soon...</a>
+            <a href="#" class="fun-link">Placeholder 1</a>
+            <a href="#" class="fun-link">Placeholder 2</a>
+            <a href="#" class="fun-link">Placeholder 3</a>
           </div>
         </section>
         <div style="margin-bottom: 24px;"></div>
@@ -98,7 +100,7 @@
       </section>
     </main>
   </div>
-  <!-- MOBILE FUN at the very bottom, outside .layout/.main-content (shown on mobile only!) -->
+  <!-- MOBILE FUN at the bottom (will be hidden on mobile/tablet via CSS) -->
   <div class="mobile-fun" style="display:none;">
     <div class="fun-title">Fun</div>
     <button id="theme-toggle-mobile" aria-label="Toggle dark mode" style="margin-top: 8px;margin-bottom: 16px;background:none;border:none;cursor:pointer;font-size:1.2em;">
@@ -132,12 +134,10 @@
     function toggleMobileVisibility() {
       if (window.matchMedia('(max-width: 900px)').matches) {
         document.querySelector('.mobile-header').style.display = 'flex';
-        document.querySelector('.mobile-fun').style.display = 'flex';
         document.querySelector('.sidebar').style.display = 'none';
         document.getElementById('desktop-fun').style.display = 'none';
       } else {
         document.querySelector('.mobile-header').style.display = 'none';
-        document.querySelector('.mobile-fun').style.display = 'none';
         document.querySelector('.sidebar').style.display = 'flex';
         document.getElementById('desktop-fun').style.display = 'block';
       }

@@ -1,5 +1,5 @@
 :root {
-  --color-bg: #f0f0f0;
+  --color-bg: #fff;
   --color-text-main: #404040;
   --color-text: #555;
   --color-link: #F21783;
@@ -107,36 +107,6 @@ html {
   }
   .role, #desktop-role, #mobile-role {
     font-size: 0.92rem;
-  }
-}
-
-#desktop-fun { display: block; }
-@media (max-width: 900px) {
-  #desktop-fun { display: none !important; }
-  .mobile-fun {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100vw;
-    margin: 0 auto;
-    padding: 24px 0 0 0;
-    background: transparent;
-    position: static;
-    min-height: 100px;
-  }
-}
-@media (max-width: 600px) {
-  .mobile-fun {
-    padding-bottom: 18px;
-  }
-}
-
-/* Padding tweaks for narrower screens: keep some side space always */
-@media (max-width: 900px) {
-  body {
-    padding-left: clamp(14px, 4vw, 32px);
-    padding-right: clamp(14px, 4vw, 32px);
   }
 }
 
@@ -381,7 +351,8 @@ html {
     margin-bottom: 36px;
   }
   .sidebar-nav,
-  #desktop-fun {
+  #desktop-fun,
+  .mobile-fun {
     display: none !important;
   }
   .mobile-header {
@@ -390,20 +361,6 @@ html {
     align-items: flex-start;
     margin-bottom: 18px;
     width: 100%;
-  }
-  .mobile-fun {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100vw;
-    margin-left: calc(-1 * var(--body-side-pad, 0px));
-    margin-right: calc(-1 * var(--body-side-pad, 0px));
-    background: transparent;
-    position: static;
-    min-height: 100px;
-    padding-top: 18px;
-    padding-bottom: 0;
   }
 }
 
