@@ -32,9 +32,9 @@
         <div style="margin-top:42px;"></div>
         <section class="sidebar-fun">
           <div class="fun-title">Fun</div>
-          <button id="theme-toggle" aria-label="Toggle dark mode" style="margin-top: 8px; margin-bottom:18px; background:none;border:none;cursor:pointer;font-size:1.2em;">
-            <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
-          </button>
+          <a href="#" id="theme-toggle" class="fun-link" aria-label="Change theme" style="margin-top: 8px; margin-bottom:18px;">
+            <span id="theme-toggle-text">Change theme 🌙</span>
+          </a>
           <div class="fun-links">
             <a href="#" class="fun-link">Placeholder 1</a>
             <a href="#" class="fun-link">Placeholder 2</a>
@@ -121,23 +121,22 @@
   <script>
     // Only dynamically populate experience section, nothing else changed
     fetch('content/experience.json')
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById('experience-list');
-    container.innerHTML = data.map(item => `
-      <li class="experience-item">
-        <strong class="exp-role">${item.position}</strong>, 
-        <a href="${item.link}" class="exp-company" target="_blank">${item.company}</a>
-        <span class="exp-years">(${item.years})</span><br>
-        <span class="exp-desc">${item.description}</span>
-      </li>
-    `).join('');
-  })
-  .catch(error => {
-    document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
-    console.error(error);
-  });
-
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('experience-list');
+        container.innerHTML = data.map(item => `
+          <li class="experience-item">
+            <strong class="exp-role">${item.position}</strong>, 
+            <a href="${item.link}" class="exp-company" target="_blank">${item.company}</a>
+            <span class="exp-years">(${item.years})</span><br>
+            <span class="exp-desc">${item.description}</span>
+          </li>
+        `).join('');
+      })
+      .catch(error => {
+        document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
+        console.error(error);
+      });
 
     // All original scripts below (unchanged)
     function toggleMobileVisibility() {
@@ -172,21 +171,25 @@
         l.classList.toggle('active', l.getAttribute('href') === '#' + currentSection);
       });
     });
+
+    // Theme toggling logic
     function setMode(dark) {
       if (dark) {
         document.body.classList.add('dark-mode');
-        document.getElementById('theme-toggle-icon').textContent = '☀️';
+        document.getElementById('theme-toggle-text').textContent = 'Change theme ☀️';
         document.getElementById('theme-toggle-mobile-icon').textContent = '☀️';
         localStorage.setItem('theme', 'dark');
       } else {
         document.body.classList.remove('dark-mode');
-        document.getElementById('theme-toggle-icon').textContent = '🌙';
+        document.getElementById('theme-toggle-text').textContent = 'Change theme 🌙';
         document.getElementById('theme-toggle-mobile-icon').textContent = '🌙';
         localStorage.setItem('theme', 'light');
       }
     }
     if (localStorage.getItem('theme') === 'dark') setMode(true);
-    document.getElementById('theme-toggle').onclick = function () {
+
+    document.getElementById('theme-toggle').onclick = function (e) {
+      e.preventDefault();
       setMode(!document.body.classList.contains('dark-mode'));
     }
     document.getElementById('theme-toggle-mobile').onclick = function () {
