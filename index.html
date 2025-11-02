@@ -138,14 +138,15 @@
         console.error(error);
       });
 
-    // All original scripts below (unchanged)
     function toggleMobileVisibility() {
-      if (window.matchMedia('(max-width: 600px)').matches) {
+      if (window.matchMedia('(max-width: 900px)').matches) {
         document.querySelector('.mobile-header').style.display = 'flex';
         document.querySelector('.mobile-fun').style.display = 'block';
+        document.querySelector('.sidebar').style.display = 'none';
       } else {
         document.querySelector('.mobile-header').style.display = 'none';
         document.querySelector('.mobile-fun').style.display = 'none';
+        document.querySelector('.sidebar').style.display = 'flex';
       }
     }
     window.addEventListener('resize', toggleMobileVisibility);
@@ -171,8 +172,6 @@
         l.classList.toggle('active', l.getAttribute('href') === '#' + currentSection);
       });
     });
-
-    // Theme toggling logic
     function setMode(dark) {
       if (dark) {
         document.body.classList.add('dark-mode');
