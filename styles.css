@@ -361,8 +361,10 @@ html {
     align-items: flex-start;
     margin-bottom: 18px;
     width: 100%;
+    margin-top: 28px;   /* <-- Add this line for the gap! */
   }
 }
+
 
 @media (max-width: 750px) {
   .selected-work {
