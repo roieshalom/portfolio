@@ -364,7 +364,7 @@ body.dark-mode .social a,
 body.dark-mode .exp-role,
 body.dark-mode .work-link,
 body.dark-mode .testimonial b {
-  color: var(--color-text-main);
+  color: var(--color-text-main-dark);
 }
 body.dark-mode .social a svg {
   fill: var(--color-link-dark);
