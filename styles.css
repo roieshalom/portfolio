@@ -332,7 +332,7 @@ html {
 /* Dark mode overrides */
 body.dark-mode .sidebar-nav .nav-link.active {
   background: var(--color-bg-dark);
-  padding-left: 18px;
+  padding-left: 6px;
 }
 body.dark-mode .brand,
 body.dark-mode .section-title,
