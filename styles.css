@@ -42,7 +42,7 @@ html {
   width: 100%;
   max-width: 1360px;
   margin: 0 auto;
-  gap: 0; /* dynamic via media */
+  gap: 0;
 }
 
 .sidebar {
@@ -110,7 +110,6 @@ html {
   }
 }
 
-/* Only show fun section in mobile-fun on mobile not at top! */
 #desktop-fun { display: block; }
 @media (max-width: 900px) {
   #desktop-fun { display: none !important; }
@@ -121,9 +120,10 @@ html {
     align-items: center;
     width: 100vw;
     margin: 0 auto;
-    padding: 18px 0 14px 0;
+    padding: 24px 0 0 0;
     background: transparent;
     position: static;
+    min-height: 100px;
   }
 }
 @media (max-width: 600px) {
@@ -270,7 +270,6 @@ html {
 }
 
 .experience-list,
-.testimonial-list,
 .personal-list {
   padding: 0;
   margin: 0;
@@ -359,8 +358,6 @@ html {
     gap: 36px;
   }
 }
-
-/* Adaptive padding, mobile fun at bottom only, proportional title */
 @media (max-width: 900px) {
   .layout {
     flex-direction: column;
@@ -394,34 +391,22 @@ html {
     margin-bottom: 18px;
     width: 100%;
   }
-  .mobile-brand {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-top: 7px;
-    margin-bottom: 4px;
-  }
-  .mobile-role {
-    font-size: 1.0rem;
-    font-weight: 500;
-    margin-bottom: 11px;
-  }
-  .mobile-social {
-    margin-bottom: 10px;
-  }
   .mobile-fun {
     display: flex !important;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     width: 100vw;
-    margin: 0 0 0 0;
-    padding: 18px 0 14px 0;
+    margin-left: calc(-1 * var(--body-side-pad, 0px));
+    margin-right: calc(-1 * var(--body-side-pad, 0px));
     background: transparent;
     position: static;
+    min-height: 100px;
+    padding-top: 18px;
+    padding-bottom: 0;
   }
 }
 
-/* PROJECTS: Stack at <750px, compact at <500px */
 @media (max-width: 750px) {
   .selected-work {
     flex-direction: column;

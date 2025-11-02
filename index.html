@@ -100,7 +100,7 @@
       </section>
     </main>
   </div>
-  <!-- MOBILE FUN at the bottom (hidden on desktop, seen on mobile) -->
+  <!-- MOBILE FUN at the very bottom, outside .layout/.main-content (shown on mobile only!) -->
   <div class="mobile-fun" style="display:none;">
     <div class="fun-title">Fun</div>
     <button id="theme-toggle-mobile" aria-label="Toggle dark mode" style="margin-top: 8px;margin-bottom: 16px;background:none;border:none;cursor:pointer;font-size:1.2em;">
@@ -113,7 +113,6 @@
     </div>
   </div>
   <script>
-    // Only dynamically populate experience section, nothing else changed
     fetch('content/experience.json')
       .then(res => res.json())
       .then(data => {
