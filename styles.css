@@ -3,7 +3,7 @@
   --color-text-main: #404040;
   --color-text: #555;
   --color-link: #F21783;
-  --color-link-bg: #fff0f8;
+  --color-link-bg: #ffc9e6;
   --color-grey-light: #ebebeb;
   --color-muted: #444;
   --color-border: #eee;
@@ -13,7 +13,7 @@ body.dark-mode {
   --color-text-main: #d4d4d4;
   --color-text: #9c9c9c;
   --color-link: #951254;
-  --color-link-bg: #2a0a1d;
+  --color-link-bg: #41102d;
   --color-grey-light: #232627;
   --color-muted: #999;
   --color-border: #232627;
