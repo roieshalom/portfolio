@@ -114,7 +114,7 @@ html {
 /* Proportional font reduction mobile/tablet */
 @media (max-width: 500px) {
   .brand, #desktop-brand, #mobile-brand {
-    font-size: 2rem;
+    font-size: 4rem;
   }
   .role, #desktop-role, #mobile-role {
     font-size: 0.92rem;
@@ -255,7 +255,7 @@ html {
 .experience-item,
 .personal-list li {
   margin-bottom: 16px;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 .exp-role {
   color: var(--color-text);
