@@ -120,7 +120,7 @@ html {
     font-size: 0.92rem;
   }
     body {
-    font-size: 0.7rem; /* or your preferred size */
+    font-size: 3cap; /* or your preferred size */
   }
 }
 .sidebar-bio {
