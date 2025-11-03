@@ -25,7 +25,7 @@ body {
   margin: 0;
   padding-left: clamp(20px, 5vw, 200px);
   padding-right: clamp(20px, 5vw, 200px);
-  font-family: 'Mark Pro', Arial, sans-serif;
+  font-family: 'Momo Trust Sans', Arial, sans-serif;
   color: var(--color-text);
   font-size: .75rem;
   letter-spacing: .01em;
