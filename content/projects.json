@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Coin Jar Website",
+    "link": "coin-jar.html",
+    "img": "content/images/placeholder.png",
+    "desc": "An interactive coin jar for kids to track and visualize savings with animation and sound."
+  },
+  {
+    "name": "Animated Portfolio",
+    "link": "project2.html",
+    "img": "content/images/placeholder.png",
+    "desc": "A custom-coded portfolio with light/dark/auto theme, project explorer, and more."
+  }
+
+]

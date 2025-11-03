@@ -36,7 +36,6 @@
         <div style="margin-top:42px;"></div>
         <section class="sidebar-fun" id="desktop-fun">
           <div class="fun-title">Fun things</div>
-          <!-- THEME CONTROLS HERE -->
           <div id="theme-controls" style="margin-top: 8px; margin-bottom: 18px;">
             <a href="#" id="theme-light">Light</a> |
             <a href="#" id="theme-dark">Dark</a> |
@@ -56,7 +55,7 @@
       <section id="about" class="section">
         <div class="section-title">About</div>
         <p>
-          I'm an experienced and creative designer with an eye for details and a desire for clear and coherent design. Fascinated by innovation and technology, I explored various fields. Recently, I've worked as an interface designer and manager with global companies such as HP, Stanley Black & Decker, and SanDisk Corporation.
+          I'm an experienced and creative designer with an eye for details and a desire for clear and coherent design. Fascinated by innovation and technology, I explored various fields. Recently, I've worked as an interface designer and manager with global companies such as Wayfair, HP, Stanley Black & Decker, and SanDisk Corporation.
         </p>
       </section>
       <section id="experience" class="section">
@@ -66,9 +65,7 @@
       </section>
       <section id="work" class="section">
         <div class="section-title">Projects</div>
-        <div class="selected-work">
-          <!-- Work items as before -->
-        </div>
+        <div class="selected-work" id="projects-list"></div>
       </section>
       <!-- Footer placed after all main content, at the end of main-content column -->
       <footer>
@@ -84,6 +81,7 @@
     <!-- Fun section will remain hidden on mobile/tablet -->
   </div>
   <script>
+    // Fetch Experience
     fetch('content/experience.json')
       .then(res => res.json())
       .then(data => {
@@ -99,6 +97,28 @@
       })
       .catch(error => {
         document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
+        console.error(error);
+      });
+
+    // Fetch Projects
+    fetch('content/projects.json')
+      .then(res => res.json())
+      .then(projects => {
+        const container = document.getElementById('projects-list');
+        container.innerHTML = projects.map(proj => `
+          <div class="work-item">
+            <a href="${proj.link}">
+              <img class="work-thumb" src="${proj.img}" alt="${proj.name} thumbnail">
+            </a>
+            <div class="work-details">
+              <div class="exp-role">${proj.name}</div>
+              <p class="work-desc">${proj.desc}</p>
+            </div>
+          </div>
+        `).join('');
+      })
+      .catch(error => {
+        document.getElementById('projects-list').innerHTML = '<div>Error loading projects.</div>';
         console.error(error);
       });
 
@@ -136,7 +156,7 @@
         l.classList.toggle('active', l.getAttribute('href') === '#' + currentSection);
       });
     });
-    // Remove any theme toggle JS from here; it's all handled in theme.js now!
+    // No theme logic here! All handled in theme.js
   </script>
   <script src="theme.js"></script>
 </body>
