@@ -408,13 +408,16 @@ html {
 
 #theme-controls a.selected {
   font-weight: bold;
-  background: var(--color-link-bg-selected, #ffe4b7);
-  color: var(--color-link-active, #ff6600);
+  color: var(--color-link);
   text-decoration: underline;
+  background: none;
+  border-radius: 3px;
 }
 
 #theme-controls a:hover,
 #theme-controls a:focus {
-  background: var(--color-link-bg-hover, #f0f0f0);
-  color: var(--color-link-hover, #26357a);
+  background: var(--color-link-bg); /* your pinkish light background */
+  color: var(--color-link);
+  text-decoration: underline;
+  border-radius: 3px;
 }
