@@ -1,43 +1,48 @@
-function setThemeByTime() {
-  // DEBUG: Log for troubleshooting
-  console.log('Theme script running...');
-  const storedTheme = localStorage.getItem('theme');
-  console.log('Stored theme:', storedTheme);
-
-  if (storedTheme === 'light') {
-    document.body.classList.remove('dark-mode');
-    console.log('Applying stored light');
-    return;
-  } else if (storedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    console.log('Applying stored dark');
-    return;
-  }
+function getThemeByTime() {
   const hour = new Date().getHours();
-  console.log('Hour is:', hour);
-
-  if (hour >= 7 && hour < 19) {
-    document.body.classList.remove('dark-mode');
-    console.log('Auto day (light)');
-  } else {
-    document.body.classList.add('dark-mode');
-    console.log('Auto night (dark)');
-  }
+  return (hour >= 20 || hour < 6) ? "dark" : "light";
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-  setThemeByTime();
-  const themeToggle = document.getElementById('theme-toggle');
-  window.addEventListener('DOMContentLoaded', function() {
-  setThemeByTime();
-  const themeToggle = document.getElementById('theme-toggle');
-  themeToggle.addEventListener('click', function(event) {
-    event.preventDefault();
-    document.body.classList.toggle('dark-mode');
-    const isDark = document.body.classList.contains('dark-mode');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    console.log('Manual toggle, now', isDark ? 'dark' : 'light');
-  });
-});
+function applyTheme(theme) {
+  document.body.classList.toggle('dark-mode', theme === 'dark');
+  document.body.classList.toggle('light-mode', theme === 'light');
+}
 
+function updateThemeLinks(selected) {
+  document.getElementById('theme-light').classList.toggle('selected', selected === 'light');
+  document.getElementById('theme-dark').classList.toggle('selected', selected === 'dark');
+  document.getElementById('theme-auto').classList.toggle('selected', selected === 'auto');
+}
+
+// On load, set theme and highlight current option
+(function initializeTheme() {
+  const storedTheme = localStorage.getItem('theme');
+  let toApply;
+  if (!storedTheme) {
+    toApply = getThemeByTime();
+    updateThemeLinks('auto');
+  } else {
+    toApply = storedTheme;
+    updateThemeLinks(storedTheme);
+  }
+  applyTheme(toApply);
+})();
+
+document.getElementById('theme-light').addEventListener('click', function(e) {
+  e.preventDefault();
+  applyTheme('light');
+  localStorage.setItem('theme', 'light');
+  updateThemeLinks('light');
+});
+document.getElementById('theme-dark').addEventListener('click', function(e) {
+  e.preventDefault();
+  applyTheme('dark');
+  localStorage.setItem('theme', 'dark');
+  updateThemeLinks('dark');
+});
+document.getElementById('theme-auto').addEventListener('click', function(e) {
+  e.preventDefault();
+  localStorage.removeItem('theme');
+  applyTheme(getThemeByTime());
+  updateThemeLinks('auto');
 });

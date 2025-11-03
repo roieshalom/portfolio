@@ -388,3 +388,33 @@ html {
   margin-bottom: 16px;
   transition: font-size 0.2s;
 }
+#theme-controls {
+  font-size: 1em;
+  margin: 0;
+  text-align: left;
+}
+
+#theme-controls a {
+  color: var(--color-link);
+  margin: 0 2px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  cursor: pointer;
+  font-weight: 500;
+  outline: none;
+}
+
+#theme-controls a.selected {
+  font-weight: bold;
+  background: var(--color-link-bg-selected, #ffe4b7);
+  color: var(--color-link-active, #ff6600);
+  text-decoration: underline;
+}
+
+#theme-controls a:hover,
+#theme-controls a:focus {
+  background: var(--color-link-bg-hover, #f0f0f0);
+  color: var(--color-link-hover, #26357a);
+}
