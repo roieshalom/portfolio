@@ -429,3 +429,15 @@ html {
   text-decoration: underline;
   border-radius: 3px;
 }
+
+.cv-link {
+  color: var(--color-link);
+  text-decoration: underline;
+  font-weight: 400;
+  font-size: 1em;
+  display: flex;
+  align-items: right;
+  transition: color 0.15s;
+  padding-left: 10px;
+  /* Remove margin, use padding or gap as needed */
+}
