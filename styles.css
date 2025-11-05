@@ -243,12 +243,17 @@ html {
   margin-bottom: 56px;
 }
 .section-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
   font-size: 1.03rem;
   color: var(--color-text-main);
   font-weight: 700;
   margin-bottom: 10px;
   letter-spacing: 1.2px;
 }
+
 .experience-list,
 .personal-list {
   padding: 0;
