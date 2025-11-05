@@ -252,6 +252,7 @@ html {
   font-weight: 700;
   margin-bottom: 10px;
   letter-spacing: 1.2px;
+    justify-content: space-between;  /* <-- add THIS line */
 }
 
 .experience-list,
@@ -434,7 +435,6 @@ html {
   color: var(--color-link);
   text-decoration: underline;
   display: flex;
-  align-items: right;
-  padding-left: 10px;
-  /* Remove margin, use padding or gap as needed */
+  align-items: center;
+  padding-left: 0;
 }
