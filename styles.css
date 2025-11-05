@@ -433,7 +433,7 @@ html {
 
 .cv-link {
   color: var(--color-link);
-  font-size: .85rem;
+  font-size: .80rem;
   letter-spacing: 0px;
   font-weight:normal ;
   text-decoration: underline;
