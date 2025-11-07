@@ -8,6 +8,12 @@
   --color-muted: #444;
   --color-border: #eee;
 }
+
+a {
+  text-decoration: none;
+  color: var(--color-link); /* Use your theme variable */
+}
+
 body.dark-mode {
   --color-bg: #111;
   --color-text-main: #d4d4d4;
@@ -386,7 +392,15 @@ html {
   color: var(--color-link);
   text-decoration: underline;
   font-weight: normal;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--color-link); /* Ensures color is correct */
 }
+.exp-company:hover,
+.exp-company:focus {
+  text-decoration-thickness: 2px;
+}
+
 .exp-desc {
   font-weight: normal;
   display: block;
@@ -479,18 +493,4 @@ html {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-/* ============================================
-   GLOBAL ICON STYLES
-   ============================================ */
 
-/* Never underline Font Awesome icons */
-i[class^="fa-"],
-i[class*=" fa-"] {
-  text-decoration: none !important;
-  display: inline-block;
-}
-
-/* Ensure SVG icons also never get underlined */
-svg {
-  text-decoration: none !important;
-}
