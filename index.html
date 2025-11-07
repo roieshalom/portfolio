@@ -113,17 +113,16 @@ fetch('data/projects.json')
   .then(projects => {
     const container = document.getElementById('projects-list');
     container.innerHTML = projects.map(proj => `
-      <div class="work-item">
-        <a href="${proj.link}">
-          <img class="work-thumb" src="${proj.thumbnail}" alt="${proj.title} thumbnail">
-        </a>
+      <a href="${proj.link}" class="work-item">
+        <img class="work-thumb" src="${proj.thumbnail}" alt="${proj.title} thumbnail">
         <div class="work-details">
           <div class="exp-role">${proj.title}</div>
           <p class="work-desc">${proj.shortdesc}</p>
         </div>
-      </div>
+      </a>
     `).join('');
   })
+
   .catch(error => {
     document.getElementById('projects-list').innerHTML = '<div>Error loading projects.</div>';
     console.error(error);

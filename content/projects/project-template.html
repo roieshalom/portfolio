@@ -6,62 +6,21 @@
   <title>Project | Roie Shalom</title>
   <link rel="icon" type="image/x-icon" href="../content/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="/styles.css">
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
-  <style>
-    /* Minimal project-specific styles that extend your existing CSS */
-    body {
-      background: var(--color-bg);
-      color: var(--color-text);
-      padding: 20px;
-    }
-    
-    .project-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .back-link {
-      display: inline-block;
-      margin-bottom: 32px;
-      color: var(--color-link);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95em;
-    }
-    
-    .back-link:hover {
-      text-decoration: underline;
-    }
-    
-    .project-gallery {
-      display: grid;
-      gap: 24px;
-      margin-top: 48px;
-    }
-    
-    .project-gallery img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-  </style>
 </head>
 <body>
   <div class="project-container">
-    <a href="/index.html" class="back-link">
+    <a href="/index.html" class="cv-link">
       <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Back to Portfolio
     </a>
+    
     <div id="project-content">
-      <!-- Content will be loaded dynamically -->
-      <div style="text-align: center; padding: 60px 20px;">
-        <p>Loading project...</p>
-      </div>
+      <p style="text-align: center; padding: 60px 20px;">Loading project...</p>
     </div>
   </div>
 
   <script>
-    // Get project ID from URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const projectId = urlParams.get('id');
     
@@ -73,7 +32,6 @@
         </div>
       `;
     } else {
-      // Load project data
       fetch('../data/projects.json')
         .then(res => res.json())
         .then(projects => {
@@ -89,21 +47,18 @@
             return;
           }
           
-          // Update page title
           document.title = project.title + ' | Roie Shalom';
           
-          // Generate image paths automatically
           const images = [];
           for (let i = 1; i <= project.imageCount; i++) {
             images.push(`../${project.imageFolder}/f${i}.png`);
           }
           
-          // Render project page using your existing CSS classes
           document.getElementById('project-content').innerHTML = `
             <div class="section">
               <div class="section-title">${project.title}</div>
-              <p style="margin-bottom: 12px; color: var(--color-text-secondary);">${project.category}</p>
-              <p style="font-size: 1.05em; line-height: 1.6;">${project.desc}</p>
+              <p style="color: var(--color-text-secondary); margin-bottom: 16px;">${project.category}</p>
+              <p>${project.desc}</p>
             </div>
             
             <div class="project-gallery">
