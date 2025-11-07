@@ -90,7 +90,7 @@
   </div>
   <script>
     // Fetch Experience
-    fetch('content/experience.json')
+    fetch('data/experience.json')
       .then(res => res.json())
       .then(data => {
         const container = document.getElementById('experience-list');
@@ -107,29 +107,28 @@
         document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
         console.error(error);
       });
-
-    // Fetch Projects
-    fetch('content/projects.json')
-      .then(res => res.json())
-      .then(projects => {
-        const container = document.getElementById('projects-list');
-        container.innerHTML = projects.map(proj => `
-          <div class="work-item">
-            <a href="${proj.link}">
-              <img class="work-thumb" src="${proj.img}" alt="${proj.name} thumbnail">
-            </a>
-            <div class="work-details">
-              <div class="exp-role">${proj.name}</div>
-              <p class="work-desc">${proj.desc}</p>
-            </div>
-          </div>
-        `).join('');
-      })
-      .catch(error => {
-        document.getElementById('projects-list').innerHTML = '<div>Error loading projects.</div>';
-        console.error(error);
-      });
-
+// Fetch Projects
+fetch('data/projects.json')
+  .then(res => res.json())
+  .then(projects => {
+    const container = document.getElementById('projects-list');
+    container.innerHTML = projects.map(proj => `
+      <div class="work-item">
+        <a href="${proj.link}">
+          <img class="work-thumb" src="${proj.thumbnail}" alt="${proj.title} thumbnail">
+        </a>
+        <div class="work-details">
+          <div class="exp-role">${proj.title}</div>
+          <p class="work-desc">${proj.shortdesc}</p>
+        </div>
+      </div>
+    `).join('');
+  })
+  .catch(error => {
+    document.getElementById('projects-list').innerHTML = '<div>Error loading projects.</div>';
+    console.error(error);
+  });
+  
     function toggleMobileVisibility() {
       if (window.matchMedia('(max-width: 900px)').matches) {
         document.querySelector('.mobile-header').style.display = 'flex';
