@@ -26,3 +26,5 @@ columnSorting:
 ## In Progress
 
 ## Done
+
+- [links-sorting-and-styling](tasks/links-sorting-and-styling.md)
