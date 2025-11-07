@@ -387,19 +387,19 @@ html {
     margin-top: 28px;
   }
 }
-/* experience/company/project styling */
 .exp-company {
   color: var(--color-link);
-  text-decoration: underline;
   font-weight: normal;
   text-decoration: underline;
   text-underline-offset: 2px;
-  color: var(--color-link); /* Ensures color is correct */
+  transition: text-decoration-thickness 0.2s, color 0.2s, transform 0.2s cubic-bezier(.37,1.13,.62,.96);
+  display: inline-block; /* <-- Add this line! */
 }
 .exp-company:hover,
 .exp-company:focus {
-  text-decoration-thickness: 2px;
+  transform: translateY(-2px);
 }
+
 
 .exp-desc {
   font-weight: normal;
@@ -492,5 +492,26 @@ html {
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-link {
+  font-size: .8rem;
+  font-weight: 300;
+  letter-spacing: 0px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  text-decoration: none; /* no underline ever */
+  color: var(--color-link);
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(.37,1.13,.62,.96);
+}
+.icon-link:hover {
+  transform: translateY(-2px);
+}
+
+.icon-link i {
+  text-decoration: none !important;
+  font-size: 1.05em; /* optional, scales icon with text */
 }
 
