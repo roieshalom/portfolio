@@ -3,7 +3,7 @@
     "id": "RaceSpace",
     "shortdesc": "An interactive sales dashboard for Formula 1 teams that visualizes car ad space, highlights coverage gaps, and helps manage bidding conflicts — enabling faster, smarter selling and sponsorship decisions at a glance.",
     "desc": "About this project: this was an interactive sales dashboard for Formula 1 teams that visualizes car ad space, highlights coverage gaps, and helps manage bidding conflicts — enabling faster, smarter selling and sponsorship decisions at a glance.",
-    "link": "race-space.html",
+    "link": "content/projects/project-template.html",
     "title": "RaceSpace Platform MVP Concept",
     "category": "UX",
     "thumbnail": "content/images/racespace/f1thumb.png",
