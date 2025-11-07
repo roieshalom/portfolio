@@ -500,7 +500,7 @@ html {
   letter-spacing: 0px;
   display: inline-flex;
   align-items: center;
-  gap: 8px; /* space between icon and text */
+  gap: 2px; /* space between icon and text */
   text-decoration: none; /* no underline ever */
   color: var(--color-link);
   cursor: pointer;
