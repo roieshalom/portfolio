@@ -9,7 +9,20 @@
     "thumbnail": "content/images/racespace/f1thumb.png",
     "imageFolder": "content/images/racespace",
     "imageCount": 15,
-    "imagePrefix": "F1",
+    "imagePrefix": "f1",
+    "imageFormat": "png"
+  },
+  {
+    "id": "Suite as Pie",
+    "shortdesc": "Effortless in-room ordering for hotel guests—RoomEase streamlines room service requests, enhancing guest comfort and hotel efficiency with a beautifully intuitive interface.",
+    "desc": "About this project: this is an Effortless in-room ordering for hotel guests—RoomEase streamlines room service requests, enhancing guest comfort and hotel efficiency with a beautifully intuitive interface.",
+    "link": "suite-as-pie.html",
+    "title": "Suite as Pie hotel service app",
+    "category": "UX",
+    "thumbnail": "content/images/suiteaspie/sapthumb.png",
+    "imageFolder": "content/images/suiteaspie",
+    "imageCount": 14,
+    "imagePrefix": "sap",
     "imageFormat": "png"
   }
 ]
