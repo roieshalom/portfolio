@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project | Roie Shalom</title>
-  <link rel="icon" type="image/x-icon" href="/content/images/favicon.ico">
+  <!-- use a relative path for favicon too! -->
+  <link rel="icon" type="image/x-icon" href="../../content/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="project-container">
-  <a href="/index.html" class="icon-link">
+  <!-- also use relative link here ! -->
+  <a href="../../index.html" class="icon-link">
     <i class="fa-solid fa-circle-left"></i>
     Home
   </a>
@@ -20,66 +22,67 @@
   </div>
 </div>
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const projectId = urlParams.get('id');
-    
-    if (!projectId) {
-      document.getElementById('project-content').innerHTML = `
-        <div style="text-align: center; padding: 60px 20px;">
-          <h1>No project specified</h1>
-          <p>Please select a project from the <a href="../index.html">homepage</a>.</p>
-        </div>
-      `;
-    } else {
-      fetch('../../data/projects.json')
-        .then(res => res.json())
-        .then(projects => {
-          const project = projects.find(p => p.id === projectId);
-          
-          if (!project) {
-            document.getElementById('project-content').innerHTML = `
-              <div style="text-align: center; padding: 60px 20px;">
-                <h1>Project not found</h1>
-                <p>The project "${projectId}" doesn't exist. <a href="../index.html">Go back to homepage</a>.</p>
-              </div>
-            `;
-            return;
-          }
-          
-          document.title = project.title + ' | Roie Shalom';
-          
-          const images = [];
-          for (let i = 1; i <= project.imagecount; i++) {
-            images.push(`/${project.imagefolder}/${project.imageprefix}${i}.${project.imageformat}`);
-          }
-          
-          document.getElementById('project-content').innerHTML = `
-            <div class="section">
-              <div class="section-title">${project.title}</div>
-              <p style="color: var(--color-text-secondary); margin-bottom: 16px;">${project.category}</p>
-              <p>${project.desc}</p>
-            </div>
-            
-            <div class="project-gallery">
-              ${images.map((imgPath, index) => `
-                <img src="${imgPath}" alt="${project.title} screenshot ${index + 1}" loading="lazy">
-              `).join('')}
-            </div>
-          `;
-        })
-        .catch(error => {
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = urlParams.get('id');
+
+  if (!projectId) {
+    document.getElementById('project-content').innerHTML = `
+      <div style="text-align: center; padding: 60px 20px;">
+        <h1>No project specified</h1>
+        <p>Please select a project from the <a href="../../index.html">homepage</a>.</p>
+      </div>
+    `;
+  } else {
+    fetch('../../data/projects.json')
+      .then(res => res.json())
+      .then(projects => {
+        const project = projects.find(p => p.id === projectId);
+
+        if (!project) {
           document.getElementById('project-content').innerHTML = `
             <div style="text-align: center; padding: 60px 20px;">
-              <h1>Error loading project</h1>
-              <p>There was an error loading the project data. Please try again later.</p>
+              <h1>Project not found</h1>
+              <p>The project "${projectId}" doesn't exist. <a href="../../index.html">Go back to homepage</a>.</p>
             </div>
           `;
-          console.error('Error loading project:', error);
-        });
-    }
-  </script>
-  
-  <script src="../../theme.js"></script>
+          return;
+        }
+
+        document.title = project.title + ' | Roie Shalom';
+
+        const images = [];
+        for (let i = 1; i <= project.imagecount; i++) {
+          // EDIT THIS LINE if your images are in /content/images/racespace/
+          images.push(`../../content/images/racespace/${project.imageprefix}${i}.${project.imageformat}`);
+          // OR USE BELOW if your images are at repo-root /images/racespace/
+          // images.push(`../../images/racespace/${project.imageprefix}${i}.${project.imageformat}`);
+        }
+
+        document.getElementById('project-content').innerHTML = `
+          <div class="section">
+            <div class="section-title">${project.title}</div>
+            <p style="color: var(--color-text-secondary); margin-bottom: 16px;">${project.category}</p>
+            <p>${project.desc}</p>
+          </div>
+          <div class="project-gallery">
+            ${images.map((imgPath, index) => `
+              <img src="${imgPath}" alt="${project.title} screenshot ${index + 1}" loading="lazy">
+            `).join('')}
+          </div>
+        `;
+      })
+      .catch(error => {
+        document.getElementById('project-content').innerHTML = `
+          <div style="text-align: center; padding: 60px 20px;">
+            <h1>Error loading project</h1>
+            <p>There was an error loading the project data. Please try again later.</p>
+          </div>
+        `;
+        console.error('Error loading project:', error);
+      });
+  }
+</script>
+<script src="../../theme.js"></script>
 </body>
 </html>
