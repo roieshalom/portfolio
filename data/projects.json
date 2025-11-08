@@ -1,28 +1,28 @@
 [
   {
-    "id": "RaceSpace",
+    "id": "racespace",
     "shortdesc": "An interactive sales dashboard for Formula 1 teams that visualizes car ad space, highlights coverage gaps, and helps manage bidding conflicts — enabling faster, smarter selling and sponsorship decisions at a glance.",
     "desc": "About this project: this was an interactive sales dashboard for Formula 1 teams that visualizes car ad space, highlights coverage gaps, and helps manage bidding conflicts — enabling faster, smarter selling and sponsorship decisions at a glance.",
     "link": "content/projects/project-template.html",
     "title": "RaceSpace Platform MVP Concept",
     "category": "UX",
     "thumbnail": "content/images/racespace/f1thumb.png",
-    "imageFolder": "content/images/racespace",
-    "imageCount": 15,
-    "imagePrefix": "f1",
-    "imageFormat": "png"
+    "imagefolder": "content/images/racespace",
+    "imagecount": 15,
+    "imageprefix": "f1",
+    "imageformat": "png"
   },
   {
-    "id": "Suite as Pie",
+    "id": "suite-as-pie",
     "shortdesc": "Effortless in-room ordering for hotel guests—RoomEase streamlines room service requests, enhancing guest comfort and hotel efficiency with a beautifully intuitive interface.",
     "desc": "About this project: this is an Effortless in-room ordering for hotel guests—RoomEase streamlines room service requests, enhancing guest comfort and hotel efficiency with a beautifully intuitive interface.",
     "link": "content/projects/project-template.html",
     "title": "Suite as Pie hotel service app",
     "category": "UX",
     "thumbnail": "content/images/suiteaspie/sapthumb.png",
-    "imageFolder": "content/images/suiteaspie",
-    "imageCount": 14,
-    "imagePrefix": "sap",
-    "imageFormat": "png"
+    "imagefolder": "content/images/suiteaspie",
+    "imagecount": 14,
+    "imageprefix": "sap",
+    "imageformat": "png"
   }
 ]

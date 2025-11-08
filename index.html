@@ -112,7 +112,7 @@ fetch('data/projects.json')
   .then(projects => {
     const container = document.getElementById('projects-list');
     container.innerHTML = projects.map(proj => `
-      <a href="${proj.link}" class="work-item">
+  <a href="content/projects/project-template.html?id=${proj.id}" class="work-item">
         <img class="work-thumb" src="${proj.thumbnail}" alt="${proj.title} thumbnail">
         <div class="work-details">
           <div class="exp-role">${proj.title}</div>
