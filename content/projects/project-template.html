@@ -54,7 +54,7 @@
         const images = [];
         for (let i = 1; i <= project.imagecount; i++) {
           // EDIT THIS LINE if your images are in /content/images/racespace/
-          images.push(`../../content/images/racespace/${project.imageprefix}${i}.${project.imageformat}`);
+          images.push(`../../${project.imagefolder}/${project.imageprefix}${i}.${project.imageformat}`);
           // OR USE BELOW if your images are at repo-root /images/racespace/
           // images.push(`../../images/racespace/${project.imageprefix}${i}.${project.imageformat}`);
         }
