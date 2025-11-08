@@ -14,7 +14,7 @@ a {
   color: var(--color-link); /* Use your theme variable */
 }
 
-body.dark-mode {
+html[data-theme="dark"] {
   --color-bg: #111;
   --color-text-main: #d4d4d4;
   --color-text: #9c9c9c;
@@ -24,6 +24,7 @@ body.dark-mode {
   --color-muted: #999;
   --color-border: #232627;
 }
+
 body {
   min-height: 100vh;
   background: var(--color-bg);
@@ -515,3 +516,6 @@ html {
   font-size: 1.05em; /* optional, scales icon with text */
 }
 
+html[data-theme="light"] { /* light styles */ }
+html[data-theme="dark"]  { /* dark styles */ }
+html[data-theme="auto"]  { /* system or fallback styles */ }

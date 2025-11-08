@@ -29,3 +29,5 @@ columnSorting:
 ## Done
 
 - [links-sorting-and-styling](tasks/links-sorting-and-styling.md)
+- [project-page-mvp-and-linking](tasks/project-page-mvp-and-linking.md)
+- [light-dark-theme-consistency-across-pages](tasks/light-dark-theme-consistency-across-pages.md)
