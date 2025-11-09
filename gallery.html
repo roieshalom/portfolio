@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery · Roie Shalom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <a href="../../index.html" class="icon-link">
+    <i class="fa-solid fa-circle-left"></i>
+    Home
+  </a>
+    <h1>Project Gallery</h1>
+    <p>Explore my work across UX, branding, and creative technology.</p>
+  </header>
+  <main>
+    <div class="bento-gallery" id="gallery-list">
+      <!-- Bento items rendered here -->
+    </div>
+  </main>
+  <footer>
+    <!-- your site/footer info -->
+  </footer>
+  <script>
+   fetch('data/projects.json')
+  .then(res => res.json())
+  .then(projects => {
+    console.log('Loaded projects:', projects); // Add this line
+    const container = document.getElementById('gallery-list');
+    container.innerHTML = projects.map(proj => `
+      <div class="bento-item${proj.featured ? ' bento-big' : ''}">
+        <a href="project.html?id=${proj.id}">
+          <img src="${proj.thumbnail}" alt="${proj.title}">
+          <div class="bento-label">${proj.title}</div>
+        </a>
+      </div>
+    `).join('');
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+  </script>
+</body>
+</html>
