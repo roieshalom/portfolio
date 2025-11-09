@@ -34,9 +34,10 @@ body {
   padding-right: clamp(20px, 5vw, 200px);
   font-family: 'Momo Trust Sans', Arial, sans-serif;
   color: var(--color-text);
-  font-size: 1rem;
+  font-size: 0.875rem; /* 14px */
   letter-spacing: .01em;
   scroll-behavior: smooth;
+  line-height: 1.3rem;
 }
 body {
   /* Default: mobile-friendly spacing */
@@ -344,6 +345,7 @@ header {
   font-weight: normal;
   margin: 0;
   padding: 0;
+  line-height: 1.3rem;
 }
 /* Remove background on mobile, keep divider for grouping */
 @media (max-width: 750px) {
@@ -407,9 +409,11 @@ header {
 
 
 .exp-desc {
-  font-weight: normal;
+  font-weight: 200;
+  color: var(--color-text);
   display: block;
   margin-top: 3px;
+  line-height: 1.3rem;
 }
 /* Applies to both desktop and mobile */
 .identity-block {
