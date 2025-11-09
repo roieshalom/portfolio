@@ -37,7 +37,7 @@
       </div>
     `;
   } else {
-    fetch('../../data/projects.json')
+    fetch('data/projects.json')
       .then(res => res.json())
       .then(projects => {
         const project = projects.find(p => p.id === projectId);
