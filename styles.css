@@ -61,7 +61,13 @@ html {
   min-height: 100%;
   width: 100%;
 }
+
+header {
+  margin-top: 32px;
+}
+
 .layout {
+  padding-top: 54px;
   display: flex;
   align-items: flex-start;
   width: 100%;
@@ -73,7 +79,6 @@ html {
   flex: 0 0 400px;
   background: var(--color-bg);
   box-sizing: border-box;
-  padding-top: 60px;
   padding-bottom: 60px;
   padding-right: 100px;
   height: 100vh;
@@ -244,7 +249,6 @@ html {
   box-sizing: border-box;
   min-height: 100vh;
   background: transparent;
-  padding-top: 60px;
 }
 .section {
   margin-bottom: 56px;
