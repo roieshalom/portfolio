@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project | Roie Shalom</title>
-  <!-- use a relative path for favicon too! -->
   <link rel="icon" type="image/x-icon" href="content/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -24,7 +23,6 @@
   </div>
 </div>
 
-
 <script>
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get('id');
@@ -33,7 +31,7 @@
     document.getElementById('project-content').innerHTML = `
       <div style="text-align: center; padding: 60px 20px;">
         <h1>No project specified</h1>
-        <p>Please select a project from the <a href="../../index.html">homepage</a>.</p>
+        <p>Please select a project from the <a href="index.html">homepage</a>.</p>
       </div>
     `;
   } else {
@@ -46,7 +44,7 @@
           document.getElementById('project-content').innerHTML = `
             <div style="text-align: center; padding: 60px 20px;">
               <h1>Project not found</h1>
-              <p>The project "${projectId}" doesn't exist. <a href="../../index.html">Go back to homepage</a>.</p>
+              <p>The project "${projectId}" doesn't exist. <a href="index.html">Go back to homepage</a>.</p>
             </div>
           `;
           return;
@@ -56,10 +54,7 @@
 
         const images = [];
         for (let i = 1; i <= project.imagecount; i++) {
-          // EDIT THIS LINE if your images are in /content/images/racespace/
-          images.push(`../../${project.imagefolder}/${project.imageprefix}${i}.${project.imageformat}`);
-          // OR USE BELOW if your images are at repo-root /images/racespace/
-          // images.push(`../../images/racespace/${project.imageprefix}${i}.${project.imageformat}`);
+          images.push(`${project.imagefolder}/${project.imageprefix}${i}.${project.imageformat}`);
         }
 
         document.getElementById('project-content').innerHTML = `
@@ -86,6 +81,6 @@
       });
   }
 </script>
-<script src="../../theme.js"></script>
+<script src="theme.js"></script>
 </body>
 </html>
