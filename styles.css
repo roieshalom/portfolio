@@ -110,6 +110,9 @@ header {
   color: var(--color-text-main);
   transition: font-size 0.2s;
   padding-bottom: 14px;
+  margin-left: -0.065em;  /* ← name specific left margin tweak */
+  letter-spacing: 0;  /* ← ADD THIS to reset letter-spacing */
+
 }
 .role,
 #desktop-role {
@@ -266,7 +269,7 @@ header {
   font-weight: 700;
   margin-bottom: 10px;
   letter-spacing: 1.2px;
-    justify-content: space-between;  /* <-- add THIS line */
+  justify-content: space-between;  /* <-- add THIS line */
 }
 
 .experience-list,
@@ -432,7 +435,11 @@ header {
 .mobile-brand, #mobile-brand,
 .mobile-role, #mobile-role {
   display: block;
-  margin: 0;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  /* Don't set margin-left/right here so your specific rule can work */
+
 }
 .mobile-role, #mobile-role {
   font-size: 1.05rem;
@@ -441,6 +448,9 @@ header {
   margin-top: 0.15em;
   margin-bottom: 16px;
   transition: font-size 0.2s;
+  padding-left: 0;  /* ← ADD THIS */
+  margin-left: 0;   /* ← ADD THIS */
+  letter-spacing: 0;  /* ← ADD THIS to reset letter-spacing */
 }
 #theme-controls {
   font-size: 1em;
