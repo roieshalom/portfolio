@@ -132,7 +132,7 @@ header {
 /* Proportional font reduction mobile/tablet */
 @media (max-width: 500px) {
   .brand, #desktop-brand, #mobile-brand {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .role, #desktop-role, #mobile-role {
     font-size: 0.92rem;
