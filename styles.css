@@ -96,18 +96,20 @@ header {
 }
 .brand,
 #desktop-brand {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 4rem;
+  font-weight: 200;
+  line-height: 1;
   color: var(--color-text-main);
   display: block;
   margin-bottom: 2px;
   transition: font-size 0.2s;
 }
 #mobile-brand {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 200;
   color: var(--color-text-main);
   transition: font-size 0.2s;
+  padding-bottom: 14px;
 }
 .role,
 #desktop-role {
@@ -386,6 +388,13 @@ header {
   .mobile-fun {
     display: none !important;
   }
+    body {
+    padding-top: 24px; /* Change 24px to your preferred value */
+  }
+  .layout {
+    padding-top: 0;
+  }
+}
   .main-content {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -393,7 +402,6 @@ header {
   .mobile-header {
     margin-top: 28px;
   }
-}
 .exp-company {
   color: var(--color-link);
   font-weight: normal;
