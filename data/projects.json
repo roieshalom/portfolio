@@ -10,9 +10,10 @@
     "imagefolder": "content/images/racespace",
     "imagecount": 15,
     "imageprefix": "f1",
-    "imageformat": "png"
+    "imageformat": "png",
+    "homepage": true
   },
-  {
+    {
     "id": "suite-as-pie",
     "shortdesc": "Effortless in-room ordering for hotel guests—RoomEase streamlines room service requests, enhancing guest comfort and hotel efficiency with a beautifully intuitive interface.",
     "desc": "About this project: this is an Effortless in-room ordering for hotel guests—RoomEase streamlines room service requests, enhancing guest comfort and hotel efficiency with a beautifully intuitive interface.",
@@ -23,6 +24,49 @@
     "imagefolder": "content/images/suiteaspie",
     "imagecount": 14,
     "imageprefix": "sap",
-    "imageformat": "png"
+    "imageformat": "png",
+    "homepage": true
+  },
+    {
+    "id": "hp",
+    "shortdesc": "HP short description.",
+    "desc": "About this project: this is an HP project.",
+    "link": "content/projects/project-template.html",
+    "title": "HP Printer User Interface",
+    "category": "UI",
+    "thumbnail": "content/images/hp/hpthumb.png",
+    "imagefolder": "content/images/hp",
+    "imagecount": 6,
+    "imageprefix": "hp",
+    "imageformat": "png",
+    "homepage": false
+  },
+  { 
+    "id": "olamundo",
+    "shortdesc": "Olamundo short description.",
+    "desc": "About this project: this is an Olamundo project.",
+    "link": "content/projects/project-template.html",
+    "title": "Olamundo User Interface",
+    "category": "UI, UX",
+    "thumbnail": "content/images/olamundo/omthumb.png",
+    "imagefolder": "content/images/olamundo",
+    "imagecount": 10,
+    "imageprefix": "om",
+    "imageformat": "png",
+    "homepage": false
+  },
+  {
+   "id": "safebreach",
+    "shortdesc": "safebreach short description.",
+    "desc": "About this project: this is an safebreach project.",
+    "link": "content/projects/project-template.html",
+    "title": "safebreach User Interface",
+    "category": "UI, UX",
+    "thumbnail": "content/images/safebreach/safebreachthumb.png",
+    "imagefolder": "content/images/safebreach",
+    "imagecount": 16,
+    "imageprefix": "safebreach",
+    "imageformat": "png",
+    "homepage": false
   }
 ]

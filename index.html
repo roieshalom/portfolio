@@ -66,7 +66,6 @@
             Experience
          <a href="content/downloads/Roie%20Shalom-%20Product%20Design%20Lead.pdf" download class="icon-link">
            <i class="fa-solid fa-circle-down" aria-hidden="true"></i> Download my CV </a>
-         </a>
           </div>
           <ul id="experience-list" class="experience-list"></ul>
         </section>
@@ -107,27 +106,28 @@
         document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
         console.error(error);
       });
-// Fetch Projects
-fetch('data/projects.json')
-  .then(res => res.json())
-  .then(projects => {
-    const container = document.getElementById('projects-list');
-    container.innerHTML = projects.map(proj => `
-  <a href="content/projects/project-template.html?id=${proj.id}" class="work-item">
-        <img class="work-thumb" src="${proj.thumbnail}" alt="${proj.title} thumbnail">
-        <div class="work-details">
-          <div class="exp-role">${proj.title}</div>
-          <p class="work-desc">${proj.shortdesc}</p>
-        </div>
-      </a>
-    `).join('');
-  })
 
-  .catch(error => {
-    document.getElementById('projects-list').innerHTML = '<div>Error loading projects.</div>';
-    console.error(error);
-  });
-  
+    // Fetch Projects - only show where "homepage": true
+    fetch('data/projects.json')
+      .then(res => res.json())
+      .then(projects => {
+        const homepageProjects = projects.filter(proj => proj.homepage);
+        const container = document.getElementById('projects-list');
+        container.innerHTML = homepageProjects.map(proj => `
+          <a href="content/projects/project-template.html?id=${proj.id}" class="work-item">
+            <img class="work-thumb" src="${proj.thumbnail}" alt="${proj.title} thumbnail">
+            <div class="work-details">
+              <div class="exp-role">${proj.title}</div>
+              <p class="work-desc">${proj.shortdesc}</p>
+            </div>
+          </a>
+        `).join('');
+      })
+      .catch(error => {
+        document.getElementById('projects-list').innerHTML = '<div>Error loading projects.</div>';
+        console.error(error);
+      });
+
     function toggleMobileVisibility() {
       if (window.matchMedia('(max-width: 900px)').matches) {
         document.querySelector('.mobile-header').style.display = 'flex';
