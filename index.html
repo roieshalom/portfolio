@@ -114,7 +114,7 @@
         const homepageProjects = projects.filter(proj => proj.homepage);
         const container = document.getElementById('projects-list');
         container.innerHTML = homepageProjects.map(proj => `
-          <a href="content/projects/project-template.html?id=${proj.id}" class="work-item">
+          <a href="project.html?id=${proj.id}" class="work-item">
             <img class="work-thumb" src="${proj.thumbnail}" alt="${proj.title} thumbnail">
             <div class="work-details">
               <div class="exp-role">${proj.title}</div>
