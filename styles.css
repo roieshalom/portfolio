@@ -34,7 +34,7 @@ body {
   padding-right: clamp(20px, 5vw, 200px);
   font-family: 'Momo Trust Sans', Arial, sans-serif;
   color: var(--color-text);
-  font-size: .75rem;
+  font-size: 1rem;
   letter-spacing: .01em;
   scroll-behavior: smooth;
 }
@@ -500,7 +500,7 @@ header {
 }
 
 .icon-link {
-  font-size: .8rem;
+  font-size:1rem;
   font-weight: 300;
   letter-spacing: 0px;
   display: inline-flex;
