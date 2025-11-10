@@ -47,7 +47,7 @@
     "imageprefix": "om",
     "homepage": false
   },
-  {
+   {
    "id": "safebreach",
     "shortdesc": "safebreach short description.",
     "desc": "About this project: this is an safebreach project.",
@@ -59,7 +59,7 @@
     "imageprefix": "safebreach",
     "homepage": false
   },
-  {
+    {
     "id": "x4",
     "shortdesc": "x4 short description.",
     "desc": "About this project: this is an x4 project.",
@@ -69,6 +69,29 @@
     "thumbnail": "content/images/x4/x4thumb.png",
     "imagefolder": "content/images/x4",
     "imageprefix": "x4",
+    "homepage": false
+  },
+    {
+    "id": "fig",
+    "shortdesc": "fig short description.",
+    "desc": "About this project: this is a fig project.",
+    "link": "project.html",
+    "title": "Ceramic figurine slipcasting",
+    "category": "Personal",
+    "thumbnail": "content/images/fig/figthumb.png",
+    "imagefolder": "content/images/fig",
+    "imageprefix": "fig",
+    "homepage": false
+  },
+      {
+    "id": "sparkly",
+    "shortdesc": "sparkly short description.",
+    "desc": "About this project: this is a sparkly project.",
+    "link": "project.html",
+    "title": "Vector grahpics poster",
+    "category": "Personal, Illustration",
+    "thumbnail": "content/images/sparkly/sparklythumb.png",
+    "imagefolder": "content/images/sparkly",
     "homepage": false
   }
 ]
