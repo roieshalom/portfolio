@@ -39,6 +39,13 @@ body {
   scroll-behavior: smooth;
   line-height: 1.3rem;
 }
+
+img {
+  border-radius: 12px; /* or your preferred radius */
+  box-shadow: 0 8px 24px #e91e62; /* example shadow */
+
+}
+
 body {
   /* Default: mobile-friendly spacing */
   padding-left: clamp(20px, 5vw, 32px);
@@ -323,11 +330,9 @@ header {
   width: 110px;
   height: 110px;
   object-fit: cover;
-  border-radius: 8px;
   margin-right: 32px;
   margin-bottom: 0;
   background: none;
-  box-shadow: none;
   cursor: pointer;
 }
 .work-details {
@@ -517,8 +522,8 @@ header {
 
 .project-gallery img {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  border: #1111110b 1px solid;
 }
 
 .icon-link {
@@ -562,7 +567,6 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   border-radius: 16px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 2px 8px rgba(0,0,0,.11);
   transition: transform .2s;
   height: 100%;
   width: 100%;
