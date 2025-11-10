@@ -583,3 +583,20 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
 .bento-tall { grid-row: span 2; }
 
 
+.back-nav-link {
+  color: var(--color-link);
+  background: none;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05em;
+  letter-spacing: 0.5px;
+  padding: 6px 0 6px 3px;
+  border: none;
+  transition: transform 0.2s cubic-bezier(.37, 1.13, .62, .96);
+  display: inline-block;   /* <-- This is key */
+}
+
+.back-nav-link:hover {
+  transform: translateY(-2px);
+}
+
