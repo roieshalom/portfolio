@@ -69,11 +69,17 @@
             <p style="color: var(--color-text-secondary); margin-bottom: 16px;">${project.category}</p>
             <p>${project.desc}</p>
           </div>
-          <div class="project-gallery">
-            ${images.map((imgPath, index) => `
-              <img src="${imgPath}" alt="${project.title} screenshot ${index + 1}" loading="lazy">
-            `).join('')}
-          </div>
+            <div class="project-gallery">
+              ${images.map((imgPath, index) => `
+                <img 
+                  src="${imgPath}" 
+                  alt="${project.title} screenshot ${index + 1}" 
+                  loading="lazy" 
+                  onerror="this.style.display='none';"
+                >
+              `).join('')}
+            </div>
+
         `;
       })
       .catch(error => {
