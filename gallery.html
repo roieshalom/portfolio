@@ -14,40 +14,38 @@
   <header>
     <nav>
       <a href="index.html" class="back-nav-link">
-      Home
+        Home
       </a>
     </nav>
-
-  <h1><!-- Gallery: "Project Gallery" | Project: set via JS --></h1>
-  <p>Explore my work across UX, branding, and creative technology.</p>
+    <h1><!-- Gallery: "Project Gallery" | Project: set via JS --></h1>
+    <p>Explore my work across UX, branding, and creative technology.</p>
   </header>
-<main>
+  <main>
     <div class="bento-gallery" id="gallery-list">
       <!-- Bento items rendered here -->
     </div>
-</main>
-<footer>
+  </main>
+  <footer>
     <!-- your site/footer info -->
-</footer>
-<script>
-   fetch('data/projects.json')
-  .then(res => res.json())
-  .then(projects => {
-    console.log('Loaded projects:', projects); // Add this line
-    const container = document.getElementById('gallery-list');
-    container.innerHTML = projects.map(proj => `
-      <div class="bento-item${proj.featured ? ' bento-big' : ''}">
-        <a href="project.html?id=${proj.id}">
-          <img src="${proj.thumbnail}" alt="${proj.title}">
-          <div class="bento-label">${proj.title}</div>
-        </a>
-      </div>
-    `).join('');
-  })
-  .catch(error => {
-    console.error(error);
-  });
-</script>
-<script src="theme.js"></script>
+  </footer>
+  <script>
+    fetch('data/projects.json')
+      .then(res => res.json())
+      .then(projects => {
+        const container = document.getElementById('gallery-list');
+        container.innerHTML = projects.map(proj => `
+          <div class="bento-item${proj.featured ? ' bento-big' : ''}">
+            <a href="project.html?id=${proj.id}">
+              <img src="${proj.thumbnail}" alt="${proj.title}">
+              <div class="bento-label">${proj.title}</div>
+            </a>
+          </div>
+        `).join('');
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
+  <script src="theme.js"></script>
 </body>
 </html>

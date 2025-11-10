@@ -38,12 +38,12 @@ body {
   letter-spacing: .01em;
   scroll-behavior: smooth;
   line-height: 1.3rem;
+  overflow: visible;
 }
 
 img {
   border-radius: 12px; /* or your preferred radius */
-  box-shadow: 2px 2px 10px rgba(233, 30, 98, 0.25); /* example shadow */
-
+  box-shadow: 2px 2px 4px rgba(233, 30, 98, 0.25); /* example shadow */
 }
 
 body {
@@ -265,6 +265,7 @@ header {
 }
 .section {
   margin-bottom: 56px;
+  overflow: visible
 }
 .section-title {
   display: flex;
@@ -300,6 +301,7 @@ header {
   gap: 24px;
   margin-top: 16px;
   justify-content: flex-start;
+  overflow: visible;
 }
 .work-item {
   display: flex;
@@ -316,6 +318,7 @@ header {
   color: inherit;
   transition: transform 0.2s ease;
   cursor: pointer;
+  overflow: visible;
 }
 
 .work-item:hover {
@@ -381,6 +384,7 @@ header {
     width: 64px;
     height: 64px;
     margin-right: 10px;
+    overflow: visible;
   }
   .work-title {
     font-size: 1.02rem;
@@ -522,7 +526,6 @@ header {
 
 .project-gallery img {
   width: 100%;
-  box-shadow: none;
   border: #1111110b 1px solid;
 }
 
