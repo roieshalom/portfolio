@@ -47,18 +47,7 @@
       box-shadow: none;
     }
 
-    /* Make the slash non-clickable, consistent style, and laterally aligned */
-    .slash {
-      color: var(--color-link, #e91e63);
-      font-size: 1.3em;
-      padding: 0 8px;
-      vertical-align: middle;
-      cursor: not-allowed;
-      display: inline-block;
-      pointer-events: none;
-      user-select: none;
-    }
-
+    /* Inline styling for demonstration, but tooltip logic is handled by JS below */
     .center-gif {
       display: flex;
       justify-content: center;
@@ -77,23 +66,42 @@
       color: #e91e63;
       font-weight: 700;
       margin-bottom: 28px;
+      margin-top: -30px;
     }
   </style>
 </head>
 <body>
   <nav>
     <a href="index.html" class="back-nav-link">Home</a>
-    <span class="slash">/</span>
+    <span class="slash" style="position:relative; color:var(--color-link,#e91e63); font-size:1.3em; padding:0 8px; vertical-align:middle; cursor:pointer; display:inline-block; user-select:none;">
+      /
+      <span style="display:none; position:absolute; left:50%;
+      top:-200%; transform:translateX(-50%); padding:8px 18px;
+      background:#fff; color:#e91e63; border-radius:8px;
+      font-size:1em; box-shadow:0 4px 16px #e91e6316;
+      white-space:nowrap; z-index:99; border:1px solid #e91e63;">
+        nope.
+      </span>
+    </span>
     <a href="gallery.html" class="back-nav-link">Gallery</a>
   </nav>
-  <h2>You clicked Slash 🤘
-  </h2>
+  <h2>You clicked Slash 🤘</h2>
   <div class="center-gif">
-<img 
-  src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3dsa3UzamNoZnlnbXN6bWh1M2NrODNzM2MwdG5jYnE5Z2prNjUzcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qbxFejrhaogQE/giphy.gif"
-  alt="Funny slash!"
-  style="width: 700px; max-width: 100vw; max-height: 85vh; height: auto; border-radius: 18px; box-shadow: 0 8px 24px #e91e6316;"
->
+    <img 
+      src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3dsa3UzamNoZnlnbXN6bWh1M2NrODNzM2MwdG5jYnE5Z2prNjUzcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qbxFejrhaogQE/giphy.gif"
+      alt="Funny slash!"
+      style="width: 700px; max-width: 100vw; max-height: 85vh; height: auto; border-radius: 18px; box-shadow: 0 8px 24px #e91e6316;"
+    >
   </div>
+  <script>
+    // Tooltip logic for slash
+    const slash = document.querySelector('.slash');
+    const tooltip = slash.querySelector('span');
+    slash.addEventListener('mouseenter', () => tooltip.style.display = 'block');
+    slash.addEventListener('mouseleave', () => tooltip.style.display = 'none');
+    // Optional: show/hide tooltip for accessibility/focus navigation
+    slash.addEventListener('focus', () => tooltip.style.display = 'block');
+    slash.addEventListener('blur', () => tooltip.style.display = 'none');
+  </script>
 </body>
 </html>
