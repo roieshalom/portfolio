@@ -527,6 +527,7 @@ header {
 .project-gallery img {
   width: 100%;
   border: #1111110b 1px solid;
+  box-shadow: none;
 }
 
 .icon-link {
