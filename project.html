@@ -11,15 +11,11 @@
 </head>
 <body>
 <header>
-
-<nav>
-  <a href="index.html" class="back-nav-link">Home</a>
-  <a href="slash.html" class="back-nav-link slash-link">/</a>
-  <a href="gallery.html" class="back-nav-link">Gallery</a>
-</nav>
-
-
-
+  <nav>
+    <a href="index.html" class="back-nav-link">Home</a>
+    <a href="slash.html" class="back-nav-link slash-link">/</a>
+    <a href="gallery.html" class="back-nav-link">Gallery</a>
+  </nav>
   <h1 id="project-title">Project Title Loading...</h1>
   <p>Explore my work across UX, branding, and creative technology.</p>
 </header>
@@ -58,29 +54,34 @@
 
         document.title = project.title + ' | Roie Shalom';
 
-        const images = [];
-        for (let i = 1; i <= project.imagecount; i++) {
-          images.push(`${project.imagefolder}/${project.imageprefix}${i}.${project.imageformat}`);
-        }
-
-        document.getElementById('project-content').innerHTML = `
-          <div class="section">
-            <div class="section-title">${project.title}</div>
-            <p style="color: var(--color-text-secondary); margin-bottom: 16px;">${project.category}</p>
-            <p>${project.desc}</p>
-          </div>
-            <div class="project-gallery">
-              ${images.map((imgPath, index) => `
-                <img 
-                  src="${imgPath}" 
-                  alt="${project.title} screenshot ${index + 1}" 
-                  loading="lazy" 
-                  onerror="this.style.display='none';"
-                >
-              `).join('')}
-            </div>
-
-        `;
+        // Fetch the manifest of image files in the project's imagefolder
+        fetch(`${project.imagefolder}/images.json`)
+          .then(res => res.json())
+          .then(files => {
+            document.getElementById('project-content').innerHTML = `
+              <div class="section">
+                <div class="section-title">${project.title}</div>
+                <p style="color: var(--color-text-secondary); margin-bottom: 16px;">${project.category}</p>
+                <p>${project.desc}</p>
+              </div>
+              <div class="project-gallery">
+                ${files.map((imgName, index) => `
+                  <img src="${project.imagefolder}/${imgName}"
+                       alt="${project.title} screenshot ${index + 1}"
+                       loading="lazy"
+                       onerror="this.style.display='none';">
+                `).join('')}
+              </div>
+            `;
+          })
+          .catch(err => {
+            document.getElementById('project-content').innerHTML += `
+              <div class="project-gallery">
+                <p style="text-align:center; color: #e91e63;">No images found for this project.</p>
+              </div>
+            `;
+            console.error('Error loading images.json:', err);
+          });
       })
       .catch(error => {
         document.getElementById('project-content').innerHTML = `

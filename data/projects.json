@@ -8,9 +8,7 @@
     "category": "UX",
     "thumbnail": "content/images/racespace/f1thumb.png",
     "imagefolder": "content/images/racespace",
-    "imagecount": 15,
     "imageprefix": "f1",
-    "imageformat": "png",
     "homepage": true
   },
     {
@@ -22,9 +20,7 @@
     "category": "UX",
     "thumbnail": "content/images/suiteaspie/sapthumb.png",
     "imagefolder": "content/images/suiteaspie",
-    "imagecount": 14,
     "imageprefix": "sap",
-    "imageformat": "png",
     "homepage": true
   },
     {
@@ -36,9 +32,7 @@
     "category": "UI",
     "thumbnail": "content/images/hp/hpthumb.png",
     "imagefolder": "content/images/hp",
-    "imagecount": 6,
     "imageprefix": "hp",
-    "imageformat": "png",
     "homepage": false
   },
   { 
@@ -50,9 +44,7 @@
     "category": "UI, UX",
     "thumbnail": "content/images/olamundo/omthumb.png",
     "imagefolder": "content/images/olamundo",
-    "imagecount": 10,
     "imageprefix": "om",
-    "imageformat": "png",
     "homepage": false
   },
   {
@@ -64,9 +56,19 @@
     "category": "UI, UX",
     "thumbnail": "content/images/safebreach/safebreachthumb.png",
     "imagefolder": "content/images/safebreach",
-    "imagecount": 14,
     "imageprefix": "safebreach",
-    "imageformat": "png",
+    "homepage": false
+  },
+  {
+    "id": "x4",
+    "shortdesc": "x4 short description.",
+    "desc": "About this project: this is an x4 project.",
+    "link": "project.html",
+    "title": "x4 Branding",
+    "category": "Branding",
+    "thumbnail": "content/images/x4/x4thumb.png",
+    "imagefolder": "content/images/x4",
+    "imageprefix": "x4",
     "homepage": false
   }
 ]
