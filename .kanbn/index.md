@@ -21,6 +21,7 @@ columnSorting:
 - [gallery-page](tasks/gallery-page.md)
 - [images-appear-on-fade-in](tasks/images-appear-on-fade-in.md)
 - [collapsable-experience-section](tasks/collapsable-experience-section.md)
+- [images-hp-only-drop-shadow-fix-so-it-could-be-bigger-and-on-the-left-side-if-the-image](tasks/images-hp-only-drop-shadow-fix-so-it-could-be-bigger-and-on-the-left-side-if-the-image.md)
 
 ## Todo
 
