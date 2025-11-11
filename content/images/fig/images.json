@@ -1,17 +1,66 @@
 [
-  "2.png",
-  "2a.png",
-  "2b.png",
-  "2c.png",
-  "detail3.png",
-  "fig process.png",
-  "gif1.png",
-  "gif2.png",
-  "il_75x75.362119421_ovpw.jpg",
-  "il_fullxfull.356392292_pcy5.jpg",
-  "il_fullxfull.356397205_qr5c.jpg",
-  "il_fullxfull.356397263_llec.jpg",
-  "il_fullxfull.362119421_ovpw.jpg",
-  "twins1.png",
-  "twins2.png"
+  {
+    "file": "2.png",
+    "caption": ""
+  },
+  {
+    "file": "2a.png",
+    "caption": ""
+  },
+  {
+    "file": "2b.png",
+    "caption": ""
+  },
+  {
+    "file": "2c.png",
+    "caption": ""
+  },
+  {
+    "file": "detail3.png",
+    "caption": ""
+  },
+  {
+    "file": "fig process.png",
+    "caption": ""
+  },
+  {
+    "file": "figthumb.png",
+    "caption": ""
+  },
+  {
+    "file": "gif1.png",
+    "caption": ""
+  },
+  {
+    "file": "gif2.png",
+    "caption": ""
+  },
+  {
+    "file": "il_75x75.362119421_ovpw.jpg",
+    "caption": ""
+  },
+  {
+    "file": "il_fullxfull.356392292_pcy5.jpg",
+    "caption": ""
+  },
+  {
+    "file": "il_fullxfull.356397205_qr5c.jpg",
+    "caption": ""
+  },
+  {
+    "file": "il_fullxfull.356397263_llec.jpg",
+    "caption": ""
+  },
+  {
+    "file": "il_fullxfull.362119421_ovpw.jpg",
+    "caption": ""
+  },
+  {
+    "file": "twins1.png",
+    "caption": ""
+  },
+  {
+    "file": "twins2.png",
+    "caption": ""
+  }
 ]

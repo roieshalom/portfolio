@@ -1,13 +1,46 @@
 [
-  "om1.png",
-  "om10.png",
-  "om2.png",
-  "om3.png",
-  "om4.png",
-  "om5.png",
-  "om6.png",
-  "om7.png",
-  "om8.png",
-  "om9.png",
-  "omthumb.png"
+  {
+    "file": "om1.png",
+    "caption": ""
+  },
+  {
+    "file": "om10.png",
+    "caption": ""
+  },
+  {
+    "file": "om2.png",
+    "caption": ""
+  },
+  {
+    "file": "om3.png",
+    "caption": ""
+  },
+  {
+    "file": "om4.png",
+    "caption": ""
+  },
+  {
+    "file": "om5.png",
+    "caption": ""
+  },
+  {
+    "file": "om6.png",
+    "caption": ""
+  },
+  {
+    "file": "om7.png",
+    "caption": ""
+  },
+  {
+    "file": "om8.png",
+    "caption": ""
+  },
+  {
+    "file": "om9.png",
+    "caption": ""
+  },
+  {
+    "file": "omthumb.png",
+    "caption": ""
+  }
 ]

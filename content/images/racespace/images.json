@@ -1,18 +1,66 @@
 [
-  "f11.png",
-  "f110.png",
-  "f111.png",
-  "f112.png",
-  "f113.png",
-  "f114.png",
-  "f115.png",
-  "f12.png",
-  "f13.png",
-  "f14.png",
-  "f15.png",
-  "f16.png",
-  "f17.png",
-  "f18.png",
-  "f19.png",
-  "f1thumb.png"
+  {
+    "file": "f11.png",
+    "caption": ""
+  },
+  {
+    "file": "f110.png",
+    "caption": ""
+  },
+  {
+    "file": "f111.png",
+    "caption": ""
+  },
+  {
+    "file": "f112.png",
+    "caption": ""
+  },
+  {
+    "file": "f113.png",
+    "caption": ""
+  },
+  {
+    "file": "f114.png",
+    "caption": ""
+  },
+  {
+    "file": "f115.png",
+    "caption": ""
+  },
+  {
+    "file": "f12.png",
+    "caption": ""
+  },
+  {
+    "file": "f13.png",
+    "caption": ""
+  },
+  {
+    "file": "f14.png",
+    "caption": ""
+  },
+  {
+    "file": "f15.png",
+    "caption": ""
+  },
+  {
+    "file": "f16.png",
+    "caption": ""
+  },
+  {
+    "file": "f17.png",
+    "caption": ""
+  },
+  {
+    "file": "f18.png",
+    "caption": ""
+  },
+  {
+    "file": "f19.png",
+    "caption": ""
+  },
+  {
+    "file": "f1thumb.png",
+    "caption": ""
+  }
 ]

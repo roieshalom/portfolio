@@ -1,17 +1,62 @@
 [
-  "safebreach1.png",
-  "safebreach10.png",
-  "safebreach11.png",
-  "safebreach12.png",
-  "safebreach13.png",
-  "safebreach14.png",
-  "safebreach2.png",
-  "safebreach3.png",
-  "safebreach4.png",
-  "safebreach5.png",
-  "safebreach6.png",
-  "safebreach7.png",
-  "safebreach8.png",
-  "safebreach9.png",
-  "safebreachthumb.png"
+  {
+    "file": "safebreach1.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach10.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach11.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach12.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach13.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach14.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach2.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach3.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach4.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach5.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach6.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach7.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach8.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreach9.png",
+    "caption": ""
+  },
+  {
+    "file": "safebreachthumb.png",
+    "caption": ""
+  }
 ]

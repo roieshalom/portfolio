@@ -1,5 +1,18 @@
 [
-  "x41.gif",
-  "x42.png",
-  "x43.png"
+  {
+    "file": "x41.gif",
+    "caption": ""
+  },
+  {
+    "file": "x42.png",
+    "caption": ""
+  },
+  {
+    "file": "x43.png",
+    "caption": ""
+  },
+  {
+    "file": "x4thumb.png",
+    "caption": ""
+  }
 ]

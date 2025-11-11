@@ -1,7 +1,26 @@
 [
-  "sparkly1.png",
-  "sparkly2.png",
-  "sparkly3.png",
-  "sparkly4.png",
-  "sparkly5.png"
+  {
+    "file": "sparkly1.png",
+    "caption": ""
+  },
+  {
+    "file": "sparkly2.png",
+    "caption": ""
+  },
+  {
+    "file": "sparkly3.png",
+    "caption": ""
+  },
+  {
+    "file": "sparkly4.png",
+    "caption": ""
+  },
+  {
+    "file": "sparkly5.png",
+    "caption": ""
+  },
+  {
+    "file": "sparklythumb.png",
+    "caption": ""
+  }
 ]

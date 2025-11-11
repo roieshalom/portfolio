@@ -1,17 +1,62 @@
 [
-  "sap1.png",
-  "sap10.png",
-  "sap11.png",
-  "sap12.png",
-  "sap13.png",
-  "sap14.png",
-  "sap2.png",
-  "sap3.png",
-  "sap4.png",
-  "sap5.png",
-  "sap6.png",
-  "sap7.png",
-  "sap8.png",
-  "sap9.png",
-  "sapthumb.png"
+  {
+    "file": "sap1.png",
+    "caption": ""
+  },
+  {
+    "file": "sap10.png",
+    "caption": ""
+  },
+  {
+    "file": "sap11.png",
+    "caption": ""
+  },
+  {
+    "file": "sap12.png",
+    "caption": ""
+  },
+  {
+    "file": "sap13.png",
+    "caption": ""
+  },
+  {
+    "file": "sap14.png",
+    "caption": ""
+  },
+  {
+    "file": "sap2.png",
+    "caption": ""
+  },
+  {
+    "file": "sap3.png",
+    "caption": ""
+  },
+  {
+    "file": "sap4.png",
+    "caption": ""
+  },
+  {
+    "file": "sap5.png",
+    "caption": ""
+  },
+  {
+    "file": "sap6.png",
+    "caption": ""
+  },
+  {
+    "file": "sap7.png",
+    "caption": ""
+  },
+  {
+    "file": "sap8.png",
+    "caption": ""
+  },
+  {
+    "file": "sap9.png",
+    "caption": ""
+  },
+  {
+    "file": "sapthumb.png",
+    "caption": ""
+  }
 ]
