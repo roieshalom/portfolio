@@ -75,11 +75,6 @@
           .then(res => res.json())
           .then(files => {
             document.getElementById('project-content').innerHTML = `
-              <div class="section">
-                <div class="section-title"><strong>${project.title_bold}</strong> ${project.title_regular}</div>
-                <p style="color: var(--color-text-secondary); margin-bottom: 16px;">${project.category}</p>
-                <p>${project.desc}</p>
-              </div>
               <div class="project-gallery">
                 ${files.map((imgName, index) => `
                   <img src="${project.imagefolder}/${imgName}"
