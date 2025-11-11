@@ -45,6 +45,9 @@ img {
   border-radius: 12px; /* or your preferred radius */
   box-shadow: 2px 2px 4px rgba(233, 30, 98, 0.25); /* example shadow */
 }
+img :hover {
+  box-shadow: 8px 8px 4px rgba(233, 30, 98, 0.25); /* example shadow */
+}
 
 body {
   /* Default: mobile-friendly spacing */
@@ -327,6 +330,8 @@ header {
 
 .work-item:hover .work-thumb {
   opacity: 0.9;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 4px 4px 4px rgba(233, 30, 98, 0.25); /* example shadow */
 }
 
 .work-thumb {
