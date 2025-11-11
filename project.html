@@ -74,16 +74,20 @@
         fetch(`${project.imagefolder}/images.json`)
           .then(res => res.json())
           .then(files => {
-            document.getElementById('project-content').innerHTML = `
-              <div class="project-gallery">
-                ${files.map((imgName, index) => `
-                  <img src="${project.imagefolder}/${imgName}"
-                       alt="${project.title_bold} screenshot ${index + 1}"
-                       loading="lazy"
-                       onerror="this.style.display='none';">
-                `).join('')}
-              </div>
-            `;
+            // NEW gallery code supporting {file, caption}
+              document.getElementById('project-content').innerHTML = `
+                <div class="project-gallery">
+                  ${files.map((img, index) => `
+                    <figure>
+                      <img src="${project.imagefolder}/${img.file}"
+                          alt="${project.title_bold} screenshot ${index + 1}"
+                          loading="lazy"
+                          onerror="this.style.display='none';">
+                      ${img.caption ? `<figcaption>${img.caption}</figcaption>` : ""}
+                    </figure>
+                  `).join('')}
+                </div>
+              `;
           })
           .catch(err => {
             document.getElementById('project-content').innerHTML += `
