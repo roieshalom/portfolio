@@ -77,7 +77,9 @@
             // NEW gallery code supporting {file, caption}
               document.getElementById('project-content').innerHTML = `
                 <div class="project-gallery">
-                  ${files.map((img, index) => `
+                  ${files
+                  .filter(img => !img.file.toLowerCase().includes('thumb.png'))
+                  .map((img, index) => `
                     <figure>
                       <img src="${project.imagefolder}/${img.file}"
                           alt="${project.title_bold} screenshot ${index + 1}"
