@@ -43,7 +43,6 @@ body {
 
 img {
   border-radius: 12px; /* or your preferred radius */
-  box-shadow: 2px 2px 4px rgba(233, 30, 98, 0.25); /* example shadow */
 }
 img :hover {
   box-shadow: 8px 8px 4px rgba(233, 30, 98, 0.25); /* example shadow */
@@ -331,7 +330,7 @@ header {
 .work-item:hover .work-thumb {
   opacity: 0.9;
   transition: opacity 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 4px 4px 4px rgba(233, 30, 98, 0.25); /* example shadow */
+  box-shadow: 4px 4px 0px rgba(233, 30, 98, 0.3); /* example shadow */
 }
 
 .work-thumb {
@@ -563,7 +562,6 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
 /* ============================================
    BENTO GALLERY STYLES
    ============================================ */
-
 .bento-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -571,29 +569,47 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   gap: 1.5rem;
 }
 
+/* Each item */
 .bento-item {
   background: var(--color-bg, #fff);
   border-radius: 16px;
   overflow: hidden;
   position: relative;
-  transition: transform .2s;
+  transition: box-shadow 0.28s cubic-bezier(.45,.2,.23,1), transform 0.2s cubic-bezier(.4,1,.4,1);
+  box-shadow: 0 2px 14px rgba(15,20,55,0.08);
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
+.bento-item:hover,
+.bento-item:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px rgba(233,30,98,0.30);
+  z-index: 1;
+}
+
+/* Optional: Add a smooth effect for the image as well */
 .bento-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: opacity 0.3s, filter 0.3s, box-shadow 0.3s;
 }
 
-/* Bento variants */
+.bento-item:hover img,
+.bento-item:focus-within img {
+  opacity: 0.94;
+  filter: contrast(113%) saturate(1.08);
+}
+
+/* Bento variants for big/wide/tall tiles */
 .bento-big { grid-column: span 2; grid-row: span 2; min-height: 370px; }
 .bento-wide { grid-column: span 2; }
 .bento-tall { grid-row: span 2; }
+
 
 
 .back-nav-link {
