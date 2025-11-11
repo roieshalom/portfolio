@@ -608,3 +608,9 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   transform: translateY(-2px);
 }
 
+#project-title {
+  font-weight: 400;       /* Makes the whole h1 normal weight */
+}
+#project-title strong {
+  font-weight: bold;      /* Only bolds the content inside <strong> */
+}

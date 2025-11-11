@@ -7,7 +7,7 @@
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "u4dp513xm1");
-</script>
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project | Roie Shalom</title>
@@ -24,13 +24,14 @@
     <a href="gallery.html" class="back-nav-link">Gallery</a>
   </nav>
   <h1 id="project-title">Project Title Loading...</h1>
-  <p>Explore my work across UX, branding, and creative technology.</p>
+  <p id="project-desc">Explore my work across UX, branding, and creative technology.</p>
 </header>
 <div class="project-container">
   <div id="project-content">
     <p style="text-align: center; padding: 60px 20px;">Loading project...</p>
   </div>
 </div>
+
 
 <script>
   const urlParams = new URLSearchParams(window.location.search);
@@ -59,7 +60,15 @@
           return;
         }
 
-        document.title = project.title + ' | Roie Shalom';
+        // Set tab/browser title to display both project title parts
+        document.title = `${project.title_bold} ${project.title_regular} | Roie Shalom`;
+
+        // Set heading in header with bold and regular styles
+        document.getElementById('project-title').innerHTML =
+          `<strong>${project.title_bold}</strong> ${project.title_regular}`;
+
+        // Set header paragraph to the project description
+        document.getElementById('project-desc').textContent = project.desc;
 
         // Fetch the manifest of image files in the project's imagefolder
         fetch(`${project.imagefolder}/images.json`)
@@ -67,14 +76,14 @@
           .then(files => {
             document.getElementById('project-content').innerHTML = `
               <div class="section">
-                <div class="section-title">${project.title}</div>
+                <div class="section-title"><strong>${project.title_bold}</strong> ${project.title_regular}</div>
                 <p style="color: var(--color-text-secondary); margin-bottom: 16px;">${project.category}</p>
                 <p>${project.desc}</p>
               </div>
               <div class="project-gallery">
                 ${files.map((imgName, index) => `
                   <img src="${project.imagefolder}/${imgName}"
-                       alt="${project.title} screenshot ${index + 1}"
+                       alt="${project.title_bold} screenshot ${index + 1}"
                        loading="lazy"
                        onerror="this.style.display='none';">
                 `).join('')}
