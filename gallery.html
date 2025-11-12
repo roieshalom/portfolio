@@ -7,18 +7,20 @@
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "u4dp513xm1");
-</script>
+  </script>
   <meta charset="UTF-8">
   <title>Gallery · Roie Shalom</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@400;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
+  <!-- GLightbox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-      <header>
+    <header>
       <nav>
         <a href="index.html" class="back-nav-link">Home</a>
       </nav>
@@ -26,26 +28,31 @@
       <p id="project-desc">Featuring selected projects in UX, branding, and creative technology.</p>
     </header>
   <main>
-    <div class="bento-gallery" id="gallery-list">
-      <!-- Bento items rendered here -->
+    <div class="gallery-grid" id="glightbox-gallery">
+      <!-- Gallery items rendered here -->
     </div>
   </main>
   <footer>
     <!-- your site/footer info -->
   </footer>
+
+  <!-- GLightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
     fetch('data/projects.json')
       .then(res => res.json())
       .then(projects => {
-        const container = document.getElementById('gallery-list');
-        container.innerHTML = projects.map(proj => `
-          <div class="bento-item${proj.featured ? ' bento-big' : ''}">
-            <a href="project.html?id=${proj.id}">
-              <img src="${proj.thumbnail}" alt="${proj.title}">
-              <div class="bento-label">${proj.title}</div>
-            </a>
-          </div>
-        `).join('');
+        const gallery = document.getElementById('glightbox-gallery');
+gallery.innerHTML = projects.map(proj => `
+  <a href="project.html?id=${proj.id}" class="gallery-tile">
+    <img src="${proj.thumbnail}" alt="${proj.title_bold || ''} ${proj.title_regular || ''}" />
+    <span class="tile-label">
+      <strong>${proj.title_bold || ''}</strong> ${proj.title_regular || ''}
+    </span>
+  </a>
+`).join('');
+
+        GLightbox({ selector: '.glightbox' });
       })
       .catch(error => {
         console.error(error);
