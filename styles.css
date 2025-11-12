@@ -416,6 +416,10 @@ header {
   .layout {
     padding-top: 0;
   }
+  #project-title {
+    line-height: 1.3em;   /* or try 1.3em for even more spacing */
+    margin-bottom: 0.7em;  /* optional, adds more room below */
+  }
 }
   .main-content {
     padding-top: 24px;
