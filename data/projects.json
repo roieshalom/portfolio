@@ -1,7 +1,8 @@
 [
   {
     "id": "racespace",
-    "shortdesc": "An interactive sales dashboard for Formula 1 teams that visualizes car ad space, highlights coverage gaps, and helps manage bidding conflicts — enabling faster, smarter selling and sponsorship decisions at a glance.",
+	  "gallery_desc": "An interactive sales dashboard for Formula-1 teams",
+    "shortdesc": "An interactive sales dashboard for Formula-1 teams that visualizes car ad space, highlights coverage gaps, and helps manage bidding conflicts — enabling faster, smarter selling and sponsorship decisions at a glance.",
     "desc": "About this project: this was an interactive sales dashboard for Formula 1 teams that visualizes car ad space, highlights coverage gaps, and helps manage bidding conflicts — enabling faster, smarter selling and sponsorship decisions at a glance.",
     "link": "project.html",
     "title_bold": "RaceSpace",
@@ -14,7 +15,8 @@
   },
     {
     "id": "suite-as-pie",
-    "shortdesc": "Effortless in-room ordering for hotel guests—RoomEase streamlines room service requests, enhancing guest comfort and hotel efficiency with a beautifully intuitive interface.",
+	  "gallery_desc": "Effortless in-room ordering for hotel guests",
+    "shortdesc": "Effortless in-room ordering for hotel guests. Suite as pie streamlines room service requests, enhancing guest comfort and hotel efficiency with a beautifully intuitive interface.",
     "desc": "About this project: this is an Effortless in-room ordering for hotel guests—RoomEase streamlines room service requests, enhancing guest comfort and hotel efficiency with a beautifully intuitive interface.",
     "link": "project.html",
     "title_bold": "Suite as Pie",
@@ -28,6 +30,7 @@
     {
     "id": "hp",
     "shortdesc": "HP short description.",
+	  "gallery_desc": "XXXXX XXXXX",
     "desc": "About this project: this is an HP project.",
     "link": "project.html",
     "title_bold": "HP Printer",
@@ -40,6 +43,7 @@
   },
   { 
     "id": "olamundo",
+	  "gallery_desc": "XXXXX XXXXX",
     "shortdesc": "Olamundo short description.",
     "desc": "About this project: this is an Olamundo project.",
     "link": "project.html",
@@ -53,6 +57,7 @@
   },
    {
    "id": "safebreach",
+	  "gallery_desc": "XXXXX XXXXX",
     "shortdesc": "safebreach short description.",
     "desc": "About this project: this is an safebreach project.",
     "link": "project.html",
@@ -67,6 +72,7 @@
     {
     "id": "x4",
     "shortdesc": "x4 short description.",
+	  "gallery_desc": "XXXXX XXXXX",
     "desc": "About this project: this is an x4 project.",
     "link": "project.html",
     "title_bold": "x4 Sandisk",
@@ -79,6 +85,7 @@
   },
     {
     "id": "fig",
+	  "gallery_desc": "XXXXX XXXXX",
     "shortdesc": "fig short description.",
     "desc": "About this project: this is a fig project.",
     "link": "project.html",
@@ -92,6 +99,7 @@
   },
       {
     "id": "sparkly",
+	  "gallery_desc": "XXXXX XXXXX",
     "shortdesc": "sparkly short description.",
     "desc": "About this project: this is a sparkly project.",
     "link": "project.html",
