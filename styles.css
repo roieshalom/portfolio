@@ -149,6 +149,12 @@ header {
     body {
     font-size: 1rem; /* or your preferred size */
   }
+  @media (max-width: 500px) {
+  #project-title {
+    line-height: 1.3em;   /* or try 1.3em for even more spacing */
+    margin-bottom: 0.7em;  /* optional, adds more room below */
+  }
+}
 }
 .sidebar-bio {
   margin-bottom: 18px;
