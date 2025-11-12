@@ -44,12 +44,16 @@
       .then(projects => {
         const gallery = document.getElementById('glightbox-gallery');
 gallery.innerHTML = projects.map(proj => `
-  <a href="project.html?id=${proj.id}" class="gallery-tile">
-    <img src="${proj.thumbnail}" alt="${proj.title_bold || ''} ${proj.title_regular || ''}" />
-    <span class="tile-label">
-      <strong>${proj.title_bold || ''}</strong> ${proj.title_regular || ''}
-    </span>
-  </a>
+<a href="project.html?id=${proj.id}" class="gallery-tile">
+  <img src="${proj.thumbnail}" alt="..." />
+  <div class="tile-overlay">
+    <div class="tile-label">
+      <strong>${proj.title_bold}</strong> ${proj.title_regular}
+    </div>
+    <div class="tile-desc">${proj.shortdesc}</div>
+  </div>
+</a>
+
 `).join('');
 
 

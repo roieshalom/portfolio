@@ -569,9 +569,11 @@ html[data-theme="light"] { /* light styles */ }
 html[data-theme="dark"]  { /* dark styles */ }
 html[data-theme="auto"]  { /* system or fallback styles */ }
 
+
 /* ============================================
    GALLERY STYLES
-   ============================================ */.gallery-grid {
+   ============================================ */
+.gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.4rem;
@@ -603,39 +605,68 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   box-shadow: 4px 4px 0px rgba(233,30,98,0.19);
 }
 
-.tile-label {
+/* --- Overlay section --- */
+.tile-overlay {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  color: #fff;
+  height: 70px; /* collapsed */
   background: linear-gradient(to top, rgba(26,16,32,0.78) 90%, rgba(26,16,32,0.00) 100%);
-  font-size: 1em;
-  line-height: 1.28;
-  font-family: inherit;
-  pointer-events: none;
-  z-index: 2;
+  color: #fff;
   box-sizing: border-box;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  overflow: hidden;
+  transition: height 0.33s cubic-bezier(.53,.2,.23,1), background 0.33s;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;             /* <-- always pins text at the TOP */
+  padding: 1.2em 1.2em 0 1.2em;           /* Top/right/bottom/left (top only!) */
+  justify-content: flex-start;
+  padding: 1.2em 1.2em 0 1.2em;  /* At rest: minimal top-padding, text starts near top */
 
-  height: 58px;             /* Fixed height ensures background is always same */
-  padding: 0 1.2em;
-  display: block;           /* <--- change from flex/grid to block */
-  white-space: normal;      /* Make sure text wraps */
-}
-.tile-label strong,
-.tile-label span {
-  display: block;
-  margin-top: 11px;    /* Or on .tile-label directly for all text */
 }
 
+/* On hover, overlay rises up, text is always at top edge */
+.gallery-tile:hover .tile-overlay,
+.gallery-tile:focus .tile-overlay {
+  height: 182px;
+  background: linear-gradient(to top, rgba(26,16,32,0.94) 99%, rgba(26,16,32,0.18) 100%);
+}
+
+/* Label is always under overlay's top, not moving independently */
+.tile-label {
+  font-size: 1.08em;
+  font-family: inherit;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.28;
+  margin-bottom: 0.42em;    /* spacing above desc block */
+  word-break: break-word;
+}
 
 .tile-label strong {
   font-weight: bold;
   color: #ffffff;
 }
 
+.tile-desc {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.27s 0.1s, max-height 0.3s;
+}
+
+.gallery-tile:hover .tile-desc,
+.gallery-tile:focus .tile-desc {
+  opacity: 1;
+  max-height: 300px;
+}
 
 
+/* Back link style for completeness */
 .back-nav-link {
   color: var(--color-link);
   background: none;
@@ -646,7 +677,7 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   padding: 6px 0 6px 3px;
   border: none;
   transition: transform 0.2s cubic-bezier(.37, 1.13, .62, .96);
-  display: inline-block;   /* <-- This is key */
+  display: inline-block;
 }
 
 .back-nav-link:hover {
