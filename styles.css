@@ -690,3 +690,62 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
 #project-title strong {
   font-weight: bold;      /* Only bolds the content inside <strong> */
 }
+
+/* ============================================
+   SIDEBAR PROJECTS
+   ============================================ */
+
+.side-project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.side-project-list li {
+  margin-bottom: 1.1em;
+}
+
+.sideproject-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  text-decoration: none;
+  background: transparent;      /* <-- Ensure no background by default */
+}
+
+/* Animate up, no pink bg on hover/focus */
+.sideproject-link:hover, .sideproject-link:focus {
+  background: transparent !important; /* <-- Remove inherited pink */
+  text-decoration: none !important;
+}
+
+/* Text stack to column, keeping desc under name, not under icon */
+.sideproject-textblock {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+/* Existing .exp-company styles (project name) - center aligned with icon already */
+.exp-company {
+  display: inline-block;
+  font-weight: normal;
+  color: var(--color-link);
+}
+
+/* Description line always below name, underline on hover */
+.exp-desc {
+  font-weight: 200;
+  color: var(--color-text);
+  margin-top: -2px;
+  line-height: 1.3rem;
+  display: block;
+  text-decoration: none;
+}
+
+.sideproject-icon {
+  width: 32px !important;
+  height: 32px !important;
+  background: red !important;
+  border-radius: 5px; 
+}
