@@ -2,8 +2,8 @@
   {
     "id": "racespace",
 	  "gallery_desc": "An interactive sales dashboard for Formula-1 teams",
-    "shortdesc": "An interactive sales dashboard for Formula-1 teams that visualizes car ad space, highlights coverage gaps, and helps manage bidding conflicts — enabling faster, smarter selling and sponsorship decisions at a glance.",
-    "desc": "About this project: this was an interactive sales dashboard for Formula 1 teams that visualizes car ad space, highlights coverage gaps, and helps manage bidding conflicts — enabling faster, smarter selling and sponsorship decisions at a glance.",
+    "shortdesc": "An interactive sales dashboard for Formula-1 teams that visualizes car ad space, highlights coverage gaps, and helps manage bidding conflicts, enabling faster, smarter selling and sponsorship decisions at a glance.",
+    "desc": "About this project: this was an interactive sales dashboard for Formula 1 teams that visualizes car ad space, highlights coverage gaps, and helps manage bidding conflicts, enabling faster, smarter selling and sponsorship decisions at a glance.",
     "link": "project.html",
     "title_bold": "RaceSpace",
     "title_regular": "F1 ad sales Platform Concept",

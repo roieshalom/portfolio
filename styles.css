@@ -296,7 +296,7 @@ header {
 }
 .experience-item,
 .personal-list li {
-  margin-bottom: 16px;
+  margin-bottom: 36px;
   line-height: 1.4;
 }
 .exp-role {
@@ -318,7 +318,7 @@ header {
   width: 100%;
   background: none;
   border-radius: 0;
-  padding: 10px 0;
+  padding: 20px 0;
   margin: 0;
   box-sizing: border-box;
   /* NEW: Make entire card clickable */
@@ -447,7 +447,7 @@ header {
   color: var(--color-text);
   display: block;
   margin-top: 3px;
-  line-height: 1.3rem;
+  line-height: 1.5rem;
 }
 /* Applies to both desktop and mobile */
 .identity-block {
