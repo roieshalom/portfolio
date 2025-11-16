@@ -81,7 +81,8 @@
     "thumbnail": "content/images/x4/x4thumb.png",
     "imagefolder": "content/images/x4",
     "imageprefix": "x4",
-    "homepage": false
+    "homepage": false,
+    "protected": true
   },
     {
     "id": "fig",
@@ -95,7 +96,8 @@
     "thumbnail": "content/images/fig/figthumb.png",
     "imagefolder": "content/images/fig",
     "imageprefix": "fig",
-    "homepage": false
+    "homepage": false,
+    "protected": true
   },
       {
     "id": "sparkly",
