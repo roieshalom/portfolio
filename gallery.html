@@ -44,7 +44,7 @@
       .then(projects => {
         const gallery = document.getElementById('glightbox-gallery');
 gallery.innerHTML = projects.map(proj => `
-<a href="project.php?id=${proj.id}" class="gallery-tile">
+<a href="project.html?id=${proj.id}" class="gallery-tile">
   <img src="${proj.thumbnail}" alt="..." />
   <div class="tile-overlay">
     <div class="tile-label">
