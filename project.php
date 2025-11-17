@@ -1,3 +1,39 @@
+<?php
+$protectedProjects = ['fig', 'stealthproj']; // IDs or slugs for protected projects
+$password = 'Rodaga708';
+
+// Get which project is being viewed, e.g., via ?id=projectid in URL
+$projectId = isset($_GET['id']) ? $_GET['id'] : null;
+
+$isProtected = in_array($projectId, $protectedProjects);
+
+if ($isProtected) {
+    session_start();
+    if (!isset($_SESSION['pw_ok']) || $_SESSION['pw_ok'] !== $projectId) {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pw']) && $_POST['pw'] === $password) {
+            $_SESSION['pw_ok'] = $projectId;
+            header("Location: " . $_SERVER['REQUEST_URI']);
+            exit;
+        }
+        ?>
+        <!DOCTYPE html>
+        <html>
+        <head><meta charset="UTF-8"><title>Password Required</title></head>
+        <body>
+            <form method="post" style="margin:3em auto;width:200px;text-align:center;">
+                <h3>This project is protected</h3>
+                <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') echo '<div style="color:red">Incorrect password.</div>'; ?>
+                <input type="password" name="pw" placeholder="Password" style="width:100%"><br><br>
+                <button type="submit">Access</button>
+            </form>
+        </body>
+        </html>
+        <?php
+        exit;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
