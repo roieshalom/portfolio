@@ -1,10 +1,8 @@
 <?php
-$protectedProjects = ['fig', 'stealthproj']; // IDs or slugs for protected projects
+$protectedProjects = ['fig', 'stealthproj'];
 $password = 'Rodaga708';
 
-// Get which project is being viewed, e.g., via ?id=projectid in URL
 $projectId = isset($_GET['id']) ? $_GET['id'] : null;
-
 $isProtected = in_array($projectId, $protectedProjects);
 
 if ($isProtected) {
@@ -15,20 +13,7 @@ if ($isProtected) {
             header("Location: " . $_SERVER['REQUEST_URI']);
             exit;
         }
-        ?>
-        <!DOCTYPE html>
-        <html>
-        <head><meta charset="UTF-8"><title>Password Required</title></head>
-        <body>
-            <form method="post" style="margin:3em auto;width:200px;text-align:center;">
-                <h3>This project is protected</h3>
-                <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') echo '<div style="color:red">Incorrect password.</div>'; ?>
-                <input type="password" name="pw" placeholder="Password" style="width:100%"><br><br>
-                <button type="submit">Access</button>
-            </form>
-        </body>
-        </html>
-        <?php
+        include 'password-form.php';
         exit;
     }
 }
@@ -68,7 +53,6 @@ if ($isProtected) {
   </div>
 </div>
 
-
 <script>
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get('id');
@@ -96,36 +80,29 @@ if ($isProtected) {
           return;
         }
 
-        // Set tab/browser title to display both project title parts
         document.title = `${project.title_bold} ${project.title_regular} | Roie Shalom`;
-
-        // Set heading in header with bold and regular styles
         document.getElementById('project-title').innerHTML =
           `<strong>${project.title_bold}</strong> ${project.title_regular}`;
-
-        // Set header paragraph to the project description
         document.getElementById('project-desc').textContent = project.desc;
 
-        // Fetch the manifest of image files in the project's imagefolder
         fetch(`${project.imagefolder}/images.json`)
           .then(res => res.json())
           .then(files => {
-            // NEW gallery code supporting {file, caption}
-              document.getElementById('project-content').innerHTML = `
-                <div class="project-gallery">
-                  ${files
-                  .filter(img => !img.file.toLowerCase().includes('thumb.png'))
-                  .map((img, index) => `
-                    <figure>
-                      <img src="${project.imagefolder}/${img.file}"
-                          alt="${project.title_bold} screenshot ${index + 1}"
-                          loading="lazy"
-                          onerror="this.style.display='none';">
-                      ${img.caption ? `<figcaption>${img.caption}</figcaption>` : ""}
-                    </figure>
-                  `).join('')}
-                </div>
-              `;
+            document.getElementById('project-content').innerHTML = `
+              <div class="project-gallery">
+                ${files
+                .filter(img => !img.file.toLowerCase().includes('thumb.png'))
+                .map((img, index) => `
+                  <figure>
+                    <img src="${project.imagefolder}/${img.file}"
+                        alt="${project.title_bold} screenshot ${index + 1}"
+                        loading="lazy"
+                        onerror="this.style.display='none';">
+                    ${img.caption ? `<figcaption>${img.caption}</figcaption>` : ""}
+                  </figure>
+                `).join('')}
+              </div>
+            `;
           })
           .catch(err => {
             document.getElementById('project-content').innerHTML += `
