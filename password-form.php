@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access Required</title>
+    <title>Protected project</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@400;700&display=swap">
     <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
@@ -11,10 +11,9 @@
     <style>
         .password-container {
             display: flex;
-            align-items: center;
             justify-content: center;
             min-height: 100vh;
-            padding: 2rem;
+            padding: 5rem; 
         }
         .password-box {
             background: var(--color-surface);
@@ -38,7 +37,7 @@
             padding: 0.75rem 1rem;
             font-size: 1rem;
             border: 1px solid var(--color-border);
-            border-radius: var(--radius-base);
+            border-radius: 5px;
             margin-bottom: 1.5rem;
             box-sizing: border-box;
             font-family: inherit;
@@ -64,10 +63,17 @@
     </style>
 </head>
 <body>
+    <header>
+  <nav>
+    <a href="index.html" class="back-nav-link">Home</a>
+    <a href="slash.html" class="back-nav-link slash-link">/</a>
+    <a href="gallery.html" class="back-nav-link">Gallery</a>
+  </nav>
+</header>
     <div class="password-container">
         <form method="post" class="password-box">
             <h1>Protected Project</h1>
-            <p>This project is password protected. Enter the password to view.</p>
+            <p>Reach out via <a href="mailto:roiesh@gmail.com" class="exp-company">email</a> to get the password</p>
             <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') echo '<div class="error-message">❌ Incorrect password. Please try again.</div>'; ?>
             <input type="password" name="pw" placeholder="Enter password" autofocus required>
             <button type="submit" class="btn btn--primary btn--lg">Access Project</button>
