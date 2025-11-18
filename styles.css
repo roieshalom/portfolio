@@ -64,6 +64,8 @@ button {
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
   transition: background 0.18s, box-shadow 0.18s;
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 button:hover,
