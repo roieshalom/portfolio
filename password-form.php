@@ -23,25 +23,45 @@
             text-align: center;
             max-width: 500px;
             width: 100%;
+            position: relative;
         }
         .password-box h1 {
             margin-top: 0;
             color: var(--color-text);
         }
-        .password-box p {
+        .status-wrapper {
+            min-height: 3.3em; /* reserve vertical space for up to 2 lines, prevents layout jump */
+            margin-bottom: 1.3em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .info-message,
+        .error-message {
+            font-size: 0.98em;
+        }
+        .info-message {
             color: var(--color-text-secondary);
-            margin-bottom: 2rem;
+            background: transparent;
+        }
+        .error-message {
+            color: var(--color-error);
+            background: rgba(var(--color-error-rgb),0.09);
+            border-radius: var(--radius-base);
+            padding: 0.5rem 0.75rem;
         }
         .password-box input {
-            width: 100%;
+            width: 64%;
+            min-width: 220px;
             padding: 0.75rem 1rem;
             font-size: 1rem;
-            border: 1px solid var(--color-border);
+            border: 1px solid var(--color-text);
             border-radius: 5px;
             margin-bottom: 1.5rem;
             box-sizing: border-box;
             font-family: inherit;
-            background: var(--color-background);
+            background: var(--color-backgroud);
             color: var(--color-text);
         }
         .password-box input:focus {
@@ -49,34 +69,47 @@
             border-color: var(--color-primary);
             box-shadow: var(--focus-ring);
         }
-        .password-box button {
-            width: 100%;
-        }
-        .error-message {
-            color: var(--color-error);
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            padding: 0.75rem;
-            background: rgba(var(--color-error-rgb), 0.1);
-            border-radius: var(--radius-base);
-        }
+
+
+                /* Centerboxes and font-size on very small screens */
+        @media (max-width: 600px) {
+            .password-container {
+                padding: 0;
+            }
+            .password-box {
+                padding: 2rem 0.8rem;
+                max-width: 98vw;
+                width: 98vw;
+            }
+            .password-box h1 {
+                font-size: 1.4em;
+            }
+            nav {
+                font-size: 1em;
+                gap: .8em;
+            }
     </style>
 </head>
 <body>
     <header>
-  <nav>
-    <a href="index.html" class="back-nav-link">Home</a>
-    <a href="slash.html" class="back-nav-link slash-link">/</a>
-    <a href="gallery.html" class="back-nav-link">Gallery</a>
-  </nav>
-</header>
+      <nav>
+        <a href="index.html" class="back-nav-link">Home</a>
+        <a href="slash.html" class="back-nav-link slash-link">/</a>
+        <a href="gallery.html" class="back-nav-link">Gallery</a>
+      </nav>
+    </header>
     <div class="password-container">
-        <form method="post" class="password-box">
+        <form method="post" class="password-box" autocomplete="off">
             <h1>Protected Project</h1>
-            <p>Reach out via <a href="mailto:roiesh@gmail.com" class="exp-company">email</a> to get the password</p>
-            <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') echo '<div class="error-message">❌ Incorrect password. Please try again.</div>'; ?>
+            <div class="status-wrapper">
+                <?php
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    echo '<div class="info-message">Wrong password. Reach out via <a href="mailto:roiesh@gmail.com" class="exp-company">email</a> to get the password</div>';
+                }
+                ?>
+            </div>
             <input type="password" name="pw" placeholder="Enter password" autofocus required>
-            <button type="submit" class="btn btn--primary btn--lg">Access Project</button>
+            <button type="submit" class="btn btn--primary btn--lg">Submit</button>
         </form>
     </div>
 </body>
