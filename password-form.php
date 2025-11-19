@@ -12,19 +12,23 @@
         .password-container {
             display: flex;
             justify-content: center;
+            align-items: center;
             min-height: 100vh;
-            padding: 5rem; 
-        }
+            padding: 0;         /* Remove excessive padding! */
+            box-sizing: border-box;
+            }
         .password-box {
+            margin: 0 auto;
             background: var(--color-surface);
-            padding: 3rem;
+            padding: 3rem 1.2rem;
             border-radius: 12px;
             box-shadow: var(--shadow-lg);
             text-align: center;
-            max-width: 500px;
+            max-width: 400px;
             width: 100%;
             position: relative;
-        }
+            box-sizing: border-box;
+            }
         .password-box h1 {
             margin-top: 0;
             color: var(--color-text);
@@ -72,15 +76,15 @@
 
 
                 /* Centerboxes and font-size on very small screens */
-        @media (max-width: 600px) {
+        @media (max-width: 600px)
             .password-container {
                 padding: 0;
+        .password-box {
+            max-width: 98vw;
+            width: 98vw;
+                padding: 2rem 0.7rem;
             }
-            .password-box {
-                padding: 2rem 0.8rem;
-                max-width: 98vw;
-                width: 98vw;
-            }
+            } 
             .password-box h1 {
                 font-size: 1.4em;
             }
