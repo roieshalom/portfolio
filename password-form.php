@@ -12,23 +12,26 @@
         .password-container {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Was center, now flex-start (prevents bottom push) */
             min-height: 100vh;
-            padding: 0;         /* Remove excessive padding! */
+            padding-top: 4vh;       /* Add small top padding only */
+            padding-left: 0;        /* Remove horizontal padding */
+            padding-right: 0;
             box-sizing: border-box;
-            }
+        }
+
         .password-box {
-            margin: 0 auto;
             background: var(--color-surface);
-            padding: 3rem 1.2rem;
+            padding: 2.2rem 1.1rem;
             border-radius: 12px;
             box-shadow: var(--shadow-lg);
-            text-align: center;
+            text-align: center;      /* Ensures button/input are centered */
             max-width: 400px;
             width: 100%;
             position: relative;
+            margin: 0 auto;          /* Centers horizontally if extra parent space */
             box-sizing: border-box;
-            }
+        }
         .password-box h1 {
             margin-top: 0;
             color: var(--color-text);
@@ -76,15 +79,16 @@
 
 
                 /* Centerboxes and font-size on very small screens */
-        @media (max-width: 600px)
-            .password-container {
-                padding: 0;
+        @media (max-width: 600px){
+        .password-container {
+            padding: 0;
+            }
         .password-box {
             max-width: 98vw;
             width: 98vw;
                 padding: 2rem 0.7rem;
             }
-            } 
+    
             .password-box h1 {
                 font-size: 1.4em;
             }
@@ -92,6 +96,7 @@
                 font-size: 1em;
                 gap: .8em;
             }
+        }
     </style>
 </head>
 <body>
