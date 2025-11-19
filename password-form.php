@@ -19,18 +19,19 @@
             padding-right: 0;
             box-sizing: border-box;
         }
-
         .password-box {
             background: var(--color-surface);
             padding: 2.2rem 1.1rem;
             border-radius: 12px;
             box-shadow: var(--shadow-lg);
-            text-align: center;      /* Ensures button/input are centered */
             max-width: 400px;
             width: 100%;
             position: relative;
-            margin: 0 auto;          /* Centers horizontally if extra parent space */
+            margin: 0 auto;
             box-sizing: border-box;
+            display: flex;           /* NEW */
+            flex-direction: column;  /* NEW */
+            align-items: center;     /* NEW, ensures children centered */
         }
         .password-box h1 {
             margin-top: 0;
