@@ -141,8 +141,8 @@
         container.innerHTML = data.map(item => `
           <li class="experience-item">
             <strong class="exp-role">${item.position}</strong>, 
-            <a href="${item.link}" class="exp-company" target="_blank">${item.company}</a>
-            <span class="exp-years">(${item.years})</span><br>
+            <a href="${item.link}" class="exp-company" target="_blank">${item.company}</a>, 
+            <strong class="exp-years">${item.years}</strong><br>
             <span class="exp-desc">${item.description}</span>
           </li>
         `).join('');
