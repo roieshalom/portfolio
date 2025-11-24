@@ -771,7 +771,6 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
 .exp-desc {
   font-weight: 200;
   color: var(--color-text);
-  margin-top: -2px;
   line-height: 1.3rem;
   display: block;
   text-decoration: none;
