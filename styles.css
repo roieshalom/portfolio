@@ -645,8 +645,8 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   left: 0;
   right: 0;
   bottom: 0;
-  height: 70px; /* collapsed */
-  background: linear-gradient(to top, rgba(26,16,32,0.78) 90%, rgba(26,16,32,0.00) 100%);
+  height: 45px; /* collapsed */
+  background: linear-gradient(to top, rgba(26,16,32,0) 90%, rgba(26,16,32,0) 100%);
   color: #fff;
   box-sizing: border-box;
   border-bottom-left-radius: 16px;
@@ -672,9 +672,9 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
 
 /* Label is always under overlay's top, not moving independently */
 .tile-label {
-  font-size: 1.08em;
+  font-size: 1em;
   font-family: inherit;
-  font-weight: 600;
+  font-weight: 400;
   color: #fff;
   line-height: 1.28;
   margin-bottom: 0.42em;    /* spacing above desc block */
@@ -779,6 +779,5 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
 .sideproject-icon {
   width: 32px !important;
   height: 32px !important;
-  background: red !important;
   border-radius: 5px; 
 }
