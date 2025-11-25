@@ -90,8 +90,9 @@ if ($isProtected) {
           .then(files => {
             document.getElementById('project-content').innerHTML = `
               <div class="project-gallery">
-                ${files
+              ${files
                 .filter(img => !img.file.toLowerCase().includes('thumb.png'))
+                .sort((a, b) => a.file.localeCompare(b.file, undefined, { numeric: true })) // <-- sort images by name!
                 .map((img, index) => `
                   <figure>
                     <img src="${project.imagefolder}/${img.file}"
