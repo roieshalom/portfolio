@@ -11,7 +11,8 @@
     "thumbnail": "content/images/racespace/f1thumb.png",
     "imagefolder": "content/images/racespace",
     "imageprefix": "f1",
-    "homepage": true
+    "homepage": true,
+    "show": true
   },
     {
     "id": "suite-as-pie",
@@ -25,7 +26,8 @@
     "thumbnail": "content/images/suiteaspie/sapthumb.png",
     "imagefolder": "content/images/suiteaspie",
     "imageprefix": "sap",
-    "homepage": true
+    "homepage": true,
+    "show": true
   },
     {
     "id": "hp",
@@ -39,7 +41,8 @@
     "thumbnail": "content/images/hp/hpthumb.png",
     "imagefolder": "content/images/hp",
     "imageprefix": "hp",
-    "homepage": false
+    "homepage": false,
+    "show": true
   },
   { 
     "id": "olamundo",
@@ -53,7 +56,8 @@
     "thumbnail": "content/images/olamundo/omthumb.png",
     "imagefolder": "content/images/olamundo",
     "imageprefix": "om",
-    "homepage": false
+    "homepage": false,
+    "show": true
   },
    {
    "id": "safebreach",
@@ -67,7 +71,8 @@
     "thumbnail": "content/images/safebreach/safebreachthumb.png",
     "imagefolder": "content/images/safebreach",
     "imageprefix": "safebreach",
-    "homepage": false
+    "homepage": false,
+    "show": true
   },
     {
     "id": "x4",
@@ -82,7 +87,8 @@
     "imagefolder": "content/images/x4",
     "imageprefix": "x4",
     "homepage": false,
-    "protected": true
+    "protected": true,
+    "show": false
   },
     {
     "id": "fig",
@@ -97,7 +103,8 @@
     "imagefolder": "content/images/fig",
     "imageprefix": "fig",
     "homepage": false,
-    "protected": true
+    "protected": true,
+    "show": true
   },
       {
     "id": "sparkly",
@@ -110,6 +117,7 @@
     "category": "Personal, Illustration",
     "thumbnail": "content/images/sparkly/sparklythumb.png",
     "imagefolder": "content/images/sparkly",
-    "homepage": false
+    "homepage": false,
+    "show": true
   }
 ]

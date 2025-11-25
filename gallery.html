@@ -43,20 +43,19 @@
       .then(res => res.json())
       .then(projects => {
         const gallery = document.getElementById('glightbox-gallery');
-gallery.innerHTML = projects.map(proj => `
-<a href="project.php?id=${proj.id}" class="gallery-tile">
-  <img src="${proj.thumbnail}" alt="..." />
-  <div class="tile-overlay">
-    <div class="tile-label">
-      <strong>${proj.title_bold}</strong> ${proj.title_regular}
-    </div>
-    <div class="tile-desc">${proj.gallery_desc}</div>
-  </div>
-</a>
-
-`).join('');
-
-
+        // Filter projects to display only those where show == true
+        const visibleProjects = projects.filter(proj => proj.show);
+        gallery.innerHTML = visibleProjects.map(proj => `
+          <a href="project.php?id=${proj.id}" class="gallery-tile">
+            <img src="${proj.thumbnail}" alt="..." />
+            <div class="tile-overlay">
+              <div class="tile-label">
+                <strong>${proj.title_bold}</strong> ${proj.title_regular}
+              </div>
+              <div class="tile-desc">${proj.gallery_desc}</div>
+            </div>
+          </a>
+        `).join('');
         GLightbox({ selector: '.glightbox' });
       })
       .catch(error => {
