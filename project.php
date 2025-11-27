@@ -1,9 +1,15 @@
 <?php
-$protectedProjects = ['fig', 'stealthproj'];
 $password = 'Rodaga708';
-
 $projectId = isset($_GET['id']) ? $_GET['id'] : null;
-$isProtected = in_array($projectId, $protectedProjects);
+
+// Load projects and check if this one is protected
+$isProtected = false;
+if ($projectId) {
+    $projectsData = json_decode(file_get_contents('data/projects.json'), true);
+    $project = array_filter($projectsData, fn($p) => $p['id'] === $projectId);
+    $project = reset($project); // get first match
+    $isProtected = !empty($project['protected']);
+}
 
 if ($isProtected) {
     session_start();
