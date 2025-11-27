@@ -24,7 +24,7 @@
             padding: 2.2rem 1.1rem;
             border-radius: 12px;
             box-shadow: var(--shadow-lg);
-            max-width: 400px;
+            max-width: 450px;
             width: 100%;
             position: relative;
             margin: 0 auto;
