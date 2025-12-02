@@ -13,12 +13,26 @@ if ($projectId) {
 
 if ($isProtected) {
     session_start();
-    if (!isset($_SESSION['pw_ok']) || $_SESSION['pw_ok'] !== $projectId) {
+    
+    // Set session timeout (in seconds) - e.g., 1 hour = 3600
+    $session_timeout = 1200; // 20 minutes
+    
+    // Check if session exists and is valid
+    $session_valid = isset($_SESSION['pw_ok']) 
+                     && $_SESSION['pw_ok'] === $projectId
+                     && isset($_SESSION['pw_timestamp'])
+                     && (time() - $_SESSION['pw_timestamp']) < $session_timeout;
+    
+    if (!$session_valid) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pw']) && $_POST['pw'] === $password) {
             $_SESSION['pw_ok'] = $projectId;
+            $_SESSION['pw_timestamp'] = time(); // Store current timestamp
             header("Location: " . $_SERVER['REQUEST_URI']);
             exit;
         }
+        // Clear old session data
+        unset($_SESSION['pw_ok']);
+        unset($_SESSION['pw_timestamp']);
         include 'password-form.php';
         exit;
     }
@@ -80,7 +94,7 @@ if ($isProtected) {
           document.getElementById('project-content').innerHTML = `
             <div style="text-align: center; padding: 60px 20px;">
               <h1>Project not found</h1>
-              <p>The project "${projectId}" doesn't exist. <a href="index.html">Go back to homepage</a>.</p>
+              <p>The project ${projectId} does not exist. <a href="index.html">Go back to homepage</a>.</p>
             </div>
           `;
           return;
@@ -91,34 +105,55 @@ if ($isProtected) {
           `<strong>${project.title_bold}</strong> ${project.title_regular}`;
         document.getElementById('project-desc').textContent = project.desc;
 
-        fetch(`${project.imagefolder}/images.json`)
-          .then(res => res.json())
-          .then(files => {
-            document.getElementById('project-content').innerHTML = `
-              <div class="project-gallery">
-              ${files
-                .filter(img => !img.file.toLowerCase().includes('thumb.png'))
-                .sort((a, b) => a.file.localeCompare(b.file, undefined, { numeric: true })) // <-- sort images by name!
-                .map((img, index) => `
-                  <figure>
-                    <img src="${project.imagefolder}/${img.file}"
-                        alt="${project.title_bold} screenshot ${index + 1}"
-                        loading="lazy"
-                        onerror="this.style.display='none';">
-                    ${img.caption ? `<figcaption>${img.caption}</figcaption>` : ""}
-                  </figure>
-                `).join('')}
-              </div>
-            `;
-          })
-          .catch(err => {
-            document.getElementById('project-content').innerHTML += `
-              <div class="project-gallery">
-                <p style="text-align:center; color: #e91e63;">No images found for this project.</p>
-              </div>
-            `;
-            console.error('Error loading images.json:', err);
-          });
+        // Check if imagefolder is a PDF file
+        if (project.imagefolder && project.imagefolder.toLowerCase().endsWith('.pdf')) {
+          // Display PDF with button at top right
+          document.getElementById('project-content').innerHTML = `
+            <div style="position: relative; width: 100%; max-width: 1400px; margin: 0 auto;">
+              <a href="serve-pdf.php?id=${projectId}" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 style="position: absolute; top: 10px; right: 10px; z-index: 10; display: inline-block; padding: 10px 20px; background: #e91e63; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                Open in New Tab
+              </a>
+              <iframe 
+                src="serve-pdf.php?id=${projectId}#pagemode=none&view=FitH" 
+                title="${project.title_bold} PDF"
+                style="width: 100%; height: 1000px; border: none;">
+              </iframe>
+            </div>
+          `;
+        } else {
+          // Display image gallery
+          fetch(`${project.imagefolder}/images.json`)
+            .then(res => res.json())
+            .then(files => {
+              document.getElementById('project-content').innerHTML = `
+                <div class="project-gallery">
+                ${files
+                  .filter(img => !img.file.toLowerCase().includes('thumb.png'))
+                  .sort((a, b) => a.file.localeCompare(b.file, undefined, { numeric: true }))
+                  .map((img, index) => `
+                    <figure>
+                      <img src="${project.imagefolder}/${img.file}"
+                          alt="${project.title_bold} screenshot ${index + 1}"
+                          loading="lazy"
+                          onerror="this.style.display='none';">
+                      ${img.caption ? `<figcaption>${img.caption}</figcaption>` : ""}
+                    </figure>
+                  `).join('')}
+                </div>
+              `;
+            })
+            .catch(err => {
+              document.getElementById('project-content').innerHTML = `
+                <div class="project-gallery">
+                  <p style="text-align:center; color: #e91e63;">No images found for this project.</p>
+                </div>
+              `;
+              console.error('Error loading images.json:', err);
+            });
+        }
       })
       .catch(error => {
         document.getElementById('project-content').innerHTML = `

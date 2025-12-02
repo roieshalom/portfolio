@@ -46,7 +46,7 @@
         // Filter projects to display only those where show == true
         const visibleProjects = projects.filter(proj => proj.show);
         gallery.innerHTML = visibleProjects.map(proj => `
-          <a href="project.php?id=${proj.id}" class="gallery-tile">
+          <a href="${proj.link}" class="gallery-tile" ${proj.link.endsWith('.pdf') ? 'target="_blank"' : ''}>
             <img src="${proj.thumbnail}" alt="..." />
             <div class="tile-overlay">
               <div class="tile-label">
