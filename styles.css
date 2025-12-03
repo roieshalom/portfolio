@@ -306,7 +306,7 @@ header {
   background: transparent;
 }
 .section {
-  margin-bottom: 56px;
+  margin-bottom: 36px;
   overflow: visible
 }
 .section-title {
@@ -330,7 +330,7 @@ header {
 }
 .experience-item,
 .personal-list li {
-  margin-bottom: 36px;
+  margin-bottom: 20px;
   line-height: 1.4;
 }
 .exp-role {
