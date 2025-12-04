@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protected project</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap">
     <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
     <script src="theme.js"></script>
     <style>

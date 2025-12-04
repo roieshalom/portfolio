@@ -53,7 +53,7 @@ if ($isProtected) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project | Roie Shalom</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
 </head>

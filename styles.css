@@ -32,7 +32,7 @@ body {
   margin: 0;
   padding-left: clamp(20px, 5vw, 200px);
   padding-right: clamp(20px, 5vw, 200px);
-  font-family: 'Momo Trust Sans', Arial, sans-serif;
+  font-family: 'Albert Sans', Arial, sans-serif;
   color: var(--color-text);
   font-size: 0.875rem; /* 14px */
   letter-spacing: .01em;
@@ -402,7 +402,7 @@ header {
   font-weight: normal;
   margin: 0;
   padding: 0;
-  line-height: 1.3rem;
+  line-height: 1.2rem;
 }
 /* Remove background on mobile, keep divider for grouping */
 @media (max-width: 750px) {
@@ -477,12 +477,12 @@ header {
 
 
 .exp-desc {
-  font-weight: 200;
   color: var(--color-text);
+  line-height: 1.2rem;
   display: block;
-  margin-top: 3px;
-  line-height: 1.5rem;
+  text-decoration: none;
 }
+
 /* Applies to both desktop and mobile */
 .identity-block {
   display: flex;
@@ -768,13 +768,6 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
 }
 
 /* Description line always below name, underline on hover */
-.exp-desc {
-  font-weight: 200;
-  color: var(--color-text);
-  line-height: 1.3rem;
-  display: block;
-  text-decoration: none;
-}
 
 .sideproject-icon {
   width: 32px !important;
