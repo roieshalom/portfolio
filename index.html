@@ -210,5 +210,24 @@
     // No theme logic here! All handled in theme.js
   </script>
   <script src="theme.js"></script>
+  <script src="name-animator.js"></script>
+  <script>
+(function() {
+  const fonts = ["Playfair Display", "Righteous", "Pacifico", "Bebas Neue", "Oswald", "Lobster", "Permanent Marker", "Caveat", "Albert Sans"];
+  
+  const randomIndex = Math.floor(Math.random() * fonts.length);
+  const randomFont = fonts[randomIndex];
+  const fontFamily = `'${randomFont}', sans-serif`;
+  
+  const desktopBrand = document.getElementById('desktop-brand');
+  const mobileBrand = document.getElementById('mobile-brand');
+  
+  if (desktopBrand) desktopBrand.style.fontFamily = fontFamily;
+  if (mobileBrand) mobileBrand.style.fontFamily = fontFamily;
+  
+  console.log('Font changed to:', randomFont);
+})();
+</script>
+
 </body>
 </html>
