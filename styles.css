@@ -140,7 +140,7 @@ header {
 .brand,
 #desktop-brand {
   font-size: 4rem;
-  font-weight: 200;
+  font-weight: 600;
   line-height: 1;
   color: var(--color-text-main);
   display: block;
@@ -318,7 +318,6 @@ header {
   color: var(--color-text-main);
   font-weight: 700;
   margin-bottom: 10px;
-  letter-spacing: 1.2px;
   justify-content: space-between;  /* <-- add THIS line */
 }
 
