@@ -27,7 +27,7 @@ if (!empty($project['protected'])) {
 }
 
 // Serve the PDF file
-$pdfFile = $project['imagefolder'];
+$pdfFile = __DIR__ . '/' . $project['imagefolder'];
 
 if (!file_exists($pdfFile)) {
     http_response_code(404);
