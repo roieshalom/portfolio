@@ -103,7 +103,9 @@ if ($isProtected) {
         document.title = `${project.title_bold} ${project.title_regular} | Roie Shalom`;
         document.getElementById('project-title').innerHTML =
           `<strong>${project.title_bold}</strong> ${project.title_regular}`;
-        document.getElementById('project-desc').textContent = project.desc;
+        document.getElementById('project-desc').innerHTML = 
+        Array.isArray(project.desc) ? project.desc.join('') : project.desc;
+
 
         // Check if imagefolder is a PDF file
         if (project.imagefolder && project.imagefolder.toLowerCase().endsWith('.pdf')) {

@@ -1,12 +1,33 @@
 [
     {
     "id": "EQCapture",
-	  "gallery_desc": "Invantory tracking",
+	  "gallery_desc": "A mobile app to capture equipmant on premise",
     "shortdesc": "shortdescription",
-    "desc": "About this project: EQCapture",
+"desc": [
+  "<strong>EQCapture</strong> is a mobile app created to feed offsite-surveyed equipment data into this platform by digitizing the onsite survey and inventory process inside large office and commercial buildings, instead of relying on paper, photos and spreadsheets. The app streamlines how surveyors walk through complex commercial buildings, capture equipment details on-site and sync them into a central digital twin.",
+  
+  "<br><br><strong>My role</strong><br>I served as Head of Design for BuildingMinds' newly established \"App Factory\" innovation hub,leading this first pioneering product over a year-long engagement. Working in a core 3-person team, I drove end-to-end design—from ethnographic field research shadowing surveyors in Hamburg and Frankfurt, through UX/UI design and design system development, to usability testing and stakeholder presentations. I also mentored the less-experienced Product Manager in user-centered design methodologies and established foundational design patterns for the broader App Factory ecosystem.",
+
+  "<br><br><strong>Project goals</strong><br>",
+  "1. Digitize the analog building equipment survey process (paper forms, photo folders, Excel) into a single mobile workflow that connects directly to the BuildingMinds platform.<br>",
+  "2. Reduce time and errors when capturing large volumes of equipment data across multi-floor office and commercial buildings.<br>",
+  "3. Maintain spatial context (building, floor, room) for each asset so equipment records can be reliably mapped into the building's digital twin.<br>",
+  "4. Improve surveyor experience in the field by minimizing repetitive typing, misclassifications and tedious post-processing work.",
+
+  "<br><br><strong>Plan and process</strong><br>",
+  "1. Discovery: Map the \"as-is\" survey workflow, from site preparation to post-survey consolidation, and shadow surveyors on real projects in Hamburg and Frankfurt to understand pain points and edge cases.<br>",
+  "2. Definition: Identify the most critical breaks in the process (losing context between photos and equipment, manual re-typing into Excel, lack of tracking) and translate them into core MVP flows.<br>",
+  "3. Design: Create task-focused flows for selecting building → floor → space, capturing equipment records, attaching photos, and filtering by equipment classification using DIN-based structures.<br>",
+  "4. Validation: Prototype the flows, run usability tests including low-fi printouts and interactive prototypes, and iterate based on surveyors' feedback about speed, clarity and error states.",
+  
+  "<br><br><strong>Achievements and outcomes</strong><br>",
+  "1. Defined an end-to-end mobile capture journey that connects on-site work directly with the BuildingMinds platform and its digital twin, replacing multiple disconnected tools with one focused app.<br>",
+  "2. Created a reusable mobile UI library aligned with BuildingMinds' design system, enabling future apps in the App Factory ecosystem to share patterns, components and interaction principles.<br>",
+  "3. Through testing and field feedback, achieved a design concept that indicated a significant reduction in per-equipment capture time (up to around five times faster for typical assets) and clearer tracking of survey progress across buildings and floors, even though the app was not ultimately launched."
+],
     "link": "project.php?id=EQCapture",
     "title_bold": "🔒 EQCapture",
-    "title_regular": "inventory tracking ",
+    "title_regular": "inventory tracking",
     "category": "UX",
     "thumbnail": "content/images/eqc/eqcthumb.png",
     "imagefolder": "content/images/eqc/eqcdesign.pdf",
