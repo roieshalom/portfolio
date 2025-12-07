@@ -85,7 +85,7 @@
     {
     "id": "hp",
     "shortdesc": "HP short description.",
-	  "gallery_desc": "XXXXX XXXXX",
+	  "gallery_desc": "Intuitive printer touchscreen interface design",
     "desc": "About this project: this is an HP project.",
     "link": "project.php?id=hp",
     "title_bold": "HP Printer",
@@ -99,7 +99,7 @@
   },
   { 
     "id": "olamundo",
-	  "gallery_desc": "XXXXX XXXXX",
+	  "gallery_desc": "Synced family communication for non-verbal kids",
     "shortdesc": "Olamundo short description.",
     "desc": "About this project: this is an Olamundo project.",
     "link": "project.php?id=olamundo",
@@ -114,7 +114,7 @@
   },
    {
    "id": "safebreach",
-	  "gallery_desc": "XXXXX XXXXX",
+	  "gallery_desc": "Pioneering enterprise breach simulation platform",
     "shortdesc": "safebreach short description.",
     "desc": "About this project: this is an safebreach project.",
     "link": "project.php?id=safebreach",
@@ -145,7 +145,7 @@
   },
     {
     "id": "fig",
-	  "gallery_desc": "XXXXX XXXXX",
+	  "gallery_desc": "3D-printed mould ceramic slipcasting",
     "shortdesc": "fig short description.",
     "desc": "About this project: this is a fig project.",
     "link": "project.php?id=fig",
@@ -161,7 +161,7 @@
   },
       {
     "id": "sparkly",
-	  "gallery_desc": "XXXXX XXXXX",
+	  "gallery_desc": "Vector illustration creative exercise",
     "shortdesc": "sparkly short description.",
     "desc": "About this project: this is a sparkly project.",
     "link": "project.php?id=sparkly",
