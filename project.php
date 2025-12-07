@@ -15,7 +15,7 @@ if ($isProtected) {
     session_start();
     
     // Set session timeout (in seconds) - e.g., 1 hour = 3600
-    $session_timeout = 1200; // 20 minutes
+    $session_timeout = 3600; // 1 hour
     
     // Check if session exists and is valid
     $session_valid = isset($_SESSION['pw_ok']) 
