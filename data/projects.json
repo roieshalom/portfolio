@@ -4,9 +4,9 @@
 	  "gallery_desc": "A mobile app to capture equipmant on premise",
     "shortdesc": "shortdescription",
 "desc": [
-  "<strong>EQCapture</strong> is a mobile app created to feed offsite-surveyed equipment data into this platform by digitizing the onsite survey and inventory process inside large office and commercial buildings, instead of relying on paper, photos and spreadsheets. The app streamlines how surveyors walk through complex commercial buildings, capture equipment details on-site and sync them into a central digital twin.",
+  "<strong>EQCapture</strong> is a mobile app that feeds offsite-surveyed equipment data into the BuildingMinds platform by digitizing the onsite survey and inventory process inside large office and commercial buildings, instead of relying on paper, photos and spreadsheets. The app streamlines how surveyors walk through complex commercial buildings, capture equipment details on-site and sync them into a central digital twin.",
   
-  "<br><br><strong>My role</strong><br>I served as Head of Design for BuildingMinds' newly established \"App Factory\" innovation hub,leading this first pioneering product over a year-long engagement. Working in a core 3-person team, I drove end-to-end design—from ethnographic field research shadowing surveyors in Hamburg and Frankfurt, through UX/UI design and design system development, to usability testing and stakeholder presentations. I also mentored the less-experienced Product Manager in user-centered design methodologies and established foundational design patterns for the broader App Factory ecosystem.",
+  "<br><br><strong>My role</strong><br>I serve as Head of Design for BuildingMinds' \"App Factory\" innovation hub, leading this pioneering product as part of a core 3-person team. I drive end-to-end design—from ethnographic field research shadowing surveyors in Hamburg and Frankfurt, through UX/UI design and design system development, to usability testing and stakeholder presentations. I also mentor the Product Manager in user-centered design methodologies and establish foundational design patterns for the broader App Factory ecosystem.",
 
   "<br><br><strong>Project goals</strong><br>",
   "1. Digitize the analog building equipment survey process (paper forms, photo folders, Excel) into a single mobile workflow that connects directly to the BuildingMinds platform.<br>",
@@ -19,11 +19,11 @@
   "2. Definition: Identify the most critical breaks in the process (losing context between photos and equipment, manual re-typing into Excel, lack of tracking) and translate them into core MVP flows.<br>",
   "3. Design: Create task-focused flows for selecting building → floor → space, capturing equipment records, attaching photos, and filtering by equipment classification using DIN-based structures.<br>",
   "4. Validation: Prototype the flows, run usability tests including low-fi printouts and interactive prototypes, and iterate based on surveyors' feedback about speed, clarity and error states.",
-  
+
   "<br><br><strong>Achievements and outcomes</strong><br>",
   "1. Defined an end-to-end mobile capture journey that connects on-site work directly with the BuildingMinds platform and its digital twin, replacing multiple disconnected tools with one focused app.<br>",
   "2. Created a reusable mobile UI library aligned with BuildingMinds' design system, enabling future apps in the App Factory ecosystem to share patterns, components and interaction principles.<br>",
-  "3. Through testing and field feedback, achieved a design concept that indicated a significant reduction in per-equipment capture time (up to around five times faster for typical assets) and clearer tracking of survey progress across buildings and floors, even though the app was not ultimately launched."
+  "3. Through testing and field feedback, shaped a design concept that indicates a significant reduction in per-equipment capture time (up to around five times faster for typical assets) and clearer tracking of survey progress across buildings and floors."
 ],
     "link": "project.php?id=EQCapture",
     "title_bold": "🔒 EQCapture",
@@ -40,7 +40,41 @@
     "id": "search",
 	  "gallery_desc": "Global assisted search on a complex system",
     "shortdesc": "12345678900",
-    "desc": "About this project: search",
+    "desc": [
+  "<strong>A Better Search</strong> reimagines how users find process content inside the Signavio (now SAP Signavio) Process Collaboration Hub, turning a technically powerful but hard-to-use search into an experience that everyday business users can actually rely on to navigate large, complex workspaces.",
+  
+  "<br><br><strong>My role</strong><br>I led the UX work on the “A Better Search” initiative for the Process Collaboration Hub, working end-to-end from research through interaction design and stakeholder alignment. I combined search log analysis, usability tests and interviews with customer-facing teams to understand how people really tried to find process models, dictionary items and documents across large, messy tenants, and translated those insights into concrete UX requirements for both simple and advanced search.",
+
+  "<br><br><strong>Project goals</strong><br>",
+  "1. Make it dramatically easier for business users to find the right process models, dictionary items and documents across very large tenants, so the Hub becomes their natural starting point.<br>",
+  "2. Transform search from a title-only, expert feature into an intuitive, Google-like experience with suggestions, meaningful refinement and guidance instead of hidden query tricks.<br>",
+  "3. Reduce time wasted scanning long, unstructured result lists by improving filtering, visual hierarchy and feedback, so users can move from hundreds of hits to a small, relevant set in just a few steps.<br>",
+  "4. Create reusable search and filtering patterns (criteria tags, saved searches, attribute refinement) that other parts of the Signavio suite can adopt wherever users work with large process datasets.",
+
+  "<br><br><strong>Plan and process</strong><br>",
+  "1. Empathise: Ran usability tests on the existing search experience, collected questionnaires, and spoke with customer support, product and customer-facing teams to surface recurring search pain points and expectations.<br>",
+  "2. Discover: Analysed Hub search data (such as volume of searches and queries with no results) and mapped how users moved between search, folders and smart folders to understand where they got stuck or gave up.<br>",
+  "3. Ideate: Benchmarked search and refinement patterns from tools like Jira, LinkedIn, job boards and e‑commerce sites, then adapted those paradigms to Signavio’s attribute-rich process content and metadata model.<br>",
+  "4. Validate: Tested early flows and interaction patterns for simple and advanced search with users, iterating on filter discoverability, criteria tags and result layouts based on observed confusion, errors and edge cases.",
+
+  "<br><br><strong>Problems we found</strong><br>",
+  "1. Simple search behaved like a bare-bones title lookup with no suggestions, autocomplete or recent searches, falling far short of the forgiving, modern behaviour users expected from search.<br>",
+  "2. Advanced search was powerful but almost unusable: attribute lists were extremely long and unclear, type controls were nearly invisible, there was no way to filter by date, and error feedback was weak or missing.<br>",
+  "3. Result lists were hard to scan and act on, with no grouping or secondary filters, unclear type icons and a flat visual structure that made it difficult to decide which item to open next.<br>",
+  "4. Users had no easy way to progressively refine very large result sets, even though many tenants contained hundreds or thousands of items matching broad queries.",
+
+  "<br><br><strong>Key design decisions</strong><br>",
+  "1. Reframed the core user story around refining results (“I want to narrow down my initial search results so I can find the right model faster”), making refinement the centre of the experience rather than an afterthought.<br>",
+  "2. Introduced a criteria-tag pattern for advanced search, where each filter (for example customer, status, IT system or date) becomes a visible, editable chip that users can add, remove and reorder with clear state and feedback.<br>",
+  "3. Curated and clarified attributes by surfacing frequently used filters first, shortening long attribute lists and improving naming so non-expert users could better understand what each filter would do.<br>",
+  "4. Restructured the results layout with stronger hierarchy for type, title, key metadata and recency, and laid the groundwork for sorting and grouping so users could scan and prioritise results much more quickly.",
+
+  "<br><br><strong>Achievements and outcomes</strong><br>",
+  "1. Turned a title-only, expert-oriented search into an approachable, guided experience that better matched expectations from modern SaaS tools while still supporting Signavio’s rich attribute model.<br>",
+  "2. Enabled users to refine result sets of hundreds of items down to focused subsets in just a few refinement steps, directly supporting real-world tasks like finding the right process, dictionary item or incident documentation.<br>",
+  "3. Strengthened the Process Collaboration Hub as the central place to discover and reuse process knowledge, making it more likely that business users stay within the Signavio ecosystem instead of reverting to local files.<br>",
+  "4. Delivered reusable patterns for advanced filtering, criteria tags and saved searches that other parts of the SAP Signavio suite can adopt wherever users need to work efficiently with large collections of process artefacts."
+],
     "link": "project.php?id=search",
     "title_bold": "🔒 Search",
     "title_regular": "on a complex system ",
