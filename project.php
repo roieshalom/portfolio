@@ -65,8 +65,10 @@ if ($isProtected) {
     <a href="gallery.html" class="back-nav-link">Gallery</a>
   </nav>
   <h1 id="project-title">Project Title Loading...</h1>
-  <p id="project-desc">Explore my work across UX, branding, and creative technology.</p>
+  <!-- remove the generic text -->
+  <p id="project-desc"></p>
 </header>
+
 
 <div class="project-container">
   <!-- Description sits above the gallery, always present -->
