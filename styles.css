@@ -838,15 +838,20 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   flex: 0 0 1.15em;  /* Fixed width for all numbers */
   margin-right: 0;
 }
-/* Ensure project section labels stay pink on all breakpoints */
-.project-body br + br + strong {
-  color: var(--color-link) !important;
+
+/* 1. Base strong style in project text */
+.project-body strong {
+  font-weight: 600;
+  color: var(--color-text-main);
 }
 
-/* Optional: slightly larger for mobile so they read as headings */
-@media (max-width: 600px) {
-  .project-body br + br + strong {
-    font-size: 0.9rem;
-    letter-spacing: 0.11em;
-  }
+/* 2. Heading-style labels (My role, Project goals, etc.) */
+.project-body p strong.section-label {
+  display: inline-block;
+  margin-top: 1.4em;
+  margin-bottom: 0.4em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-link);
 }

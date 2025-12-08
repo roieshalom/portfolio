@@ -191,7 +191,7 @@
     "imageprefix": "fig",
     "homepage": false,
     "protected": true,
-    "show": true
+    "show": false
   },
       {
     "id": "sparkly",
