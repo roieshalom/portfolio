@@ -2,7 +2,6 @@
 $password = 'Rodaga708';
 $projectId = isset($_GET['id']) ? $_GET['id'] : null;
 
-
 // Load projects and check if this one is protected
 $isProtected = false;
 if ($projectId) {
@@ -11,7 +10,6 @@ if ($projectId) {
     $project = reset($project); // get first match
     $isProtected = !empty($project['protected']);
 }
-
 
 if ($isProtected) {
     session_start();
@@ -41,7 +39,6 @@ if ($isProtected) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,61 +67,66 @@ if ($isProtected) {
   <h1 id="project-title">Project Title Loading...</h1>
   <p id="project-desc">Explore my work across UX, branding, and creative technology.</p>
 </header>
+
 <div class="project-container">
+  <!-- Description sits above the gallery, always present -->
+  <div id="project-description-block">
+    <div class="project-body">
+      <p style="text-align: center; padding: 60px 20px;">Loading project...</p>
+    </div>
+  </div>
+
+  <!-- Gallery / PDF container -->
   <div id="project-content">
-    <p style="text-align: center; padding: 60px 20px;">Loading project...</p>
+    <p style="text-align: center; padding: 20px 20px;">Loading media...</p>
   </div>
 </div>
-
 
 <script>
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get('id');
 
-
   if (!projectId) {
-    document.getElementById('project-content').innerHTML = `
-      <div style="text-align: center; padding: 60px 20px;">
+    document.getElementById('project-description-block').innerHTML = `
+      <div class="project-body">
         <h1>No project specified</h1>
         <p>Please select a project from the <a href="index.html">homepage</a>.</p>
       </div>
     `;
+    document.getElementById('project-content').innerHTML = '';
   } else {
     fetch('data/projects.json')
       .then(res => res.json())
       .then(projects => {
         const project = projects.find(p => p.id === projectId);
 
-
         if (!project) {
-          document.getElementById('project-content').innerHTML = `
-            <div style="text-align: center; padding: 60px 20px;">
+          document.getElementById('project-description-block').innerHTML = `
+            <div class="project-body">
               <h1>Project not found</h1>
               <p>The project ${projectId} does not exist. <a href="index.html">Go back to homepage</a>.</p>
             </div>
           `;
+          document.getElementById('project-content').innerHTML = '';
           return;
         }
-
 
         document.title = `${project.title_bold} ${project.title_regular} | Roie Shalom`;
         document.getElementById('project-title').innerHTML =
           `<strong>${project.title_bold}</strong> ${project.title_regular}`;
 
-        // Wrap JSON description in a reusable container
+        // Description: always in .project-body so CSS applies
         const descHtml = Array.isArray(project.desc) ? project.desc.join('') : project.desc;
-        document.getElementById('project-desc').innerHTML = `
+        document.getElementById('project-description-block').innerHTML = `
           <div class="project-body">
             ${descHtml}
           </div>
         `;
 
-
-        // Check if imagefolder is a PDF file
+        // Media area (PDF or gallery)
         if (project.imagefolder && project.imagefolder.toLowerCase().endsWith('.pdf')) {
-          // Display PDF with button at top right
           document.getElementById('project-content').innerHTML = `
-            <div style="position: relative; width: 100%; max-width: 1400px; margin: 0 auto;">
+            <div style="position: relative; width: 100%; max-width: 1400px; margin: 40px auto 0;">
               <a href="serve-pdf.php?id=${projectId}" 
                  target="_blank" 
                  rel="noopener noreferrer"
@@ -138,25 +140,24 @@ if ($isProtected) {
               </iframe>
             </div>
           `;
-        } else {
-          // Display image gallery
+        } else if (project.imagefolder) {
           fetch(`${project.imagefolder}/images.json`)
             .then(res => res.json())
             .then(files => {
               document.getElementById('project-content').innerHTML = `
                 <div class="project-gallery">
-                ${files
-                  .filter(img => !img.file.toLowerCase().includes('thumb.png'))
-                  .sort((a, b) => a.file.localeCompare(b.file, undefined, { numeric: true }))
-                  .map((img, index) => `
-                    <figure>
-                      <img src="${project.imagefolder}/${img.file}"
-                          alt="${project.title_bold} screenshot ${index + 1}"
-                          loading="lazy"
-                          onerror="this.style.display='none';">
-                      ${img.caption ? `<figcaption>${img.caption}</figcaption>` : ""}
-                    </figure>
-                  `).join('')}
+                  ${files
+                    .filter(img => !img.file.toLowerCase().includes('thumb.png'))
+                    .sort((a, b) => a.file.localeCompare(b.file, undefined, { numeric: true }))
+                    .map((img, index) => `
+                      <figure>
+                        <img src="${project.imagefolder}/${img.file}"
+                             alt="${project.title_bold} screenshot ${index + 1}"
+                             loading="lazy"
+                             onerror="this.style.display='none';">
+                        ${img.caption ? `<figcaption>${img.caption}</figcaption>` : ""}
+                      </figure>
+                    `).join('')}
                 </div>
               `;
             })
@@ -168,15 +169,18 @@ if ($isProtected) {
               `;
               console.error('Error loading images.json:', err);
             });
+        } else {
+          document.getElementById('project-content').innerHTML = '';
         }
       })
       .catch(error => {
-        document.getElementById('project-content').innerHTML = `
-          <div style="text-align: center; padding: 60px 20px;">
+        document.getElementById('project-description-block').innerHTML = `
+          <div class="project-body">
             <h1>Error loading project</h1>
             <p>There was an error loading the project data. Please try again later.</p>
           </div>
         `;
+        document.getElementById('project-content').innerHTML = '';
         console.error('Error loading project:', error);
       });
   }
