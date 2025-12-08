@@ -838,3 +838,15 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   flex: 0 0 1.15em;  /* Fixed width for all numbers */
   margin-right: 0;
 }
+/* Ensure project section labels stay pink on all breakpoints */
+.project-body br + br + strong {
+  color: var(--color-link) !important;
+}
+
+/* Optional: slightly larger for mobile so they read as headings */
+@media (max-width: 600px) {
+  .project-body br + br + strong {
+    font-size: 0.9rem;
+    letter-spacing: 0.11em;
+  }
+}
