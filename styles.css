@@ -787,7 +787,6 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   text-align: left;
 }
 
-
 /* Give paragraphs inside project text some rhythm */
 .project-body p {
   margin: 0 0 0.8em 0;
@@ -822,4 +821,20 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
 .project-body li {
   margin-bottom: 0.25em;
   line-height: 1.45;
+}
+
+/* Numbered lines with consistent alignment */
+.project-body span.numbered-line {
+  display: flex !important;
+  align-items: flex-start;
+  margin-bottom: -1em;
+  line-height: 1.45;
+  padding-left: 0 !important;
+  text-indent: 0 !important;
+  margin-left: 0 !important;
+}
+
+.project-body span.numbered-line .num {
+  flex: 0 0 1.15em;  /* Fixed width for all numbers */
+  margin-right: 0;
 }
