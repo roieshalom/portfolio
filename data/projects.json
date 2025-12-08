@@ -4,27 +4,28 @@
 	  "gallery_desc": "A mobile app to capture equipmant on premise",
     "shortdesc": "shortdescription",
 "desc": [
-  "<strong>EQCapture</strong> is a mobile app that feeds offsite-surveyed equipment data into the BuildingMinds platform by digitizing the onsite survey and inventory process inside large office and commercial buildings, instead of relying on paper, photos and spreadsheets. The app streamlines how surveyors walk through complex commercial buildings, capture equipment details on-site and sync them into a central digital twin.",
-  
-  "<br><br><strong>My role</strong><br>I serve as Head of Design for BuildingMinds' \"App Factory\" innovation hub, leading this pioneering product as part of a core 3-person team. I drive end-to-end design—from ethnographic field research shadowing surveyors in Hamburg and Frankfurt, through UX/UI design and design system development, to usability testing and stakeholder presentations. I also mentor the Product Manager in user-centered design methodologies and establish foundational design patterns for the broader App Factory ecosystem.",
+  "<strong>EQCapture</strong> is a mobile app that replaces paper, photos and spreadsheets with a single workflow for on-site equipment surveys in large commercial buildings. It guides surveyors through complex properties, captures equipment details in context and syncs everything directly into the BuildingMinds digital twin.",
+
+  "<br><br><strong>My role</strong><br>As Head of Design for BuildingMinds' App Factory, I led EQCapture as part of a core three-person team. I owned end-to-end design: field research with surveyors in Hamburg and Frankfurt, UX/UI and design system work, usability testing and stakeholder presentations, while mentoring the Product Manager in user-centred methods.",
 
   "<br><br><strong>Project goals</strong><br>",
-  "1. Digitize the analog building equipment survey process (paper forms, photo folders, Excel) into a single mobile workflow that connects directly to the BuildingMinds platform.<br>",
-  "2. Reduce time and errors when capturing large volumes of equipment data across multi-floor office and commercial buildings.<br>",
-  "3. Maintain spatial context (building, floor, room) for each asset so equipment records can be reliably mapped into the building's digital twin.<br>",
-  "4. Improve surveyor experience in the field by minimizing repetitive typing, misclassifications and tedious post-processing work.",
+  "1. Replace fragmented paper, photo and Excel workflows with a single mobile app connected to the BuildingMinds platform.<br>",
+  "2. Reduce time and errors when capturing large volumes of equipment data across multi-floor buildings.<br>",
+  "3. Keep clear spatial context (building, floor, room) for every asset to support a reliable digital twin.<br>",
+  "4. Make surveyors' on-site work smoother by cutting repetitive typing and tedious post-processing.<br>",
 
   "<br><br><strong>Plan and process</strong><br>",
-  "1. Discovery: Map the \"as-is\" survey workflow, from site preparation to post-survey consolidation, and shadow surveyors on real projects in Hamburg and Frankfurt to understand pain points and edge cases.<br>",
-  "2. Definition: Identify the most critical breaks in the process (losing context between photos and equipment, manual re-typing into Excel, lack of tracking) and translate them into core MVP flows.<br>",
-  "3. Design: Create task-focused flows for selecting building → floor → space, capturing equipment records, attaching photos, and filtering by equipment classification using DIN-based structures.<br>",
-  "4. Validation: Prototype the flows, run usability tests including low-fi printouts and interactive prototypes, and iterate based on surveyors' feedback about speed, clarity and error states.",
+  "1. Discovery: Map the existing survey workflow end to end and shadow surveyors on real projects to uncover pain points and edge cases.<br>",
+  "2. Definition: Prioritise breaks in the process (lost context between photos and equipment, manual re-typing, lack of tracking) and turn them into core MVP flows.<br>",
+  "3. Design: Create task-focused journeys for selecting building → floor → space, capturing records, attaching photos and filtering via DIN-based equipment structures.<br>",
+  "4. Validation: Prototype key flows, test with surveyors using both paper and interactive prototypes, and iterate on speed, clarity and error handling.<br>",
 
   "<br><br><strong>Achievements and outcomes</strong><br>",
-  "1. Defined an end-to-end mobile capture journey that connects on-site work directly with the BuildingMinds platform and its digital twin, replacing multiple disconnected tools with one focused app.<br>",
-  "2. Created a reusable mobile UI library aligned with BuildingMinds' design system, enabling future apps in the App Factory ecosystem to share patterns, components and interaction principles.<br>",
-  "3. Through testing and field feedback, shaped a design concept that indicates a significant reduction in per-equipment capture time (up to around five times faster for typical assets) and clearer tracking of survey progress across buildings and floors."
+  "1. Designed an end-to-end mobile capture journey that connects on-site work directly with the BuildingMinds digital twin, replacing several disconnected tools with one focused app.<br>",
+  "2. Built a reusable mobile UI library aligned with the BuildingMinds design system, laying groundwork for future App Factory apps to share patterns and components.<br>",
+  "3. Achieved a concept that field feedback indicates can cut per-equipment capture time by up to around five times for typical assets, while improving visibility into survey progress across buildings and floors.<br>"
 ],
+
     "link": "project.php?id=EQCapture",
     "title_bold": "🔒 EQCapture",
     "title_regular": "inventory tracking",
