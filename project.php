@@ -2,6 +2,7 @@
 $password = 'Rodaga708';
 $projectId = isset($_GET['id']) ? $_GET['id'] : null;
 
+
 // Load projects and check if this one is protected
 $isProtected = false;
 if ($projectId) {
@@ -10,6 +11,7 @@ if ($projectId) {
     $project = reset($project); // get first match
     $isProtected = !empty($project['protected']);
 }
+
 
 if ($isProtected) {
     session_start();
@@ -38,6 +40,7 @@ if ($isProtected) {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,9 +76,11 @@ if ($isProtected) {
   </div>
 </div>
 
+
 <script>
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get('id');
+
 
   if (!projectId) {
     document.getElementById('project-content').innerHTML = `
@@ -90,6 +95,7 @@ if ($isProtected) {
       .then(projects => {
         const project = projects.find(p => p.id === projectId);
 
+
         if (!project) {
           document.getElementById('project-content').innerHTML = `
             <div style="text-align: center; padding: 60px 20px;">
@@ -100,11 +106,18 @@ if ($isProtected) {
           return;
         }
 
+
         document.title = `${project.title_bold} ${project.title_regular} | Roie Shalom`;
         document.getElementById('project-title').innerHTML =
           `<strong>${project.title_bold}</strong> ${project.title_regular}`;
-        document.getElementById('project-desc').innerHTML = 
-        Array.isArray(project.desc) ? project.desc.join('') : project.desc;
+
+        // Wrap JSON description in a reusable container
+        const descHtml = Array.isArray(project.desc) ? project.desc.join('') : project.desc;
+        document.getElementById('project-desc').innerHTML = `
+          <div class="project-body">
+            ${descHtml}
+          </div>
+        `;
 
 
         // Check if imagefolder is a PDF file

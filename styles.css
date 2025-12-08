@@ -773,3 +773,53 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   height: 32px !important;
   border-radius: 5px; 
 }
+
+/* ============================================
+   PROJECTS DESCRIPTION
+   ============================================ */
+
+/* Project body container – shared by all projects */
+.project-body {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right:auto;
+  max-width: 700px;
+  text-align: left;
+}
+
+
+/* Give paragraphs inside project text some rhythm */
+.project-body p {
+  margin: 0 0 0.8em 0;
+  line-height: 1.5;
+  color: var(--color-text-main);
+}
+
+/* Emphasis inside project copy */
+.project-body strong {
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+/* Turn inline section labels (My role, Project goals…) into headings */
+.project-body br + br + strong {
+  display: inline-block;
+  margin-top: 1.4em;
+  margin-bottom: 0.4em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-link);   /* reuse existing accent */
+}
+
+/* Lists inside project text */
+.project-body ul,
+.project-body ol {
+  margin: 0.2em 0 0.8em 0;
+  padding-left: 1.1rem;
+}
+
+.project-body li {
+  margin-bottom: 0.25em;
+  line-height: 1.45;
+}
