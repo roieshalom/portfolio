@@ -855,3 +855,24 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   letter-spacing: 0.1em;
   color: var(--color-link);
 }
+
+/* Project section headings inside the case study body */
+.project-body .section-label {
+  display: inline-block;
+  margin-top: 1.4em;
+  margin-bottom: 0.4em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-link);
+}
+
+/* Ensure generic strong does not override them */
+.project-body strong {
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.project-body .section-label {
+  font-weight: 600;
+}
