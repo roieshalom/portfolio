@@ -1,5 +1,5 @@
 <?php
-$password = 'Rodaga708';
+$password = 'ProblemSolver2026';
 $projectId = isset($_GET['id']) ? $_GET['id'] : null;
 
 // Load projects and check if this one is protected
