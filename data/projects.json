@@ -140,7 +140,7 @@
   { 
     "id": "olamundo",
 	  "gallery_desc": "Synced family communication for non-verbal kids",
-    "shortdesc": "Olamundo short description.",
+    "shortdesc": "A symbol-based communication app that empowers non-verbal children to chat with family and therapists using intuitive visual boards, bridging distance and giving them a clearer voice in everyday life.",
     "desc": "<strong>Ola Mundo</strong> is a child-centred communication app that uses symbol based messages to help nonverbal or minimally verbal children stay in touch with their parents, siblings, and therapists whether they are in the same room or far away.",
     "link": "project.php?id=olamundo",
     "title_bold": "Olamundo",
@@ -149,7 +149,7 @@
     "thumbnail": "content/images/olamundo/omthumb.png",
     "imagefolder": "content/images/olamundo",
     "imageprefix": "om",
-    "homepage": false,
+    "homepage": true,
     "show": true
   },
    {
