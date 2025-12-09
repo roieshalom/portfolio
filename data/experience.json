@@ -1,38 +1,69 @@
 [
   {
     "position": "Product Design Lead",
-    "company": "Wayfair",
-    "link": "https://www.wayfair.com/",
-    "years": "2022–2025",
-    "description": "I crafted supplier logistics interfaces with a focus on inventory management, integrated user insights into product enhancements, and improved team processes through collaborative design thinking."},
-  
+    "years": "2022-2025",
+    "companies": [
+      {
+        "name": "Wayfair",
+        "link": "https://www.wayfair.com/"
+      }
+    ],
+    "description": "I crafted supplier logistics interfaces with a focus on inventory management, integrated user insights into product enhancements, and improved team processes through collaborative design thinking."
+  },
   {
     "position": "Senior UX/UI Designer",
-    "company": "BuildingMinds by Schindler Group",
-    "link": "https://buildingminds.com/",
-    "years": "2019–2021",
-    "description": "I led the UX design process to boost user satisfaction and built a Design System that streamlined development. As a co-founder of “App Factory,” I united research, design, product, and tech teams, while optimizing data onboarding to increase user adoption and integration speed."},
-  
+    "years": "2019-2021",
+    "companies": [
+      {
+        "name": "BuildingMinds by Schindler Group",
+        "link": "https://buildingminds.com/"
+      }
+    ],
+    "description": "I led the UX design process to boost user satisfaction and built a Design System that streamlined development. As a co-founder of “App Factory,” I united research, design, product, and tech teams, while optimizing data onboarding to increase user adoption and integration speed."
+  },
   {
     "position": "Senior UX Designer",
-    "company": "SAP Signavio",
-    "link": "https://www.signavio.com/",
     "years": "2018-2019",
-    "description": "I built and managed Signavio’s design library for consistent, collaborative product development. I led the UX/UI redesign of the flagship product, raising user experience and visual unity, and delivered impactful prototypes and usability tests."
+    "companies": [
+      {
+        "name": "SAP Signavio",
+        "link": "https://www.signavio.com/"
+      }
+    ],
+    "description": "I built and managed Signavio's design library for consistent, collaborative product development. I led the UX/UI redesign of the flagship product, raising user experience and visual unity, and delivered impactful prototypes and usability tests."
   },
-  
   {
     "position": "Creative Director",
-    "company": "Safebreach",
-    "link": "https://www.safebreach.com/",
-    "years": "2015–2017",
+    "years": "2015-2017",
+    "companies": [
+      {
+        "name": "Safebreach",
+        "link": "https://www.safebreach.com/"
+      }
+    ],
     "description": "As the sole designer from day one, I shaped all UX/UI, branding, marketing, and event visuals for three years, applying full design thinking and delivering assets that drove product and sales success."
   },
-    {
-    "position": "Lead Design roles at Sandisk, Stanley Black & Decker, Aran R&D (HP), Ola Mundo",
-    "company": "",
-    "link": "-",
-    "years": "2005–2015",
+  {
+    "position": "Lead Design roles",
+    "years": "2005-2015",
+    "companies": [
+      {
+        "name": "Sandisk",
+        "link": "https://www.sandisk.com/"
+      },
+      {
+        "name": "Stanley Black & Decker",
+        "link": "https://www.stanleyblackanddecker.com/"
+      },
+      {
+        "name": "Aran R&D (HP)",
+        "link": "https://www.aran-rd.com/"
+      },
+      {
+        "name": "Ola Mundo",
+        "link": "https://www.tpgi.com/ola-mundo-app-children-verbal-communication-difficulties/"
+      }
+    ],
     "description": "I created visual and interface designs for global hardware and software products, leading cross-functional projects in packaging and product visuals. I worked with international teams to uphold UX excellence and ensure brand consistency across markets."
-  }  
+  }
 ]

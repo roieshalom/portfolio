@@ -133,24 +133,31 @@
     <!-- Fun section will remain hidden on mobile/tablet -->
   </div>
   <script>
-    // Fetch Experience
-    fetch('data/experience.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('experience-list');
-        container.innerHTML = data.map(item => `
-          <li class="experience-item">
-            <strong class="exp-role">${item.position}</strong>, 
-            <a href="${item.link}" class="exp-company" target="_blank">${item.company}</a>, 
-            <strong class="exp-years">${item.years}</strong><br>
-            <span class="exp-desc">${item.description}</span>
-          </li>
-        `).join('');
-      })
-      .catch(error => {
-        document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
-        console.error(error);
-      });
+// Fetch Experience
+fetch('data/experience.json')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('experience-list');
+    container.innerHTML = data.map(item => {
+      const companiesHtml = (item.companies || [])
+        .map(c => `<a href="${c.link}" class="exp-company" target="_blank">${c.name}</a>`)
+        .join(', ');
+
+      return `
+        <li class="experience-item">
+          <strong class="exp-role">${item.position}</strong>, 
+          ${companiesHtml}, 
+          <strong class="exp-years">${item.years}</strong><br>
+          <span class="exp-desc">${item.description}</span>
+        </li>
+      `;
+    }).join('');
+  })
+  .catch(error => {
+    document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
+    console.error(error);
+  });
+
 
     // Fetch Projects - only show where "homepage": true
     fetch('data/projects.json')
