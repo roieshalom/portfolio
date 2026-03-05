@@ -7,6 +7,9 @@
   --color-grey-light: #ebebeb;
   --color-muted: #444;
   --color-border: #eee;
+  --color-card: #fff;
+  --color-card-shadow: rgba(15,20,55,0.07);
+  --color-card-shadow-hover: rgba(15,20,55,0.13);
 }
 
 a {
@@ -23,6 +26,9 @@ html[data-theme="dark"] {
   --color-grey-light: #232627;
   --color-muted: #999;
   --color-border: #232627;
+  --color-card: #1e1e1e;
+  --color-card-shadow: rgba(0,0,0,0.25);
+  --color-card-shadow-hover: rgba(0,0,0,0.4);
 }
 
 body {
@@ -608,94 +614,85 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
    ============================================ */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.6rem;
   padding: 2rem 0;
 }
 
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+  }
+  .gallery-tile img {
+    height: 130px;
+  }
+  .tile-overlay {
+    padding: 0.6em 0.8em 0.8em;
+  }
+  .tile-label {
+    font-size: 0.82em;
+  }
+  .tile-desc {
+    display: none;
+  }
+}
+
 .gallery-tile {
-  position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   border-radius: 16px;
   overflow: hidden;
-  background: #fff;
+  background: var(--color-card, #fff);
   transition: box-shadow 0.23s cubic-bezier(.5,.2,.23,1), transform 0.17s cubic-bezier(.4,1,.4,1);
-  box-shadow: 0 1.5px 9px rgba(15,20,55,0.07);
+  box-shadow: 0 1.5px 9px var(--color-card-shadow);
   text-decoration: none;
+}
+
+.gallery-tile:hover,
+.gallery-tile:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--color-card-shadow-hover);
 }
 
 .gallery-tile img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
   display: block;
+  transition: filter 0.2s;
 }
 
 .gallery-tile:hover img,
 .gallery-tile:focus img {
-  opacity: 0.97;
-  filter: contrast(108%) saturate(1.09);
-  box-shadow: 4px 4px 0px rgba(233,30,98,0.19);
+  filter: contrast(105%) saturate(1.06);
 }
 
-/* --- Overlay section --- */
 .tile-overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 45px; /* collapsed */
-  background: linear-gradient(to top, rgba(26,16,32,0) 90%, rgba(26,16,32,0) 100%);
-  color: #fff;
-  box-sizing: border-box;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
-  overflow: hidden;
-  transition: height 0.33s cubic-bezier(.53,.2,.23,1), background 0.33s;
-  z-index: 2;
+  padding: 1em 1.2em 1.2em;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;             /* <-- always pins text at the TOP */
-  padding: 1.2em 1.2em 0 1.2em;           /* Top/right/bottom/left (top only!) */
-  justify-content: flex-start;
-  padding: 1.2em 1.2em 0 1.2em;  /* At rest: minimal top-padding, text starts near top */
-
+  gap: 0.3em;
 }
 
-/* On hover, overlay rises up, text is always at top edge */
-.gallery-tile:hover .tile-overlay,
-.gallery-tile:focus .tile-overlay {
-  height: 182px;
-  background: linear-gradient(to top, rgba(26,16,32,0.94) 99%, rgba(26,16,32,0.18) 100%);
-}
-
-/* Label is always under overlay's top, not moving independently */
 .tile-label {
   font-size: 1em;
   font-family: inherit;
   font-weight: 400;
-  color: #fff;
+  color: var(--color-text);
   line-height: 1.28;
-  margin-bottom: 0.42em;    /* spacing above desc block */
-  word-break: break-word;
 }
 
 .tile-label strong {
-  font-weight: bold;
-  color: #ffffff;
+  font-weight: 700;
+  color: var(--color-text);
 }
 
 .tile-desc {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.27s 0.1s, max-height 0.3s;
-}
-
-.gallery-tile:hover .tile-desc,
-.gallery-tile:focus .tile-desc {
-  opacity: 1;
-  max-height: 300px;
+  font-size: 0.88em;
+  color: var(--color-text);
+  opacity: 0.65;
+  line-height: 1.45;
 }
 
 
