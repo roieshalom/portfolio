@@ -1,11 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Roie – AI Playground</title>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "u4dp513xm1");
+  </script>
+  <meta charset="UTF-8">
+  <title>AI Projects · Roie Shalom</title>
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-  <h1>AI projects gallery</h1>
-  <p>soon, my dear</p>
+  <header>
+    <nav>
+      <a href="../index.html" class="back-nav-link">Home</a>
+    </nav>
+    <h1 id="project-title"><strong>AI Projects</strong></h1>
+    <p id="project-desc">These projects grew out of personal interests, needs, and occasionally just the urge to build something fun. They're also a learning ground: how to code, how to work with AI as a development partner, and how to move fast without sacrificing the craft. Each one is an experiment in UX, content, and engagement. I build, track, and iterate, trying to understand what actually makes something worth returning to. The ideas, the decisions, and the direction are mine. AI is part of how I develop and think things through.</p>
+  </header>
+  <main>
+    <div class="gallery-grid" id="ai-gallery">
+      <!-- AI project cards rendered here -->
+    </div>
+  </main>
+  <footer></footer>
+
+  <script>
+    fetch('data/projects.json')
+      .then(res => res.json())
+      .then(projects => {
+        const gallery = document.getElementById('ai-gallery');
+        gallery.innerHTML = projects.map(proj => `
+          <a href="${proj.link}" class="gallery-tile" target="_blank" rel="noopener noreferrer">
+            <img src="${proj.thumbnail}" alt="${proj.title_bold}" />
+            <div class="tile-overlay">
+              <div class="tile-label">
+                <strong>${proj.title_bold}</strong> ${proj.title_regular}
+              </div>
+              <div class="tile-desc">${proj.shortdesc}</div>
+            </div>
+          </a>
+        `).join('');
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
+  <script src="../theme.js"></script>
 </body>
 </html>

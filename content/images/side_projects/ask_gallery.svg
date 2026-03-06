@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#2a1a4e"/>
+      <stop offset="100%" stop-color="#0d0818"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect width="600" height="400" fill="url(#glow)"/>
+  <!-- Stars -->
+  <circle cx="80" cy="60" r="1.5" fill="#e0c97f" opacity="0.8"/>
+  <circle cx="150" cy="30" r="1" fill="#fff" opacity="0.6"/>
+  <circle cx="520" cy="50" r="1.5" fill="#e0c97f" opacity="0.7"/>
+  <circle cx="470" cy="90" r="1" fill="#fff" opacity="0.5"/>
+  <circle cx="40" cy="150" r="1" fill="#fff" opacity="0.4"/>
+  <circle cx="560" cy="130" r="1.5" fill="#e0c97f" opacity="0.6"/>
+  <circle cx="200" cy="20" r="1" fill="#fff" opacity="0.5"/>
+  <circle cx="380" cy="40" r="1" fill="#fff" opacity="0.6"/>
+  <circle cx="540" cy="300" r="1" fill="#fff" opacity="0.4"/>
+  <circle cx="30" cy="320" r="1.5" fill="#e0c97f" opacity="0.5"/>
+  <circle cx="570" cy="370" r="1" fill="#fff" opacity="0.4"/>
+  <circle cx="100" cy="370" r="1" fill="#e0c97f" opacity="0.5"/>
+  <!-- Crystal ball -->
+  <circle cx="300" cy="195" r="80" fill="#1e0f3d" stroke="#7c3aed" stroke-width="1.5" opacity="0.9"/>
+  <circle cx="300" cy="195" r="80" fill="url(#glow)" opacity="0.5"/>
+  <ellipse cx="270" cy="165" rx="25" ry="15" fill="#fff" opacity="0.07" transform="rotate(-20 270 165)"/>
+  <!-- Ornament base -->
+  <rect x="270" y="275" width="60" height="10" rx="5" fill="#4c1d95" opacity="0.8"/>
+  <rect x="250" y="283" width="100" height="6" rx="3" fill="#4c1d95" opacity="0.6"/>
+  <!-- Text -->
+  <text x="300" y="340" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#e0c97f" letter-spacing="2">Ask Esmeralda</text>
+  <text x="300" y="365" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#a78bfa" letter-spacing="3">FORTUNE TELLER</text>
+</svg>

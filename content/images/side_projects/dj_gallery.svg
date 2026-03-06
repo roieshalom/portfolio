@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#fdf6ec"/>
+  <!-- Jar body -->
+  <rect x="210" y="150" width="180" height="160" rx="18" fill="#fff" stroke="#e8c97a" stroke-width="2.5"/>
+  <!-- Jar neck -->
+  <rect x="230" y="128" width="140" height="30" rx="8" fill="#f0d080" stroke="#e8c97a" stroke-width="2"/>
+  <!-- Jar lid -->
+  <rect x="222" y="112" width="156" height="22" rx="8" fill="#e8a020"/>
+  <!-- Jar shine -->
+  <rect x="228" y="162" width="12" height="80" rx="6" fill="#fff" opacity="0.4"/>
+  <!-- Coins inside jar -->
+  <ellipse cx="300" cy="285" rx="32" ry="10" fill="#f5c842" opacity="0.9"/>
+  <ellipse cx="300" cy="275" rx="32" ry="10" fill="#f7d050"/>
+  <ellipse cx="285" cy="255" rx="20" ry="7" fill="#f5c842"/>
+  <ellipse cx="315" cy="248" rx="18" ry="6" fill="#f7d050"/>
+  <!-- Coin falling in -->
+  <ellipse cx="300" cy="115" rx="18" ry="6" fill="#f7d050" transform="rotate(-15 300 115)"/>
+  <!-- Slot line on lid -->
+  <rect x="288" y="115" width="24" height="3" rx="2" fill="#c87010"/>
+  <!-- Text -->
+  <text x="300" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#c87010" letter-spacing="1">Disclaimer Jar</text>
+  <text x="300" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#aaa" letter-spacing="2">MADE A DISCLAIMER? PUT A COIN IN.</text>
+</svg>
