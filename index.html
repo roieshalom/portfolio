@@ -50,7 +50,15 @@
             <i class="fa-solid fa-swatchbook" aria-hidden="true"></i> View project gallery
           </a>
         </div>
-        <div class="selected-work" id="projects-list"></div>
+        <div class="gallery-grid home-grid" id="projects-list"></div>
+      </section>
+      <section id="ai-work" class="section">
+        <div class="section-title">AI Projects
+          <a href="ai/" class="icon-link">
+            <i class="fa-solid fa-robot" aria-hidden="true"></i> View all AI projects
+          </a>
+        </div>
+        <div class="gallery-grid home-grid" id="ai-projects-list"></div>
       </section>
       <!-- Footer placed after all main content, at the end of main-content column -->
       <footer>
@@ -95,17 +103,40 @@ fetch('data/experience.json')
         const homepageProjects = projects.filter(proj => proj.homepage);
         const container = document.getElementById('projects-list');
         container.innerHTML = homepageProjects.map(proj => `
-          <a href="project.php?id=${proj.id}" class="work-item">
-            <img class="work-thumb" src="${proj.thumbnail}" alt="${proj.title} thumbnail">
-            <div class="work-details">
-              <div class="exp-role">${proj.title_bold}</div>
-              <p class="work-desc">${proj.shortdesc}</p>
+          <a href="project.php?id=${proj.id}" class="gallery-tile">
+            <img src="${proj.thumbnail}" alt="${proj.title_bold} thumbnail">
+            <div class="tile-overlay">
+              <div class="tile-label"><strong>${proj.title_bold}</strong> ${proj.title_regular}</div>
+              <div class="tile-desc">${proj.shortdesc}</div>
             </div>
           </a>
         `).join('');
       })
       .catch(error => {
         document.getElementById('projects-list').innerHTML = '<div>Error loading projects.</div>';
+        console.error(error);
+      });
+
+    // Fetch AI Projects - show first 3
+    fetch('ai/data/projects.json')
+      .then(res => res.json())
+      .then(projects => {
+        const container = document.getElementById('ai-projects-list');
+        container.innerHTML = projects.slice(0, 3).map(proj => {
+          const thumb = proj.thumbnail.replace('../content/', 'content/');
+          return `
+          <a href="${proj.link}" class="gallery-tile" target="_blank" rel="noopener">
+            <img src="${thumb}" alt="${proj.title_bold} thumbnail">
+            <div class="tile-overlay">
+              <div class="tile-label"><strong>${proj.title_bold}</strong></div>
+              <div class="tile-desc">${proj.shortdesc}</div>
+            </div>
+          </a>
+        `;
+        }).join('');
+      })
+      .catch(error => {
+        document.getElementById('ai-projects-list').innerHTML = '<div>Error loading AI projects.</div>';
         console.error(error);
       });
 
@@ -121,7 +152,7 @@ fetch('data/experience.json')
         this.classList.add('active');
       });
     });
-    const sections = ['about', 'experience', 'work'];
+    const sections = ['about', 'experience', 'work', 'ai-work'];
     window.addEventListener('scroll', () => {
       let currentSection = sections[0];
       sections.forEach(id => {

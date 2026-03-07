@@ -648,7 +648,15 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   padding: 2rem 0;
 }
 
+.home-grid {
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1rem 0;
+}
+
 @media (max-width: 600px) {
+  .home-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.9rem;
