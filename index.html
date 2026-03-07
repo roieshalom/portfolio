@@ -18,93 +18,16 @@
 </head>
 
 <body>
-  <!-- MOBILE HEADER (shown only on mobile by CSS) -->
-  <div class="mobile-header" style="display:none;">
-    <div class="identity-block">
-      <span class="mobile-brand" id="mobile-brand">Roie Shalom</span>
-      <span class="mobile-role" id="mobile-role">Product Design Lead</span>
+  <nav class="top-nav">
+    <span class="brand" id="desktop-brand">Roie Shalom</span>
+    <div class="top-nav-links">
+      <a href="#about" class="nav-link active">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#work" class="nav-link">Projects</a>
+      <a href="ai/" class="nav-link">AI Projects</a>
     </div>
-    <div class="mobile-social">
-      <!-- Social SVG icons here (same as sidebar) -->
-    </div>
-  </div>
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="sidebar-inner">
-        <div class="identity-block">
-          <span class="brand" id="desktop-brand">Roie Shalom</span>
-          <span class="role" id="desktop-role">Product Design Lead</span>
-        </div>
-        <nav class="sidebar-nav">
-          <a href="#about" class="nav-link active">About me</a>
-          <a href="#experience" class="nav-link">Experience</a>
-          <a href="#work" class="nav-link">Projects</a>
-        </nav>
-        <div style="margin-top:36px;"></div>
-        <section class="sidebar-fun" id="desktop-fun">
-          <div class="fun-title">AI Projects</div>
-          <div id="theme-controls" style="margin-top: 8px; margin-bottom: 18px;">
-            <ul class="side-project-list">
-              <li>
-                <a href="https://askesmeralda.com/" target="_blank" class="sideproject-link">
-                  <img src="content/images/side_projects/ask_thumb.png" class="sideproject-icon" alt="Icon" />
-                  <div class="sideproject-textblock">
-                    <span class="exp-company">Ask Esmeralda</span>
-                    <span class="exp-desc">Ask the mystic, get your fortune</span>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="https://grooped.de/" target="_blank" class="sideproject-link">
-                  <img src="content/images/side_projects/con_thumb.png" class="sideproject-icon" alt="Icon" />
-                  <div class="sideproject-textblock">
-                    <span class="exp-company">Connections game</span>
-                    <span class="exp-desc">Make 4 word groups</span>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.fragen-katalog.com/" target="_blank" class="sideproject-link">
-                  <img src="content/images/side_projects/fk_thumb.png" class="sideproject-icon" alt="Icon" />
-                  <div class="sideproject-textblock">
-                    <span class="exp-company">Fragen Katalog</span>
-                    <span class="exp-desc">German Einburgerung test practice</span>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.b1wortschatz.de/" target="_blank" class="sideproject-link">
-                  <img src="content/images/side_projects/b1w_thumb.png" class="sideproject-icon" alt="Icon" />
-                  <div class="sideproject-textblock">
-                    <span class="exp-company">B1 Wortschatz</span>
-                    <span class="exp-desc">German Voabulary flashcards</span>
-                  </div>
-                </a>
-              </li>
-                            <li>
-                <a href="https://roieshalom.github.io/disclaimer-jar/" target="_blank" class="sideproject-link">
-                  <img src="content/images/side_projects/dj_thumb.png" class="sideproject-icon" alt="Icon" />
-                  <div class="sideproject-textblock">
-                    <span class="exp-company">Disclamer Jar</span>
-                    <span class="exp-desc">Made a disclamer? put a coin in</span>
-                  </div>
-                </a>
-              </li>
-            </ul>
-        </div>
-
-
-          <div class="textContent">
-            <span class="exp-desc">More coming soon...</span>
-          </div>
-        </section>
-        <div style="margin-bottom: 24px;"></div>
-        <nav class="social" style="color: var(--color-link); display: flex; gap: 16px;">
-          <!-- Social SVG icons (leave as is) -->
-        </nav>
-      </div>
-    </aside>
-    <main class="main-content">
+  </nav>
+  <main class="main-content">
       <section id="about" class="section">
         <div class="section-title">About</div>
         <p>
@@ -137,11 +60,7 @@
           as I try to integrate and goof around with technologies. Let's see where it takes me.
         </p>
       </footer>
-    </main>
-  </div>
-  <div class="mobile-fun" style="display:none;">
-    <!-- Fun section will remain hidden on mobile/tablet -->
-  </div>
+  </main>
   <script>
 // Fetch Experience
 fetch('data/experience.json')
@@ -190,24 +109,13 @@ fetch('data/experience.json')
         console.error(error);
       });
 
-    function toggleMobileVisibility() {
-      if (window.matchMedia('(max-width: 900px)').matches) {
-        document.querySelector('.mobile-header').style.display = 'flex';
-        document.querySelector('.sidebar').style.display = 'none';
-        document.getElementById('desktop-fun').style.display = 'none';
-      } else {
-        document.querySelector('.mobile-header').style.display = 'none';
-        document.querySelector('.sidebar').style.display = 'flex';
-        document.getElementById('desktop-fun').style.display = 'block';
-      }
-    }
-    window.addEventListener('resize', toggleMobileVisibility);
-    window.addEventListener('DOMContentLoaded', toggleMobileVisibility);
-
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href.startsWith('#')) return;
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
+        if (!target) return;
         window.scrollTo({top: target.offsetTop - 60, behavior: 'smooth'});
         document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
         this.classList.add('active');
@@ -236,18 +144,12 @@ fetch('data/experience.json')
   const randomFont = fonts[randomIndex];
   const fontFamily = `'${randomFont}', sans-serif`;
   
-  const desktopBrand = document.getElementById('desktop-brand');
-  const mobileBrand = document.getElementById('mobile-brand');
-  
-  if (desktopBrand) desktopBrand.style.fontFamily = fontFamily;
-  if (mobileBrand) mobileBrand.style.fontFamily = fontFamily;
-
-  [desktopBrand, mobileBrand].forEach(el => {
-    if (el) {
-      el.style.cursor = 'pointer';
-      el.addEventListener('click', () => location.reload());
-    }
-  });
+  const brand = document.getElementById('desktop-brand');
+  if (brand) {
+    brand.style.fontFamily = fontFamily;
+    brand.style.cursor = 'pointer';
+    brand.addEventListener('click', () => location.reload());
+  }
 
   console.log('Font changed to:', randomFont);
 })();
