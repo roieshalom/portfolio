@@ -15,6 +15,6 @@
   <!-- Words -->
   <text x="195" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#333" letter-spacing="2">BARK</text>
   <text x="405" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#333" letter-spacing="2">TRUNK</text>
-  <text x="195" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#fff" letter-spacing="2">CROWN</text>
+  <text x="195" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#fff" letter-spacing="2">LEAF</text>
   <text x="405" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#fff" letter-spacing="2">ROOT</text>
 </svg>
