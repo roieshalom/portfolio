@@ -1,46 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-  <rect width="600" height="400" fill="#f9f7f4"/>
-  <!-- 4x4 grid of word tiles -->
-  <!-- Row 1 - yellow group -->
-  <rect x="50" y="60" width="115" height="65" rx="6" fill="#f9df6d"/>
-  <rect x="175" y="60" width="115" height="65" rx="6" fill="#f9df6d"/>
-  <rect x="300" y="60" width="115" height="65" rx="6" fill="#f9df6d"/>
-  <rect x="425" y="60" width="115" height="65" rx="6" fill="#f9df6d"/>
-  <!-- Row 2 - green group -->
-  <rect x="50" y="135" width="115" height="65" rx="6" fill="#a0c35a"/>
-  <rect x="175" y="135" width="115" height="65" rx="6" fill="#a0c35a"/>
-  <rect x="300" y="135" width="115" height="65" rx="6" fill="#a0c35a"/>
-  <rect x="425" y="135" width="115" height="65" rx="6" fill="#a0c35a"/>
-  <!-- Row 3 - blue group -->
-  <rect x="50" y="210" width="115" height="65" rx="6" fill="#6aabe4"/>
-  <rect x="175" y="210" width="115" height="65" rx="6" fill="#6aabe4"/>
-  <rect x="300" y="210" width="115" height="65" rx="6" fill="#6aabe4"/>
-  <rect x="425" y="210" width="115" height="65" rx="6" fill="#6aabe4"/>
-  <!-- Row 4 - purple group -->
-  <rect x="50" y="285" width="115" height="65" rx="6" fill="#ba81c5"/>
-  <rect x="175" y="285" width="115" height="65" rx="6" fill="#ba81c5"/>
-  <rect x="300" y="285" width="115" height="65" rx="6" fill="#ba81c5"/>
-  <rect x="425" y="285" width="115" height="65" rx="6" fill="#ba81c5"/>
-  <!-- Word labels row 1 -->
-  <text x="107" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333">BARK</text>
-  <text x="232" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333">PITCH</text>
-  <text x="357" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333">SCALE</text>
-  <text x="482" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333">NOTE</text>
-  <!-- Word labels row 2 -->
-  <text x="107" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333">SPRING</text>
-  <text x="232" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333">TRUNK</text>
-  <text x="357" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333">POOL</text>
-  <text x="482" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333">DRAFT</text>
-  <!-- Word labels row 3 -->
-  <text x="107" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff">BASS</text>
-  <text x="232" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff">CRANE</text>
-  <text x="357" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff">BANK</text>
-  <text x="482" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff">LIGHT</text>
-  <!-- Word labels row 4 -->
-  <text x="107" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff">CAST</text>
-  <text x="232" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff">STRIKE</text>
-  <text x="357" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff">CATCH</text>
-  <text x="482" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff">MATCH</text>
-  <!-- Title -->
-  <text x="300" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#333" letter-spacing="4">GROOPED</text>
+  <!-- Background -->
+  <rect width="600" height="400" fill="#3d3d5c"/>
+  <!-- 2x2 grid of large color blocks -->
+  <rect x="110" y="80" width="170" height="105" rx="14" fill="#f9df6d"/>
+  <rect x="320" y="80" width="170" height="105" rx="14" fill="#a0c35a"/>
+  <rect x="110" y="215" width="170" height="105" rx="14" fill="#6aabe4"/>
+  <rect x="320" y="215" width="170" height="105" rx="14" fill="#ba81c5"/>
 </svg>
