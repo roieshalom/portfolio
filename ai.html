@@ -10,21 +10,21 @@
   </script>
   <meta charset="UTF-8">
   <title>AI Projects · Roie Shalom</title>
-  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <nav class="top-nav">
-    <a href="../index.html" class="brand" id="desktop-brand">Roie Shalom</a>
+    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
     <div class="top-nav-links">
-      <a href="../index.html#about" class="nav-link">About</a>
-      <a href="../index.html#experience" class="nav-link">Experience</a>
-      <a href="../projects.html" class="nav-link">Projects</a>
-      <a href="../ai/" class="nav-link active">AI Projects</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#experience" class="nav-link">Experience</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="ai.html" class="nav-link active">AI Projects</a>
     </div>
   </nav>
   <header>
@@ -39,13 +39,15 @@
   <footer></footer>
 
   <script>
-    fetch('data/projects.json')
+    fetch('ai/data/projects.json')
       .then(res => res.json())
       .then(projects => {
         const gallery = document.getElementById('ai-gallery');
-        gallery.innerHTML = projects.map(proj => `
+        gallery.innerHTML = projects.map(proj => {
+          const thumb = proj.thumbnail.replace('../content/', 'content/');
+          return `
           <a href="${proj.link}" class="gallery-tile" target="_blank" rel="noopener noreferrer">
-            <img src="${proj.thumbnail}" alt="${proj.title_bold}" />
+            <img src="${thumb}" alt="${proj.title_bold}" />
             <div class="tile-overlay">
               <div class="tile-label">
                 <strong>${proj.title_bold}</strong> ${proj.title_regular}
@@ -53,12 +55,13 @@
               <div class="tile-desc">${proj.shortdesc}</div>
             </div>
           </a>
-        `).join('');
+        `;
+        }).join('');
       })
       .catch(error => {
         console.error(error);
       });
   </script>
-  <script src="../theme.js"></script>
+  <script src="theme.js"></script>
 </body>
 </html>
