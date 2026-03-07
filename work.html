@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "u4dp513xm1");
+  </script>
+  <meta charset="UTF-8">
+  <title>Work · Roie Shalom</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="top-nav">
+    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
+    <div class="top-nav-links">
+      <a href="work.html" class="nav-link active">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </nav>
+  <main class="gallery-content">
+    <section class="section">
+      <div class="section-title">Design Work</div>
+      <p>A mix of product design, UX, and visual work. Projects here span discovery and research, interaction design, design systems, and prototyping, across enterprise software, consumer apps, and the occasional creative detour.</p>
+      <div class="gallery-grid" id="ux-gallery"></div>
+    </section>
+    <section class="section">
+      <div class="section-title">AI Projects</div>
+      <p>These projects grew out of personal interests, needs, and occasionally just the urge to build something fun. The ideas, the decisions, and the direction are mine. AI is part of how I develop and think things through.</p>
+      <div class="gallery-grid" id="ai-gallery"></div>
+    </section>
+  </main>
+  <footer></footer>
+
+  <script>
+    fetch('data/projects.json')
+      .then(res => res.json())
+      .then(projects => {
+        const gallery = document.getElementById('ux-gallery');
+        gallery.innerHTML = projects.filter(p => p.show).map(proj => `
+          <a href="${proj.link}" class="gallery-tile">
+            <img src="${proj.thumbnail}" alt="${proj.title_bold}" />
+            <div class="tile-overlay">
+              <div class="tile-label"><strong>${proj.title_bold}</strong> ${proj.title_regular}</div>
+              <div class="tile-desc">${proj.gallery_desc}</div>
+            </div>
+          </a>
+        `).join('');
+      })
+      .catch(err => console.error(err));
+
+    fetch('ai/data/projects.json')
+      .then(res => res.json())
+      .then(projects => {
+        const gallery = document.getElementById('ai-gallery');
+        gallery.innerHTML = projects.map(proj => {
+          const thumb = proj.thumbnail.replace('../content/', 'content/');
+          return `
+          <a href="${proj.link}" class="gallery-tile" target="_blank" rel="noopener noreferrer">
+            <img src="${thumb}" alt="${proj.title_bold}" />
+            <div class="tile-overlay">
+              <div class="tile-label"><strong>${proj.title_bold}</strong> ${proj.title_regular || ''}</div>
+              <div class="tile-desc">${proj.shortdesc}</div>
+            </div>
+          </a>
+        `;
+        }).join('');
+      })
+      .catch(err => console.error(err));
+  </script>
+  <script src="theme.js"></script>
+</body>
+</html>

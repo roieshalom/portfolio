@@ -21,170 +21,78 @@
   <nav class="top-nav">
     <span class="brand" id="desktop-brand">Roie Shalom</span>
     <div class="top-nav-links">
-      <a href="#about" class="nav-link active">About</a>
-      <a href="#experience" class="nav-link">Experience</a>
-      <a href="projects.html" class="nav-link">Projects</a>
-      <a href="ai.html" class="nav-link">AI Projects</a>
+      <a href="work.html" class="nav-link">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </nav>
   <main class="main-content">
-      <section id="about" class="section">
-        <div class="section-title">About</div>
-        <p>
-          I'm an experienced and creative designer with an eye for details and a desire for clear and coherent design. Fascinated by innovation and technology, I explored various fields. Recently, I've worked as an interface designer and manager with global companies such as Wayfair, HP, Stanley Black & Decker, and SanDisk Corporation.
-        </p>
-      </section>
-      <section id="experience" class="section">
-        <div class="section-title">
-          Experience
-          <a href="content/downloads/Roie Shalom Product Design Lead.pdf" download class="icon-link">
-            <i class="fa-solid fa-circle-down" aria-hidden="true"></i> Download my CV
-          </a>
-        </div>
-        <ul id="experience-list" class="experience-list"></ul>
-      </section>
-
-      <section id="work" class="section">
-        <div class="section-title">UX Projects
-          <a href="projects.html" class="icon-link">
-            <i class="fa-solid fa-swatchbook" aria-hidden="true"></i> View project gallery
-          </a>
-        </div>
-        <div class="gallery-grid home-grid" id="projects-list"></div>
-      </section>
-      <section id="ai-work" class="section">
-        <div class="section-title">AI Projects
-          <a href="ai.html" class="icon-link">
-            <i class="fa-solid fa-robot" aria-hidden="true"></i> View all AI projects
-          </a>
-        </div>
-        <div class="gallery-grid home-grid" id="ai-projects-list"></div>
-      </section>
-      <!-- Footer placed after all main content, at the end of main-content column -->
-      <footer>
-        <p style="text-align:center; margin-top:48px; margin-bottom:18px; color:var(--color-text); font-size:.9em;">
-          Coded in VS Code with Perplexity as my counterpart.<br>
-          This is also a learning and experiment environment for me<br>
-          as I try to integrate and goof around with technologies. Let's see where it takes me.
-        </p>
-      </footer>
+    <section class="section">
+      <p>
+        I'm an experienced and creative designer with an eye for details and a desire for clear and coherent design. Fascinated by innovation and technology, I explored various fields. Recently, I've worked as an interface designer and manager with global companies such as Wayfair, HP, Stanley Black &amp; Decker, and SanDisk Corporation.
+      </p>
+    </section>
+    <section class="section">
+      <div class="section-title">Selected Work
+        <a href="work.html" class="icon-link">
+          <i class="fa-solid fa-swatchbook" aria-hidden="true"></i> View all work
+        </a>
+      </div>
+      <div class="gallery-grid home-grid" id="featured-list"></div>
+    </section>
+    <footer>
+      <p style="text-align:center; margin-top:48px; margin-bottom:18px; color:var(--color-text); font-size:.9em;">
+        Coded in VS Code with Perplexity as my counterpart.<br>
+        This is also a learning and experiment environment for me<br>
+        as I try to integrate and goof around with technologies. Let's see where it takes me.
+      </p>
+    </footer>
   </main>
   <script>
-// Fetch Experience
-fetch('data/experience.json')
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById('experience-list');
-    container.innerHTML = data.map(item => {
-      const companiesHtml = (item.companies || [])
-        .map(c => `<a href="${c.link}" class="exp-company" target="_blank">${c.name}</a>`)
-        .join(', ');
+    const featured = [
+      { src: 'data/projects.json', id: 'suite-as-pie', external: false },
+      { src: 'data/projects.json', id: 'olamundo', external: false },
+      { src: 'ai/data/projects.json', id: 'grooped', external: true }
+    ];
 
-      return `
-        <li class="experience-item">
-          <strong class="exp-role">${item.position}</strong>, 
-          ${companiesHtml}, 
-          <strong class="exp-years">${item.years}</strong><br>
-          <span class="exp-desc">${item.description}</span>
-        </li>
-      `;
-    }).join('');
-  })
-  .catch(error => {
-    document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
-    console.error(error);
-  });
-
-
-    // Fetch Projects - only show where "homepage": true
-    fetch('data/projects.json')
-      .then(res => res.json())
-      .then(projects => {
-        const homepageProjects = projects.filter(proj => proj.homepage);
-        const container = document.getElementById('projects-list');
-        container.innerHTML = homepageProjects.map(proj => `
-          <a href="project.php?id=${proj.id}" class="gallery-tile">
-            <img src="${proj.thumbnail}" alt="${proj.title_bold} thumbnail">
-            <div class="tile-overlay">
-              <div class="tile-label"><strong>${proj.title_bold}</strong> ${proj.title_regular}</div>
-              <div class="tile-desc">${proj.shortdesc}</div>
-            </div>
-          </a>
-        `).join('');
-      })
-      .catch(error => {
-        document.getElementById('projects-list').innerHTML = '<div>Error loading projects.</div>';
-        console.error(error);
-      });
-
-    // Fetch AI Projects - show first 3
-    fetch('ai/data/projects.json')
-      .then(res => res.json())
-      .then(projects => {
-        const container = document.getElementById('ai-projects-list');
-        container.innerHTML = projects.slice(0, 3).map(proj => {
-          const thumb = proj.thumbnail.replace('../content/', 'content/');
-          return `
-          <a href="${proj.link}" class="gallery-tile" target="_blank" rel="noopener">
-            <img src="${thumb}" alt="${proj.title_bold} thumbnail">
-            <div class="tile-overlay">
-              <div class="tile-label"><strong>${proj.title_bold}</strong></div>
-              <div class="tile-desc">${proj.shortdesc}</div>
-            </div>
-          </a>
-        `;
-        }).join('');
-      })
-      .catch(error => {
-        document.getElementById('ai-projects-list').innerHTML = '<div>Error loading AI projects.</div>';
-        console.error(error);
-      });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (!href.startsWith('#')) return;
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (!target) return;
-        window.scrollTo({top: target.offsetTop - 60, behavior: 'smooth'});
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
-    const sections = ['about', 'experience'];
-    window.addEventListener('scroll', () => {
-      let currentSection = sections[0];
-      sections.forEach(id => {
-        const el = document.getElementById(id);
-        if (window.scrollY >= el.offsetTop - 110) currentSection = id;
-      });
-      document.querySelectorAll('.nav-link').forEach(l => {
-        l.classList.toggle('active', l.getAttribute('href') === '#' + currentSection);
-      });
-    });
-    // No theme logic here! All handled in theme.js
+    Promise.all([
+      fetch('data/projects.json').then(r => r.json()),
+      fetch('ai/data/projects.json').then(r => r.json())
+    ]).then(([uxProjects, aiProjects]) => {
+      const order = ['suite-as-pie', 'olamundo', 'grooped'];
+      const all = [
+        ...uxProjects.map(p => ({ ...p, external: false })),
+        ...aiProjects.map(p => ({
+          ...p,
+          external: true,
+          thumbnail: p.thumbnail.replace('../content/', 'content/')
+        }))
+      ];
+      const tiles = order.map(id => all.find(p => p.id === id)).filter(Boolean);
+      document.getElementById('featured-list').innerHTML = tiles.map(proj => `
+        <a href="${proj.external ? proj.link : 'project.php?id=' + proj.id}" class="gallery-tile" ${proj.external ? 'target="_blank" rel="noopener"' : ''}>
+          <img src="${proj.thumbnail}" alt="${proj.title_bold} thumbnail">
+          <div class="tile-overlay">
+            <div class="tile-label"><strong>${proj.title_bold}</strong> ${proj.title_regular || ''}</div>
+            <div class="tile-desc">${proj.shortdesc}</div>
+          </div>
+        </a>
+      `).join('');
+    }).catch(err => console.error(err));
   </script>
   <script src="theme.js"></script>
   <script src="name-animator.js"></script>
   <script>
 (function() {
   const fonts = ["Playfair Display", "Righteous", "Pacifico", "Bebas Neue", "Oswald", "Lobster", "Permanent Marker", "Caveat", "Albert Sans"];
-  
-  const randomIndex = Math.floor(Math.random() * fonts.length);
-  const randomFont = fonts[randomIndex];
-  const fontFamily = `'${randomFont}', sans-serif`;
-  
+  const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
   const brand = document.getElementById('desktop-brand');
   if (brand) {
-    brand.style.fontFamily = fontFamily;
+    brand.style.fontFamily = `'${randomFont}', sans-serif`;
     brand.style.cursor = 'pointer';
     brand.addEventListener('click', () => location.reload());
   }
-
-  console.log('Font changed to:', randomFont);
 })();
 </script>
-
 </body>
 </html>

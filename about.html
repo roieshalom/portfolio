@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "u4dp513xm1");
+  </script>
+  <meta charset="UTF-8">
+  <title>About · Roie Shalom</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="top-nav">
+    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
+    <div class="top-nav-links">
+      <a href="work.html" class="nav-link">Work</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </nav>
+  <main class="main-content">
+    <section class="section">
+      <div class="section-title">About</div>
+      <p>
+        I'm an experienced and creative designer with an eye for details and a desire for clear and coherent design. Fascinated by innovation and technology, I explored various fields. Recently, I've worked as an interface designer and manager with global companies such as Wayfair, HP, Stanley Black &amp; Decker, and SanDisk Corporation.
+      </p>
+    </section>
+    <section class="section">
+      <div class="section-title">
+        Experience
+        <a href="content/downloads/Roie Shalom Product Design Lead.pdf" download class="icon-link">
+          <i class="fa-solid fa-circle-down" aria-hidden="true"></i> Download my CV
+        </a>
+      </div>
+      <ul id="experience-list" class="experience-list"></ul>
+    </section>
+  </main>
+
+  <script>
+    fetch('data/experience.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('experience-list');
+        container.innerHTML = data.map(item => {
+          const companiesHtml = (item.companies || [])
+            .map(c => `<a href="${c.link}" class="exp-company" target="_blank">${c.name}</a>`)
+            .join(', ');
+          return `
+            <li class="experience-item">
+              <strong class="exp-role">${item.position}</strong>,
+              ${companiesHtml},
+              <strong class="exp-years">${item.years}</strong><br>
+              <span class="exp-desc">${item.description}</span>
+            </li>
+          `;
+        }).join('');
+      })
+      .catch(error => {
+        document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
+        console.error(error);
+      });
+  </script>
+  <script src="theme.js"></script>
+</body>
+</html>
