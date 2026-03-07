@@ -187,13 +187,17 @@ button:focus {
   max-width: var(--max-width);
   margin: 0 auto;
   box-sizing: border-box;
-  padding-top: 4px;
+  padding-top: 20px;
   padding-bottom: 60px;
 }
 
 .section {
   margin-bottom: var(--spacing-section);
   overflow: visible;
+}
+
+.section > p:first-child {
+  margin-top: 0;
 }
 
 .section-title {
