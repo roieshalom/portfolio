@@ -30,9 +30,41 @@
   <main class="main-content">
     <section class="section">
       <div class="section-title">Contact</div>
-      <p>Coming soon.</p>
+      <p>Got a project in mind, a question, or just want to say hello? Fill in the form and I'll get back to you.</p>
+      <form class="contact-form" id="contact-form">
+        <div class="form-row">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required placeholder="Jane Smith">
+        </div>
+        <div class="form-row">
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="email" required placeholder="jane@example.com">
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="What's on your mind?" rows="5"></textarea>
+        </div>
+        <button type="submit">Send message</button>
+      </form>
+      <p class="form-success" id="form-success" style="display:none;">Thanks! I'll be in touch soon.</p>
     </section>
   </main>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const res = await fetch('https://formspree.io/f/mkoqgrwg', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      }
+    });
+  </script>
   <script src="theme.js"></script>
 </body>
 </html>
