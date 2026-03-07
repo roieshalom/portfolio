@@ -1,4 +1,7 @@
 :root {
+  --max-width: 840px;
+  --spacing-section: 36px;
+  --radius-card: 16px;
   --color-bg: #fafafa;
   --color-text-main: #404040;
   --color-text: #555;
@@ -10,11 +13,6 @@
   --color-card: #fff;
   --color-card-shadow: rgba(15,20,55,0.07);
   --color-card-shadow-hover: rgba(15,20,55,0.13);
-}
-
-a {
-  text-decoration: none;
-  color: var(--color-link); /* Use your theme variable */
 }
 
 html[data-theme="dark"] {
@@ -31,31 +29,69 @@ html[data-theme="dark"] {
   --color-card-shadow-hover: rgba(0,0,0,0.4);
 }
 
+/* ============================================
+   BASE
+   ============================================ */
+
+html {
+  min-height: 100%;
+  width: 100%;
+}
+
 body {
   min-height: 100vh;
   background: var(--color-bg);
   box-sizing: border-box;
   margin: 0;
-  padding-left: clamp(20px, 5vw, 200px);
-  padding-right: clamp(20px, 5vw, 200px);
   font-family: 'Albert Sans', Arial, sans-serif;
   color: var(--color-text);
-  font-size: 0.875rem; /* 14px */
+  font-size: 0.875rem;
   letter-spacing: .01em;
   scroll-behavior: smooth;
   line-height: 1.3rem;
   overflow: visible;
+  padding-left: clamp(20px, 5vw, 32px);
+  padding-right: clamp(20px, 5vw, 32px);
+}
+
+@media (min-width: 600px) {
+  body {
+    padding-left: clamp(32px, 8vw, 64px);
+    padding-right: clamp(32px, 8vw, 64px);
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    padding-left: clamp(80px, 12vw, 200px);
+    padding-right: clamp(80px, 12vw, 200px);
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-link);
 }
 
 h1 {
-    display: inline;
-    font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
+  display: inline;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+
+img {
+  border-radius: 12px;
 }
 
 button {
@@ -71,7 +107,7 @@ button {
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
   transition: background 0.18s, box-shadow 0.18s;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
 }
 
 button:hover,
@@ -81,129 +117,10 @@ button:focus {
   outline: none;
 }
 
-img {
-  border-radius: 12px; /* or your preferred radius */
-}
-img :hover {
-  box-shadow: 8px 8px 4px rgba(233, 30, 98, 0.25); /* example shadow */
-}
+/* ============================================
+   NAVIGATION
+   ============================================ */
 
-body {
-  /* Default: mobile-friendly spacing */
-  padding-left: clamp(20px, 5vw, 32px);
-  padding-right: clamp(20px, 5vw, 32px);
-}
-/* Tablet: more space */
-@media (min-width: 600px) {
-  body {
-    padding-left: clamp(32px, 8vw, 64px);
-    padding-right: clamp(32px, 8vw, 64px);
-  }
-}
-/* Desktop: wide spacing */
-@media (min-width: 1200px) {
-  body {
-    padding-left: clamp(80px, 12vw, 200px);
-    padding-right: clamp(80px, 12vw, 200px);
-  }
-}
-html {
-  min-height: 100%;
-  width: 100%;
-}
-
-header {
-  margin-top: 32px;
-  max-width: 840px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.layout {
-  padding-top: 54px;
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1360px;
-  margin: 0 auto;
-  gap: 0;
-}
-.sidebar {
-  flex: 0 0 400px;
-  background: var(--color-bg);
-  box-sizing: border-box;
-  padding-bottom: 60px;
-  padding-right: 100px;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  align-self: flex-start;
-  display: flex;
-}
-.sidebar-inner {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.brand,
-#desktop-brand {
-  font-size: 3rem;
-  font-weight: 600;
-  line-height: 1;
-  color: var(--color-text-main);
-  display: block;
-  transition: font-size 0.2s;
-}
-#mobile-brand {
-  font-size: 3rem;
-  font-weight: 200;
-  color: var(--color-text-main);
-  transition: font-size 0.2s;
-  padding-bottom: 14px;
-  margin-left: -0.065em;  /* ← name specific left margin tweak */
-  letter-spacing: 0;  /* ← ADD THIS to reset letter-spacing */
-
-}
-.role,
-#desktop-role {
-  font-size: 1.07rem;
-  font-weight: 400;
-  color: var(--color-text);
-  margin-bottom: 16px;
-  display: block;
-  transition: font-size 0.2s;
-}
-#mobile-role {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--color-text);
-  transition: font-size 0.2s;
-}
-/* Proportional font reduction mobile/tablet */
-@media (max-width: 500px) {
-  .brand, #desktop-brand, #mobile-brand {
-    font-size: 3rem;
-  }
-  .role, #desktop-role, #mobile-role {
-    font-size: 0.92rem;
-  }
-    body {
-    font-size: 1rem; /* or your preferred size */
-  }
-  @media (max-width: 500px) {
-  #project-title {
-    line-height: 1.3em;   /* or try 1.3em for even more spacing */
-    margin-bottom: 0.7em;  /* optional, adds more room below */
-  }
-}
-}
-.sidebar-bio {
-  margin-bottom: 18px;
-  color: var(--color-muted);
-  font-size: .75rem;
-  line-height: 1.5;
-}
 .top-nav {
   position: sticky;
   top: 10px;
@@ -215,9 +132,19 @@ header {
   background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
   margin-bottom: 8px;
-  max-width: 840px;
+  max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
+}
+
+.brand,
+#desktop-brand {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-text-main);
+  display: block;
+  transition: font-size 0.2s;
 }
 
 .top-nav-links {
@@ -236,6 +163,7 @@ header {
   border-bottom: 1.5px solid transparent;
   transition: color 0.2s, border-color 0.2s;
 }
+
 .nav-link.active,
 .nav-link:hover {
   color: var(--color-link);
@@ -249,102 +177,24 @@ header {
     display: none;
   }
 }
-.fun-title {
-  font-weight: 600;
-  color: var(--color-text-main);
-  margin-bottom: 6px;
-  font-size: 1.05em;
-}
-.fun-links {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.fun-link {
-  color: var(--color-text-main);
-  font-size: 0.97em;
-  text-decoration: none;
-  padding: 3px 0;
-  transition: opacity 0.2s;
-}
-.fun-link:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-#theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 0.97em;
-  color: var(--color-link);
-  padding: 0;
-  margin-top: 18px;
-  margin-bottom: 18px;
-  text-decoration: none;
-  text-align: left;
-  display: inline;
-}
-#theme-toggle:hover {
-  text-decoration: underline;
-}
-#theme-toggle svg,
-#theme-toggle img,
-#theme-toggle .icon {
-  display: inline;
-  vertical-align: middle;
-  margin-right: 4px;
-}
-#theme-toggle:focus-visible {
-  outline: 2px solid var(--color-link);
-}
-#theme-toggle:focus:not(:focus-visible) {
-  outline: none;
-}
-.social {
-  margin-top: auto;
-  margin-bottom: 36px;
-  display: flex;
-  gap: 10px;
-}
-.social a {
-  margin-right: 0;
-  color: var(--color-link);
-  text-decoration: none;
-  font-weight: 500;
-}
-.social a:hover {
-  text-decoration: underline;
-  opacity: .65;
-}
-.social a svg {
-  display: inline-block;
-  vertical-align: middle;
-  height: 1.3em;
-  width: 1.3em;
-  fill: var(--color-link);
-  transition: opacity 0.2s;
-}
-.social a:hover svg {
-  opacity: .65;
-}
-.main-content {
-  max-width: 840px;
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+
+.main-content,
+.gallery-content {
+  max-width: var(--max-width);
   margin: 0 auto;
   box-sizing: border-box;
-  padding-top: 4px;
   padding-bottom: 60px;
 }
 
-.gallery-content {
-  max-width: 840px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding-bottom: 60px;
-}
 .section {
-  margin-bottom: 36px;
-  overflow: visible
+  margin-bottom: var(--spacing-section);
+  overflow: visible;
 }
+
 .section-title {
   display: flex;
   align-items: center;
@@ -354,158 +204,42 @@ header {
   color: var(--color-text-main);
   font-weight: 700;
   margin-bottom: 10px;
-  justify-content: space-between;  /* <-- add THIS line */
+  justify-content: space-between;
 }
 
-.experience-list,
-.personal-list {
+/* ============================================
+   EXPERIENCE
+   ============================================ */
+
+.experience-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-.experience-item,
-.personal-list li {
+
+.experience-item {
   margin-bottom: 20px;
   line-height: 1.4;
 }
+
 .exp-role {
   color: var(--color-text);
   font-weight: bold;
 }
-.selected-work {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin-top: 16px;
-  justify-content: flex-start;
-  overflow: visible;
-}
-.work-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  background: none;
-  border-radius: 0;
-  padding: 20px 0;
-  margin: 0;
-  box-sizing: border-box;
-  /* NEW: Make entire card clickable */
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.2s ease;
-  cursor: pointer;
-  overflow: visible;
-}
 
-.work-item:hover {
-  transform: translateY(-2px);
-}
-
-.work-item:hover .work-thumb {
-  opacity: 0.9;
-  transition: opacity 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 4px 4px 0px rgba(233, 30, 98, 0.3); /* example shadow */
-}
-
-.work-thumb {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
-  margin-right: 32px;
-  margin-bottom: 0;
-  background: none;
-  cursor: pointer;
-}
-.work-details {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-}
-/* Use same as .work-title for project titles */
-.work-title {
-  font-size: 1.19rem;
-  font-weight: bold;
-  margin-bottom: 7px;
-  color: var(--color-text-main);
-  letter-spacing: 0.7px;
-}
-/* Use default paragraph styles for description */
-.work-desc {
-  font-size: inherit;
-  color: inherit;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2rem;
-}
-/* Remove background on mobile, keep divider for grouping */
-@media (max-width: 750px) {
-  .work-item {
-    background: none;
-    border-radius: 0;
-    border-bottom: 1.5px solid var(--color-grey-light);
-    padding: 14px 0 10px 0;
-    margin: 0;
-  }
-  .work-thumb {
-    width: 90px;
-    height: 90px;
-    margin-right: 16px;
-  }
-  .work-title {
-    color: var(--color-text);
-    font-weight: bold;
-  }
-}
-@media (max-width: 500px) {
-  .work-thumb {
-    width: 64px;
-    height: 64px;
-    margin-right: 10px;
-    overflow: visible;
-  }
-  .work-title {
-    font-size: 1.02rem;
-  }
-  .work-item {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-/* Hide Fun section on mobile/tablet screens */
-@media (max-width: 900px) {
-  #desktop-fun,
-  .mobile-fun {
-    display: none !important;
-  }
-    body {
-    padding-top: 24px; /* Change 24px to your preferred value */
-  }
-  .layout {
-    padding-top: 0;
-  }
-  #project-title {
-    line-height: 1.3em;   /* or try 1.3em for even more spacing */
-    margin-bottom: 0.7em;  /* optional, adds more room below */
-  }
-}
-  .mobile-header {
-    margin-top: 28px;
-  }
 .exp-company {
   color: var(--color-link);
   font-weight: normal;
   text-decoration: underline;
   text-underline-offset: 2px;
-  transition: text-decoration-thickness 0.2s, color 0.2s, transform 0.2s cubic-bezier(.37,1.13,.62,.96);
-  display: inline-block; /* <-- Add this line! */
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(.37,1.13,.62,.96);
 }
+
 .exp-company:hover,
 .exp-company:focus {
   transform: translateY(-2px);
 }
-
 
 .exp-desc {
   color: var(--color-text);
@@ -514,130 +248,53 @@ header {
   text-decoration: none;
 }
 
-/* Applies to both desktop and mobile */
-.identity-block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.mobile-brand, #mobile-brand,
-.mobile-role, #mobile-role {
-  display: block;
-  display: block;
-  margin-top: 0;
-  margin-bottom: 0;
-  /* Don't set margin-left/right here so your specific rule can work */
-
-}
-.mobile-role, #mobile-role {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--color-text);
-  margin-top: 0.15em;
-  margin-bottom: 16px;
-  transition: font-size 0.2s;
-  padding-left: 0;  /* ← ADD THIS */
-  margin-left: 0;   /* ← ADD THIS */
-  letter-spacing: 0;  /* ← ADD THIS to reset letter-spacing */
-}
-#theme-controls {
-  font-size: 1em;
-  margin: 0;
-  text-align: left;
-}
-
-#theme-controls a {
-  color: var(--color-link);
-  margin: 0 2px;
-  padding: 2px 8px;
-  border-radius: 3px;
-  text-decoration: none;
-  transition: background 0.15s, color 0.15s;
-  cursor: pointer;
-  font-weight: 500;
-  outline: none;
-}
-
-#theme-controls a.selected {
-  font-weight: bold;
-  color: var(--color-link);
-  text-decoration: underline;
-  background: none;
-  border-radius: 3px;
-}
-
-#theme-controls a:hover,
-#theme-controls a:focus {
-  background: var(--color-link-bg); /* your pinkish light background */
-  color: var(--color-link);
-  text-decoration: underline;
-  border-radius: 3px;
-}
-
-.cv-link {
-  color: var(--color-link);
-  font-size: .80rem;
-  letter-spacing: 0px;
-  font-weight:normal ;
-  text-decoration: underline;
-  display: flex;
-  align-items: center;
-  padding-left: 0;
-}
-
 /* ============================================
-   PROJECT PAGE STYLES
+   LINKS & ICONS
    ============================================ */
 
-/* Project container - centers content */
-.project-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-/* Image gallery grid */
-.project-gallery {
-  display: grid;
-  gap: 24px;
-  margin-top: 48px;
-}
-
-.project-gallery img {
-  width: 100%;
-  border: #1111110b 1px solid;
-  box-shadow: none;
-}
-
 .icon-link {
-  font-size:1rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0px;
   display: inline-flex;
   align-items: center;
-  gap: 2px; /* space between icon and text */
-  text-decoration: none; /* no underline ever */
+  gap: 2px;
+  text-decoration: none;
   color: var(--color-link);
   cursor: pointer;
   transition: transform 0.2s cubic-bezier(.37,1.13,.62,.96);
 }
+
 .icon-link:hover {
   transform: translateY(-2px);
 }
 
 .icon-link i {
   text-decoration: none !important;
-  font-size: 1.05em; /* optional, scales icon with text */
+  font-size: 1.05em;
 }
 
-html[data-theme="light"] { /* light styles */ }
-html[data-theme="dark"]  { /* dark styles */ }
-html[data-theme="auto"]  { /* system or fallback styles */ }
+.back-nav-link {
+  color: var(--color-link);
+  background: none;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05em;
+  letter-spacing: 0.5px;
+  padding: 6px 0 6px 3px;
+  border: none;
+  transition: transform 0.2s cubic-bezier(.37, 1.13, .62, .96);
+  display: inline-block;
+}
 
+.back-nav-link:hover {
+  transform: translateY(-2px);
+}
 
 /* ============================================
-   GALLERY STYLES
+   GALLERY
    ============================================ */
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -650,32 +307,10 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   padding: 1rem 0;
 }
 
-@media (max-width: 600px) {
-  .home-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.9rem;
-  }
-  .gallery-tile img {
-    height: 130px;
-  }
-  .tile-overlay {
-    padding: 0.6em 0.8em 0.8em;
-  }
-  .tile-label {
-    font-size: 0.82em;
-  }
-  .tile-desc {
-    display: none;
-  }
-}
-
 .gallery-tile {
   display: flex;
   flex-direction: column;
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   background: var(--color-card, #fff);
   transition: box-shadow 0.23s cubic-bezier(.5,.2,.23,1), transform 0.17s cubic-bezier(.4,1,.4,1);
@@ -729,120 +364,84 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   line-height: 1.45;
 }
 
-
-/* Back link style for completeness */
-.back-nav-link {
-  color: var(--color-link);
-  background: none;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.05em;
-  letter-spacing: 0.5px;
-  padding: 6px 0 6px 3px;
-  border: none;
-  transition: transform 0.2s cubic-bezier(.37, 1.13, .62, .96);
-  display: inline-block;
+@media (max-width: 600px) {
+  .home-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+  }
+  .gallery-tile img {
+    height: 130px;
+  }
+  .tile-overlay {
+    padding: 0.6em 0.8em 0.8em;
+  }
+  .tile-label {
+    font-size: 0.82em;
+  }
+  .tile-desc {
+    display: none;
+  }
 }
 
-.back-nav-link:hover {
-  transform: translateY(-2px);
+/* ============================================
+   PROJECT PAGES
+   ============================================ */
+
+.project-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.project-gallery {
+  display: grid;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.project-gallery img {
+  width: 100%;
+  border: #1111110b 1px solid;
+  box-shadow: none;
 }
 
 #project-title {
-  font-weight: 400;       /* Makes the whole h1 normal weight */
+  font-weight: 400;
 }
+
 #project-title strong {
-  font-weight: bold;      /* Only bolds the content inside <strong> */
+  font-weight: bold;
 }
 
-/* ============================================
-   SIDEBAR PROJECTS
-   ============================================ */
-
-.side-project-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+@media (max-width: 500px) {
+  #project-title {
+    line-height: 1.3em;
+    margin-bottom: 0.7em;
+  }
 }
 
-.side-project-list li {
-  margin-bottom: 1.1em;
-}
-
-.sideproject-link {
-  display: flex;
-  align-items: center;
-  gap: 0.6em;
-  text-decoration: none;
-  background: transparent;      /* <-- Ensure no background by default */
-}
-
-/* Animate up, no pink bg on hover/focus */
-.sideproject-link:hover, .sideproject-link:focus {
-  background: transparent !important; /* <-- Remove inherited pink */
-  text-decoration: none !important;
-}
-
-/* Text stack to column, keeping desc under name, not under icon */
-.sideproject-textblock {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-}
-
-/* Existing .exp-company styles (project name) - center aligned with icon already */
-.exp-company {
-  display: inline-block;
-  font-weight: normal;
-  color: var(--color-link);
-}
-
-/* Description line always below name, underline on hover */
-
-.sideproject-icon {
-  width: 32px !important;
-  height: 32px !important;
-  border-radius: 5px; 
-}
-
-/* ============================================
-   PROJECTS DESCRIPTION
-   ============================================ */
-
-/* Project body container – shared by all projects */
 .project-body {
   margin-top: 60px;
   margin-left: auto;
-  margin-right:auto;
+  margin-right: auto;
   max-width: 700px;
   text-align: left;
 }
 
-/* Give paragraphs inside project text some rhythm */
 .project-body p {
   margin: 0 0 0.8em 0;
   line-height: 1.5;
   color: var(--color-text-main);
 }
 
-/* Emphasis inside project copy */
 .project-body strong {
   font-weight: 600;
   color: var(--color-text-main);
 }
 
-/* Turn inline section labels (My role, Project goals…) into headings */
-.project-body br + br + strong {
-  display: inline-block;
-  margin-top: 1.4em;
-  margin-bottom: 0.4em;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-link);   /* reuse existing accent */
-}
-
-/* Lists inside project text */
 .project-body ul,
 .project-body ol {
   margin: 0.2em 0 0.8em 0;
@@ -854,7 +453,6 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
   line-height: 1.45;
 }
 
-/* Numbered lines with consistent alignment */
 .project-body span.numbered-line {
   display: flex !important;
   align-items: flex-start;
@@ -866,44 +464,17 @@ html[data-theme="auto"]  { /* system or fallback styles */ }
 }
 
 .project-body span.numbered-line .num {
-  flex: 0 0 1.15em;  /* Fixed width for all numbers */
+  flex: 0 0 1.15em;
   margin-right: 0;
 }
 
-/* 1. Base strong style in project text */
-.project-body strong {
-  font-weight: 600;
-  color: var(--color-text-main);
-}
-
-/* 2. Heading-style labels (My role, Project goals, etc.) */
-.project-body p strong.section-label {
-  display: inline-block;
-  margin-top: 1.4em;
-  margin-bottom: 0.4em;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-link);
-}
-
-/* Project section headings inside the case study body */
 .project-body .section-label {
   display: inline-block;
   margin-top: 1.4em;
   margin-bottom: 0.4em;
   font-size: 0.85rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-link);
-}
-
-/* Ensure generic strong does not override them */
-.project-body strong {
-  font-weight: 600;
-  color: var(--color-text-main);
-}
-
-.project-body .section-label {
-  font-weight: 600;
 }
