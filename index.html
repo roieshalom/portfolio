@@ -241,7 +241,14 @@ fetch('data/experience.json')
   
   if (desktopBrand) desktopBrand.style.fontFamily = fontFamily;
   if (mobileBrand) mobileBrand.style.fontFamily = fontFamily;
-  
+
+  [desktopBrand, mobileBrand].forEach(el => {
+    if (el) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => location.reload());
+    }
+  });
+
   console.log('Font changed to:', randomFont);
 })();
 </script>
