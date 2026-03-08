@@ -60,7 +60,7 @@
       fetch('data/projects.json').then(r => r.json()),
       fetch('ai/data/projects.json').then(r => r.json())
     ]).then(([uxProjects, aiProjects]) => {
-      const order = ['suite-as-pie', 'olamundo', 'grooped', 'racespace'];
+      const order = ['suite-as-pie', 'olamundo', 'grooped', 'askesmeralda'];
       const all = [
         ...uxProjects.map(p => ({ ...p, external: false })),
         ...aiProjects.map(p => ({
