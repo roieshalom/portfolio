@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
   <!-- Background -->
-  <rect width="600" height="400" fill="#3d3d5c"/>
+  <rect width="600" height="400" fill="#1e3a6e"/>
 
   <!-- Connecting lines (drawn behind tiles) -->
   <path d="M 195,132 Q 300,200 405,267" stroke="white" stroke-width="2" stroke-opacity="0.25" fill="none" stroke-linecap="round"/>
@@ -10,7 +10,7 @@
   <rect x="110" y="80" width="170" height="105" rx="14" fill="#f9df6d"/>
   <rect x="320" y="80" width="170" height="105" rx="14" fill="#a0c35a"/>
   <rect x="110" y="215" width="170" height="105" rx="14" fill="#6aabe4"/>
-  <rect x="320" y="215" width="170" height="105" rx="14" fill="#ba81c5"/>
+  <rect x="320" y="215" width="170" height="105" rx="14" fill="#7c3aed"/>
 
   <!-- Words -->
   <text x="195" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#333" letter-spacing="2">BARK</text>
