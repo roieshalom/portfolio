@@ -426,6 +426,10 @@ button:focus {
   padding: 1rem 0;
 }
 
+.home-grid .gallery-tile:nth-child(4) {
+  display: none;
+}
+
 .gallery-tile {
   display: flex;
   flex-direction: column;
@@ -485,7 +489,10 @@ button:focus {
 
 @media (max-width: 600px) {
   .home-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home-grid .gallery-tile:nth-child(4) {
+    display: flex;
   }
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
