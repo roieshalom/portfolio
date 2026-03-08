@@ -174,8 +174,9 @@ button:focus {
 
 .nav-menu-toggle {
   display: none;
-  background: none;
+  background-color: transparent;
   border: none;
+  border-radius: 0;
   padding: 6px 8px;
   margin: 0;
   cursor: pointer;
@@ -187,13 +188,17 @@ button:focus {
 
 .nav-menu-toggle:hover,
 .nav-menu-toggle:focus {
-  background: none;
+  background-color: transparent;
   box-shadow: none;
   color: var(--color-link);
   outline: none;
 }
 
 @media (max-width: 768px) {
+  .top-nav {
+    flex-wrap: wrap;
+  }
+
   .nav-menu-toggle {
     display: flex;
     align-items: center;
@@ -205,26 +210,20 @@ button:focus {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
-    box-shadow: 0 8px 20px var(--color-card-shadow);
-    padding: 8px clamp(20px, 5vw, 32px);
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
     opacity: 0;
-    visibility: hidden;
-    transform: translateY(-6px);
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+    border-top: none;
   }
 
   .top-nav-links.open {
+    max-height: 300px;
     opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
+    border-top: 1px solid var(--color-border);
+    padding-top: 4px;
+    padding-bottom: 8px;
   }
 
   .nav-link {
