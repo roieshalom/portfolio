@@ -195,15 +195,10 @@ button:focus {
 }
 
 @media (max-width: 768px) {
-  .top-nav {
-    align-items: flex-start;
-  }
-
   .nav-menu-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-    align-self: center;
   }
 
   .top-nav-links {
