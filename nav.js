@@ -3,16 +3,18 @@
   const links = document.querySelector('.top-nav-links');
   if (!toggle || !links) return;
 
+  const icon = toggle.querySelector('.nav-icon');
+
   function closeMenu() {
     links.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.querySelector('i').className = 'fa-solid fa-bars';
+    icon.textContent = '☰';
   }
 
   toggle.addEventListener('click', function () {
     const open = links.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.querySelector('i').className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    icon.textContent = open ? '✕' : '☰';
     if (open) {
       links.style.top = toggle.closest('.top-nav').getBoundingClientRect().bottom + 'px';
     }
