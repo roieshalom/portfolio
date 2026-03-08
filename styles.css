@@ -180,7 +180,7 @@ button:focus {
   margin: 0;
   cursor: pointer;
   color: var(--color-text-main);
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   box-shadow: none;
   line-height: 1;
 }
