@@ -203,7 +203,7 @@ button:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 1.1rem;
+    padding-top: 0.9rem;
   }
 
   .top-nav-links {
