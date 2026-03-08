@@ -60,6 +60,7 @@ if ($isProtected) {
 <body>
   <nav class="top-nav">
     <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
+    <button class="nav-menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     <div class="top-nav-links">
       <a href="index.html" class="nav-link">Home</a>
       <a href="work.html" class="nav-link">Work</a>
@@ -186,6 +187,7 @@ if ($isProtected) {
       });
   }
 </script>
+<script src="nav.js"></script>
 <script src="theme.js"></script>
 </body>
 </html>

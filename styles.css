@@ -172,9 +172,55 @@ button:focus {
   padding-left: 0;
 }
 
+.nav-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 6px 8px;
+  margin: 0;
+  cursor: pointer;
+  color: var(--color-text-main);
+  font-size: 1.3rem;
+  box-shadow: none;
+  line-height: 1;
+}
+
+.nav-menu-toggle:hover,
+.nav-menu-toggle:focus {
+  background: none;
+  box-shadow: none;
+  color: var(--color-link);
+  outline: none;
+}
+
 @media (max-width: 768px) {
+  .nav-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .top-nav-links {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px clamp(20px, 5vw, 32px);
+  }
+
+  .top-nav-links.open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+    width: 100%;
   }
 }
 
