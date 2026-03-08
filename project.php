@@ -58,31 +58,31 @@ if ($isProtected) {
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<header>
-  <nav>
-    <a href="index.html" class="back-nav-link">Home</a>
-    <a href="slash.html" class="back-nav-link slash-link">/</a>
-    <a href="gallery.html" class="back-nav-link">Gallery</a>
-  </nav>
-  <h1 id="project-title">Project Title Loading...</h1>
-  <!-- remove the generic text -->
-  <p id="project-desc"></p>
-</header>
-
-
-<div class="project-container">
-  <!-- Description sits above the gallery, always present -->
-  <div id="project-description-block">
-    <div class="project-body">
-      <p style="text-align: center; padding: 60px 20px;">Loading project...</p>
+  <nav class="top-nav">
+    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
+    <div class="top-nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="work.html" class="nav-link">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
-  </div>
+  </nav>
+  <main class="main-content">
+    <a href="work.html" class="back-nav-link">← Work</a>
+    <h1 id="project-title">Project Title Loading...</h1>
 
-  <!-- Gallery / PDF container -->
-  <div id="project-content">
-    <p style="text-align: center; padding: 20px 20px;">Loading media...</p>
-  </div>
-</div>
+    <!-- Description sits above the gallery, always present -->
+    <div id="project-description-block">
+      <div class="project-body">
+        <p style="text-align: center; padding: 60px 20px;">Loading project...</p>
+      </div>
+    </div>
+
+    <!-- Gallery / PDF container -->
+    <div id="project-content">
+      <p style="text-align: center; padding: 20px 20px;">Loading media...</p>
+    </div>
+  </main>
 
 <script>
   const urlParams = new URLSearchParams(window.location.search);
