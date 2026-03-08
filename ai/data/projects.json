@@ -13,7 +13,7 @@
     "id": "grooped",
     "title_bold": "Grooped AI",
     "title_regular": "Connections Game",
-    "shortdesc": "Sort 16 words into 4 groups of 4, each sharing a connection to find. Some words may mislead, so use your four chances wisely. Puzzles are generated with AI and curated by hand.",
+    "shortdesc": "Built with AI, from site development to puzzle generation and curation. Sort 16 words into 4 groups of 4, find the connection in each, and use your four chances wisely.",
     "desc": "A word association game inspired by the NYT Connections puzzle. Group 16 words into 4 categories — sounds simple, gets tricky fast.",
     "thumbnail": "../content/images/side_projects/con_gallery.svg",
     "link": "https://grooped.de",
