@@ -68,7 +68,6 @@ if ($isProtected) {
     </div>
   </nav>
   <main class="main-content">
-    <a href="work.html" class="back-nav-link">← Work</a>
     <h1 id="project-title">Project Title Loading...</h1>
 
     <!-- Description sits above the gallery, always present -->
