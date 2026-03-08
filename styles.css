@@ -507,6 +507,9 @@ button:focus {
   .tile-label {
     font-size: 0.82em;
   }
+  .tile-label strong {
+    display: block;
+  }
   .tile-desc {
     display: none;
   }
