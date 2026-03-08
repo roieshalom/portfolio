@@ -13,6 +13,9 @@
     const open = links.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
     toggle.querySelector('i').className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    if (open) {
+      links.style.top = toggle.closest('.top-nav').getBoundingClientRect().bottom + 'px';
+    }
   });
 
   links.querySelectorAll('.nav-link').forEach(function (link) {
