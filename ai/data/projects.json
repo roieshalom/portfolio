@@ -4,7 +4,7 @@
     "title_bold": "Ask Esmeralda AI",
     "title_regular": "Fortune teller",
     "shortdesc": "Fortune teller",
-    "desc": "A mystical AI-powered fortune teller. Ask Esmeralda anything and receive a personalized, atmospheric response — part oracle, part entertainment, entirely immersive.",
+    "desc": "A mystical AI-powered fortune teller. Ask Esmeralda anything and receive a personalized, atmospheric response, part oracle, part entertainment, entirely immersive.",
     "thumbnail": "../content/images/side_projects/ask_gallery.png",
     "link": "https://askesmeralda.com",
     "category": "AI · Web App"
@@ -14,7 +14,7 @@
     "title_bold": "Grooped AI",
     "title_regular": "Connections Game",
     "shortdesc": "Built with AI, from site development to puzzle generation and curation. Sort 16 words into 4 groups of 4, find the connection in each, and use your four chances wisely.",
-    "desc": "A word association game inspired by the NYT Connections puzzle. Group 16 words into 4 categories — sounds simple, gets tricky fast.",
+    "desc": "A word association game inspired by the NYT Connections puzzle. Group 16 words into 4 categories. Sounds simple, gets tricky fast.",
     "thumbnail": "../content/images/side_projects/con_gallery.svg",
     "link": "https://grooped.de",
     "category": "AI · Game"
