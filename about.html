@@ -29,48 +29,38 @@
     </div>
   </nav>
   <main class="main-content">
+    <div style="width:180px; aspect-ratio:3/4; background:var(--color-grey-light); border-radius:var(--radius-card); display:flex; align-items:center; justify-content:center; margin-bottom:var(--spacing-section);">
+      <span style="color:var(--color-muted); font-size:0.85rem;">Photo coming soon</span>
+    </div>
     <section class="section">
-      <div class="section-title">About</div>
-      <p>
-        I'm a product design lead based in Berlin, with a background spanning industrial design, UX, brand, and product. For over 20 years I've worked across consumer hardware, enterprise SaaS, and logistics platforms, at companies like HP, SAP Signavio, and Wayfair. The common thread isn't the industry, it's the problem: how do you simplify a complex problem in a delightful way for the user?
-        Outside of client work, I make my own projects: AI tools, games and educational apps, because creating is the fastest way I know to understand a new medium.
-      </p>
+      <h2 class="about-h">I've been watching how people use things since I was a kid</h2>
+      <p>I grew up helping my father with <strong>construction and carpentry projects</strong>, and somewhere between holding tools and watching how people actually used the things we built, I fell in love with design. Not the theoretical kind. The kind where you stand next to someone and notice they're <strong>holding the thing differently than you expected</strong>.</p>
+      <p>That instinct led me to study <strong>industrial design</strong>, where I learned to think about objects: what role they fill in our lives, what we keep, what we reach for without thinking. Over time, I followed the same curiosity from <strong>physical products into digital ones</strong>, from <strong>hardware interfaces</strong> to <strong>enterprise software</strong> to <strong>consumer brands</strong>. The medium kept changing. The question never did.</p>
     </section>
+
     <section class="section">
-      <div class="section-title">
-        Experience
-        <a href="content/downloads/Roie Shalom Product Design Lead.pdf" download class="icon-link">
-          <i class="fa-solid fa-circle-down" aria-hidden="true"></i> Download my CV
-        </a>
+      <h2 class="about-h">I go deep before I design</h2>
+      <p>My shift into digital started with designing the interface for <strong>HP's press machines</strong>. To get the UI right, I had to understand the machine inside and out. That project taught me something I keep coming back to: the best interfaces come from <strong>deeply understanding the system behind the screen</strong>.</p>
+      <p>From there I moved through <strong>cybersecurity, consumer electronics</strong>, and <strong>enterprise tools</strong>. Each domain asked me to go deep before I could design well. Moving to <strong>Berlin</strong> was a deliberate choice: I wanted a market where <strong>design maturity and industry diversity</strong> matched the range I'd built over the years.</p>
+      <p>One project I'm especially proud of: designing a <strong>mobile app for surveying equipment</strong> inside buildings. I didn't just interview users. I <strong>shadowed them in the field</strong>, walked through the building alongside them, scanning equipment, carrying the device. I felt firsthand the <strong>cognitive load</strong> of jumping between rooms, screens, and context. That changed everything about the product. I designed the app to <strong>carry the mental work</strong> so the user could simply move through the space. That kind of closeness to the real problem is where my best design work comes from.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="about-h">Delight with intent</h2>
+      <p>I believe even the most serious product can be a <strong>pleasure to use</strong>. Not through gimmicks or unnecessary flair, but through the <strong>right level of warmth</strong> for the context. An accounting tool can still surprise you with how good it feels. A complex dashboard can still be something people want to open.</p>
+      <p>I also believe a designer's job is to <strong>fight for the people using the product</strong>, even when that means extra development time or pushing back against the loudest voice in the room. The best decisions I've made came from <strong>being close to users</strong>, watching them work, and designing for what I actually saw.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="about-h">Building, shipping, and learning right now</h2>
+      <p>I ship my own products: a <strong>daily word puzzle game</strong> with AI-assisted content, <strong>language learning tools</strong> for German, and an <strong>AI-powered fortune teller</strong> that doubles as a creative networking experiment. These projects let me work across the <strong>full product cycle</strong>, from concept and code to <strong>user acquisition and analytics</strong>.</p>
+      <p>I'm looking for my next role as a <strong>design lead</strong> at a company where design has a <strong>real seat at the table</strong>. I'm drawn to products with a <strong>connection to the physical world</strong>, teams that <strong>communicate openly</strong>, and work that brings <strong>genuine value</strong> to the people using it.</p>
+      <p>If that sounds like your team, let's talk. You can also <a href="content/downloads/Roie Shalom Product Design Lead.pdf" download><strong>download my CV</strong></a> for the full picture.</p>
+      <div style="margin-top:32px; padding:24px; border:1px solid var(--color-border); border-radius:var(--radius-card); text-align:center; color:var(--color-muted); font-size:0.85rem;">
+        Experience timeline coming soon.
       </div>
-      <ul id="experience-list" class="experience-list"></ul>
     </section>
   </main>
-
-  <script>
-    fetch('data/experience.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('experience-list');
-        container.innerHTML = data.map(item => {
-          const companiesHtml = (item.companies || [])
-            .map(c => `<a href="${c.link}" class="exp-company" target="_blank">${c.name}</a>`)
-            .join(', ');
-          return `
-            <li class="experience-item">
-              <strong class="exp-role">${item.position}</strong>,
-              ${companiesHtml},
-              <strong class="exp-years">${item.years}</strong><br>
-              <span class="exp-desc">${item.description}</span>
-            </li>
-          `;
-        }).join('');
-      })
-      .catch(error => {
-        document.getElementById('experience-list').innerHTML = '<li>Error loading experience data.</li>';
-        console.error(error);
-      });
-  </script>
   <script src="nav.js"></script>
 <script src="theme.js"></script>
 </body>
