@@ -55,10 +55,188 @@
       <h2 class="about-h">Building, shipping, and learning right now</h2>
       <p>I ship my own products: a <strong>daily word puzzle game</strong> with AI-assisted content, <strong>language learning tools</strong> for German, and an <strong>AI-powered fortune teller</strong> that doubles as a creative networking experiment. These projects let me work across the <strong>full product cycle</strong>, from concept and code to <strong>user acquisition and analytics</strong>.</p>
       <p>I'm looking for my next role as a <strong>design lead</strong> at a company where design has a <strong>real seat at the table</strong>. I'm drawn to products with a <strong>connection to the physical world</strong>, teams that <strong>communicate openly</strong>, and work that brings <strong>genuine value</strong> to the people using it.</p>
-      <p>If that sounds like your team, let's talk. You can also <a href="content/downloads/Roie Shalom Product Design Lead.pdf" download><strong>download my CV</strong></a> for the full picture.</p>
-      <div style="margin-top:32px; padding:24px; border:1px solid var(--color-border); border-radius:var(--radius-card); text-align:center; color:var(--color-muted); font-size:0.85rem;">
-        Experience timeline coming soon.
+      <h2 class="about-h" style="margin-top:32px;">Where I've been</h2>
+      <div id="tl" style="padding:1rem 0; max-width:100%;">
+        <style>
+          .tl-row { display: grid; grid-template-columns: 80px 40px 1fr; gap: 0; position: relative; opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+          .tl-row.vis { opacity: 1; transform: translateY(0); }
+          .tl-yr-col { text-align: right; padding-right: 4px; }
+          .tl-yr { font-size: 12px; color: var(--color-muted); font-weight: 500; letter-spacing: 0.02em; line-height: 1.2; margin: 0; }
+          .tl-mid { display: flex; flex-direction: column; align-items: center; }
+          .tl-node { width: 12px; height: 12px; border-radius: 50%; background: var(--color-grey-light); z-index: 2; flex-shrink: 0; transition: background 0.4s ease, transform 0.3s ease; cursor: default; margin-top: 2px; }
+          .tl-row.vis .tl-node { background: #E8457A; }
+          .tl-row:hover .tl-node { transform: scale(1.5); }
+          .tl-node.now { width: 14px; height: 14px; margin-top: 1px; }
+          .tl-row.vis .tl-node.now { animation: breathe 2.5s ease-in-out infinite; }
+          .tl-row:hover .tl-node.now { animation: none; }
+          @keyframes breathe { 0%,100% { box-shadow: 0 0 0 0 rgba(232,69,122,0.3); } 50% { box-shadow: 0 0 0 8px rgba(232,69,122,0); } }
+          .tl-stem { width: 1.5px; background: var(--color-grey-light); position: relative; overflow: visible; margin: 0; }
+          .tl-stem-fill { width: 100%; height: 0%; background: #E8457A; position: absolute; top: 0; left: 0; transition: height 0.8s ease; }
+          .tl-row.vis .tl-stem-fill { height: 100%; }
+          .tl-fade { width: 1.5px; height: 60px; margin-top: 0; background: linear-gradient(to bottom, #E8457A, transparent); opacity: 0; transition: opacity 0.8s ease; }
+          .tl-fade.vis { opacity: 1; }
+          .tl-content { padding-left: 12px; }
+          .tl-card { padding: 0; border-radius: 12px; border: 0.5px solid transparent; transition: border-color 0.3s ease, background 0.3s ease; }
+          .tl-row:hover .tl-card { border-color: var(--color-border); background: var(--color-card); padding: 10px 14px; margin: -10px -14px 0; }
+          .tl-role { font-size: 15px; font-weight: 500; color: var(--color-text-main); margin: 0 0 2px; line-height: 1.2; transition: color 0.3s; }
+          .tl-row:hover .tl-role { color: #E8457A; }
+          .tl-co { font-size: 13px; color: var(--color-text); margin: 0; }
+          .tl-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.3s ease; }
+          .tl-row:hover .tl-tags { max-height: 120px; opacity: 1; }
+          .tl-tag { font-size: 11px; padding: 3px 10px; border-radius: 99px; background: rgba(232,69,122,0.1); color: #E8457A; white-space: nowrap; font-weight: 500; }
+          .tl-co-list { display: flex; flex-wrap: wrap; gap: 0; }
+          .tl-co-item { font-size: 13px; color: var(--color-text); }
+          .tl-co-item:not(:last-child)::after { content: " \00B7 "; color: var(--color-muted); }
+          @media (max-width: 600px) {
+            .tl-tags { max-height: 120px; opacity: 1; }
+            .tl-row { padding-bottom: 12px; overflow: visible; }
+            .tl-card { border-color: var(--color-border); background: var(--color-card); padding: 10px 14px; margin: -10px -14px 0; }
+            .tl-mid { height: calc(100% + 8px); }
+            .tl-stem { flex: 1; height: auto !important; }
+          }
+        </style>
+
+        <div class="tl-row" data-d="0" data-base="120" data-target="140">
+          <div class="tl-yr-col"><p class="tl-yr">2022–2025</p></div>
+          <div class="tl-mid">
+            <div class="tl-node now"></div>
+            <div class="tl-stem" style="height:120px; transition:height 0.5s cubic-bezier(0.34,1.56,0.64,1);"><div class="tl-stem-fill"></div></div>
+          </div>
+          <div class="tl-content"><div class="tl-card">
+            <p class="tl-role">Product Design Lead</p>
+            <p class="tl-co">Wayfair</p>
+            <div class="tl-tags">
+              <span class="tl-tag">Enterprise SaaS</span>
+              <span class="tl-tag">Logistics</span>
+              <span class="tl-tag">Design systems</span>
+              <span class="tl-tag">User research</span>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="tl-row" data-d="150" data-base="80" data-target="100">
+          <div class="tl-yr-col"><p class="tl-yr">2019–2021</p></div>
+          <div class="tl-mid">
+            <div class="tl-node"></div>
+            <div class="tl-stem" style="height:80px; transition:height 0.5s cubic-bezier(0.34,1.56,0.64,1);"><div class="tl-stem-fill"></div></div>
+          </div>
+          <div class="tl-content"><div class="tl-card">
+            <p class="tl-role">Senior UX/UI Designer</p>
+            <p class="tl-co">BuildingMinds by Schindler Group</p>
+            <div class="tl-tags">
+              <span class="tl-tag">Real estate tech</span>
+              <span class="tl-tag">Sustainability</span>
+              <span class="tl-tag">Data visualization</span>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="tl-row" data-d="300" data-base="60" data-target="80">
+          <div class="tl-yr-col"><p class="tl-yr">2018–2019</p></div>
+          <div class="tl-mid">
+            <div class="tl-node"></div>
+            <div class="tl-stem" style="height:60px; transition:height 0.5s cubic-bezier(0.34,1.56,0.64,1);"><div class="tl-stem-fill"></div></div>
+          </div>
+          <div class="tl-content"><div class="tl-card">
+            <p class="tl-role">Senior UX Designer</p>
+            <p class="tl-co">SAP Signavio</p>
+            <div class="tl-tags">
+              <span class="tl-tag">Enterprise</span>
+              <span class="tl-tag">Process automation</span>
+              <span class="tl-tag">Design system</span>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="tl-row" data-d="450" data-base="80" data-target="100">
+          <div class="tl-yr-col"><p class="tl-yr">2015–2017</p></div>
+          <div class="tl-mid">
+            <div class="tl-node"></div>
+            <div class="tl-stem" style="height:80px; transition:height 0.5s cubic-bezier(0.34,1.56,0.64,1);"><div class="tl-stem-fill"></div></div>
+          </div>
+          <div class="tl-content"><div class="tl-card">
+            <p class="tl-role">Creative Director</p>
+            <p class="tl-co">SafeBreach</p>
+            <div class="tl-tags">
+              <span class="tl-tag">Cybersecurity</span>
+              <span class="tl-tag">Branding</span>
+              <span class="tl-tag">Marketing</span>
+              <span class="tl-tag">Sole designer</span>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="tl-row" data-d="600">
+          <div class="tl-yr-col"><p class="tl-yr">2005–2015</p></div>
+          <div class="tl-mid">
+            <div class="tl-node"></div>
+            <div class="tl-fade" id="tl-fade"></div>
+          </div>
+          <div class="tl-content"><div class="tl-card">
+            <p class="tl-role">Lead Designer Roles</p>
+            <div class="tl-co-list">
+              <span class="tl-co-item">SanDisk</span>
+              <span class="tl-co-item">Stanley Black &amp; Decker</span>
+              <span class="tl-co-item">Aran R&amp;D (HP)</span>
+              <span class="tl-co-item">Ola Mundo</span>
+            </div>
+            <div class="tl-tags">
+              <span class="tl-tag">Hardware</span>
+              <span class="tl-tag">Industrial design</span>
+              <span class="tl-tag">Packaging</span>
+              <span class="tl-tag">Interface systems</span>
+            </div>
+          </div></div>
+        </div>
+
+        <script>
+          (function() {
+            var rows = document.querySelectorAll('.tl-row');
+            var fade = document.getElementById('tl-fade');
+            function revealAll() {
+              rows.forEach(function(r, i) {
+                var d = parseInt(r.getAttribute('data-d')) || (i * 150);
+                setTimeout(function() {
+                  r.classList.add('vis');
+                  if (r.contains(fade)) { setTimeout(function() { fade.classList.add('vis'); }, 300); }
+                }, d);
+              });
+            }
+            if ('IntersectionObserver' in window) {
+              var obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) {
+                  if (e.isIntersecting) {
+                    var d = parseInt(e.target.getAttribute('data-d')) || 0;
+                    setTimeout(function() {
+                      e.target.classList.add('vis');
+                      if (e.target.contains(fade)) { setTimeout(function() { fade.classList.add('vis'); }, 300); }
+                    }, d);
+                    obs.unobserve(e.target);
+                  }
+                });
+              }, { threshold: 0.1 });
+              rows.forEach(function(r) { obs.observe(r); });
+              setTimeout(function() {
+                var anyHidden = false;
+                rows.forEach(function(r) { if (!r.classList.contains('vis')) anyHidden = true; });
+                if (anyHidden) revealAll();
+              }, 1500);
+            } else {
+              revealAll();
+            }
+            rows.forEach(function(r) {
+              var stem = r.querySelector('.tl-stem');
+              if (!stem) return;
+              var base = r.getAttribute('data-base');
+              var target = r.getAttribute('data-target');
+              if (!base || !target) return;
+              r.addEventListener('mouseenter', function() { stem.style.transition = 'height 0.5s cubic-bezier(0.34,1.56,0.64,1)'; stem.style.height = target + 'px'; });
+              r.addEventListener('mouseleave', function() { stem.style.transition = 'height 0.4s ease-out'; stem.style.height = base + 'px'; });
+            });
+          })();
+        </script>
       </div>
+      <p>If that sounds like your team, let's talk. You can also <a href="content/downloads/Roie Shalom Product Design Lead.pdf" download><strong>download my CV</strong></a> for the full picture.</p>
     </section>
   </main>
   <script src="nav.js"></script>
