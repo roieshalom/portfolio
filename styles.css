@@ -9,7 +9,7 @@
   --color-link-bg: #f8cde2;
   --color-grey-light: #ebebeb;
   --color-muted: #444;
-  --color-border: #eee;
+  --color-border: #d8d8d8;
   --color-card: #fff;
   --color-card-shadow: rgba(15,20,55,0.07);
   --color-card-shadow-hover: rgba(15,20,55,0.13);
@@ -174,7 +174,8 @@ button:focus {
 
 .nav-menu-toggle {
   display: none;
-  background-color: transparent;
+  background: none !important;
+  background-color: transparent !important;
   border: none;
   border-radius: 0;
   padding: 6px 8px;
@@ -184,11 +185,14 @@ button:focus {
   font-size: 2rem;
   box-shadow: none;
   line-height: 1;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .nav-menu-toggle:hover,
 .nav-menu-toggle:focus {
-  background-color: transparent;
+  background: none !important;
+  background-color: transparent !important;
   box-shadow: none;
   color: var(--color-link);
   outline: none;
@@ -207,7 +211,7 @@ button:focus {
   }
 
   .top-nav-links {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
@@ -227,6 +231,7 @@ button:focus {
   }
 
   .top-nav-links.open {
+    display: flex;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
