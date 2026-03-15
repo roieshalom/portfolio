@@ -282,7 +282,7 @@ button:focus {
   font-weight: 700;
   color: var(--color-text-main);
   margin: 0 0 14px 0;
-  line-height: 1.35;
+  line-height: 1.5;
 }
 
 /* ============================================
