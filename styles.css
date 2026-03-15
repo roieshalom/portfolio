@@ -285,6 +285,10 @@ button:focus {
   line-height: 1.5;
 }
 
+p {
+  margin: 0 0 8px;
+}
+
 .about-h + p {
   margin-top: 0;
 }
