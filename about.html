@@ -29,7 +29,7 @@
     </div>
   </nav>
   <main class="main-content">
-    <div style="width:180px; aspect-ratio:3/4; background:var(--color-grey-light); border-radius:var(--radius-card); display:flex; align-items:center; justify-content:center; margin-bottom:var(--spacing-section);">
+    <div style="width:100%; aspect-ratio:3/1; background:var(--color-grey-light); border-radius:var(--radius-card); display:flex; align-items:center; justify-content:center; margin-bottom:var(--spacing-section);">
       <span style="color:var(--color-muted); font-size:0.85rem;">Photo coming soon</span>
     </div>
     <section class="section">
@@ -93,6 +93,7 @@
             .tl-card { border-color: var(--color-border); background: var(--color-card); padding: 10px 14px; margin: -10px -14px 0; }
             .tl-mid { height: calc(100% + 8px); }
             .tl-stem { flex: 1; height: auto !important; }
+            .cta-row { flex-direction: column; align-items: center; text-align: center; }
           }
         </style>
 
@@ -236,7 +237,25 @@
           })();
         </script>
       </div>
-      <p>If that sounds like your team, let's talk. You can also <a href="content/downloads/Roie Shalom Product Design Lead.pdf" download><strong>download my CV</strong></a> for the full picture.</p>
+      <div id="about-cta" style="margin-top:48px; padding-top:28px; border-top:1px solid var(--color-border); opacity:0; transform:translateY(12px); transition:opacity 0.6s ease, transform 0.6s ease;">
+        <div class="cta-row" style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+          <p style="font-size:1.05rem; margin:0; color:var(--color-text-main);">If you'd like the full picture, here's my CV.</p>
+          <a href="content/downloads/Roie Shalom Product Design Lead.pdf" download style="display:inline-flex; align-items:center; gap:6px; padding:10px 22px; border-radius:99px; background:#E8457A; color:#fff; font-weight:600; font-size:14px; text-decoration:none; white-space:nowrap; transition:opacity 0.2s; flex-shrink:0;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Download CV</a>
+        </div>
+      </div>
+      <script>
+        (function() {
+          var cta = document.getElementById('about-cta');
+          if ('IntersectionObserver' in window) {
+            var obs = new IntersectionObserver(function(entries) {
+              if (entries[0].isIntersecting) { cta.style.opacity = '1'; cta.style.transform = 'translateY(0)'; obs.disconnect(); }
+            }, { threshold: 0.2 });
+            obs.observe(cta);
+          } else {
+            cta.style.opacity = '1'; cta.style.transform = 'translateY(0)';
+          }
+        })();
+      </script>
     </section>
   </main>
   <script src="nav.js"></script>
