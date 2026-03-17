@@ -230,15 +230,25 @@
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       margin: 32px 0 0;
+      align-items: start;
     }
 
     .cs-img-2col figure {
       margin: 0;
     }
 
+    .cs-img-2col .cs-img {
+      height: 420px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
     @media (max-width: 600px) {
       .cs-img-2col {
         grid-template-columns: 1fr;
+      }
+      .cs-img-2col .cs-img {
+        height: 280px;
       }
     }
 
