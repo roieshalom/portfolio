@@ -128,13 +128,28 @@ button:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 20px clamp(20px, 5vw, 32px);
   background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
   margin-bottom: 8px;
-  max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: calc(-1 * clamp(20px, 5vw, 32px));
+  margin-right: calc(-1 * clamp(20px, 5vw, 32px));
+}
+
+@media (min-width: 600px) {
+  .top-nav {
+    padding: 20px clamp(32px, 8vw, 64px);
+    margin-left: calc(-1 * clamp(32px, 8vw, 64px));
+    margin-right: calc(-1 * clamp(32px, 8vw, 64px));
+  }
+}
+
+@media (min-width: 1200px) {
+  .top-nav {
+    padding: 20px clamp(80px, 12vw, 200px);
+    margin-left: calc(-1 * clamp(80px, 12vw, 200px));
+    margin-right: calc(-1 * clamp(80px, 12vw, 200px));
+  }
 }
 
 .brand,
