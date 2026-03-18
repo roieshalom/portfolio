@@ -1,1 +1,4 @@
 AddHandler application/x-httpd-php .phtml
+
+RewriteEngine On
+RewriteRule ^in$ in.php [L]
