@@ -481,9 +481,7 @@ p {
   text-decoration: none;
 }
 
-.gallery-tile:hover,
 .gallery-tile:focus {
-  transform: translateY(-3px);
   box-shadow: 0 8px 24px var(--color-card-shadow-hover);
 }
 
