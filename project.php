@@ -8,6 +8,13 @@ if ($projectId) {
     $projectsData = json_decode(file_get_contents('data/projects.json'), true);
     $project = array_filter($projectsData, fn($p) => $p['id'] === $projectId);
     $project = reset($project); // get first match
+
+    // If the project has a dedicated page, redirect there immediately
+    if (!empty($project['page'])) {
+        header("Location: " . $project['page']);
+        exit;
+    }
+
     $isProtected = !empty($project['protected']);
 }
 
