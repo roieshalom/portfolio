@@ -2,47 +2,53 @@
 $password = '2026';
 $projectId = isset($_GET['id']) ? $_GET['id'] : null;
 
-// Load projects and check if this one is protected
+// Load projects
+$project = null;
 $isProtected = false;
 if ($projectId) {
     $projectsData = json_decode(file_get_contents('data/projects.json'), true);
-    $project = array_filter($projectsData, fn($p) => $p['id'] === $projectId);
-    $project = reset($project); // get first match
-
-    // If the project has a dedicated page, serve it directly (URL stays the same)
-    if (!empty($project['page'])) {
-        readfile($project['page']);
-        exit;
-    }
-
+    $matches = array_filter($projectsData, fn($p) => $p['id'] === $projectId);
+    $project = reset($matches);
     $isProtected = !empty($project['protected']);
 }
 
 if ($isProtected) {
     session_start();
-    
-    // Set session timeout (in seconds) - e.g., 1 hour = 3600
-    $session_timeout = 3600; // 1 hour
-    
-    // Check if session exists and is valid
-    $session_valid = isset($_SESSION['pw_ok']) 
+
+    $session_timeout = 3600;
+
+    $session_valid = isset($_SESSION['pw_ok'])
                      && $_SESSION['pw_ok'] === $projectId
                      && isset($_SESSION['pw_timestamp'])
                      && (time() - $_SESSION['pw_timestamp']) < $session_timeout;
-    
+
+    // Check magic link cookie (30-day access)
+    if (!$session_valid && isset($_COOKIE['portfolio_access']) && is_numeric($_COOKIE['portfolio_access'])) {
+        $elapsed_ms = (time() * 1000) - intval($_COOKIE['portfolio_access']);
+        if ($elapsed_ms < (30 * 24 * 60 * 60 * 1000)) {
+            $session_valid = true;
+        }
+    }
+
     if (!$session_valid) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pw']) && $_POST['pw'] === $password) {
             $_SESSION['pw_ok'] = $projectId;
-            $_SESSION['pw_timestamp'] = time(); // Store current timestamp
+            $_SESSION['pw_timestamp'] = time();
             header("Location: " . $_SERVER['REQUEST_URI']);
             exit;
         }
-        // Clear old session data
         unset($_SESSION['pw_ok']);
         unset($_SESSION['pw_timestamp']);
         include 'password-form.php';
         exit;
     }
+}
+
+// If the project has a dedicated page, serve it directly (URL stays the same)
+// This runs after auth so protected custom pages are also guarded
+if ($project && !empty($project['page'])) {
+    readfile($project['page']);
+    exit;
 }
 ?>
 
@@ -136,14 +142,14 @@ if ($isProtected) {
         if (project.imagefolder && project.imagefolder.toLowerCase().endsWith('.pdf')) {
           document.getElementById('project-content').innerHTML = `
             <div style="position: relative; width: 100%; max-width: 1400px; margin: 40px auto 0;">
-              <a href="serve-pdf.php?id=${projectId}" 
-                 target="_blank" 
+              <a href="serve-pdf.php?id=${projectId}"
+                 target="_blank"
                  rel="noopener noreferrer"
                  style="position: absolute; top: 10px; right: 10px; z-index: 10; display: inline-block; padding: 10px 20px; background: #e91e63; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
                 Open in New Tab
               </a>
-              <iframe 
-                src="serve-pdf.php?id=${projectId}#pagemode=none&view=FitH" 
+              <iframe
+                src="serve-pdf.php?id=${projectId}#pagemode=none&view=FitH"
                 title="${project.title_bold} PDF"
                 style="width: 100%; height: 1000px; border: none;">
               </iframe>
@@ -194,6 +200,7 @@ if ($isProtected) {
       });
   }
 </script>
+<script src="access.js"></script>
 <script src="nav.js"></script>
 <script src="theme.js"></script>
 </body>

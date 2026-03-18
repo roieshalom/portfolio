@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Roie Shalom</title>
+  <script>
+    (function() {
+      var now = Date.now().toString();
+      localStorage.setItem('portfolio_access', now);
+      var expires = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
+      document.cookie = 'portfolio_access=' + now + '; expires=' + expires + '; path=/; SameSite=Lax';
+      window.location.replace('/');
+    })();
+  </script>
+</head>
+<body></body>
+</html>

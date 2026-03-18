@@ -31,8 +31,12 @@
                        border:1px solid var(--color-border); border-radius:8px;
                        outline:none; box-sizing:border-box;">
             <button type="submit">Submit</button>
+            <p style="font-size: 0.8rem; color: var(--color-muted); text-align: center; margin: 0;">
+              Got here from a referral? Feel free to <a href="contact.html" style="color: var(--color-link);">reach out</a> for access.
+            </p>
         </form>
     </main>
+    <script src="access.js"></script>
     <script src="nav.js"></script>
     <script src="theme.js"></script>
 </body>
