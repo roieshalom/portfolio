@@ -49,6 +49,7 @@
       </p>
     </footer>
   </main>
+  <script src="access.js"></script>
   <script>
     const featured = [
       { src: 'data/projects.json', id: 'suite-as-pie', external: false },
@@ -70,18 +71,20 @@
         }))
       ];
       const tiles = order.map(id => all.find(p => p.id === id)).filter(Boolean);
-      document.getElementById('featured-list').innerHTML = tiles.map(proj => `
+      const unlocked = hasPortfolioAccess();
+      document.getElementById('featured-list').innerHTML = tiles.map(proj => {
+        const title = unlocked ? proj.title_bold.replace(/🔒\s*/g, '') : proj.title_bold;
+        return `
         <a href="${proj.external ? proj.link : 'project.php?id=' + proj.id}" class="gallery-tile" ${proj.external ? 'target="_blank" rel="noopener"' : ''}>
-          <img src="${proj.thumbnail}" alt="${proj.title_bold} thumbnail">
+          <img src="${proj.thumbnail}" alt="${title} thumbnail">
           <div class="tile-overlay">
-            <div class="tile-label"><strong>${proj.title_bold}</strong> ${proj.title_regular || ''}</div>
+            <div class="tile-label"><strong>${title}</strong> ${proj.title_regular || ''}</div>
             <div class="tile-desc">${proj.shortdesc}</div>
           </div>
         </a>
-      `).join('');
+      `; }).join('');
     }).catch(err => console.error(err));
   </script>
-  <script src="access.js"></script>
   <script src="nav.js"></script>
 <script src="theme.js"></script>
   <script src="name-animator.js"></script>

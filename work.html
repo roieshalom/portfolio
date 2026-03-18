@@ -42,20 +42,24 @@
   </main>
   <footer></footer>
 
+  <script src="access.js"></script>
   <script>
     fetch('data/projects.json')
       .then(res => res.json())
       .then(projects => {
+        const unlocked = hasPortfolioAccess();
         const gallery = document.getElementById('ux-gallery');
-        gallery.innerHTML = projects.filter(p => p.show).map(proj => `
+        gallery.innerHTML = projects.filter(p => p.show).map(proj => {
+          const title = unlocked ? proj.title_bold.replace(/🔒\s*/g, '') : proj.title_bold;
+          return `
           <a href="${proj.link}" class="gallery-tile">
-            <img src="${proj.thumbnail}" alt="${proj.title_bold}" />
+            <img src="${proj.thumbnail}" alt="${title}" />
             <div class="tile-overlay">
-              <div class="tile-label"><strong>${proj.title_bold}</strong> ${proj.title_regular}</div>
+              <div class="tile-label"><strong>${title}</strong> ${proj.title_regular}</div>
               <div class="tile-desc">${proj.gallery_desc}</div>
             </div>
           </a>
-        `).join('');
+        `; }).join('');
       })
       .catch(err => console.error(err));
 
@@ -78,7 +82,6 @@
       })
       .catch(err => console.error(err));
   </script>
-  <script src="access.js"></script>
   <script src="nav.js"></script>
 <script src="theme.js"></script>
 <script src="name-animator.js"></script>
