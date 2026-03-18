@@ -9,9 +9,9 @@ if ($projectId) {
     $project = array_filter($projectsData, fn($p) => $p['id'] === $projectId);
     $project = reset($project); // get first match
 
-    // If the project has a dedicated page, redirect there immediately
+    // If the project has a dedicated page, serve it directly (URL stays the same)
     if (!empty($project['page'])) {
-        header("Location: " . $project['page']);
+        readfile($project['page']);
         exit;
     }
 
