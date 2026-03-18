@@ -7,7 +7,8 @@
     "desc": "A mystical AI-powered fortune teller. Ask Esmeralda anything and receive a personalized, atmospheric response, part oracle, part entertainment, entirely immersive.",
     "thumbnail": "../content/images/side_projects/ask_gallery.png",
     "link": "https://askesmeralda.com",
-    "category": "AI · Web App"
+    "category": "AI · Web App",
+    "show": true
   },
   {
     "id": "grooped",
@@ -17,7 +18,8 @@
     "desc": "A word association game inspired by the NYT Connections puzzle. Group 16 words into 4 categories. Sounds simple, gets tricky fast.",
     "thumbnail": "../content/images/side_projects/con_gallery.svg",
     "link": "https://grooped.de",
-    "category": "AI · Game"
+    "category": "AI · Game",
+    "show": true
   },
   {
     "id": "fragenkatalog",
@@ -27,7 +29,8 @@
     "desc": "A clean, focused practice tool for the German Einbürgerung (naturalization) test. Browse all 310 official questions, filter by category, and drill the ones you miss.",
     "thumbnail": "../content/images/side_projects/fk_gallery.svg",
     "link": "https://www.fragen-katalog.com",
-    "category": "AI · Education"
+    "category": "AI · Education",
+    "show": false
   },
   {
     "id": "b1wortschatz",
@@ -37,7 +40,8 @@
     "desc": "Flashcard-based vocabulary trainer for the B1 German level. A simple, distraction-free way to build the word bank you need to pass the test.",
     "thumbnail": "../content/images/side_projects/b1w_gallery.svg",
     "link": "https://www.b1wortschatz.de",
-    "category": "AI · Education"
+    "category": "AI · Education",
+    "show": false
   },
   {
     "id": "disclaimerjar",
@@ -47,6 +51,7 @@
     "desc": "A playful accountability tool for meetings and conversations. Every time someone throws out a disclaimer instead of a real answer, the jar gets a coin. A lighthearted nudge toward clearer communication.",
     "thumbnail": "../content/images/side_projects/dj_gallery.svg",
     "link": "https://roieshalom.github.io/disclaimer-jar/",
-    "category": "AI · Tool"
+    "category": "AI · Tool",
+    "show": false
   }
 ]

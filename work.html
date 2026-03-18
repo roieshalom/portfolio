@@ -32,12 +32,28 @@
     <section class="section">
       <div class="section-title">Design Work</div>
       <p>A mix of product design, UX, and visual work. Projects here span discovery and research, interaction design, design systems, and prototyping, across enterprise software, consumer apps, and the occasional creative detour.</p>
-      <div class="gallery-grid" id="ux-gallery"></div>
+      <div class="gallery-grid" id="ux-gallery">
+        <div class="gallery-tile coming-soon-tile">
+          <div class="coming-soon-img"></div>
+          <div class="tile-overlay">
+            <div class="tile-label"><strong>Coming Soon</strong></div>
+            <div class="tile-desc">More work in progress.</div>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="section">
       <div class="section-title">AI Projects</div>
       <p>These projects grew out of personal interests, needs, and occasionally just the urge to build something fun. The ideas, the decisions, and the direction are mine. AI is part of how I develop and think things through.</p>
-      <div class="gallery-grid" id="ai-gallery"></div>
+      <div class="gallery-grid" id="ai-gallery">
+        <div class="gallery-tile coming-soon-tile">
+          <div class="coming-soon-img"></div>
+          <div class="tile-overlay">
+            <div class="tile-label"><strong>Coming Soon</strong></div>
+            <div class="tile-desc">More in the works.</div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <footer></footer>
@@ -49,7 +65,8 @@
       .then(projects => {
         const unlocked = hasPortfolioAccess();
         const gallery = document.getElementById('ux-gallery');
-        gallery.innerHTML = projects.filter(p => p.show).map(proj => {
+        const comingSoon = gallery.querySelector('.coming-soon-tile');
+        const tiles = projects.filter(p => p.show).map(proj => {
           const title = unlocked ? proj.title_bold.replace(/🔒\s*/g, '') : proj.title_bold;
           return `
           <a href="${proj.link}" class="gallery-tile">
@@ -60,6 +77,7 @@
             </div>
           </a>
         `; }).join('');
+        comingSoon.insertAdjacentHTML('beforebegin', tiles);
       })
       .catch(err => console.error(err));
 
@@ -67,7 +85,8 @@
       .then(res => res.json())
       .then(projects => {
         const gallery = document.getElementById('ai-gallery');
-        gallery.innerHTML = projects.map(proj => {
+        const comingSoon = gallery.querySelector('.coming-soon-tile');
+        const tiles = projects.filter(p => p.show).map(proj => {
           const thumb = proj.thumbnail.replace('../content/', 'content/');
           return `
           <a href="${proj.link}" class="gallery-tile" target="_blank" rel="noopener noreferrer">
@@ -79,6 +98,7 @@
           </a>
         `;
         }).join('');
+        comingSoon.insertAdjacentHTML('beforebegin', tiles);
       })
       .catch(err => console.error(err));
   </script>

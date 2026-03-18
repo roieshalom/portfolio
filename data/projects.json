@@ -1,36 +1,33 @@
 [
-    {
+  {
     "id": "EQCapture",
-	  "gallery_desc": "A mobile app to capture equipmant on premise",
+    "gallery_desc": "A mobile app to capture equipmant on premise",
     "shortdesc": "shortdescription",
-"desc": [
-  "<p><strong>EQCapture</strong> is a mobile app that replaces paper, photos and spreadsheets with a single workflow for on-site equipment surveys in large commercial buildings. It guides surveyors through complex properties, captures equipment details in context and syncs everything directly into the BuildingMinds digital twin.</p>",
-
-  "<p><strong class=\"section-label\">Plan and process</strong></p>", "As Head of Design for BuildingMinds' App Factory, I led EQCapture as part of a core three-person team. I owned end-to-end design: field research with surveyors in Hamburg and Frankfurt, UX/UI and design system work, usability testing and stakeholder presentations, while mentoring the Product Manager in user-centred methods.</p>",
-
-  "<p><strong class=\"section-label\">Project goals</strong></p>",
-  "<ol>",
-    "<li>Replace fragmented paper, photo and Excel workflows with a single mobile app connected to the BuildingMinds platform.</li>",
-    "<li>Reduce time and errors when capturing large volumes of equipment data across multi-floor buildings.</li>",
-    "<li>Keep clear spatial context (building, floor, room) for every asset to support a reliable digital twin.</li>",
-    "<li>Make surveyors' on-site work smoother by cutting repetitive typing and tedious post-processing.</li>",
-  "</ol>",
-
-  "<p><strong class=\"section-label\">Plan and process</strong></p>",
-  "<ol>",
-    "<li>Discovery: Map the existing survey workflow end to end and shadow surveyors on real projects to uncover pain points and edge cases.</li>",
-    "<li>Definition: Prioritise breaks in the process (lost context between photos and equipment, manual re-typing, lack of tracking) and turn them into core MVP flows.</li>",
-    "<li>Design: Create task-focused journeys for selecting building → floor → space, capturing records, attaching photos and filtering via DIN-based equipment structures.</li>",
-    "<li>Validation: Prototype key flows, test with surveyors using both paper and interactive prototypes, and iterate on speed, clarity and error handling.</li>",
-  "</ol>",
-
-  "<p><strong class=\"section-label\">Achievements and outcomes</strong></p>",
-  "<ol>",
-    "<li>Designed an end-to-end mobile capture journey that connects on-site work directly with the BuildingMinds digital twin, replacing several disconnected tools with one focused app.</li>",
-    "<li>Built a reusable mobile UI library aligned with the BuildingMinds design system, laying groundwork for future App Factory apps to share patterns and components.</li>",
-    "<li>Achieved a concept that field feedback indicates can cut per-equipment capture time by up to around five times for typical assets, while improving visibility into survey progress across buildings and floors.</li>",
-  "</ol>"
-],
+    "desc": [
+      "<p><strong>EQCapture</strong> is a mobile app that replaces paper, photos and spreadsheets with a single workflow for on-site equipment surveys in large commercial buildings. It guides surveyors through complex properties, captures equipment details in context and syncs everything directly into the BuildingMinds digital twin.</p>",
+      "<p><strong class=\"section-label\">Plan and process</strong></p>",
+      "As Head of Design for BuildingMinds' App Factory, I led EQCapture as part of a core three-person team. I owned end-to-end design: field research with surveyors in Hamburg and Frankfurt, UX/UI and design system work, usability testing and stakeholder presentations, while mentoring the Product Manager in user-centred methods.</p>",
+      "<p><strong class=\"section-label\">Project goals</strong></p>",
+      "<ol>",
+      "<li>Replace fragmented paper, photo and Excel workflows with a single mobile app connected to the BuildingMinds platform.</li>",
+      "<li>Reduce time and errors when capturing large volumes of equipment data across multi-floor buildings.</li>",
+      "<li>Keep clear spatial context (building, floor, room) for every asset to support a reliable digital twin.</li>",
+      "<li>Make surveyors' on-site work smoother by cutting repetitive typing and tedious post-processing.</li>",
+      "</ol>",
+      "<p><strong class=\"section-label\">Plan and process</strong></p>",
+      "<ol>",
+      "<li>Discovery: Map the existing survey workflow end to end and shadow surveyors on real projects to uncover pain points and edge cases.</li>",
+      "<li>Definition: Prioritise breaks in the process (lost context between photos and equipment, manual re-typing, lack of tracking) and turn them into core MVP flows.</li>",
+      "<li>Design: Create task-focused journeys for selecting building → floor → space, capturing records, attaching photos and filtering via DIN-based equipment structures.</li>",
+      "<li>Validation: Prototype key flows, test with surveyors using both paper and interactive prototypes, and iterate on speed, clarity and error handling.</li>",
+      "</ol>",
+      "<p><strong class=\"section-label\">Achievements and outcomes</strong></p>",
+      "<ol>",
+      "<li>Designed an end-to-end mobile capture journey that connects on-site work directly with the BuildingMinds digital twin, replacing several disconnected tools with one focused app.</li>",
+      "<li>Built a reusable mobile UI library aligned with the BuildingMinds design system, laying groundwork for future App Factory apps to share patterns and components.</li>",
+      "<li>Achieved a concept that field feedback indicates can cut per-equipment capture time by up to around five times for typical assets, while improving visibility into survey progress across buildings and floors.</li>",
+      "</ol>"
+    ],
     "link": "project.php?id=EQCapture",
     "page": "eqcapture.html",
     "title_bold": "🔒 EQCapture",
@@ -48,33 +45,30 @@
     "gallery_desc": "EQCapture (archived PDF version)",
     "shortdesc": "",
     "desc": [
-  "<p><strong>EQCapture</strong> is a mobile app that replaces paper, photos and spreadsheets with a single workflow for on-site equipment surveys in large commercial buildings. It guides surveyors through complex properties, captures equipment details in context and syncs everything directly into the BuildingMinds digital twin.</p>",
-
-  "<p><strong class=\"section-label\">Plan and process</strong></p>", "As Head of Design for BuildingMinds' App Factory, I led EQCapture as part of a core three-person team. I owned end-to-end design: field research with surveyors in Hamburg and Frankfurt, UX/UI and design system work, usability testing and stakeholder presentations, while mentoring the Product Manager in user-centred methods.</p>",
-
-  "<p><strong class=\"section-label\">Project goals</strong></p>",
-  "<ol>",
-    "<li>Replace fragmented paper, photo and Excel workflows with a single mobile app connected to the BuildingMinds platform.</li>",
-    "<li>Reduce time and errors when capturing large volumes of equipment data across multi-floor buildings.</li>",
-    "<li>Keep clear spatial context (building, floor, room) for every asset to support a reliable digital twin.</li>",
-    "<li>Make surveyors' on-site work smoother by cutting repetitive typing and tedious post-processing.</li>",
-  "</ol>",
-
-  "<p><strong class=\"section-label\">Plan and process</strong></p>",
-  "<ol>",
-    "<li>Discovery: Map the existing survey workflow end to end and shadow surveyors on real projects to uncover pain points and edge cases.</li>",
-    "<li>Definition: Prioritise breaks in the process (lost context between photos and equipment, manual re-typing, lack of tracking) and turn them into core MVP flows.</li>",
-    "<li>Design: Create task-focused journeys for selecting building → floor → space, capturing records, attaching photos and filtering via DIN-based equipment structures.</li>",
-    "<li>Validation: Prototype key flows, test with surveyors using both paper and interactive prototypes, and iterate on speed, clarity and error handling.</li>",
-  "</ol>",
-
-  "<p><strong class=\"section-label\">Achievements and outcomes</strong></p>",
-  "<ol>",
-    "<li>Designed an end-to-end mobile capture journey that connects on-site work directly with the BuildingMinds digital twin, replacing several disconnected tools with one focused app.</li>",
-    "<li>Built a reusable mobile UI library aligned with the BuildingMinds design system, laying groundwork for future App Factory apps to share patterns and components.</li>",
-    "<li>Achieved a concept that field feedback indicates can cut per-equipment capture time by up to around five times for typical assets, while improving visibility into survey progress across buildings and floors.</li>",
-  "</ol>"
-],
+      "<p><strong>EQCapture</strong> is a mobile app that replaces paper, photos and spreadsheets with a single workflow for on-site equipment surveys in large commercial buildings. It guides surveyors through complex properties, captures equipment details in context and syncs everything directly into the BuildingMinds digital twin.</p>",
+      "<p><strong class=\"section-label\">Plan and process</strong></p>",
+      "As Head of Design for BuildingMinds' App Factory, I led EQCapture as part of a core three-person team. I owned end-to-end design: field research with surveyors in Hamburg and Frankfurt, UX/UI and design system work, usability testing and stakeholder presentations, while mentoring the Product Manager in user-centred methods.</p>",
+      "<p><strong class=\"section-label\">Project goals</strong></p>",
+      "<ol>",
+      "<li>Replace fragmented paper, photo and Excel workflows with a single mobile app connected to the BuildingMinds platform.</li>",
+      "<li>Reduce time and errors when capturing large volumes of equipment data across multi-floor buildings.</li>",
+      "<li>Keep clear spatial context (building, floor, room) for every asset to support a reliable digital twin.</li>",
+      "<li>Make surveyors' on-site work smoother by cutting repetitive typing and tedious post-processing.</li>",
+      "</ol>",
+      "<p><strong class=\"section-label\">Plan and process</strong></p>",
+      "<ol>",
+      "<li>Discovery: Map the existing survey workflow end to end and shadow surveyors on real projects to uncover pain points and edge cases.</li>",
+      "<li>Definition: Prioritise breaks in the process (lost context between photos and equipment, manual re-typing, lack of tracking) and turn them into core MVP flows.</li>",
+      "<li>Design: Create task-focused journeys for selecting building → floor → space, capturing records, attaching photos and filtering via DIN-based equipment structures.</li>",
+      "<li>Validation: Prototype key flows, test with surveyors using both paper and interactive prototypes, and iterate on speed, clarity and error handling.</li>",
+      "</ol>",
+      "<p><strong class=\"section-label\">Achievements and outcomes</strong></p>",
+      "<ol>",
+      "<li>Designed an end-to-end mobile capture journey that connects on-site work directly with the BuildingMinds digital twin, replacing several disconnected tools with one focused app.</li>",
+      "<li>Built a reusable mobile UI library aligned with the BuildingMinds design system, laying groundwork for future App Factory apps to share patterns and components.</li>",
+      "<li>Achieved a concept that field feedback indicates can cut per-equipment capture time by up to around five times for typical assets, while improving visibility into survey progress across buildings and floors.</li>",
+      "</ol>"
+    ],
     "link": "project.php?id=EQCapture-old",
     "title_bold": "EQCapture",
     "title_regular": "archived",
@@ -88,43 +82,37 @@
   },
   {
     "id": "search",
-	  "gallery_desc": "Global assisted search on a complex system",
+    "gallery_desc": "Global assisted search on a complex system",
     "shortdesc": "12345678900",
     "desc": [
-  "<strong>A Better Search</strong> reimagines how users find process content inside the Signavio (now SAP Signavio) Process Collaboration Hub, turning a technically powerful but hard-to-use search into an experience that everyday business users can actually rely on to navigate large, complex workspaces.",
-  
-  "<br><br><strong>My role</strong><br>I led the UX work on the initiative for the Process Collaboration Hub, working end-to-end from research through interaction design and stakeholder alignment. I combined search log analysis, usability tests and interviews with customer-facing teams to understand how people really tried to find process models, dictionary items and documents across large, messy tenants, and translated those insights into concrete UX requirements for both simple and advanced search.",
-
-  "<br><br><strong>Project goals</strong><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">1.</span> Make it dramatically easier for business users to find the right process models, dictionary items and documents across very large tenants, so the Hub becomes their natural starting point.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">2.</span> Transform search from a title-only, expert feature into an intuitive, Google-like experience with suggestions, meaningful refinement and guidance instead of hidden query tricks.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">3.</span> Reduce time wasted scanning long, unstructured result lists by improving filtering, visual hierarchy and feedback, so users can move from hundreds of hits to a small, relevant set in just a few steps.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">4.</span> Create reusable search and filtering patterns (criteria tags, saved searches, attribute refinement) that other parts of the Signavio suite can adopt wherever users work with large process datasets.</span><br>",
-
-  "<br><br><strong>Plan and process</strong><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">1.</span> Empathise: Ran usability tests on the existing search experience, collected questionnaires, and spoke with customer support, product and customer-facing teams to surface recurring search pain points and expectations.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">2.</span> Discover: Analysed Hub search data (such as volume of searches and queries with no results) and mapped how users moved between search, folders and smart folders to understand where they got stuck or gave up.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">3.</span> Ideate: Benchmarked search and refinement patterns from tools like Jira, LinkedIn, job boards and e-commerce sites, then adapted those paradigms to Signavio's attribute-rich process content and metadata model.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">4.</span> Validate: Tested early flows and interaction patterns for simple and advanced search with users, iterating on filter discoverability, criteria tags and result layouts based on observed confusion, errors and edge cases.</span><br>",
-
-  "<br><br><strong>Problems we found</strong><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">1.</span> Simple search behaved like a bare-bones title lookup with no suggestions, autocomplete or recent searches, falling far short of the forgiving, modern behaviour users expected from search.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">2.</span> Advanced search was powerful but almost unusable: attribute lists were extremely long and unclear, type controls were nearly invisible, there was no way to filter by date, and error feedback was weak or missing.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">3.</span> Result lists were hard to scan and act on, with no grouping or secondary filters, unclear type icons and a flat visual structure that made it difficult to decide which item to open next.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">4.</span> Users had no easy way to progressively refine very large result sets, even though many tenants contained hundreds or thousands of items matching broad queries.</span><br>",
-
-  "<br><br><strong>Key design decisions</strong><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">1.</span> Reframed the core user story around refining results (\"I want to narrow down my initial search results so I can find the right model faster\"), making refinement the centre of the experience rather than an afterthought.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">2.</span> Introduced a criteria-tag pattern for advanced search, where each filter (for example customer, status, IT system or date) becomes a visible, editable chip that users can add, remove and reorder with clear state and feedback.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">3.</span> Curated and clarified attributes by surfacing frequently used filters first, shortening long attribute lists and improving naming so non-expert users could better understand what each filter would do.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">4.</span> Restructured the results layout with stronger hierarchy for type, title, key metadata and recency, and laid the groundwork for sorting and grouping so users could scan and prioritise results much more quickly.</span><br>",
-
-  "<br><br><strong>Achievements and outcomes</strong><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">1.</span> Turned a title-only, expert-oriented search into an approachable, guided experience that better matched expectations from modern SaaS tools while still supporting Signavio's rich attribute model.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">2.</span> Enabled users to refine result sets of hundreds of items down to focused subsets in just a few refinement steps, directly supporting real-world tasks like finding the right process, dictionary item or incident documentation.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">3.</span> Strengthened the Process Collaboration Hub as the central place to discover and reuse process knowledge, making it more likely that business users stay within the Signavio ecosystem instead of reverting to local files.</span><br>",
-  "<span class=\"numbered-line\"><span class=\"num\">4.</span> Delivered reusable patterns for advanced filtering, criteria tags and saved searches that other parts of the SAP Signavio suite can adopt wherever users need to work efficiently with large collections of process artefacts.</span><br>"
-],
+      "<strong>A Better Search</strong> reimagines how users find process content inside the Signavio (now SAP Signavio) Process Collaboration Hub, turning a technically powerful but hard-to-use search into an experience that everyday business users can actually rely on to navigate large, complex workspaces.",
+      "<br><br><strong>My role</strong><br>I led the UX work on the initiative for the Process Collaboration Hub, working end-to-end from research through interaction design and stakeholder alignment. I combined search log analysis, usability tests and interviews with customer-facing teams to understand how people really tried to find process models, dictionary items and documents across large, messy tenants, and translated those insights into concrete UX requirements for both simple and advanced search.",
+      "<br><br><strong>Project goals</strong><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">1.</span> Make it dramatically easier for business users to find the right process models, dictionary items and documents across very large tenants, so the Hub becomes their natural starting point.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">2.</span> Transform search from a title-only, expert feature into an intuitive, Google-like experience with suggestions, meaningful refinement and guidance instead of hidden query tricks.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">3.</span> Reduce time wasted scanning long, unstructured result lists by improving filtering, visual hierarchy and feedback, so users can move from hundreds of hits to a small, relevant set in just a few steps.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">4.</span> Create reusable search and filtering patterns (criteria tags, saved searches, attribute refinement) that other parts of the Signavio suite can adopt wherever users work with large process datasets.</span><br>",
+      "<br><br><strong>Plan and process</strong><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">1.</span> Empathise: Ran usability tests on the existing search experience, collected questionnaires, and spoke with customer support, product and customer-facing teams to surface recurring search pain points and expectations.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">2.</span> Discover: Analysed Hub search data (such as volume of searches and queries with no results) and mapped how users moved between search, folders and smart folders to understand where they got stuck or gave up.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">3.</span> Ideate: Benchmarked search and refinement patterns from tools like Jira, LinkedIn, job boards and e-commerce sites, then adapted those paradigms to Signavio's attribute-rich process content and metadata model.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">4.</span> Validate: Tested early flows and interaction patterns for simple and advanced search with users, iterating on filter discoverability, criteria tags and result layouts based on observed confusion, errors and edge cases.</span><br>",
+      "<br><br><strong>Problems we found</strong><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">1.</span> Simple search behaved like a bare-bones title lookup with no suggestions, autocomplete or recent searches, falling far short of the forgiving, modern behaviour users expected from search.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">2.</span> Advanced search was powerful but almost unusable: attribute lists were extremely long and unclear, type controls were nearly invisible, there was no way to filter by date, and error feedback was weak or missing.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">3.</span> Result lists were hard to scan and act on, with no grouping or secondary filters, unclear type icons and a flat visual structure that made it difficult to decide which item to open next.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">4.</span> Users had no easy way to progressively refine very large result sets, even though many tenants contained hundreds or thousands of items matching broad queries.</span><br>",
+      "<br><br><strong>Key design decisions</strong><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">1.</span> Reframed the core user story around refining results (\"I want to narrow down my initial search results so I can find the right model faster\"), making refinement the centre of the experience rather than an afterthought.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">2.</span> Introduced a criteria-tag pattern for advanced search, where each filter (for example customer, status, IT system or date) becomes a visible, editable chip that users can add, remove and reorder with clear state and feedback.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">3.</span> Curated and clarified attributes by surfacing frequently used filters first, shortening long attribute lists and improving naming so non-expert users could better understand what each filter would do.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">4.</span> Restructured the results layout with stronger hierarchy for type, title, key metadata and recency, and laid the groundwork for sorting and grouping so users could scan and prioritise results much more quickly.</span><br>",
+      "<br><br><strong>Achievements and outcomes</strong><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">1.</span> Turned a title-only, expert-oriented search into an approachable, guided experience that better matched expectations from modern SaaS tools while still supporting Signavio's rich attribute model.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">2.</span> Enabled users to refine result sets of hundreds of items down to focused subsets in just a few refinement steps, directly supporting real-world tasks like finding the right process, dictionary item or incident documentation.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">3.</span> Strengthened the Process Collaboration Hub as the central place to discover and reuse process knowledge, making it more likely that business users stay within the Signavio ecosystem instead of reverting to local files.</span><br>",
+      "<span class=\"numbered-line\"><span class=\"num\">4.</span> Delivered reusable patterns for advanced filtering, criteria tags and saved searches that other parts of the SAP Signavio suite can adopt wherever users need to work efficiently with large collections of process artefacts.</span><br>"
+    ],
     "link": "project.php?id=search",
     "title_bold": "🔒 Search",
     "title_regular": "on a complex system ",
@@ -136,9 +124,9 @@
     "protected": true,
     "show": true
   },
-    {
+  {
     "id": "racespace",
-	  "gallery_desc": "An interactive sales dashboard for Formula-1 teams",
+    "gallery_desc": "An interactive sales dashboard for Formula-1 teams",
     "shortdesc": "An interactive sales dashboard for Formula-1 teams that visualizes car ad space, highlights coverage gaps, and helps manage bidding conflicts, enabling faster, smarter selling and sponsorship decisions at a glance.",
     "desc": "<strong>RaceSpace</strong> is an interactive sales platform for Formula 1 teams that maps every advertising slot on the car, surfaces inventory gaps and overlaps, and clarifies bidding conflicts so commercial teams can price, package, and sell sponsorships more confidently and much faster.",
     "link": "project.php?id=racespace",
@@ -149,11 +137,11 @@
     "imagefolder": "content/images/racespace",
     "imageprefix": "f1",
     "homepage": true,
-    "show": true
+    "show": false
   },
-    {
+  {
     "id": "suite-as-pie",
-	  "gallery_desc": "Effortless in-room ordering for hotel guests",
+    "gallery_desc": "Effortless in-room ordering for hotel guests",
     "shortdesc": "Effortless in-room ordering for hotel guests. Suite as pie streamlines room service requests, enhancing guest comfort and hotel efficiency with a beautifully intuitive interface.",
     "desc": "<strong>Suite as Pie</strong> is a mobile hotel service app that lets guests browse, customise, and order in-room services in just a few taps, while giving hotel staff a clear, real-time view of incoming requests so they can fulfil orders faster and more accurately.",
     "link": "project.php?id=suite-as-pie",
@@ -164,12 +152,12 @@
     "imagefolder": "content/images/suiteaspie",
     "imageprefix": "sap",
     "homepage": true,
-    "show": true
+    "show": false
   },
-    {
+  {
     "id": "hp",
     "shortdesc": "HP short description.",
-	  "gallery_desc": "Intuitive printer touchscreen interface design",
+    "gallery_desc": "Intuitive printer touchscreen interface design",
     "desc": "This was a multi-year, engagement as part of an external design team supporting <strong>HP</strong> in developing the 19\" touchscreen interface used by professional print operators. The work combined UX for complex workflows with a deep understanding of how the printers function mechanically and operationally, so the UI could expose the right controls and feedback for expert users without adding friction.",
     "link": "project.php?id=hp",
     "title_bold": "HP Printer",
@@ -179,11 +167,11 @@
     "imagefolder": "content/images/hp",
     "imageprefix": "hp",
     "homepage": false,
-    "show": true
+    "show": false
   },
-  { 
+  {
     "id": "olamundo",
-	  "gallery_desc": "Synced family communication for non-verbal kids",
+    "gallery_desc": "Synced family communication for non-verbal kids",
     "shortdesc": "A symbol based communication app that empowers non-verbal children to chat with family and therapists using intuitive visual boards, bridging distance and giving them a clearer voice in everyday life.",
     "desc": "<strong>Ola Mundo</strong> is a child-centred communication app that uses symbol based messages to help nonverbal or minimally verbal children stay in touch with their parents, siblings, and therapists whether they are in the same room or far away.",
     "link": "project.php?id=olamundo",
@@ -194,11 +182,11 @@
     "imagefolder": "content/images/olamundo",
     "imageprefix": "om",
     "homepage": true,
-    "show": true
+    "show": false
   },
-   {
-   "id": "safebreach",
-	  "gallery_desc": "Pioneering enterprise breach simulation platform",
+  {
+    "id": "safebreach",
+    "gallery_desc": "Pioneering enterprise breach simulation platform",
     "shortdesc": "safebreach short description.",
     "desc": "<strong>SafeBreach</strong> is a breach and attack simulation platform that continuously runs real world attack scenarios to show security teams where their controls fail and how to fix the most critical gaps. As the company's first designer over its first three years, I owned all design work end to end, from product UX flows and dense data-heavy UIs to brand and marketing assets, helping shape how complex security findings are visualised and prioritised for customers.",
     "link": "project.php?id=safebreach",
@@ -209,12 +197,12 @@
     "imagefolder": "content/images/safebreach",
     "imageprefix": "safebreach",
     "homepage": false,
-    "show": true
+    "show": false
   },
-    {
+  {
     "id": "x4",
     "shortdesc": "x4 short description.",
-	  "gallery_desc": "XXXXX XXXXX",
+    "gallery_desc": "XXXXX XXXXX",
     "desc": "About this project: this is an x4 project.",
     "link": "project.php?id=x4",
     "title_bold": "x4 Sandisk",
@@ -227,9 +215,9 @@
     "protected": true,
     "show": false
   },
-    {
+  {
     "id": "fig",
-	  "gallery_desc": "3D-printed mould ceramic slipcasting",
+    "gallery_desc": "3D-printed mould ceramic slipcasting",
     "shortdesc": "fig short description.",
     "desc": "About this project: this is a fig project.",
     "link": "project.php?id=fig",
@@ -243,9 +231,9 @@
     "protected": true,
     "show": false
   },
-      {
+  {
     "id": "sparkly",
-	  "gallery_desc": "Vector illustration creative exercise",
+    "gallery_desc": "Vector illustration creative exercise",
     "shortdesc": "sparkly short description.",
     "desc": "<strong>Sparkly!</strong> is a self initiated poster that pushes pure vector illustration to its limits, using only shapes, colour, and composition (no raster effects) to demonstrate control over detail, lighting, and depth in a scalable, print ready artwork.",
     "link": "project.php?id=sparkly",
@@ -255,6 +243,6 @@
     "thumbnail": "content/images/sparkly/sparklythumb.png",
     "imagefolder": "content/images/sparkly",
     "homepage": false,
-    "show": true
+    "show": false
   }
 ]
