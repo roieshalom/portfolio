@@ -44,11 +44,11 @@
     "show": true
   },
   {
-    "id": "EQCapture/old",
+    "id": "EQCapture-old",
     "gallery_desc": "EQCapture (archived PDF version)",
     "shortdesc": "",
     "desc": [],
-    "link": "project.php?id=EQCapture/old",
+    "link": "project.php?id=EQCapture-old",
     "title_bold": "EQCapture",
     "title_regular": "archived",
     "category": "UX",
