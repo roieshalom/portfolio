@@ -33,14 +33,14 @@
 ],
     "link": "project.php?id=EQCapture",
     "page": "eqcapture.html",
-    "title_bold": "EQCapture",
+    "title_bold": "🔒 EQCapture",
     "title_regular": "inventory tracking",
     "category": "UX",
     "thumbnail": "content/images/eqc/eqcthumb.png",
     "imagefolder": "content/images/eqc/eqcdesign.pdf",
     "imageprefix": "eqc",
     "homepage": false,
-    "protected": false,
+    "protected": true,
     "show": true
   },
   {
