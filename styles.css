@@ -132,23 +132,19 @@ button:focus {
   background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
   margin-bottom: 8px;
-  margin-left: calc(-1 * clamp(20px, 5vw, 32px));
-  margin-right: calc(-1 * clamp(20px, 5vw, 32px));
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 @media (min-width: 600px) {
   .top-nav {
     padding: 20px clamp(32px, 8vw, 64px);
-    margin-left: calc(-1 * clamp(32px, 8vw, 64px));
-    margin-right: calc(-1 * clamp(32px, 8vw, 64px));
   }
 }
 
 @media (min-width: 1200px) {
   .top-nav {
     padding: 20px clamp(80px, 12vw, 200px);
-    margin-left: calc(-1 * clamp(80px, 12vw, 200px));
-    margin-right: calc(-1 * clamp(80px, 12vw, 200px));
   }
 }
 
