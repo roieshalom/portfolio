@@ -81,6 +81,21 @@
     "show": false
   },
   {
+    "id": "Search2",
+    "gallery_desc": "Global assisted search on a complex system",
+    "shortdesc": "",
+    "desc": [],
+    "link": "project.php?id=Search2",
+    "page": "search2.html",
+    "title_bold": "🔒 Search (staging)",
+    "title_regular": "staging",
+    "category": "UX",
+    "thumbnail": "content/images/search/searcthumb.png",
+    "homepage": false,
+    "protected": true,
+    "show": false
+  },
+  {
     "id": "search",
     "gallery_desc": "Global assisted search on a complex system",
     "shortdesc": "12345678900",
