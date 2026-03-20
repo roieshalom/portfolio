@@ -13,7 +13,6 @@
        CASE STUDY — Search Redesign
     ============================================================ */
 
-    /* Full-bleed: escape body padding at every breakpoint */
     .cs-bleed {
       margin-left: calc(-1 * clamp(20px, 5vw, 32px));
       margin-right: calc(-1 * clamp(20px, 5vw, 32px));
@@ -31,7 +30,6 @@
       }
     }
 
-    /* Re-adds padding inside full-bleed sections */
     .cs-inner {
       max-width: 1080px;
       margin: 0 auto;
@@ -51,19 +49,16 @@
       }
     }
 
-    /* Narrow text column */
     .cs-text {
       max-width: 660px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    /* Section spacing */
     .cs-section {
       margin-top: 72px;
     }
 
-    /* Eyebrow label */
     .cs-eyebrow {
       display: inline-block;
       font-size: 0.72rem;
@@ -74,7 +69,6 @@
       margin-bottom: 10px;
     }
 
-    /* Section headings */
     .cs-h2 {
       font-size: clamp(1.2rem, 2.8vw, 1.65rem);
       font-weight: 700;
@@ -83,7 +77,6 @@
       line-height: 1.3;
     }
 
-    /* Body text */
     .cs-p {
       font-size: 0.95rem;
       line-height: 1.7;
@@ -150,19 +143,12 @@
     }
 
     @media (max-width: 600px) {
-      .cs-hero {
-        padding: 56px 0 52px;
-      }
-      .cs-meta-row {
-        flex-wrap: wrap;
-        gap: 6px 16px;
-      }
+      .cs-hero { padding: 56px 0 52px; }
+      .cs-meta-row { flex-wrap: wrap; gap: 6px 16px; }
     }
 
     /* ---- ROLE BAR ---- */
-    .cs-role-bar {
-      background: var(--color-grey-light);
-    }
+    .cs-role-bar { background: var(--color-grey-light); }
 
     .cs-role-bar .cs-inner {
       display: grid;
@@ -188,10 +174,7 @@
     }
 
     @media (max-width: 600px) {
-      .cs-role-bar .cs-inner {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
+      .cs-role-bar .cs-inner { grid-template-columns: 1fr; gap: 20px; }
     }
 
     /* ---- IMAGES ---- */
@@ -201,9 +184,7 @@
       border-radius: 12px;
     }
 
-    .cs-img-wrap {
-      margin: 32px 0 0;
-    }
+    .cs-img-wrap { margin: 32px 0 0; }
 
     .cs-img-2col {
       display: grid;
@@ -213,26 +194,19 @@
       align-items: start;
     }
 
-    .cs-img-2col figure {
-      margin: 0;
-    }
+    .cs-img-2col figure { margin: 0; }
 
     .cs-img-2col .cs-img {
-      height: 420px;
+      height: 360px;
       object-fit: cover;
       border-radius: 12px;
     }
 
     @media (max-width: 600px) {
-      .cs-img-2col {
-        grid-template-columns: 1fr;
-      }
-      .cs-img-2col .cs-img {
-        height: 280px;
-      }
+      .cs-img-2col { grid-template-columns: 1fr; }
+      .cs-img-2col .cs-img { height: 240px; }
     }
 
-    /* ---- CAPTION ---- */
     .cs-caption {
       font-size: 0.78rem;
       color: var(--color-text);
@@ -254,45 +228,32 @@
       line-height: 1.55;
     }
 
-    /* ---- DECISION CARDS ---- */
-    .cs-decision-card {
+    /* ---- ASSUMPTION / DECISION CARDS ---- */
+    .cs-card {
       background: var(--color-grey-light);
       border-radius: var(--radius-card);
-      padding: 28px 32px 32px;
-      margin-bottom: 0;
+      padding: 24px 28px 28px;
     }
 
-    .cs-decision-num {
-      font-size: 1.9rem;
-      font-weight: 800;
-      color: var(--color-link);
-      opacity: 0.35;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .cs-decision-title {
-      font-size: 1.05rem;
+    .cs-card-title {
+      font-size: 1.0rem;
       font-weight: 700;
       color: var(--color-text-main);
-      margin: 0 0 12px;
+      margin: 0 0 10px;
     }
 
-    .cs-decision-block {
-      margin-bottom: 56px;
-    }
-
-    .cs-decision-block:last-child {
-      margin-bottom: 0;
+    .cs-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 28px 0;
     }
 
     @media (max-width: 600px) {
-      .cs-decision-card {
-        padding: 20px 20px 24px;
-      }
+      .cs-cards-grid { grid-template-columns: 1fr; }
     }
 
-    /* ---- OUTCOME (soft, no big numbers) ---- */
+    /* ---- OUTCOME ---- */
     .cs-outcome {
       background: var(--color-grey-light);
       padding: 56px 0 64px;
@@ -314,9 +275,7 @@
       transition: transform 0.2s cubic-bezier(.37,1.13,.62,.96);
     }
 
-    .cs-back-link:hover {
-      transform: translateX(-3px);
-    }
+    .cs-back-link:hover { transform: translateX(-3px); }
   </style>
 </head>
 <body>
@@ -357,7 +316,7 @@
       </div>
       <div>
         <div class="cs-role-col-label">The team</div>
-        <div class="cs-role-col-val">1 Product Manager, Engineering team, and me as the sole designer on this initiative</div>
+        <div class="cs-role-col-val">1 PM, Engineering team, and me as the sole designer on this initiative</div>
       </div>
       <div>
         <div class="cs-role-col-label">Outcome</div>
@@ -369,7 +328,7 @@
   <!-- 3. CONTEXT -->
   <section class="cs-section">
     <div class="cs-text">
-      <p class="cs-p">Signavio (now SAP Signavio) makes process management software used by over 1,500 companies and more than a million users worldwide. The Collaboration Hub is where employees across an organization go to find, view, and work with business process documentation. Think of it as a company's single source of truth for how things get done. I joined the team as Senior UX Designer and quickly noticed that a critical part of the product had been left behind as the platform grew.</p>
+      <p class="cs-p">Signavio (now SAP Signavio) makes process management software used by over 1,500 companies and more than a million users worldwide. The Collaboration Hub is where employees find, view, and work with business process documentation: a company's single source of truth for how things get done. I joined as Senior UX Designer and quickly noticed that a critical piece of the product had been left behind as the platform grew.</p>
     </div>
   </section>
 
@@ -377,36 +336,22 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">The Problem</span>
-      <h2 class="cs-h2">Tens of thousands of searches, and almost nobody finding what they need</h2>
-      <p class="cs-p">The Hub's search was being used heavily. Tens of thousands of searches per year. But the experience hadn't evolved alongside the product. Simple search only matched item titles. No autocomplete, no suggestions, no recent searches. Users expected Google; they got a blank text field.</p>
-    </div>
-    <div class="cs-text">
+      <h2 class="cs-h2">Tens of thousands of searches, almost nobody finding what they need</h2>
+      <p class="cs-p">The Hub's search was used heavily but hadn't evolved with the product. Simple search matched titles only. No autocomplete, no suggestions, no recent searches. Users expected Google; they got a blank text field.</p>
       <div class="cs-img-wrap">
         <img src="content/images/search2/old_simple_search.jpg" alt="The existing simple search" class="cs-img">
-        <p class="cs-caption">The existing simple search: a basic text field with no suggestions or autocomplete.</p>
+        <p class="cs-caption">The existing simple search: a blank field with title-only matching.</p>
       </div>
-      <div class="cs-img-wrap">
-        <img src="content/images/search2/conclusions_simple.jpg" alt="Key findings for simple search" class="cs-img">
-        <p class="cs-caption">Key findings for simple search: no suggestions, title-only matching, and wasted screen space.</p>
+      <p class="cs-p" style="margin-top: 32px;">Advanced search was worse. A confusing form with hidden dropdowns, unclear labels, no error feedback, and filter lists running to over a thousand items for some customers. About 80% of users never touched it. They stuck with simple search and scrolled through unstructured results, hoping to spot what they needed.</p>
+      <div class="cs-img-2col">
+        <figure>
+          <img src="content/images/search2/old_advanced_search.jpg" alt="The confusing advanced search form" class="cs-img">
+        </figure>
+        <figure>
+          <img src="content/images/search2/old_results.jpg" alt="Unstructured results" class="cs-img">
+        </figure>
       </div>
-      <p class="cs-p" style="margin-top: 32px;">The advanced search was worse. A confusing form with hidden dropdowns, unclear attribute labels, no error feedback, and a filter list that could run to over a thousand items for some customers. Only about 20% of users even attempted it. The rest stuck with simple search and scrolled through unstructured result lists, hoping to spot what they needed.</p>
-      <div class="cs-img-wrap">
-        <img src="content/images/search2/old_advanced_search.jpg" alt="The existing advanced search" class="cs-img">
-        <p class="cs-caption">The existing advanced search: a complex form that most users avoided.</p>
-      </div>
-      <div class="cs-img-wrap">
-        <img src="content/images/search2/conclusions_advanced.jpg" alt="Advanced search findings" class="cs-img">
-        <p class="cs-caption">Advanced search was confusing, error-prone, and largely avoided by users.</p>
-      </div>
-      <p class="cs-p" style="margin-top: 32px;">Search results told a similar story. No grouping, no further filtering, no sorting beyond relevance. Type icons were unclear. The visual structure made it hard to scan quickly. And when results ran across multiple pages, almost nobody clicked past the first one.</p>
-      <div class="cs-img-wrap">
-        <img src="content/images/search2/old_results.jpg" alt="The existing search results" class="cs-img">
-        <p class="cs-caption">Search results: flat list with unclear hierarchy and no way to filter further.</p>
-      </div>
-      <div class="cs-img-wrap">
-        <img src="content/images/search2/conclusions_results.jpg" alt="Search results findings" class="cs-img">
-        <p class="cs-caption">Results lacked filtering, sorting, and clear visual hierarchy.</p>
-      </div>
+      <p class="cs-caption">Left: The confusing advanced search form. Right: Unstructured results with no way to filter further.</p>
     </div>
   </section>
 
@@ -414,29 +359,11 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Making the Case</span>
-      <h2 class="cs-h2">No analytics function? Go find the data yourself</h2>
-      <p class="cs-p">Nobody had asked me to look at search. I noticed the problem while immersing myself in the product as a new team member. The fresh eyes helped: I was experiencing the same friction that regular users faced, but I had the skills to diagnose it.</p>
-      <p class="cs-p">There was no analytics function at Signavio, so I partnered with a backend engineer to pull raw usage data. What we found confirmed the hunch: the vast majority of users relied on simple search, almost nobody used advanced filtering, and result page engagement dropped off a cliff after the first page.</p>
-      <div class="cs-img-wrap">
-        <img src="content/images/search2/data_search_method.jpg" alt="Search method usage data" class="cs-img">
-        <p class="cs-caption">Usage data: the vast majority of users relied on simple search over advanced filtering.</p>
-      </div>
-      <div class="cs-img-wrap">
-        <img src="content/images/search2/data_dropoff.jpg" alt="Result page engagement dropoff" class="cs-img">
-        <p class="cs-caption">Engagement dropped sharply after the first results page. Almost no one went further.</p>
-      </div>
-      <p class="cs-p" style="margin-top: 32px;">A conversation with a Customer Success representative gave me another crucial insight: many Hub users aren't particularly tech-savvy. They're mid-management process owners, compliance officers, HR leads. People who use web browsers and office tools, not power users. This shaped everything that came after.</p>
-      <div class="cs-img-2col">
-        <figure>
-          <img src="content/images/search2/assumption_1.jpg" alt="Research assumption 1" class="cs-img">
-        </figure>
-        <figure>
-          <img src="content/images/search2/assumption_2.jpg" alt="Research assumption 2" class="cs-img">
-        </figure>
-      </div>
-      <p class="cs-caption">Key assumptions going into the redesign, validated through user interviews and usage data.</p>
-      <blockquote class="cs-pullquote">One customer was such a fan of the product that he'd hide pictures inside the process folders, challenging his employees to find them as a way to encourage adoption. Creative. But also a sign that finding things in the Hub was genuinely hard.</blockquote>
-      <p class="cs-p">When I shared the data with the team, there was no resistance. The case was clear. The question was just: where do we focus first?</p>
+      <h2 class="cs-h2">No analytics team? Go find the data yourself</h2>
+      <p class="cs-p">Nobody asked me to look at search. I spotted the problem while ramping up on the product as a new team member. Fresh eyes helped: I was experiencing the same friction that real users faced every day.</p>
+      <p class="cs-p">Signavio had no analytics function, so I partnered with a backend engineer to pull raw usage data. The numbers confirmed the hunch: the vast majority used simple search, almost nobody used advanced filtering, and engagement dropped off a cliff after the first page of results.</p>
+      <p class="cs-p">A conversation with a Customer Success representative shaped my design direction. She told me that many Hub users aren't tech-savvy. They're process owners, compliance officers, HR leads. People who use web browsers and office tools. Not power users. That insight changed everything.</p>
+      <blockquote class="cs-pullquote">One customer hid pictures inside process folders, challenging employees to find them as a way to encourage product adoption. Creative, but also a sign that finding things in the Hub was genuinely hard.</blockquote>
     </div>
   </section>
 
@@ -444,108 +371,39 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Focus</span>
-      <h2 class="cs-h2">Refine results: the biggest pain point</h2>
-      <p class="cs-p">I mapped the complete search journey into five stages: the user's need, the search action, advanced filtering, finding the right model in results, and finding the term on the destination page. Each had problems, but result refinement stood out as the highest-impact area. The existing advanced search was so broken that most users never touched it, leaving them stranded with long, unfiltered result lists.</p>
+      <h2 class="cs-h2">Where to start: refining results</h2>
+      <p class="cs-p">I mapped the search journey into five stages: the need, the search, advanced filtering, finding the model in results, and spotting it on the page. Each had problems, but result refinement was the biggest gap. Advanced search was so broken most users skipped it entirely, leaving them stranded in long, unfiltered lists.</p>
       <div class="cs-img-wrap">
-        <img src="content/images/search2/discover_flow.jpg" alt="Search journey map" class="cs-img">
-        <p class="cs-caption">The search journey broken into five stages. Refine/advanced search was the critical gap.</p>
+        <img src="content/images/search2/discover_flow.jpg" alt="Five-stage search journey" class="cs-img">
+        <p class="cs-caption">The search journey in five stages. Advanced filtering was the critical gap.</p>
       </div>
-      <div class="cs-img-wrap">
-        <img src="content/images/search2/user_story.jpg" alt="Core user story" class="cs-img">
-        <p class="cs-caption">The core user story that framed the entire redesign effort.</p>
-      </div>
-      <p class="cs-p" style="margin-top: 32px;">I framed the core user story simply: "As a Hub user, I want to narrow down my search results so I can find the right model faster."</p>
     </div>
   </section>
 
-  <!-- 7. KEY DESIGN DECISIONS -->
+  <!-- 7. DESIGN DIRECTION -->
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Design Direction</span>
       <h2 class="cs-h2">Making filtering feel physical</h2>
-      <p class="cs-p">Knowing our users weren't power users, I wanted a filtering approach that felt tangible and visual rather than technical. Something closer to sorting papers on a desk than writing database queries.</p>
-    </div>
+      <p class="cs-p">Knowing our users weren't power users, I wanted filtering that felt tangible. Something closer to sorting papers on a desk than writing database queries.</p>
 
-    <div class="cs-text" style="margin-top: 48px;">
-
-      <!-- Decision 01 -->
-      <div class="cs-decision-block">
-        <div class="cs-decision-card">
-          <div class="cs-decision-num">01</div>
-          <div class="cs-decision-title">Drag-and-drop criteria</div>
-          <p class="cs-p">I proposed replacing the confusing advanced search form with a drag-and-drop system. Search criteria appear as visible tags, organized into "Frequently Used" and "All Attributes" sections. Users drag a criteria tag into the refine area, select a value, and the results update. Every active filter is visible, removable with one click, and the whole state is saveable.</p>
-          <p class="cs-p" style="margin-bottom: 0;">The rationale came from UX fundamentals: recognition over recall (show the options, don't make users remember them), visibility (active criteria are always visible, building confidence and trust), and error prevention (you can't submit a broken query because the interface won't let you).</p>
+      <div class="cs-cards-grid">
+        <div class="cs-card">
+          <div class="cs-card-title">Assumption 1</div>
+          <p class="cs-p" style="margin: 0;">Laying out the criteria visually will simplify the interface. The current form is confusing, unpredictable, and hides information.</p>
         </div>
-        <div class="cs-img-wrap">
-          <img src="content/images/search2/why_dragdrop.jpg" alt="Why drag and drop" class="cs-img">
-          <p class="cs-caption">The rationale: drag-and-drop addresses the core UX principles the existing form violated.</p>
-        </div>
-        <div class="cs-img-wrap">
-          <img src="content/images/search2/proto_refine_empty.jpg" alt="New refine panel" class="cs-img">
-          <p class="cs-caption">The new refine panel: drag criteria from the tag inventory into the refinement area.</p>
-        </div>
-        <div class="cs-img-wrap">
-          <img src="content/images/search2/proto_dragging.jpg" alt="Dragging a criteria tag" class="cs-img">
-          <p class="cs-caption">Dragging a criteria tag into the active area.</p>
-        </div>
-        <div class="cs-img-wrap">
-          <img src="content/images/search2/proto_value_select.jpg" alt="Selecting a value for a criteria tag" class="cs-img">
-          <p class="cs-caption">Selecting a value for the active criteria tag.</p>
-        </div>
-        <div class="cs-img-wrap">
-          <img src="content/images/search2/proto_active_criteria.jpg" alt="Active criteria tags" class="cs-img">
-          <p class="cs-caption">Active criteria displayed as removable tags. Results narrow from 948 to 350 items.</p>
-        </div>
-        <div class="cs-img-wrap">
-          <img src="content/images/search2/proto_multi_criteria.jpg" alt="Multiple criteria stacked" class="cs-img">
-          <p class="cs-caption">Multiple criteria stacked. Results refined from 948 to 17 items.</p>
-        </div>
-        <div class="cs-img-2col">
-          <figure>
-            <img src="content/images/search2/proto_before.jpg" alt="Before applying criteria" class="cs-img">
-          </figure>
-          <figure>
-            <img src="content/images/search2/proto_removed.jpg" alt="After removing a criteria" class="cs-img">
-          </figure>
-        </div>
-        <p class="cs-caption">Left: the panel before any criteria are applied. Right: removing a criteria tag returns results to the previous state immediately.</p>
-        <div class="cs-img-wrap">
-          <img src="content/images/search2/disadvantages.jpg" alt="Disadvantages of the existing approach" class="cs-img">
-          <p class="cs-caption">The existing approach's shortcomings mapped against the proposed model.</p>
+        <div class="cs-card">
+          <div class="cs-card-title">Assumption 2</div>
+          <p class="cs-p" style="margin: 0;">Preventing use of unfilled criteria will reduce errors. Users are currently making mistakes without knowing it.</p>
         </div>
       </div>
 
-      <!-- Decision 02 -->
-      <div class="cs-decision-block">
-        <div class="cs-decision-card">
-          <div class="cs-decision-num">02</div>
-          <div class="cs-decision-title">If engineers say it's too easy, it's just right</div>
-          <p class="cs-p" style="margin-bottom: 0;">I tested the prototype internally. Signavio employees, all highly technical, said it felt "too easy." That was exactly the signal I was looking for. If people who build software for a living find it almost too simple, then process managers in HR and compliance departments will find it just right.</p>
-        </div>
+      <p class="cs-p">I explored four established filtering patterns before committing to a direction: a two-column sidebar, JIRA-style toolbar dropdowns, a lightbox with faceted columns, and a megadrop panel.</p>
+      <div class="cs-img-wrap">
+        <img src="content/images/search2/patterns_compared.jpg" alt="Four filtering patterns evaluated" class="cs-img">
+        <p class="cs-caption">Four filtering patterns evaluated against our user context.</p>
       </div>
-
-      <!-- Decision 03 -->
-      <div class="cs-decision-block">
-        <div class="cs-decision-card">
-          <div class="cs-decision-num">03</div>
-          <div class="cs-decision-title">Exploring the alternatives</div>
-          <p class="cs-p" style="margin-bottom: 0;">Before committing to drag-and-drop, I explored four established filtering patterns: a two-column sidebar (like job search sites), a JIRA-style toolbar with dropdowns, a lightbox with faceted columns, and a megadrop panel (like LinkedIn's job filters). Each had strengths, but for our user base, drag-and-drop best balanced visibility, simplicity, and error prevention.</p>
-        </div>
-        <div class="cs-img-2col">
-          <figure>
-            <img src="content/images/search2/alt_twocol.jpg" alt="Two-column sidebar alternative" class="cs-img">
-          </figure>
-          <figure>
-            <img src="content/images/search2/alt_jira.jpg" alt="JIRA-style toolbar alternative" class="cs-img">
-          </figure>
-        </div>
-        <p class="cs-caption">Two alternatives explored: a two-column sidebar filter (left) and a JIRA-style inline toolbar (right).</p>
-        <div class="cs-img-wrap">
-          <img src="content/images/search2/patterns_compared.jpg" alt="Four filtering patterns evaluated" class="cs-img">
-          <p class="cs-caption">All four patterns evaluated side by side against our user profile and requirements.</p>
-        </div>
-      </div>
-
+      <p class="cs-p" style="margin-top: 32px;">For our user base, drag-and-drop won. Criteria appear as visible tags. Users drag what they need into a refinement area, pick a value, and results update. Every active filter is visible and removable. The rationale: recognition over recall, continuous visibility, and error prevention built into the interaction itself.</p>
     </div>
   </section>
 
@@ -553,26 +411,24 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">The Solution</span>
-      <h2 class="cs-h2">A smarter search from start to finish</h2>
-      <p class="cs-p">The redesign wasn't just about filtering. I also proposed improvements to the search entry point: autocomplete with recent searches, content suggestions, and matching files appearing as you type.</p>
+      <h2 class="cs-h2">A smarter search, start to finish</h2>
+      <p class="cs-p">The redesign improved the full journey: an autocomplete dropdown at entry, and a drag-and-drop criteria system for refinement.</p>
       <div class="cs-img-wrap">
-        <img src="content/images/search2/proto_autocomplete.jpg" alt="New search autocomplete dropdown" class="cs-img">
-        <p class="cs-caption">New search dropdown: recent items, suggestions, and matching files before even hitting enter.</p>
+        <img src="content/images/search2/proto_autocomplete.jpg" alt="New autocomplete search dropdown" class="cs-img">
+        <p class="cs-caption">New search entry: recent items, suggestions, and matching files before hitting enter.</p>
       </div>
-    </div>
-    <div class="cs-text">
-      <div class="cs-img-2col" style="margin-top: 32px;">
-        <figure>
-          <img src="content/images/search2/criteria_states.jpg" alt="Four states of a criteria tag" class="cs-img">
-        </figure>
-        <figure>
-          <img src="content/images/search2/criteria_types.jpg" alt="Different input types per criteria" class="cs-img">
-        </figure>
+      <div class="cs-img-wrap">
+        <img src="content/images/search2/proto_refine_empty.jpg" alt="The refine panel" class="cs-img">
+        <p class="cs-caption">The refine panel: frequently used criteria at the top, all attributes below. Drag to filter.</p>
       </div>
-      <p class="cs-caption">Left: The four states of a criteria tag (inventory, moving, selecting value, active). Right: Different input types per criteria (text, dropdown, date picker, dictionary reference).</p>
+      <div class="cs-img-wrap">
+        <img src="content/images/search2/proto_multi_criteria.jpg" alt="Multiple active criteria" class="cs-img">
+        <p class="cs-caption">Three active criteria. Results narrowed from 948 to 17 items.</p>
+      </div>
+      <p class="cs-p" style="margin-top: 32px;">I tested the prototype with Signavio employees. Even the engineers said it felt "too easy." For our actual users, that meant it would be just right.</p>
       <div class="cs-img-wrap">
         <img src="content/images/search2/proto_responsive.jpg" alt="Responsive layout" class="cs-img">
-        <p class="cs-caption">Responsive layout: criteria panel above results on smaller viewports.</p>
+        <p class="cs-caption">Responsive layout: criteria panel stacks above results on smaller screens.</p>
       </div>
     </div>
   </section>
@@ -583,8 +439,8 @@
       <div class="cs-text">
         <span class="cs-eyebrow">Outcome</span>
         <h2 class="cs-h2">The work that shapes how you think</h2>
-        <p class="cs-p">The project was deprioritized before reaching development. That's a reality of enterprise product work: even strong proposals compete with shifting business priorities.</p>
-        <p class="cs-p">But the work wasn't wasted. The research and design thinking influenced how the team approached search and discoverability going forward. And for me, it reinforced a lesson I keep learning: great design needs a coalition. The data was there, the solution tested well, but I hadn't built enough internal champions to keep it alive. Next time, I'd bring more people into the process earlier, designers and non-designers, to create shared ownership of the problem.</p>
+        <p class="cs-p">The project was deprioritized before reaching development. That happens in enterprise product work: even well-researched proposals compete with shifting business priorities.</p>
+        <p class="cs-p" style="margin-bottom: 0;">The work wasn't wasted. The research influenced how the team thought about search and discoverability. And for me, it reinforced a lesson I keep learning: great design needs a coalition around it. The data was clear, the solution tested well, but I hadn't built enough internal champions to protect it. Next time, I'd bring more people into the process earlier to create shared ownership of the problem.</p>
       </div>
     </div>
   </section>
