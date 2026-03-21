@@ -8,11 +8,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
-  <script>document.documentElement.removeAttribute('data-theme');</script>
+  <script>
+    /* Force light mode — never apply dark theme on this page */
+    document.documentElement.removeAttribute('data-theme');
+    document.documentElement.style.colorScheme = 'light';
+  </script>
   <style>
     /* ============================================================
        CASE STUDY — Search Redesign
     ============================================================ */
+
+    /* Lock light-mode tokens regardless of OS preference */
+    :root {
+      --color-bg: #fafafa !important;
+      --color-text-main: #404040 !important;
+      --color-text: #555 !important;
+      --color-card: #fff !important;
+      --color-grey-light: #f2f2f2 !important;
+      --color-border: #e6e6e6 !important;
+    }
 
     .cs-bleed {
       margin-left: calc(-1 * clamp(20px, 5vw, 32px));
@@ -446,7 +460,7 @@
     </div>
   </section>
 
-  <!-- 10. BACK LINK -->
+  <!-- BACK LINK -->
   <div class="cs-back-wrap">
     <a href="work.html" class="cs-back-link">← Back to all projects</a>
   </div>
