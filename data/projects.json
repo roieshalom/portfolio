@@ -87,18 +87,19 @@
     "desc": [],
     "link": "project.php?id=Search2",
     "page": "search2.html",
-    "title_bold": "🔒 Search (staging)",
+    "title_bold": "Search (staging)",
     "title_regular": "staging",
     "category": "UX",
     "thumbnail": "content/images/search/searcthumb.png",
     "homepage": false,
-    "protected": true,
+    "protected": false,
     "show": false
   },
   {
     "id": "search",
     "gallery_desc": "Global assisted search on a complex system",
-    "shortdesc": "12345678900",
+    "shortdesc": "",
+    "page": "search.html",
     "desc": [
       "<strong>A Better Search</strong> reimagines how users find process content inside the Signavio (now SAP Signavio) Process Collaboration Hub, turning a technically powerful but hard-to-use search into an experience that everyday business users can actually rely on to navigate large, complex workspaces.",
       "<br><br><strong>My role</strong><br>I led the UX work on the initiative for the Process Collaboration Hub, working end-to-end from research through interaction design and stakeholder alignment. I combined search log analysis, usability tests and interviews with customer-facing teams to understand how people really tried to find process models, dictionary items and documents across large, messy tenants, and translated those insights into concrete UX requirements for both simple and advanced search.",
