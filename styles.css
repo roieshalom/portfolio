@@ -43,14 +43,13 @@ body {
   background: var(--color-bg);
   box-sizing: border-box;
   margin: 0;
-  overflow-x: hidden;
   font-family: 'Albert Sans', Arial, sans-serif;
   color: var(--color-text);
   font-size: 0.875rem;
   letter-spacing: .01em;
   scroll-behavior: smooth;
   line-height: 1.3rem;
-  overflow: visible;
+  overflow-x: hidden;
   padding-left: clamp(20px, 5vw, 32px);
   padding-right: clamp(20px, 5vw, 32px);
 }
