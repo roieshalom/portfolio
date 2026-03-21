@@ -326,7 +326,7 @@
       box-shadow: 0 8px 48px rgba(0,0,0,0.6);
     }
 
-    .cs-img { cursor: zoom-in; }
+    img.cs-img { cursor: zoom-in; }
 
     /* ---- OUTCOME ---- */
     .cs-outcome {
@@ -562,7 +562,7 @@
       }
 
       // Bind all .cs-img images and pattern grid images
-      document.querySelectorAll('.cs-img[src], .cs-pattern-grid img').forEach(function(img) {
+      document.querySelectorAll('img.cs-img, .cs-pattern-grid img').forEach(function(img) {
         img.addEventListener('click', function() {
           openLightbox(img.src, img.alt);
         });
