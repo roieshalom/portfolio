@@ -43,6 +43,7 @@ body {
   background: var(--color-bg);
   box-sizing: border-box;
   margin: 0;
+  overflow-x: hidden;
   font-family: 'Albert Sans', Arial, sans-serif;
   color: var(--color-text);
   font-size: 0.875rem;
