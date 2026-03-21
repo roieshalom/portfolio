@@ -268,6 +268,66 @@
       .cs-cards-grid { grid-template-columns: 1fr; }
     }
 
+    /* ---- PATTERN GRID ---- */
+    .cs-pattern-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 32px 0 0;
+    }
+
+    .cs-pattern-grid figure {
+      margin: 0;
+    }
+
+    .cs-pattern-grid img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      cursor: zoom-in;
+    }
+
+    .cs-pattern-grid figcaption {
+      font-size: 0.75rem;
+      color: var(--color-text);
+      font-style: italic;
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .cs-pattern-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---- LIGHTBOX ---- */
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+
+    .lb-overlay.is-open {
+      display: flex;
+    }
+
+    .lb-overlay img,
+    .lb-overlay video {
+      max-width: min(92vw, 1200px);
+      max-height: 90vh;
+      border-radius: 8px;
+      object-fit: contain;
+      cursor: default;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+    }
+
+    .cs-img { cursor: zoom-in; }
+
     /* ---- OUTCOME ---- */
     .cs-outcome {
       background: var(--color-grey-light);
@@ -414,9 +474,23 @@
       </div>
 
       <p class="cs-p">I explored four established filtering patterns before committing to a direction: a two-column sidebar, JIRA-style toolbar dropdowns, a lightbox with faceted columns, and a megadrop panel.</p>
-      <div class="cs-img-wrap">
-        <img src="content/images/search2/patterns_compared.jpg" alt="Four filtering patterns evaluated" class="cs-img">
-        <p class="cs-caption">Four filtering patterns evaluated against our user context.</p>
+      <div class="cs-pattern-grid">
+        <figure>
+          <img src="content/images/search2/pat1.png" alt="JIRA-style filter pattern">
+          <figcaption>JIRA-style</figcaption>
+        </figure>
+        <figure>
+          <img src="content/images/search2/pat2.png" alt="2 Columns filter pattern">
+          <figcaption>2 Columns</figcaption>
+        </figure>
+        <figure>
+          <img src="content/images/search2/pat3.png" alt="Megadrop filter pattern">
+          <figcaption>Megadrop</figcaption>
+        </figure>
+        <figure>
+          <img src="content/images/search2/pat4.png" alt="Lightbox filter pattern">
+          <figcaption>Lightbox</figcaption>
+        </figure>
       </div>
       <p class="cs-p" style="margin-top: 32px;">For our user base, drag-and-drop won. Criteria appear as visible tags. Users drag what they need into a refinement area, pick a value, and results update. Every active filter is visible and removable. The rationale: recognition over recall, continuous visibility, and error prevention built into the interaction itself.</p>
     </div>
@@ -465,8 +539,46 @@
     <a href="work.html" class="cs-back-link">← Back to all projects</a>
   </div>
 
+  <!-- LIGHTBOX -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
+    <img id="lb-img" src="" alt="">
+  </div>
+
   <script src="access.js"></script>
   <script src="nav.js"></script>
   <script src="name-animator.js"></script>
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg = document.getElementById('lb-img');
+
+      function openLightbox(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Bind all .cs-img images and pattern grid images
+      document.querySelectorAll('.cs-img[src], .cs-pattern-grid img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          openLightbox(img.src, img.alt);
+        });
+      });
+
+      overlay.addEventListener('click', closeLightbox);
+      lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
 </body>
 </html>
