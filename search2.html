@@ -212,14 +212,13 @@
     .cs-img-2col figure { margin: 0; }
 
     .cs-img-2col .cs-img {
-      height: 360px;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       border-radius: 12px;
     }
 
     @media (max-width: 600px) {
       .cs-img-2col { grid-template-columns: 1fr; }
-      .cs-img-2col .cs-img { height: 240px; }
     }
 
     .cs-caption {
