@@ -72,9 +72,11 @@
         const title = unlocked ? proj.title_bold.replace(/🔒\s*/g, '') : proj.title_bold;
         return `
         <a href="${proj.external ? proj.link : 'project.php?id=' + proj.id}" class="gallery-tile" ${proj.external ? 'target="_blank" rel="noopener"' : ''}>
-          <img src="${proj.thumbnail}" alt="${title} thumbnail">
-          <div class="tile-overlay">
+          <div class="tile-img-wrap">
+            <img src="${proj.thumbnail}" alt="${title} thumbnail">
             ${proj.label ? `<div class="tile-company">${proj.label}</div>` : ''}
+          </div>
+          <div class="tile-overlay">
             <div class="tile-label"><strong>${title}</strong> ${proj.title_regular || ''}</div>
             <div class="tile-desc">${proj.shortdesc}</div>
           </div>
