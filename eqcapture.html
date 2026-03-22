@@ -228,13 +228,14 @@
     .cs-img-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 420px;
       gap: 16px;
       margin: 32px 0 0;
     }
 
     .cs-img-2col figure {
       margin: 0;
-      height: 420px;
+      min-height: 0;
       border-radius: 12px;
       overflow: hidden;
     }
@@ -250,9 +251,7 @@
     @media (max-width: 600px) {
       .cs-img-2col {
         grid-template-columns: 1fr;
-      }
-      .cs-img-2col figure {
-        height: 280px;
+        grid-template-rows: 280px;
       }
     }
 
