@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wayfair · Roie Shalom</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
+  <style>
+    /* ============================================================
+       CASE STUDY — Wayfair
+    ============================================================ */
+
+    /* Full-bleed: escape body padding at every breakpoint */
+    .cs-bleed {
+      margin-left: calc(-1 * clamp(20px, 5vw, 32px));
+      margin-right: calc(-1 * clamp(20px, 5vw, 32px));
+    }
+    @media (min-width: 600px) {
+      .cs-bleed {
+        margin-left: calc(-1 * clamp(32px, 8vw, 64px));
+        margin-right: calc(-1 * clamp(32px, 8vw, 64px));
+      }
+    }
+    @media (min-width: 1200px) {
+      .cs-bleed {
+        margin-left: calc(-1 * clamp(80px, 12vw, 200px));
+        margin-right: calc(-1 * clamp(80px, 12vw, 200px));
+      }
+    }
+
+    /* Re-adds padding inside full-bleed sections */
+    .cs-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding-left: clamp(20px, 5vw, 32px);
+      padding-right: clamp(20px, 5vw, 32px);
+    }
+    @media (min-width: 600px) {
+      .cs-inner {
+        padding-left: clamp(32px, 8vw, 64px);
+        padding-right: clamp(32px, 8vw, 64px);
+      }
+    }
+    @media (min-width: 1200px) {
+      .cs-inner {
+        padding-left: clamp(80px, 12vw, 200px);
+        padding-right: clamp(80px, 12vw, 200px);
+      }
+    }
+
+    /* Narrow text column */
+    .cs-text {
+      max-width: 660px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Section spacing */
+    .cs-section {
+      margin-top: 72px;
+    }
+
+    /* Eyebrow label */
+    .cs-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-link);
+      margin-bottom: 10px;
+    }
+
+    /* Section headings */
+    .cs-h2 {
+      font-size: clamp(1.2rem, 2.8vw, 1.65rem);
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin: 6px 0 18px;
+      line-height: 1.3;
+    }
+
+    /* Body text */
+    .cs-p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--color-text-main);
+      margin: 0 0 14px;
+    }
+
+    /* ---- HERO ---- */
+    .cs-hero {
+      position: relative;
+      background: #7B2D8E;
+      padding: 96px 0 88px;
+      margin-top: -8px;
+      overflow: hidden;
+    }
+
+    .cs-hero .cs-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cs-hero-content {
+      max-width: 700px;
+    }
+
+    .cs-hero-img-wrap {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 62%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .cs-hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      opacity: 0.45;
+    }
+
+    .cs-hero-fade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #7B2D8E 28%, rgba(123,45,142,0.7) 50%, rgba(123,45,142,0.1) 100%);
+      z-index: 1;
+    }
+
+    .cs-hero-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 14px;
+    }
+
+    .cs-hero-h {
+      display: block;
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: #fff;
+      margin: 0 0 28px;
+    }
+
+    .cs-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .cs-meta-row strong {
+      color: rgba(255,255,255,0.9);
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .cs-hero-img-wrap {
+        width: 100%;
+        opacity: 0.3;
+      }
+      .cs-hero-fade {
+        background: linear-gradient(to bottom, rgba(123,45,142,0.5) 0%, #7B2D8E 65%);
+      }
+      .cs-hero {
+        padding: 56px 0 52px;
+      }
+    }
+
+    /* ---- ROLE BAR ---- */
+    .cs-role-bar {
+      background: var(--color-grey-light);
+    }
+
+    .cs-role-bar .cs-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px 32px;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    .cs-role-col-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-link);
+      margin-bottom: 6px;
+    }
+
+    .cs-role-col-val {
+      font-size: 0.875rem;
+      color: var(--color-text-main);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 600px) {
+      .cs-role-bar .cs-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    /* ---- IMAGES ---- */
+    .cs-img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      cursor: zoom-in;
+    }
+
+    .cs-img-wrap {
+      margin: 32px 0 0;
+    }
+
+    /* ---- CAPTION ---- */
+    .cs-caption {
+      font-size: 0.78rem;
+      color: var(--color-text);
+      font-style: italic;
+      text-align: center;
+      margin: 8px 0 0;
+      line-height: 1.45;
+    }
+
+    /* ---- PULL QUOTE ---- */
+    .cs-pullquote {
+      border-left: 3px solid var(--color-link);
+      padding: 10px 20px;
+      margin: 28px 0;
+      font-size: 1.02rem;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--color-text-main);
+      line-height: 1.55;
+    }
+
+    /* ---- DECISION CARDS ---- */
+    .cs-decision-card {
+      background: var(--color-grey-light);
+      border-radius: var(--radius-card);
+      padding: 28px 32px 32px;
+      margin-bottom: 0;
+    }
+
+    .cs-decision-num {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--color-link);
+      opacity: 0.35;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .cs-decision-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin: 0 0 12px;
+    }
+
+    .cs-decision-block {
+      margin-bottom: 56px;
+    }
+
+    .cs-decision-block:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      .cs-decision-card {
+        padding: 20px 20px 24px;
+      }
+    }
+
+    /* ---- LIGHTBOX ---- */
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+
+    .lb-overlay.is-open {
+      display: flex;
+    }
+
+    .lb-overlay img {
+      max-width: min(92vw, 1200px);
+      max-height: 90vh;
+      border-radius: 8px;
+      object-fit: contain;
+      cursor: default;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+    }
+
+    /* ---- IMPACT STRIP ---- */
+    .cs-impact {
+      background: #3D1952;
+      padding: 64px 0;
+      margin-top: 72px;
+    }
+
+    html[data-theme="dark"] .cs-impact {
+      background: #250d33;
+    }
+
+    .cs-impact .cs-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+
+    .cs-impact-num {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 800;
+      color: #c96fdf;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .cs-impact-label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+    }
+
+    .cs-impact-label strong {
+      display: block;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 700px) {
+      .cs-impact .cs-inner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px 24px;
+      }
+    }
+
+    /* ---- REFLECTION ---- */
+    .cs-reflection {
+      background: var(--color-grey-light);
+      padding: 56px 0 64px;
+      margin-top: 0;
+    }
+
+    /* ---- BACK LINK ---- */
+    .cs-back-wrap {
+      text-align: center;
+      padding: 48px 0 72px;
+    }
+
+    .cs-back-link {
+      color: var(--color-link);
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.2s cubic-bezier(.37,1.13,.62,.96);
+    }
+
+    .cs-back-link:hover {
+      transform: translateX(-3px);
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
+    <button class="nav-menu-toggle" aria-label="Open menu" aria-expanded="false"><span class="nav-icon">☰</span></button>
+    <div class="top-nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="work.html" class="nav-link active">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- 1. HERO -->
+  <section class="cs-hero cs-bleed">
+    <div class="cs-hero-img-wrap">
+      <img src="content/images/wayfair/hero-bg.jpg" alt="">
+      <div class="cs-hero-fade"></div>
+    </div>
+    <div class="cs-inner">
+      <div class="cs-hero-content">
+        <span class="cs-hero-eyebrow">Product Story</span>
+        <h1 class="cs-hero-h">Replacing four supplier tools with one, for 3,200 suppliers across three continents</h1>
+        <div class="cs-meta-row">
+          <span><strong>Role:</strong> Product Design Lead (sole designer)</span>
+          <span><strong>Company:</strong> Wayfair</span>
+          <span><strong>Team:</strong> 1 PM, ~6 engineers</span>
+          <span><strong>Duration:</strong> ~2 years</span>
+          <span><strong>Platform:</strong> Web (B2B supplier portal)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. ROLE BAR -->
+  <div class="cs-role-bar cs-bleed">
+    <div class="cs-inner">
+      <div>
+        <div class="cs-role-col-label">What I did</div>
+        <div class="cs-role-col-val">Led all design work across both order entry flows, built a validation component system for engineering, ran supplier research, and guided the product through five phased releases.</div>
+      </div>
+      <div>
+        <div class="cs-role-col-label">The team</div>
+        <div class="cs-role-col-val">One PM (rotated three times before stabilizing), ~6 engineers in Boston. I worked from Berlin across a 6-hour time zone gap. Content strategy support was later removed in a restructuring.</div>
+      </div>
+      <div>
+        <div class="cs-role-col-label">Outcome</div>
+        <div class="cs-role-col-val">All supplier segments migrated. 5% reversion rate (target was 15%). Order volume dipped just ~2% at launch.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CONTEXT -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Context</span>
+      <h2 class="cs-h2">The supplier tool that grew into four</h2>
+      <p class="cs-p">Wayfair's Partner Home is the portal where thousands of suppliers manage their business with the company. One critical workflow is creating inbound orders to ship products to Wayfair's CastleGate warehouses, positioned closer to customers for faster delivery.</p>
+      <p class="cs-p">Over time, this workflow had splintered. Four separate teams had built four separate order entry tools: one for large managed suppliers, one for self-service, one for stocking orders, and one for port-to-door shipping. Same core task, four different interfaces, each with its own quirks and limitations.</p>
+    </div>
+
+    <div class="cs-img-wrap">
+      <img class="cs-img" src="content/images/wayfair/four-old-tools.jpg" alt="The four old tool interfaces side by side">
+      <p class="cs-caption">Four tools, four teams, one job. Each interface handled the same core task differently.</p>
+    </div>
+  </section>
+
+  <!-- 4. THE PROBLEM -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">The Problem</span>
+      <h2 class="cs-h2">Fragmented tools, frustrated suppliers</h2>
+      <p class="cs-p">Suppliers were missing replenishment opportunities because the tools weren't fully self-service, couldn't handle account nuances across regions, and were spread across multiple screens. Internally, Wayfair was maintaining four codebases for what was essentially one workflow.</p>
+      <p class="cs-p">The strategy: create a single, unified experience that worked for every supplier type, every service level, and every geography. Flexible enough for power users who think in spreadsheets, and guided enough for smaller suppliers seeing this for the first time.</p>
+    </div>
+
+    <div class="cs-img-wrap">
+      <img class="cs-img" src="content/images/wayfair/journey-map.jpg" alt="The replenishment journey map showing how similar the process was across segments">
+      <p class="cs-caption">Mapping the journey across supplier segments revealed the needs were overwhelmingly similar.</p>
+    </div>
+  </section>
+
+  <!-- 5. STARTING FROM BEHIND -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Starting From Behind</span>
+      <h2 class="cs-h2">No designer, no PM, no handoff</h2>
+      <p class="cs-p">I joined Wayfair to work with a Berlin team but was quickly reassigned to this project in Boston. The previous designer had left abruptly. There was no overlap, no handoff, and the project was about 25% complete. The PM seat was empty too: first filled by the Head of Product, then the Engineering Manager doubling in both roles, before a dedicated PM finally joined months later.</p>
+      <p class="cs-p">The dev team was demoralized. Remote, post-COVID, dealing with leadership churn and a tool migration from Sketch to Figma happening simultaneously. I needed to earn trust before I could push the design forward.</p>
+      <p class="cs-p">My first move wasn't a design review or a stakeholder interview. It was the validation building blocks: a comprehensive document mapping every form field, every error state, every edge case into structured components the engineering team could assemble like puzzle pieces. I asked no questions. I just delivered the file.</p>
+      <p class="cs-p" style="margin-bottom:0;">It worked. The team saw someone willing to do extra work to make their job easier. That file became the foundation I built trust on.</p>
+    </div>
+
+    <div class="cs-img-wrap">
+      <img class="cs-img" src="content/images/wayfair/validation-blocks.jpg" alt="A section of the Validation Building Blocks document showing the field-by-field breakdown">
+      <p class="cs-caption">Every field, every error state, every edge case. One structured file for the team to build from.</p>
+    </div>
+  </section>
+
+  <!-- 6. THE DESIGN -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Two Flows, One Tool</span>
+      <h2 class="cs-h2">Tables for power users, a wizard for everyone else</h2>
+      <p class="cs-p">The experience split into two paths based on supplier proficiency.</p>
+      <p class="cs-p">Experienced suppliers got what they already knew: data-rich tables with inline editing, bulk actions, search and filters. These users understood the replenishment process, knew the required details and timelines, and were comfortable working with spreadsheet-like interfaces.</p>
+      <p class="cs-p">Newer or less technical suppliers got a guided flow: a step-by-step wizard using expanded radio buttons with titles and subtitles explaining each choice. Not just "Truckload" but "Move products from your warehouses to Wayfair's facilities."</p>
+    </div>
+
+    <div class="cs-img-wrap">
+      <img class="cs-img" src="content/images/wayfair/two-flows.jpg" alt="Side by side comparison: the proposal table view and the guided flow radio button selection">
+      <p class="cs-caption">Two paths to the same destination. Power users get tables, newcomers get step-by-step guidance.</p>
+    </div>
+
+    <div class="cs-text" style="margin-top: 32px;">
+      <p class="cs-p">One principle I held throughout: guide users through what they can't select, not just what they can. Disabled options always had hover explanations. If a supplier had no active proposals, they'd see exactly why the catalog option was greyed out and what to do about it.</p>
+    </div>
+
+    <div class="cs-text" style="margin-top: 24px;">
+      <div class="cs-img-wrap">
+        <img class="cs-img" src="content/images/wayfair/disabled-state.jpg" alt="The guided flow showing a disabled radio button with the popover tooltip explaining why">
+        <p class="cs-caption">Disabled states should explain themselves. A greyed-out option without context is just a dead end.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. RESEARCH -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Testing With Real Suppliers</span>
+      <h2 class="cs-h2">100% task completion, but a discoverability problem hiding underneath</h2>
+      <p class="cs-p">When we introduced a new way for suppliers to add products through the UI (instead of uploading Excel files), I ran research across three waves. We reached out to 123 suppliers and conducted 11 interviews spanning EU and North America, across self-service, managed, and forwarding supplier types.</p>
+      <p class="cs-p">Every participant completed the task without help. Average time was about four minutes.</p>
+      <p class="cs-p">But the secondary finding was more revealing. Every single user tried the table's search box first, assuming it would search their full product catalog. The actual "Manage Products" button took much longer to find, with some users spending up to 70% of their session time looking for it.</p>
+      <p class="cs-p" style="margin-bottom:0;">I escalated the issue to the design system team and explored alternative placements. We agreed the new design system was still rolling out across Partner Home. Once the button pattern became consistent across all screens, familiarity would solve the problem. We kept the design. Sometimes the right call is patience, not a patch.</p>
+    </div>
+
+    <div class="cs-img-wrap">
+      <img class="cs-img" src="content/images/wayfair/research-results.jpg" alt="Research results showing 100% success rate, time-to-complete data, and the Manage Products discoverability finding">
+      <p class="cs-caption">All users completed the task. But all users also stumbled on the same thing first.</p>
+    </div>
+  </section>
+
+  <!-- 8. IMPACT STRIP -->
+  <section class="cs-impact cs-bleed">
+    <div class="cs-inner">
+      <div>
+        <div class="cs-impact-num">5%</div>
+        <div class="cs-impact-label">
+          <strong>Reversion rate</strong>
+          Target was 15%. Suppliers stayed.
+        </div>
+      </div>
+      <div>
+        <div class="cs-impact-num">~2%</div>
+        <div class="cs-impact-label">
+          <strong>Order volume dip</strong>
+          Target was under 10%. Near-seamless transition.
+        </div>
+      </div>
+      <div>
+        <div class="cs-impact-num">3,200+</div>
+        <div class="cs-impact-label">
+          <strong>Suppliers migrated</strong>
+          Across the US, Canada, and Europe.
+        </div>
+      </div>
+      <div>
+        <div class="cs-impact-num">4</div>
+        <div class="cs-impact-label">
+          <strong>Legacy tools retired</strong>
+          One experience replaced them all.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. REFLECTION -->
+  <section class="cs-reflection cs-bleed">
+    <div class="cs-inner">
+      <div class="cs-text">
+        <span class="cs-eyebrow">Looking Back</span>
+        <h2 class="cs-h2">Shipping is not the finish line</h2>
+        <p class="cs-p">The rollout covered five supplier segments across the US, Canada, and Europe over the course of the project. Each phase was monitored to ensure order volume held steady and reversion stayed low. By the end, all legacy tools were retired.</p>
+        <p class="cs-p">If I could change one thing, I'd fight harder for time to follow through. The migration went well, but I was pulled to the next project before I could sit with the data and push the experience further.</p>
+        <p class="cs-p" style="margin-bottom:0;">Cross-team alignment was the other miss. I saw the fragmentation across Wayfair's 50+ person design org from day one. I made small attempts to bridge it, but never had the runway to drive real change. Both taught me that the work after launch matters as much as the work before it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. BACK LINK -->
+  <div class="cs-back-wrap">
+    <a href="work.html" class="cs-back-link">← Back to all projects</a>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
+    <img id="lb-img" src="" alt="">
+  </div>
+
+  <script src="access.js"></script>
+  <script src="nav.js"></script>
+  <script src="theme.js"></script>
+  <script src="name-animator.js"></script>
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg = document.getElementById('lb-img');
+
+      function openLightbox(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      document.querySelectorAll('img.cs-img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          openLightbox(img.src, img.alt);
+        });
+      });
+
+      overlay.addEventListener('click', closeLightbox);
+      lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+</body>
+</html>

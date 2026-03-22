@@ -1,5 +1,20 @@
 [
   {
+    "id": "wayfair",
+    "gallery_desc": "Replacing four supplier tools with one for 3,200+ suppliers",
+    "shortdesc": "Unified inbound ordering for Wayfair's supplier portal, replacing four separate tools with one experience across all supplier types and geographies.",
+    "page": "wayfair.html",
+    "desc": [],
+    "link": "project.php?id=wayfair",
+    "title_bold": "🔒 Wayfair",
+    "title_regular": "supplier portal",
+    "category": "UX",
+    "thumbnail": "content/images/wayfair/wayfair-thumb.png",
+    "homepage": false,
+    "protected": true,
+    "show": true
+  },
+  {
     "id": "EQCapture",
     "gallery_desc": "A mobile app to capture equipmant on premise",
     "shortdesc": "shortdescription",
