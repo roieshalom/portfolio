@@ -7,6 +7,7 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="casestudy.css">
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
   <script>
     /* Force light mode — never apply dark theme on this page */
@@ -14,10 +15,6 @@
     document.documentElement.style.colorScheme = 'light';
   </script>
   <style>
-    /* ============================================================
-       CASE STUDY — Search Redesign
-    ============================================================ */
-
     /* Lock light-mode tokens regardless of OS preference */
     :root {
       --color-bg: #fafafa !important;
@@ -28,89 +25,11 @@
       --color-border: #e6e6e6 !important;
     }
 
-    .cs-bleed {
-      margin-left: calc(-1 * clamp(20px, 5vw, 32px));
-      margin-right: calc(-1 * clamp(20px, 5vw, 32px));
-    }
-    @media (min-width: 600px) {
-      .cs-bleed {
-        margin-left: calc(-1 * clamp(32px, 8vw, 64px));
-        margin-right: calc(-1 * clamp(32px, 8vw, 64px));
-      }
-    }
-    @media (min-width: 1200px) {
-      .cs-bleed {
-        margin-left: calc(-1 * clamp(80px, 12vw, 200px));
-        margin-right: calc(-1 * clamp(80px, 12vw, 200px));
-      }
-    }
-
-    .cs-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding-left: clamp(20px, 5vw, 32px);
-      padding-right: clamp(20px, 5vw, 32px);
-    }
-    @media (min-width: 600px) {
-      .cs-inner {
-        padding-left: clamp(32px, 8vw, 64px);
-        padding-right: clamp(32px, 8vw, 64px);
-      }
-    }
-    @media (min-width: 1200px) {
-      .cs-inner {
-        padding-left: clamp(80px, 12vw, 200px);
-        padding-right: clamp(80px, 12vw, 200px);
-      }
-    }
-
-    .cs-text {
-      max-width: 660px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cs-section {
-      margin-top: 72px;
-      max-width: var(--max-width);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cs-eyebrow {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--color-link);
-      margin-bottom: 10px;
-    }
-
-    .cs-h2 {
-      font-size: clamp(1.2rem, 2.8vw, 1.65rem);
-      font-weight: 700;
-      color: var(--color-text-main);
-      margin: 6px 0 18px;
-      line-height: 1.3;
-    }
-
-    .cs-p {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: var(--color-text-main);
-      margin: 0 0 14px;
-    }
-
-    /* ---- HERO ---- */
+    /* ---- Search: hero (no image, radial gradient overlay) ---- */
     .cs-hero {
-      position: relative;
       background: #B1135E;
-      padding: 96px 0 88px;
-      margin-top: -8px;
       overflow: hidden;
     }
-
     .cs-hero::before {
       content: '';
       position: absolute;
@@ -118,247 +37,43 @@
       background: radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.07) 0%, transparent 65%);
       pointer-events: none;
     }
+    .cs-hero-content { max-width: 850px; }
+    .cs-hero-eyebrow { color: rgba(255,255,255,0.55); }
 
-    .cs-hero .cs-inner {
-      position: relative;
-      z-index: 2;
-    }
-
-    .cs-hero-content {
-      max-width: 850px;
-    }
-
-    .cs-hero-eyebrow {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 14px;
-    }
-
-    .cs-hero-h {
-      display: block;
-      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
-      font-weight: 700;
-      line-height: 1.25;
-      color: #fff;
-      margin: 0 0 28px;
-    }
-
-    .cs-meta-row {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 6px 20px;
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.6);
-    }
-
-    .cs-meta-row strong {
-      color: rgba(255,255,255,0.9);
-      font-weight: 600;
-    }
-
-    @media (max-width: 600px) {
-      .cs-hero { padding: 56px 0 52px; }
-      .cs-meta-row { flex-wrap: wrap; gap: 6px 16px; }
-    }
-
-    /* ---- ROLE BAR ---- */
-    .cs-role-bar { background: var(--color-grey-light); }
-
-    .cs-role-bar .cs-inner {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px 32px;
-      padding-top: 32px;
-      padding-bottom: 32px;
-    }
-
-    .cs-role-col-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-link);
-      margin-bottom: 6px;
-    }
-
-    .cs-role-col-val {
-      font-size: 0.875rem;
-      color: var(--color-text-main);
-      line-height: 1.55;
-    }
-
-    @media (max-width: 600px) {
-      .cs-role-bar .cs-inner { grid-template-columns: 1fr; gap: 20px; }
-    }
-
-    /* ---- IMAGES ---- */
-    .cs-img {
-      width: 100%;
-      display: block;
-      border-radius: 12px;
-    }
-
-    .cs-img-wrap { margin: 32px 0 0; }
-
-    .cs-img-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin: 32px 0 0;
-      align-items: start;
-    }
-
-    .cs-img-2col figure {
-      margin: 0;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .cs-img-2col .cs-img {
-      height: auto;
-      width: 100%;
-      object-fit: contain;
-      border-radius: 0;
-      display: block;
-    }
-
-    @media (max-width: 600px) {
-      .cs-img-2col { grid-template-columns: 1fr; }
-    }
-
-    .cs-caption {
-      font-size: 0.78rem;
-      color: var(--color-text);
-      font-style: italic;
-      text-align: center;
-      margin: 8px 0 0;
-      line-height: 1.45;
-    }
-
-    /* ---- PULL QUOTE ---- */
-    .cs-pullquote {
-      border-left: 3px solid var(--color-link);
-      padding: 10px 20px;
-      margin: 28px 0;
-      font-size: 1.02rem;
-      font-style: italic;
-      font-weight: 500;
-      color: var(--color-text-main);
-      line-height: 1.55;
-    }
-
-    /* ---- ASSUMPTION / DECISION CARDS ---- */
+    /* ---- Assumption cards ---- */
     .cs-card {
       background: var(--color-grey-light);
       border-radius: var(--radius-card);
       padding: 24px 28px 28px;
     }
-
     .cs-card-title {
       font-size: 1.0rem;
       font-weight: 700;
       color: var(--color-text-main);
       margin: 0 0 10px;
     }
-
     .cs-cards-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       margin: 28px 0;
     }
-
     @media (max-width: 600px) {
       .cs-cards-grid { grid-template-columns: 1fr; }
     }
 
-    /* ---- PATTERN GRID ---- */
-    .cs-pattern-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin: 32px 0 0;
-    }
-
-    .cs-pattern-grid figure {
-      margin: 0;
-    }
-
+    /* ---- Pattern grid: search adds shadow + zoom ---- */
     .cs-pattern-grid img {
-      width: 100%;
-      display: block;
-      border-radius: 10px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.10);
       cursor: zoom-in;
     }
 
-    .cs-pattern-grid figcaption {
-      font-size: 0.75rem;
-      color: var(--color-text);
-      font-style: italic;
-      text-align: center;
-      margin-top: 6px;
-    }
-
-    @media (max-width: 600px) {
-      .cs-pattern-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ---- LIGHTBOX ---- */
-    .lb-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.88);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      cursor: zoom-out;
-    }
-
-    .lb-overlay.is-open {
-      display: flex;
-    }
-
-    .lb-overlay img,
-    .lb-overlay video {
-      max-width: min(92vw, 1200px);
-      max-height: 90vh;
-      border-radius: 8px;
-      object-fit: contain;
-      cursor: default;
-      box-shadow: 0 8px 48px rgba(0,0,0,0.6);
-    }
-
-    img.cs-img { cursor: zoom-in; }
-
-    /* ---- OUTCOME ---- */
+    /* ---- Outcome section ---- */
     .cs-outcome {
       background: var(--color-grey-light);
       padding: 56px 0 64px;
       margin-top: 72px;
     }
-
-    /* ---- BACK LINK ---- */
-    .cs-back-wrap {
-      text-align: center;
-      padding: 48px 0 72px;
-    }
-
-    .cs-back-link {
-      color: var(--color-link);
-      font-weight: 500;
-      font-size: 0.95rem;
-      text-decoration: none;
-      display: inline-block;
-      transition: transform 0.2s cubic-bezier(.37,1.13,.62,.96);
-    }
-
-    .cs-back-link:hover { transform: translateX(-3px); }
   </style>
 </head>
 <body>
