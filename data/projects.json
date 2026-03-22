@@ -197,7 +197,7 @@
     "thumbnail": "content/images/olamundo/omthumb.png",
     "imagefolder": "content/images/olamundo",
     "imageprefix": "om",
-    "homepage": true,
+    "homepage": false,
     "show": false
   },
   {
