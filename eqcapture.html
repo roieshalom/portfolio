@@ -233,17 +233,18 @@
       align-items: start;
     }
 
-    .cs-img-2col figure {
-      margin: 0;
+    .cs-img-2col .img-box {
       height: 420px;
       border-radius: 12px;
       overflow: hidden;
-      flex-shrink: 0;
+      position: relative;
     }
 
-    .cs-img-2col .cs-img {
+    .cs-img-2col .img-box img {
+      position: absolute;
+      inset: 0;
       width: 100%;
-      height: 420px;
+      height: 100%;
       object-fit: cover;
       border-radius: 0;
       display: block;
@@ -253,10 +254,7 @@
       .cs-img-2col {
         grid-template-columns: 1fr;
       }
-      .cs-img-2col figure {
-        height: 280px;
-      }
-      .cs-img-2col .cs-img {
+      .cs-img-2col .img-box {
         height: 280px;
       }
     }
@@ -463,12 +461,12 @@
     </div>
 
     <div class="cs-img-2col">
-      <figure style="margin:0;height:420px;border-radius:12px;overflow:hidden;position:relative;">
-        <img class="cs-img" src="content/images/eqc/field_test_rooftop.jpg" alt="Surveyor with phone on rooftop" style="width:100%;height:420px;object-fit:cover;object-position:center;display:block;border-radius:0;">
-      </figure>
-      <figure style="margin:0;height:420px;border-radius:12px;overflow:hidden;position:relative;">
-        <img class="cs-img" src="content/images/eqc/field_test_tablet.jpg" alt="Surveyor with tablet by control panel" style="width:100%;height:420px;object-fit:cover;object-position:left center;display:block;border-radius:0;">
-      </figure>
+      <div class="img-box">
+        <img src="content/images/eqc/field_test_rooftop.jpg" alt="Surveyor with phone on rooftop" style="object-position:center;">
+      </div>
+      <div class="img-box">
+        <img src="content/images/eqc/field_test_tablet.jpg" alt="Surveyor with tablet by control panel" style="object-position:left center;">
+      </div>
     </div>
     <p class="cs-caption">Surveyors at work: capturing equipment data on rooftops and in technical rooms across Hamburg and Frankfurt.</p>
 
