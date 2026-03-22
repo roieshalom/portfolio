@@ -74,6 +74,7 @@
         <a href="${proj.external ? proj.link : 'project.php?id=' + proj.id}" class="gallery-tile" ${proj.external ? 'target="_blank" rel="noopener"' : ''}>
           <img src="${proj.thumbnail}" alt="${title} thumbnail">
           <div class="tile-overlay">
+            ${proj.label ? `<div class="tile-company">${proj.label}</div>` : ''}
             <div class="tile-label"><strong>${title}</strong> ${proj.title_regular || ''}</div>
             <div class="tile-desc">${proj.shortdesc}</div>
           </div>

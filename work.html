@@ -64,6 +64,7 @@
           <a href="${proj.link}" class="gallery-tile">
             <img src="${proj.thumbnail}" alt="${title}" />
             <div class="tile-overlay">
+              ${proj.label ? `<div class="tile-company">${proj.label}</div>` : ''}
               <div class="tile-label"><strong>${title}</strong> ${proj.title_regular}</div>
               <div class="tile-desc">${proj.gallery_desc}</div>
             </div>
@@ -84,6 +85,7 @@
           <a href="${proj.link}" class="gallery-tile" target="_blank" rel="noopener noreferrer">
             <img src="${thumb}" alt="${proj.title_bold}" />
             <div class="tile-overlay">
+              ${proj.label ? `<div class="tile-company">${proj.label}</div>` : ''}
               <div class="tile-label"><strong>${proj.title_bold}</strong> ${proj.title_regular || ''}</div>
               <div class="tile-desc">${proj.shortdesc}</div>
             </div>
