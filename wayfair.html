@@ -241,7 +241,6 @@
       width: 100%;
       display: block;
       border-radius: 10px;
-      cursor: zoom-in;
     }
 
     .cs-pattern-grid figcaption {
@@ -652,7 +651,7 @@
         lbImg.src = '';
       }
 
-      document.querySelectorAll('img.cs-img, .cs-pattern-grid img').forEach(function(img) {
+      document.querySelectorAll('img.cs-img').forEach(function(img) {
         img.addEventListener('click', function() {
           openLightbox(img.src, img.alt);
         });
