@@ -22,20 +22,6 @@
       .cs-hero-fade { background: linear-gradient(to bottom, rgba(123,45,142,0.5) 0%, #7B2D8E 65%); }
     }
 
-    /* ---- 2-col images: fixed height crop ---- */
-    .cs-img-2col .img-box { height: 420px; }
-    .cs-img-2col .img-box img {
-      position: absolute;
-      inset: 0;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      border-radius: 0;
-    }
-    @media (max-width: 600px) {
-      .cs-img-2col .img-box { height: 280px; }
-    }
-
     /* ---- Impact strip ---- */
     .cs-impact { background: #3D1952; }
     .cs-impact .cs-inner { grid-template-columns: repeat(4, 1fr); }
@@ -169,15 +155,14 @@
       <p class="cs-p">Newer or less technical suppliers got a guided flow: a step-by-step wizard using expanded radio buttons with titles and subtitles explaining each choice. Not just "Truckload" but "Move products from your warehouses to Wayfair's facilities."</p>
     </div>
 
-    <div class="cs-img-2col" style="margin-top: 32px;">
-      <div class="img-box">
-        <img class="cs-img" src="content/images/wayfair/4-1 proposal.png" alt="Proposal table view for power users">
-      </div>
-      <div class="img-box">
-        <img class="cs-img" src="content/images/wayfair/4-2 guided flow.png" alt="Guided step-by-step flow for newer suppliers">
-      </div>
+    <div class="cs-img-wrap" style="margin-top: 32px;">
+      <p class="cs-caption" style="text-align:left; font-style:normal; font-weight:600; margin:0 0 8px;">Experienced suppliers got data-rich tables</p>
+      <img class="cs-img" src="content/images/wayfair/4-1 proposal.png" alt="Proposal table view for power users">
     </div>
-    <p class="cs-caption">Two paths to the same destination. Power users get tables, newcomers get step-by-step guidance.</p>
+    <div class="cs-img-wrap" style="margin-top: 24px;">
+      <p class="cs-caption" style="text-align:left; font-style:normal; font-weight:600; margin:0 0 8px;">Newer suppliers got a step-by-step guided flow</p>
+      <img class="cs-img" src="content/images/wayfair/4-2 guided flow.png" alt="Guided step-by-step flow for newer suppliers">
+    </div>
 
     <div class="cs-text" style="margin-top: 32px;">
       <p class="cs-p">One principle I held throughout: guide users through what they can't select, not just what they can. Disabled options always had hover explanations. If a supplier had no active proposals, they'd see exactly why the catalog option was greyed out and what to do about it.</p>
