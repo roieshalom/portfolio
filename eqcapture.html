@@ -228,21 +228,22 @@
     .cs-img-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 420px;
       gap: 16px;
       margin: 32px 0 0;
+      align-items: stretch;
     }
 
     .cs-img-2col figure {
       margin: 0;
-      min-height: 0;
+      height: 420px;
       border-radius: 12px;
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .cs-img-2col .cs-img {
       width: 100%;
-      height: 100%;
+      height: 420px;
       object-fit: cover;
       border-radius: 0;
       display: block;
@@ -251,7 +252,12 @@
     @media (max-width: 600px) {
       .cs-img-2col {
         grid-template-columns: 1fr;
-        grid-template-rows: 280px;
+      }
+      .cs-img-2col figure {
+        height: 280px;
+      }
+      .cs-img-2col .cs-img {
+        height: 280px;
       }
     }
 
