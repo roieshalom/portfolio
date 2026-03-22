@@ -23,7 +23,7 @@
         <form method="post" autocomplete="off" style="max-width:400px; width:100%; display:flex; flex-direction:column; align-items:center; gap:1.2rem;">
             <h1 style="display:block; font-size:1.4rem; font-weight:600; color:var(--color-text-main); margin:0;">Protected Project</h1>
             <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
-                <p style="color:var(--color-text-main); margin:0; font-size:0.95rem;">Wrong password. Reach out via <a href="mailto:roiesh@gmail.com" style="color:var(--color-link); text-decoration:underline;">email</a> to get access.</p>
+                <p style="color:#c0392b; margin:0; font-size:0.88rem;">Wrong password.</p>
             <?php endif; ?>
             <input type="password" name="pw" placeholder="Enter password" autofocus required
                 style="width:100%; padding:0.65em 0.85em; font-size:1rem; font-family:inherit;
@@ -31,8 +31,8 @@
                        border:1px solid var(--color-border); border-radius:8px;
                        outline:none; box-sizing:border-box;">
             <button type="submit">Submit</button>
-            <p style="font-size: 0.8rem; color: var(--color-muted); text-align: center; margin: 0;">
-              Got here from a referral? Feel free to <a href="contact.html" style="color: var(--color-link);">reach out</a> for access.
+            <p style="font-size:0.82rem; color:var(--color-text); text-align:center; margin:0;">
+              Don't have the password? <a href="mailto:roiesh@gmail.com" style="color:var(--color-link);">Reach out</a> and I'll get you in.
             </p>
         </form>
     </main>
