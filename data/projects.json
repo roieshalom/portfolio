@@ -1,12 +1,12 @@
 [
   {
     "id": "wayfair",
-    "gallery_desc": "Consolidating four fragmented tools into one unified experience",
+    "gallery_desc": "Consolidating four supplier tools into one",
     "shortdesc": "Unified inbound ordering for Wayfair's supplier portal, replacing four separate tools with one experience across all supplier types and geographies.",
     "page": "wayfair.html",
     "desc": [],
     "link": "project.php?id=wayfair",
-    "title_bold": "🔒 Inbound Order Entry",
+    "title_bold": "🔒 Unified Order Entry",
     "title_regular": "",
     "category": "UX",
     "thumbnail": "content/images/wayfair/uoethumb.png",
@@ -16,7 +16,7 @@
   },
   {
     "id": "EQCapture",
-    "gallery_desc": "A mobile app to capture equipmant on premise",
+    "gallery_desc": "Taking building equipment audits from clipboards to a mobile app",
     "shortdesc": "shortdescription",
     "desc": [
       "<p><strong>EQCapture</strong> is a mobile app that replaces paper, photos and spreadsheets with a single workflow for on-site equipment surveys in large commercial buildings. It guides surveyors through complex properties, captures equipment details in context and syncs everything directly into the BuildingMinds digital twin.</p>",
@@ -45,8 +45,8 @@
     ],
     "link": "project.php?id=EQCapture",
     "page": "eqcapture.html",
-    "title_bold": "🔒 EQCapture",
-    "title_regular": "inventory tracking",
+    "title_bold": "🔒 EQ Capture",
+    "title_regular": "",
     "category": "UX",
     "thumbnail": "content/images/eqc/eqcthumb.png",
     "imagefolder": "content/images/eqc/eqcdesign.pdf",
@@ -97,7 +97,7 @@
   },
   {
     "id": "search",
-    "gallery_desc": "Global assisted search on a complex system",
+    "gallery_desc": "Rethinking neglected search on a million-user enterprise platform",
     "shortdesc": "",
     "page": "search.html",
     "desc": [
@@ -130,8 +130,8 @@
       "<span class=\"numbered-line\"><span class=\"num\">4.</span> Delivered reusable patterns for advanced filtering, criteria tags and saved searches that other parts of the SAP Signavio suite can adopt wherever users need to work efficiently with large collections of process artefacts.</span><br>"
     ],
     "link": "project.php?id=search",
-    "title_bold": "🔒 Search",
-    "title_regular": "on a complex system ",
+    "title_bold": "🔒 Search Redesign",
+    "title_regular": "",
     "category": "UX",
     "thumbnail": "content/images/search/searcthumb.png",
     "imagefolder": "content/images/search/search.pdf",
