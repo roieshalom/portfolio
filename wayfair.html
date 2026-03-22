@@ -225,6 +225,37 @@
       margin: 32px 0 0;
     }
 
+    /* ---- PATTERN GRID ---- */
+    .cs-pattern-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 32px 0 0;
+    }
+
+    .cs-pattern-grid figure {
+      margin: 0;
+    }
+
+    .cs-pattern-grid img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      cursor: zoom-in;
+    }
+
+    .cs-pattern-grid figcaption {
+      font-size: 0.75rem;
+      color: var(--color-text);
+      font-style: italic;
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .cs-pattern-grid { grid-template-columns: 1fr; }
+    }
+
     /* ---- CAPTION ---- */
     .cs-caption {
       font-size: 0.78rem;
@@ -444,9 +475,23 @@
       <p class="cs-p">Over time, this workflow had splintered. Four separate teams had built four separate order entry tools: one for large managed suppliers, one for self-service, one for stocking orders, and one for port-to-door shipping. Same core task, four different interfaces, each with its own quirks and limitations.</p>
     </div>
 
-    <div class="cs-img-wrap">
-      <img class="cs-img" src="content/images/wayfair/four-old-tools.jpg" alt="The four old tool interfaces side by side">
-      <p class="cs-caption">Four tools, four teams, one job. Each interface handled the same core task differently.</p>
+    <div class="cs-pattern-grid">
+      <figure>
+        <img src="content/images/wayfair/old-1-Vertical.png" alt="Vertical tool">
+        <figcaption>Placeholder caption 1</figcaption>
+      </figure>
+      <figure>
+        <img src="content/images/wayfair/old-2-US-self-Service.png" alt="US self-service tool">
+        <figcaption>Placeholder caption 2</figcaption>
+      </figure>
+      <figure>
+        <img src="content/images/wayfair/old-3-Port-to-Door.png" alt="Port-to-door tool">
+        <figcaption>Placeholder caption 3</figcaption>
+      </figure>
+      <figure>
+        <img src="content/images/wayfair/old-4-Stocking.png" alt="Stocking tool">
+        <figcaption>Placeholder caption 4</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -605,7 +650,7 @@
         lbImg.src = '';
       }
 
-      document.querySelectorAll('img.cs-img').forEach(function(img) {
+      document.querySelectorAll('img.cs-img, .cs-pattern-grid img').forEach(function(img) {
         img.addEventListener('click', function() {
           openLightbox(img.src, img.alt);
         });
