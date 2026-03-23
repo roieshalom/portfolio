@@ -41,6 +41,8 @@ html {
 
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: var(--color-bg);
   transition: background-color 0.5s ease;
   box-sizing: border-box;
@@ -267,16 +269,13 @@ button:focus {
    ============================================ */
 
 footer {
-  position: fixed;
-  bottom: 30px;
-  left: 0;
-  right: 0;
+  margin-top: auto;
   text-align: center;
+  padding: 0 0 30px;
   font-size: 0.85rem;
   font-weight: 400;
   color: var(--color-text);
   opacity: 0.5;
-  pointer-events: none;
 }
 
 .main-content,
@@ -517,7 +516,7 @@ p {
 
 .tile-company {
   position: absolute;
-  bottom: 6px;
+  bottom: 12px;
   left: 12px;
   font-size: 0.7rem;
   font-weight: 400;
@@ -605,8 +604,12 @@ p {
   .tile-label strong {
     display: block;
   }
-  .tile-desc {
-    display: none;
+}
+
+@media (max-width: 480px) {
+  .gallery-grid,
+  .home-grid {
+    grid-template-columns: 1fr;
   }
 }
 

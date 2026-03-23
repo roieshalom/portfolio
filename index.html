@@ -38,7 +38,6 @@
       <div class="section-title">Selected Work</div>
       <div class="gallery-grid home-grid" id="featured-list"></div>
     </section>
-    <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
   </main>
   <script src="access.js"></script>
   <script>
@@ -84,6 +83,7 @@
 <script src="tilt.js"></script>
 <script>
   (function () {
+    if (!window.matchMedia('(hover: hover)').matches) return;
     const root = document.documentElement;
 
     function tintBg(hex, strength) {
@@ -118,5 +118,6 @@
   }
 })();
 </script>
+  <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
 </body>
 </html>
