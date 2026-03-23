@@ -41,6 +41,7 @@ html {
 body {
   min-height: 100vh;
   background: var(--color-bg);
+  transition: background-color 0.5s ease;
   box-sizing: border-box;
   margin: 0;
   font-family: 'Albert Sans', Arial, sans-serif;
@@ -128,6 +129,7 @@ button:focus {
   align-items: center;
   justify-content: space-between;
   background: var(--color-bg);
+  transition: background-color 0.5s ease;
   border-bottom: 1px solid var(--color-border);
   margin-bottom: 8px;
   /* Bleed out of body padding without using 100vw (which overflows when scrollbar is present) */
