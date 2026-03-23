@@ -595,6 +595,9 @@ p {
   .gallery-tile img {
     height: 130px;
   }
+  .tile-company {
+    bottom: 6px;
+  }
   .tile-overlay {
     padding: 0.6em 0.8em 0.8em;
   }
