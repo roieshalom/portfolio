@@ -487,6 +487,8 @@ p {
 
 .tile-img-wrap {
   position: relative;
+  height: 200px;
+  overflow: hidden;
 }
 
 .tile-img-wrap img {
@@ -573,6 +575,7 @@ p {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.9rem;
   }
+  .tile-img-wrap,
   .tile-img-wrap img,
   .gallery-tile img {
     height: 130px;
