@@ -606,12 +606,6 @@ p {
   }
 }
 
-@media (max-width: 480px) {
-  .gallery-grid,
-  .home-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* ============================================
    PROJECT PAGES
