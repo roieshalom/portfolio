@@ -2,7 +2,7 @@
   {
     "id": "wayfair",
     "gallery_desc": "Consolidating four supplier tools into one",
-    "shortdesc": "Unified inbound ordering for Wayfair's supplier portal, replacing four separate tools with one experience across all supplier types and geographies.",
+    "shortdesc": "Consolidating four supplier tools into one",
     "page": "wayfair.html",
     "desc": [],
     "link": "project.php?id=wayfair",
@@ -100,7 +100,7 @@
   {
     "id": "search",
     "gallery_desc": "Rethinking neglected search on a million-user enterprise platform",
-    "shortdesc": "",
+    "shortdesc": "Rethinking neglected search on a million-user enterprise platform",
     "page": "search.html",
     "desc": [
       "<strong>A Better Search</strong> reimagines how users find process content inside the Signavio (now SAP Signavio) Process Collaboration Hub, turning a technically powerful but hard-to-use search into an experience that everyday business users can actually rely on to navigate large, complex workspaces.",
