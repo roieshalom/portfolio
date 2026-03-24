@@ -700,13 +700,12 @@ p {
 .pin-unlock-card {
   display: flex;
   align-items: center;
-  gap: 12px 24px;
+  gap: 8px 20px;
   flex-wrap: wrap;
-  padding: 14px 20px;
-  background: var(--color-card);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-card);
-  margin-bottom: 28px;
+  padding: 8px 0 16px;
+  background: transparent;
+  margin-bottom: 0;
+  transition: background-color 0.5s ease;
 }
 
 .pin-unlock-copy {
