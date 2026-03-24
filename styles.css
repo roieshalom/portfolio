@@ -695,3 +695,98 @@ p {
   letter-spacing: 0.1em;
   color: var(--color-link);
 }
+
+/* ---- PIN UNLOCK CARD ---- */
+.pin-unlock-card {
+  display: flex;
+  align-items: center;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+  padding: 14px 20px;
+  background: var(--color-card);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-card);
+  margin-bottom: 28px;
+}
+
+.pin-unlock-copy {
+  font-size: 0.82rem;
+  color: var(--color-text);
+  margin: 0;
+  flex: 1;
+  min-width: 160px;
+}
+
+.pin-inputs {
+  display: flex;
+  gap: 8px;
+}
+
+.pin-digit {
+  width: 40px;
+  height: 44px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: inherit;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: var(--color-text-main);
+  outline: none;
+  caret-color: transparent;
+  transition: border-color 0.15s;
+}
+
+.pin-digit:focus {
+  border-color: #E8457A;
+}
+
+.pin-digit.is-success {
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+@keyframes pinShake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+.pin-inputs.is-shaking {
+  animation: pinShake 0.35s ease;
+}
+
+@keyframes pinPulse {
+  0%, 100% { border-color: var(--color-border); }
+  50%       { border-color: #E8457A; }
+}
+
+.pin-digit.is-pulsing {
+  animation: pinPulse 0.4s ease 2;
+}
+
+/* ---- LOCKED CARD ---- */
+.gallery-tile.is-locked {
+  cursor: default;
+}
+
+.tile-lock-hint {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.62);
+  color: #fff;
+  font-size: 0.78rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  line-height: 1.45;
+}

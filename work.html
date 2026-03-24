@@ -30,6 +30,15 @@
   </nav>
   <main class="gallery-content">
     <section class="section">
+      <div class="pin-unlock-card" id="pin-unlock-card">
+        <p class="pin-unlock-copy">Some projects are protected. Enter the code to unlock.</p>
+        <div class="pin-inputs">
+          <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="pin-digit" autocomplete="off">
+          <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="pin-digit" autocomplete="off">
+          <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="pin-digit" autocomplete="off">
+          <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="pin-digit" autocomplete="off">
+        </div>
+      </div>
       <div class="section-title">Design Work</div>
       <p>A mix of product design, UX, and visual work. Projects here span discovery and research, interaction design, design systems, and prototyping, across enterprise software, consumer apps, and the occasional creative detour.</p>
       <div class="gallery-grid" id="ux-gallery">
@@ -52,12 +61,15 @@
         const unlocked = hasPortfolioAccess();
         const gallery = document.getElementById('ux-gallery');
         const tiles = projects.filter(p => p.show).map(proj => {
+          const isLocked = !unlocked && proj.protected;
           const title = unlocked ? proj.title_bold.replace(/🔒\s*/g, '') : proj.title_bold;
+          const href = proj.page || proj.link;
           return `
-          <a href="${proj.link}" class="gallery-tile" ${proj.color ? `data-color="${proj.color}"` : ''}>
+          <a href="${href}" class="gallery-tile${isLocked ? ' is-locked' : ''}" ${proj.color ? `data-color="${proj.color}"` : ''}>
             <div class="tile-img-wrap">
               <img src="${proj.thumbnail}" alt="${title}" />
               ${proj.label ? `<div class="tile-company">${proj.label}</div>` : ''}
+              ${isLocked ? '<div class="tile-lock-hint">Enter the code above to view this project</div>' : ''}
             </div>
             <div class="tile-overlay">
               <div class="tile-label"><strong>${title}</strong> ${proj.title_regular}</div>
@@ -96,6 +108,7 @@
 <script src="theme.js"></script>
 <script src="name-animator.js"></script>
 <script src="tilt.js"></script>
+<script src="pin-unlock.js"></script>
 <script>
   (function () {
     if (!window.matchMedia('(hover: hover)').matches) return;

@@ -35,6 +35,15 @@
       </p>
     </section>
     <section class="section">
+      <div class="pin-unlock-card" id="pin-unlock-card">
+        <p class="pin-unlock-copy">Some projects are protected. Enter the code to unlock.</p>
+        <div class="pin-inputs">
+          <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="pin-digit" autocomplete="off">
+          <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="pin-digit" autocomplete="off">
+          <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="pin-digit" autocomplete="off">
+          <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="pin-digit" autocomplete="off">
+        </div>
+      </div>
       <div class="section-title">Selected Work</div>
       <div class="gallery-grid home-grid" id="featured-list"></div>
     </section>
@@ -63,12 +72,15 @@
       const tiles = order.map(id => all.find(p => p.id === id)).filter(Boolean);
       const unlocked = hasPortfolioAccess();
       document.getElementById('featured-list').innerHTML = tiles.map(proj => {
+        const isLocked = !unlocked && proj.protected;
         const title = unlocked ? proj.title_bold.replace(/🔒\s*/g, '') : proj.title_bold;
+        const href = proj.external ? proj.link : (proj.page || proj.link);
         return `
-        <a href="${proj.external ? proj.link : 'project.php?id=' + proj.id}" class="gallery-tile" ${proj.color ? `data-color="${proj.color}"` : ''} ${proj.external ? 'target="_blank" rel="noopener"' : ''}>
+        <a href="${href}" class="gallery-tile${isLocked ? ' is-locked' : ''}" ${proj.color ? `data-color="${proj.color}"` : ''} ${proj.external ? 'target="_blank" rel="noopener"' : ''}>
           <div class="tile-img-wrap">
             <img src="${proj.thumbnail}" alt="${title} thumbnail">
             ${proj.label ? `<div class="tile-company">${proj.label}</div>` : ''}
+            ${isLocked ? '<div class="tile-lock-hint">Enter the code above to view this project</div>' : ''}
           </div>
           <div class="tile-overlay">
             <div class="tile-label"><strong>${title}</strong> ${proj.title_regular || ''}</div>
@@ -106,6 +118,7 @@
   })();
 </script>
   <script src="name-animator.js"></script>
+  <script src="pin-unlock.js"></script>
   <script>
 (function() {
   const fonts = ["Playfair Display", "Righteous", "Pacifico", "Bebas Neue", "Oswald", "Lobster", "Permanent Marker", "Caveat", "Albert Sans"];
