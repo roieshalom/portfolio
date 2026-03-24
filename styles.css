@@ -516,7 +516,7 @@ p {
 
 .tile-company {
   position: absolute;
-  bottom: 12px;
+  bottom: 6px;
   left: 12px;
   font-size: 0.7rem;
   font-weight: 400;
@@ -596,7 +596,7 @@ p {
     height: 130px;
   }
   .tile-company {
-    bottom: 6px;
+    bottom: 3px;
   }
   .tile-overlay {
     padding: 0.6em 0.8em 0.8em;
