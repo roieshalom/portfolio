@@ -702,10 +702,10 @@ p {
   align-items: center;
   gap: 8px 20px;
   flex-wrap: wrap;
-  padding: 8px 0 16px;
-  background: transparent;
+  padding: 10px 16px 12px;
+  background: var(--color-grey-light);
+  border-radius: var(--radius-card);
   margin-bottom: 0;
-  transition: background-color 0.5s ease;
 }
 
 .pin-unlock-copy {
@@ -734,7 +734,7 @@ p {
   color: var(--color-text-main);
   outline: none;
   caret-color: transparent;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, background-color 0.5s ease;
 }
 
 .pin-digit:focus {
