@@ -162,7 +162,12 @@
 
 @media (max-width: 600px) {
   .cs-hero { padding: 56px 0 52px; }
-  .cs-meta-row { gap: 6px 16px; }
+  .cs-meta-row {
+    flex-wrap: wrap;
+    white-space: normal;
+    overflow: visible;
+    gap: 6px 16px;
+  }
 }
 
 /* ---- ROLE BAR ---- */
