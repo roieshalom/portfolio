@@ -89,6 +89,8 @@
   position: relative;
   padding: 96px 0 88px;
   margin-top: -8px;
+  min-height: 380px;
+  box-sizing: border-box;
 }
 
 .cs-hero .cs-inner {
@@ -120,6 +122,10 @@
   z-index: 1;
 }
 
+.cs-hero-content {
+  max-width: 700px;
+}
+
 .cs-hero-eyebrow {
   display: inline-block;
   font-size: 0.72rem;
@@ -141,10 +147,12 @@
 
 .cs-meta-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px 20px;
-  font-size: 0.82rem;
+  flex-wrap: nowrap;
+  gap: 0 16px;
+  font-size: 0.78rem;
   color: rgba(255,255,255,0.6);
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .cs-meta-row strong {
