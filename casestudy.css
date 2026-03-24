@@ -147,12 +147,10 @@
 
 .cs-meta-row {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 0 16px;
+  flex-wrap: wrap;
+  gap: 4px 16px;
   font-size: 0.78rem;
   color: rgba(255,255,255,0.6);
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .cs-meta-row strong {
@@ -162,12 +160,7 @@
 
 @media (max-width: 600px) {
   .cs-hero { padding: 56px 0 52px; }
-  .cs-meta-row {
-    flex-wrap: wrap;
-    white-space: normal;
-    overflow: visible;
-    gap: 6px 16px;
-  }
+  .cs-meta-row { gap: 6px 16px; }
 }
 
 /* ---- ROLE BAR ---- */
