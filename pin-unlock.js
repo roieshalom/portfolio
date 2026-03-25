@@ -45,15 +45,30 @@
       if (code === CORRECT) {
         grantPortfolioAccess();
         digits.forEach(function (d) { d.classList.add('is-success'); });
+
+        // Step 1: green wash
         setTimeout(function () {
-          card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(-6px)';
+          card.style.transition = 'background 0.45s ease';
+          card.style.background = 'rgba(72, 199, 100, 0.25)';
+
+          // Step 2: fade out + slide up
           setTimeout(function () {
-            card.style.display = 'none';
-            unlockCards();
-          }, 500);
-        }, 1000);
+            var h = card.offsetHeight;
+            card.style.maxHeight = h + 'px';
+            card.style.overflow = 'hidden';
+            void card.offsetWidth; // reflow
+            card.style.transition = 'opacity 0.4s ease, max-height 0.45s ease, padding 0.45s ease, margin 0.45s ease, background 0.3s ease';
+            card.style.opacity = '0';
+            card.style.maxHeight = '0';
+            card.style.padding = '0';
+            card.style.margin = '0';
+            card.style.background = 'transparent';
+            setTimeout(function () {
+              card.style.display = 'none';
+              unlockCards();
+            }, 500);
+          }, 550);
+        }, 250);
       } else {
         inputsWrap.classList.add('is-shaking');
         setTimeout(function () {
