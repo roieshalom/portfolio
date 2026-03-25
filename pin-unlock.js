@@ -83,8 +83,12 @@
   function unlockCards() {
     document.querySelectorAll('.gallery-tile.is-locked').forEach(function (tile) {
       tile.classList.remove('is-locked');
-      var strong = tile.querySelector('.tile-label strong');
-      if (strong) strong.textContent = strong.textContent.replace(/🔒\s*/g, '');
+      var icon = tile.querySelector('.tile-lock-icon');
+      if (icon) {
+        icon.style.maxWidth = '0';
+        icon.style.opacity = '0';
+        setTimeout(function () { icon.remove(); }, 400);
+      }
     });
   }
 

@@ -781,6 +781,15 @@ p {
   cursor: default;
 }
 
+.tile-lock-icon {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 2em;
+  white-space: nowrap;
+  vertical-align: baseline;
+  transition: max-width 0.35s ease, opacity 0.3s ease;
+}
+
 @media (hover: hover) {
   .gallery-tile.is-locked:hover .tile-lock-hint {
     opacity: 1;

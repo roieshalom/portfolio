@@ -63,17 +63,18 @@
         const gallery = document.getElementById('ux-gallery');
         const tiles = projects.filter(p => p.show).map(proj => {
           const isLocked = !unlocked && proj.protected;
-          const title = unlocked ? proj.title_bold.replace(/🔒\s*/g, '') : proj.title_bold;
+          const titleText = proj.title_bold.replace(/🔒\s*/g, '');
+          const titleHtml = isLocked ? `<span class="tile-lock-icon">🔒 </span>${titleText}` : titleText;
           const href = proj.page || proj.link;
           return `
           <a href="${href}" class="gallery-tile${isLocked ? ' is-locked' : ''}" ${proj.color ? `data-color="${proj.color}"` : ''}>
             <div class="tile-img-wrap">
-              <img src="${proj.thumbnail}" alt="${title}" />
+              <img src="${proj.thumbnail}" alt="${titleText}" />
               ${proj.label ? `<div class="tile-company">${proj.label}</div>` : ''}
               ${isLocked ? '<div class="tile-lock-hint">Enter the code above to view this project</div>' : ''}
             </div>
             <div class="tile-overlay">
-              <div class="tile-label"><strong>${title}</strong> ${proj.title_regular}</div>
+              <div class="tile-label"><strong>${titleHtml}</strong> ${proj.title_regular}</div>
               <div class="tile-desc">${proj.gallery_desc}</div>
             </div>
           </a>
