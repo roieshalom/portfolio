@@ -719,8 +719,7 @@ p {
 }
 
 .pin-unlock-copy {
-  font-size: 0.78rem;
-  line-height: 1.5;
+  font-size: inherit;
   color: var(--color-text);
   margin: 0;
 }
