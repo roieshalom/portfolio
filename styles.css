@@ -701,8 +701,8 @@ p {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: center;
+  gap: 20px;
   padding: 10px 14px;
   background: color-mix(in srgb, var(--color-bg) 85%, #b0b0b0 15%);
   border-radius: var(--radius-card);
