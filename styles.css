@@ -710,13 +710,6 @@ p {
   transition: background-color 0.5s ease;
 }
 
-@media (max-width: 480px) {
-  .pin-unlock-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-}
 
 .pin-unlock-copy {
   font-size: 0.78rem;
