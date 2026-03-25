@@ -135,5 +135,59 @@
     });
   })();
 </script>
+<script>
+  (function () {
+    document.addEventListener('click', function (e) {
+      var tile = e.target.closest('.gallery-tile[data-color]');
+      if (!tile || tile.classList.contains('is-locked') || tile.getAttribute('target') === '_blank') return;
+      e.preventDefault();
+
+      var color = tile.dataset.color;
+      var href = tile.href;
+      var rect = tile.getBoundingClientRect();
+      var navH = (document.querySelector('.top-nav') || { offsetHeight: 0 }).offsetHeight;
+      var tw = window.innerWidth;
+      var heroH = Math.max(Math.round(window.innerHeight * 0.44), 380);
+
+      document.documentElement.style.removeProperty('--color-bg');
+
+      var targetCX = tw / 2;
+      var targetCY = navH + heroH / 2;
+      var cardCX = rect.left + rect.width / 2;
+      var cardCY = rect.top + rect.height / 2;
+      var scaleX = rect.width / tw;
+      var scaleY = rect.height / heroH;
+      var tx = cardCX - targetCX;
+      var ty = cardCY - targetCY;
+
+      var fade = document.createElement('div');
+      fade.setAttribute('data-departure', '1');
+      fade.style.cssText = 'position:fixed;z-index:9997;pointer-events:none;top:' + navH + 'px;left:0;width:100vw;bottom:0;background:#fff;opacity:0;';
+      document.body.appendChild(fade);
+      fade.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, easing: 'ease', fill: 'forwards' });
+
+      var el = document.createElement('div');
+      el.setAttribute('data-departure', '1');
+      el.style.cssText = 'position:fixed;z-index:9999;pointer-events:none;top:' + navH + 'px;left:0;width:' + tw + 'px;height:' + heroH + 'px;background:' + color + ';transform-origin:center center;';
+      document.body.appendChild(el);
+
+      el.animate([
+        { transform: 'translate(' + tx + 'px,' + ty + 'px) scaleX(' + scaleX + ') scaleY(' + scaleY + ')', borderRadius: '16px' },
+        { transform: 'translate(0,0) scale(1)', borderRadius: '0px' }
+      ], { duration: 500, easing: 'cubic-bezier(0.7,0,0.3,1)', fill: 'forwards' }).onfinish = function () {
+        sessionStorage.setItem('fromCard', '1');
+        sessionStorage.setItem('transitionColor', color);
+        window.location.href = href;
+      };
+    });
+  })();
+</script>
+  <script>
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted) {
+        document.querySelectorAll('[data-departure]').forEach(function (el) { el.remove(); });
+      }
+    });
+  </script>
 </body>
 </html>
