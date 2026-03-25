@@ -737,7 +737,7 @@ p {
   font-size: 0.9rem;
   font-weight: 600;
   font-family: inherit;
-  border: 1.5px solid rgba(0, 0, 0, 0.18);
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   background: var(--color-bg);
   color: var(--color-text-main);
