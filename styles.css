@@ -720,12 +720,12 @@ p {
 .pin-inputs {
   display: flex;
   flex-wrap: nowrap;
-  gap: 8px;
+  gap: 5px;
 }
 
 .pin-digit {
-  width: 36px;
-  height: 38px;
+  width: 28px;
+  height: 34px;
   text-align: center;
   font-size: 1.1rem;
   font-weight: 600;
