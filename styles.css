@@ -727,7 +727,7 @@ p {
 .pin-inputs {
   display: flex;
   flex-wrap: nowrap;
-  gap: 4px;
+  gap: 10px;
 }
 
 .pin-digit {
@@ -737,7 +737,7 @@ p {
   font-size: 0.9rem;
   font-weight: 600;
   font-family: inherit;
-  border: 1.5px solid var(--color-border);
+  border: 1.5px solid rgba(0, 0, 0, 0.18);
   border-radius: 8px;
   background: var(--color-bg);
   color: var(--color-text-main);
