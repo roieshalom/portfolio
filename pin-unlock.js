@@ -89,6 +89,8 @@
     if (digits[0]) setTimeout(function () { digits[0].focus(); }, 150);
   }
 
+  var isTouch = !window.matchMedia('(hover: hover)').matches;
+
   // Locked card click handler
   document.addEventListener('click', function (e) {
     var tile = e.target.closest('.gallery-tile.is-locked');
@@ -96,11 +98,15 @@
     e.preventDefault();
     e.stopImmediatePropagation();
     pulsePinCard();
-    var hint = tile.querySelector('.tile-lock-hint');
-    if (hint) {
-      hint.style.opacity = '1';
-      clearTimeout(hint._hideTimer);
-      hint._hideTimer = setTimeout(function () { hint.style.opacity = '0'; }, 2000);
+    // On touch devices only: show hint and auto-hide after 2.5s
+    // On desktop: CSS :hover handles the hint display
+    if (isTouch) {
+      var hint = tile.querySelector('.tile-lock-hint');
+      if (hint) {
+        hint.style.opacity = '1';
+        clearTimeout(hint._hideTimer);
+        hint._hideTimer = setTimeout(function () { hint.style.opacity = '0'; }, 2500);
+      }
     }
   }, true); // capture phase so it runs before departure animation
 
