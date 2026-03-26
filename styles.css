@@ -702,6 +702,7 @@ p {
 .pin-unlock-card {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   gap: 12px;
@@ -711,6 +712,8 @@ p {
   margin-bottom: 0;
   transition: background-color 0.5s ease;
 }
+
+.pin-copy-web { display: none; }
 
 @media (min-width: 600px) {
   .pin-copy-mobile { display: none; }
