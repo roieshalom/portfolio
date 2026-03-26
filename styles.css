@@ -494,6 +494,7 @@ p {
   transition: box-shadow 0.23s cubic-bezier(.5,.2,.23,1), transform 0.17s cubic-bezier(.4,1,.4,1);
   box-shadow: 0 1.5px 9px var(--color-card-shadow);
   text-decoration: none;
+  color: var(--color-text);
 }
 
 .gallery-tile:focus {
@@ -596,7 +597,7 @@ p {
     height: 130px;
   }
   .tile-company {
-    bottom: -1px;
+    bottom: 4px;
   }
   .tile-overlay {
     padding: 0.6em 0.8em 0.8em;
