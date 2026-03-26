@@ -724,18 +724,17 @@ p {
   font-size: inherit;
   color: var(--color-text);
   margin: 0;
-  white-space: nowrap;
 }
 
 .pin-inputs {
   display: flex;
   flex-wrap: nowrap;
-  gap: 6px;
+  gap: 5px;
   flex-shrink: 0;
 }
 
 .pin-digit {
-  width: 28px;
+  width: 24px;
   height: 28px;
   text-align: center;
   font-size: 0.9rem;
