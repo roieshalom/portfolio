@@ -790,7 +790,7 @@ p {
   overflow: hidden;
   max-width: 2em;
   white-space: nowrap;
-  vertical-align: baseline;
+  vertical-align: -0.1em;
   transition: max-width 0.35s ease, opacity 0.3s ease;
 }
 
