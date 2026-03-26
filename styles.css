@@ -704,7 +704,7 @@ p {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
   padding: 10px 14px;
   background: color-mix(in srgb, var(--color-bg) 85%, #b0b0b0 15%);
   border-radius: var(--radius-card);
@@ -715,24 +715,28 @@ p {
 @media (min-width: 600px) {
   .pin-copy-mobile { display: none; }
   .pin-copy-web { display: block; }
-  .pin-unlock-card { justify-content: space-between; }
+  .pin-unlock-card { justify-content: space-between; gap: 20px; }
+  .pin-inputs { gap: 10px; }
+  .pin-digit { width: 34px; height: 34px; }
 }
 
 .pin-unlock-copy {
   font-size: inherit;
   color: var(--color-text);
   margin: 0;
+  white-space: nowrap;
 }
 
 .pin-inputs {
   display: flex;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .pin-digit {
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
   text-align: center;
   font-size: 0.9rem;
   font-weight: 600;
