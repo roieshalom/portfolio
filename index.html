@@ -54,7 +54,7 @@
     const featured = [
       { src: 'data/projects.json', id: 'suite-as-pie', external: false },
       { src: 'data/projects.json', id: 'olamundo', external: false },
-      { src: 'ai/data/projects.json', id: 'grooped', external: true }
+      { src: 'ai/data/projects.json', id: 'grooped', external: false }
     ];
 
     Promise.all([
@@ -66,7 +66,7 @@
         ...uxProjects.map(p => ({ ...p, external: false })),
         ...aiProjects.map(p => ({
           ...p,
-          external: true,
+          external: !p.page,
           thumbnail: p.thumbnail.replace('../content/', 'content/')
         }))
       ];

@@ -89,8 +89,10 @@
         const gallery = document.getElementById('ai-gallery');
         const tiles = projects.filter(p => p.show).map(proj => {
           const thumb = proj.thumbnail.replace('../content/', 'content/');
+          const href = proj.page || proj.link;
+          const isExternal = !proj.page;
           return `
-          <a href="${proj.link}" class="gallery-tile" ${proj.color ? `data-color="${proj.color}"` : ''} target="_blank" rel="noopener noreferrer">
+          <a href="${href}" class="gallery-tile" ${proj.color ? `data-color="${proj.color}"` : ''}${isExternal ? ' target="_blank" rel="noopener noreferrer"' : ''}>
             <div class="tile-img-wrap">
               <img src="${thumb}" alt="${proj.title_bold}" />
               ${proj.label ? `<div class="tile-company">${proj.label}</div>` : ''}
