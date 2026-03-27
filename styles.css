@@ -758,9 +758,17 @@ p {
   border-color: #E8457A;
 }
 
+@keyframes pinSuccess {
+  0%   { transform: scale(1);    background: transparent;              box-shadow: none; }
+  38%  { transform: scale(1.16); background: rgba(76, 175, 80, 0.18);  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.25); }
+  68%  { transform: scale(0.97); background: rgba(76, 175, 80, 0.10);  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.14); }
+  100% { transform: scale(1);    background: rgba(76, 175, 80, 0.08);  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.10); }
+}
+
 .pin-digit.is-success {
   border-color: #4caf50;
   color: #4caf50;
+  animation: pinSuccess 1.0s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 @keyframes pinShake {
@@ -795,7 +803,7 @@ p {
   max-width: 2em;
   white-space: nowrap;
   vertical-align: -0.3em;
-  transition: max-width 0.35s ease, opacity 0.3s ease;
+  transition: max-width 0.65s ease, opacity 0.55s ease;
 }
 
 @media (hover: hover) {

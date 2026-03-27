@@ -44,20 +44,23 @@
       var code = digits.map(function (d) { return d.value; }).join('');
       if (code === CORRECT) {
         grantPortfolioAccess();
-        digits.forEach(function (d) { d.classList.add('is-success'); });
+        // Stagger the pop animation across digits
+        digits.forEach(function (d, i) {
+          setTimeout(function () { d.classList.add('is-success'); }, i * 110);
+        });
 
-        // Step 1: green wash
+        // Step 1: green wash — start after digits have popped
         setTimeout(function () {
-          card.style.transition = 'background 0.45s ease';
-          card.style.background = 'rgba(72, 199, 100, 0.25)';
+          card.style.transition = 'background 0.55s ease';
+          card.style.background = 'rgba(60, 200, 80, 0.28)';
 
-          // Step 2: fade out + slide up
+          // Step 2: fade out + slide up — give green state time to breathe
           setTimeout(function () {
             var h = card.offsetHeight;
             card.style.maxHeight = h + 'px';
             card.style.overflow = 'hidden';
             void card.offsetWidth; // reflow
-            card.style.transition = 'opacity 0.4s ease, max-height 0.45s ease, padding 0.45s ease, margin 0.45s ease, background 0.3s ease';
+            card.style.transition = 'opacity 0.55s ease, max-height 0.6s ease, padding 0.6s ease, margin 0.6s ease, background 0.4s ease';
             card.style.opacity = '0';
             card.style.maxHeight = '0';
             card.style.padding = '0';
@@ -66,9 +69,9 @@
             setTimeout(function () {
               card.style.display = 'none';
               unlockCards();
-            }, 500);
-          }, 550);
-        }, 250);
+            }, 700);
+          }, 1000);
+        }, 450);
       } else {
         inputsWrap.classList.add('is-shaking');
         setTimeout(function () {
@@ -87,7 +90,7 @@
       if (icon) {
         icon.style.maxWidth = '0';
         icon.style.opacity = '0';
-        setTimeout(function () { icon.remove(); }, 400);
+        setTimeout(function () { icon.remove(); }, 750);
       }
     });
   }
