@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="page-transition.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grooped · Roie Shalom</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="casestudy.css">
+  <style>
+    /* ---- Grooped hero ---- */
+    .cs-hero {
+      background: #ec7357;
+    }
+
+    /* Hero subline */
+    .cs-hero-sub {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.72);
+      margin: -16px 0 28px;
+      line-height: 1.55;
+    }
+
+    /* CTA button */
+    .cs-cta-btn {
+      display: inline-block;
+      background: var(--color-link);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 13px 26px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.18s;
+      margin-bottom: 10px;
+    }
+    .cs-cta-btn:hover { opacity: 0.88; color: #fff; }
+
+    /* Small muted hint below CTA */
+    .cs-cta-hint {
+      display: block;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 2px;
+    }
+
+    /* Bottom CTA hint (on white/card bg) */
+    .cs-bottom-cta .cs-cta-hint {
+      color: var(--color-text);
+      opacity: 0.6;
+    }
+
+    /* ---- Phone frames ---- */
+    .phone-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 32px 0 0;
+      align-items: start;
+    }
+
+    .phone-frame {
+      border-radius: 28px;
+      border: 2px solid #e0e0e0;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      cursor: zoom-in;
+    }
+
+    .phone-frame img {
+      width: 100%;
+      display: block;
+    }
+
+    html[data-theme="dark"] .phone-frame {
+      border-color: #3a3a3a;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 700px) {
+      .phone-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+    }
+
+    /* ---- Bottom CTA section ---- */
+    .cs-bottom-cta {
+      text-align: center;
+      padding: 60px 0 32px;
+    }
+
+    .cs-qr {
+      width: 120px;
+      height: 120px;
+      margin: 20px auto 6px;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .cs-qr-caption {
+      font-size: 0.75rem;
+      color: var(--color-text);
+      font-style: italic;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
+    <button class="nav-menu-toggle" aria-label="Open menu" aria-expanded="false"><span class="nav-icon">☰</span></button>
+    <div class="top-nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="work.html" class="nav-link active">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- 1. HERO -->
+  <section class="cs-hero cs-bleed">
+    <div class="cs-inner">
+      <div class="cs-hero-content">
+        <span class="cs-hero-eyebrow">AI Project</span>
+        <h1 class="cs-hero-h">A daily word puzzle, built and curated with AI</h1>
+        <p class="cs-hero-sub">Find 4 groups of 4 words that belong together. New puzzle every day.</p>
+        <a href="https://grooped.de" target="_blank" rel="noopener" class="cs-cta-btn">Try today's puzzle →</a>
+        <span class="cs-cta-hint">Best played on your phone</span>
+        <div class="cs-meta-row" style="margin-top: 32px;">
+          <span>Solo project</span>
+          <span>Design, AI, Development</span>
+          <span>Live at grooped.de</span>
+          <span>Since December 2025</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. INTRO -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <p class="cs-p">I wanted to get serious about working with AI. Not just prompting, but building a real feedback loop between human judgment and AI output. I needed a project I could ship, something with real users and real decisions. I chose a format I already loved: the word connections puzzle. Find 4 groups of 4 words that belong together. Simple rules, deep design space.</p>
+      <p class="cs-p">Grooped is a daily word game I designed, built, and ship solo. The front end, the game logic, the puzzle generation pipeline, the editorial tooling, and the analytics. I'm not a developer. Everything was built with AI assistance, and that was the point.</p>
+    </div>
+  </section>
+
+  <!-- 3. HOW PUZZLES ARE MADE -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">How puzzles are made</span>
+      <h2 class="cs-h2">An AI pipeline with a human editor at the center</h2>
+      <p class="cs-p">Every puzzle starts with a prompt. I built an internal tool called Puzzle Editor 3000 that generates a full puzzle: four categories, four words each, plus intentional decoys — words designed to blur the lines between groups.</p>
+      <p class="cs-p">But AI alone doesn't make a good puzzle. The generator checks every new puzzle against a file of previously published categories so it never repeats itself, and against a banned list of categories I've rejected. When I ban a category, it gets replaced with a fresh one automatically and the system remembers not to suggest it again.</p>
+      <p class="cs-p">From there, I can swap individual words, rewrite category names, or type my own category and let the AI generate words to match it. Every puzzle also comes with a reasoning breakdown: why these decoys, which words could mislead, and how the groups overlap. That's my quality check. If the misdirection is too obvious or too obscure, I catch it before anything goes live.</p>
+      <p class="cs-p" style="margin-bottom: 0;">AI proposes. I curate. The system gets sharper over time.</p>
+    </div>
+
+    <div class="cs-img-wrap">
+      <img class="cs-img" src="content/images/grooped/editor.png" alt="Puzzle Editor 3000 showing four categories with refresh and ban controls">
+      <p class="cs-caption">Puzzle Editor 3000: four categories with refresh and ban controls, plus a decoy analysis at the bottom.</p>
+    </div>
+
+    <div class="cs-img-wrap">
+      <img class="cs-img" src="content/images/grooped/editor-wireframe.png" alt="Early wireframe for the editor layout">
+      <p class="cs-caption">Early wireframe for the editor layout.</p>
+    </div>
+  </section>
+
+  <!-- 4. BUILDING THE GAME -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Building the game</span>
+      <h2 class="cs-h2">A designer ships a product, with AI as co-pilot</h2>
+      <p class="cs-p">The entire game — the front end, the game logic, the animations — was built with AI assistance. My basic knowledge of HTML, CSS, and JavaScript helped me steer, debug, and understand what the AI was explaining, but I couldn't have built this alone.</p>
+      <p class="cs-p" style="margin-bottom: 0;">The part that surprised me was the small things. When a player solves a category, it collapses into a colored block at the top of the grid. But the order depends on which group you solve first, second, third. That reordering logic wasn't something I'd considered until it broke. It's the kind of invisible detail that feels natural when it works and immediately wrong when it doesn't.</p>
+    </div>
+
+    <div class="phone-row">
+      <div class="phone-frame">
+        <img src="content/images/grooped/play-1.png" alt="Fresh puzzle grid, player selecting words">
+      </div>
+      <div class="phone-frame">
+        <img src="content/images/grooped/play-2.png" alt="First category solved, collapsed into a color block">
+      </div>
+      <div class="phone-frame">
+        <img src="content/images/grooped/play-3.png" alt="Mid-game with two categories solved">
+      </div>
+      <div class="phone-frame">
+        <img src="content/images/grooped/play-4.png" alt="Win state, all four categories revealed">
+      </div>
+    </div>
+    <p class="cs-caption" style="margin-top: 12px;">A full session: selecting words, solving groups, and the win state.</p>
+  </section>
+
+  <!-- 5. WATCHING PEOPLE PLAY -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Level design and real behavior</span>
+      <h2 class="cs-h2">Session recordings over surveys, every time</h2>
+      <p class="cs-p">I connected Microsoft Clarity to track how people actually play. Not surveys, not friend feedback. Session recordings of real behavior. I believe in seeing what people do, not asking what they would do.</p>
+      <p class="cs-p">What I learned: people play fast and lose patience faster. A couple of wrong guesses and some players just leave. That insight pushed me to dial back the AI's independence and make puzzles more solvable. The challenge should feel rewarding, not punishing.</p>
+    </div>
+
+    <blockquote class="cs-pullquote" style="max-width: 660px; margin-left: auto; margin-right: auto;">
+      "I believe in seeing what people do, not asking what they would do."
+    </blockquote>
+
+    <div class="cs-text">
+      <p class="cs-p">The creative part of this project is the puzzle design itself. Each puzzle is a small system of intentional overlap. Take one example: JAWS, BULL, TIGER, MAKO. All sharks. But JAWS is also a Bond villain. BULL could be a steak cut. TIGER could be an arcade game. Designing that web of almost-right answers is the closest I've come to level design, and it's the part I enjoy most.</p>
+    </div>
+
+    <div class="cs-img-wrap">
+      <img class="cs-img" src="content/images/grooped/clarity-session.png" alt="Microsoft Clarity session recording showing click tracking on the game">
+      <p class="cs-caption">Microsoft Clarity session recording: tracking real player behavior.</p>
+    </div>
+
+    <div class="cs-img-wrap">
+      <img class="cs-img" src="content/images/grooped/puzzle-sharks.png" alt="Puzzle grid: sharks, steaks, Bond villains, and arcade games">
+      <p class="cs-caption">One puzzle, four layers of misdirection: sharks, steaks, Bond villains, and arcade games.</p>
+    </div>
+  </section>
+
+  <!-- 6. BOTTOM CTA -->
+  <div class="cs-bottom-cta">
+    <a href="https://grooped.de" target="_blank" rel="noopener" class="cs-cta-btn">Try today's puzzle →</a>
+    <span class="cs-cta-hint">Best played on your phone</span>
+    <img src="content/images/grooped/qr-code.png" alt="QR code linking to grooped.de" class="cs-qr">
+    <p class="cs-qr-caption">Scan to play on your phone</p>
+  </div>
+
+  <!-- BACK LINK -->
+  <div class="cs-back-wrap">
+    <a href="work.html" class="cs-back-link">← Back to all projects</a>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
+    <img id="lb-img" src="" alt="">
+  </div>
+
+  <script src="access.js"></script>
+  <script src="nav.js"></script>
+  <script src="theme.js"></script>
+  <script src="name-animator.js"></script>
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+
+      function openLightbox(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      document.querySelectorAll('img.cs-img, .phone-frame img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          openLightbox(img.src, img.alt);
+        });
+      });
+
+      overlay.addEventListener('click', closeLightbox);
+      lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+  <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
+</body>
+</html>
