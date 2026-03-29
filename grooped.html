@@ -52,38 +52,113 @@
       opacity: 0.6;
     }
 
-    /* ---- Phone frames ---- */
-    .phone-row {
+    /* ---- Gameplay stepper ---- */
+    .gs-stepper {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 10px;
-      margin: 32px 0 0;
-      align-items: start;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 40px 0 0;
+      align-items: center;
     }
 
-    .phone-frame {
-      border-radius: 12px;
+    .gs-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .gs-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 13px 14px;
+      border-left: 3px solid transparent;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      opacity: 0.38;
+      transition: border-color 0.2s, background 0.2s, opacity 0.2s;
+    }
+
+    .gs-step:hover { opacity: 0.65; }
+
+    .gs-step.is-active {
+      border-left-color: var(--color-link);
+      background: rgba(242, 23, 131, 0.05);
+      opacity: 1;
+    }
+
+    .gs-step.is-active:hover { opacity: 1; }
+
+    .gs-step-num {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--color-link);
+      line-height: 1.3;
+      min-width: 18px;
+      opacity: 0.45;
+    }
+
+    .gs-step.is-active .gs-step-num { opacity: 1; }
+
+    .gs-step-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 3px;
+      line-height: 1.3;
+    }
+
+    .gs-step-desc {
+      font-size: 0.78rem;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+
+    .gs-phone-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .gs-phone-frame {
+      border-radius: 32px;
       border: 2px solid #e0e0e0;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      cursor: zoom-in;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+      padding: 10px;
+      background: #fff;
+      width: 100%;
+      max-width: 240px;
     }
 
-    .phone-frame img {
+    html[data-theme="dark"] .gs-phone-frame {
+      border-color: #3a3a3a;
+      background: #1e1e1e;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+
+    .gs-phone-inner {
+      display: grid;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .gs-slide {
+      grid-column: 1;
+      grid-row: 1;
       width: 100%;
       display: block;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
-    html[data-theme="dark"] .phone-frame {
-      border-color: #3a3a3a;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
+    .gs-slide.is-active { opacity: 1; }
 
-    @media (max-width: 700px) {
-      .phone-row {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
+    @media (max-width: 768px) {
+      .gs-stepper {
+        grid-template-columns: 1fr;
+        gap: 24px;
       }
+      .gs-phone-wrap { order: -1; }
+      .gs-phone-frame { max-width: 200px; }
     }
 
     /* ---- Bottom CTA section ---- */
@@ -177,30 +252,48 @@
       <p class="cs-p" style="margin-bottom: 0;">The part that surprised me was the small things. When a player solves a category, it collapses into a colored block at the top of the grid. But the order depends on which group you solve first, second, third. That reordering logic wasn't something I'd considered until it broke. It's the kind of invisible detail that feels natural when it works and immediately wrong when it doesn't.</p>
     </div>
 
-    <div class="phone-row">
-      <div class="phone-frame">
-        <img src="content/images/grooped/groopped gameplay/gp-1.PNG" alt="Gameplay screenshot 1">
+    <div class="gs-stepper" id="gs-stepper">
+      <div class="gs-steps">
+        <div class="gs-step is-active" data-index="0">
+          <div class="gs-step-num">1</div>
+          <div class="gs-step-body">
+            <div class="gs-step-title">16 words, 4 groups</div>
+            <div class="gs-step-desc">A fresh puzzle. The grid shows 16 words with no hints about what connects them.</div>
+          </div>
+        </div>
+        <div class="gs-step" data-index="1">
+          <div class="gs-step-num">2</div>
+          <div class="gs-step-body">
+            <div class="gs-step-title">Spot a pattern</div>
+            <div class="gs-step-desc">Four words selected, ready to submit. Is it the right group?</div>
+          </div>
+        </div>
+        <div class="gs-step" data-index="2">
+          <div class="gs-step-num">3</div>
+          <div class="gs-step-body">
+            <div class="gs-step-title">First group found</div>
+            <div class="gs-step-desc">A correct guess collapses into a color block. Twelve words remain.</div>
+          </div>
+        </div>
+        <div class="gs-step" data-index="3">
+          <div class="gs-step-num">4</div>
+          <div class="gs-step-body">
+            <div class="gs-step-title">Puzzle complete</div>
+            <div class="gs-step-desc">All four groups revealed. Come back tomorrow for a new one.</div>
+          </div>
+        </div>
       </div>
-      <div class="phone-frame">
-        <img src="content/images/grooped/groopped gameplay/gp-2.PNG" alt="Gameplay screenshot 2">
-      </div>
-      <div class="phone-frame">
-        <img src="content/images/grooped/groopped gameplay/gp-3.PNG" alt="Gameplay screenshot 3">
-      </div>
-      <div class="phone-frame">
-        <img src="content/images/grooped/groopped gameplay/gp-4.PNG" alt="Gameplay screenshot 4">
-      </div>
-      <div class="phone-frame">
-        <img src="content/images/grooped/groopped gameplay/gp-5.PNG" alt="Gameplay screenshot 5">
-      </div>
-      <div class="phone-frame">
-        <img src="content/images/grooped/groopped gameplay/gp-6.PNG" alt="Gameplay screenshot 6">
-      </div>
-      <div class="phone-frame">
-        <img src="content/images/grooped/groopped gameplay/gp-7.PNG" alt="Gameplay screenshot 7">
+      <div class="gs-phone-wrap">
+        <div class="gs-phone-frame">
+          <div class="gs-phone-inner">
+            <img class="gs-slide is-active" src="content/images/grooped/groopped gameplay/gp-1.PNG" alt="16 words, 4 groups">
+            <img class="gs-slide" src="content/images/grooped/groopped gameplay/gp-3.PNG" alt="Spot a pattern">
+            <img class="gs-slide" src="content/images/grooped/groopped gameplay/gp-5.PNG" alt="First group found">
+            <img class="gs-slide" src="content/images/grooped/groopped gameplay/gp-7.PNG" alt="Puzzle complete">
+          </div>
+        </div>
       </div>
     </div>
-    <p class="cs-caption" style="margin-top: 12px;">A full session: selecting words, solving groups, and the win state.</p>
   </section>
 
   <!-- 5. WATCHING PEOPLE PLAY -->
@@ -288,7 +381,7 @@
         lbImg.style.display = '';
       }
 
-      document.querySelectorAll('img.cs-img, .phone-frame img').forEach(function(img) {
+      document.querySelectorAll('img.cs-img').forEach(function(img) {
         img.addEventListener('click', function() { openImage(img.src, img.alt); });
       });
 
@@ -303,6 +396,42 @@
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeLightbox();
       });
+    })();
+  </script>
+  <script>
+    (function() {
+      var stepper = document.getElementById('gs-stepper');
+      var steps   = stepper.querySelectorAll('.gs-step');
+      var slides  = stepper.querySelectorAll('.gs-slide');
+      var current = 0;
+      var timer   = null;
+
+      function goTo(i) {
+        steps[current].classList.remove('is-active');
+        slides[current].classList.remove('is-active');
+        current = i;
+        steps[current].classList.add('is-active');
+        slides[current].classList.add('is-active');
+      }
+
+      function startTimer() {
+        timer = setInterval(function() { goTo((current + 1) % steps.length); }, 4000);
+      }
+
+      function stopTimer() { clearInterval(timer); }
+
+      steps.forEach(function(step, i) {
+        step.addEventListener('click', function() {
+          stopTimer();
+          goTo(i);
+          startTimer();
+        });
+      });
+
+      stepper.addEventListener('mouseenter', stopTimer);
+      stepper.addEventListener('mouseleave', startTimer);
+
+      startTimer();
     })();
   </script>
   <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
