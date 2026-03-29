@@ -13,83 +13,6 @@
     /* ---- Grooped hero ---- */
     .cs-hero {
       background: #ec7357;
-      overflow: visible;
-    }
-
-    /* Two-column hero layout */
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .hero-layout .cs-hero-content {
-      max-width: none;
-    }
-
-    /* ---- Shared phone frame ---- */
-    .hero-phone-frame {
-      border-radius: 32px;
-      background: #fff;
-      border: 2px solid rgba(255,255,255,0.45);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.22), 0 4px 14px rgba(0,0,0,0.14);
-      padding: 10px;
-      position: relative;
-    }
-
-    .hero-phone-notch {
-      width: 8px;
-      height: 8px;
-      background: rgba(0,0,0,0.12);
-      border-radius: 50%;
-      margin: 0 auto 8px;
-    }
-
-    .hero-phone-inner {
-      border-radius: 24px;
-      overflow: hidden;
-    }
-
-    .hero-phone-inner img {
-      width: 100%;
-      display: block;
-    }
-
-    /* ---- Desktop phone (right column) ---- */
-    .hero-phone-col {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      margin-bottom: -52px;
-      position: relative;
-      z-index: 5;
-      perspective: 900px;
-    }
-
-    .hero-phone-col .hero-phone-frame {
-      width: 300px;
-      transform: rotateY(-8deg) rotateX(3deg);
-      transform-style: preserve-3d;
-      will-change: transform;
-    }
-
-    /* ---- Mobile phone (inside left column) ---- */
-    .hero-phone-mobile {
-      display: none;
-    }
-
-    /* ---- Responsive ---- */
-    @media (max-width: 768px) {
-      .hero-layout {
-        grid-template-columns: 1fr;
-      }
-      .hero-phone-col {
-        display: none;
-      }
-      .hero-phone-mobile {
-        display: none;
-      }
     }
 
     /* Hero subline */
@@ -274,40 +197,17 @@
   <!-- 1. HERO -->
   <section class="cs-hero cs-bleed">
     <div class="cs-inner">
-      <div class="hero-layout">
-
-        <div class="cs-hero-content">
-          <span class="cs-hero-eyebrow">AI Project</span>
-          <h1 class="cs-hero-h">A daily word puzzle,<br>built and curated with AI</h1>
-          <!-- Mobile phone: between headline and CTA -->
-          <div class="hero-phone-mobile">
-            <div class="hero-phone-frame">
-              <div class="hero-phone-notch"></div>
-              <div class="hero-phone-inner">
-                <img src="content/images/grooped/groopped gameplay/gp-1.PNG" alt="Grooped puzzle grid">
-              </div>
-            </div>
-          </div>
-          <a href="https://grooped.de" target="_blank" rel="noopener" class="cs-cta-btn">Try today's puzzle →</a>
-          <span class="cs-cta-hint">Best played on your phone</span>
-          <div class="cs-meta-row" style="margin-top: 32px;">
-            <span>Solo project</span>
-            <span>Design, AI, Development</span>
-            <span>Live at grooped.de</span>
-            <span>Since December 2025</span>
-          </div>
+      <div class="cs-hero-content">
+        <span class="cs-hero-eyebrow">AI Project</span>
+        <h1 class="cs-hero-h">A daily word puzzle,<br>built and curated with AI</h1>
+        <a href="https://grooped.de" target="_blank" rel="noopener" class="cs-cta-btn">Try today's puzzle →</a>
+        <span class="cs-cta-hint">Best played on your phone</span>
+        <div class="cs-meta-row" style="margin-top: 32px;">
+          <span>Solo project</span>
+          <span>Design, AI, Development</span>
+          <span>Live at grooped.de</span>
+          <span>Since December 2025</span>
         </div>
-
-        <!-- Desktop phone: parallax, right column -->
-        <div class="hero-phone-col">
-          <div class="hero-phone-frame" id="hero-phone">
-            <div class="hero-phone-notch"></div>
-            <div class="hero-phone-inner">
-              <img src="content/images/grooped/groopped gameplay/gp-1.PNG" alt="Grooped puzzle grid">
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -497,30 +397,6 @@
       });
     })();
   </script>
-  <script>
-    (function() {
-      var phone = document.getElementById('hero-phone');
-      if (!phone) return;
-      var hero  = document.querySelector('.cs-hero');
-      var ticking = false;
-
-      function update() {
-        var rect     = hero.getBoundingClientRect();
-        var progress = Math.max(0, Math.min(1, -rect.top / (rect.height * 0.5)));
-        var ry = -8 + 8 * progress;
-        var rx =  3 - 3 * progress;
-        phone.style.transform = 'rotateY(' + ry + 'deg) rotateX(' + rx + 'deg)';
-        ticking = false;
-      }
-
-      window.addEventListener('scroll', function() {
-        if (!ticking) { requestAnimationFrame(update); ticking = true; }
-      }, { passive: true });
-
-      update();
-    })();
-  </script>
-
   <script>
     (function() {
       var stepper = document.getElementById('gs-stepper');
