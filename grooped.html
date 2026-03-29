@@ -212,7 +212,7 @@
     </div>
 
     <div class="cs-img-wrap">
-      <img class="cs-img" src="content/images/grooped/clarity-session.png" alt="Microsoft Clarity session recording showing click tracking on the game">
+      <video class="cs-img cs-video" src="content/images/grooped/clarity-session.mp4" autoplay loop muted playsinline style="cursor: zoom-in;"></video>
       <p class="cs-caption">Microsoft Clarity session recording: tracking real player behavior.</p>
     </div>
 
@@ -238,6 +238,7 @@
   <!-- LIGHTBOX -->
   <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
     <img id="lb-img" src="" alt="">
+    <video id="lb-video" src="" autoplay loop muted playsinline style="display:none;"></video>
   </div>
 
   <script src="access.js"></script>
@@ -246,12 +247,25 @@
   <script src="name-animator.js"></script>
   <script>
     (function() {
-      var overlay = document.getElementById('lb-overlay');
-      var lbImg   = document.getElementById('lb-img');
+      var overlay  = document.getElementById('lb-overlay');
+      var lbImg    = document.getElementById('lb-img');
+      var lbVideo  = document.getElementById('lb-video');
 
-      function openLightbox(src, alt) {
+      function openImage(src, alt) {
         lbImg.src = src;
         lbImg.alt = alt || '';
+        lbImg.style.display = '';
+        lbVideo.style.display = 'none';
+        lbVideo.src = '';
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function openVideo(src) {
+        lbVideo.src = src;
+        lbVideo.style.display = '';
+        lbImg.style.display = 'none';
+        lbImg.src = '';
         overlay.classList.add('is-open');
         document.body.style.overflow = 'hidden';
       }
@@ -260,16 +274,22 @@
         overlay.classList.remove('is-open');
         document.body.style.overflow = '';
         lbImg.src = '';
+        lbVideo.src = '';
+        lbVideo.style.display = 'none';
+        lbImg.style.display = '';
       }
 
       document.querySelectorAll('img.cs-img, .phone-frame img').forEach(function(img) {
-        img.addEventListener('click', function() {
-          openLightbox(img.src, img.alt);
-        });
+        img.addEventListener('click', function() { openImage(img.src, img.alt); });
+      });
+
+      document.querySelectorAll('video.cs-video').forEach(function(vid) {
+        vid.addEventListener('click', function() { openVideo(vid.src); });
       });
 
       overlay.addEventListener('click', closeLightbox);
       lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
+      lbVideo.addEventListener('click', function(e) { e.stopPropagation(); });
 
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeLightbox();
