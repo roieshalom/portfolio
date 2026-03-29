@@ -414,11 +414,12 @@
         slides[current].classList.add('is-active');
       }
 
+      function stopTimer() { clearInterval(timer); timer = null; }
+
       function startTimer() {
+        stopTimer();
         timer = setInterval(function() { goTo((current + 1) % steps.length); }, 4000);
       }
-
-      function stopTimer() { clearInterval(timer); }
 
       steps.forEach(function(step, i) {
         step.addEventListener('click', function() {
