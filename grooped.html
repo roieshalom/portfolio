@@ -14,8 +14,20 @@
     .cs-hero {
       background: #ec7357;
       overflow: hidden;
+      height: 380px;
     }
-    .cs-hero-img-wrap img { opacity: 0.55; }
+    .cs-hero-img-wrap {
+      width: auto;
+      height: 100%;
+      bottom: 0;
+    }
+    .cs-hero-img-wrap img {
+      opacity: 0.72;
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+      object-position: right bottom;
+    }
     .cs-hero-fade {
       background: linear-gradient(to right, #ec7357 28%, rgba(236,115,87,0.7) 50%, rgba(236,115,87,0.1) 100%);
     }
@@ -44,6 +56,7 @@
       text-decoration: none;
       transition: opacity 0.18s;
       margin-bottom: 10px;
+      outline: 1px solid rgba(255, 255, 255, 0.4);
     }
     .cs-cta-btn:hover { opacity: 0.88; color: #fff; }
 
@@ -160,25 +173,65 @@
       .gs-phone-frame { max-width: 200px; }
     }
 
-    /* ---- Bottom CTA section ---- */
-    .cs-bottom-cta {
+    /* ---- Bottom CTA strip ---- */
+    .cs-closing-strip {
+      background: var(--color-grey-light);
       text-align: center;
-      padding: 60px 0 32px;
+      padding: 72px 24px 64px;
     }
 
-    .cs-qr {
-      width: 120px;
-      height: 120px;
-      margin: 20px auto 6px;
-      display: block;
-      border-radius: 10px;
+    .cs-closing-h {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin: 0 0 20px;
     }
 
-    .cs-qr-caption {
-      font-size: 0.75rem;
+    .cs-cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .cs-bottom-qr-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cs-bottom-qr-group img {
+      width: 84px;
+      height: 84px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      mix-blend-mode: multiply;
+    }
+
+    .cs-bottom-qr-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-link);
+      line-height: 1.3;
+      text-align: right;
+      max-width: 120px;
+    }
+
+    .cs-cta-or {
+      font-size: 0.85rem;
       color: var(--color-text);
+      opacity: 0.45;
       font-style: italic;
-      opacity: 0.7;
+    }
+
+    .cs-back-wrap {
+      text-align: center;
+      padding: 36px 0 40px;
+    }
+
+    @media (max-width: 768px) {
+      .cs-bottom-qr-group { display: none; }
     }
   </style>
 </head>
@@ -202,16 +255,9 @@
     </div>
     <div class="cs-inner">
       <div class="cs-hero-content">
-        <span class="cs-hero-eyebrow">AI Project</span>
+        <span class="cs-hero-eyebrow">Solo Project</span>
         <h1 class="cs-hero-h">A daily word puzzle,<br>built and curated with AI</h1>
-        <a href="https://grooped.de" target="_blank" rel="noopener" class="cs-cta-btn">Try today's puzzle →</a>
-        <span class="cs-cta-hint">Best played on your phone</span>
-        <div class="cs-meta-row" style="margin-top: 32px;">
-          <span>Solo project</span>
-          <span>Design, AI, Development</span>
-          <span>Live at grooped.de</span>
-          <span>Since December 2025</span>
-        </div>
+        <a href="https://grooped.de?utm_source=portfolio&utm_medium=web" target="_blank" rel="noopener" class="cs-cta-btn">Play today's puzzle ➜</a>
       </div>
     </div>
   </section>
@@ -236,13 +282,13 @@
     </div>
 
     <div class="cs-img-wrap">
-      <img class="cs-img" src="content/images/grooped/editor.png" alt="Puzzle Editor 3000 showing four categories with refresh and ban controls">
-      <p class="cs-caption">Puzzle Editor 3000: four categories with refresh and ban controls, plus a decoy analysis at the bottom.</p>
+      <img class="cs-img" src="content/images/grooped/editor-wireframe.png" alt="Early wireframe for the editor layout" style="width: 75%; margin: 0 auto; display: block;">
+      <p class="cs-caption">Early wireframe for the puzzle editor.</p>
     </div>
 
-    <div class="cs-img-wrap">
-      <img class="cs-img" src="content/images/grooped/editor-wireframe.png" alt="Early wireframe for the editor layout">
-      <p class="cs-caption">Early wireframe for the editor layout.</p>
+    <div class="cs-img-wrap" style="margin-top: 40px;">
+      <img class="cs-img" src="content/images/grooped/editor.png" alt="Puzzle Editor 3000 showing four categories with refresh and ban controls" style="width: 75%; margin: 0 auto; display: block;">
+      <p class="cs-caption">Puzzle Editor 3000: the tool I built to generate, edit, and curate puzzles.</p>
     </div>
   </section>
 
@@ -312,28 +358,35 @@
       "I believe in seeing what people do, not asking what they would do."
     </blockquote>
 
-    <div class="cs-text">
-      <p class="cs-p">The creative part of this project is the puzzle design itself. Each puzzle is a small system of intentional overlap. Take one example: JAWS, BULL, TIGER, MAKO. All sharks. But JAWS is also a Bond villain. BULL could be a steak cut. TIGER could be an arcade game. Designing that web of almost-right answers is the closest I've come to level design, and it's the part I enjoy most.</p>
-    </div>
-
     <div class="cs-img-wrap">
       <video class="cs-img cs-video" src="content/images/grooped/clarity-session.mp4" autoplay loop muted playsinline style="cursor: zoom-in;"></video>
       <p class="cs-caption">Microsoft Clarity session recording: tracking real player behavior.</p>
     </div>
 
+    <div class="cs-text" style="margin-top: 44px;">
+      <p class="cs-p">The creative part of this project is the puzzle design itself. Each puzzle is a small system of intentional overlap. Take one example: JAWS, BULL, TIGER, MAKO. All sharks. But JAWS is also a Bond villain. BULL could be a steak cut. TIGER could be an arcade game. Designing that web of almost-right answers is the closest I've come to level design, and it's the part I enjoy most.</p>
+    </div>
+
   </section>
 
-  <!-- 6. BOTTOM CTA -->
-  <div class="cs-bottom-cta">
-    <a href="https://grooped.de" target="_blank" rel="noopener" class="cs-cta-btn">Try today's puzzle →</a>
-    <span class="cs-cta-hint">Best played on your phone</span>
-    <img src="content/images/grooped/groopedde.png" alt="QR code linking to grooped.de" class="cs-qr">
-    <p class="cs-qr-caption">Scan to play on your phone</p>
+  <div style="height: 60px;"></div>
+
+  <!-- 6. BOTTOM CTA STRIP -->
+  <div class="cs-closing-strip cs-bleed">
+    <p class="cs-closing-h">Curious? Give it a try.</p>
+    <div class="cs-cta-row">
+      <div class="cs-bottom-qr-group">
+        <span class="cs-bottom-qr-label">Scan to play on your phone</span>
+        <img src="content/images/grooped/qr-grooped.png" alt="QR code linking to grooped.de">
+      </div>
+      <span class="cs-cta-or">or</span>
+      <a href="https://grooped.de?utm_source=portfolio&utm_medium=web" target="_blank" rel="noopener" class="cs-cta-btn">Play today's puzzle ➜</a>
+    </div>
   </div>
 
   <!-- BACK LINK -->
   <div class="cs-back-wrap">
-    <a href="work.html" class="cs-back-link">← Back to all projects</a>
+    <a href="work.html" class="cs-back-link"><span style="display:inline-block;transform:scaleX(-1);">➜</span> Back to all projects</a>
   </div>
 
   <!-- LIGHTBOX -->

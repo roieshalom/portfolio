@@ -32,13 +32,6 @@
       background: #118ab2;
       overflow: hidden;
     }
-    .cs-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.07) 0%, transparent 65%);
-      pointer-events: none;
-    }
     .cs-hero-eyebrow { color: rgba(255,255,255,0.55); }
 
     /* ---- Assumption cards ---- */
@@ -91,6 +84,9 @@
 
   <!-- 1. HERO -->
   <section class="cs-hero cs-bleed">
+    <div class="cs-hero-img-wrap">
+      <!-- hero image: <img src="..."> + <div class="cs-hero-fade"></div> -->
+    </div>
     <div class="cs-inner">
       <div class="cs-hero-content">
         <span class="cs-hero-eyebrow">Product Story</span>

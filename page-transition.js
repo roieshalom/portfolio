@@ -28,7 +28,8 @@
 
       var nav = document.querySelector('.top-nav');
       var navH = nav ? nav.offsetHeight : 56;
-      var heroH = Math.max(Math.round(window.innerHeight * 0.44), 380);
+      var heroEl = document.querySelector('.cs-hero');
+      var heroH = heroEl ? heroEl.offsetHeight : Math.max(Math.round(window.innerHeight * 0.44), 380);
 
       // Color block covering hero area — matches departure end state
       var colorEl = document.createElement('div');
