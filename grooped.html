@@ -13,6 +13,15 @@
     /* ---- Grooped hero ---- */
     .cs-hero {
       background: #ec7357;
+      overflow: hidden;
+    }
+    .cs-hero-img-wrap img { opacity: 0.45; }
+    .cs-hero-fade {
+      background: linear-gradient(to right, #ec7357 28%, rgba(236,115,87,0.7) 50%, rgba(236,115,87,0.1) 100%);
+    }
+    @media (max-width: 600px) {
+      .cs-hero-img-wrap { width: 100%; opacity: 0.3; }
+      .cs-hero-fade { background: linear-gradient(to bottom, rgba(236,115,87,0.5) 0%, #ec7357 65%); }
     }
 
     /* Hero subline */
@@ -196,6 +205,10 @@
 
   <!-- 1. HERO -->
   <section class="cs-hero cs-bleed">
+    <div class="cs-hero-img-wrap">
+      <img src="content/images/grooped/grooped-hero.jpg" alt="">
+      <div class="cs-hero-fade"></div>
+    </div>
     <div class="cs-inner">
       <div class="cs-hero-content">
         <span class="cs-hero-eyebrow">AI Project</span>
