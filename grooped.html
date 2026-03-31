@@ -77,16 +77,18 @@
     /* ---- Gameplay stepper ---- */
     .gs-stepper {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin: 40px 0 0;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      margin: 40px auto 0;
       align-items: center;
+      max-width: 640px;
+      padding: 0 clamp(20px, 5vw, 32px);
     }
 
     .gs-steps {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 12px;
     }
 
     .gs-step {
@@ -98,6 +100,7 @@
       border-radius: 0 8px 8px 0;
       cursor: pointer;
       opacity: 0.38;
+      background: #00000014;
       transition: border-color 0.2s, background 0.2s, opacity 0.2s;
     }
 
@@ -166,11 +169,99 @@
 
     @media (max-width: 768px) {
       .gs-stepper {
-        grid-template-columns: 1fr;
-        gap: 24px;
+        display: block;
       }
-      .gs-phone-wrap { order: -1; }
-      .gs-phone-frame { max-width: 200px; }
+      .gs-phone-wrap {
+        margin-bottom: 24px;
+      }
+      .gs-phone-frame { max-width: 280px; }
+
+      /* Hide the vertical steps list on mobile */
+      .gs-steps { display: none; }
+
+      /* Horizontal swipeable strip */
+      .gs-steps-mobile {
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 12px;
+        padding: 16px 0 4px;
+      }
+      .gs-steps-mobile::-webkit-scrollbar { display: none; }
+      .gs-steps-mobile::before,
+      .gs-steps-mobile::after {
+        content: '';
+        flex-shrink: 0;
+        width: calc(50vw - 140px);
+      }
+
+      .gs-step-mobile {
+        flex: 0 0 min(280px, 75vw);
+        scroll-snap-align: center;
+        border-left: 3px solid transparent;
+        border-radius: 0 8px 8px 0;
+        padding: 12px 14px;
+        background: #00000014;
+        opacity: 0.38;
+        transition: opacity 0.2s, border-color 0.2s, background 0.2s;
+      }
+
+      .gs-step-mobile.is-active {
+        border-left-color: var(--color-link);
+        background: rgba(242, 23, 131, 0.05);
+        opacity: 1;
+      }
+
+      .gs-step-mobile .gs-step-num {
+        font-size: 0.85rem;
+        font-weight: 800;
+        color: var(--color-text);
+        margin-bottom: 4px;
+      }
+
+      .gs-step-mobile.is-active .gs-step-num { color: var(--color-link); }
+
+      .gs-step-mobile .gs-step-title {
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: var(--color-text-main);
+        margin-bottom: 3px;
+        line-height: 1.3;
+      }
+
+      .gs-step-mobile .gs-step-desc {
+        font-size: 0.78rem;
+        color: var(--color-text);
+        line-height: 1.5;
+      }
+
+      /* Dots indicator */
+      .gs-dots {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 12px;
+      }
+
+      .gs-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--color-border);
+        transition: background 0.2s, transform 0.2s;
+      }
+
+      .gs-dot.is-active {
+        background: var(--color-link);
+        transform: scale(1.3);
+      }
+    }
+
+    /* Hide mobile strip on desktop */
+    @media (min-width: 769px) {
+      .gs-steps-mobile, .gs-dots { display: none; }
     }
 
     /* ---- Bottom CTA strip ---- */
@@ -237,6 +328,8 @@
         height: auto;
         padding: 60px 0 56px;
       }
+      html, body { overflow-x: clip; }
+      .gs-stepper { overflow-x: clip; }
     }
   </style>
 </head>
@@ -255,7 +348,7 @@
   <!-- 1. HERO -->
   <section class="cs-hero cs-bleed">
     <div class="cs-hero-img-wrap">
-      <img src="content/images/grooped/grooped-hero.jpg" alt="">
+      <img src="content/images/grooped/grooped-hero.jpg" alt="Playing Grooped on a phone">
       <div class="cs-hero-fade"></div>
     </div>
     <div class="cs-inner">
@@ -305,7 +398,10 @@
       <p class="cs-p">The entire game — the front end, the game logic, the animations — was built with AI assistance. My basic knowledge of HTML, CSS, and JavaScript helped me steer, debug, and understand what the AI was explaining, but I couldn't have built this alone.</p>
       <p class="cs-p" style="margin-bottom: 0;">The part that surprised me was the small things. When a player solves a category, it collapses into a colored block at the top of the grid. But the order depends on which group you solve first, second, third. That reordering logic wasn't something I'd considered until it broke. It's the kind of invisible detail that feels natural when it works and immediately wrong when it doesn't.</p>
     </div>
+  </section>
 
+  <!-- 4b. GAMEPLAY STEPPER -->
+  <section class="cs-section" style="max-width: none; padding: 0; margin-left: 0; margin-right: 0;">
     <div class="gs-stepper" id="gs-stepper">
       <div class="gs-steps">
         <div class="gs-step is-active" data-index="0">
@@ -346,6 +442,35 @@
             <img class="gs-slide" src="content/images/grooped/groopped gameplay/gp-7.PNG" alt="Puzzle complete">
           </div>
         </div>
+      </div>
+      <!-- Mobile horizontal steps strip -->
+      <div class="gs-steps-mobile" id="gs-steps-mobile">
+        <div class="gs-step-mobile is-active" data-index="0">
+          <div class="gs-step-num">1</div>
+          <div class="gs-step-title">16 words, 4 groups</div>
+          <div class="gs-step-desc">A fresh puzzle. The grid shows 16 words with no hints about what connects them.</div>
+        </div>
+        <div class="gs-step-mobile" data-index="1">
+          <div class="gs-step-num">2</div>
+          <div class="gs-step-title">Spot a pattern</div>
+          <div class="gs-step-desc">Four words selected, ready to submit. Is it the right group?</div>
+        </div>
+        <div class="gs-step-mobile" data-index="2">
+          <div class="gs-step-num">3</div>
+          <div class="gs-step-title">First group found</div>
+          <div class="gs-step-desc">A correct guess collapses into a color block. Twelve words remain.</div>
+        </div>
+        <div class="gs-step-mobile" data-index="3">
+          <div class="gs-step-num">4</div>
+          <div class="gs-step-title">Puzzle complete</div>
+          <div class="gs-step-desc">All four groups revealed. Come back tomorrow for a new one.</div>
+        </div>
+      </div>
+      <div class="gs-dots" id="gs-dots">
+        <div class="gs-dot is-active"></div>
+        <div class="gs-dot"></div>
+        <div class="gs-dot"></div>
+        <div class="gs-dot"></div>
       </div>
     </div>
   </section>
@@ -457,18 +582,38 @@
   </script>
   <script>
     (function() {
-      var stepper = document.getElementById('gs-stepper');
-      var steps   = stepper.querySelectorAll('.gs-step');
-      var slides  = stepper.querySelectorAll('.gs-slide');
-      var current = 0;
-      var timer   = null;
+      var stepper      = document.getElementById('gs-stepper');
+      var steps        = stepper.querySelectorAll('.gs-step');
+      var slides       = stepper.querySelectorAll('.gs-slide');
+      var mobileStrip  = document.getElementById('gs-steps-mobile');
+      var mobileSteps  = mobileStrip ? mobileStrip.querySelectorAll('.gs-step-mobile') : [];
+      var dotsWrap     = document.getElementById('gs-dots');
+      var dots         = dotsWrap ? dotsWrap.querySelectorAll('.gs-dot') : [];
+      var current      = 0;
+      var timer        = null;
+      var isMobile     = function() { return window.innerWidth <= 768; };
 
-      function goTo(i) {
+      function scrollMobileTo(i) {
+        if (!mobileStrip || !mobileSteps[i]) return;
+        var strip = mobileStrip;
+        var card  = mobileSteps[i];
+        var stripW = strip.offsetWidth;
+        var cardW  = card.offsetWidth;
+        var cardLeft = card.offsetLeft;
+        strip.scrollTo({ left: cardLeft - (stripW - cardW) / 2, behavior: 'smooth' });
+      }
+
+      function goTo(i, fromSwipe) {
         steps[current].classList.remove('is-active');
         slides[current].classList.remove('is-active');
+        if (mobileSteps[current]) mobileSteps[current].classList.remove('is-active');
+        if (dots[current]) dots[current].classList.remove('is-active');
         current = i;
         steps[current].classList.add('is-active');
         slides[current].classList.add('is-active');
+        if (mobileSteps[current]) mobileSteps[current].classList.add('is-active');
+        if (dots[current]) dots[current].classList.add('is-active');
+        if (!fromSwipe && isMobile()) scrollMobileTo(i);
       }
 
       function stopTimer() { clearInterval(timer); timer = null; }
@@ -478,13 +623,37 @@
         timer = setInterval(function() { goTo((current + 1) % steps.length); }, 4000);
       }
 
+      // Desktop: click steps
       steps.forEach(function(step, i) {
-        step.addEventListener('click', function() {
-          stopTimer();
-          goTo(i);
-          startTimer();
-        });
+        step.addEventListener('click', function() { stopTimer(); goTo(i); startTimer(); });
       });
+
+      // Mobile: click cards
+      mobileSteps.forEach(function(step, i) {
+        step.addEventListener('click', function() { stopTimer(); goTo(i); startTimer(); });
+      });
+
+      // Mobile swipe: detect which card is snapped after scroll ends
+      if (mobileStrip) {
+        var scrollEndTimer = null;
+        mobileStrip.addEventListener('scroll', function() {
+          stopTimer();
+          clearTimeout(scrollEndTimer);
+          scrollEndTimer = setTimeout(function() {
+            // Find which card is closest to center
+            var stripCenter = mobileStrip.scrollLeft + mobileStrip.offsetWidth / 2;
+            var closest = 0;
+            var minDist = Infinity;
+            mobileSteps.forEach(function(card, i) {
+              var cardCenter = card.offsetLeft + card.offsetWidth / 2;
+              var dist = Math.abs(cardCenter - stripCenter);
+              if (dist < minDist) { minDist = dist; closest = i; }
+            });
+            goTo(closest, true);
+            startTimer();
+          }, 120);
+        });
+      }
 
       stepper.addEventListener('mouseenter', stopTimer);
       stepper.addEventListener('mouseleave', startTimer);
