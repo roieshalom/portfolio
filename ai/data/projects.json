@@ -9,6 +9,7 @@
     "desc": "A mystical AI-powered fortune teller. Ask Esmeralda anything and receive a personalized, atmospheric response, part oracle, part entertainment, entirely immersive.",
     "thumbnail": "../content/images/side_projects/ask_gallery.png",
     "link": "https://askesmeralda.com",
+    "page": "esmeralda.html",
     "category": "AI · Web App",
     "show": true
   },

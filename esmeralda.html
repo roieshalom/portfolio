@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="page-transition.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Esmeralda · Roie Shalom</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="casestudy.css">
+  <style>
+    /* ---- Esmeralda hero ---- */
+    .cs-hero {
+      background: #06d6a0;
+      overflow: hidden;
+      height: 380px;
+      position: relative;
+    }
+
+    /* Card image: rotated, right side, absolutely positioned */
+    .es-hero-card {
+      position: absolute;
+      right: clamp(40px, 8vw, 120px);
+      bottom: -12px;
+      width: clamp(160px, 22vw, 260px);
+      transform: rotate(4deg);
+      filter: drop-shadow(0 12px 32px rgba(0,0,0,0.28));
+      pointer-events: none;
+      border-radius: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .cs-hero {
+        height: auto;
+        padding: 60px 0 56px;
+      }
+      .es-hero-card {
+        opacity: 0.22;
+        right: -20px;
+        width: 180px;
+        bottom: -8px;
+      }
+      html, body { overflow-x: clip; }
+    }
+
+    /* Hero subline */
+    .cs-hero-sub {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.72);
+      margin: -16px 0 28px;
+      line-height: 1.55;
+    }
+
+    /* CTA button */
+    .cs-cta-btn {
+      display: inline-block;
+      background: var(--color-link);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 13px 26px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.18s;
+      margin-bottom: 10px;
+      outline: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .cs-cta-btn:hover { opacity: 0.88; color: #fff; }
+
+    /* ---- Static phone row ---- */
+    .es-phone-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin: 40px auto 0;
+      max-width: 760px;
+      padding: 0 clamp(20px, 5vw, 32px);
+    }
+
+    .es-phone-item {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .es-phone-inner {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(6,214,160,0.28);
+      outline: 1px solid rgba(0,0,0,0.07);
+      width: 100%;
+    }
+
+    .es-phone-inner img {
+      width: 100%;
+      display: block;
+    }
+
+    .es-phone-label {
+      font-size: 0.75rem;
+      font-style: italic;
+      color: var(--color-text);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .es-phone-row {
+        gap: 10px;
+      }
+    }
+
+    /* ---- Bottom CTA strip ---- */
+    .cs-closing-strip {
+      background: var(--color-grey-light);
+      text-align: center;
+      padding: 72px 24px 64px;
+    }
+
+    .cs-closing-h {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin: 0 0 20px;
+    }
+
+    .cs-cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .cs-bottom-qr-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cs-bottom-qr-group img {
+      width: 84px;
+      height: 84px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      mix-blend-mode: multiply;
+    }
+
+    .cs-bottom-qr-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-link);
+      line-height: 1.3;
+      text-align: right;
+      max-width: 120px;
+    }
+
+    .cs-cta-or {
+      font-size: 0.85rem;
+      color: var(--color-text);
+      opacity: 0.45;
+      font-style: italic;
+    }
+
+    .cs-back-wrap {
+      text-align: center;
+      padding: 36px 0 40px;
+    }
+
+    @media (max-width: 768px) {
+      .cs-bottom-qr-group { display: none; }
+      .cs-cta-or { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
+    <button class="nav-menu-toggle" aria-label="Open menu" aria-expanded="false"><span class="nav-icon">☰</span></button>
+    <div class="top-nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="work.html" class="nav-link active">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- 1. HERO -->
+  <section class="cs-hero cs-bleed">
+    <img class="es-hero-card" src="content/images/esmeralda/card.png" alt="The Ask Esmeralda NFC card">
+    <div class="cs-inner">
+      <div class="cs-hero-content">
+        <span class="cs-hero-eyebrow">Solo Project</span>
+        <h1 class="cs-hero-h">A fortune teller on a business card,<br>powered by AI</h1>
+        <a href="https://askesmeralda.com?utm_source=portfolio&utm_medium=web" target="_blank" rel="noopener" class="cs-cta-btn">Ask Esmeralda ➜</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. INTRO -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <p class="cs-p">Ask Esmeralda started as a party trick. I wanted to build something that could live in the physical world and conjure a digital experience from a single tap. No app download. No login. Just a card, a phone, and a question.</p>
+      <p class="cs-p">The card has an NFC chip. You tap it, the browser opens, and Esmeralda is waiting. Ask her anything — a question about work, love, a decision you've been avoiding — and she answers in character: part oracle, part entertainer, entirely in her own voice. The AI is Claude. The character is mine.</p>
+    </div>
+  </section>
+
+  <!-- 3. THE CARD -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">The Card</span>
+      <h2 class="cs-h2">The best interface is no interface</h2>
+      <p class="cs-p">I wanted the entry point to feel like magic. NFC cards are invisible technology — you tap and something happens. There's no icon to tap, no URL to remember, no app to install. The card is the product. The mystery starts before the page loads.</p>
+      <p class="cs-p">I designed the card to look like a tarot card, printed on matte black stock. The gold illustration is Esmeralda herself. On the back, just a tagline: "Ask me anything." No instructions needed.</p>
+      <div class="cs-img-wrap">
+        <img src="content/images/esmeralda/card.png" alt="The Ask Esmeralda NFC card, front and back" class="cs-img" style="max-width: 480px; margin: 0 auto; display: block;">
+        <p class="cs-caption">The physical card. Tap it, and Esmeralda answers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THE EXPERIENCE -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">The Experience</span>
+      <h2 class="cs-h2">Atmospheric by design</h2>
+      <p class="cs-p">Every detail of the web experience is designed to sustain the illusion. The page opens dark, the typeface is old-world serif, and Esmeralda's responses arrive word by word — as if she's thinking. The UI disappears into the background. What's left is the conversation.</p>
+      <p class="cs-p">I wrote the system prompt as if it were a character bible. Esmeralda is cryptic but warm, confident but playful. She never breaks character. She doesn't say "As an AI language model." She says things like "The cards are rarely wrong about this."</p>
+    </div>
+
+    <div class="es-phone-row">
+      <div class="es-phone-item">
+        <div class="es-phone-inner">
+          <img src="content/images/esmeralda/flow-1.png" alt="Esmeralda welcome screen">
+        </div>
+        <span class="es-phone-label">The welcome</span>
+      </div>
+      <div class="es-phone-item">
+        <div class="es-phone-inner">
+          <img src="content/images/esmeralda/flow-2.png" alt="Asking a question">
+        </div>
+        <span class="es-phone-label">Ask your question</span>
+      </div>
+      <div class="es-phone-item">
+        <div class="es-phone-inner">
+          <img src="content/images/esmeralda/flow-3.png" alt="Esmeralda thinking">
+        </div>
+        <span class="es-phone-label">She thinks</span>
+      </div>
+      <div class="es-phone-item">
+        <div class="es-phone-inner">
+          <img src="content/images/esmeralda/flow-4.png" alt="Esmeralda's response">
+        </div>
+        <span class="es-phone-label">The reading</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. THE FUNNEL -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">The Funnel</span>
+      <h2 class="cs-h2">Word of mouth as the growth engine</h2>
+      <p class="cs-p">I give cards away at events, dinners, and meetings. One card produces multiple sessions — the person who receives it shows it to whoever's nearby. The physical object creates curiosity before anyone has typed a word.</p>
+      <p class="cs-p">After a reading, Esmeralda offers a share link. Not a prompt to share — just a link in the response, framed naturally. "If you want a second opinion, send this to someone you trust." Some people do. That's the loop.</p>
+      <div class="cs-img-wrap">
+        <img src="content/images/esmeralda/info-modal.png" alt="Session data in the analytics view" class="cs-img">
+        <p class="cs-caption">Real usage data. Most sessions arrive through a shared link or a tapped card.</p>
+      </div>
+    </div>
+  </section>
+
+  <div style="height: 60px;"></div>
+
+  <!-- 6. BOTTOM CTA STRIP -->
+  <div class="cs-closing-strip cs-bleed">
+    <p class="cs-closing-h">Want your own reading?</p>
+    <div class="cs-cta-row">
+      <div class="cs-bottom-qr-group">
+        <span class="cs-bottom-qr-label">Scan to ask on your phone</span>
+        <img src="content/images/esmeralda/qr-esmeralda.png" alt="QR code linking to askesmeralda.com">
+      </div>
+      <span class="cs-cta-or">or</span>
+      <a href="https://askesmeralda.com?utm_source=portfolio&utm_medium=web" target="_blank" rel="noopener" class="cs-cta-btn">Ask Esmeralda ➜</a>
+    </div>
+  </div>
+
+  <!-- BACK LINK -->
+  <div class="cs-back-wrap">
+    <a href="work.html" class="cs-back-link"><span style="display:inline-block;transform:scaleX(-1);">➜</span> Back to all projects</a>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
+    <img id="lb-img" src="" alt="">
+  </div>
+
+  <script src="access.js"></script>
+  <script src="nav.js"></script>
+  <script src="theme.js"></script>
+  <script src="name-animator.js"></script>
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+
+      function openLightbox(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      document.querySelectorAll('img.cs-img').forEach(function(img) {
+        img.addEventListener('click', function() { openLightbox(img.src, img.alt); });
+      });
+
+      overlay.addEventListener('click', closeLightbox);
+      lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+  <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
+</body>
+</html>
