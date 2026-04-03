@@ -83,19 +83,25 @@
       perspective: 800px;
     }
 
+    .es-card-float {
+      animation: es-float 4s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    .es-card-scene:hover .es-card-float {
+      animation-play-state: paused;
+    }
+
     .es-card-tilt {
       transform-style: preserve-3d;
       border-radius: 16px;
-      animation: es-float 4s ease-in-out infinite;
-      will-change: transform;
       cursor: pointer;
       filter: drop-shadow(0 20px 48px rgba(0,0,0,0.32));
-      transition: filter 0.3s;
+      transition: transform 0.08s linear, filter 0.3s;
     }
 
     .es-card-tilt:hover {
       filter: drop-shadow(0 28px 56px rgba(0,0,0,0.44));
-      animation-play-state: paused;
     }
 
     .es-card-tilt img {
@@ -105,9 +111,9 @@
     }
 
     @keyframes es-float {
-      0%   { transform: translateY(0px) rotateX(2deg) rotateY(-2deg); }
-      50%  { transform: translateY(-10px) rotateX(-2deg) rotateY(2deg); }
-      100% { transform: translateY(0px) rotateX(2deg) rotateY(-2deg); }
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
     }
 
     /* ---- Bottom CTA strip ---- */
@@ -216,8 +222,10 @@
       <p class="cs-p">I wanted the entry point to feel like magic. NFC cards are invisible technology. You tap and something happens. There's no icon to tap, no URL to remember, no app to install. The card is the product. The mystery starts before the page loads.</p>
       <p class="cs-p">I designed the card to look like a tarot card, printed on matte black stock. The gold illustration is Esmeralda herself. On the back, just a tagline: "Ask me anything." No instructions needed.</p>
       <div class="es-card-scene">
-        <div class="es-card-tilt" id="es-card-tilt">
-          <img src="content/images/esmeralda/card.png" alt="The Ask Esmeralda NFC card, front and back">
+        <div class="es-card-float" id="es-card-float">
+          <div class="es-card-tilt" id="es-card-tilt">
+            <img src="content/images/esmeralda/card.png" alt="The Ask Esmeralda NFC card, front and back">
+          </div>
         </div>
         <p class="cs-caption">The physical card. Tap it, and Esmeralda answers.</p>
       </div>
@@ -336,20 +344,20 @@
   </script>
   <script>
     (function() {
-      var card = document.getElementById('es-card-tilt');
-      if (!card) return;
-      var scene = card.parentElement;
-      var MAX = 18;
+      var tilt  = document.getElementById('es-card-tilt');
+      var scene = document.querySelector('.es-card-scene');
+      if (!tilt || !scene) return;
+      var MAX = 24;
 
       scene.addEventListener('mousemove', function(e) {
-        var rect = scene.getBoundingClientRect();
-        var x = (e.clientX - rect.left) / rect.width  - 0.5; // -0.5 to 0.5
+        var rect = tilt.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width  - 0.5;
         var y = (e.clientY - rect.top)  / rect.height - 0.5;
-        card.style.transform = 'rotateX(' + (-y * MAX) + 'deg) rotateY(' + (x * MAX) + 'deg) translateY(-6px)';
+        tilt.style.transform = 'rotateX(' + (-y * MAX) + 'deg) rotateY(' + (x * MAX) + 'deg)';
       });
 
       scene.addEventListener('mouseleave', function() {
-        card.style.transform = '';
+        tilt.style.transform = '';
       });
     })();
   </script>
