@@ -133,8 +133,7 @@
 
     video.gs-slide {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
     }
 
     @media (max-width: 768px) {
@@ -576,10 +575,14 @@
       function setSlide(i) {
         slides.forEach(function(s) {
           s.classList.remove('is-active');
-          if (s.tagName === 'VIDEO') s.pause();
+          if (s.tagName === 'VIDEO') { s.pause(); s.currentTime = 0; }
         });
         slides[i].classList.add('is-active');
-        if (slides[i].tagName === 'VIDEO') slides[i].play();
+        if (slides[i].tagName === 'VIDEO') {
+          var v = slides[i];
+          var p = v.play();
+          if (p && p.catch) p.catch(function() {});
+        }
       }
 
       function scrollMobileTo(i) {
