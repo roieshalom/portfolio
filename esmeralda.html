@@ -214,31 +214,65 @@
       <p class="cs-p">Every detail of the web experience is designed to sustain the illusion. The page opens dark, the typeface is old-world serif, and Esmeralda's responses arrive word by word, as if she's thinking. The UI disappears into the background. What's left is the conversation.</p>
       <p class="cs-p">I wrote the system prompt as if it were a character bible. Esmeralda is cryptic but warm, confident but playful. She never breaks character. She doesn't say "As an AI language model." She says things like "The cards are rarely wrong about this."</p>
     </div>
+  </section>
 
-    <div class="es-phone-row">
-      <div class="es-phone-item">
-        <div class="es-phone-inner">
-          <img src="content/images/esmeralda/flow-1.png" alt="Esmeralda welcome screen">
+  <!-- 4b. EXPERIENCE STEPPER -->
+  <section class="cs-section" style="max-width: none; padding: 0; margin-left: 0; margin-right: 0;">
+    <div class="gs-stepper" id="es-stepper">
+      <div class="gs-steps">
+        <div class="gs-step is-active" data-index="0">
+          <div class="gs-step-num">1</div>
+          <div class="gs-step-body">
+            <div class="gs-step-title">The clouds part</div>
+            <div class="gs-step-desc">Text coming soon.</div>
+          </div>
         </div>
-        <span class="cs-caption">The welcome</span>
+        <div class="gs-step" data-index="1">
+          <div class="gs-step-num">2</div>
+          <div class="gs-step-body">
+            <div class="gs-step-title">Ask your question</div>
+            <div class="gs-step-desc">Text coming soon.</div>
+          </div>
+        </div>
+        <div class="gs-step" data-index="2">
+          <div class="gs-step-num">3</div>
+          <div class="gs-step-body">
+            <div class="gs-step-title">Esmeralda speaks</div>
+            <div class="gs-step-desc">Text coming soon.</div>
+          </div>
+        </div>
       </div>
-      <div class="es-phone-item">
-        <div class="es-phone-inner">
-          <img src="content/images/esmeralda/flow-2.png" alt="Asking a question">
+      <div class="gs-phone-wrap">
+        <div class="gs-phone-frame">
+          <div class="gs-phone-inner">
+            <video class="gs-slide is-active" src="content/images/esmeralda/flow-1.mp4" autoplay loop muted playsinline></video>
+            <img class="gs-slide" src="content/images/esmeralda/flow-2.png" alt="Ask your question">
+            <img class="gs-slide" src="content/images/esmeralda/flow-3.png" alt="Esmeralda speaks">
+          </div>
         </div>
-        <span class="cs-caption">Ask your question</span>
       </div>
-      <div class="es-phone-item">
-        <div class="es-phone-inner">
-          <img src="content/images/esmeralda/flow-3.png" alt="Esmeralda thinking">
+      <!-- Mobile horizontal steps strip -->
+      <div class="gs-steps-mobile" id="es-steps-mobile">
+        <div class="gs-step-mobile is-active" data-index="0">
+          <div class="gs-step-num">1</div>
+          <div class="gs-step-title">The clouds part</div>
+          <div class="gs-step-desc">Text coming soon.</div>
         </div>
-        <span class="cs-caption">She thinks</span>
+        <div class="gs-step-mobile" data-index="1">
+          <div class="gs-step-num">2</div>
+          <div class="gs-step-title">Ask your question</div>
+          <div class="gs-step-desc">Text coming soon.</div>
+        </div>
+        <div class="gs-step-mobile" data-index="2">
+          <div class="gs-step-num">3</div>
+          <div class="gs-step-title">Esmeralda speaks</div>
+          <div class="gs-step-desc">Text coming soon.</div>
+        </div>
       </div>
-      <div class="es-phone-item">
-        <div class="es-phone-inner">
-          <img src="content/images/esmeralda/flow-4.png" alt="Esmeralda's response">
-        </div>
-        <span class="cs-caption">The reading</span>
+      <div class="gs-dots" id="es-dots">
+        <div class="gs-dot is-active"></div>
+        <div class="gs-dot"></div>
+        <div class="gs-dot"></div>
       </div>
     </div>
   </section>
@@ -375,6 +409,85 @@
         // Android / other — no permission needed
         startGyro();
       }
+    })();
+  </script>
+  <script>
+    (function() {
+      var stepper      = document.getElementById('es-stepper');
+      var steps        = stepper.querySelectorAll('.gs-step');
+      var slides       = stepper.querySelectorAll('.gs-slide');
+      var mobileStrip  = document.getElementById('es-steps-mobile');
+      var mobileSteps  = mobileStrip ? mobileStrip.querySelectorAll('.gs-step-mobile') : [];
+      var dotsWrap     = document.getElementById('es-dots');
+      var dots         = dotsWrap ? dotsWrap.querySelectorAll('.gs-dot') : [];
+      var current      = 0;
+      var timer        = null;
+      var isMobile     = function() { return window.innerWidth <= 768; };
+
+      function setSlide(i) {
+        slides.forEach(function(s) {
+          s.classList.remove('is-active');
+          if (s.tagName === 'VIDEO') s.pause();
+        });
+        slides[i].classList.add('is-active');
+        if (slides[i].tagName === 'VIDEO') slides[i].play();
+      }
+
+      function scrollMobileTo(i) {
+        if (!mobileStrip || !mobileSteps[i]) return;
+        var strip = mobileStrip;
+        var card  = mobileSteps[i];
+        strip.scrollTo({ left: card.offsetLeft - (strip.offsetWidth - card.offsetWidth) / 2, behavior: 'smooth' });
+      }
+
+      function goTo(i, fromSwipe) {
+        steps[current].classList.remove('is-active');
+        if (mobileSteps[current]) mobileSteps[current].classList.remove('is-active');
+        if (dots[current]) dots[current].classList.remove('is-active');
+        current = i;
+        steps[current].classList.add('is-active');
+        if (mobileSteps[current]) mobileSteps[current].classList.add('is-active');
+        if (dots[current]) dots[current].classList.add('is-active');
+        setSlide(current);
+        if (!fromSwipe && isMobile()) scrollMobileTo(i);
+      }
+
+      function stopTimer() { clearInterval(timer); timer = null; }
+      function startTimer() {
+        stopTimer();
+        timer = setInterval(function() { goTo((current + 1) % steps.length); }, 4000);
+      }
+
+      steps.forEach(function(step, i) {
+        step.addEventListener('click', function() { stopTimer(); goTo(i); startTimer(); });
+      });
+      mobileSteps.forEach(function(step, i) {
+        step.addEventListener('click', function() { stopTimer(); goTo(i); startTimer(); });
+      });
+
+      if (mobileStrip) {
+        var scrollEndTimer = null;
+        mobileStrip.addEventListener('scroll', function() {
+          stopTimer();
+          clearTimeout(scrollEndTimer);
+          scrollEndTimer = setTimeout(function() {
+            var stripCenter = mobileStrip.scrollLeft + mobileStrip.offsetWidth / 2;
+            var closest = 0, minDist = Infinity;
+            mobileSteps.forEach(function(card, i) {
+              var dist = Math.abs(card.offsetLeft + card.offsetWidth / 2 - stripCenter);
+              if (dist < minDist) { minDist = dist; closest = i; }
+            });
+            goTo(closest, true);
+            startTimer();
+          }, 120);
+        });
+      }
+
+      stepper.addEventListener('mouseenter', stopTimer);
+      stepper.addEventListener('mouseleave', startTimer);
+
+      setSlide(0);
+      startTimer();
     })();
   </script>
   <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
