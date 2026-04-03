@@ -15,32 +15,18 @@
       background: #06d6a0;
       overflow: hidden;
       height: 380px;
-      position: relative;
     }
-
-    /* Card image: rotated, right side, absolutely positioned */
-    .es-hero-card {
-      position: absolute;
-      right: clamp(40px, 8vw, 120px);
-      bottom: -12px;
-      width: clamp(160px, 22vw, 260px);
-      transform: rotate(4deg);
-      filter: drop-shadow(0 12px 32px rgba(0,0,0,0.28));
-      pointer-events: none;
-      border-radius: 14px;
+    .cs-hero-img-wrap img { opacity: 0.72; }
+    .cs-hero-fade {
+      background: linear-gradient(to right, #06d6a0 28%, rgba(6,214,160,0.7) 50%, rgba(6,214,160,0.1) 100%);
     }
-
     @media (max-width: 600px) {
       .cs-hero {
         height: auto;
         padding: 60px 0 56px;
       }
-      .es-hero-card {
-        opacity: 0.22;
-        right: -20px;
-        width: 180px;
-        bottom: -8px;
-      }
+      .cs-hero-img-wrap { width: 100%; opacity: 0.3; }
+      .cs-hero-fade { background: linear-gradient(to bottom, rgba(6,214,160,0.5) 0%, #06d6a0 65%); }
       html, body { overflow-x: clip; }
     }
 
@@ -175,7 +161,10 @@
 
   <!-- 1. HERO -->
   <section class="cs-hero cs-bleed">
-    <img class="es-hero-card" src="content/images/esmeralda/hero.png" alt="The Ask Esmeralda NFC card">
+    <div class="cs-hero-img-wrap">
+      <img src="content/images/esmeralda/hero.png" alt="The Ask Esmeralda NFC card">
+      <div class="cs-hero-fade"></div>
+    </div>
     <div class="cs-inner">
       <div class="cs-hero-content">
         <span class="cs-hero-eyebrow">Solo Project</span>
