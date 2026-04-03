@@ -318,26 +318,63 @@
   </script>
   <script>
     (function() {
-      if (!window.matchMedia('(hover: hover)').matches) return;
       var tile = document.getElementById('es-card-tilt');
       if (!tile) return;
 
-      tile.addEventListener('mousemove', function(e) {
-        var rect = tile.getBoundingClientRect();
-        var x = (e.clientX - rect.left) / rect.width;
-        var y = (e.clientY - rect.top)  / rect.height;
-        var rx = (y - 0.5) * -14;
-        var ry = (x - 0.5) * 14;
-        tile.style.transition = 'transform 0.08s linear, filter 0.08s linear';
-        tile.style.transform = 'perspective(700px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) scale3d(1.03,1.03,1.03)';
-        tile.style.filter = 'drop-shadow(0 24px 56px rgba(0,0,0,0.36))';
-      });
+      // ---- Desktop: mouse tilt ----
+      if (window.matchMedia('(hover: hover)').matches) {
+        tile.addEventListener('mousemove', function(e) {
+          var rect = tile.getBoundingClientRect();
+          var x = (e.clientX - rect.left) / rect.width;
+          var y = (e.clientY - rect.top)  / rect.height;
+          var rx = (y - 0.5) * -14;
+          var ry = (x - 0.5) * 14;
+          tile.style.transition = 'transform 0.08s linear, filter 0.08s linear';
+          tile.style.transform = 'perspective(700px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) scale3d(1.03,1.03,1.03)';
+          tile.style.filter = 'drop-shadow(0 24px 56px rgba(0,0,0,0.36))';
+        });
+        tile.addEventListener('mouseleave', function() {
+          tile.style.transition = 'transform 0.5s ease, filter 0.5s ease';
+          tile.style.transform = '';
+          tile.style.filter = '';
+        });
+        return;
+      }
 
-      tile.addEventListener('mouseleave', function() {
-        tile.style.transition = 'transform 0.5s ease, filter 0.5s ease';
-        tile.style.transform = '';
-        tile.style.filter = '';
-      });
+      // ---- Mobile: gyroscope tilt ----
+      // Clamp helper
+      function clamp(v, min, max) { return Math.min(Math.max(v, min), max); }
+
+      // Baseline orientation captured when gyro activates
+      var baseB = null, baseG = null;
+      var MAX_DEG = 20;
+
+      function onOrientation(e) {
+        // beta  = front/back tilt (-180 to 180), gamma = left/right (-90 to 90)
+        if (baseB === null) { baseB = e.beta; baseG = e.gamma; return; }
+        var db = clamp(e.beta  - baseB, -MAX_DEG, MAX_DEG);
+        var dg = clamp(e.gamma - baseG, -MAX_DEG, MAX_DEG);
+        tile.style.transition = 'transform 0.1s linear';
+        tile.style.transform = 'perspective(700px) rotateX(' + (-db) + 'deg) rotateY(' + dg + 'deg)';
+      }
+
+      function startGyro() {
+        window.addEventListener('deviceorientation', onOrientation);
+      }
+
+      // iOS 13+ needs explicit permission from a user gesture
+      if (typeof DeviceOrientationEvent !== 'undefined' &&
+          typeof DeviceOrientationEvent.requestPermission === 'function') {
+        tile.addEventListener('click', function onFirstTap() {
+          DeviceOrientationEvent.requestPermission().then(function(state) {
+            if (state === 'granted') startGyro();
+          }).catch(function() {});
+          tile.removeEventListener('click', onFirstTap);
+        });
+      } else if (typeof DeviceOrientationEvent !== 'undefined') {
+        // Android / other — no permission needed
+        startGyro();
+      }
     })();
   </script>
   <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
