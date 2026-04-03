@@ -79,41 +79,20 @@
     /* ---- Tilt card ---- */
     .es-card-scene {
       margin: 32px auto 0;
-      max-width: 320px;
-      perspective: 800px;
-    }
-
-    .es-card-float {
-      animation: es-float 4s ease-in-out infinite;
-      will-change: transform;
-    }
-
-    .es-card-scene:hover .es-card-float {
-      animation-play-state: paused;
+      max-width: 480px;
     }
 
     .es-card-tilt {
-      transform-style: preserve-3d;
       border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 48px rgba(0,0,0,0.22);
       cursor: pointer;
-      filter: drop-shadow(0 20px 48px rgba(0,0,0,0.32));
-      transition: transform 0.08s linear, filter 0.3s;
-    }
-
-    .es-card-tilt:hover {
-      filter: drop-shadow(0 28px 56px rgba(0,0,0,0.44));
     }
 
     .es-card-tilt img {
       width: 100%;
       display: block;
-      border-radius: 16px;
-    }
-
-    @keyframes es-float {
-      0%   { transform: translateY(0px); }
-      50%  { transform: translateY(-12px); }
-      100% { transform: translateY(0px); }
+      border-radius: 0;
     }
 
     /* ---- Bottom CTA strip ---- */
@@ -222,10 +201,8 @@
       <p class="cs-p">I wanted the entry point to feel like magic. NFC cards are invisible technology. You tap and something happens. There's no icon to tap, no URL to remember, no app to install. The card is the product. The mystery starts before the page loads.</p>
       <p class="cs-p">I designed the card to look like a tarot card, printed on matte black stock. The gold illustration is Esmeralda herself. On the back, just a tagline: "Ask me anything." No instructions needed.</p>
       <div class="es-card-scene">
-        <div class="es-card-float" id="es-card-float">
-          <div class="es-card-tilt" id="es-card-tilt">
-            <img src="content/images/esmeralda/card.png" alt="The Ask Esmeralda NFC card, front and back">
-          </div>
+        <div class="es-card-tilt" id="es-card-tilt">
+          <img src="content/images/esmeralda/card.png" alt="The Ask Esmeralda NFC card, front and back">
         </div>
         <p class="cs-caption">The physical card. Tap it, and Esmeralda answers.</p>
       </div>
@@ -344,20 +321,25 @@
   </script>
   <script>
     (function() {
-      var tilt  = document.getElementById('es-card-tilt');
-      var scene = document.querySelector('.es-card-scene');
-      if (!tilt || !scene) return;
-      var MAX = 24;
+      if (!window.matchMedia('(hover: hover)').matches) return;
+      var tile = document.getElementById('es-card-tilt');
+      if (!tile) return;
 
-      scene.addEventListener('mousemove', function(e) {
-        var rect = tilt.getBoundingClientRect();
-        var x = (e.clientX - rect.left) / rect.width  - 0.5;
-        var y = (e.clientY - rect.top)  / rect.height - 0.5;
-        tilt.style.transform = 'rotateX(' + (-y * MAX) + 'deg) rotateY(' + (x * MAX) + 'deg)';
+      tile.addEventListener('mousemove', function(e) {
+        var rect = tile.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width;
+        var y = (e.clientY - rect.top)  / rect.height;
+        var rx = (y - 0.5) * -14;
+        var ry = (x - 0.5) * 14;
+        tile.style.transition = 'transform 0.08s linear, box-shadow 0.08s linear';
+        tile.style.transform = 'perspective(700px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) scale3d(1.03,1.03,1.03)';
+        tile.style.boxShadow = '0 24px 56px rgba(0,0,0,0.32)';
       });
 
-      scene.addEventListener('mouseleave', function() {
-        tilt.style.transform = '';
+      tile.addEventListener('mouseleave', function() {
+        tile.style.transition = 'transform 0.5s ease, box-shadow 0.5s ease';
+        tile.style.transform = '';
+        tile.style.boxShadow = '';
       });
     })();
   </script>
