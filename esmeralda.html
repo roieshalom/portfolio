@@ -113,7 +113,7 @@
     }
 
     .gs-phone-inner {
-      display: grid;
+      position: relative;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 8px 32px rgba(6,214,160,0.3);
@@ -121,20 +121,23 @@
     }
 
     .gs-slide {
-      grid-column: 1;
-      grid-row: 1;
+      position: absolute;
+      inset: 0;
       width: 100%;
+      height: 100%;
       display: block;
       opacity: 0;
       transition: opacity 0.3s ease;
+      object-fit: cover;
+    }
+
+    /* First image acts as sizer — stays in flow */
+    .gs-phone-inner img:first-of-type {
+      position: relative;
+      height: auto;
     }
 
     .gs-slide.is-active { opacity: 1; }
-
-    video.gs-slide {
-      width: 100%;
-      height: auto;
-    }
 
     @media (max-width: 768px) {
       .gs-stepper { display: block; }
@@ -393,9 +396,9 @@
       <div class="gs-phone-wrap">
         <div class="gs-phone-frame">
           <div class="gs-phone-inner">
-            <video class="gs-slide is-active" src="content/images/esmeralda/flow-1.MP4" autoplay loop muted playsinline></video>
-            <img class="gs-slide" src="content/images/esmeralda/flow-2.PNG" alt="Ask your question">
-            <img class="gs-slide" src="content/images/esmeralda/flow-3.PNG" alt="Esmeralda speaks">
+            <img class="gs-slide" data-step="1" src="content/images/esmeralda/flow-2.PNG" alt="Ask your question">
+            <img class="gs-slide" data-step="2" src="content/images/esmeralda/flow-3.PNG" alt="Esmeralda speaks">
+            <video class="gs-slide is-active" data-step="0" src="content/images/esmeralda/flow-1.MP4" autoplay loop muted playsinline></video>
           </div>
         </div>
       </div>
@@ -563,7 +566,11 @@
     (function() {
       var stepper      = document.getElementById('es-stepper');
       var steps        = stepper.querySelectorAll('.gs-step');
-      var slides       = stepper.querySelectorAll('.gs-slide');
+      var allSlides    = stepper.querySelectorAll('.gs-slide');
+      // Map step index → slide element via data-step attribute
+      var slides = Array.from(allSlides).reduce(function(acc, el) {
+        acc[parseInt(el.dataset.step, 10)] = el; return acc;
+      }, {});
       var mobileStrip  = document.getElementById('es-steps-mobile');
       var mobileSteps  = mobileStrip ? mobileStrip.querySelectorAll('.gs-step-mobile') : [];
       var dotsWrap     = document.getElementById('es-dots');
@@ -573,14 +580,15 @@
       var isMobile     = function() { return window.innerWidth <= 768; };
 
       function setSlide(i) {
-        slides.forEach(function(s) {
+        allSlides.forEach(function(s) {
           s.classList.remove('is-active');
           if (s.tagName === 'VIDEO') { s.pause(); s.currentTime = 0; }
         });
-        slides[i].classList.add('is-active');
-        if (slides[i].tagName === 'VIDEO') {
-          var v = slides[i];
-          var p = v.play();
+        var target = slides[i];
+        if (!target) return;
+        target.classList.add('is-active');
+        if (target.tagName === 'VIDEO') {
+          var p = target.play();
           if (p && p.catch) p.catch(function() {});
         }
       }
