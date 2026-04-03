@@ -83,16 +83,13 @@
     }
 
     .es-card-tilt {
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 20px 48px rgba(0,0,0,0.22);
       cursor: pointer;
+      filter: drop-shadow(0 20px 48px rgba(0,0,0,0.22));
     }
 
     .es-card-tilt img {
       width: 100%;
       display: block;
-      border-radius: 0;
     }
 
     /* ---- Bottom CTA strip ---- */
@@ -331,15 +328,15 @@
         var y = (e.clientY - rect.top)  / rect.height;
         var rx = (y - 0.5) * -14;
         var ry = (x - 0.5) * 14;
-        tile.style.transition = 'transform 0.08s linear, box-shadow 0.08s linear';
+        tile.style.transition = 'transform 0.08s linear, filter 0.08s linear';
         tile.style.transform = 'perspective(700px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) scale3d(1.03,1.03,1.03)';
-        tile.style.boxShadow = '0 24px 56px rgba(0,0,0,0.32)';
+        tile.style.filter = 'drop-shadow(0 24px 56px rgba(0,0,0,0.36))';
       });
 
       tile.addEventListener('mouseleave', function() {
-        tile.style.transition = 'transform 0.5s ease, box-shadow 0.5s ease';
+        tile.style.transition = 'transform 0.5s ease, filter 0.5s ease';
         tile.style.transform = '';
-        tile.style.boxShadow = '';
+        tile.style.filter = '';
       });
     })();
   </script>
