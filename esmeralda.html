@@ -577,40 +577,7 @@
         return;
       }
 
-      // ---- Mobile: gyroscope tilt ----
-      // Clamp helper
-      function clamp(v, min, max) { return Math.min(Math.max(v, min), max); }
-
-      // Baseline orientation captured when gyro activates
-      var baseB = null, baseG = null;
-      var MAX_DEG = 20;
-
-      function onOrientation(e) {
-        // beta  = front/back tilt (-180 to 180), gamma = left/right (-90 to 90)
-        if (baseB === null) { baseB = e.beta; baseG = e.gamma; return; }
-        var db = clamp(e.beta  - baseB, -MAX_DEG, MAX_DEG);
-        var dg = clamp(e.gamma - baseG, -MAX_DEG, MAX_DEG);
-        tile.style.transition = 'transform 0.1s linear';
-        tile.style.transform = 'perspective(700px) rotateX(' + (-db) + 'deg) rotateY(' + dg + 'deg)';
-      }
-
-      function startGyro() {
-        window.addEventListener('deviceorientation', onOrientation);
-      }
-
-      // iOS 13+ needs explicit permission from a user gesture
-      if (typeof DeviceOrientationEvent !== 'undefined' &&
-          typeof DeviceOrientationEvent.requestPermission === 'function') {
-        tile.addEventListener('click', function onFirstTap() {
-          DeviceOrientationEvent.requestPermission().then(function(state) {
-            if (state === 'granted') startGyro();
-          }).catch(function() {});
-          tile.removeEventListener('click', onFirstTap);
-        });
-      } else if (typeof DeviceOrientationEvent !== 'undefined') {
-        // Android / other — no permission needed
-        startGyro();
-      }
+      // Mobile: no interaction
     })();
   </script>
   <script>
