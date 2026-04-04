@@ -351,6 +351,30 @@
   box-shadow: 0 8px 48px rgba(0,0,0,0.6);
 }
 
+/* ---- LIGHTBOX NAV ARROWS ---- */
+.lb-overlay.is-open {
+  gap: 0;
+}
+
+.lb-arrow {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.55);
+  font-size: 2.4rem;
+  line-height: 1;
+  width: 40px;
+  padding: 0;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.15s;
+  user-select: none;
+}
+.lb-arrow:hover { color: #fff; }
+.lb-overlay.has-nav .lb-arrow { display: flex; }
+
 /* ---- IMPACT STRIP (base) ---- */
 .cs-impact {
   padding: 64px 0;

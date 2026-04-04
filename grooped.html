@@ -521,8 +521,10 @@
 
   <!-- LIGHTBOX -->
   <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
+    <button class="lb-arrow lb-arrow-prev" id="lb-prev" aria-label="Previous">&#8249;</button>
     <img id="lb-img" src="" alt="">
     <video id="lb-video" src="" autoplay loop muted playsinline style="display:none;"></video>
+    <button class="lb-arrow lb-arrow-next" id="lb-next" aria-label="Next">&#8250;</button>
   </div>
 
   <script src="access.js"></script>
@@ -534,42 +536,69 @@
       var overlay  = document.getElementById('lb-overlay');
       var lbImg    = document.getElementById('lb-img');
       var lbVideo  = document.getElementById('lb-video');
+      var btnPrev  = document.getElementById('lb-prev');
+      var btnNext  = document.getElementById('lb-next');
 
-      function openImage(src, alt) {
-        lbImg.src = src;
-        lbImg.alt = alt || '';
-        lbImg.style.display = '';
-        lbVideo.style.display = 'none';
-        lbVideo.src = '';
-        overlay.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
+      var navSlides = null; // array of slide elements when in stepper mode
+      var navIndex  = 0;
+
+      function showSlide(el) {
+        if (el.tagName === 'VIDEO') {
+          lbVideo.src = el.src; lbVideo.style.display = ''; lbImg.style.display = 'none'; lbImg.src = '';
+        } else {
+          lbImg.src = el.src; lbImg.alt = el.alt || ''; lbImg.style.display = ''; lbVideo.style.display = 'none'; lbVideo.src = '';
+        }
       }
 
-      function openVideo(src) {
-        lbVideo.src = src;
-        lbVideo.style.display = '';
-        lbImg.style.display = 'none';
-        lbImg.src = '';
-        overlay.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
+      function openSingle(src, alt) {
+        navSlides = null;
+        overlay.classList.remove('has-nav');
+        lbImg.src = src; lbImg.alt = alt || ''; lbImg.style.display = '';
+        lbVideo.style.display = 'none'; lbVideo.src = '';
+        overlay.classList.add('is-open'); document.body.style.overflow = 'hidden';
+      }
+
+      function openStepper(slides, index) {
+        navSlides = slides; navIndex = index;
+        overlay.classList.add('has-nav');
+        showSlide(navSlides[navIndex]);
+        overlay.classList.add('is-open'); document.body.style.overflow = 'hidden';
       }
 
       function closeLightbox() {
-        overlay.classList.remove('is-open');
+        overlay.classList.remove('is-open', 'has-nav');
         document.body.style.overflow = '';
-        lbImg.src = '';
-        lbVideo.src = '';
-        lbVideo.style.display = 'none';
-        lbImg.style.display = '';
+        lbImg.src = ''; lbVideo.src = ''; lbVideo.style.display = 'none'; lbImg.style.display = '';
+        navSlides = null;
+      }
+
+      function navigate(dir) {
+        if (!navSlides) return;
+        navIndex = (navIndex + dir + navSlides.length) % navSlides.length;
+        showSlide(navSlides[navIndex]);
       }
 
       document.querySelectorAll('img.cs-img').forEach(function(img) {
-        img.addEventListener('click', function() { openImage(img.src, img.alt); });
+        img.addEventListener('click', function() { openSingle(img.src, img.alt); });
+      });
+      document.querySelectorAll('video.cs-video').forEach(function(vid) {
+        vid.addEventListener('click', function() { openSingle(vid.src, ''); });
       });
 
-      document.querySelectorAll('video.cs-video').forEach(function(vid) {
-        vid.addEventListener('click', function() { openVideo(vid.src); });
-      });
+      // Stepper phone frame click
+      var phoneFrame = document.querySelector('#gs-stepper .gs-phone-inner');
+      if (phoneFrame) {
+        phoneFrame.style.cursor = 'zoom-in';
+        phoneFrame.addEventListener('click', function(e) {
+          var slides = Array.from(phoneFrame.querySelectorAll('.gs-slide'));
+          var active = slides.findIndex(function(s) { return s.classList.contains('is-active'); });
+          openStepper(slides, active >= 0 ? active : 0);
+          e.stopPropagation();
+        });
+      }
+
+      btnPrev.addEventListener('click', function(e) { e.stopPropagation(); navigate(-1); });
+      btnNext.addEventListener('click', function(e) { e.stopPropagation(); navigate(1); });
 
       overlay.addEventListener('click', closeLightbox);
       lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
@@ -577,6 +606,8 @@
 
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft')  navigate(-1);
+        if (e.key === 'ArrowRight') navigate(1);
       });
     })();
   </script>

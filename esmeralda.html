@@ -349,6 +349,12 @@
       <p class="cs-p">The card looks like something you'd pick up from a fortune teller's table: vintage typography, a zodiac wheel, aged parchment texture. Nothing about it says "UX designer looking for work." That's the point.</p>
       <p class="cs-p">It includes a QR code, a URL, and a promo code: HIRE-ROIE. The code is a wink. The kind of detail that makes someone smile and remember you three weeks later when a design lead role opens up.</p>
       <p class="cs-p">The format is deliberate. A regular business card communicates credentials. This one creates an experience. The card is the top of a funnel that ends at my portfolio, but the person holding it doesn't know that yet.</p>
+      <div class="es-card-scene">
+        <div class="es-card-tilt" id="es-card-tilt">
+          <img src="content/images/esmeralda/card.png" alt="The Ask Esmeralda NFC card">
+        </div>
+        <p class="cs-caption" style="margin-top: 16px;">The physical card: vintage fortune teller aesthetic, QR code, and a promo code that winks.</p>
+      </div>
     </div>
   </section>
 
@@ -431,6 +437,7 @@
       <h2 class="cs-h2">Every piece leads somewhere</h2>
       <p class="cs-p">After receiving a fortune, the user can share it. There's also a small (i) icon that opens a modal: "A mystical fortune experience created by Roie Shalom," with links to my portfolio and LinkedIn.</p>
       <p class="cs-p">The connection isn't forced. There's no popup, no redirect, no "hire me" banner. Just a curious person who had a good time, and a door left open for them to walk through if they want to know more.</p>
+      <blockquote class="cs-pullquote">"No popup, no redirect, no 'hire me' banner. Just a door left open."</blockquote>
       <p class="cs-p">Behind the scenes, every question is logged with location data in Airtable. The plan is to use that data to understand who's engaging and where the cards are traveling. One fortune at a time, one scan at a time.</p>
     </div>
   </section>
@@ -457,7 +464,10 @@
 
   <!-- LIGHTBOX -->
   <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
+    <button class="lb-arrow lb-arrow-prev" id="lb-prev" aria-label="Previous">&#8249;</button>
     <img id="lb-img" src="" alt="">
+    <video id="lb-video" src="" autoplay loop muted playsinline style="display:none;"></video>
+    <button class="lb-arrow lb-arrow-next" id="lb-next" aria-label="Next">&#8250;</button>
   </div>
 
   <script src="access.js"></script>
@@ -466,31 +476,77 @@
   <script src="name-animator.js"></script>
   <script>
     (function() {
-      var overlay = document.getElementById('lb-overlay');
-      var lbImg   = document.getElementById('lb-img');
+      var overlay  = document.getElementById('lb-overlay');
+      var lbImg    = document.getElementById('lb-img');
+      var lbVideo  = document.getElementById('lb-video');
+      var btnPrev  = document.getElementById('lb-prev');
+      var btnNext  = document.getElementById('lb-next');
 
-      function openLightbox(src, alt) {
-        lbImg.src = src;
-        lbImg.alt = alt || '';
-        overlay.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
+      var navSlides = null;
+      var navIndex  = 0;
+
+      function showSlide(el) {
+        if (el.tagName === 'VIDEO') {
+          lbVideo.src = el.src; lbVideo.style.display = ''; lbImg.style.display = 'none'; lbImg.src = '';
+        } else {
+          lbImg.src = el.src; lbImg.alt = el.alt || ''; lbImg.style.display = ''; lbVideo.style.display = 'none'; lbVideo.src = '';
+        }
+      }
+
+      function openSingle(src, alt) {
+        navSlides = null;
+        overlay.classList.remove('has-nav');
+        lbImg.src = src; lbImg.alt = alt || ''; lbImg.style.display = '';
+        lbVideo.style.display = 'none'; lbVideo.src = '';
+        overlay.classList.add('is-open'); document.body.style.overflow = 'hidden';
+      }
+
+      function openStepper(slides, index) {
+        navSlides = slides; navIndex = index;
+        overlay.classList.add('has-nav');
+        showSlide(navSlides[navIndex]);
+        overlay.classList.add('is-open'); document.body.style.overflow = 'hidden';
       }
 
       function closeLightbox() {
-        overlay.classList.remove('is-open');
+        overlay.classList.remove('is-open', 'has-nav');
         document.body.style.overflow = '';
-        lbImg.src = '';
+        lbImg.src = ''; lbVideo.src = ''; lbVideo.style.display = 'none'; lbImg.style.display = '';
+        navSlides = null;
+      }
+
+      function navigate(dir) {
+        if (!navSlides) return;
+        navIndex = (navIndex + dir + navSlides.length) % navSlides.length;
+        showSlide(navSlides[navIndex]);
       }
 
       document.querySelectorAll('img.cs-img').forEach(function(img) {
-        img.addEventListener('click', function() { openLightbox(img.src, img.alt); });
+        img.addEventListener('click', function() { openSingle(img.src, img.alt); });
       });
+
+      var phoneFrame = document.querySelector('#es-stepper .gs-phone-inner');
+      if (phoneFrame) {
+        phoneFrame.style.cursor = 'zoom-in';
+        phoneFrame.addEventListener('click', function(e) {
+          var slides = Array.from(phoneFrame.querySelectorAll('.gs-slide'));
+          var active = slides.findIndex(function(s) { return s.classList.contains('is-active'); });
+          openStepper(slides, active >= 0 ? active : 0);
+          e.stopPropagation();
+        });
+      }
+
+      btnPrev.addEventListener('click', function(e) { e.stopPropagation(); navigate(-1); });
+      btnNext.addEventListener('click', function(e) { e.stopPropagation(); navigate(1); });
 
       overlay.addEventListener('click', closeLightbox);
       lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
+      lbVideo.addEventListener('click', function(e) { e.stopPropagation(); });
 
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft')  navigate(-1);
+        if (e.key === 'ArrowRight') navigate(1);
       });
     })();
   </script>
