@@ -363,14 +363,17 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: none;
+  background: none !important;
+  box-shadow: none !important;
   border: none;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
   color: rgba(255,255,255,0.55);
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   line-height: 1;
-  width: 40px;
-  height: 40px;
-  padding: 0;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
   display: none;
   align-items: center;
@@ -379,9 +382,10 @@
   user-select: none;
   z-index: 1;
 }
-.lb-arrow:hover { color: #fff; }
-.lb-arrow-prev { right: calc(100% + 12px); }
-.lb-arrow-next { left: calc(100% + 12px); }
+.lb-arrow:hover,
+.lb-arrow:focus { background: none !important; box-shadow: none !important; color: #fff; outline: none; }
+.lb-arrow-prev { right: calc(100% + 40px); }
+.lb-arrow-next { left: calc(100% + 40px); }
 .lb-overlay.has-nav .lb-arrow { display: flex; }
 
 /* ---- IMPACT STRIP (base) ---- */
