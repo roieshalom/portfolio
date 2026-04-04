@@ -464,10 +464,12 @@
 
   <!-- LIGHTBOX -->
   <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
-    <button class="lb-arrow lb-arrow-prev" id="lb-prev" aria-label="Previous">&#8249;</button>
-    <img id="lb-img" src="" alt="">
-    <video id="lb-video" src="" autoplay loop muted playsinline style="display:none;"></video>
-    <button class="lb-arrow lb-arrow-next" id="lb-next" aria-label="Next">&#8250;</button>
+    <div class="lb-media-wrap">
+      <button class="lb-arrow lb-arrow-prev" id="lb-prev" aria-label="Previous">&#8249;</button>
+      <img id="lb-img" src="" alt="">
+      <video id="lb-video" src="" autoplay loop muted playsinline style="display:none;"></video>
+      <button class="lb-arrow lb-arrow-next" id="lb-next" aria-label="Next">&#8250;</button>
+    </div>
   </div>
 
   <script src="access.js"></script>
