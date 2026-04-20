@@ -321,6 +321,71 @@
       padding: 36px 0 40px;
     }
 
+    /* ---- Live prompt block ---- */
+    .gs-prompt-section {
+      margin-top: 40px;
+      margin-bottom: 8px;
+    }
+
+    .gs-prompt-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .gs-prompt-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-link);
+    }
+
+    .gs-prompt-source {
+      font-size: 0.75rem;
+      color: var(--color-text);
+      opacity: 0.55;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .gs-prompt-source:hover { opacity: 1; }
+
+    .gs-prompt-box {
+      background: var(--color-grey-light);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      max-height: 420px;
+      overflow-y: auto;
+      padding: 20px 24px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-border) transparent;
+    }
+
+    .gs-prompt-box::-webkit-scrollbar { width: 6px; }
+    .gs-prompt-box::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+    .gs-prompt-box::-webkit-scrollbar-track { background: transparent; }
+
+    .gs-prompt-box pre {
+      margin: 0;
+      font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+      font-size: 0.75rem;
+      line-height: 1.65;
+      color: var(--color-text);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .gs-prompt-loading {
+      font-size: 0.8rem;
+      color: var(--color-text);
+      opacity: 0.45;
+      font-style: italic;
+    }
+
     @media (max-width: 768px) {
       .cs-bottom-qr-group { display: none; }
       .cs-cta-or { display: none; }
@@ -369,7 +434,7 @@
   </section>
 
   <!-- 3. HOW PUZZLES ARE MADE -->
-  <section class="cs-section">
+  <section class="cs-section" style="margin-top: 65px;">
     <div class="cs-text">
       <span class="cs-eyebrow">How puzzles are made</span>
       <h2 class="cs-h2">An AI pipeline with a human editor at the center</h2>
@@ -388,10 +453,22 @@
       <img class="cs-img" src="content/images/grooped/editor.png" alt="Puzzle Editor 3000 showing four categories with refresh and ban controls" style="width: 75%; margin: 0 auto; display: block;">
       <p class="cs-caption">Puzzle Editor 3000: the tool I built to generate, edit, and curate puzzles.</p>
     </div>
+
+    <div class="cs-text gs-prompt-section">
+      <p class="cs-p">The quality of the output lives or dies on the prompt. Writing it was a design problem: precise enough to produce consistent results, flexible enough to surprise me. This is the actual system prompt the generator uses, loaded live from the source code.</p>
+      <div class="gs-prompt-label" style="margin-top: 80px;">
+        <span class="gs-prompt-eyebrow">System prompt</span>
+        <a class="gs-prompt-source" href="https://github.com/roieshalom/grooped-puzzle-generator/blob/main/puzzle_generator.py" target="_blank" rel="noopener">View source on GitHub ↗</a>
+      </div>
+      <div class="gs-prompt-box" id="gs-prompt-box">
+        <p class="gs-prompt-loading" id="gs-prompt-loading">Loading prompt...</p>
+        <pre id="gs-prompt-text" style="display:none;"></pre>
+      </div>
+    </div>
   </section>
 
   <!-- 4. BUILDING THE GAME -->
-  <section class="cs-section">
+  <section class="cs-section" style="margin-top: 71px;">
     <div class="cs-text">
       <span class="cs-eyebrow">Building the game</span>
       <h2 class="cs-h2">A designer ships a product, with AI as co-pilot</h2>
@@ -476,7 +553,7 @@
   </section>
 
   <!-- 5. WATCHING PEOPLE PLAY -->
-  <section class="cs-section">
+  <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
       <span class="cs-eyebrow">Level design and real behavior</span>
       <h2 class="cs-h2">Session recordings over surveys</h2>
@@ -692,6 +769,29 @@
       stepper.addEventListener('mouseleave', startTimer);
 
       startTimer();
+    })();
+  </script>
+  <script>
+    (function() {
+      var RAW_URL = 'https://raw.githubusercontent.com/roieshalom/grooped-puzzle-generator/main/puzzle_generator.py';
+      fetch(RAW_URL)
+        .then(function(r) { return r.text(); })
+        .then(function(text) {
+          var startMarker = 'prompt = """\n';
+          var endMarker = '""" + banned_block';
+          var start = text.indexOf(startMarker);
+          var end = text.indexOf(endMarker);
+          if (start === -1 || end === -1) throw new Error('markers not found');
+          var promptText = text.slice(start + startMarker.length, end).trim();
+          var pre = document.getElementById('gs-prompt-text');
+          var loading = document.getElementById('gs-prompt-loading');
+          pre.textContent = promptText;
+          pre.style.display = '';
+          loading.style.display = 'none';
+        })
+        .catch(function() {
+          document.getElementById('gs-prompt-loading').textContent = 'Prompt unavailable right now.';
+        });
     })();
   </script>
   <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
