@@ -369,14 +369,30 @@
     .gs-prompt-box::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
     .gs-prompt-box::-webkit-scrollbar-track { background: transparent; }
 
-    .gs-prompt-box pre {
-      margin: 0;
+.gsp-header {
+      font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--color-link);
+      margin-top: 20px;
+      margin-bottom: 6px;
+    }
+
+    .gsp-header:first-child {
+      margin-top: 0;
+    }
+
+    .gsp-line {
       font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
       font-size: 0.75rem;
       line-height: 1.65;
       color: var(--color-text);
-      white-space: pre-wrap;
-      word-break: break-word;
+      margin-bottom: 2px;
+    }
+
+    .gsp-line.gsp-first {
+      margin-top: 0;
     }
 
     .gs-prompt-loading {
@@ -462,7 +478,7 @@
       </div>
       <div class="gs-prompt-box" id="gs-prompt-box">
         <p class="gs-prompt-loading" id="gs-prompt-loading">Loading prompt...</p>
-        <pre id="gs-prompt-text" style="display:none;"></pre>
+        <div id="gs-prompt-text" style="display:none;"></div>
       </div>
     </div>
   </section>
@@ -783,10 +799,43 @@
           var end = text.indexOf(endMarker);
           if (start === -1 || end === -1) throw new Error('markers not found');
           var promptText = text.slice(start + startMarker.length, end).trim();
-          var pre = document.getElementById('gs-prompt-text');
+          var el = document.getElementById('gs-prompt-text');
           var loading = document.getElementById('gs-prompt-loading');
-          pre.textContent = promptText;
-          pre.style.display = '';
+
+          // Parse prompt into styled HTML
+          var lines = promptText.split('\n');
+          var html = '';
+          var prevWasHeader = false;
+          var prevWasBlank = false;
+
+          function isHeader(line) {
+            var t = line.trim();
+            if (!t) return false;
+            // ALL CAPS line: letters, spaces, colons, parens, ampersands, hyphens
+            return t === t.toUpperCase() && /[A-Z]{2,}/.test(t);
+          }
+
+          lines.forEach(function(line, i) {
+            var t = line.trim();
+            if (!t) {
+              prevWasBlank = true;
+              return;
+            }
+            if (isHeader(t)) {
+              // Add consistent spacing before each header (except the very first)
+              html += '<div class="gsp-header">' + t + '</div>';
+              prevWasHeader = true;
+              prevWasBlank = false;
+            } else {
+              var spacer = (prevWasHeader || prevWasBlank) ? ' gsp-first' : '';
+              html += '<div class="gsp-line' + spacer + '">' + t + '</div>';
+              prevWasHeader = false;
+              prevWasBlank = false;
+            }
+          });
+
+          el.innerHTML = html;
+          el.style.display = '';
           loading.style.display = 'none';
         })
         .catch(function() {
