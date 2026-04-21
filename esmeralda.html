@@ -304,6 +304,81 @@
       .cs-bottom-qr-group { display: none; }
       .cs-cta-or { display: none; }
     }
+
+    /* ---- Live prompt block ---- */
+    .gs-prompt-section {
+      margin-top: 40px;
+      margin-bottom: 8px;
+    }
+
+    .gs-prompt-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .gs-prompt-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-link);
+    }
+
+    .gs-prompt-source {
+      font-size: 0.75rem;
+      color: var(--color-text);
+      opacity: 0.55;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .gs-prompt-source:hover { opacity: 1; }
+
+    .gs-prompt-box {
+      background: var(--color-grey-light);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      max-height: 420px;
+      overflow-y: auto;
+      padding: 20px 24px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-border) transparent;
+    }
+
+    .gs-prompt-box::-webkit-scrollbar { width: 6px; }
+    .gs-prompt-box::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+    .gs-prompt-box::-webkit-scrollbar-track { background: transparent; }
+
+    .gsp-header {
+      font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--color-link);
+      margin-top: 20px;
+      margin-bottom: 6px;
+    }
+
+    .gsp-header:first-child { margin-top: 0; }
+
+    .gsp-line {
+      font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+      font-size: 0.75rem;
+      line-height: 1.65;
+      color: var(--color-text);
+      margin-bottom: 2px;
+    }
+
+    .gs-prompt-loading {
+      font-size: 0.8rem;
+      color: var(--color-text);
+      opacity: 0.45;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -342,7 +417,7 @@
   </section>
 
   <!-- 3. THE CARD -->
-  <section class="cs-section">
+  <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
       <span class="cs-eyebrow">The entry point</span>
       <h2 class="cs-h2">A business card nobody throws away</h2>
@@ -359,13 +434,12 @@
   </section>
 
   <!-- 4. THE EXPERIENCE -->
-  <section class="cs-section">
+  <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
       <span class="cs-eyebrow">What happens after the scan</span>
       <h2 class="cs-h2">Purple clouds and a two-sentence fortune</h2>
       <p class="cs-p">The site opens with swirling clouds that slowly part to reveal a single input field: "What do you seek?" The user types a question and hits Reveal Fortune. The clouds wash back over the screen while the AI generates a response. A few seconds later, a fortune appears on a vintage parchment card.</p>
-      <p class="cs-p">Every fortune is unique. The AI responds to what you actually asked, not a random horoscope. A career question gets career-flavored mystery. A silly question gets a straight-faced answer. The tone always matches.</p>
-      <p class="cs-p">I spent real time on the prompt. Esmeralda has a banned word list (no "tapestry," no "whispers," no "journey"), forced variety in sentence structure, and instructions to ground every fortune in one tangible detail: a color, a number, a gesture. The goal was fortunes that feel half-remembered, like something you already knew but couldn't name.</p>
+      <p class="cs-p" style="margin-bottom: 0;">Every fortune is unique. The AI responds to what you actually asked, not a random horoscope. A career question gets career-flavored mystery. A silly question gets a straight-faced answer. The tone always matches.</p>
     </div>
   </section>
 
@@ -430,8 +504,28 @@
     </div>
   </section>
 
-  <!-- 5. THE FUNNEL -->
-  <section class="cs-section">
+  <!-- 5. WRITING ESMERALDA -->
+  <section class="cs-section" style="margin-top: 79px;">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Writing Esmeralda</span>
+      <h2 class="cs-h2">The prompt is the product</h2>
+      <p class="cs-p">I spent real time on the prompt. Esmeralda has a banned word list (no "tapestry," no "whispers," no "journey"), forced variety in sentence structure, and instructions to ground every fortune in one tangible detail: a color, a number, a gesture. The goal was fortunes that feel half-remembered, like something you already knew but couldn't name.</p>
+    </div>
+
+    <div class="cs-text gs-prompt-section">
+      <div class="gs-prompt-label" style="margin-top: 80px;">
+        <span class="gs-prompt-eyebrow">System prompt</span>
+        <a class="gs-prompt-source" href="https://github.com/roieshalom/fortuna/blob/main/src/server/index.js" target="_blank" rel="noopener">View source on GitHub ↗</a>
+      </div>
+      <div class="gs-prompt-box" id="es-prompt-box">
+        <p class="gs-prompt-loading" id="es-prompt-loading">Loading prompt...</p>
+        <div id="es-prompt-text" style="display:none;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. THE FUNNEL -->
+  <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
       <span class="cs-eyebrow">The quiet path to the portfolio</span>
       <h2 class="cs-h2">Every piece leads somewhere</h2>
@@ -666,6 +760,55 @@
 
       setSlide(0);
       startTimer();
+    })();
+  </script>
+  <script>
+    (function() {
+      var RAW_URL = 'https://raw.githubusercontent.com/roieshalom/fortuna/main/src/server/index.js';
+      fetch(RAW_URL)
+        .then(function(r) { return r.text(); })
+        .then(function(text) {
+          var startMarker = 'content: `';
+          var endMarker = '`\n        },';
+          var start = text.indexOf(startMarker);
+          var end = text.indexOf(endMarker, start);
+          if (start === -1 || end === -1) throw new Error('markers not found');
+          var promptText = text.slice(start + startMarker.length, end).trim();
+
+          var el = document.getElementById('es-prompt-text');
+          var loading = document.getElementById('es-prompt-loading');
+
+          function isHeader(line) {
+            var t = line.trim();
+            if (!t) return false;
+            return t === t.toUpperCase() && /[A-Z]{2,}/.test(t);
+          }
+
+          var lines = promptText.split('\n');
+          var html = '';
+          var prevWasHeader = false;
+          var prevWasBlank = false;
+
+          lines.forEach(function(line) {
+            var t = line.trim();
+            if (!t) { prevWasBlank = true; return; }
+            if (isHeader(t)) {
+              html += '<div class="gsp-header">' + t + '</div>';
+              prevWasHeader = true; prevWasBlank = false;
+            } else {
+              var spacer = (prevWasHeader || prevWasBlank) ? ' gsp-first' : '';
+              html += '<div class="gsp-line' + spacer + '">' + t + '</div>';
+              prevWasHeader = false; prevWasBlank = false;
+            }
+          });
+
+          el.innerHTML = html;
+          el.style.display = '';
+          loading.style.display = 'none';
+        })
+        .catch(function() {
+          document.getElementById('es-prompt-loading').textContent = 'Prompt unavailable right now.';
+        });
     })();
   </script>
   <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
