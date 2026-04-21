@@ -793,12 +793,14 @@
       fetch(RAW_URL)
         .then(function(r) { return r.text(); })
         .then(function(text) {
-          var startMarker = 'prompt = """\n';
-          var endMarker = '""" + banned_block';
-          var start = text.indexOf(startMarker);
-          var end = text.indexOf(endMarker);
-          if (start === -1 || end === -1) throw new Error('markers not found');
-          var promptText = text.slice(start + startMarker.length, end).trim();
+          var startMarker = '# PORTFOLIO_START';
+          var endMarker = '# PORTFOLIO_END';
+          var markerStart = text.indexOf(startMarker);
+          var markerEnd = text.indexOf(endMarker);
+          if (markerStart === -1 || markerEnd === -1) throw new Error('markers not found');
+          var contentStart = text.indexOf('"""\n', markerStart) + '"""\n'.length;
+          var contentEnd = text.lastIndexOf('\n"""', markerEnd);
+          var promptText = text.slice(contentStart, contentEnd).trim();
           var el = document.getElementById('gs-prompt-text');
           var loading = document.getElementById('gs-prompt-loading');
 
