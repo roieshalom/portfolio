@@ -375,12 +375,22 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       color: var(--color-link);
-      margin-top: 20px;
-      margin-bottom: 6px;
+      margin-top: 22px;
+      margin-bottom: 8px;
     }
 
     .gsp-header:first-child {
       margin-top: 0;
+    }
+
+    .gsp-step {
+      font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--color-link);
+      opacity: 0.75;
+      margin-top: 14px;
+      margin-bottom: 3px;
     }
 
     .gsp-line {
@@ -391,8 +401,33 @@
       margin-bottom: 2px;
     }
 
-    .gsp-line.gsp-first {
-      margin-top: 0;
+    .gsp-bullet {
+      font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+      font-size: 0.75rem;
+      line-height: 1.65;
+      color: var(--color-text);
+      padding-left: 1.2em;
+      position: relative;
+      margin-bottom: 2px;
+    }
+
+    .gsp-bullet::before {
+      content: '\2013';
+      position: absolute;
+      left: 0;
+    }
+
+    .gsp-code {
+      font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+      font-size: 0.68rem;
+      line-height: 1.55;
+      color: var(--color-text);
+      background: rgba(0,0,0,0.04);
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin: 10px 0 4px;
+      overflow-x: auto;
+      white-space: pre;
     }
 
     .gs-prompt-loading {
@@ -804,37 +839,70 @@
           var el = document.getElementById('gs-prompt-text');
           var loading = document.getElementById('gs-prompt-loading');
 
-          // Parse prompt into styled HTML
+          // Parse prompt into styled HTML (v5 format: box headers, step headers, bullets, JSON)
           var lines = promptText.split('\n');
           var html = '';
-          var prevWasHeader = false;
-          var prevWasBlank = false;
 
-          function isHeader(line) {
-            var t = line.trim();
-            if (!t) return false;
-            // ALL CAPS line: letters, spaces, colons, parens, ampersands, hyphens
-            return t === t.toUpperCase() && /[A-Z]{2,}/.test(t);
+          function escHtml(s) {
+            return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
           }
 
-          lines.forEach(function(line, i) {
+          function isSeparator(s) {
+            return /^={6,}$/.test(s.trim());
+          }
+
+          function isAllCaps(s) {
+            var t = s.trim();
+            return t.length > 0 && t === t.toUpperCase() && /[A-Z]{2,}/.test(t);
+          }
+
+          // Two-pass: classify each line
+          var types = lines.map(function(line, i) {
             var t = line.trim();
-            if (!t) {
-              prevWasBlank = true;
-              return;
-            }
-            if (isHeader(t)) {
-              // Add consistent spacing before each header (except the very first)
-              html += '<div class="gsp-header">' + t + '</div>';
-              prevWasHeader = true;
-              prevWasBlank = false;
-            } else {
-              var spacer = (prevWasHeader || prevWasBlank) ? ' gsp-first' : '';
-              html += '<div class="gsp-line' + spacer + '">' + t + '</div>';
-              prevWasHeader = false;
-              prevWasBlank = false;
-            }
+            if (!t) return 'blank';
+            if (isSeparator(t)) return 'sep';
+            var prevSep = i > 0 && isSeparator(lines[i-1].trim());
+            var nextSep = i < lines.length-1 && isSeparator(lines[i+1].trim());
+            if (prevSep && nextSep) return 'box-header';
+            if (/^STEP\s+\d/.test(t)) return 'step';
+            if (/^-\s/.test(t)) return 'bullet';
+            if (isAllCaps(t)) return 'step'; // sub-headers like AVOID:
+            return 'text';
           });
+
+          var idx = 0;
+          while (idx < lines.length) {
+            var t = lines[idx].trim();
+            var type = types[idx];
+
+            if (type === 'sep' || type === 'blank') { idx++; continue; }
+
+            if (type === 'box-header') {
+              html += '<div class="gsp-header">' + escHtml(t) + '</div>';
+            } else if (type === 'step') {
+              html += '<div class="gsp-step">' + escHtml(t) + '</div>';
+            } else if (type === 'bullet') {
+              html += '<div class="gsp-bullet">' + escHtml(t.slice(2)) + '</div>';
+            } else if (t === '{') {
+              // Collect JSON block by tracking brace depth
+              var depth = 0, jLines = [];
+              while (idx < lines.length) {
+                var jl = lines[idx];
+                jLines.push(jl);
+                for (var ci = 0; ci < jl.length; ci++) {
+                  if (jl[ci] === '{') depth++;
+                  else if (jl[ci] === '}') depth--;
+                }
+                idx++;
+                if (depth === 0) break;
+              }
+              html += '<pre class="gsp-code">' + escHtml(jLines.join('\n')) + '</pre>';
+              continue;
+            } else {
+              html += '<div class="gsp-line">' + escHtml(t) + '</div>';
+            }
+            idx++;
+          }
 
           el.innerHTML = html;
           el.style.display = '';
