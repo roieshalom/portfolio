@@ -857,16 +857,19 @@
           }
 
           // Two-pass: classify each line
+          // Supports two header styles:
+          //   box:      ====\nTITLE\n====  (separator before AND after)
+          //   underline: TITLE\n====        (separator only after, RST style)
           var types = lines.map(function(line, i) {
             var t = line.trim();
             if (!t) return 'blank';
             if (isSeparator(t)) return 'sep';
             var prevSep = i > 0 && isSeparator(lines[i-1].trim());
             var nextSep = i < lines.length-1 && isSeparator(lines[i+1].trim());
-            if (prevSep && nextSep) return 'box-header';
+            if ((prevSep && nextSep) || nextSep) return 'box-header'; // box or underline
             if (/^STEP\s+\d/.test(t)) return 'step';
             if (/^-\s/.test(t)) return 'bullet';
-            if (isAllCaps(t)) return 'step'; // sub-headers like AVOID:
+            if (isAllCaps(t)) return 'step'; // sub-headers like AVOID:, HARD RULES:
             return 'text';
           });
 
