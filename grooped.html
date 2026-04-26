@@ -582,7 +582,7 @@
     </blockquote>
 
     <div class="cs-img-wrap">
-      <video class="cs-img cs-video" src="content/images/grooped/grooped-clarity-session.mp4" autoplay loop muted playsinline style="cursor: zoom-in;"></video>
+      <video class="cs-img cs-video no-lightbox" src="content/images/grooped/grooped-clarity-session.mp4" autoplay loop muted playsinline></video>
       <p class="cs-caption">Microsoft Clarity session recording: tracking real player behavior.</p>
     </div>
 
@@ -676,7 +676,7 @@
       document.querySelectorAll('img.cs-img').forEach(function(img) {
         img.addEventListener('click', function() { openSingle(img.src, img.alt); });
       });
-      document.querySelectorAll('video.cs-video').forEach(function(vid) {
+      document.querySelectorAll('video.cs-video:not(.no-lightbox)').forEach(function(vid) {
         vid.addEventListener('click', function() { openSingle(vid.src, ''); });
       });
 
