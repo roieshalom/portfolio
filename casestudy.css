@@ -44,6 +44,8 @@
 /* Narrow text column */
 .cs-text {
   max-width: 660px;
+  width: 100%;
+  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
 }
@@ -52,6 +54,8 @@
 .cs-section {
   margin-top: 72px;
   max-width: var(--max-width);
+  width: 100%;
+  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
 }
@@ -441,6 +445,137 @@
   text-decoration: none;
   display: inline-block;
   transition: transform 0.2s cubic-bezier(.37,1.13,.62,.96);
+}
+
+/* ============================================================
+   SHARED PROMPT BOX — grooped.html + esmeralda.html
+============================================================ */
+
+.gs-prompt-section {
+  margin-top: 40px;
+  margin-bottom: 8px;
+}
+
+.gs-prompt-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.gs-prompt-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-link);
+}
+
+.gs-prompt-source {
+  font-size: 0.75rem;
+  color: var(--color-text);
+  opacity: 0.55;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.gs-prompt-source:hover { opacity: 1; }
+
+.gs-prompt-box {
+  background: var(--color-grey-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  max-height: 420px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px 24px;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.gs-prompt-box::-webkit-scrollbar { width: 6px; }
+.gs-prompt-box::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+.gs-prompt-box::-webkit-scrollbar-track { background: transparent; }
+
+.gsp-header {
+  font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-link);
+  margin-top: 22px;
+  margin-bottom: 8px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.gsp-header:first-child { margin-top: 0; }
+
+.gsp-step {
+  font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-link);
+  opacity: 0.75;
+  margin-top: 14px;
+  margin-bottom: 3px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.gsp-line {
+  font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+  font-size: 0.75rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  margin-bottom: 2px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.gsp-bullet {
+  font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+  font-size: 0.75rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  padding-left: 1.2em;
+  position: relative;
+  margin-bottom: 2px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.gsp-bullet::before {
+  content: '\2013';
+  position: absolute;
+  left: 0;
+}
+
+.gsp-code {
+  font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+  font-size: 0.68rem;
+  line-height: 1.55;
+  color: var(--color-text);
+  background: rgba(0,0,0,0.04);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin: 10px 0 4px;
+  overflow-x: auto;
+  white-space: pre;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  display: block;
+}
+
+.gs-prompt-loading {
+  font-size: 0.8rem;
+  color: var(--color-text);
+  opacity: 0.45;
+  font-style: italic;
 }
 
 .cs-back-link:hover {
