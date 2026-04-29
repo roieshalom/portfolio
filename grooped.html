@@ -589,7 +589,7 @@
       <span class="cs-eyebrow">How it's made</span>
       <h2 class="cs-h2">An AI pipeline with a human editor at the center</h2>
       <p class="cs-p">Every puzzle starts with a prompt. I built an internal tool called Puzzle Editor 3000 that generates a full puzzle — four categories, four words each, plus intentional decoys designed to blur the lines between groups.</p>
-      <p class="cs-p">The generator doesn't just make puzzles. It tracks 28 connection mechanics across four tiers, each with a cooldown period so the same trick never runs two days in a row. A fill-in-blank category can appear weekly. A first-letter acrostic gets saved for once every six weeks. The system reads the last 21 published puzzles before generating a new one, checks which mechanics are underused, and steers toward variety automatically.</p>
+      <p class="cs-p">The generator doesn't just make puzzles. It tracks 28 connection mechanics across four tiers, each with a cooldown period so the same trick never runs two days in a row. A fill-in-blank category can appear weekly. A first-letter acrostic gets saved for once every six weeks. The system reads the last 60 published puzzles before generating a new one, checks which mechanics are underused, and steers toward variety automatically.</p>
       <p class="cs-p">When I export a puzzle, it's appended to the live file on GitHub. The next generation reads that file first. The system has memory.</p>
       <p class="cs-p" style="margin-bottom: 0;">AI proposes. I curate. The system gets sharper over time.</p>
     </div>
@@ -752,11 +752,12 @@
     </div><!-- /.gp-collapsible-wrap -->
 
     <div class="cs-text gs-prompt-section">
-      <p class="cs-p">The quality of the output lives or dies on the prompt. Writing it was a design problem: precise enough to produce consistent results, flexible enough to surprise me. This is the actual system prompt the generator uses, loaded live from the source code.</p>
       <div class="gs-prompt-label" style="margin-top: 80px;">
         <span class="gs-prompt-eyebrow">System prompt</span>
         <a class="gs-prompt-source" href="https://github.com/roieshalom/grooped-puzzle-generator/blob/main/puzzle_generator.py" target="_blank" rel="noopener">View source on GitHub ↗</a>
       </div>
+      <p class="cs-p" style="margin-top: 18px;">The quality of the output lives or dies on the prompt. Writing it was a design problem: precise enough to produce consistent results, flexible enough to surprise me. This is the actual system prompt the generator uses, loaded live from the source code.</p>
+      <div class="gs-prompt-box-label">puzzle_generator.py</div>
       <div class="gs-prompt-box" id="gs-prompt-box">
         <p class="gs-prompt-loading" id="gs-prompt-loading">Loading prompt...</p>
         <div id="gs-prompt-text" style="display:none;"></div>
