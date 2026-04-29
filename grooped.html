@@ -360,13 +360,12 @@
     .gp-collapsible-body {
       padding: 28px 0 20px;
     }
-    /* Tiers (first) and flowchart (second) inside collapsible */
     .gp-collapsible-body .gp-tiers-section {
       margin-top: 0;
       padding: 0 18px;
     }
     .gp-collapsible-body .gp-flow-section {
-      margin-top: 40px;
+      margin-top: 0;
       padding: 0 18px;
     }
 
@@ -402,7 +401,7 @@
     .gp-swim-scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
 
     /* Grid: col 1 = sticky lane label, cols 2–28 = steps + connectors */
-    /* Rows: 1 = You lane | 2 = 1px divider | 3 = AI lane */
+    /* Rows: 1 = Roie lane | 2 = 1px divider | 3 = AI lane */
     .gp-swim-grid {
       display: grid;
       grid-template-columns: 32px repeat(27, auto);
@@ -595,15 +594,13 @@
       <p class="cs-p" style="margin-bottom: 0;">AI proposes. I curate. The system gets sharper over time.</p>
     </div>
 
-    <!-- Collapsible: pipeline + tier map -->
+    <!-- Collapsible 1: mechanic tier map -->
     <div class="gp-collapsible-wrap">
       <details class="gp-collapsible">
-        <summary>How the pipeline works <span class="gp-collapsible-chevron" aria-hidden="true">▼</span></summary>
+        <summary>Connection mechanic tiers <span class="gp-collapsible-chevron" aria-hidden="true">▼</span></summary>
         <div class="gp-collapsible-body">
 
-          <!-- Mechanic tier map (first — the flowchart references these tiers) -->
           <div class="gp-tiers-section">
-            <div class="gp-section-label">Connection mechanic tiers</div>
             <div class="gp-tiers">
 
               <div class="gp-tier gp-tier-1">
@@ -672,9 +669,17 @@
             </div>
           </div><!-- /.gp-tiers-section -->
 
-          <!-- Pipeline flowchart — 2-lane swimlane, horizontal scroll -->
+        </div><!-- /.gp-collapsible-body -->
+      </details>
+    </div><!-- /.gp-collapsible-wrap -->
+
+    <!-- Collapsible 2: generation pipeline flowchart -->
+    <div class="gp-collapsible-wrap">
+      <details class="gp-collapsible">
+        <summary>Generation pipeline <span class="gp-collapsible-chevron" aria-hidden="true">▼</span></summary>
+        <div class="gp-collapsible-body">
+
           <div class="gp-flow-section">
-            <div class="gp-section-label">Generation pipeline</div>
             <div class="gp-swim-scroll">
               <div class="gp-swim-grid">
 
@@ -684,7 +689,7 @@
                 <div class="gp-swim-ai-bg"></div>
 
                 <!-- Sticky lane labels -->
-                <div class="gp-swim-lbl gp-you">You</div>
+                <div class="gp-swim-lbl gp-you">Roie</div>
                 <div class="gp-swim-lbl gp-ai">AI</div>
 
                 <!-- Step 1: You trigger generation -->
