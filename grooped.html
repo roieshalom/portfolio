@@ -489,13 +489,13 @@
       width: 28px;
       position: relative;
     }
-    /* vertical line */
+    /* vertical line — only bridges the gap between the two lane nodes */
     .gp-swim-off::before {
       content: '';
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      top: 6px; bottom: 6px;
+      top: 33%; bottom: 33%;
       width: 1.5px;
       background: #999;
     }
@@ -503,7 +503,7 @@
     .gp-swim-off.gp-down::after {
       content: '';
       position: absolute;
-      bottom: 2px;
+      bottom: calc(33% - 6px);
       left: 50%;
       transform: translateX(-50%);
       width: 0; height: 0;
@@ -515,7 +515,7 @@
     .gp-swim-off.gp-up::after {
       content: '';
       position: absolute;
-      top: 2px;
+      top: calc(33% - 6px);
       left: 50%;
       transform: translateX(-50%);
       width: 0; height: 0;
