@@ -445,6 +445,8 @@
       align-items: center;
       line-height: 1.35;
     }
+    /* First node in each lane gets a small left gap away from the label */
+    .gp-swim-node[style*="grid-column:2"] { margin-left: 8px; }
     .gp-swim-node.gp-auto  { background: rgba(0,0,0,0.06); }
     .gp-swim-node.gp-human {
       background: rgba(236,115,87,0.14);
@@ -744,28 +746,28 @@
 
                 <!-- Steps 2–10: AI works autonomously -->
                 <div class="gp-swim-node gp-auto" style="grid-column:4;grid-row:3">Fetch live puzzle history from GitHub</div>
-                <div class="gp-swim-arr" style="grid-column:5;grid-row:3">→</div>
+                <div class="gp-swim-arr" style="grid-column:5;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-auto" style="grid-column:6;grid-row:3">Scan last 21 puzzles — compute mechanic cooldowns</div>
-                <div class="gp-swim-arr" style="grid-column:7;grid-row:3">→</div>
+                <div class="gp-swim-arr" style="grid-column:7;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-auto" style="grid-column:8;grid-row:3">Identify underused Tier 2 and Tier 3 mechanics</div>
-                <div class="gp-swim-arr" style="grid-column:9;grid-row:3">→</div>
+                <div class="gp-swim-arr" style="grid-column:9;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-auto" style="grid-column:10;grid-row:3">Pick spine mechanic — prefer underused, respect cooldowns</div>
-                <div class="gp-swim-arr" style="grid-column:11;grid-row:3">→</div>
+                <div class="gp-swim-arr" style="grid-column:11;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-auto" style="grid-column:12;grid-row:3">Generate puzzle with cross-pull decoys</div>
-                <div class="gp-swim-arr" style="grid-column:13;grid-row:3">→</div>
+                <div class="gp-swim-arr" style="grid-column:13;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-auto" style="grid-column:14;grid-row:3">Verify hidden words letter-by-letter</div>
-                <div class="gp-swim-arr" style="grid-column:15;grid-row:3">→</div>
+                <div class="gp-swim-arr" style="grid-column:15;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-auto" style="grid-column:16;grid-row:3">Check all 16 words — duplicates and 60-day repeat rule</div>
-                <div class="gp-swim-arr" style="grid-column:17;grid-row:3">→</div>
+                <div class="gp-swim-arr" style="grid-column:17;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-auto" style="grid-column:18;grid-row:3">Inject mechanic + tier into each category</div>
-                <div class="gp-swim-arr" style="grid-column:19;grid-row:3">→</div>
+                <div class="gp-swim-arr" style="grid-column:19;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-auto" style="grid-column:20;grid-row:3">Strip scratchpad fields — save clean draft</div>
 
@@ -774,7 +776,7 @@
 
                 <!-- Steps 11–12: You review and export -->
                 <div class="gp-swim-node gp-human" style="grid-column:22;grid-row:1">Editor review — regenerate weak categories, edit words</div>
-                <div class="gp-swim-arr" style="grid-column:23;grid-row:1">→</div>
+                <div class="gp-swim-arr" style="grid-column:23;grid-row:1"></div>
 
                 <div class="gp-swim-node gp-human" style="grid-column:24;grid-row:1">Export triggered</div>
 
@@ -783,7 +785,7 @@
 
                 <!-- Steps 13–14: AI publishes -->
                 <div class="gp-swim-node gp-auto" style="grid-column:26;grid-row:3">Append to puzzle history — push to GitHub</div>
-                <div class="gp-swim-arr" style="grid-column:27;grid-row:3">→</div>
+                <div class="gp-swim-arr" style="grid-column:27;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-end" style="grid-column:28;grid-row:3">Puzzle is live</div>
 
