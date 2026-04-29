@@ -465,17 +465,20 @@
     .gp-swim-arr::before {
       content: '';
       position: absolute;
-      left: 2px; right: 8px;
+      left: 2px;
+      right: 7px;
       height: 1.5px;
       background: #999;
     }
     .gp-swim-arr::after {
-      content: '▶';
+      content: '';
       position: absolute;
       right: 2px;
-      font-size: 0.5rem;
-      color: #999;
-      line-height: 1;
+      width: 0;
+      height: 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 6px solid #999;
     }
     /* Cross-lane handoff arrows — span all 3 rows */
     .gp-swim-off {
