@@ -432,15 +432,18 @@
     .gp-swim-lbl.gp-ai  { grid-row: 3; background: rgba(0,0,0,0.025); color: var(--color-text); }
     /* Step nodes */
     .gp-swim-node {
-      white-space: nowrap;
+      white-space: normal;
+      width: 112px;
+      min-height: 52px;
       padding: 8px 12px;
       border-radius: 7px;
       font-size: 0.74rem;
       font-weight: 500;
       color: var(--color-text-main);
-      margin: 10px 2px;
+      margin: 14px 0;
       display: flex;
       align-items: center;
+      line-height: 1.35;
     }
     .gp-swim-node.gp-auto  { background: rgba(0,0,0,0.06); }
     .gp-swim-node.gp-human {
@@ -449,14 +452,28 @@
       font-weight: 600;
     }
     .gp-swim-node.gp-end   { background: #ec7357; color: #fff; font-weight: 700; }
-    /* In-lane arrows */
+    /* In-lane connectors — horizontal line with arrow */
     .gp-swim-arr {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 20px;
-      color: var(--color-border);
-      font-size: 0.68rem;
+      width: 28px;
+      position: relative;
+    }
+    .gp-swim-arr::before {
+      content: '';
+      position: absolute;
+      left: 2px; right: 8px;
+      height: 1.5px;
+      background: #999;
+    }
+    .gp-swim-arr::after {
+      content: '▶';
+      position: absolute;
+      right: 2px;
+      font-size: 0.5rem;
+      color: #999;
+      line-height: 1;
     }
     /* Cross-lane handoff arrows — span all 3 rows */
     .gp-swim-off {
@@ -464,8 +481,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 24px;
-      color: rgba(236,115,87,0.7);
+      width: 28px;
+      color: rgba(236,115,87,0.85);
       font-size: 0.85rem;
     }
 
