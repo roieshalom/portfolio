@@ -479,7 +479,7 @@
     }
     .gp-tiers {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 10px;
     }
     .gp-tier {
@@ -525,9 +525,6 @@
       line-height: 1.35;
     }
 
-    @media (max-width: 768px) {
-      .gp-tiers { grid-template-columns: 1fr 1fr; }
-    }
     @media (max-width: 460px) {
       .gp-tiers { grid-template-columns: 1fr; }
     }
