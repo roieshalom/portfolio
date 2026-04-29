@@ -523,7 +523,30 @@
       font-size: 0.88rem;
       color: var(--color-text);
       line-height: 1.4;
+      cursor: default;
     }
+    .gp-tier-list li[data-example]:hover {
+      color: var(--color-link);
+    }
+
+    /* ── Mechanic tooltip ───────────────────────────────────────────── */
+    #gp-mechanic-tip {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      background: var(--color-text);
+      color: var(--color-surface, #fff);
+      font-size: 0.78rem;
+      line-height: 1.45;
+      padding: 7px 11px;
+      border-radius: 7px;
+      max-width: 240px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      opacity: 0;
+      transition: opacity 0.12s ease;
+      white-space: normal;
+    }
+    #gp-mechanic-tip.visible { opacity: 1; }
 
     @media (max-width: 460px) {
       .gp-tiers { grid-template-columns: 1fr; }
@@ -604,11 +627,11 @@
                 <div class="gp-tier-name">Workhorses</div>
                 <div class="gp-tier-cd">cooldown: 4 puzzles</div>
                 <ul class="gp-tier-list">
-                  <li>Taxonomy</li>
-                  <li>Found in scene</li>
-                  <li>Prefix blank</li>
-                  <li>Suffix blank</li>
-                  <li>Synonyms</li>
+                  <li data-example="Types of cloud: cirrus, cumulus, stratus, nimbus">Taxonomy</li>
+                  <li data-example="Found in a kitchen: fork, apron, ladle, colander">Found in scene</li>
+                  <li data-example="___ ball: base, basket, snow, fire">Prefix blank</li>
+                  <li data-example="book___: shelf, worm, case, mark">Suffix blank</li>
+                  <li data-example="Happy: glad, jolly, elated, content">Synonyms</li>
                 </ul>
               </div>
 
@@ -617,15 +640,15 @@
                 <div class="gp-tier-name">Regulars</div>
                 <div class="gp-tier-cd">cooldown: 7 puzzles</div>
                 <ul class="gp-tier-list">
-                  <li>Things that verb</li>
-                  <li>Can be verbed</li>
-                  <li>Shared hidden property</li>
-                  <li>Metaphor substitutes</li>
-                  <li>Ways to verb</li>
-                  <li>Idiom completion</li>
-                  <li>Ordered set member</li>
-                  <li>Works by one maker</li>
-                  <li>Characters in one work</li>
+                  <li data-example="Things that buzz: bee, phone, saw, crowd">Things that verb</li>
+                  <li data-example="Can be pressed: shirt, button, case, flower">Can be verbed</li>
+                  <li data-example="All contain a planet: martial, mercury, saturnine, jovial">Shared hidden property</li>
+                  <li data-example="Storm metaphors for anger: thunder, lightning, boil, surge">Metaphor substitutes</li>
+                  <li data-example="Ways to walk quietly: tiptoe, creep, slink, pad">Ways to verb</li>
+                  <li data-example="___ of the storm: eye, calm, center, heart">Idiom completion</li>
+                  <li data-example="Planets: mars, venus, saturn, jupiter">Ordered set member</li>
+                  <li data-example="Kubrick films: clockwork, shining, spartacus, paths">Works by one maker</li>
+                  <li data-example="Friends characters: ross, rachel, joey, phoebe">Characters in one work</li>
                 </ul>
               </div>
 
@@ -634,18 +657,18 @@
                 <div class="gp-tier-name">Specials</div>
                 <div class="gp-tier-cd">cooldown: 21 puzzles</div>
                 <ul class="gp-tier-list">
-                  <li>Hidden word inside</li>
-                  <li>Hidden word at start</li>
-                  <li>Hidden word at end</li>
-                  <li>Homophone of letter</li>
-                  <li>Homophone of number</li>
-                  <li>Homophone pairs</li>
-                  <li>Compound both ways</li>
-                  <li>Add letter</li>
-                  <li>Drop letter</li>
-                  <li>Eponyms</li>
-                  <li>Cross language</li>
-                  <li>Abbreviation expansion</li>
+                  <li data-example="Hide 'ear': heart, learn, heard, pearl">Hidden word inside</li>
+                  <li data-example="Start with 'ant': anthem, antler, antique, antenna">Hidden word at start</li>
+                  <li data-example="End with 'age': package, village, message, courage">Hidden word at end</li>
+                  <li data-example="Sound like letters: jay, sea, are, why">Homophone of letter</li>
+                  <li data-example="Sound like numbers: won, too, for, ate">Homophone of number</li>
+                  <li data-example="Sound like other words: knight, bare, sea, knot">Homophone pairs</li>
+                  <li data-example="Compound both ways: sun+flower, door+step, fire+place, rain+coat">Compound both ways</li>
+                  <li data-example="Add a letter to make a new word: laughter, smile, plant, word">Add letter</li>
+                  <li data-example="Drop a letter: brave, smile, plant, three">Drop letter</li>
+                  <li data-example="Named after people: sandwich, wellington, cardigan, boycott">Eponyms</li>
+                  <li data-example="French in English: café, ballet, cliché, genre">Cross language</li>
+                  <li data-example="What they stand for: RAM, NASA, RSVP, ASAP">Abbreviation expansion</li>
                 </ul>
               </div>
 
@@ -654,11 +677,11 @@
                 <div class="gp-tier-name">Treats</div>
                 <div class="gp-tier-cd">cooldown: 45 puzzles</div>
                 <ul class="gp-tier-list">
-                  <li>Anagram of one source</li>
-                  <li>Acrostic first letters</li>
-                  <li>Chain through hub</li>
-                  <li>Portmanteau</li>
-                  <li>Onomatopoeia</li>
+                  <li data-example="Anagrams of LISTEN: silent, enlist, tinsel, inlets">Anagram of one source</li>
+                  <li data-example="First letters spell CATS: cream, apple, toast, sage">Acrostic first letters</li>
+                  <li data-example="All connect to DARK: horse, room, ages, matter">Chain through hub</li>
+                  <li data-example="Blended words: brunch, smog, blog, motel">Portmanteau</li>
+                  <li data-example="Sound words: buzz, crash, sizzle, thud">Onomatopoeia</li>
                 </ul>
               </div>
 
@@ -1162,5 +1185,37 @@
     })();
   </script>
   <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
+
+  <!-- Mechanic tooltip -->
+  <div id="gp-mechanic-tip"></div>
+  <script>
+    (function () {
+      var tip = document.getElementById('gp-mechanic-tip');
+      var offset = { x: 14, y: 14 };
+
+      document.querySelectorAll('.gp-tier-list li[data-example]').forEach(function (li) {
+        li.addEventListener('mouseenter', function (e) {
+          tip.textContent = li.dataset.example;
+          tip.classList.add('visible');
+          position(e);
+        });
+        li.addEventListener('mousemove', position);
+        li.addEventListener('mouseleave', function () {
+          tip.classList.remove('visible');
+        });
+      });
+
+      function position(e) {
+        var x = e.clientX + offset.x;
+        var y = e.clientY + offset.y;
+        var w = tip.offsetWidth;
+        var h = tip.offsetHeight;
+        if (x + w > window.innerWidth - 8)  x = e.clientX - w - offset.x;
+        if (y + h > window.innerHeight - 8) y = e.clientY - h - offset.y;
+        tip.style.left = x + 'px';
+        tip.style.top  = y + 'px';
+      }
+    })();
+  </script>
 </body>
 </html>
