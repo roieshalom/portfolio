@@ -323,6 +323,54 @@
 
     /* Prompt styles moved to casestudy.css */
 
+    /* ── Collapsible pipeline block ─────────────────────────────────────────── */
+    .gp-collapsible-wrap {
+      margin: 28px auto 0;
+      max-width: 660px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 clamp(20px, 5vw, 32px);
+    }
+    .gp-collapsible {
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .gp-collapsible summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 13px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-link);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    .gp-collapsible summary::-webkit-details-marker { display: none; }
+    .gp-collapsible summary:hover { background: rgba(0,0,0,0.03); }
+    .gp-collapsible[open] summary { border-bottom: 1px solid var(--color-border); }
+    .gp-collapsible-chevron {
+      font-style: normal;
+      font-size: 0.7rem;
+      transition: transform 0.25s;
+    }
+    .gp-collapsible[open] .gp-collapsible-chevron { transform: rotate(180deg); }
+    .gp-collapsible-body {
+      padding: 28px 0 20px;
+    }
+    /* Remove outer padding from flowchart/tiers when inside collapsible */
+    .gp-collapsible-body .gp-flow-section,
+    .gp-collapsible-body .gp-tiers-section {
+      margin-top: 0;
+      padding: 0 18px;
+    }
+    .gp-collapsible-body .gp-tiers-section {
+      margin-top: 36px;
+    }
+
     /* ── Pipeline flowchart ────────────────────────────────────────────────── */
     .gp-flow-section {
       margin: 44px auto 0;
@@ -499,27 +547,36 @@
     </div>
   </section>
 
-  <!-- 2. INTRO -->
-  <section class="cs-section">
+  <!-- 2. THE DESIGN PROBLEM -->
+  <section class="cs-section" style="margin-top: 72px;">
     <div class="cs-text">
-      <p class="cs-p">I wanted to get serious about working with AI. Not just prompting, but building a real feedback loop between human judgment and AI output. I needed a project I could ship, something with real users and real decisions. I chose a format I already loved: the word connections puzzle. Find 4 groups of 4 words that belong together. Simple rules, deep design space.</p>
-      <p class="cs-p">Grooped is a daily word game I designed, built, and ship solo. The front end, the game logic, the puzzle generation pipeline, the editorial tooling, and the analytics. I'm not a developer. Everything was built with AI assistance, and that was the point.</p>
+      <span class="cs-eyebrow">The design problem</span>
+      <h2 class="cs-h2">The hardest part isn't the tech</h2>
+      <p class="cs-p">Word puzzles sound simple. Four groups of four words. But the design space is deceptively deep.</p>
+      <p class="cs-p">The real challenge is intentional misdirection. Take IRON, PRESS, CURL, BENCH — all things you do at the gym. But PRESS also fits a medieval weapons category. IRON fits things you can flip. CURL fits hair styling. That web of almost-right answers is what makes a puzzle feel clever instead of arbitrary. Designing it is the closest thing I've found to level design.</p>
+      <p class="cs-p" style="margin-bottom: 0;">Every word on the board has to earn its place. Not just as a correct answer, but as a convincing wrong one.</p>
     </div>
   </section>
 
-  <!-- 3. HOW PUZZLES ARE MADE -->
-  <section class="cs-section" style="margin-top: 65px;">
+  <!-- 3. HOW IT'S MADE -->
+  <section class="cs-section" style="margin-top: 72px;">
     <div class="cs-text">
-      <span class="cs-eyebrow">How puzzles are made</span>
+      <span class="cs-eyebrow">How it's made</span>
       <h2 class="cs-h2">An AI pipeline with a human editor at the center</h2>
       <p class="cs-p">Every puzzle starts with a prompt. I built an internal tool called Puzzle Editor 3000 that generates a full puzzle — four categories, four words each, plus intentional decoys designed to blur the lines between groups.</p>
-      <p class="cs-p">The generator doesn't just make puzzles. It tracks 28 connection mechanics across four tiers, each with a cooldown period so the same trick never runs two days in a row. A fill-in-blank category can appear weekly. A first-letter acrostic gets used once every six weeks. The system reads the last 21 published puzzles before generating a new one, checks which mechanics are underused, and steers toward variety automatically.</p>
+      <p class="cs-p">The generator doesn't just make puzzles. It tracks 28 connection mechanics across four tiers, each with a cooldown period so the same trick never runs two days in a row. A fill-in-blank category can appear weekly. A first-letter acrostic gets saved for once every six weeks. The system reads the last 21 published puzzles before generating a new one, checks which mechanics are underused, and steers toward variety automatically.</p>
       <p class="cs-p">When I export a puzzle, it's appended to the live file on GitHub. The next generation reads that file first. The system has memory.</p>
       <p class="cs-p" style="margin-bottom: 0;">AI proposes. I curate. The system gets sharper over time.</p>
     </div>
 
-    <!-- Pipeline flowchart -->
-    <div class="gp-flow-section">
+    <!-- Collapsible: pipeline + tier map -->
+    <div class="gp-collapsible-wrap">
+      <details class="gp-collapsible">
+        <summary>How the pipeline works <span class="gp-collapsible-chevron" aria-hidden="true">▼</span></summary>
+        <div class="gp-collapsible-body">
+
+          <!-- Pipeline flowchart -->
+          <div class="gp-flow-section">
       <div class="gp-section-label">Generation pipeline</div>
       <div class="gp-flow">
 
@@ -675,17 +732,11 @@
         </div>
 
       </div>
-    </div>
+    </div><!-- /.gp-tiers-section -->
 
-    <div class="cs-img-wrap">
-      <img class="cs-img" src="content/images/grooped/editor-wireframe.png" alt="Early wireframe for the editor layout" style="width: 75%; margin: 0 auto; display: block;">
-      <p class="cs-caption">Early wireframe for the puzzle editor.</p>
-    </div>
-
-    <div class="cs-img-wrap" style="margin-top: 40px;">
-      <img class="cs-img" src="content/images/grooped/editor.png" alt="Puzzle Editor 3000 showing four categories with refresh and ban controls" style="width: 75%; margin: 0 auto; display: block;">
-      <p class="cs-caption">Puzzle Editor 3000: the tool I built to generate, edit, and curate puzzles.</p>
-    </div>
+        </div><!-- /.gp-collapsible-body -->
+      </details>
+    </div><!-- /.gp-collapsible-wrap -->
 
     <div class="cs-text gs-prompt-section">
       <p class="cs-p">The quality of the output lives or dies on the prompt. Writing it was a design problem: precise enough to produce consistent results, flexible enough to surprise me. This is the actual system prompt the generator uses, loaded live from the source code.</p>
@@ -700,17 +751,21 @@
     </div>
   </section>
 
-  <!-- 4. BUILDING THE GAME -->
-  <section class="cs-section" style="margin-top: 71px;">
+  <!-- 4. THE TOOL -->
+  <section class="cs-section" style="margin-top: 72px;">
     <div class="cs-text">
-      <span class="cs-eyebrow">Building the game</span>
-      <h2 class="cs-h2">A designer ships a product, with AI as co-pilot</h2>
-      <p class="cs-p">The entire game — the front end, the game logic, the animations — was built with AI assistance. My basic knowledge of HTML, CSS, and JavaScript helped me steer, debug, and understand what the AI was explaining, but I couldn't have built this alone.</p>
-      <p class="cs-p" style="margin-bottom: 0;">The part that surprised me was the small things. When a player solves a category, it collapses into a colored block at the top of the grid. But the order depends on which group you solve first, second, third. That reordering logic wasn't something I'd considered until it broke. It's the kind of invisible detail that feels natural when it works and immediately wrong when it doesn't.</p>
+      <span class="cs-eyebrow">The tool</span>
+      <h2 class="cs-h2">Puzzle Editor 3000</h2>
+      <p class="cs-p">The editor is the interface between AI output and human judgment. Generate a full puzzle, regenerate individual categories, swap words, rename groups, or type your own category and let the AI fill in the words. Every category shows which connection mechanic the model used and which tier it belongs to — so I can see at a glance if the puzzle is mechanically varied or just four versions of the same trick.</p>
+      <p class="cs-p" style="margin-bottom: 0;">The dashboard at the top tracks mechanic usage across the last 21 puzzles. If Tier 2 is dominating, the next generation will steer toward Tier 3 automatically. I can see what's been overused and nudge the system before it gets repetitive.</p>
+    </div>
+    <div class="cs-img-wrap" style="margin-top: 40px;">
+      <img class="cs-img" src="content/images/grooped/puzzle_editor_3000_interface.png" alt="Puzzle Editor 3000 showing four categories with refresh and ban controls" style="width: 75%; margin: 0 auto; display: block;">
+      <p class="cs-caption">Puzzle Editor 3000: generate, curate, and track puzzle mechanics in one place.</p>
     </div>
   </section>
 
-  <!-- 4b. GAMEPLAY STEPPER -->
+  <!-- 5. THE GAME -->
   <section class="cs-section" style="max-width: none; padding: 0; margin-left: 0; margin-right: 0;">
     <div class="gs-stepper" id="gs-stepper">
       <div class="gs-steps">
@@ -785,13 +840,12 @@
     </div>
   </section>
 
-  <!-- 5. WATCHING PEOPLE PLAY -->
+  <!-- 6. ITERATION WITH DATA -->
   <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
-      <span class="cs-eyebrow">Level design and real behavior</span>
+      <span class="cs-eyebrow">Iteration with data</span>
       <h2 class="cs-h2">Session recordings over surveys</h2>
-      <p class="cs-p">I connected Microsoft Clarity to track how people actually play. Not surveys, not friend feedback. Session recordings of real behavior. I believe in seeing what people do, not asking what they would do.</p>
-      <p class="cs-p">What I learned: people play fast and lose patience faster. A couple of wrong guesses and some players just leave. That insight pushed me to dial back the AI's independence and make puzzles more solvable. The challenge should feel rewarding, not punishing.</p>
+      <p class="cs-p">I connected Microsoft Clarity to track how people actually play. People play fast and lose patience faster — a couple of wrong guesses and some players just leave. That insight pushed me to make puzzles more solvable.</p>
     </div>
 
     <blockquote class="cs-pullquote" style="max-width: 660px; margin-left: auto; margin-right: auto;">
@@ -801,10 +855,6 @@
     <div class="cs-img-wrap">
       <video class="cs-img cs-video no-lightbox" src="content/images/grooped/grooped-clarity-session.mp4" autoplay loop muted playsinline></video>
       <p class="cs-caption">Microsoft Clarity session recording: tracking real player behavior.</p>
-    </div>
-
-    <div class="cs-text" style="margin-top: 44px;">
-      <p class="cs-p">The creative part of this project is the puzzle design itself. Each puzzle is a small system of intentional overlap. Take one example: JAWS, BULL, TIGER, MAKO. All sharks. But JAWS is also a Bond villain. BULL could be a steak cut. TIGER could be an arcade game. Designing that web of almost-right answers is the closest I've come to level design, and it's the part I enjoy most.</p>
     </div>
 
   </section>
