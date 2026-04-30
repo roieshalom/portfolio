@@ -35,7 +35,7 @@
       </p>
     </section>
     <section class="section">
-      <div class="section-title">Selected Work</div>
+      <div class="section-title" id="selected-work-title">Selected Work</div>
       <div class="pin-unlock-card" id="pin-unlock-card">
         <p class="pin-unlock-copy pin-copy-mobile">Unlock protected projects</p>
         <p class="pin-unlock-copy pin-copy-web">Some projects are protected. Enter the code here to unlock all projects.</p>
@@ -187,6 +187,318 @@
         document.querySelectorAll('[data-departure]').forEach(function (el) { el.remove(); });
       }
     });
+  </script>
+
+  <!-- ============================================================
+       DESIGN DECISIONS OVERLAY
+  ============================================================ -->
+  <style>
+    /* Toggle pill */
+    .dd-toggle {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 18px;
+      border-radius: 100px;
+      border: 1.5px solid var(--color-link);
+      background: var(--color-bg);
+      color: var(--color-link);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    }
+    .dd-toggle:hover { box-shadow: 0 4px 24px rgba(242,23,131,0.18); }
+    body.dd-active .dd-toggle { background: var(--color-link); color: #fff; }
+    .dd-toggle-icon { font-size: 0.9rem; line-height: 1; }
+
+    /* Overlay container */
+    .dd-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 200;
+    }
+
+    /* Individual callout card — hidden by default, shown on hover via .is-visible */
+    .dd-callout {
+      position: absolute;
+      width: 248px;
+      background: var(--color-card);
+      border: 1.5px solid var(--color-link);
+      border-radius: 14px;
+      padding: 18px 18px 20px;
+      box-shadow: 0 6px 28px rgba(242,23,131,0.15);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(10px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .dd-callout.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0);
+    }
+    /* Connector line pointing back toward the dot */
+    .dd-callout::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: -14px;
+      width: 12px;
+      height: 1.5px;
+      background: var(--color-link);
+      opacity: 0.35;
+    }
+
+    /* Number badge */
+    .dd-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--color-link);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .dd-callout-title {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin: 0 0 6px;
+      line-height: 1.3;
+    }
+    .dd-callout-body {
+      font-size: 0.77rem;
+      color: var(--color-text);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Numbered dot injected next to annotated elements */
+    .dd-target-dot {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--color-link);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 700;
+      margin-left: 9px;
+      vertical-align: middle;
+      cursor: default;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    body.dd-active .dd-target-dot {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    /* On narrow screens: bottom sheet */
+    @media (max-width: 1100px) {
+      .dd-callout::before { display: none; }
+      .dd-overlay {
+        position: fixed;
+        bottom: 0; left: 0; right: 0; top: auto;
+        display: flex;
+        flex-direction: column;
+        pointer-events: none;
+        max-height: 55vh;
+        overflow-y: auto;
+        background: var(--color-bg);
+        border-top: 1.5px solid var(--color-link);
+        box-shadow: 0 -8px 32px rgba(242,23,131,0.10);
+        border-radius: 16px 16px 0 0;
+        padding: 16px 20px 32px;
+        transform: translateY(100%);
+        transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+        opacity: 0;
+        z-index: 200;
+      }
+      body.dd-active .dd-overlay {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .dd-callout {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        border-bottom: 1px solid var(--color-border);
+        border-radius: 0;
+        padding: 14px 0;
+        transform: none;
+        opacity: 1;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .dd-callout.is-visible { transform: none; }
+      .dd-callout:last-child { border-bottom: none; }
+      .dd-num { flex-shrink: 0; margin: 3px 0 0; }
+      .dd-toggle { bottom: 20px; right: 20px; }
+    }
+  </style>
+
+  <!-- Overlay callouts -->
+  <div class="dd-overlay" id="dd-overlay" aria-hidden="true">
+    <div class="dd-callout" data-target="desktop-brand">
+      <div class="dd-num">1</div>
+      <p class="dd-callout-title">A new font, every time</p>
+      <p class="dd-callout-body">The brand resets to a random typeface on every page load. A quiet signal this wasn't made with a template, and that someone here has opinions about type.</p>
+    </div>
+    <div class="dd-callout" data-target="selected-work-title">
+      <div class="dd-num">2</div>
+      <p class="dd-callout-title">Three projects. On purpose.</p>
+      <p class="dd-callout-body">Not a portfolio dump. Three picks that each show something different. If everything's featured, nothing is.</p>
+    </div>
+    <div class="dd-callout" data-target="pin-unlock-card">
+      <div class="dd-num">3</div>
+      <p class="dd-callout-title">A lock, not a wall</p>
+      <p class="dd-callout-body">Protected work sits behind a 4-digit code, not a login form. Minimal friction that filters for people who actually want to see it.</p>
+    </div>
+    <div class="dd-callout" data-target="featured-list">
+      <div class="dd-num">4</div>
+      <p class="dd-callout-title">The page feels the hover</p>
+      <p class="dd-callout-body">Hover any tile. The whole background tints to that project's color. You're previewing the mood before you commit to clicking.</p>
+    </div>
+  </div>
+
+  <!-- Toggle button -->
+  <button class="dd-toggle" id="dd-toggle" aria-pressed="false">
+    <span class="dd-toggle-icon">✦</span>
+    <span class="dd-toggle-label">Design notes</span>
+  </button>
+
+  <script>
+  (function () {
+    var toggle   = document.getElementById('dd-toggle');
+    var overlay  = document.getElementById('dd-overlay');
+    var label    = toggle.querySelector('.dd-toggle-label');
+    var callouts = Array.from(overlay.querySelectorAll('.dd-callout'));
+    var active   = false;
+    var hideTimer = null;
+    var currentCallout = null;
+
+    var GAP = 14;
+
+    function positionCallout(callout, dot) {
+      if (!dot) return;
+      var rect = dot.getBoundingClientRect();
+      var top  = rect.top + window.scrollY + (rect.height / 2) - 28;
+      var left = rect.right + window.scrollX + GAP;
+      // Clamp so it doesn't bleed off screen
+      var cardW = 248;
+      if (left + cardW > window.innerWidth - 12) {
+        left = rect.left + window.scrollX - cardW - GAP;
+      }
+      top = Math.max(top, window.scrollY + 12);
+      callout.style.top  = top + 'px';
+      callout.style.left = left + 'px';
+    }
+
+    function showCallout(callout, dot) {
+      clearTimeout(hideTimer);
+      if (window.innerWidth <= 1100) return;
+      callouts.forEach(function (c) { c.classList.remove('is-visible'); });
+      positionCallout(callout, dot);
+      callout.classList.add('is-visible');
+      currentCallout = callout;
+    }
+
+    function scheduleHide() {
+      hideTimer = setTimeout(function () {
+        callouts.forEach(function (c) { c.classList.remove('is-visible'); });
+        currentCallout = null;
+      }, 180);
+    }
+
+    // Inject dots and wire hover events
+    callouts.forEach(function (callout, i) {
+      var targetId = callout.getAttribute('data-target');
+      var target   = document.getElementById(targetId);
+      if (!target) return;
+
+      // Dot
+      var dot = document.createElement('span');
+      dot.className = 'dd-target-dot';
+      dot.textContent = i + 1;
+      target.appendChild(dot);
+
+      // Hover on target element or dot
+      target.addEventListener('mouseenter', function () {
+        if (!active) return;
+        showCallout(callout, dot);
+      });
+      target.addEventListener('mouseleave', function () {
+        if (!active) return;
+        scheduleHide();
+      });
+      dot.addEventListener('mouseenter', function () {
+        if (!active) return;
+        showCallout(callout, dot);
+      });
+      dot.addEventListener('mouseleave', function () {
+        if (!active) return;
+        scheduleHide();
+      });
+
+      // Keep visible while hovering the callout itself
+      callout.addEventListener('mouseenter', function () {
+        clearTimeout(hideTimer);
+      });
+      callout.addEventListener('mouseleave', function () {
+        scheduleHide();
+      });
+    });
+
+    function open() {
+      active = true;
+      document.body.classList.add('dd-active');
+      toggle.setAttribute('aria-pressed', 'true');
+      label.textContent = 'Close notes';
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+
+    function close() {
+      active = false;
+      callouts.forEach(function (c) { c.classList.remove('is-visible'); });
+      document.body.classList.remove('dd-active');
+      toggle.setAttribute('aria-pressed', 'false');
+      label.textContent = 'Design notes';
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+
+    toggle.addEventListener('click', function () {
+      active ? close() : open();
+    });
+
+    window.addEventListener('resize', function () {
+      if (active && currentCallout) {
+        var targetId = currentCallout.getAttribute('data-target');
+        var dot = document.querySelector('#' + targetId + ' .dd-target-dot');
+        positionCallout(currentCallout, dot);
+      }
+    });
+  })();
   </script>
 </body>
 </html>
