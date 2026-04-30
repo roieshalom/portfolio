@@ -323,6 +323,290 @@
 
     /* Prompt styles moved to casestudy.css */
 
+    /* ── Collapsible pipeline block ─────────────────────────────────────────── */
+    .gp-collapsible-wrap {
+      margin: 28px auto 0;
+      max-width: 660px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .gp-collapsible {
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+    }
+    .gp-collapsible summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 13px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-link);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    .gp-collapsible summary::-webkit-details-marker { display: none; }
+    .gp-collapsible summary:hover { background: rgba(0,0,0,0.03); }
+    .gp-collapsible[open] summary { border-bottom: 1px solid var(--color-border); }
+    .gp-collapsible-chevron {
+      font-style: normal;
+      font-size: 0.7rem;
+      transition: transform 0.25s;
+    }
+    .gp-collapsible[open] .gp-collapsible-chevron { transform: rotate(180deg); }
+    .gp-collapsible-body {
+      padding: 28px 0 20px;
+    }
+    .gp-collapsible-body .gp-tiers-section {
+      margin-top: 0;
+      padding: 0 18px;
+    }
+    .gp-collapsible-body .gp-flow-section {
+      margin-top: 0;
+      padding: 0 18px;
+    }
+
+    /* ── Pipeline flowchart ────────────────────────────────────────────────── */
+    .gp-flow-section {
+      margin: 44px auto 0;
+      max-width: 840px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 clamp(20px, 5vw, 32px);
+    }
+    .gp-section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-link);
+      margin-bottom: 14px;
+    }
+
+    /* ── Swimlane flowchart ─────────────────────────────────────────────────── */
+    /* Scrollable wrapper with border */
+    .gp-swim-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-border) transparent;
+    }
+    .gp-swim-scroll::-webkit-scrollbar { height: 4px; }
+    .gp-swim-scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
+
+    /* Grid: col 1 = sticky lane label, cols 2–28 = steps + connectors */
+    /* Rows: 1 = Roie lane | 2 = 1px divider | 3 = AI lane */
+    .gp-swim-grid {
+      display: grid;
+      grid-template-columns: 32px repeat(27, auto);
+      grid-template-rows: auto 1px auto;
+      width: max-content;
+    }
+    /* Full-width lane backgrounds (listed first → behind content) */
+    .gp-swim-you-bg { grid-column: 1 / -1; grid-row: 1; background: rgba(236,115,87,0.07); }
+    .gp-swim-ai-bg  { grid-column: 1 / -1; grid-row: 3; background: rgba(0,0,0,0.025); }
+    .gp-swim-div    { grid-column: 1 / -1; grid-row: 2; background: var(--color-border); }
+    /* Lane labels — sticky so they stay visible on scroll */
+    .gp-swim-lbl {
+      position: sticky;
+      left: 0;
+      z-index: 4;
+      grid-column: 1;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 0.58rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 0;
+    }
+    .gp-swim-lbl.gp-you { grid-row: 1; background: rgba(236,115,87,0.07); color: #ec7357; }
+    .gp-swim-lbl.gp-ai  { grid-row: 3; background: rgba(0,0,0,0.025); color: var(--color-text); }
+    /* Step nodes */
+    .gp-swim-node {
+      white-space: normal;
+      width: 112px;
+      min-height: 52px;
+      padding: 8px 12px;
+      border-radius: 7px;
+      font-size: 0.74rem;
+      font-weight: 500;
+      color: var(--color-text-main);
+      margin: 14px 0;
+      display: flex;
+      align-items: center;
+      line-height: 1.35;
+    }
+    /* First node in each lane gets a small left gap away from the label */
+    .gp-swim-node[style*="grid-column:2"] { margin-left: 8px; }
+    .gp-swim-node.gp-auto  { background: rgba(0,0,0,0.06); }
+    .gp-swim-node.gp-human {
+      background: rgba(236,115,87,0.14);
+      border: 1px solid rgba(236,115,87,0.32);
+      font-weight: 600;
+    }
+    .gp-swim-node.gp-end   { background: #ec7357; color: #fff; font-weight: 700; }
+    /* In-lane connectors — horizontal line with arrow */
+    .gp-swim-arr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      position: relative;
+    }
+    .gp-swim-arr::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      right: 7px;
+      height: 1.5px;
+      background: #999;
+    }
+    .gp-swim-arr::after {
+      content: '';
+      position: absolute;
+      right: 2px;
+      width: 0;
+      height: 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 6px solid #999;
+    }
+    /* Cross-lane handoff arrows — span all 3 rows */
+    .gp-swim-off {
+      grid-row: 1 / 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      position: relative;
+    }
+    /* vertical line — only bridges the gap between the two lane nodes */
+    .gp-swim-off::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 33%; bottom: 33%;
+      width: 1.5px;
+      background: #999;
+    }
+    /* arrowhead pointing down */
+    .gp-swim-off.gp-down::after {
+      content: '';
+      position: absolute;
+      bottom: calc(33% - 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 6px solid #999;
+    }
+    /* arrowhead pointing up */
+    .gp-swim-off.gp-up::after {
+      content: '';
+      position: absolute;
+      top: calc(33% - 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 6px solid #999;
+    }
+
+    /* ── Mechanic tier map ─────────────────────────────────────────────────── */
+    .gp-tiers-section {
+      margin: 52px auto 0;
+      max-width: 840px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 clamp(20px, 5vw, 32px);
+    }
+    .gp-tiers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .gp-tier {
+      background: var(--color-grey-light);
+      border-radius: 10px;
+      padding: 14px 14px 18px;
+      border-top: 3px solid transparent;
+    }
+    .gp-tier-1 { border-top-color: var(--color-border); }
+    .gp-tier-2 { border-top-color: rgba(236,115,87,0.55); }
+    .gp-tier-3 { border-top-color: #ec7357; }
+    .gp-tier-4 { border-top-color: var(--color-link); }
+    .gp-tier-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--color-text);
+      margin-bottom: 1px;
+    }
+    .gp-tier-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 2px;
+    }
+    .gp-tier-cd {
+      font-size: 0.78rem;
+      color: var(--color-text);
+      margin-bottom: 12px;
+    }
+    .gp-tier-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .gp-tier-list li {
+      font-size: 0.88rem;
+      color: var(--color-text);
+      line-height: 1.4;
+      cursor: default;
+    }
+    .gp-tier-list li[data-example]:hover {
+      color: var(--color-link);
+    }
+
+    /* ── Mechanic tooltip ───────────────────────────────────────────── */
+    #gp-mechanic-tip {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      background: var(--color-text);
+      color: var(--color-surface, #fff);
+      font-size: 0.78rem;
+      line-height: 1.45;
+      padding: 7px 11px;
+      border-radius: 7px;
+      max-width: 240px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      opacity: 0;
+      transition: opacity 0.12s ease;
+      white-space: normal;
+    }
+    #gp-mechanic-tip.visible { opacity: 1; }
+
+    @media (max-width: 460px) {
+      .gp-tiers { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 768px) {
       .cs-bottom-qr-group { display: none; }
       .cs-cta-or { display: none; }
@@ -362,41 +646,195 @@
     </div>
   </section>
 
-  <!-- 2. INTRO -->
-  <section class="cs-section">
+  <!-- 2. THE DESIGN PROBLEM -->
+  <section class="cs-section" style="margin-top: 72px;">
     <div class="cs-text">
-      <p class="cs-p">I wanted to get serious about working with AI. Not just prompting, but building a real feedback loop between human judgment and AI output. I needed a project I could ship, something with real users and real decisions. I chose a format I already loved: the word connections puzzle. Find 4 groups of 4 words that belong together. Simple rules, deep design space.</p>
-      <p class="cs-p">Grooped is a daily word game I designed, built, and ship solo. The front end, the game logic, the puzzle generation pipeline, the editorial tooling, and the analytics. I'm not a developer. Everything was built with AI assistance, and that was the point.</p>
+      <span class="cs-eyebrow">The design problem</span>
+      <h2 class="cs-h2">The hardest part isn't the tech</h2>
+      <p class="cs-p">Word puzzles sound simple. Four groups of four words. But the design space is deceptively deep.</p>
+      <p class="cs-p">The real challenge is intentional misdirection. Take IRON, PRESS, CURL, BENCH — all things you do at the gym. But PRESS also fits a medieval weapons category. IRON fits things you can flip. CURL fits hair styling. That web of almost-right answers is what makes a puzzle feel clever instead of arbitrary. Designing it is the closest thing I've found to level design.</p>
+      <p class="cs-p" style="margin-bottom: 0;">Every word on the board has to earn its place. Not just as a correct answer, but as a convincing wrong one.</p>
     </div>
   </section>
 
-  <!-- 3. HOW PUZZLES ARE MADE -->
-  <section class="cs-section" style="margin-top: 65px;">
+  <!-- 3. HOW IT'S MADE -->
+  <section class="cs-section" style="margin-top: 72px;">
     <div class="cs-text">
-      <span class="cs-eyebrow">How puzzles are made</span>
+      <span class="cs-eyebrow">How it's made</span>
       <h2 class="cs-h2">An AI pipeline with a human editor at the center</h2>
-      <p class="cs-p">Every puzzle starts with a prompt. I built an internal tool called Puzzle Editor 3000 that generates a full puzzle: four categories, four words each, plus intentional decoys — words designed to blur the lines between groups.</p>
-      <p class="cs-p">But AI alone doesn't make a good puzzle. The generator checks every new puzzle against a file of previously published categories so it never repeats itself, and against a banned list of categories I've rejected. When I ban a category, it gets replaced with a fresh one automatically and the system remembers not to suggest it again.</p>
-      <p class="cs-p">From there, I can swap individual words, rewrite category names, or type my own category and let the AI generate words to match it. Every puzzle also comes with a reasoning breakdown: why these decoys, which words could mislead, and how the groups overlap. That's my quality check. If the misdirection is too obvious or too obscure, I catch it before anything goes live.</p>
+      <p class="cs-p">Every puzzle starts with a prompt. I built an internal tool called Puzzle Editor 3000 that generates a full puzzle — four categories, four words each, plus intentional decoys designed to blur the lines between groups.</p>
+      <p class="cs-p">The generator doesn't just make puzzles. It tracks 28 connection mechanics across four tiers, each with a cooldown period so the same trick never runs two days in a row. A fill-in-blank category can appear weekly. A first-letter acrostic gets saved for once every six weeks. The system reads the last 60 published puzzles before generating a new one, checks which mechanics are underused, and steers toward variety automatically.</p>
+      <p class="cs-p">When I export a puzzle, it's appended to the live file on GitHub. The next generation reads that file first. The system has memory.</p>
       <p class="cs-p" style="margin-bottom: 0;">AI proposes. I curate. The system gets sharper over time.</p>
     </div>
 
-    <div class="cs-img-wrap">
-      <img class="cs-img" src="content/images/grooped/editor-wireframe.png" alt="Early wireframe for the editor layout" style="width: 75%; margin: 0 auto; display: block;">
-      <p class="cs-caption">Early wireframe for the puzzle editor.</p>
-    </div>
+    <!-- Collapsible 1: mechanic tier map -->
+    <div class="gp-collapsible-wrap">
+      <details class="gp-collapsible">
+        <summary>Connection mechanic tiers <span class="gp-collapsible-chevron" aria-hidden="true">▼</span></summary>
+        <div class="gp-collapsible-body">
 
-    <div class="cs-img-wrap" style="margin-top: 40px;">
-      <img class="cs-img" src="content/images/grooped/editor.png" alt="Puzzle Editor 3000 showing four categories with refresh and ban controls" style="width: 75%; margin: 0 auto; display: block;">
-      <p class="cs-caption">Puzzle Editor 3000: the tool I built to generate, edit, and curate puzzles.</p>
-    </div>
+          <div class="gp-tiers-section">
+            <div class="gp-tiers">
+
+              <div class="gp-tier gp-tier-1">
+                <div class="gp-tier-num">Tier 1</div>
+                <div class="gp-tier-name">Workhorses</div>
+                <div class="gp-tier-cd">cooldown: 4 puzzles</div>
+                <ul class="gp-tier-list">
+                  <li data-example="Types of cloud: cirrus, cumulus, stratus, nimbus">Taxonomy</li>
+                  <li data-example="Found in a kitchen: fork, apron, ladle, colander">Found in scene</li>
+                  <li data-example="___ ball: base, basket, snow, fire">Prefix blank</li>
+                  <li data-example="book___: shelf, worm, case, mark">Suffix blank</li>
+                  <li data-example="Happy: glad, jolly, elated, content">Synonyms</li>
+                </ul>
+              </div>
+
+              <div class="gp-tier gp-tier-2">
+                <div class="gp-tier-num">Tier 2</div>
+                <div class="gp-tier-name">Regulars</div>
+                <div class="gp-tier-cd">cooldown: 7 puzzles</div>
+                <ul class="gp-tier-list">
+                  <li data-example="Things that buzz: bee, phone, saw, crowd">Things that verb</li>
+                  <li data-example="Can be pressed: shirt, button, case, flower">Can be verbed</li>
+                  <li data-example="All contain a planet: martial, mercury, saturnine, jovial">Shared hidden property</li>
+                  <li data-example="Storm metaphors for anger: thunder, lightning, boil, surge">Metaphor substitutes</li>
+                  <li data-example="Ways to walk quietly: tiptoe, creep, slink, pad">Ways to verb</li>
+                  <li data-example="___ of the storm: eye, calm, center, heart">Idiom completion</li>
+                  <li data-example="Planets: mars, venus, saturn, jupiter">Ordered set member</li>
+                  <li data-example="Kubrick films: clockwork, shining, spartacus, paths">Works by one maker</li>
+                  <li data-example="Friends characters: ross, rachel, joey, phoebe">Characters in one work</li>
+                </ul>
+              </div>
+
+              <div class="gp-tier gp-tier-3">
+                <div class="gp-tier-num">Tier 3</div>
+                <div class="gp-tier-name">Specials</div>
+                <div class="gp-tier-cd">cooldown: 21 puzzles</div>
+                <ul class="gp-tier-list">
+                  <li data-example="Hide 'ear': heart, learn, heard, pearl">Hidden word inside</li>
+                  <li data-example="Start with 'ant': anthem, antler, antique, antenna">Hidden word at start</li>
+                  <li data-example="End with 'age': package, village, message, courage">Hidden word at end</li>
+                  <li data-example="Sound like letters: jay, sea, are, why">Homophone of letter</li>
+                  <li data-example="Sound like numbers: won, too, for, ate">Homophone of number</li>
+                  <li data-example="Sound like other words: knight, bare, sea, knot">Homophone pairs</li>
+                  <li data-example="Compound both ways: sun+flower, door+step, fire+place, rain+coat">Compound both ways</li>
+                  <li data-example="Add a letter to make a new word: laughter, smile, plant, word">Add letter</li>
+                  <li data-example="Drop a letter: brave, smile, plant, three">Drop letter</li>
+                  <li data-example="Named after people: sandwich, wellington, cardigan, boycott">Eponyms</li>
+                  <li data-example="French in English: café, ballet, cliché, genre">Cross language</li>
+                  <li data-example="What they stand for: RAM, NASA, RSVP, ASAP">Abbreviation expansion</li>
+                </ul>
+              </div>
+
+              <div class="gp-tier gp-tier-4">
+                <div class="gp-tier-num">Tier 4</div>
+                <div class="gp-tier-name">Treats</div>
+                <div class="gp-tier-cd">cooldown: 45 puzzles</div>
+                <ul class="gp-tier-list">
+                  <li data-example="Anagrams of LISTEN: silent, enlist, tinsel, inlets">Anagram of one source</li>
+                  <li data-example="First letters spell CATS: cream, apple, toast, sage">Acrostic first letters</li>
+                  <li data-example="All connect to DARK: horse, room, ages, matter">Chain through hub</li>
+                  <li data-example="Blended words: brunch, smog, blog, motel">Portmanteau</li>
+                  <li data-example="Sound words: buzz, crash, sizzle, thud">Onomatopoeia</li>
+                </ul>
+              </div>
+
+            </div>
+          </div><!-- /.gp-tiers-section -->
+
+        </div><!-- /.gp-collapsible-body -->
+      </details>
+    </div><!-- /.gp-collapsible-wrap -->
 
     <div class="cs-text gs-prompt-section">
-      <p class="cs-p">The quality of the output lives or dies on the prompt. Writing it was a design problem: precise enough to produce consistent results, flexible enough to surprise me. This is the actual system prompt the generator uses, loaded live from the source code.</p>
       <div class="gs-prompt-label" style="margin-top: 80px;">
         <span class="gs-prompt-eyebrow">System prompt</span>
         <a class="gs-prompt-source" href="https://github.com/roieshalom/grooped-puzzle-generator/blob/main/puzzle_generator.py" target="_blank" rel="noopener">View source on GitHub ↗</a>
       </div>
+      <p class="cs-p" style="margin-top: 18px;">The quality of the output lives or dies on the prompt. Writing it was a design problem: precise enough to produce consistent results, flexible enough to surprise me. This is the actual system prompt the generator uses, loaded live from the source code.</p>
+    </div>
+
+    <!-- Collapsible 2: generation pipeline flowchart -->
+    <div class="gp-collapsible-wrap">
+      <details class="gp-collapsible">
+        <summary>Generation pipeline <span class="gp-collapsible-chevron" aria-hidden="true">▼</span></summary>
+        <div class="gp-collapsible-body">
+
+          <div class="gp-flow-section">
+            <div class="gp-swim-scroll">
+              <div class="gp-swim-grid">
+
+                <!-- Lane backgrounds (first in DOM = behind content) -->
+                <div class="gp-swim-you-bg"></div>
+                <div class="gp-swim-div"></div>
+                <div class="gp-swim-ai-bg"></div>
+
+                <!-- Sticky lane labels -->
+                <div class="gp-swim-lbl gp-you">Roie</div>
+                <div class="gp-swim-lbl gp-ai">AI</div>
+
+                <!-- Step 1: You trigger generation -->
+                <div class="gp-swim-node gp-human" style="grid-column:2;grid-row:1">Generate triggered</div>
+
+                <!-- Handoff: You → AI -->
+                <div class="gp-swim-off gp-down" style="grid-column:3"></div>
+
+                <!-- Steps 2–10: AI works autonomously -->
+                <div class="gp-swim-node gp-auto" style="grid-column:4;grid-row:3">Fetch live puzzle history from GitHub</div>
+                <div class="gp-swim-arr" style="grid-column:5;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:6;grid-row:3">Scan last 21 puzzles — compute mechanic cooldowns</div>
+                <div class="gp-swim-arr" style="grid-column:7;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:8;grid-row:3">Identify underused Tier 2 and Tier 3 mechanics</div>
+                <div class="gp-swim-arr" style="grid-column:9;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:10;grid-row:3">Pick spine mechanic — prefer underused, respect cooldowns</div>
+                <div class="gp-swim-arr" style="grid-column:11;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:12;grid-row:3">Generate puzzle with cross-pull decoys</div>
+                <div class="gp-swim-arr" style="grid-column:13;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:14;grid-row:3">Verify hidden words letter-by-letter</div>
+                <div class="gp-swim-arr" style="grid-column:15;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:16;grid-row:3">Check all 16 words — duplicates and 60-day repeat rule</div>
+                <div class="gp-swim-arr" style="grid-column:17;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:18;grid-row:3">Inject mechanic + tier into each category</div>
+                <div class="gp-swim-arr" style="grid-column:19;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:20;grid-row:3">Strip scratchpad fields — save clean draft</div>
+
+                <!-- Handoff: AI → You -->
+                <div class="gp-swim-off gp-up" style="grid-column:21"></div>
+
+                <!-- Steps 11–12: You review and export -->
+                <div class="gp-swim-node gp-human" style="grid-column:22;grid-row:1">Editor review — regenerate weak categories, edit words</div>
+                <div class="gp-swim-arr" style="grid-column:23;grid-row:1"></div>
+
+                <div class="gp-swim-node gp-human" style="grid-column:24;grid-row:1">Export triggered</div>
+
+                <!-- Handoff: You → AI -->
+                <div class="gp-swim-off gp-down" style="grid-column:25"></div>
+
+                <!-- Steps 13–14: AI publishes -->
+                <div class="gp-swim-node gp-auto" style="grid-column:26;grid-row:3">Append to puzzle history — push to GitHub</div>
+                <div class="gp-swim-arr" style="grid-column:27;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-end" style="grid-column:28;grid-row:3">Puzzle is live</div>
+
+              </div><!-- /.gp-swim-grid -->
+            </div><!-- /.gp-swim-scroll -->
+          </div><!-- /.gp-flow-section -->
+
+        </div><!-- /.gp-collapsible-body -->
+      </details>
+    </div><!-- /.gp-collapsible-wrap -->
+
+    <div class="cs-text gs-prompt-section">
+      <div class="gs-prompt-box-label">puzzle_generator.py</div>
       <div class="gs-prompt-box" id="gs-prompt-box">
         <p class="gs-prompt-loading" id="gs-prompt-loading">Loading prompt...</p>
         <div id="gs-prompt-text" style="display:none;"></div>
@@ -404,18 +842,27 @@
     </div>
   </section>
 
-  <!-- 4. BUILDING THE GAME -->
-  <section class="cs-section" style="margin-top: 71px;">
+  <!-- 4. THE TOOL -->
+  <section class="cs-section" style="margin-top: 72px;">
     <div class="cs-text">
-      <span class="cs-eyebrow">Building the game</span>
-      <h2 class="cs-h2">A designer ships a product, with AI as co-pilot</h2>
-      <p class="cs-p">The entire game — the front end, the game logic, the animations — was built with AI assistance. My basic knowledge of HTML, CSS, and JavaScript helped me steer, debug, and understand what the AI was explaining, but I couldn't have built this alone.</p>
-      <p class="cs-p" style="margin-bottom: 0;">The part that surprised me was the small things. When a player solves a category, it collapses into a colored block at the top of the grid. But the order depends on which group you solve first, second, third. That reordering logic wasn't something I'd considered until it broke. It's the kind of invisible detail that feels natural when it works and immediately wrong when it doesn't.</p>
+      <span class="cs-eyebrow">The tool</span>
+      <h2 class="cs-h2">Puzzle Editor 3000</h2>
+      <p class="cs-p">The editor is the interface between AI output and human judgment. Generate a full puzzle, regenerate individual categories, swap words, rename groups, or type your own category and let the AI fill in the words. Every category shows which connection mechanic the model used and which tier it belongs to — so I can see at a glance if the puzzle is mechanically varied or just four versions of the same trick.</p>
+      <p class="cs-p" style="margin-bottom: 0;">The dashboard at the top tracks mechanic usage across the last 21 puzzles. If Tier 2 is dominating, the next generation will steer toward Tier 3 automatically. I can see what's been overused and nudge the system before it gets repetitive.</p>
+    </div>
+    <div class="cs-img-wrap" style="margin-top: 40px;">
+      <img class="cs-img" src="content/images/grooped/editor.png" alt="Puzzle Editor 3000 showing four categories with refresh and ban controls" style="width: 75%; margin: 0 auto; display: block;">
+      <p class="cs-caption">Puzzle Editor 3000: generate, curate, and track puzzle mechanics in one place.</p>
     </div>
   </section>
 
-  <!-- 4b. GAMEPLAY STEPPER -->
+  <!-- 5. THE GAME -->
   <section class="cs-section" style="max-width: none; padding: 0; margin-left: 0; margin-right: 0;">
+    <div class="cs-text" style="padding: 0 clamp(20px,5vw,32px); margin-bottom: 40px;">
+      <span class="cs-eyebrow">The game</span>
+      <h2 class="cs-h2">What the player sees</h2>
+      <p class="cs-p" style="margin-bottom:0;">None of the pipeline is visible to the player. They get 16 words and four attempts. The mechanic, the tier, the cooldowns — all invisible. The only thing that matters is whether the puzzle feels satisfying to solve.</p>
+    </div>
     <div class="gs-stepper" id="gs-stepper">
       <div class="gs-steps">
         <div class="gs-step is-active" data-index="0">
@@ -489,13 +936,12 @@
     </div>
   </section>
 
-  <!-- 5. WATCHING PEOPLE PLAY -->
+  <!-- 6. ITERATION WITH DATA -->
   <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
-      <span class="cs-eyebrow">Level design and real behavior</span>
+      <span class="cs-eyebrow">Iteration with data</span>
       <h2 class="cs-h2">Session recordings over surveys</h2>
-      <p class="cs-p">I connected Microsoft Clarity to track how people actually play. Not surveys, not friend feedback. Session recordings of real behavior. I believe in seeing what people do, not asking what they would do.</p>
-      <p class="cs-p">What I learned: people play fast and lose patience faster. A couple of wrong guesses and some players just leave. That insight pushed me to dial back the AI's independence and make puzzles more solvable. The challenge should feel rewarding, not punishing.</p>
+      <p class="cs-p">I connected Microsoft Clarity to track how people actually play. People play fast and lose patience faster — a couple of wrong guesses and some players just leave. That insight pushed me to make puzzles more solvable.</p>
     </div>
 
     <blockquote class="cs-pullquote" style="max-width: 660px; margin-left: auto; margin-right: auto;">
@@ -505,10 +951,6 @@
     <div class="cs-img-wrap">
       <video class="cs-img cs-video no-lightbox" src="content/images/grooped/grooped-clarity-session.mp4" autoplay loop muted playsinline></video>
       <p class="cs-caption">Microsoft Clarity session recording: tracking real player behavior.</p>
-    </div>
-
-    <div class="cs-text" style="margin-top: 44px;">
-      <p class="cs-p">The creative part of this project is the puzzle design itself. Each puzzle is a small system of intentional overlap. Take one example: JAWS, BULL, TIGER, MAKO. All sharks. But JAWS is also a Bond villain. BULL could be a steak cut. TIGER could be an arcade game. Designing that web of almost-right answers is the closest I've come to level design, and it's the part I enjoy most.</p>
     </div>
 
   </section>
@@ -803,5 +1245,37 @@
     })();
   </script>
   <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
+
+  <!-- Mechanic tooltip -->
+  <div id="gp-mechanic-tip"></div>
+  <script>
+    (function () {
+      var tip = document.getElementById('gp-mechanic-tip');
+      var offset = { x: 14, y: 14 };
+
+      document.querySelectorAll('.gp-tier-list li[data-example]').forEach(function (li) {
+        li.addEventListener('mouseenter', function (e) {
+          tip.textContent = li.dataset.example;
+          tip.classList.add('visible');
+          position(e);
+        });
+        li.addEventListener('mousemove', position);
+        li.addEventListener('mouseleave', function () {
+          tip.classList.remove('visible');
+        });
+      });
+
+      function position(e) {
+        var x = e.clientX + offset.x;
+        var y = e.clientY + offset.y;
+        var w = tip.offsetWidth;
+        var h = tip.offsetHeight;
+        if (x + w > window.innerWidth - 8)  x = e.clientX - w - offset.x;
+        if (y + h > window.innerHeight - 8) y = e.clientY - h - offset.y;
+        tip.style.left = x + 'px';
+        tip.style.top  = y + 'px';
+      }
+    })();
+  </script>
 </body>
 </html>
