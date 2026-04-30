@@ -616,6 +616,11 @@ p {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+  .tile-img-wrap,
+  .tile-img-wrap img,
+  .gallery-tile img {
+    height: 200px;
+  }
 }
 
 /* ============================================
