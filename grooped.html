@@ -353,11 +353,12 @@
     .gp-collapsible-chevron {
       font-style: normal;
       font-size: 0.7rem;
-      transition: transform 0.25s;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .gp-collapsible[open] .gp-collapsible-chevron { transform: rotate(180deg); }
     .gp-collapsible-body {
       padding: 28px 0 20px;
+      overflow: hidden;
     }
     .gp-collapsible-body .gp-tiers-section {
       margin-top: 0;
@@ -1275,6 +1276,62 @@
         tip.style.left = x + 'px';
         tip.style.top  = y + 'px';
       }
+    })();
+  </script>
+
+  <script>
+    // Animate open/close of .gp-collapsible <details> elements
+    (function() {
+      document.querySelectorAll('.gp-collapsible').forEach(function(details) {
+        var body = details.querySelector('.gp-collapsible-body');
+        if (!body) return;
+        var isAnimating = false;
+
+        details.addEventListener('click', function(e) {
+          // Only intercept clicks on the summary
+          if (!e.target.closest('summary')) return;
+          e.preventDefault();
+          if (isAnimating) return;
+
+          if (details.open) {
+            // Closing
+            isAnimating = true;
+            var startH = body.scrollHeight;
+            body.style.height = startH + 'px';
+            body.style.transition = 'height 0.32s cubic-bezier(0.4, 0, 0.2, 1)';
+            requestAnimationFrame(function() {
+              requestAnimationFrame(function() {
+                body.style.height = '0px';
+              });
+            });
+            body.addEventListener('transitionend', function onEnd() {
+              body.removeEventListener('transitionend', onEnd);
+              details.removeAttribute('open');
+              body.style.height = '';
+              body.style.transition = '';
+              isAnimating = false;
+            });
+          } else {
+            // Opening
+            isAnimating = true;
+            details.setAttribute('open', '');
+            var targetH = body.scrollHeight;
+            body.style.height = '0px';
+            body.style.transition = 'height 0.32s cubic-bezier(0.4, 0, 0.2, 1)';
+            requestAnimationFrame(function() {
+              requestAnimationFrame(function() {
+                body.style.height = targetH + 'px';
+              });
+            });
+            body.addEventListener('transitionend', function onEnd() {
+              body.removeEventListener('transitionend', onEnd);
+              body.style.height = '';
+              body.style.transition = '';
+              isAnimating = false;
+            });
+          }
+        });
+      });
     })();
   </script>
 </body>
