@@ -309,6 +309,10 @@
       transform: scale(0.5);
       transition: opacity 0.2s ease, transform 0.2s ease;
     }
+    .dd-target-dot.dd-dot-left {
+      margin-left: 0;
+      margin-right: 9px;
+    }
     body.dd-active .dd-target-dot {
       opacity: 1;
       transform: scale(1);
@@ -368,7 +372,7 @@
       <p class="dd-callout-title">A new font, every time</p>
       <p class="dd-callout-body">The brand resets to a random typeface on every page load. A quiet signal this wasn't made with a template, and that someone here has opinions about type.</p>
     </div>
-    <div class="dd-callout" data-target="selected-work-title">
+    <div class="dd-callout" data-target="selected-work-title" data-dot-left="true">
       <div class="dd-num">2</div>
       <p class="dd-callout-title">Three projects. On purpose.</p>
       <p class="dd-callout-body">Not a portfolio dump. Three picks that each show something different. If everything's featured, nothing is.</p>
@@ -482,7 +486,12 @@
       dot.className = 'dd-target-dot';
       dot.textContent = i + 1;
       callout._dot = dot;
-      target.appendChild(dot);
+      if (callout.getAttribute('data-dot-left')) {
+        dot.classList.add('dd-dot-left');
+        target.insertBefore(dot, target.firstChild);
+      } else {
+        target.appendChild(dot);
+      }
 
       // Hover on target element or dot
       target.addEventListener('mouseenter', function () {
