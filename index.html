@@ -295,6 +295,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      position: relative;
       width: 22px;
       height: 22px;
       border-radius: 50%;
@@ -317,6 +318,11 @@
     #selected-work-title {
       justify-content: flex-start;
       gap: 7px;
+    }
+    .dd-target-dot::after {
+      content: '';
+      position: absolute;
+      inset: -10px;
     }
     body.dd-active .dd-target-dot {
       opacity: 1;
@@ -498,15 +504,7 @@
         target.appendChild(dot);
       }
 
-      // Hover on target element or dot
-      target.addEventListener('mouseenter', function () {
-        if (!active) return;
-        showCallout(callout, dot);
-      });
-      target.addEventListener('mouseleave', function () {
-        if (!active) return;
-        scheduleHide();
-      });
+      // Hover on dot only (hit area extended via ::after in CSS)
       dot.addEventListener('mouseenter', function () {
         if (!active) return;
         showCallout(callout, dot);
