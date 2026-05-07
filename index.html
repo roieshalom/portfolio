@@ -412,20 +412,24 @@
       var VGAP  = 10;   // vertical gap between dot edge and card
       var HPAD  = 16;   // min gap from left/right viewport edges
 
+      // Overlay is position:fixed so all coordinates are pure viewport — no scroll offset needed
       // Place above if there's room, otherwise below
       var spaceAbove = rect.top - VGAP - cardH;
       var top;
       if (spaceAbove >= 12) {
-        top = rect.top + window.scrollY - cardH - VGAP;
+        top = rect.top - cardH - VGAP;
       } else {
-        top = rect.bottom + window.scrollY + VGAP;
+        top = rect.bottom + VGAP;
       }
+      // Clamp vertically too
+      top = Math.max(12, top);
+      top = Math.min(top, window.innerHeight - cardH - 12);
 
       // Center on the dot, then clamp so card never touches the viewport edges
       var dotCenterX = rect.left + rect.width / 2;
-      var left = window.scrollX + dotCenterX - cardW / 2;
-      left = Math.max(window.scrollX + HPAD, left);
-      left = Math.min(left, window.scrollX + window.innerWidth - cardW - HPAD);
+      var left = dotCenterX - cardW / 2;
+      left = Math.max(HPAD, left);
+      left = Math.min(left, window.innerWidth - cardW - HPAD);
 
       callout.style.top  = top + 'px';
       callout.style.left = left + 'px';
