@@ -407,7 +407,7 @@
     function positionCallout(callout, dot) {
       if (!dot) return;
       var rect  = dot.getBoundingClientRect();
-      var cardW = 248;
+      var cardW = callout.offsetWidth  || 248;
       var cardH = callout.offsetHeight || 120;
       var VGAP  = 10;   // vertical gap between dot edge and card
       var HPAD  = 16;   // min gap from left/right viewport edges
