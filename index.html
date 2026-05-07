@@ -249,23 +249,13 @@
       box-shadow: 0 6px 28px rgba(242,23,131,0.15);
       opacity: 0;
       pointer-events: none;
-      transform: translateX(10px);
+      transform: translateY(8px);
       transition: opacity 0.2s ease, transform 0.2s ease;
     }
     .dd-callout.is-visible {
       opacity: 1;
       pointer-events: auto;
-      transform: translateX(0);
-    }
-    /* Connector line — standalone fixed div, positioned entirely in JS */
-    #dd-connector {
-      position: fixed;
-      height: 1.5px;
-      background: var(--color-link);
-      opacity: 0.35;
-      pointer-events: none;
-      display: none;
-      z-index: 199;
+      transform: translateY(0);
     }
 
     /* Number badge */
@@ -323,7 +313,6 @@
 
     /* On narrow screens: bottom sheet */
     @media (max-width: 1100px) {
-      #dd-connector { display: none !important; }
       .dd-overlay {
         position: fixed;
         bottom: 0; left: 0; right: 0; top: auto;
@@ -397,9 +386,6 @@
     </div>
   </div>
 
-  <!-- Connector line between dot and callout (positioned by JS) -->
-  <div id="dd-connector"></div>
-
   <!-- Toggle button -->
   <button class="dd-toggle" id="dd-toggle" aria-pressed="false">
     <span class="dd-toggle-icon">✦</span>
@@ -420,58 +406,29 @@
 
     function positionCallout(callout, dot) {
       if (!dot) return;
-      var rect = dot.getBoundingClientRect();
-      // dotCenterY in viewport coords (for fixed connector) and page coords (for abs callout)
-      var dotCenterVY = rect.top + rect.height / 2;
-      var dotCenterY  = dotCenterVY + window.scrollY;
-
-      var top   = dotCenterY - 28;
+      var rect  = dot.getBoundingClientRect();
       var cardW = 248;
       var cardH = callout.offsetHeight || 120;
+      var VGAP  = 10;   // vertical gap between dot edge and card
+      var HPAD  = 16;   // min gap from left/right viewport edges
 
-      // Open right by default, flip left if it bleeds off screen
-      var left    = rect.right + window.scrollX + GAP;
-      var flipped = false;
-      if (left + cardW > window.innerWidth - 12) {
-        left    = rect.left + window.scrollX - cardW - GAP;
-        flipped = true;
-      }
-      callout.classList.toggle('is-left', flipped);
-
-      // Clamp horizontally (non-flipped only — clamping flipped pushes card over the dot)
-      if (!flipped) {
-        left = Math.min(left, window.scrollX + window.innerWidth - cardW - 8);
+      // Place above if there's room, otherwise below
+      var spaceAbove = rect.top - VGAP - cardH;
+      var top;
+      if (spaceAbove >= 12) {
+        top = rect.top + window.scrollY - cardH - VGAP;
+      } else {
+        top = rect.bottom + window.scrollY + VGAP;
       }
 
-      // Clamp vertically
-      top = Math.max(top, window.scrollY + 12);
-      top = Math.min(top, window.scrollY + window.innerHeight - cardH - 12);
+      // Center on the dot, then clamp so card never touches the viewport edges
+      var dotCenterX = rect.left + rect.width / 2;
+      var left = window.scrollX + dotCenterX - cardW / 2;
+      left = Math.max(window.scrollX + HPAD, left);
+      left = Math.min(left, window.scrollX + window.innerWidth - cardW - HPAD);
 
       callout.style.top  = top + 'px';
       callout.style.left = left + 'px';
-
-      // Position standalone connector div with fixed viewport coords — no CSS variable math
-      var connector = document.getElementById('dd-connector');
-      if (connector) {
-        var cardVX    = left - window.scrollX;   // card left edge in viewport coords
-        var lineY     = dotCenterVY - 0.75;      // center the 1.5px line on the dot
-        var lineLeft, lineWidth;
-        if (!flipped) {
-          lineLeft  = rect.right;
-          lineWidth = cardVX - rect.right;
-        } else {
-          lineLeft  = cardVX + cardW;
-          lineWidth = rect.left - lineLeft;
-        }
-        if (lineWidth > 0) {
-          connector.style.top    = lineY + 'px';
-          connector.style.left   = lineLeft + 'px';
-          connector.style.width  = lineWidth + 'px';
-          connector.style.display = 'block';
-        } else {
-          connector.style.display = 'none';
-        }
-      }
     }
 
     function showCallout(callout, dot) {
@@ -486,8 +443,6 @@
     function scheduleHide() {
       hideTimer = setTimeout(function () {
         callouts.forEach(function (c) { c.classList.remove('is-visible'); });
-        var connector = document.getElementById('dd-connector');
-        if (connector) connector.style.display = 'none';
         currentCallout = null;
       }, 180);
     }
@@ -560,8 +515,6 @@
     function close() {
       active = false;
       callouts.forEach(function (c) { c.classList.remove('is-visible'); });
-      var connector = document.getElementById('dd-connector');
-      if (connector) connector.style.display = 'none';
       document.body.classList.remove('dd-active');
       toggle.setAttribute('aria-pressed', 'false');
       label.textContent = 'Design notes';
