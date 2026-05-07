@@ -438,9 +438,10 @@
       }
       callout.classList.toggle('is-left', flipped);
 
-      // Clamp horizontally so card never goes off either edge (allows overlap with content)
-      left = Math.max(left, window.scrollX + 8);
-      left = Math.min(left, window.scrollX + window.innerWidth - cardW - 8);
+      // Clamp horizontally — when flipped, don't clamp left edge (would push card over the dot)
+      if (!flipped) {
+        left = Math.min(left, window.scrollX + window.innerWidth - cardW - 8);
+      }
 
       // Clamp vertically: stay within viewport top and bottom
       top = Math.max(top, window.scrollY + 12);
