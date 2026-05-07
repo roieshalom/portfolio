@@ -330,48 +330,9 @@
       pointer-events: auto;
     }
 
-    /* On narrow screens: bottom sheet */
-    @media (max-width: 1100px) {
-      .dd-overlay {
-        position: fixed;
-        bottom: 0; left: 0; right: 0; top: auto;
-        display: flex;
-        flex-direction: column;
-        pointer-events: none;
-        max-height: 55vh;
-        overflow-y: auto;
-        background: var(--color-bg);
-        border-top: 1.5px solid var(--color-link);
-        box-shadow: 0 -8px 32px rgba(242,23,131,0.10);
-        border-radius: 16px 16px 0 0;
-        padding: 16px 20px 32px;
-        transform: translateY(100%);
-        transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
-        opacity: 0;
-        z-index: 200;
-      }
-      body.dd-active .dd-overlay {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-      }
-      .dd-callout {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        border: none;
-        border-bottom: 1px solid var(--color-border);
-        border-radius: 0;
-        padding: 14px 0;
-        transform: none;
-        opacity: 1;
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-      }
-      .dd-callout.is-visible { transform: none; }
-      .dd-callout:last-child { border-bottom: none; }
-      .dd-num { flex-shrink: 0; margin: 3px 0 0; }
+    /* Touch devices: slightly larger toggle pill, cursor auto on dots */
+    @media (hover: none) and (pointer: coarse) {
+      .dd-target-dot { cursor: pointer; }
       .dd-toggle { bottom: 20px; right: 20px; }
     }
   </style>
@@ -422,6 +383,7 @@
     var currentCallout = null;
 
     var GAP = 14;
+    var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
     function positionCallout(callout, dot) {
       if (!dot) return;
@@ -456,7 +418,6 @@
 
     function showCallout(callout, dot) {
       clearTimeout(hideTimer);
-      if (window.innerWidth <= 1100) return;
       callouts.forEach(function (c) { c.classList.remove('is-visible'); });
       positionCallout(callout, dot);
       callout.classList.add('is-visible');
@@ -504,15 +465,30 @@
         target.appendChild(dot);
       }
 
-      // Hover on dot only (hit area extended via ::after in CSS)
-      dot.addEventListener('mouseenter', function () {
-        if (!active) return;
-        showCallout(callout, dot);
-      });
-      dot.addEventListener('mouseleave', function () {
-        if (!active) return;
-        scheduleHide();
-      });
+      if (isTouch) {
+        // Touch: tap dot to toggle popover
+        dot.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (!active) return;
+          if (currentCallout === callout && callout.classList.contains('is-visible')) {
+            scheduleHide();
+          } else {
+            showCallout(callout, dot);
+          }
+        });
+        // Keep visible while tapping inside the callout
+        callout.addEventListener('click', function (e) { e.stopPropagation(); });
+      } else {
+        // Mouse: hover dot to show popover
+        dot.addEventListener('mouseenter', function () {
+          if (!active) return;
+          showCallout(callout, dot);
+        });
+        dot.addEventListener('mouseleave', function () {
+          if (!active) return;
+          scheduleHide();
+        });
+      }
 
       // Keep visible while hovering the callout itself
       callout.addEventListener('mouseenter', function () {
@@ -544,6 +520,16 @@
     toggle.addEventListener('click', function () {
       active ? close() : open();
     });
+
+    // Touch: tap outside any callout dismisses the current one
+    if (isTouch) {
+      document.addEventListener('click', function () {
+        if (active && currentCallout) {
+          callouts.forEach(function (c) { c.classList.remove('is-visible'); });
+          currentCallout = null;
+        }
+      });
+    }
 
     window.addEventListener('resize', function () {
       if (active && currentCallout) {
