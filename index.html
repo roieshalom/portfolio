@@ -257,22 +257,21 @@
       pointer-events: auto;
       transform: translateX(0);
     }
-    /* Connector line pointing back toward the dot */
+    /* Connector line — length and offset set dynamically in JS via CSS vars */
     .dd-callout::before {
       content: '';
       position: absolute;
       top: var(--line-top, 28px);
-      left: -14px;
+      left: var(--line-offset, -14px);
       right: auto;
-      width: 12px;
+      width: var(--line-width, 12px);
       height: 1.5px;
       background: var(--color-link);
       opacity: 0.35;
     }
-    /* When card opens to the left of the dot, flip connector to right side */
     .dd-callout.is-left::before {
       left: auto;
-      right: -14px;
+      right: var(--line-offset, -14px);
     }
 
     /* Number badge */
@@ -449,9 +448,21 @@
 
       callout.style.top  = top + 'px';
       callout.style.left = left + 'px';
-      // ::before is positioned from padding box; subtract border (1.5px) + half line height (0.75px)
+
+      // Vertical: center line on dot (padding box offset = subtract border 1.5px + half line 0.75px)
       var lineTop = dotCenterY - top - 2.25;
       callout.style.setProperty('--line-top', lineTop + 'px');
+
+      // Horizontal: calculate exact gap after clamping so line always touches the dot
+      if (!flipped) {
+        var gap = left - (rect.right + window.scrollX);
+        callout.style.setProperty('--line-offset', '-' + gap + 'px');
+        callout.style.setProperty('--line-width', gap + 'px');
+      } else {
+        var gap = (rect.left + window.scrollX) - (left + cardW);
+        callout.style.setProperty('--line-offset', '-' + gap + 'px');
+        callout.style.setProperty('--line-width', gap + 'px');
+      }
     }
 
     function showCallout(callout, dot) {
