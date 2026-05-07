@@ -46,7 +46,18 @@
           <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" class="pin-digit" autocomplete="off">
         </div>
       </div>
-      <div class="gallery-grid home-grid" id="featured-list"></div>
+      <div style="position:relative;" id="featured-list-wrap">
+        <div class="gallery-grid home-grid" id="featured-list"></div>
+      </div>
+      <style>
+        #featured-list-wrap > .dd-target-dot {
+          position: absolute;
+          top: 50%;
+          right: -24px;
+          transform: translateY(-50%);
+          margin: 0;
+        }
+      </style>
     </section>
   </main>
   <script src="access.js"></script>
@@ -180,7 +191,7 @@
     });
   })();
   </script>
-  <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
+  <footer id="site-footer">Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
   <script>
     window.addEventListener('pageshow', function (e) {
       if (e.persisted) {
@@ -250,12 +261,18 @@
     .dd-callout::before {
       content: '';
       position: absolute;
-      top: 28px;
+      top: var(--line-top, 28px);
       left: -14px;
+      right: auto;
       width: 12px;
       height: 1.5px;
       background: var(--color-link);
       opacity: 0.35;
+    }
+    /* When card opens to the left of the dot, flip connector to right side */
+    .dd-callout.is-left::before {
+      left: auto;
+      right: -14px;
     }
 
     /* Number badge */
@@ -291,12 +308,12 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 18px;
-      height: 18px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       background: var(--color-link);
       color: #fff;
-      font-size: 0.62rem;
+      font-size: 0.65rem;
       font-weight: 700;
       margin-left: 9px;
       vertical-align: middle;
@@ -370,15 +387,20 @@
       <p class="dd-callout-title">Three projects. On purpose.</p>
       <p class="dd-callout-body">Not a portfolio dump. Three picks that each show something different. If everything's featured, nothing is.</p>
     </div>
-    <div class="dd-callout" data-target="pin-unlock-card">
+    <div class="dd-callout" data-target="featured-list-wrap">
       <div class="dd-num">3</div>
-      <p class="dd-callout-title">A lock, not a wall</p>
-      <p class="dd-callout-body">Protected work sits behind a 4-digit code, not a login form. Minimal friction that filters for people who actually want to see it.</p>
-    </div>
-    <div class="dd-callout" data-target="featured-list">
-      <div class="dd-num">4</div>
       <p class="dd-callout-title">The page feels the hover</p>
       <p class="dd-callout-body">Hover any tile. The whole background tints to that project's color. You're previewing the mood before you commit to clicking.</p>
+    </div>
+    <div class="dd-callout" data-target="site-footer">
+      <div class="dd-num">4</div>
+      <p class="dd-callout-title">No templates. Really.</p>
+      <p class="dd-callout-body">Hand coded in HTML, CSS, and vanilla JS. The AI helped write it, but every decision about layout, interaction, and copy was mine.</p>
+    </div>
+    <div class="dd-callout" data-target="pin-unlock-card">
+      <div class="dd-num">5</div>
+      <p class="dd-callout-title">A lock, not a wall</p>
+      <p class="dd-callout-body">Protected work sits behind a 4-digit code, not a login form. Minimal friction that filters for people who actually want to see it.</p>
     </div>
   </div>
 
@@ -403,16 +425,33 @@
     function positionCallout(callout, dot) {
       if (!dot) return;
       var rect = dot.getBoundingClientRect();
-      var top  = rect.top + window.scrollY + (rect.height / 2) - 28;
-      var left = rect.right + window.scrollX + GAP;
-      // Clamp so it doesn't bleed off screen
+      var dotCenterY = rect.top + window.scrollY + (rect.height / 2);
+      var top  = dotCenterY - 28;
       var cardW = 248;
+      var cardH = callout.offsetHeight || 120;
+
+      // Open right by default, flip left if it bleeds off screen
+      var left = rect.right + window.scrollX + GAP;
+      var flipped = false;
       if (left + cardW > window.innerWidth - 12) {
         left = rect.left + window.scrollX - cardW - GAP;
+        flipped = true;
       }
+      callout.classList.toggle('is-left', flipped);
+
+      // Clamp horizontally so card never goes off either edge (allows overlap with content)
+      left = Math.max(left, window.scrollX + 8);
+      left = Math.min(left, window.scrollX + window.innerWidth - cardW - 8);
+
+      // Clamp vertically: stay within viewport top and bottom
       top = Math.max(top, window.scrollY + 12);
+      top = Math.min(top, window.scrollY + window.innerHeight - cardH - 12);
+
       callout.style.top  = top + 'px';
       callout.style.left = left + 'px';
+      // ::before is positioned from padding box; subtract border (1.5px) + half line height (0.75px)
+      var lineTop = dotCenterY - top - 2.25;
+      callout.style.setProperty('--line-top', lineTop + 'px');
     }
 
     function showCallout(callout, dot) {
@@ -431,6 +470,22 @@
       }, 180);
     }
 
+    // Renumber visible dots sequentially (skips hidden targets like unlocked PIN card)
+    function renumber() {
+      var n = 1;
+      callouts.forEach(function (callout) {
+        var dot = callout._dot;
+        if (!dot) return;
+        var target = dot.parentElement;
+        var visible = target && target.offsetHeight > 0 && getComputedStyle(target).display !== 'none';
+        if (visible) {
+          dot.textContent = n;
+          callout.querySelector('.dd-num').textContent = n;
+          n++;
+        }
+      });
+    }
+
     // Inject dots and wire hover events
     callouts.forEach(function (callout, i) {
       var targetId = callout.getAttribute('data-target');
@@ -441,6 +496,7 @@
       var dot = document.createElement('span');
       dot.className = 'dd-target-dot';
       dot.textContent = i + 1;
+      callout._dot = dot;
       target.appendChild(dot);
 
       // Hover on target element or dot
@@ -473,6 +529,7 @@
     function open() {
       active = true;
       document.body.classList.add('dd-active');
+      renumber();
       toggle.setAttribute('aria-pressed', 'true');
       label.textContent = 'Close notes';
       overlay.setAttribute('aria-hidden', 'false');
