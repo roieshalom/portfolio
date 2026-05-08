@@ -52,7 +52,7 @@ body {
   font-size: 1rem;
   letter-spacing: .01em;
   scroll-behavior: smooth;
-  line-height: 1.3rem;
+  line-height: 1.7;
   padding-left: clamp(20px, 5vw, 32px);
   padding-right: clamp(20px, 5vw, 32px);
 }
