@@ -653,7 +653,7 @@
       <span class="cs-eyebrow">The design problem</span>
       <h2 class="cs-h2">The hardest part isn't the tech</h2>
       <p class="cs-p">Word puzzles sound simple. Four groups of four words. But the design space is deceptively deep.</p>
-      <p class="cs-p">The real challenge is intentional misdirection. Take IRON, PRESS, CURL, BENCH — all things you do at the gym. But PRESS also fits a medieval weapons category. IRON fits things you can flip. CURL fits hair styling. That web of almost-right answers is what makes a puzzle feel clever instead of arbitrary. Designing it is the closest thing I've found to level design.</p>
+      <p class="cs-p">The real challenge is intentional misdirection. Take IRON, PRESS, CURL, BENCH, all things you do at the gym. But PRESS also fits a medieval weapons category. IRON fits things you can flip. CURL fits hair styling. That web of almost-right answers is what makes a puzzle feel clever instead of arbitrary. Designing it is the closest thing I've found to level design.</p>
       <p class="cs-p" style="margin-bottom: 0;">Every word on the board has to earn its place. Not just as a correct answer, but as a convincing wrong one.</p>
     </div>
   </section>
@@ -663,7 +663,7 @@
     <div class="cs-text">
       <span class="cs-eyebrow">How it's made</span>
       <h2 class="cs-h2">An AI pipeline with a human editor at the center</h2>
-      <p class="cs-p">Every puzzle starts with a prompt. I built an internal tool called Puzzle Editor 3000 that generates a full puzzle — four categories, four words each, plus intentional decoys designed to blur the lines between groups.</p>
+      <p class="cs-p">Every puzzle starts with a prompt. I built an internal tool called Puzzle Editor 3000 that generates a full puzzle: four categories, four words each, plus intentional decoys designed to blur the lines between groups.</p>
       <p class="cs-p">The generator doesn't just make puzzles. It tracks 28 connection mechanics across four tiers, each with a cooldown period so the same trick never runs two days in a row. A fill-in-blank category can appear weekly. A first-letter acrostic gets saved for once every six weeks. The system reads the last 60 published puzzles before generating a new one, checks which mechanics are underused, and steers toward variety automatically.</p>
       <p class="cs-p">When I export a puzzle, it's appended to the live file on GitHub. The next generation reads that file first. The system has memory.</p>
       <p class="cs-p" style="margin-bottom: 0;">AI proposes. I curate. The system gets sharper over time.</p>
@@ -781,13 +781,13 @@
                 <div class="gp-swim-node gp-auto" style="grid-column:4;grid-row:3">Fetch live puzzle history from GitHub</div>
                 <div class="gp-swim-arr" style="grid-column:5;grid-row:3"></div>
 
-                <div class="gp-swim-node gp-auto" style="grid-column:6;grid-row:3">Scan last 21 puzzles — compute mechanic cooldowns</div>
+                <div class="gp-swim-node gp-auto" style="grid-column:6;grid-row:3">Scan last 21 puzzles, compute mechanic cooldowns</div>
                 <div class="gp-swim-arr" style="grid-column:7;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-auto" style="grid-column:8;grid-row:3">Identify underused Tier 2 and Tier 3 mechanics</div>
                 <div class="gp-swim-arr" style="grid-column:9;grid-row:3"></div>
 
-                <div class="gp-swim-node gp-auto" style="grid-column:10;grid-row:3">Pick spine mechanic — prefer underused, respect cooldowns</div>
+                <div class="gp-swim-node gp-auto" style="grid-column:10;grid-row:3">Pick spine mechanic, prefer underused, respect cooldowns</div>
                 <div class="gp-swim-arr" style="grid-column:11;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-auto" style="grid-column:12;grid-row:3">Generate puzzle with cross-pull decoys</div>
@@ -796,19 +796,19 @@
                 <div class="gp-swim-node gp-auto" style="grid-column:14;grid-row:3">Verify hidden words letter-by-letter</div>
                 <div class="gp-swim-arr" style="grid-column:15;grid-row:3"></div>
 
-                <div class="gp-swim-node gp-auto" style="grid-column:16;grid-row:3">Check all 16 words — duplicates and 60-day repeat rule</div>
+                <div class="gp-swim-node gp-auto" style="grid-column:16;grid-row:3">Check all 16 words, duplicates and 60-day repeat rule</div>
                 <div class="gp-swim-arr" style="grid-column:17;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-auto" style="grid-column:18;grid-row:3">Inject mechanic + tier into each category</div>
                 <div class="gp-swim-arr" style="grid-column:19;grid-row:3"></div>
 
-                <div class="gp-swim-node gp-auto" style="grid-column:20;grid-row:3">Strip scratchpad fields — save clean draft</div>
+                <div class="gp-swim-node gp-auto" style="grid-column:20;grid-row:3">Strip scratchpad fields, save clean draft</div>
 
                 <!-- Handoff: AI → You -->
                 <div class="gp-swim-off gp-up" style="grid-column:21"></div>
 
                 <!-- Steps 11–12: You review and export -->
-                <div class="gp-swim-node gp-human" style="grid-column:22;grid-row:1">Editor review — regenerate weak categories, edit words</div>
+                <div class="gp-swim-node gp-human" style="grid-column:22;grid-row:1">Editor review, regenerate weak categories, edit words</div>
                 <div class="gp-swim-arr" style="grid-column:23;grid-row:1"></div>
 
                 <div class="gp-swim-node gp-human" style="grid-column:24;grid-row:1">Export triggered</div>
@@ -817,7 +817,7 @@
                 <div class="gp-swim-off gp-down" style="grid-column:25"></div>
 
                 <!-- Steps 13–14: AI publishes -->
-                <div class="gp-swim-node gp-auto" style="grid-column:26;grid-row:3">Append to puzzle history — push to GitHub</div>
+                <div class="gp-swim-node gp-auto" style="grid-column:26;grid-row:3">Append to puzzle history, push to GitHub</div>
                 <div class="gp-swim-arr" style="grid-column:27;grid-row:3"></div>
 
                 <div class="gp-swim-node gp-end" style="grid-column:28;grid-row:3">Puzzle is live</div>
@@ -844,7 +844,7 @@
     <div class="cs-text">
       <span class="cs-eyebrow">The tool</span>
       <h2 class="cs-h2">Puzzle Editor 3000</h2>
-      <p class="cs-p">The editor is the interface between AI output and human judgment. Generate a full puzzle, regenerate individual categories, swap words, rename groups, or type your own category and let the AI fill in the words. Every category shows which connection mechanic the model used and which tier it belongs to — so I can see at a glance if the puzzle is mechanically varied or just four versions of the same trick.</p>
+      <p class="cs-p">The editor is the interface between AI output and human judgment. Generate a full puzzle, regenerate individual categories, swap words, rename groups, or type your own category and let the AI fill in the words. Every category shows which connection mechanic the model used and which tier it belongs to, so I can see at a glance if the puzzle is mechanically varied or just four versions of the same trick.</p>
       <p class="cs-p" style="margin-bottom: 0;">The dashboard at the top tracks mechanic usage across the last 21 puzzles. If Tier 2 is dominating, the next generation will steer toward Tier 3 automatically. I can see what's been overused and nudge the system before it gets repetitive.</p>
     </div>
     <div class="cs-img-wrap" style="margin-top: 40px;">
@@ -858,7 +858,7 @@
     <div class="cs-text" style="padding: 0 clamp(20px,5vw,32px); margin-bottom: 40px;">
       <span class="cs-eyebrow">The game</span>
       <h2 class="cs-h2">What the player sees</h2>
-      <p class="cs-p" style="margin-bottom:0;">None of the pipeline is visible to the player. They get 16 words and four attempts. The mechanic, the tier, the cooldowns — all invisible. The only thing that matters is whether the puzzle feels satisfying to solve.</p>
+      <p class="cs-p" style="margin-bottom:0;">None of the pipeline is visible to the player. They get 16 words and four attempts. The mechanic, the tier, the cooldowns. All invisible. The only thing that matters is whether the puzzle feels satisfying to solve.</p>
     </div>
     <div class="gs-stepper" id="gs-stepper">
       <div class="gs-steps">
@@ -938,7 +938,7 @@
     <div class="cs-text">
       <span class="cs-eyebrow">Iteration with data</span>
       <h2 class="cs-h2">Session recordings over surveys</h2>
-      <p class="cs-p">I connected Microsoft Clarity to track how people actually play. People play fast and lose patience faster — a couple of wrong guesses and some players just leave. That insight pushed me to make puzzles more solvable.</p>
+      <p class="cs-p">I connected Microsoft Clarity to track how people actually play. People play fast and lose patience faster. A couple of wrong guesses and some players just leave. That insight pushed me to make puzzles more solvable.</p>
     </div>
 
     <blockquote class="cs-pullquote" style="max-width: 660px; margin-left: auto; margin-right: auto;">
