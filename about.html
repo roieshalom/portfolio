@@ -65,26 +65,26 @@
           .tl-yr { font-size: 12px; color: var(--color-muted); font-weight: 500; letter-spacing: 0.02em; line-height: 1.2; margin: 0; }
           .tl-mid { display: flex; flex-direction: column; align-items: center; }
           .tl-node { width: 12px; height: 12px; border-radius: 50%; background: var(--color-grey-light); z-index: 2; flex-shrink: 0; transition: background 0.4s ease, transform 0.3s ease; cursor: default; margin-top: 2px; }
-          .tl-row.vis .tl-node { background: #E8457A; }
+          .tl-row.vis .tl-node { background: var(--color-link); }
           .tl-row:hover .tl-node { transform: scale(1.5); }
           .tl-node.now { width: 14px; height: 14px; margin-top: 1px; }
           .tl-row.vis .tl-node.now { animation: breathe 2.5s ease-in-out infinite; }
           .tl-row:hover .tl-node.now { animation: none; }
-          @keyframes breathe { 0%,100% { box-shadow: 0 0 0 0 rgba(232,69,122,0.3); } 50% { box-shadow: 0 0 0 8px rgba(232,69,122,0); } }
+          @keyframes breathe { 0%,100% { box-shadow: 0 0 0 0 rgba(242,23,131,0.3); } 50% { box-shadow: 0 0 0 8px rgba(242,23,131,0); } }
           .tl-stem { width: 1.5px; background: var(--color-grey-light); position: relative; overflow: visible; margin: 0; }
-          .tl-stem-fill { width: 100%; height: 0%; background: #E8457A; position: absolute; top: 0; left: 0; transition: height 0.8s ease; }
+          .tl-stem-fill { width: 100%; height: 0%; background: var(--color-link); position: absolute; top: 0; left: 0; transition: height 0.8s ease; }
           .tl-row.vis .tl-stem-fill { height: 100%; }
-          .tl-fade { width: 1.5px; height: 60px; margin-top: 0; background: linear-gradient(to bottom, #E8457A, transparent); opacity: 0; transition: opacity 0.8s ease; }
+          .tl-fade { width: 1.5px; height: 60px; margin-top: 0; background: linear-gradient(to bottom, var(--color-link), transparent); opacity: 0; transition: opacity 0.8s ease; }
           .tl-fade.vis { opacity: 1; }
           .tl-content { padding-left: 12px; }
           .tl-card { padding: 0; border-radius: 12px; border: 0.5px solid transparent; transition: border-color 0.3s ease, background 0.3s ease; }
           .tl-row:hover .tl-card { border-color: var(--color-border); background: var(--color-card); padding: 10px 14px; margin: -10px -14px 0; }
           .tl-role { font-size: 1rem; font-weight: 500; color: var(--color-text-main); margin: 0 0 2px; line-height: 1.2; transition: color 0.3s; }
-          .tl-row:hover .tl-role { color: #E8457A; }
+          .tl-row:hover .tl-role { color: var(--color-link); }
           .tl-co { font-size: 1rem; color: var(--color-text); margin: 0; }
           .tl-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.3s ease; }
           .tl-row:hover .tl-tags { max-height: 120px; opacity: 1; }
-          .tl-tag { font-size: 11px; padding: 3px 10px; border-radius: 99px; background: rgba(232,69,122,0.1); color: #E8457A; white-space: nowrap; font-weight: 500; }
+          .tl-tag { font-size: 11px; padding: 3px 10px; border-radius: 99px; background: var(--color-link-bg); color: var(--color-link); white-space: nowrap; font-weight: 500; }
           .tl-co-list { display: block; }
           .tl-co-item { display: inline; font-size: 1rem; color: var(--color-text); }
           .tl-co-item:not(:last-child)::after { content: ", "; color: var(--color-muted); }
@@ -241,7 +241,7 @@
       <div id="about-cta" style="margin-top:48px; padding-top:28px; border-top:1px solid var(--color-border); opacity:0; transform:translateY(12px); transition:opacity 0.6s ease, transform 0.6s ease;">
         <div class="cta-row" style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
           <p style="font-size:1.05rem; margin:0; color:var(--color-text-main);">If you'd like the full picture, here's my CV.</p>
-          <a href="content/downloads/Roie Shalom Product Design Lead.pdf" download style="display:inline-flex; align-items:center; gap:6px; padding:10px 22px; border-radius:99px; background:#E8457A; color:#fff; font-weight:600; font-size:14px; text-decoration:none; white-space:nowrap; transition:opacity 0.2s; flex-shrink:0;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Download CV</a>
+          <a href="content/downloads/Roie Shalom Product Design Lead.pdf" download style="display:inline-flex; align-items:center; gap:6px; padding:10px 22px; border-radius:99px; background:var(--color-link); color:#fff; font-weight:600; font-size:14px; text-decoration:none; white-space:nowrap; transition:opacity 0.2s; flex-shrink:0;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Download CV</a>
         </div>
       </div>
       <script>
