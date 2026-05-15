@@ -178,7 +178,6 @@ button:focus {
   font-weight: 400;
   text-decoration: none;
   letter-spacing: 0.3px;
-  font-size: 1.1rem;
   padding: 4px 0;
   border-bottom: 1.5px solid transparent;
   transition: color 0.2s, border-color 0.2s;
