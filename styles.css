@@ -985,7 +985,7 @@ p {
 @media (max-width: 767px) {
   .cv-fab { display: flex; }
   .home-hero .cv-circle { display: none; }
-  .home-hero { gap: 0; margin-bottom: 20px; }
+  .home-hero { gap: 0; margin-bottom: 16px; }
 }
 
 body.page-contact .cv-fab { display: none; }
