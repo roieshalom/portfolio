@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=38">
+  <link rel="stylesheet" href="styles.css?v=39">
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
 </head>
 
@@ -179,6 +179,37 @@
   })();
   </script>
   <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
+
+  <button class="cv-fab" type="button" aria-label="Share my CV" onclick="shareCV()">CV</button>
+  <script>
+    async function shareCV() {
+      const fileUrl = 'content/downloads/Roie Shalom Product Design Lead.pdf';
+      const fileName = 'Roie Shalom CV.pdf';
+      try {
+        const res = await fetch(fileUrl);
+        const blob = await res.blob();
+        const file = new File([blob], fileName, { type: 'application/pdf' });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          await navigator.share({
+            files: [file],
+            title: 'Roie Shalom CV',
+            text: 'CV from roiesh.com',
+          });
+          return;
+        }
+      } catch (err) {
+        if (err.name === 'AbortError') return;
+      }
+      const a = document.createElement('a');
+      a.href = fileUrl;
+      a.download = fileName;
+      a.rel = 'noopener';
+      a.target = '_blank';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+  </script>
   <script>
     window.addEventListener('pageshow', function (e) {
       if (e.persisted) {
