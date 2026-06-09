@@ -257,8 +257,13 @@
         <h2 class="cs-h2">Interactive prototype</h2>
         <p class="cs-p">Some projects don't fully leave you. The research and design held up, so I went back and built the interactive prototype this one always deserved, with AI on the code. Type a query, or drag a criterion into the filter bar.</p>
       </div>
+      <div class="cs-prototype-narrow-note">
+        <span class="cs-prototype-narrow-icon">🖥</span>
+        Showing a static preview. Open this page on a wider screen to try the interactive version.
+      </div>
       <div class="cs-prototype-frame">
         <iframe id="atlas-frame" src="content/images/search/atlas-search.html" title="Atlas search prototype" loading="lazy"></iframe>
+        <img class="cs-prototype-image" src="content/images/search/search_prototype.png" alt="Static preview of the Atlas search prototype">
       </div>
     </div>
   </section>
@@ -332,6 +337,7 @@
       padding: 0;
     }
     .cs-prototype-frame {
+      position: relative;
       margin: 24px auto 0;
       border-radius: 16px;
       overflow: hidden;
@@ -345,8 +351,32 @@
       height: 760px;
       border: 0;
     }
-    @media (max-width: 768px) {
-      .cs-prototype-frame iframe { height: 540px; }
+    .cs-prototype-image {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+    .cs-prototype-narrow-note {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      max-width: 720px;
+      margin: 24px auto 0;
+      padding: 14px 18px;
+      background: var(--color-grey-light);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+    .cs-prototype-narrow-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    @media (max-width: 1023px) {
+      .cs-prototype-frame iframe { display: none; }
+      .cs-prototype-image { display: block; }
+      .cs-prototype-narrow-note { display: flex; }
     }
   </style>
 
