@@ -249,6 +249,107 @@
     </div>
   </section>
 
+  <!-- INTERACTIVE PROTOTYPE -->
+  <section class="cs-prototype-section cs-bleed">
+    <div class="cs-inner">
+      <div class="cs-text">
+        <span class="cs-eyebrow">Epilogue</span>
+        <h2 class="cs-h2">Interactive prototype</h2>
+        <p class="cs-p">Some projects don't fully leave you. The research and design held up, so I went back and built the interactive prototype this one always deserved, with AI on the code. Type a query, or drag a criterion into the filter bar.</p>
+      </div>
+      <div class="cs-prototype-frame">
+        <iframe id="atlas-frame" src="content/images/search/atlas-search.html" title="Atlas search prototype" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function() {
+      var frame = document.getElementById('atlas-frame');
+      if (!frame) return;
+      function injectCursorRules() {
+        try {
+          var doc = frame.contentDocument;
+          if (!doc) return;
+          var style = doc.createElement('style');
+          style.textContent = [
+            '*, *::before, *::after { cursor: default !important; }',
+            'a, button, [role="button"], [role="link"], [role="tab"], [role="checkbox"], [role="radio"], [role="menuitem"], [role="option"], [tabindex]:not([tabindex="-1"]), summary, label[for], [draggable="true"] { cursor: pointer !important; }',
+            'input[type="text"], input[type="search"], input[type="email"], input[type="password"], input[type="url"], input[type="number"], input:not([type]), textarea { cursor: text !important; }',
+            'input[type="checkbox"], input[type="radio"] { cursor: pointer !important; }',
+            'input[disabled], button[disabled], [aria-disabled="true"] { cursor: not-allowed !important; }',
+            /* Disable pointer on top decorative chrome (nav/header) and everything inside */
+            'header, header *, nav, nav *, [role="banner"], [role="banner"] *, [role="navigation"], [role="navigation"] * { cursor: default !important; }',
+            /* But keep inputs inside nav/header usable */
+            'header input, header textarea, nav input, nav textarea { cursor: text !important; }'
+          ].join('\n');
+          doc.head.appendChild(style);
+        } catch (e) {}
+      }
+      function fixDragImage() {
+        try {
+          var doc = frame.contentDocument;
+          var win = frame.contentWindow;
+          if (!doc || !win || doc.__atlasDragFixed) return;
+          doc.__atlasDragFixed = true;
+
+          // Create an empty transparent element inside the iframe document.
+          // Using a real DOM element (vs an Image) is the most reliable cross-browser way.
+          var ghostEl = doc.createElement('div');
+          ghostEl.style.cssText = 'position:fixed;top:-9999px;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;';
+          doc.body.appendChild(ghostEl);
+
+          // Use BOTH capture and bubble phases so we override any handler order
+          function suppressGlobe(e) {
+            try {
+              if (e.dataTransfer && e.dataTransfer.setDragImage) {
+                e.dataTransfer.setDragImage(ghostEl, 0, 0);
+                // Also clear any "URL" data the browser might use for the globe preview
+                if (e.dataTransfer.types && e.dataTransfer.setData) {
+                  try { e.dataTransfer.clearData(); } catch (err2) {}
+                }
+              }
+            } catch (err) {}
+          }
+          doc.addEventListener('dragstart', suppressGlobe, true);  // capture
+          doc.addEventListener('dragstart', suppressGlobe, false); // bubble
+        } catch (e) {}
+      }
+      frame.addEventListener('load', function() {
+        injectCursorRules();
+        fixDragImage();
+        setTimeout(injectCursorRules, 500);
+        setTimeout(fixDragImage, 500);
+        setTimeout(injectCursorRules, 1500);
+        setTimeout(fixDragImage, 1500);
+      });
+    })();
+  </script>
+
+  <style>
+    .cs-prototype-section {
+      margin-top: 72px;
+      padding: 0;
+    }
+    .cs-prototype-frame {
+      margin: 24px auto 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      background: #fafbfc;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .cs-prototype-frame iframe {
+      display: block;
+      width: 100%;
+      height: 760px;
+      border: 0;
+    }
+    @media (max-width: 768px) {
+      .cs-prototype-frame iframe { height: 540px; }
+    }
+  </style>
+
   <!-- BACK LINK -->
   <div class="cs-back-wrap">
     <a href="work.html" class="cs-back-link">← Back to all projects</a>
