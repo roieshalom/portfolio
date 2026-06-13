@@ -11,7 +11,7 @@
     "label": "Wayfair",
     "color": "#801566",
     "category": "UX",
-    "thumbnail": "content/images/wayfair/uoethumb.png",
+    "thumbnail": "content/images/wayfair/uoethumb-2.jpeg",
     "homepage": false,
     "protected": true,
     "show": true
@@ -52,7 +52,7 @@
     "label": "BuildingMinds",
     "color": "#ffb60a",
     "category": "UX",
-    "thumbnail": "content/images/eqc/eqcthumb.png",
+    "thumbnail": "content/images/eqc/eqcthumb.jpeg",
     "imagefolder": "content/images/eqc/eqcdesign.pdf",
     "imageprefix": "eqc",
     "homepage": false,

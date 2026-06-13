@@ -521,8 +521,13 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #fff;
-  opacity: 0.7;
+  opacity: 0.85;
   pointer-events: none;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.28);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 
 .gallery-tile img {
