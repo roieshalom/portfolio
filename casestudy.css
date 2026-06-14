@@ -43,7 +43,7 @@
 
 /* Narrow text column */
 .cs-text {
-  max-width: 660px;
+  max-width: 800px;
   width: 100%;
   box-sizing: border-box;
   margin-left: auto;
