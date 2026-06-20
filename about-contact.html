@@ -19,13 +19,12 @@
 
 <body>
   <nav class="top-nav">
-    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
+    <a href="homework.html" class="brand" id="desktop-brand">Roie Shalom</a>
     <button class="nav-menu-toggle" aria-label="Open menu" aria-expanded="false"><span class="nav-icon">☰</span></button>
     <div class="top-nav-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="work.html" class="nav-link">Work</a>
-      <a href="about.html" class="nav-link active">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="homework.html" class="nav-link">Home</a>
+      <a href="homework.html#hw-work" class="nav-link">Work</a>
+      <a href="about-contact.html" class="nav-link active">About &amp; Contact</a>
     </div>
   </nav>
   <main class="main-content">
@@ -58,7 +57,7 @@
       <h2 class="about-h" style="margin-top:32px;">Where I've been</h2>
       <div id="tl" style="padding:1rem 0; max-width:100%;">
         <style>
-          .section p, .about-h { max-width: 800px; margin-left: auto; margin-right: auto; }
+          .section p, .about-h { max-width: 660px; margin-left: auto; margin-right: auto; }
           .tl-row { display: grid; grid-template-columns: 80px 40px 1fr; gap: 0; position: relative; opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
           .tl-row.vis { opacity: 1; transform: translateY(0); }
           .tl-yr-col { text-align: right; padding-right: 4px; }
@@ -258,7 +257,46 @@
         })();
       </script>
     </section>
+
+    <section class="section" style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--color-border);">
+      <h2 class="about-h" style="margin-bottom: 12px;">Get in touch</h2>
+      <p style="max-width: 660px; margin-left: auto; margin-right: auto;">Looking to hire, collaborate, or just want to say hello? Fill in the form and I'll get back to you.</p>
+      <form class="contact-form" id="contact-form" style="max-width: 660px; margin-left: auto; margin-right: auto;">
+        <div class="form-row">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required placeholder="Jane Smith">
+        </div>
+        <div class="form-row">
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="email" required placeholder="jane@example.com">
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="What's on your mind?" rows="5"></textarea>
+        </div>
+        <button type="submit">Send message</button>
+      </form>
+      <p class="form-success" id="form-success" style="display:none; max-width: 660px; margin-left: auto; margin-right: auto;">Thanks! I'll be in touch soon.</p>
+    </section>
   </main>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const res = await fetch('https://formspree.io/f/mkoqgrwg', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      }
+    });
+  </script>
+
   <script src="access.js"></script>
   <script src="nav.js"></script>
   <script src="clarity.js" defer></script>
