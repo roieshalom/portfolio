@@ -2,3 +2,11 @@ AddHandler application/x-httpd-php .phtml
 
 RewriteEngine On
 RewriteRule ^in$ in.php [L]
+
+# Always revalidate HTML so visitors get the current pages (keeps analytics
+# scripts and content fresh instead of serving a stale cached copy).
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
