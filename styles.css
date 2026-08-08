@@ -471,7 +471,7 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.6rem;
-  padding: 2rem 0;
+  padding: 0.5rem 0 2rem;
 }
 
 .home-grid {
@@ -487,12 +487,15 @@ p {
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-card);
-  overflow: hidden;
   background: var(--color-card, #fff);
   transition: box-shadow 0.23s cubic-bezier(.5,.2,.23,1), transform 0.17s cubic-bezier(.4,1,.4,1);
   box-shadow: 0 1.5px 9px var(--color-card-shadow);
   text-decoration: none;
   color: var(--color-text);
+  /* No overflow:hidden here on purpose. This element runs the 3D tilt
+     transform, and a rounded clip on a transformed element gets dropped by the
+     compositor mid-animation. Bottom corners come from the background radius
+     above; the top corners are painted on the image (see .tile-img-wrap img). */
 }
 
 .gallery-tile:focus {
@@ -502,7 +505,12 @@ p {
 .tile-img-wrap {
   position: relative;
   height: 200px;
+  /* Plain rectangular clip only. A ROUNDED clip here (overflow:hidden +
+     border-radius) gets dropped by Chrome's compositor while the parent tile
+     runs its 3D tilt animation, which made the corners flatten mid-hover.
+     The radius is painted on the image itself instead, which needs no clip. */
   overflow: hidden;
+  border-radius: 0;
 }
 
 .tile-img-wrap img {
@@ -510,6 +518,7 @@ p {
   height: 200px;
   object-fit: cover;
   display: block;
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
   transition: filter 0.2s;
 }
 
@@ -848,7 +857,8 @@ p {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  border-radius: inherit;
+  /* Explicit, not inherit: the wrapper's radius is now 0 (see .tile-img-wrap) */
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
   opacity: 0;
   transition: opacity 0.2s;
   pointer-events: none;
