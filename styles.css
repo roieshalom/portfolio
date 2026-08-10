@@ -263,6 +263,31 @@ button:focus {
   }
 }
 
+/* A nav holding a single link needs no burger menu, so it stays inline at
+   every width instead of collapsing into the mobile dropdown above. */
+.top-nav-links.nav-single {
+  display: flex;
+  /* Breathing room from the wordmark, which wraps to two lines on phones. */
+  margin-left: 20px;
+  flex-direction: row;
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  background: none;
+  border-bottom: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.top-nav-links.nav-single .nav-link {
+  padding: 4px 0;
+  width: auto;
+  /* Keep it on one line. Wrapped, it doubles the nav height on phones. */
+  white-space: nowrap;
+}
+
 /* ============================================
    LAYOUT
    ============================================ */
