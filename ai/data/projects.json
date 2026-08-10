@@ -36,7 +36,8 @@
     "thumbnail": "../content/images/side_projects/fk_gallery.svg",
     "link": "https://www.fragen-katalog.com",
     "category": "AI · Education",
-    "show": false
+    "show": false,
+    "color": "#3d5a80"
   },
   {
     "id": "b1wortschatz",
@@ -47,7 +48,8 @@
     "thumbnail": "../content/images/side_projects/b1w_gallery.svg",
     "link": "https://www.b1wortschatz.de",
     "category": "AI · Education",
-    "show": false
+    "show": false,
+    "color": "#8367c7"
   },
   {
     "id": "disclaimerjar",
@@ -58,6 +60,7 @@
     "thumbnail": "../content/images/side_projects/dj_gallery.svg",
     "link": "https://roieshalom.github.io/disclaimer-jar/",
     "category": "AI · Tool",
-    "show": false
+    "show": false,
+    "color": "#f4a259"
   }
 ]
