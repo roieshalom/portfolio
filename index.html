@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=54">
+  <link rel="stylesheet" href="styles.css?v=56">
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
 </head>
 
@@ -105,9 +105,9 @@
         `;
         }).join('');
         // Placeholder tile so the AI row stays balanced at three across.
-        // Doubles as the way into the full AI experiments hub.
+        // Not a link: purely visual balance (see aria-hidden below).
         const placeholder = `
-          <a href="https://ai.roiesh.com/" class="gallery-tile coming-soon-tile">
+          <div class="gallery-tile coming-soon-tile" aria-hidden="true">
             <div class="tile-img-wrap">
               <div class="coming-soon-img"><span>Coming soon</span></div>
             </div>
@@ -115,7 +115,7 @@
               <div class="tile-label"><strong>Something new</strong></div>
               <div class="tile-desc">There's always one in progress. This one isn't ready yet.</div>
             </div>
-          </a>
+          </div>
         `;
         gallery.innerHTML = tiles + placeholder;
       })
