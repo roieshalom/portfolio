@@ -47,8 +47,9 @@
     "desc": "Flashcard-based vocabulary trainer for the B1 German level. A simple, distraction-free way to build the word bank you need to pass the test.",
     "thumbnail": "../content/images/side_projects/b1w_gallery.svg",
     "link": "https://www.b1wortschatz.de",
+    "page": "ai/b1-wortliste/",
     "category": "AI · Education",
-    "show": false,
+    "show": true,
     "color": "#8367c7"
   },
   {

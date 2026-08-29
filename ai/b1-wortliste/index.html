@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <title>B1-WortschatzÜbung</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C0CSPW20QX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C0CSPW20QX');
+  </script>
+
+  <!-- Google Fonts Noto Sans -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="themes/main.css">
+  <link rel="stylesheet" href="themes/light.css">
+  <link rel="stylesheet" href="themes/brutalist.css">
+</head>
+
+<body>
+  <div class="theme-bar">
+    <button class="theme-btn theme-btn-default" onclick="setTheme('light')">
+      Default
+    </button>
+    <button class="theme-btn theme-btn-brutalist" onclick="setTheme('brutalist')">
+      Brutalist
+    </button>
+  </div>
+
+  <div class="header">
+    <div class="header-inner">
+      <h1 class="app-title">B1-WortschatzÜbung</h1>
+      <div class="header-links">
+        <a href="#feedback" id="feedback-link" class="header-feedback-link">Feedback</a>
+        <a href="#ueber" id="about-link">Über</a>
+        <a href="https://www.b2wortschatz.de" target="_blank" id="about-link">B2 ↗&#xfe0e;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-layout">
+    <div id="game-container"></div>
+    <button id="next-btn">Next</button>
+  </div>
+
+  <!-- ABOUT MODAL -->
+  <div class="about-modal-overlay" id="about-overlay">
+    <div class="about-modal" id="about-modal">
+      <div class="about-modal-header">
+        <h2 class="about-modal-title">
+          Über
+          <span>
+            <button
+              type="button"
+              class="about-modal-lang-btn active"
+              id="about-lang-de"
+              aria-label="Deutsch"
+            >🇩🇪</button>
+            <button
+              type="button"
+              class="about-modal-lang-btn"
+              id="about-lang-en"
+              aria-label="English"
+            >🇬🇧</button>
+          </span>
+        </h2>
+        <button class="about-modal-close" id="about-close-btn" aria-label="Schließen">&times;</button>
+      </div>
+
+      <div class="about-modal-body">
+        <p id="about-text-de">
+          <span style="font-weight:600;">
+            Diese Seite hilft dir, den gesamten wichtigen Wortschatz der offiziellen Goethe-B1-Wortliste zu lernen.
+          </span>
+          <br><br>
+          Diese Seite ist ein kleines persönliches Projekt, das ich für mich selbst erstellt habe, um meinen Wortschatz auf B1‑Niveau zu üben.
+          Sie verwendet frei verfügbare Daten, die sich an der Goethe‑B1‑Wortliste orientieren,
+          ist aber nicht offiziell und steht in keiner Verbindung zum Goethe‑Institut oder zu anderen Prüfungsanbietern.
+          <br>
+          Ich kann weder Vollständigkeit noch Richtigkeit garantieren; Fehler können auftreten.
+          Die Nutzung erfolgt auf eigene Verantwortung – ich übernehme keine Haftung für Folgen,
+          Entscheidungen oder Schäden, die aus der Verwendung der hier bereitgestellten Informationen entstehen.
+        </p>
+
+        <p id="about-text-en" style="display:none;">
+          <span style="font-weight:600;">
+            This site helps you learn all key vocabulary from the official Goethe B1 word list.
+          </span>
+          <br><br>
+            This site is a small personal project I built for myself to practice German vocabulary at B1 level.
+            It uses publicly available data based on the Goethe B1 word list and is not official or affiliated with Goethe‑Institut or any exam provider.
+            <br>
+            I cannot guarantee completeness or correctness; mistakes can occur.
+            Use this site at your own risk – I assume no responsibility for any consequences,
+            decisions, or damages that result from using the information here.
+        </p>
+      </div>
+
+      <div class="about-modal-bottom">
+        <a
+          href="https://buymeacoffee.com/roiesh"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="primary-btn"
+          id="support-btn"
+          style="text-align:center; text-decoration:none; display:block;"
+        >
+          ❤️ Support this project
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FEEDBACK MODAL -->
+  <div class="about-modal-overlay" id="feedback-overlay">
+    <div class="about-modal" id="feedback-modal">
+      <div class="about-modal-header">
+        <h2 class="about-modal-title">Feedback</h2>
+        <button class="about-modal-close" id="feedback-close-btn" aria-label="Schließen">&times;</button>
+      </div>
+
+      <div class="about-modal-body">
+        <p class="about-contact-text">
+          Kurzes Feedback zur Seite? <br>Fehler gefunden? Schreib mir gerne.
+        </p>
+        <form
+          id="about-contact-form"
+          action="https://formspree.io/f/xrekgolz"
+          method="POST"
+        >
+          <label for="contact-email">E‑Mail</label>
+          <input
+            id="contact-email"
+            type="email"
+            name="email"
+            required
+          >
+
+          <label for="contact-message">Nachricht</label>
+          <textarea
+            id="contact-message"
+            name="message"
+            required
+          ></textarea>
+
+          <button type="submit" class="primary-btn">
+            Senden
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const WORD_KEY = "Wortliste";
+    const MEANING_KEY = "Meaning";
+    const ENGLISH_KEY = "English";
+    let vocabData = [];
+    let currentIdx = 0;
+    
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+    
+    function adjustOuterHeight(outer, front, back) {
+      setTimeout(() => {
+        const frontHeight = front.scrollHeight;
+        const backHeight = back.scrollHeight;
+        const maxHeight = Math.max(frontHeight, backHeight, 180);
+        outer.style.minHeight = maxHeight + "px";
+      }, 0);
+    }
+    
+    function renderCard(idx) {
+      const container = document.getElementById('game-container');
+      container.innerHTML = "";
+      
+      const item = vocabData[idx];
+      if (!item) {
+        container.innerHTML = "<p>No card found.</p>";
+        return;
+      }
+      
+      const word = item[WORD_KEY] || Object.values(item)[0];
+      const meaning = item[MEANING_KEY] || "";
+      const english = item[ENGLISH_KEY] || "";
+      
+      const outer = document.createElement('div');
+      outer.className = 'flip-card-outer';
+      
+      const card = document.createElement('div');
+      card.className = 'flip-card';
+      card.innerHTML = `
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            ${word}
+            <button class="tap-hint-badge" type="button" aria-hidden="true">
+              👆
+              <span>Tap</span>
+            </button>
+          </div>
+          <div class="flip-card-back">
+            <div class="back-english">${english}</div>
+            <div class="back-meaning">${meaning}</div>
+          </div>
+        </div>
+      `;
+
+      // first-visit indicator
+      let hasSeenHint = localStorage.getItem('hasSeenFlipHint') === '1';
+      if (!hasSeenHint) {
+        card.classList.add('show-tap-hint');
+      }
+
+      card.addEventListener('click', function() {
+        card.classList.toggle('flipped');
+        const front = card.querySelector('.flip-card-front');
+        const back = card.querySelector('.flip-card-back');
+        adjustOuterHeight(outer, front, back);
+
+        // on first actual tap: hide hint forever
+        if (!hasSeenHint) {
+          hasSeenHint = true;
+          card.classList.remove('show-tap-hint');
+          localStorage.setItem('hasSeenFlipHint', '1');
+        }
+      });
+      
+      outer.appendChild(card);
+      container.appendChild(outer);
+      
+      const front = card.querySelector('.flip-card-front');
+      const back = card.querySelector('.flip-card-back');
+      adjustOuterHeight(outer, front, back);
+    }
+    
+    function showCard(idx) {
+      if (vocabData.length === 0) return;
+      if (idx < 0) idx = 0;
+      if (idx >= vocabData.length) idx = 0;
+      currentIdx = idx;
+      renderCard(currentIdx);
+    }
+    
+    fetch('csvjson.json')
+      .then(response => response.json())
+      .then(data => {
+        vocabData = data;
+        shuffleArray(vocabData);
+        showCard(0);
+      })
+      .catch(error => {
+        document.getElementById('game-container').innerText =
+          'Fehler beim Laden der Wortliste: ' + error;
+      });
+    
+    document.getElementById('next-btn').addEventListener('click', function() {
+      if (vocabData.length > 0) {
+        currentIdx = (currentIdx + 1) % vocabData.length;
+        showCard(currentIdx);
+      }
+    });
+
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      setTheme(savedTheme);
+
+      const aboutLink = document.getElementById('about-link');
+      const aboutOverlay = document.getElementById('about-overlay');
+      const aboutCloseBtn = document.getElementById('about-close-btn');
+      const langDeBtn = document.getElementById('about-lang-de');
+      const langEnBtn = document.getElementById('about-lang-en');
+      const textDe = document.getElementById('about-text-de');
+      const textEn = document.getElementById('about-text-en');
+
+      const feedbackOverlay = document.getElementById('feedback-overlay');
+      const feedbackCloseBtn = document.getElementById('feedback-close-btn');
+      const feedbackOpenBtn = document.getElementById('feedback-open-btn');
+      const feedbackHeaderLink = document.getElementById('feedback-link');
+      const contactForm = document.getElementById('about-contact-form');
+      const supportBtn = document.getElementById('support-btn');
+
+      // Initial About language state (DE is default)
+      if (supportBtn) {
+        supportBtn.textContent = '❤️ Projekt unterstützen';
+      }
+
+      function openAbout() {
+        aboutOverlay.classList.add('open');
+      }
+
+      function closeAbout() {
+        aboutOverlay.classList.remove('open');
+      }
+
+      function openFeedback() {
+        feedbackOverlay.classList.add('open');
+      }
+
+      function closeFeedback() {
+        feedbackOverlay.classList.remove('open');
+      }
+
+      // Über link
+      aboutLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        openAbout();
+      });
+
+      aboutCloseBtn.addEventListener('click', closeAbout);
+
+      aboutOverlay.addEventListener('click', function(e) {
+        if (e.target === aboutOverlay) {
+          closeAbout();
+        }
+      });
+
+      // Language toggle in Über modal
+      langDeBtn.addEventListener('click', () => {
+        langDeBtn.classList.add('active');
+        langEnBtn.classList.remove('active');
+        textDe.style.display = 'block';
+        textEn.style.display = 'none';
+        if (supportBtn) supportBtn.textContent = '❤️ Projekt unterstützen';
+      });
+
+      langEnBtn.addEventListener('click', () => {
+        langEnBtn.classList.add('active');
+        langDeBtn.classList.remove('active');
+        textDe.style.display = 'none';
+        textEn.style.display = 'block';
+        if (supportBtn) supportBtn.textContent = '❤️ Support this project';
+      });
+
+      // Feedback modal from About button
+      if (feedbackOpenBtn) {
+        feedbackOpenBtn.addEventListener('click', () => {
+          closeAbout();
+          openFeedback();
+        });
+      }
+
+      // Feedback modal from header link
+      if (feedbackHeaderLink) {
+        feedbackHeaderLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          openFeedback();
+        });
+      }
+
+      feedbackCloseBtn.addEventListener('click', closeFeedback);
+
+      feedbackOverlay.addEventListener('click', function(e) {
+        if (e.target === feedbackOverlay) {
+          closeFeedback();
+        }
+      });
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', function () {
+          const btn = contactForm.querySelector('button[type="submit"]');
+          if (btn) {
+            btn.disabled = true;
+            btn.textContent = 'Senden...';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
