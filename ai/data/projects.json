@@ -28,6 +28,19 @@
     "show": true
   },
   {
+    "id": "onpaper",
+    "title_bold": "On Paper",
+    "title_regular": "",
+    "label": "AI Project",
+    "color": "#e0a458",
+    "shortdesc": "Compare your CV and match the job description",
+    "desc": "Compare your CV and match the job description.",
+    "thumbnail": "../content/images/side_projects/op_gallery.jpg",
+    "link": "https://onpaper.fit",
+    "category": "AI · Web App",
+    "show": true
+  },
+  {
     "id": "fragenkatalog",
     "title_bold": "Fragen Katalog",
     "title_regular": "Einbürgerung Test Practice",
