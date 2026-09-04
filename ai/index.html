@@ -62,18 +62,7 @@
           </a>
         `;
         }).join('');
-        const placeholder = `
-          <div class="gallery-tile coming-soon-tile" aria-hidden="true">
-            <div class="tile-img-wrap">
-              <div class="coming-soon-img"><span>Coming soon</span></div>
-            </div>
-            <div class="tile-overlay">
-              <div class="tile-label"><strong>Something new</strong></div>
-              <div class="tile-desc">There's always one in progress. This one isn't ready yet.</div>
-            </div>
-          </div>
-        `;
-        gallery.innerHTML = tiles + placeholder;
+        gallery.innerHTML = tiles;
       })
       .catch(err => console.error(err));
   </script>

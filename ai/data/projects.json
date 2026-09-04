@@ -90,5 +90,18 @@
     "category": "AI · Music",
     "show": true,
     "color": "#2e6b4f"
+  },
+  {
+    "id": "b2wortschatz",
+    "title_bold": "B2 Wortschatz",
+    "title_regular": "Vocabulary Flashcards",
+    "shortdesc": "German B2 vocabulary flashcards",
+    "desc": "Flashcard-based vocabulary trainer for the B2 German level. Flip through the key words, switch translation language, and drill the ones you miss.",
+    "thumbnail": "../content/images/side_projects/b2w_gallery.svg",
+    "link": "https://b2wortschatz.de",
+    "page": "ai/de-b2-wortliste/",
+    "category": "AI · Education",
+    "show": true,
+    "color": "#2a9d8f"
   }
 ]

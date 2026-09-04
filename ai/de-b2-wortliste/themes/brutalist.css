@@ -1,0 +1,20 @@
+:root[data-theme="brutalist"] {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0 0 0);
+  --primary: #158d4b;
+  --primary-hover: #0f6d39;
+  --card-bg: oklch(100% 0.00011 271.152);
+  --card-shadow: 4px 4px 0px 0px hsl(0 0% 0% / 1);
+  --text-primary: #158d4b;
+  --text-secondary: oklch(100% 0.00011 271.152);
+  --accent: oklch(100% 0.00011 271.152);
+  --border-radius: 0px;
+  --border-radius-sm: 0px;
+  --shadow-sm: 7px 7px 0px 0px hsl(0 0% 0% / 1);
+  --card-border: 2px solid black;
+  --button-radius: 0px;
+  --font-family: 'Oxanium', Courier, monospace;
+  --header-text: oklch(0 0 0);
+  --header-link: #158d4b;
+  --header-link-hover: #0f6d39;
+}

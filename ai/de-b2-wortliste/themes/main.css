@@ -1,0 +1,690 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');
+
+/* Generic defaults (overridden by theme files) */
+:root {
+  --background: #f5f5f5;
+  --foreground: #333;
+  --primary: #b01e73;
+  --primary-hover: #92175f;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  --card-border: 1px solid transparent;
+  --text-primary: c;
+  --text-secondary: #ffffff;
+  --accent: #ffe082;
+  --border-radius: 18px;
+  --border-radius-sm: 6px;
+  --shadow-sm: 0 4px 16px rgba(0,0,0,0.15);
+  --spacing-xs: 5px;
+  --spacing-sm: 12px;
+  --spacing-md: 24px;
+  --spacing-lg: 36px;
+  --font-family: 'Noto Sans', Arial, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --header-text: #333;
+  --header-link: #b01e73;
+  --header-link-hover: #92175f;
+}
+
+/* Shared styles using variables */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  background: var(--background);
+  margin: 0;
+  padding: 0;
+  color: var(--foreground);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 0.3em;
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  margin-bottom: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Header */
+.header {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--header-text); 
+  font-family: var(--font-family);
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--header-text);
+  margin: 0;
+  font-family: var(--font-family);
+}
+
+.header-links {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.header-links a {
+  color: var(--header-link);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: var(--font-family);
+  text-decoration: underline;
+}
+
+.header-links a:hover {
+  color: var(--header-link-hover);
+  text-decoration: underline;
+}
+
+#settings-link {
+  text-decoration: none;
+  font-size: 1.7rem;
+}
+
+#game-container {
+  margin-top: var(--spacing-lg);
+  margin-bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* outer wrapper */
+.flip-card-outer {
+  width: 340px;
+  max-width: 95vw;
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 180px;
+  height: auto;
+}
+
+/* Container only sets perspective, no border/shadow */
+.flip-card {
+  width: 100%;
+  position: relative;
+  min-height: 180px;
+  perspective: 1200px;
+}
+
+/* Faces wrapper */
+.flip-card-inner {
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.8,1,.2,1);
+}
+
+/* When flipped, rotate the faces wrapper */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back share styles */
+.flip-card-front,
+.flip-card-back {
+  width: 100%;
+  border-radius: var(--border-radius);
+  border: var(--card-border, 1px solid transparent);
+  box-shadow: var(--card-shadow, var(--shadow-sm));
+  background: var(--card-bg);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4em;
+  padding: 32px 24px;
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-family);
+  box-sizing: border-box;
+  word-break: break-word;
+
+  backface-visibility: hidden;
+  transition: background 0.3s;
+}
+
+/* FRONT: sits on top, stretches to whatever height back has */
+.flip-card-front {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  color: var(--text-primary);
+  background: var(--card-bg);
+}
+
+/* BACK: normal flow, controls the height */
+.flip-card-back {
+  position: relative;          /* was absolute */
+  transform: rotateY(180deg);
+  background: var(--primary);
+  color: var(--text-secondary);
+
+  /* allow extreme cases to scroll, optional */
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.back-english {
+  font-size: 0.9em;
+  color: var(--accent);
+  background: rgba(255,255,255,0.07);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 12px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-weight: var(--font-weight-normal);
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.back-meaning {
+  font-size: 0.7em;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+}
+
+#next-btn {
+  padding: 12px 40px;
+  font-size: 1.1em;
+  border-radius: var(--button-radius, 10px);
+  border: none;
+  background: var(--primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  display: block;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  transition: background 0.2s;
+}
+
+#next-btn:hover {
+  background: var(--primary-hover);
+}
+
+.primary-btn {
+  padding: 12px 40px;
+  font-size: 1.1em;
+  border-radius: var(--button-radius, 10px);
+  border: none;
+  background: var(--primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: block;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  transition: background 0.2s;
+  margin: 16px auto 0;   /* add this line */
+}
+
+
+.primary-btn:hover {
+  background: var(--primary-hover);
+}
+
+
+/* Theme switcher */
+.theme-switcher {
+  display: flex;
+  gap: 0.5rem;
+  margin: var(--spacing-lg) 0;
+  justify-content: center;
+}
+
+.theme-switcher button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary);
+  background: var(--background);
+  color: var(--foreground);
+  cursor: pointer;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-family);
+}
+
+/* Fixed gray bar for theme buttons */
+.theme-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background: #e5e5e5;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Base style for theme buttons */
+.theme-btn {
+  min-width: 110px;
+  padding: 8px 16px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Default theme button look */
+.theme-btn-default {
+  border-radius: 10px;
+  border-color: #b01e73;
+  color: #92175f;
+  font-family: 'Noto Sans', Arial, sans-serif;
+}
+
+/* Brutalist theme button look */
+.theme-btn-brutalist {
+  border-radius: 0;
+  border-color: rgb(0, 0, 0);
+  color: #158d4b;
+  box-shadow: 2px 2px 0px hsl(0 0% 0% / 1);
+  font-family: 'Geo', Courier, monospace;
+}
+
+/* Hover states */
+.theme-btn-default:hover {
+  background: #c3ecff;
+}
+
+.theme-btn-brutalist:hover {
+  background: #ffe1e1;
+}
+
+/* Feedback form inside modal */
+.about-modal-body form {
+  margin-top: 12px;
+}
+
+.about-modal-body label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.about-modal-body input[type="email"],
+.about-modal-body textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+}
+
+.about-modal-body textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+
+/* About modal – aligned with source styles */
+.about-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 16px 16px;
+  box-sizing: border-box;
+}
+
+.about-modal-overlay.open {
+  display: flex;
+}
+
+.about-modal {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  max-height: 75vh;
+  min-height: 580px;
+  padding: 16px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1001;
+  pointer-events: auto;
+  color: #333;
+}
+
+.about-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+}
+
+.about-modal-close:hover {
+  color: #000;
+}
+
+.about-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 4px 4px 12px 4px;
+}
+
+.about-header-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* keep title left */
+  gap: 4px;
+}
+
+.about-modal-title {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+.about-modal-lang-btn {
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+.about-modal-lang-btn.active {
+  opacity: 1;
+}
+
+/* scrollable body, force left aligned */
+.about-modal-body {
+  overflow-y: auto;
+  flex: 1;
+  margin-top: 10px;
+  max-height: calc(90vh - 140px);
+  width: 100%;
+  box-sizing: border-box;
+  scrollbar-width: none;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 5px; 
+  text-align: left !important;
+}
+
+.about-modal-body::-webkit-scrollbar {
+  display: none;
+}
+
+.about-modal-body p {
+  margin: 0;
+  text-align: left !important;
+}
+
+/* bottom email + support button */
+.about-modal-bottom {
+  align-self: center;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* old email link style (kept in case used elsewhere) */
+.about-modal-email {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--primary);
+  text-decoration: underline;
+  margin-bottom: 12px;
+}
+
+/* support button styled like floating-support-button */
+.support-button-placeholder {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+}
+
+.support-button-placeholder:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  background-color: var(--primary-hover);
+}
+
+/* ========================= */
+/* NEW: ABOUT FEEDBACK STYLES */
+/* ========================= */
+
+.about-modal-button {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.about-modal-button:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.about-contact-text {
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+#feedback-view form {
+  margin-top: 8px;
+}
+
+#feedback-view label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+#feedback-view input,
+#feedback-view textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: var(--font-family);
+  font-size: 13px;
+}
+
+.about-contact-submit:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.about-contact-submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.about-contact-back {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.about-contact-note {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.about-header-back {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  border: none;
+  background: transparent;
+  color: var(--header-link);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.about-back-row {
+  width: 100%;
+}
+
+.about-back-btn {
+  width: 100%;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--header-link);
+}
+
+/* Tap hint badge (first visit only) */
+.tap-hint-badge {
+  position: absolute;
+  bottom: -18px;
+  right: -18px;
+  width: 102px;
+  height: 102px;
+  border-radius: 999px;
+  border: none;
+  background-color: #b01e7383;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: default;
+  pointer-events: none;
+
+  /* hidden by default */
+  opacity: 0;
+  transform: translateY(8px) scale(0.9);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.tap-hint-badge span {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 9px;
+}
+
+/* only when JS adds .show-tap-hint */
+.show-tap-hint .tap-hint-badge {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Settings modal */
+.settings-section {
+  margin-bottom: 1.2rem;
+}
+.settings-section h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.5rem;
+  opacity: 0.55;
+}
+.settings-section label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.settings-section input[type="checkbox"],
+.settings-section input[type="radio"] {
+  accent-color: var(--color-primary);
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}

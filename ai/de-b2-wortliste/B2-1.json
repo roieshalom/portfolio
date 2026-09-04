@@ -1,0 +1,5581 @@
+[
+  {
+    "Wortliste": "die Vorstellung, -en",
+    "English": "the introduction; the performance; the idea",
+    "Meaning": "1. Nach der Vorstellung haben wir uns alle kurz vorgestellt.\n2. Die Theateraufführung gestern war eine tolle Vorstellung.",
+    "Hebrew": "הצגה / מופע / מושג / היכרות",
+    "Ukrainian": "уявлення / вистава / знайомство"
+  },
+  {
+    "Wortliste": "das Zitat, -e",
+    "English": "the quotation",
+    "Meaning": "Das Zitat aus dem Buch passt sehr gut zu unserem Thema.",
+    "Hebrew": "ציטוט",
+    "Ukrainian": "цитата"
+  },
+  {
+    "Wortliste": "das Fernweh (Sg.)",
+    "English": "the wanderlust; longing to travel far away",
+    "Meaning": "Im Winter habe ich immer starkes Fernweh nach warmen Ländern.",
+    "Hebrew": "געגוע לנדודים / כמיהה לטייל",
+    "Ukrainian": "потяг до мандрів / туга за далекими краями"
+  },
+  {
+    "Wortliste": "der Arbeitsvertrag, \"-e",
+    "English": "the employment contract",
+    "Meaning": "Bevor ich anfange zu arbeiten, muss ich den Arbeitsvertrag unterschreiben.",
+    "Hebrew": "חוזה עבודה",
+    "Ukrainian": "трудовий договір"
+  },
+  {
+    "Wortliste": "auflösen",
+    "English": "to dissolve; to cancel; to resolve",
+    "Meaning": "Wir mussten den Mietvertrag früher auflösen.",
+    "Hebrew": "לבטל / לפרק / להמיס",
+    "Ukrainian": "розчиняти / розривати / ліквідувати"
+  },
+  {
+    "Wortliste": "beantragen",
+    "English": "to apply for; to request officially",
+    "Meaning": "Hast du schon die Arbeitserlaubnis beantragt?",
+    "Hebrew": "לבקש / להגיש בקשה",
+    "Ukrainian": "подавати заяву / клопотати"
+  },
+  {
+    "Wortliste": "eröffnen",
+    "English": "to open; to inaugurate",
+    "Meaning": "Nächste Woche eröffnet in unserer Straße ein neues Café.",
+    "Hebrew": "לפתוח / להקים",
+    "Ukrainian": "відкривати / засновувати"
+  },
+  {
+    "Wortliste": "der Handyvertrag, \"-e",
+    "English": "the mobile phone contract",
+    "Meaning": "Mein Handyvertrag läuft noch ein Jahr.",
+    "Hebrew": "חוזה טלפון סלולרי",
+    "Ukrainian": "договір на мобільний телефон"
+  },
+  {
+    "Wortliste": "knüpfen",
+    "English": "to tie; to establish (contacts)",
+    "Meaning": "Auf der Konferenz konnte ich viele neue Kontakte knüpfen.",
+    "Hebrew": "לקשור / ליצור (קשרים)",
+    "Ukrainian": "зав'язувати / налагоджувати (контакти)"
+  },
+  {
+    "Wortliste": "der Kontakt, -e",
+    "English": "the contact",
+    "Meaning": "Ich habe noch Kontakt zu meinen Kollegen aus Deutschland.",
+    "Hebrew": "קשר / מגע",
+    "Ukrainian": "контакт / зв'язок"
+  },
+  {
+    "Wortliste": "der Mietvertrag, \"-e",
+    "English": "the rental contract; the lease",
+    "Meaning": "Im Mietvertrag steht, dass Haustiere erlaubt sind.",
+    "Hebrew": "חוזה שכירות",
+    "Ukrainian": "договір оренди"
+  },
+  {
+    "Wortliste": "der/die Nachmieter/in, -/-nen",
+    "English": "the new tenant; the successor tenant",
+    "Meaning": "Wir suchen noch einen Nachmieter für unsere Wohnung.",
+    "Hebrew": "דייר/ת הבא/ה",
+    "Ukrainian": "наступний орендар / наступна орендарка"
+  },
+  {
+    "Wortliste": "abenteuerlich",
+    "English": "adventurous",
+    "Meaning": "Die Reise durch Südamerika war sehr abenteuerlich.",
+    "Hebrew": "הרפתקני",
+    "Ukrainian": "пригодницький / авантюрний"
+  },
+  {
+    "Wortliste": "die Arbeitserlaubnis, -se",
+    "English": "the work permit",
+    "Meaning": "Ohne Arbeitserlaubnis darf ich hier nicht arbeiten.",
+    "Hebrew": "היתר עבודה",
+    "Ukrainian": "дозвіл на роботу"
+  },
+  {
+    "Wortliste": "aufgeregt",
+    "English": "excited; agitated; nervous",
+    "Meaning": "Vor dem Vorstellungsgespräch war ich sehr aufgeregt.",
+    "Hebrew": "נרגש/ת",
+    "Ukrainian": "схвильований / збуджений"
+  },
+  {
+    "Wortliste": "die Auslandserfahrung, -en",
+    "English": "the experience abroad",
+    "Meaning": "Auslandserfahrung ist für viele Firmen ein Vorteil.",
+    "Hebrew": "ניסיון בחו\"ל",
+    "Ukrainian": "досвід за кордоном"
+  },
+  {
+    "Wortliste": "auswandern",
+    "English": "to emigrate",
+    "Meaning": "Meine Freunde wollen nach Kanada auswandern.",
+    "Hebrew": "לעלות / להגר",
+    "Ukrainian": "емігрувати / виїжджати за кордон"
+  },
+  {
+    "Wortliste": "bereuen",
+    "English": "to regret",
+    "Meaning": "Ich bereue nicht, dass ich ins Ausland gegangen bin.",
+    "Hebrew": "להתחרט",
+    "Ukrainian": "жалкувати / каятися"
+  },
+  {
+    "Wortliste": "der Blog, -s",
+    "English": "the blog",
+    "Meaning": "Sie schreibt einen Blog über ihr Leben in Berlin.",
+    "Hebrew": "בלוג",
+    "Ukrainian": "блог"
+  },
+  {
+    "Wortliste": "einleben (sich)",
+    "English": "to settle in; to get used to a new place",
+    "Meaning": "In der neuen Stadt habe ich mich schnell eingelebt.",
+    "Hebrew": "להתאקלם / להשתלב",
+    "Ukrainian": "освоюватися / звикати"
+  },
+  {
+    "Wortliste": "die Erfahrung, -en",
+    "English": "the experience",
+    "Meaning": "Durch meinen Job im Ausland habe ich viele Erfahrungen gesammelt.",
+    "Hebrew": "ניסיון / חוויה",
+    "Ukrainian": "досвід / переживання"
+  },
+  {
+    "Wortliste": "erweitern",
+    "English": "to expand; to widen; to extend",
+    "Meaning": "Ich möchte meinen Wortschatz jeden Tag ein bisschen erweitern.",
+    "Hebrew": "להרחיב / לאלץ",
+    "Ukrainian": "розширювати"
+  },
+  {
+    "Wortliste": "gestresst",
+    "English": "stressed",
+    "Meaning": "In der Prüfungszeit bin ich immer sehr gestresst.",
+    "Hebrew": "לחוץ/ה",
+    "Ukrainian": "у стресі / перевтомлений"
+  },
+  {
+    "Wortliste": "die Landessprache, -n",
+    "English": "the national language",
+    "Meaning": "Es ist wichtig, die Landessprache gut zu sprechen.",
+    "Hebrew": "שפת המדינה",
+    "Ukrainian": "мова країни"
+  },
+  {
+    "Wortliste": "die Amtssprache, -n",
+    "English": "the official language",
+    "Meaning": "In der Schweiz sind Deutsch, Französisch, Italienisch und Rätoromanisch Amtssprachen.",
+    "Hebrew": "שפה רשמית",
+    "Ukrainian": "офіційна мова"
+  },
+  {
+    "Wortliste": "anerkennen, erkannte an, hat anerkannt",
+    "English": "to recognize; to acknowledge",
+    "Meaning": "Mein Abschluss aus dem Ausland wurde in Deutschland anerkannt.",
+    "Hebrew": "להכיר / להודות / להעריך",
+    "Ukrainian": "визнавати / цінувати"
+  },
+  {
+    "Wortliste": "die Elite, -n",
+    "English": "the elite",
+    "Meaning": "Nur eine kleine Elite besucht diese teure Privatschule.",
+    "Hebrew": "אליטה",
+    "Ukrainian": "еліта"
+  },
+  {
+    "Wortliste": "die Identität, -en",
+    "English": "the identity",
+    "Meaning": "Sprache ist ein wichtiger Teil der persönlichen Identität.",
+    "Hebrew": "זהות",
+    "Ukrainian": "ідентичність"
+  },
+  {
+    "Wortliste": "komplex",
+    "English": "complex",
+    "Meaning": "Das Thema Migration ist sehr komplex.",
+    "Hebrew": "מורכב",
+    "Ukrainian": "складний / комплексний"
+  },
+  {
+    "Wortliste": "konfrontieren",
+    "English": "to confront",
+    "Meaning": "Im Ausland wird man oft mit neuen Kulturen konfrontiert.",
+    "Hebrew": "לעמת / להתעמת",
+    "Ukrainian": "конфронтувати / зіштовхувати"
+  },
+  {
+    "Wortliste": "multikulturell",
+    "English": "multicultural",
+    "Meaning": "Berlin ist eine sehr multikulturelle Stadt.",
+    "Hebrew": "רב-תרבותי",
+    "Ukrainian": "багатокультурний"
+  },
+  {
+    "Wortliste": "das Parlament, -e",
+    "English": "the parliament",
+    "Meaning": "Im Parlament wird heute über das neue Gesetz diskutiert.",
+    "Hebrew": "פרלמנט",
+    "Ukrainian": "парламент"
+  },
+  {
+    "Wortliste": "der Sachverhalt, -e",
+    "English": "the facts; the circumstances",
+    "Meaning": "Können Sie mir den Sachverhalt noch einmal genau erklären?",
+    "Hebrew": "עובדה / מצב דברים",
+    "Ukrainian": "стан справ / факти"
+  },
+  {
+    "Wortliste": "trösten",
+    "English": "to comfort; to console",
+    "Meaning": "Nach der Prüfung hat sie ihre enttäuschte Freundin getröstet.",
+    "Hebrew": "לנחם",
+    "Ukrainian": "втішати / заспокоювати"
+  },
+  {
+    "Wortliste": "die Vertrautheit (Sg.)",
+    "English": "the familiarity; the closeness",
+    "Meaning": "Ich mag die Vertrautheit in meiner kleinen Heimatstadt.",
+    "Hebrew": "היכרות / קרבה",
+    "Ukrainian": "близькість / фамільярність"
+  },
+  {
+    "Wortliste": "die Verwaltungssprache, -n",
+    "English": "the administrative language",
+    "Meaning": "Formulare sind oft in einer sehr komplizierten Verwaltungssprache geschrieben.",
+    "Hebrew": "שפת המינהל",
+    "Ukrainian": "мова адміністрації"
+  },
+  {
+    "Wortliste": "die Vielfalt (Sg.)",
+    "English": "the diversity; the variety",
+    "Meaning": "Die kulturelle Vielfalt in der Klasse ist groß.",
+    "Hebrew": "גיוון / שונות",
+    "Ukrainian": "різноманітність"
+  },
+  {
+    "Wortliste": "vielsprachig",
+    "English": "multilingual; speaking many languages",
+    "Meaning": "In unserer Firma arbeiten viele vielsprachige Mitarbeiter.",
+    "Hebrew": "רב-לשוני",
+    "Ukrainian": "багатомовний"
+  },
+  {
+    "Wortliste": "das Landesgesetz, -e",
+    "English": "the federal state law; regional law",
+    "Meaning": "Die Regeln sind im Landesgesetz genau festgelegt.",
+    "Hebrew": "חוק מדינה / חוק מחוז",
+    "Ukrainian": "закон землі / регіональний закон"
+  },
+  {
+    "Wortliste": "die Vielsprachigkeit (Sg.)",
+    "English": "the multilingualism",
+    "Meaning": "Die Vielsprachigkeit Europas ist eine große Chance.",
+    "Hebrew": "רב-לשוניות",
+    "Ukrainian": "багатомовність"
+  },
+  {
+    "Wortliste": "das Alltagsprodukt, -e",
+    "English": "the everyday product",
+    "Meaning": "Auf vielen Alltagsprodukten stehen die Infos in mehreren Sprachen.",
+    "Hebrew": "מוצר יומיומי",
+    "Ukrainian": "повсякденний продукт"
+  },
+  {
+    "Wortliste": "amtlich",
+    "English": "official",
+    "Meaning": "Sie müssen das Formular beim amtlichen Bürgerbüro abgeben.",
+    "Hebrew": "רשמי",
+    "Ukrainian": "офіційний"
+  },
+  {
+    "Wortliste": "beherrschen",
+    "English": "to master; to command",
+    "Meaning": "Sie beherrscht drei Sprachen fließend.",
+    "Hebrew": "לשלוט / לדעת היטב",
+    "Ukrainian": "володіти / контролювати"
+  },
+  {
+    "Wortliste": "die Bekanntmachung, -en",
+    "English": "the announcement; the public notice",
+    "Meaning": "Die Bekanntmachung hängt am Schwarzen Brett der Uni.",
+    "Hebrew": "הודעה / פרסום רשמי",
+    "Ukrainian": "оголошення / повідомлення"
+  },
+  {
+    "Wortliste": "beschriften",
+    "English": "to label; to inscribe",
+    "Meaning": "Bitte beschriften Sie die Ordner mit Namen und Datum.",
+    "Hebrew": "לסמן / לכתוב על",
+    "Ukrainian": "підписувати / маркувати"
+  },
+  {
+    "Wortliste": "betreffen, betraf, hat betroffen",
+    "English": "to affect; to concern",
+    "Meaning": "Die neuen Regeln betreffen alle Mieter im Haus.",
+    "Hebrew": "לנגוע ב / לעסוק ב",
+    "Ukrainian": "стосуватися / торкатися"
+  },
+  {
+    "Wortliste": "einheitlich",
+    "English": "uniform; consistent",
+    "Meaning": "Die Schilder sollen in allen Städten einheitlich sein.",
+    "Hebrew": "אחיד / אחידות",
+    "Ukrainian": "однаковий / уніфікований"
+  },
+  {
+    "Wortliste": "fälschlicherweise",
+    "English": "by mistake; wrongly; erroneously",
+    "Meaning": "Mein Name wurde fälschlicherweise falsch geschrieben.",
+    "Hebrew": "בטעות / שלא כדין",
+    "Ukrainian": "помилково / неправильно"
+  },
+  {
+    "Wortliste": "der Flyer, -",
+    "English": "the flyer; the leaflet",
+    "Meaning": "Vor der U-Bahn-Station werden Flyer verteilt.",
+    "Hebrew": "עלון / פרסומת",
+    "Ukrainian": "листівка / флаєр"
+  },
+  {
+    "Wortliste": "der/die Grafiker/in, -/-nen",
+    "English": "the graphic designer",
+    "Meaning": "Die Grafikerin hat das neue Logo entworfen.",
+    "Hebrew": "גרפיקאי/ת",
+    "Ukrainian": "графічний дизайнер / графік"
+  },
+  {
+    "Wortliste": "der Horizont, -e",
+    "English": "the horizon; the outlook",
+    "Meaning": "Reisen erweitert den eigenen Horizont.",
+    "Hebrew": "אופק",
+    "Ukrainian": "горизонт"
+  },
+  {
+    "Wortliste": "leichtfallen, fiel leicht, ist leichtgefallen",
+    "English": "to come easy; to be easy for someone",
+    "Meaning": "Sprachenlernen ist ihm schon immer leichtgefallen.",
+    "Hebrew": "להיות קל / לבוא בקלות",
+    "Ukrainian": "даватися легко"
+  },
+  {
+    "Wortliste": "mittlerweile",
+    "English": "in the meantime; by now",
+    "Meaning": "Ich bin mittlerweile seit fünf Jahren in Deutschland.",
+    "Hebrew": "בינתיים / כבר",
+    "Ukrainian": "тим часом / вже"
+  },
+  {
+    "Wortliste": "netterweise",
+    "English": "kindly; nicely",
+    "Meaning": "Netterweise hat mein Nachbar mir beim Umzug geholfen.",
+    "Hebrew": "באדיבות / בטוב לב",
+    "Ukrainian": "люб'язно / доброзичливо"
+  },
+  {
+    "Wortliste": "riskieren",
+    "English": "to risk",
+    "Meaning": "Er wollte nichts riskieren und hat den sicheren Job behalten.",
+    "Hebrew": "לסכן / להסתכן",
+    "Ukrainian": "ризикувати"
+  },
+  {
+    "Wortliste": "schaffen",
+    "English": "to manage; to accomplish; to create",
+    "Meaning": "Keine Sorge, du schaffst die Prüfung bestimmt.",
+    "Hebrew": "ליצור / להצליח / לעשות",
+    "Ukrainian": "створювати / встигати / справлятися"
+  },
+  {
+    "Wortliste": "sehnsüchtig",
+    "English": "longingly; full of longing",
+    "Meaning": "Sie schaut sehnsüchtig auf die alten Urlaubsfotos.",
+    "Hebrew": "מגעגע / כמה",
+    "Ukrainian": "тужливий / сповнений туги"
+  },
+  {
+    "Wortliste": "spontan",
+    "English": "spontaneous",
+    "Meaning": "Wir haben spontan entschieden, übers Wochenende wegzufahren.",
+    "Hebrew": "ספונטני",
+    "Ukrainian": "спонтанний"
+  },
+  {
+    "Wortliste": "wagen",
+    "English": "to dare; to venture",
+    "Meaning": "Ich habe es gewagt und bin allein ins Ausland gegangen.",
+    "Hebrew": "להעז / לסכן",
+    "Ukrainian": "наважуватися / ризикувати"
+  },
+  {
+    "Wortliste": "die Wohnungssuche, -n",
+    "English": "the apartment search",
+    "Meaning": "In Berlin kann die Wohnungssuche sehr lange dauern.",
+    "Hebrew": "חיפוש דירה",
+    "Ukrainian": "пошук квартири"
+  },
+  {
+    "Wortliste": "zwischendurch",
+    "English": "in between; from time to time",
+    "Meaning": "Ich lerne zwischendurch Vokabeln mit meinem Handy.",
+    "Hebrew": "בינתיים / מדי פעם",
+    "Ukrainian": "зрідка / між іншим / між ділом"
+  },
+  {
+    "Wortliste": "empfinden, empfand, hat empfunden",
+    "English": "to feel; to perceive",
+    "Meaning": "Wie empfindest du das Klima in deiner Firma?",
+    "Hebrew": "להרגיש / לחוש",
+    "Ukrainian": "відчувати / сприймати"
+  },
+  {
+    "Wortliste": "die Faustregel, -n",
+    "English": "the rule of thumb",
+    "Meaning": "Als Faustregel gilt: Erst fragen, dann handeln.",
+    "Hebrew": "כלל אצבע",
+    "Ukrainian": "загальне правило / правило великого пальця"
+  },
+  {
+    "Wortliste": "die Merkformel, -n",
+    "English": "the mnemonic; memory formula",
+    "Meaning": "Für die Grammatik habe ich mir eine kleine Merkformel ausgedacht.",
+    "Hebrew": "נוסחה לזכירה / מנמוניקה",
+    "Ukrainian": "мнемонічна формула"
+  },
+  {
+    "Wortliste": "die Position, -en",
+    "English": "the position",
+    "Meaning": "Er bewirbt sich auf eine Position als Projektleiter.",
+    "Hebrew": "עמדה / מיקום / תפקיד",
+    "Ukrainian": "позиція / посада / місце"
+  },
+  {
+    "Wortliste": "ständig",
+    "English": "constant; all the time",
+    "Meaning": "Mein Handy klingelt heute ständig.",
+    "Hebrew": "תמידי / מתמיד / כל הזמן",
+    "Ukrainian": "постійний / безперервний"
+  },
+  {
+    "Wortliste": "zerschneiden, zerschnitt, hat zerschnitten",
+    "English": "to cut into pieces",
+    "Meaning": "Sie hat das Papier in kleine Stücke zerschnitten.",
+    "Hebrew": "לחתוך / לגזור",
+    "Ukrainian": "розрізати"
+  },
+  {
+    "Wortliste": "die Geschäftsbeziehung, -en",
+    "English": "the business relationship",
+    "Meaning": "Wir pflegen seit Jahren gute Geschäftsbeziehungen nach Österreich.",
+    "Hebrew": "קשרי עסקים",
+    "Ukrainian": "ділові стосунки"
+  },
+  {
+    "Wortliste": "die Geschäftsverhandlung, -en",
+    "English": "the business negotiation",
+    "Meaning": "Die Geschäftsverhandlungen dauerten den ganzen Tag.",
+    "Hebrew": "משא ומתן עסקי",
+    "Ukrainian": "ділові переговори"
+  },
+  {
+    "Wortliste": "jedoch",
+    "English": "however; though",
+    "Meaning": "Ich wollte kommen, ich war jedoch krank.",
+    "Hebrew": "אולם / אך / אבל",
+    "Ukrainian": "проте / однак / але"
+  },
+  {
+    "Wortliste": "die Konferenz, -en",
+    "English": "the conference",
+    "Meaning": "Auf der Konferenz treffen sich Experten aus vielen Ländern.",
+    "Hebrew": "ועידה / כנס",
+    "Ukrainian": "конференція"
+  },
+  {
+    "Wortliste": "das Platzproblem, -e",
+    "English": "the space problem; lack of space",
+    "Meaning": "In unserer Küche haben wir ein echtes Platzproblem.",
+    "Hebrew": "בעיית מקום",
+    "Ukrainian": "проблема з місцем"
+  },
+  {
+    "Wortliste": "sämtlich",
+    "English": "all; entire",
+    "Meaning": "Sämtliche Unterlagen müssen bis Freitag abgegeben werden.",
+    "Hebrew": "כולם / כל",
+    "Ukrainian": "всі / цілком"
+  },
+  {
+    "Wortliste": "die Sitzung, -en",
+    "English": "the meeting; the session",
+    "Meaning": "Die Sitzung beginnt um 9 Uhr im großen Konferenzraum.",
+    "Hebrew": "ישיבה / פגישה",
+    "Ukrainian": "засідання / нарада"
+  },
+  {
+    "Wortliste": "die Sprachenvielfalt (Sg.)",
+    "English": "the diversity of languages",
+    "Meaning": "Die Sprachenvielfalt in Europa ist beeindruckend.",
+    "Hebrew": "גיוון לשוני",
+    "Ukrainian": "мовне різноманіття"
+  },
+  {
+    "Wortliste": "das Sprachgebiet, -e",
+    "English": "the language area/region",
+    "Meaning": "Im deutschsprachigen Sprachgebiet gibt es viele Dialekte.",
+    "Hebrew": "אזור דיבור / אזור לשוני",
+    "Ukrainian": "мовний регіон"
+  },
+  {
+    "Wortliste": "die Sprachregion, -en",
+    "English": "the language region",
+    "Meaning": "Die Schweiz ist in verschiedene Sprachregionen aufgeteilt.",
+    "Hebrew": "אזור לשוני",
+    "Ukrainian": "мовний регіон"
+  },
+  {
+    "Wortliste": "das Verkehrsschild, -er",
+    "English": "the traffic sign",
+    "Meaning": "Du hast das Verkehrsschild mit dem Tempolimit übersehen.",
+    "Hebrew": "שלט תנועה",
+    "Ukrainian": "дорожній знак"
+  },
+  {
+    "Wortliste": "veröffentlichen",
+    "English": "to publish",
+    "Meaning": "Der Artikel wird nächste Woche online veröffentlicht.",
+    "Hebrew": "לפרסם / להוציא לאור",
+    "Ukrainian": "публікувати / видавати"
+  },
+  {
+    "Wortliste": "die Verpackung, -en",
+    "English": "the packaging",
+    "Meaning": "Auf der Verpackung stehen die Inhaltsstoffe in mehreren Sprachen.",
+    "Hebrew": "אריזה",
+    "Ukrainian": "упаковка"
+  },
+  {
+    "Wortliste": "voraussetzen",
+    "English": "to presuppose; to require",
+    "Meaning": "Für diesen Kurs wird B1-Niveau vorausgesetzt.",
+    "Hebrew": "להניח מראש / לדרוש",
+    "Ukrainian": "передбачати / вимагати як умову"
+  },
+  {
+    "Wortliste": "der Wandel, -",
+    "English": "the change; transformation",
+    "Meaning": "Die Stadt ist im ständigen Wandel.",
+    "Hebrew": "שינוי / תמורה",
+    "Ukrainian": "зміна / перетворення"
+  },
+  {
+    "Wortliste": "die Webseite, -n",
+    "English": "the website",
+    "Meaning": "Auf der Webseite findest du alle wichtigen Informationen.",
+    "Hebrew": "אתר אינטרנט / דף אינטרנט",
+    "Ukrainian": "вебсайт / веб-сторінка"
+  },
+  {
+    "Wortliste": "die Auffassung, -en",
+    "English": "the view; the opinion",
+    "Meaning": "In dieser Frage haben wir unterschiedliche Auffassungen.",
+    "Hebrew": "השקפה / דעה / הבנה",
+    "Ukrainian": "погляд / розуміння / думка"
+  },
+  {
+    "Wortliste": "entscheidend",
+    "English": "decisive; crucial",
+    "Meaning": "Die Sprachkenntnisse waren entscheidend für die Zusage.",
+    "Hebrew": "מכריע / קריטי",
+    "Ukrainian": "вирішальний / ключовий"
+  },
+  {
+    "Wortliste": "erstaunlich",
+    "English": "amazing; astonishing",
+    "Meaning": "Es ist erstaunlich, wie schnell Kinder eine Sprache lernen.",
+    "Hebrew": "מפתיע / מדהים",
+    "Ukrainian": "дивовижний / вражаючий"
+  },
+  {
+    "Wortliste": "geteilt",
+    "English": "divided; shared",
+    "Meaning": "Die Meinungen in der Gruppe sind stark geteilt.",
+    "Hebrew": "מחולק / שנוי במחלוקת",
+    "Ukrainian": "розділений / спірний"
+  },
+  {
+    "Wortliste": "hilfreich",
+    "English": "helpful",
+    "Meaning": "Die Tipps meiner Lehrerin waren sehr hilfreich.",
+    "Hebrew": "מועיל / עוזר",
+    "Ukrainian": "корисний / допоміжний"
+  },
+  {
+    "Wortliste": "die Mehrsprachigkeit (Sg.)",
+    "English": "the multilingualism",
+    "Meaning": "Mehrsprachigkeit kann viele Türen im Berufsleben öffnen.",
+    "Hebrew": "רב-לשוניות",
+    "Ukrainian": "багатомовність"
+  },
+  {
+    "Wortliste": "nützlich",
+    "English": "useful",
+    "Meaning": "Ein gutes Wörterbuch ist immer nützlich.",
+    "Hebrew": "שימושי / מועיל",
+    "Ukrainian": "корисний / практичний"
+  },
+  {
+    "Wortliste": "die Sicht, -en",
+    "English": "the view; the perspective",
+    "Meaning": "Aus meiner Sicht ist das eine gute Lösung.",
+    "Hebrew": "נקודת מבט / ראייה",
+    "Ukrainian": "точка зору / погляд"
+  },
+  {
+    "Wortliste": "missverständlich",
+    "English": "misleading; ambiguous",
+    "Meaning": "Die Formulierung in der E-Mail war missverständlich.",
+    "Hebrew": "מטעה / בלתי ברור",
+    "Ukrainian": "незрозумілий / оманливий"
+  },
+  {
+    "Wortliste": "das Abteil, -e",
+    "English": "the compartment (on a train)",
+    "Meaning": "Im Zug haben wir ein ruhiges Abteil gefunden.",
+    "Hebrew": "תא (ברכבת)",
+    "Ukrainian": "купе (у поїзді)"
+  },
+  {
+    "Wortliste": "missverstehen, missverstand, hat missverstanden",
+    "English": "to misunderstand",
+    "Meaning": "Entschuldigung, ich habe dich total missverstanden.",
+    "Hebrew": "להבין לא נכון / לטעות בהבנה",
+    "Ukrainian": "неправильно зрозуміти"
+  },
+  {
+    "Wortliste": "peinlich",
+    "English": "embarrassing",
+    "Meaning": "Es war mir sehr peinlich, den Namen zu vergessen.",
+    "Hebrew": "מביך",
+    "Ukrainian": "незручний / ганебний"
+  },
+  {
+    "Wortliste": "der Abstand, \"-e",
+    "English": "the distance; the gap",
+    "Meaning": "Bitte halten Sie genügend Abstand zur Tür.",
+    "Hebrew": "מרחק / ריחוק",
+    "Ukrainian": "відстань / дистанція"
+  },
+  {
+    "Wortliste": "die Art, -en",
+    "English": "the kind; the type; the way",
+    "Meaning": "Diese Art von Humor verstehe ich nicht.",
+    "Hebrew": "סוג / מין / אופן",
+    "Ukrainian": "вид / тип / спосіб"
+  },
+  {
+    "Wortliste": "äußerst",
+    "English": "extremely",
+    "Meaning": "Er war äußerst freundlich und hilfsbereit.",
+    "Hebrew": "ביותר / קיצוני / מאוד",
+    "Ukrainian": "надзвичайно / вкрай"
+  },
+  {
+    "Wortliste": "bedenken, bedachte, hat bedacht",
+    "English": "to consider; to keep in mind",
+    "Meaning": "Bitte bedenken Sie, dass das nur ein Beispiel ist.",
+    "Hebrew": "לשקול / לחשוב על",
+    "Ukrainian": "обдумувати / зважати на"
+  },
+  {
+    "Wortliste": "der/die Begleiter/in, -/-nen",
+    "English": "the companion; the escort",
+    "Meaning": "Jeder Teilnehmer darf eine Begleiterin oder einen Begleiter mitbringen.",
+    "Hebrew": "מלווה",
+    "Ukrainian": "супутник / супутниця"
+  },
+  {
+    "Wortliste": "breit",
+    "English": "broad; wide",
+    "Meaning": "Die Straße ist hier sehr breit.",
+    "Hebrew": "רחב",
+    "Ukrainian": "широкий"
+  },
+  {
+    "Wortliste": "die Freundlichkeit, -en",
+    "English": "the friendliness",
+    "Meaning": "Ich war von der Freundlichkeit der Leute beeindruckt.",
+    "Hebrew": "ידידותיות / נחמדות",
+    "Ukrainian": "доброзичливість / привітність"
+  },
+  {
+    "Wortliste": "das Gegenüber, -",
+    "English": "the person opposite; the counterpart",
+    "Meaning": "Versuche, dein Gegenüber immer auszureden zu lassen.",
+    "Hebrew": "הצד השני / האדם מולך",
+    "Ukrainian": "співрозмовник / людина навпроти"
+  },
+  {
+    "Wortliste": "jeglich",
+    "English": "any; every",
+    "Meaning": "Jegliche Form von Diskriminierung ist verboten.",
+    "Hebrew": "כל / כלשהו",
+    "Ukrainian": "будь-який / кожний"
+  },
+  {
+    "Wortliste": "das Lächeln, -",
+    "English": "the smile",
+    "Meaning": "Ein freundliches Lächeln kann viel bewirken.",
+    "Hebrew": "חיוך",
+    "Ukrainian": "усмішка"
+  },
+  {
+    "Wortliste": "die Öffentlichkeit (Sg.)",
+    "English": "the public",
+    "Meaning": "Die Entscheidung wurde in der Öffentlichkeit kritisiert.",
+    "Hebrew": "ציבור / מרחב ציבורי",
+    "Ukrainian": "громадськість / публіка"
+  },
+  {
+    "Wortliste": "die Privatsphäre (Sg.)",
+    "English": "the privacy",
+    "Meaning": "In sozialen Netzwerken ist die Privatsphäre ein wichtiges Thema.",
+    "Hebrew": "פרטיות",
+    "Ukrainian": "приватна сфера / особисте життя"
+  },
+  {
+    "Wortliste": "stellen",
+    "English": "to put; to place; to pose (a question)",
+    "Meaning": "Darf ich Ihnen noch eine Frage stellen?",
+    "Hebrew": "לשים / לשאול (שאלה) / להציב",
+    "Ukrainian": "ставити / розміщувати / задавати (питання)"
+  },
+  {
+    "Wortliste": "üblich",
+    "English": "usual; common",
+    "Meaning": "In Deutschland ist es üblich, pünktlich zu sein.",
+    "Hebrew": "רגיל / נהוג / מקובל",
+    "Ukrainian": "звичайний / прийнятий"
+  },
+  {
+    "Wortliste": "die Spielregel, -n",
+    "English": "the rule of the game",
+    "Meaning": "Bevor wir anfangen, erklären wir kurz die Spielregeln.",
+    "Hebrew": "חוק משחק / כלל",
+    "Ukrainian": "правило гри"
+  },
+  {
+    "Wortliste": "die Geste, -n",
+    "English": "the gesture",
+    "Meaning": "Ein kleines Geschenk kann eine nette Geste sein.",
+    "Hebrew": "מחווה / תנועה",
+    "Ukrainian": "жест"
+  },
+  {
+    "Wortliste": "alkoholfrei",
+    "English": "alcohol-free; non-alcoholic",
+    "Meaning": "Ich trinke lieber ein alkoholfreies Bier.",
+    "Hebrew": "ללא אלכוהול",
+    "Ukrainian": "безалкогольний"
+  },
+  {
+    "Wortliste": "atypisch",
+    "English": "atypical; untypical",
+    "Meaning": "Für diese Jahreszeit ist das Wetter eher atypisch.",
+    "Hebrew": "לא טיפוסי / חריג",
+    "Ukrainian": "нетиповий / нестандартний"
+  },
+  {
+    "Wortliste": "das Desinteresse (Sg.)",
+    "English": "the lack of interest",
+    "Meaning": "Sein Desinteresse am Unterricht war deutlich zu sehen.",
+    "Hebrew": "חוסר עניין",
+    "Ukrainian": "байдужість / відсутність інтересу"
+  },
+  {
+    "Wortliste": "disqualifizieren",
+    "English": "to disqualify",
+    "Meaning": "Der Spieler wurde nach einem Foul disqualifiziert.",
+    "Hebrew": "לפסול / לפסל",
+    "Ukrainian": "дискваліфікувати"
+  },
+  {
+    "Wortliste": "inhaltsleer",
+    "English": "empty of content; meaningless",
+    "Meaning": "Die Rede war schön, aber ziemlich inhaltsleer.",
+    "Hebrew": "חסר תוכן / ריק ממשמעות",
+    "Ukrainian": "беззмістовний / порожній"
+  },
+  {
+    "Wortliste": "intolerant",
+    "English": "intolerant",
+    "Meaning": "Gegenüber anderen Kulturen sollten wir nicht intolerant sein.",
+    "Hebrew": "בלתי סובלני",
+    "Ukrainian": "нетерпимий"
+  },
+  {
+    "Wortliste": "irreal",
+    "English": "unreal; imaginary",
+    "Meaning": "Sein Plan klang interessant, aber völlig irreal.",
+    "Hebrew": "לא מציאותי",
+    "Ukrainian": "нереальний"
+  },
+  {
+    "Wortliste": "der/die Nichtschwimmer/in, -/-nen",
+    "English": "the non-swimmer",
+    "Meaning": "Für Nichtschwimmer gibt es im Schwimmbad einen extra Bereich.",
+    "Hebrew": "מי שאינו יודע לשחות",
+    "Ukrainian": "той, хто не вміє плавати"
+  },
+  {
+    "Wortliste": "nonverbal",
+    "English": "nonverbal",
+    "Meaning": "Nonverbale Signale spielen in der Kommunikation eine große Rolle.",
+    "Hebrew": "לא מילולי",
+    "Ukrainian": "невербальний"
+  },
+  {
+    "Wortliste": "das Unverständnis (Sg.)",
+    "English": "the lack of understanding",
+    "Meaning": "Seine Entscheidung stieß auf viel Unverständnis.",
+    "Hebrew": "חוסר הבנה",
+    "Ukrainian": "нерозуміння"
+  },
+  {
+    "Wortliste": "trennbar",
+    "English": "separable (verb); detachable",
+    "Meaning": "‚aufstehen‘ ist ein trennbares Verb.",
+    "Hebrew": "ניתן להפרדה",
+    "Ukrainian": "дільний / роздільний"
+  },
+  {
+    "Wortliste": "die Chancengleichheit (Sg.)",
+    "English": "the equal opportunities",
+    "Meaning": "Chancengleichheit ist ein wichtiges Ziel in der Bildungspolitik.",
+    "Hebrew": "שוויון הזדמנויות",
+    "Ukrainian": "рівність можливостей"
+  },
+  {
+    "Wortliste": "der Migrationshintergrund (Sg.)",
+    "English": "the migration background",
+    "Meaning": "Viele Kinder in dieser Klasse haben einen Migrationshintergrund.",
+    "Hebrew": "רקע של הגירה",
+    "Ukrainian": "міграційне походження"
+  },
+  {
+    "Wortliste": "das Schlüsselwort, \"-er",
+    "English": "the key word",
+    "Meaning": "Markieren Sie die Schlüsselwörter im Text.",
+    "Hebrew": "מילת מפתח",
+    "Ukrainian": "ключове слово"
+  },
+  {
+    "Wortliste": "völlig",
+    "English": "completely; totally",
+    "Meaning": "Ich bin nach dem langen Tag völlig müde.",
+    "Hebrew": "לחלוטין / לגמרי",
+    "Ukrainian": "повністю / цілком"
+  },
+  {
+    "Wortliste": "die Kindergartenpflicht (Sg.)",
+    "English": "the compulsory kindergarten attendance",
+    "Meaning": "In manchen Ländern gibt es eine Kindergartenpflicht.",
+    "Hebrew": "חובת גן ילדים",
+    "Ukrainian": "обов'язкове відвідування дитячого садка"
+  },
+  {
+    "Wortliste": "die Schuluniform, -en",
+    "English": "the school uniform",
+    "Meaning": "An dieser Schule tragen alle Schülerinnen und Schüler eine Schuluniform.",
+    "Hebrew": "מדי בית ספר / אחיד",
+    "Ukrainian": "шкільна форма"
+  },
+  {
+    "Wortliste": "eingehen",
+    "English": "to enter into; to go into; to be received",
+    "Meaning": "Auf dieses Thema möchte ich später noch genauer eingehen.",
+    "Hebrew": "להיכנס ל / להתייחס ל / לאבד תוקף",
+    "Ukrainian": "входити / розглядати / зменшуватися"
+  },
+  {
+    "Wortliste": "die Einrichtung, -en",
+    "English": "the institution; the facility; the furnishing",
+    "Meaning": "Die Stadt unterstützt soziale Einrichtungen mit Geld.",
+    "Hebrew": "מוסד / ריהוט / מתקן",
+    "Ukrainian": "установа / заклад / меблювання"
+  },
+  {
+    "Wortliste": "ermöglichen",
+    "English": "to make possible; to enable",
+    "Meaning": "Das Stipendium ermöglicht mir das Studium im Ausland.",
+    "Hebrew": "לאפשר",
+    "Ukrainian": "уможливлювати / дозволяти"
+  },
+  {
+    "Wortliste": "die Lehrkraft, \"-e",
+    "English": "the teacher; teaching staff",
+    "Meaning": "Die Lehrkräfte an dieser Schule sind sehr engagiert.",
+    "Hebrew": "מורה / כוח הוראה",
+    "Ukrainian": "вчитель / викладач"
+  },
+  {
+    "Wortliste": "die Migrantenfamilie, -n",
+    "English": "the migrant family",
+    "Meaning": "Viele Migrantenfamilien leben schon seit Jahren in Deutschland.",
+    "Hebrew": "משפחה מהגרת",
+    "Ukrainian": "сім'я мігрантів"
+  },
+  {
+    "Wortliste": "das Migrantenkind, -er",
+    "English": "the child from a migrant family",
+    "Meaning": "Migrantenkinder wachsen oft zweisprachig auf.",
+    "Hebrew": "ילד מהגר",
+    "Ukrainian": "дитина мігрантів"
+  },
+  {
+    "Wortliste": "der/die Pate/Patin, -n/-nen",
+    "English": "the sponsor; the mentor; the godparent",
+    "Meaning": "Ein ehrenamtlicher Pate hilft neuen Flüchtlingen im Alltag.",
+    "Hebrew": "סנדק / סנדקית / חסות",
+    "Ukrainian": "хрещений батько / хрещена мати / покровитель"
+  },
+  {
+    "Wortliste": "der/die Senior/in, -en/-nen",
+    "English": "the senior; the elderly person",
+    "Meaning": "Die Senioren treffen sich jeden Mittwoch im Nachbarschaftshaus.",
+    "Hebrew": "מבוגר/ת / בכיר/ה",
+    "Ukrainian": "літня людина / старший / старша"
+  },
+  {
+    "Wortliste": "sinnvoll",
+    "English": "sensible; meaningful; useful",
+    "Meaning": "Es ist sinnvoll, früh mit dem Deutschlernen zu beginnen.",
+    "Hebrew": "הגיוני / שימושי / כדאי",
+    "Ukrainian": "розумний / доцільний / корисний"
+  },
+  {
+    "Wortliste": "der/die Zugewanderte, -n",
+    "English": "the immigrant; the newcomer",
+    "Meaning": "Die Stadt bietet einen Sprachkurs speziell für Zugewanderte an.",
+    "Hebrew": "מהגר/ת / עולה",
+    "Ukrainian": "іммігрант / переселенець"
+  },
+  {
+    "Wortliste": "anfügen",
+    "English": "to add; to append",
+    "Meaning": "Am Ende des Briefes fügte sie noch eine persönliche Notiz an.",
+    "Hebrew": "לצרף / להוסיף",
+    "Ukrainian": "додавати / прикріплювати"
+  },
+  {
+    "Wortliste": "ausbremsen",
+    "English": "to slow down; to thwart",
+    "Meaning": "Ständige Bürokratie kann gute Ideen ausbremsen.",
+    "Hebrew": "לבלום / לעצור",
+    "Ukrainian": "гальмувати / стримувати"
+  },
+  {
+    "Wortliste": "die Ausländerquote, -n",
+    "English": "the proportion of foreigners",
+    "Meaning": "In diesem Stadtteil ist die Ausländerquote besonders hoch.",
+    "Hebrew": "מכסת זרים",
+    "Ukrainian": "квота для іноземців"
+  },
+  {
+    "Wortliste": "der Automobilhersteller, -",
+    "English": "the car manufacturer",
+    "Meaning": "Viele deutsche Automobilhersteller exportieren weltweit.",
+    "Hebrew": "יצרן רכב",
+    "Ukrainian": "виробник автомобілів"
+  },
+  {
+    "Wortliste": "die Betriebswirtschaft, -en",
+    "English": "business administration",
+    "Meaning": "Sie studiert Betriebswirtschaft an der Universität.",
+    "Hebrew": "מנהל עסקים",
+    "Ukrainian": "бізнес-адміністрування / менеджмент"
+  },
+  {
+    "Wortliste": "die Diskriminierung, -en",
+    "English": "the discrimination",
+    "Meaning": "Diskriminierung wegen Herkunft oder Sprache ist verboten.",
+    "Hebrew": "אפליה / הפליה",
+    "Ukrainian": "дискримінація"
+  },
+  {
+    "Wortliste": "farbenfroh",
+    "English": "colourful",
+    "Meaning": "Die Wohnung ist sehr farbenfroh eingerichtet.",
+    "Hebrew": "צבעוני / עליז",
+    "Ukrainian": "барвистий / яскравий"
+  },
+  {
+    "Wortliste": "fernliegen, lag fern, hat ferngelegen",
+    "English": "to be far from someone’s mind",
+    "Meaning": "Mir liegt es fern, dich zu kritisieren.",
+    "Hebrew": "להיות רחוק מ / לא נראה מסתבר",
+    "Ukrainian": "бути далеким / видаватися малоймовірним"
+  },
+  {
+    "Wortliste": "das Feuerholz (Sg.)",
+    "English": "the firewood",
+    "Meaning": "Wir haben genug Feuerholz für den ganzen Winter.",
+    "Hebrew": "עצי הסקה / עצי מדורה",
+    "Ukrainian": "дрова"
+  },
+  {
+    "Wortliste": "flechten, flocht, hat geflochten",
+    "English": "to braid; to weave",
+    "Meaning": "Sie hat ihrer Tochter Zöpfe geflochten.",
+    "Hebrew": "לקלוע / לשזור",
+    "Ukrainian": "плести / заплітати"
+  },
+  {
+    "Wortliste": "führen",
+    "English": "to lead; to guide; to manage",
+    "Meaning": "Er führt seit fünf Jahren eine eigene Firma.",
+    "Hebrew": "להוביל / לנהל",
+    "Ukrainian": "вести / керувати"
+  },
+  {
+    "Wortliste": "gelegentlich",
+    "English": "occasionally",
+    "Meaning": "Wir treffen uns gelegentlich auf einen Kaffee.",
+    "Hebrew": "לעיתים / מדי פעם",
+    "Ukrainian": "іноді / час від часу"
+  },
+  {
+    "Wortliste": "das Gemüsegeschäft, -e",
+    "English": "the vegetable shop; greengrocer’s",
+    "Meaning": "Ich kaufe mein Obst im kleinen Gemüsegeschäft an der Ecke.",
+    "Hebrew": "חנות ירקות",
+    "Ukrainian": "овочевий магазин"
+  },
+  {
+    "Wortliste": "der/die Gründer/in, -/-nen",
+    "English": "the founder",
+    "Meaning": "Die Gründerin des Start-ups ist erst 25 Jahre alt.",
+    "Hebrew": "מייסד/ת",
+    "Ukrainian": "засновник / засновниця"
+  },
+  {
+    "Wortliste": "die Hausverwaltung, -en",
+    "English": "the property management",
+    "Meaning": "Bei Problemen mit der Heizung wenden Sie sich an die Hausverwaltung.",
+    "Hebrew": "ניהול בניין / ועד בית",
+    "Ukrainian": "управління будинком"
+  },
+  {
+    "Wortliste": "die Hochschulreife (Sg.)",
+    "English": "the higher education entrance qualification (A-levels/Abitur)",
+    "Meaning": "Für das Studium brauchst du die Hochschulreife.",
+    "Hebrew": "בגרות / כשירות ללימודים אקדמיים",
+    "Ukrainian": "атестат зрілості / право вступу до університету"
+  },
+  {
+    "Wortliste": "die Informatik (Sg.)",
+    "English": "computer science",
+    "Meaning": "Er interessiert sich für Informatik und programmiert gern.",
+    "Hebrew": "מדעי המחשב",
+    "Ukrainian": "інформатика"
+  },
+  {
+    "Wortliste": "infrage kommen",
+    "English": "to be possible; to be considered",
+    "Meaning": "Für diese Stelle kommen nur Bewerber mit Erfahrung infrage.",
+    "Hebrew": "לבוא בחשבון / להיות אפשרות",
+    "Ukrainian": "братися до уваги / бути варіантом"
+  },
+  {
+    "Wortliste": "inmitten",
+    "English": "in the middle of; amidst",
+    "Meaning": "Inmitten der Stadt gibt es einen großen Park.",
+    "Hebrew": "בתוך / בלב",
+    "Ukrainian": "посеред / у центрі"
+  },
+  {
+    "Wortliste": "der Keks, -e",
+    "English": "the biscuit; the cookie",
+    "Meaning": "Zum Tee gibt es selbst gebackene Kekse.",
+    "Hebrew": "עוגיה / ביסקוויט",
+    "Ukrainian": "печиво"
+  },
+  {
+    "Wortliste": "der/die Kommilitone/Kommilitonin, -n/-nen",
+    "English": "the fellow student (university)",
+    "Meaning": "Mit meinen Kommilitonen lerne ich oft in der Bibliothek.",
+    "Hebrew": "חבר/ת ללימודים",
+    "Ukrainian": "одногрупник / одногрупниця"
+  },
+  {
+    "Wortliste": "leuchten",
+    "English": "to shine; to glow",
+    "Meaning": "Die Sterne leuchten heute besonders hell.",
+    "Hebrew": "להאיר / לזהור",
+    "Ukrainian": "світити / сяяти"
+  },
+  {
+    "Wortliste": "nachdenklich",
+    "English": "thoughtful; pensive",
+    "Meaning": "Nach dem Gespräch war sie still und nachdenklich.",
+    "Hebrew": "מהורהר / חשבני",
+    "Ukrainian": "задуманий / замислений"
+  },
+  {
+    "Wortliste": "die Odyssee, -n",
+    "English": "the odyssey; long difficult journey",
+    "Meaning": "Die Wohnungssuche war eine echte Odyssee.",
+    "Hebrew": "אודיסיאה / מסע ארוך",
+    "Ukrainian": "одіссея / довга мандрівка"
+  },
+  {
+    "Wortliste": "die Option, -en",
+    "English": "the option; the choice",
+    "Meaning": "Wir prüfen noch verschiedene Optionen.",
+    "Hebrew": "אפשרות / אופציה",
+    "Ukrainian": "варіант / опція"
+  },
+  {
+    "Wortliste": "der Preis, -e",
+    "English": "the price; the prize",
+    "Meaning": "Für den Film hat sie einen wichtigen Preis bekommen.",
+    "Hebrew": "מחיר / פרס",
+    "Ukrainian": "ціна / нагорода"
+  },
+  {
+    "Wortliste": "scheitern",
+    "English": "to fail",
+    "Meaning": "Das Projekt ist leider an der Finanzierung gescheitert.",
+    "Hebrew": "להיכשל",
+    "Ukrainian": "зазнавати невдачі / провалюватися"
+  },
+  {
+    "Wortliste": "der Schulabschluss, \"-e",
+    "English": "the school leaving certificate",
+    "Meaning": "Nach dem Schulabschluss möchte er eine Ausbildung machen.",
+    "Hebrew": "תעודת בית ספר / סיום לימודים",
+    "Ukrainian": "шкільний атестат / закінчення школи"
+  },
+  {
+    "Wortliste": "verbergen, verbarg, hat verborgen",
+    "English": "to hide; to conceal",
+    "Meaning": "Sie konnte ihre Enttäuschung nicht verbergen.",
+    "Hebrew": "להסתיר / להסתר",
+    "Ukrainian": "приховувати / ховати"
+  },
+  {
+    "Wortliste": "vollkommen",
+    "English": "completely; perfectly",
+    "Meaning": "Ich bin mit dem Ergebnis vollkommen zufrieden.",
+    "Hebrew": "מושלם / לחלוטין",
+    "Ukrainian": "досконалий / цілком / повністю"
+  },
+  {
+    "Wortliste": "der/die Wanderarbeiter/in, -/-nen",
+    "English": "the migrant worker",
+    "Meaning": "Viele Wanderarbeiter schicken Geld an ihre Familien im Heimatland.",
+    "Hebrew": "עובד/ת נודד/ת / פועל עונתי",
+    "Ukrainian": "мігрант-робітник / сезонний робітник"
+  },
+  {
+    "Wortliste": "weitergehen",
+    "English": "to continue; to go on",
+    "Meaning": "Nach einer kurzen Pause ging der Unterricht weiter.",
+    "Hebrew": "להמשיך / להמשיך לאחר",
+    "Ukrainian": "іти далі / тривати"
+  },
+  {
+    "Wortliste": "die Windeseile (Sg.)",
+    "English": "great haste; very quickly",
+    "Meaning": "Die Nachricht verbreitete sich in Windeseile.",
+    "Hebrew": "מהירות רוח / מהירות אדירה",
+    "Ukrainian": "блискавична швидкість"
+  },
+  {
+    "Wortliste": "die Wüste, -n",
+    "English": "the desert",
+    "Meaning": "Sie träumen von einer Reise durch die Wüste.",
+    "Hebrew": "מדבר",
+    "Ukrainian": "пустеля"
+  },
+  {
+    "Wortliste": "zerrissen",
+    "English": "torn (also figurative: torn between)",
+    "Meaning": "Nach dem Umzug fühlte er sich innerlich zerrissen.",
+    "Hebrew": "קרוע / שסוע",
+    "Ukrainian": "роздертий / розірваний"
+  },
+  {
+    "Wortliste": "das Zöpfchen, -",
+    "English": "the little braid; small plait",
+    "Meaning": "Das Mädchen trägt zwei kleine Zöpfchen.",
+    "Hebrew": "צמה קטנה",
+    "Ukrainian": "маленька кіска"
+  },
+  {
+    "Wortliste": "zusammenbinden, band zusammen, hat zusammengebunden",
+    "English": "to tie together",
+    "Meaning": "Sie hat die Bücher mit einem Band zusammengebunden.",
+    "Hebrew": "לקשור יחד",
+    "Ukrainian": "зв'язувати разом"
+  },
+  {
+    "Wortliste": "der Anschluss, \"-e",
+    "English": "the connection; the connection (train/bus); affiliation",
+    "Meaning": "Ich habe meinen Anschlusszug knapp verpasst.",
+    "Hebrew": "חיבור / קשר / המשך",
+    "Ukrainian": "з'єднання / підключення / зв'язок"
+  },
+  {
+    "Wortliste": "entsprechend",
+    "English": "corresponding; appropriate",
+    "Meaning": "Bitte verhalten Sie sich der Situation entsprechend.",
+    "Hebrew": "מתאים / בהתאם ל",
+    "Ukrainian": "відповідно / відповідний"
+  },
+  {
+    "Wortliste": "anhören",
+    "English": "to listen to; to sound",
+    "Meaning": "Die Geschichte hört sich interessant an.",
+    "Hebrew": "להאזין / לשמוע",
+    "Ukrainian": "слухати / вислуховувати"
+  },
+  {
+    "Wortliste": "annehmen",
+    "English": "to accept; to assume",
+    "Meaning": "Ich nehme an, dass du morgen kommst.",
+    "Hebrew": "לקבל / להניח / לאמץ",
+    "Ukrainian": "приймати / припускати"
+  },
+  {
+    "Wortliste": "einig",
+    "English": "in agreement; united",
+    "Meaning": "Wir sind uns einig, dass das die beste Lösung ist.",
+    "Hebrew": "תמים דעים / מסכים",
+    "Ukrainian": "згодний / одностайний"
+  },
+  {
+    "Wortliste": "entwickeln",
+    "English": "to develop",
+    "Meaning": "Die Firma entwickelt eine neue App.",
+    "Hebrew": "לפתח / לפרוש",
+    "Ukrainian": "розробляти / розвивати"
+  },
+  {
+    "Wortliste": "meinetwegen",
+    "English": "as far as I’m concerned; for my sake",
+    "Meaning": "Meinetwegen können wir jetzt eine Pause machen.",
+    "Hebrew": "בשבילי / כפי שאני מתכוון",
+    "Ukrainian": "заради мене / будь ласка / я не проти"
+  },
+  {
+    "Wortliste": "veranstalten",
+    "English": "to organize; to host (an event)",
+    "Meaning": "Die Schule veranstaltet ein Sommerfest.",
+    "Hebrew": "לארגן / לקיים אירוע",
+    "Ukrainian": "організовувати / влаштовувати"
+  },
+  {
+    "Wortliste": "auszeichnen",
+    "English": "to distinguish; to award",
+    "Meaning": "Der Film wurde mit mehreren Preisen ausgezeichnet.",
+    "Hebrew": "להעניק פרס / לייחד",
+    "Ukrainian": "нагороджувати / відзначати"
+  },
+  {
+    "Wortliste": "begehrt",
+    "English": "in demand; sought-after",
+    "Meaning": "Diese Wohnungen sind in der Innenstadt sehr begehrt.",
+    "Hebrew": "מבוקש / נחשק",
+    "Ukrainian": "бажаний / затребуваний"
+  },
+  {
+    "Wortliste": "bürgerlich",
+    "English": "middle-class; bourgeois; civic",
+    "Meaning": "Er kommt aus einem eher bürgerlichen Elternhaus.",
+    "Hebrew": "בורגני / אזרחי",
+    "Ukrainian": "буржуазний / цивільний / міщанський"
+  },
+  {
+    "Wortliste": "das Diplom, -e",
+    "English": "the diploma; degree",
+    "Meaning": "Nach fünf Jahren Studium hat sie ihr Diplom bekommen.",
+    "Hebrew": "דיפלומה",
+    "Ukrainian": "диплом"
+  },
+  {
+    "Wortliste": "kommerziell",
+    "English": "commercial",
+    "Meaning": "Der Film war ein großer kommerzieller Erfolg.",
+    "Hebrew": "מסחרי",
+    "Ukrainian": "комерційний"
+  },
+  {
+    "Wortliste": "der/die Drehbuchautor/in, -en/-nen",
+    "English": "the screenwriter",
+    "Meaning": "Der Drehbuchautor arbeitet an einer neuen Serie.",
+    "Hebrew": "כותב/ת תסריט",
+    "Ukrainian": "сценарист / сценаристка"
+  },
+  {
+    "Wortliste": "der Langspielfilm, -e",
+    "English": "the feature film",
+    "Meaning": "Ihr erster Langspielfilm lief auf einem großen Festival.",
+    "Hebrew": "סרט ארוך",
+    "Ukrainian": "повнометражний фільм"
+  },
+  {
+    "Wortliste": "der Drehbuchpreis, -e",
+    "English": "the screenwriting award",
+    "Meaning": "Für das Drehbuch bekam sie einen internationalen Drehbuchpreis.",
+    "Hebrew": "פרס תסריט",
+    "Ukrainian": "премія за сценарій"
+  },
+  {
+    "Wortliste": "der Lebensweg, -e",
+    "English": "the life path",
+    "Meaning": "Jeder Mensch hat seinen eigenen Lebensweg.",
+    "Hebrew": "מסלול חיים",
+    "Ukrainian": "життєвий шлях"
+  },
+  {
+    "Wortliste": "der Durchbruch, \"-e",
+    "English": "the breakthrough",
+    "Meaning": "Mit diesem Film gelang ihm der große Durchbruch.",
+    "Hebrew": "פריצת דרך",
+    "Ukrainian": "прорив"
+  },
+  {
+    "Wortliste": "das Melodram, -en",
+    "English": "the melodrama",
+    "Meaning": "Das Melodram war spannend, aber sehr gefühlvoll.",
+    "Hebrew": "מלודרמה",
+    "Ukrainian": "мелодрама"
+  },
+  {
+    "Wortliste": "der/die Einwanderer/Einwanderin, -/-nen",
+    "English": "the immigrant",
+    "Meaning": "Viele Einwanderer kommen wegen der Arbeit nach Deutschland.",
+    "Hebrew": "מהגר/ת",
+    "Ukrainian": "іммігрант / іммігрантка"
+  },
+  {
+    "Wortliste": "entstammen",
+    "English": "to originate from; to come from",
+    "Meaning": "Er entstammt einer Musikerfamilie.",
+    "Hebrew": "לבוא מ / להיות ממוצא",
+    "Ukrainian": "походити від / бути родом з"
+  },
+  {
+    "Wortliste": "das Migrationsdrama, -dramen",
+    "English": "the migration drama",
+    "Meaning": "Das Migrationsdrama erzählt die Geschichte einer Flüchtlingsfamilie.",
+    "Hebrew": "דרמת הגירה",
+    "Ukrainian": "драма міграції"
+  },
+  {
+    "Wortliste": "das Milieu, -s",
+    "English": "the social environment; the milieu",
+    "Meaning": "Der Film spielt im kriminellen Milieu einer Großstadt.",
+    "Hebrew": "מילייה / סביבה חברתית",
+    "Ukrainian": "середовище / соціальне оточення"
+  },
+  {
+    "Wortliste": "der/die Filmregisseur/in, -e/-nen",
+    "English": "the film director",
+    "Meaning": "Der bekannte Filmregisseur arbeitet an einem neuen Projekt.",
+    "Hebrew": "במאי/ת קולנוע",
+    "Ukrainian": "кінорежисер / кінорежисерка"
+  },
+  {
+    "Wortliste": "der/die Muslim/in, -e/-nen",
+    "English": "the Muslim",
+    "Meaning": "In diesem Viertel leben viele Muslime.",
+    "Hebrew": "מוסלמי/ת",
+    "Ukrainian": "мусульманин / мусульманка"
+  },
+  {
+    "Wortliste": "das Gangsterkino (Sg.)",
+    "English": "gangster films (as a genre)",
+    "Meaning": "Er interessiert sich besonders für amerikanisches Gangsterkino.",
+    "Hebrew": "סרטי גנגסטרים",
+    "Ukrainian": "гангстерське кіно"
+  },
+  {
+    "Wortliste": "passioniert",
+    "English": "passionate",
+    "Meaning": "Sie ist eine passionierte Filmregisseurin.",
+    "Hebrew": "נלהב / בעל תשוקה",
+    "Ukrainian": "пристрасний / захоплений"
+  },
+  {
+    "Wortliste": "geprägt",
+    "English": "shaped; influenced",
+    "Meaning": "Sein Stil ist stark von seiner Kindheit geprägt.",
+    "Hebrew": "מעוצב / מושפע",
+    "Ukrainian": "сформований / позначений"
+  },
+  {
+    "Wortliste": "der/die Produzent/in, -en/-nen",
+    "English": "the producer",
+    "Meaning": "Der Produzent sucht nach Geld für den neuen Film.",
+    "Hebrew": "מפיק/ה",
+    "Ukrainian": "продюсер / продюсерка"
+  },
+  {
+    "Wortliste": "gläubig",
+    "English": "religious; believing",
+    "Meaning": "Seine Familie ist sehr gläubig.",
+    "Hebrew": "מאמין/ה / דתי/ה",
+    "Ukrainian": "віруючий / набожний"
+  },
+  {
+    "Wortliste": "die Härte (Sg.)",
+    "English": "the hardness; the severity",
+    "Meaning": "Er war überrascht über die Härte der Kritik.",
+    "Hebrew": "קשיות / חומרה",
+    "Ukrainian": "жорсткість / суворість"
+  },
+  {
+    "Wortliste": "die Hauptrolle, -n",
+    "English": "the leading role",
+    "Meaning": "Sie spielt die Hauptrolle in diesem Kinofilm.",
+    "Hebrew": "תפקיד ראשי",
+    "Ukrainian": "головна роль"
+  },
+  {
+    "Wortliste": "heimisch",
+    "English": "at home; native",
+    "Meaning": "In Berlin fühlt er sich inzwischen heimisch.",
+    "Hebrew": "ביתי / מוכר / ילידי",
+    "Ukrainian": "рідний / домашній / місцевий"
+  },
+  {
+    "Wortliste": "die Hommage, -n",
+    "English": "the homage; tribute",
+    "Meaning": "Der Film ist eine Hommage an seine Kindheit.",
+    "Hebrew": "מחווה / כבוד",
+    "Ukrainian": "данина поваги / посвята"
+  },
+  {
+    "Wortliste": "der Juryvorsitz (Sg.)",
+    "English": "the chairmanship of the jury",
+    "Meaning": "Den Juryvorsitz übernimmt dieses Jahr eine bekannte Schauspielerin.",
+    "Hebrew": "יו\"ר חבר השופטים",
+    "Ukrainian": "голова журі"
+  },
+  {
+    "Wortliste": "katholisch",
+    "English": "Catholic",
+    "Meaning": "Er ist in einer katholischen Familie aufgewachsen.",
+    "Hebrew": "קתולי",
+    "Ukrainian": "католицький"
+  },
+  {
+    "Wortliste": "der Kiez, -e",
+    "English": "the neighbourhood (colloquial, often in Berlin)",
+    "Meaning": "In meinem Kiez kennt fast jeder jeden.",
+    "Hebrew": "שכונה (בגרמנית סלנג)",
+    "Ukrainian": "квартал / район"
+  },
+  {
+    "Wortliste": "der Kinofilm, -e",
+    "English": "the cinema film",
+    "Meaning": "Der neue Kinofilm läuft ab Donnerstag.",
+    "Hebrew": "סרט קולנוע",
+    "Ukrainian": "кінофільм"
+  },
+  {
+    "Wortliste": "die Kinokasse, -n",
+    "English": "the box office; cinema ticket counter",
+    "Meaning": "An der Kinokasse bilden sich lange Schlangen.",
+    "Hebrew": "קופה של קולנוע",
+    "Ukrainian": "каса кінотеатру"
+  },
+  {
+    "Wortliste": "der Nonsens (Sg.)",
+    "English": "the nonsense",
+    "Meaning": "Was er erzählt hat, war totaler Nonsens.",
+    "Hebrew": "שטויות / חוסר הגיון",
+    "Ukrainian": "нісенітниця / безглуздість"
+  },
+  {
+    "Wortliste": "der/die Regisseur/in, -e/-nen",
+    "English": "the director",
+    "Meaning": "Der Regisseur erklärt den Schauspielern die nächste Szene.",
+    "Hebrew": "במאי/ת",
+    "Ukrainian": "режисер / режисерка"
+  },
+  {
+    "Wortliste": "die Scheinehe, -n",
+    "English": "the sham marriage",
+    "Meaning": "Eine Scheinehe ist in vielen Ländern strafbar.",
+    "Hebrew": "נישואי פיקציה",
+    "Ukrainian": "фіктивний шлюб"
+  },
+  {
+    "Wortliste": "schmerzlos",
+    "English": "painless",
+    "Meaning": "Die Behandlung war fast schmerzlos.",
+    "Hebrew": "ללא כאב / כואב-פחות",
+    "Ukrainian": "безболісний"
+  },
+  {
+    "Wortliste": "der Spielfilm, -e",
+    "English": "the feature film",
+    "Meaning": "Heute Abend läuft ein französischer Spielfilm im Fernsehen.",
+    "Hebrew": "סרט עלילתי",
+    "Ukrainian": "художній фільм"
+  },
+  {
+    "Wortliste": "stets",
+    "English": "always",
+    "Meaning": "Sie ist stets pünktlich und gut vorbereitet.",
+    "Hebrew": "תמיד / כל הזמן",
+    "Ukrainian": "завжди / постійно"
+  },
+  {
+    "Wortliste": "treu",
+    "English": "faithful; loyal",
+    "Meaning": "Er ist seinen Freunden immer treu geblieben.",
+    "Hebrew": "נאמן",
+    "Ukrainian": "вірний / відданий"
+  },
+  {
+    "Wortliste": "die Trophäe, -n",
+    "English": "the trophy",
+    "Meaning": "Die Mannschaft hielt stolz die Trophäe in die Höhe.",
+    "Hebrew": "גביע / פרס",
+    "Ukrainian": "трофей / кубок"
+  },
+  {
+    "Wortliste": "visuell",
+    "English": "visual",
+    "Meaning": "Der Film arbeitet stark mit visuellen Effekten.",
+    "Hebrew": "חזותי",
+    "Ukrainian": "візуальний"
+  },
+  {
+    "Wortliste": "voller",
+    "English": "full of",
+    "Meaning": "Der Film ist voller überraschender Wendungen.",
+    "Hebrew": "מלא / עמוס",
+    "Ukrainian": "сповнений / повний"
+  },
+  {
+    "Wortliste": "das Vorbild, -er",
+    "English": "the role model",
+    "Meaning": "Sein älterer Bruder ist für ihn ein großes Vorbild.",
+    "Hebrew": "מודל לחיקוי / דוגמה",
+    "Ukrainian": "взірець / приклад для наслідування"
+  },
+  {
+    "Wortliste": "wesentlich",
+    "English": "essential; significant",
+    "Meaning": "Sprachkenntnisse sind ein wesentlicher Vorteil im Beruf.",
+    "Hebrew": "מהותי / חשוב / משמעותי",
+    "Ukrainian": "суттєвий / важливий / значний"
+  },
+  {
+    "Wortliste": "das Piktogramm, -e",
+    "English": "the pictogram",
+    "Meaning": "Piktogramme helfen, Informationen ohne Text zu verstehen.",
+    "Hebrew": "פיקטוגרמה / סמל גרפי",
+    "Ukrainian": "піктограма"
+  },
+  {
+    "Wortliste": "der Anlass, \"-e",
+    "English": "the occasion; the reason",
+    "Meaning": "Der Geburtstag war ein schöner Anlass für ein Treffen.",
+    "Hebrew": "סיבה / אירוע / הזדמנות",
+    "Ukrainian": "привід / нагода / подія"
+  },
+  {
+    "Wortliste": "kommunizieren",
+    "English": "to communicate",
+    "Meaning": "Wir kommunizieren heute oft über Messenger-Dienste.",
+    "Hebrew": "לתקשר",
+    "Ukrainian": "спілкуватися / комунікувати"
+  },
+  {
+    "Wortliste": "ausstrecken",
+    "English": "to stretch out",
+    "Meaning": "Er streckte die Hand aus, um sie zu begrüßen.",
+    "Hebrew": "להושיט / למתוח",
+    "Ukrainian": "витягувати / простягати"
+  },
+  {
+    "Wortliste": "die Auszeit, -en",
+    "English": "the time-out; break",
+    "Meaning": "Nach dem Studium nahm sie sich eine Auszeit im Ausland.",
+    "Hebrew": "הפסקה / זמן חופש",
+    "Ukrainian": "перерва / вихідний"
+  },
+  {
+    "Wortliste": "die Gebärdensprache (Sg.)",
+    "English": "sign language",
+    "Meaning": "Viele Gehörlose kommunizieren mit Gebärdensprache.",
+    "Hebrew": "שפת סימנים",
+    "Ukrainian": "мова жестів"
+  },
+  {
+    "Wortliste": "die Schranke, -n",
+    "English": "the barrier; the gate",
+    "Meaning": "Die Schranke am Bahnübergang ist geschlossen.",
+    "Hebrew": "מחסום / גבול",
+    "Ukrainian": "бар'єр / перешкода"
+  },
+  {
+    "Wortliste": "der Stopp, -s",
+    "English": "the stop; halt",
+    "Meaning": "Wir machen einen kurzen Stopp an der Tankstelle.",
+    "Hebrew": "עצור / עצירה",
+    "Ukrainian": "зупинка / стоп"
+  },
+  {
+    "Wortliste": "weisen",
+    "English": "to point; to show",
+    "Meaning": "Der Wegweiser weist in Richtung Zentrum.",
+    "Hebrew": "להצביע / לכוון",
+    "Ukrainian": "вказувати / направляти"
+  },
+  {
+    "Wortliste": "die Körpersprache (Sg.)",
+    "English": "body language",
+    "Meaning": "Ihre Körpersprache zeigt deutlich, dass sie nervös ist.",
+    "Hebrew": "שפת גוף",
+    "Ukrainian": "мова тіла"
+  },
+  {
+    "Wortliste": "die Emotion, -en",
+    "English": "the emotion",
+    "Meaning": "Der Film löste starke Emotionen beim Publikum aus.",
+    "Hebrew": "רגש / אמוציה",
+    "Ukrainian": "емоція"
+  },
+  {
+    "Wortliste": "das Körpersignal, -e",
+    "English": "the body signal",
+    "Meaning": "Achten Sie auf die Körpersignale Ihres Gesprächspartners.",
+    "Hebrew": "אות גוף / סימן גוף",
+    "Ukrainian": "сигнал тіла"
+  },
+  {
+    "Wortliste": "verraten",
+    "English": "to reveal; to betray",
+    "Meaning": "Sein Gesicht verrät, dass er nervös ist.",
+    "Hebrew": "לבגוד / לגלות סוד",
+    "Ukrainian": "зрадити / видати / розкрити секрет"
+  },
+  {
+    "Wortliste": "allzu",
+    "English": "too; all too",
+    "Meaning": "Mach dir nicht allzu viele Sorgen.",
+    "Hebrew": "יותר מדי",
+    "Ukrainian": "надто / занадто"
+  },
+  {
+    "Wortliste": "anlegen",
+    "English": "to apply; to put on; to invest",
+    "Meaning": "Für das Projekt müssen wir einen neuen Ordner anlegen.",
+    "Hebrew": "ליצור / להשקיע / לעגון",
+    "Ukrainian": "створювати / накопичувати / пришвартовувати"
+  },
+  {
+    "Wortliste": "auszahlen",
+    "English": "to pay out; to pay off",
+    "Meaning": "Fleiß zahlt sich am Ende aus.",
+    "Hebrew": "לשלם / להחזיר כסף",
+    "Ukrainian": "виплачувати / окупатися"
+  },
+  {
+    "Wortliste": "der/die Autor/in, -en/-nen",
+    "English": "the author",
+    "Meaning": "Die Autorin liest heute Abend aus ihrem neuen Buch.",
+    "Hebrew": "מחבר/ת / סופר/ת",
+    "Ukrainian": "автор / авторка"
+  },
+  {
+    "Wortliste": "betroffen",
+    "English": "affected; concerned; shocked",
+    "Meaning": "Viele Mitarbeiter sind von der Entscheidung betroffen.",
+    "Hebrew": "מושפע / נפגע / נרגש",
+    "Ukrainian": "зачеплений / вражений / стурбований"
+  },
+  {
+    "Wortliste": "bilingual",
+    "English": "bilingual",
+    "Meaning": "Die Kinder wachsen bilingual auf.",
+    "Hebrew": "דו-לשוני",
+    "Ukrainian": "двомовний"
+  },
+  {
+    "Wortliste": "einsprachig",
+    "English": "monolingual; speaking one language",
+    "Meaning": "Er ist einsprachig aufgewachsen.",
+    "Hebrew": "חד-לשוני",
+    "Ukrainian": "одномовний"
+  },
+  {
+    "Wortliste": "fehlerlos",
+    "English": "without mistakes; flawless",
+    "Meaning": "Sie hat den Test fast fehlerlos geschrieben.",
+    "Hebrew": "ללא שגיאות / מושלם",
+    "Ukrainian": "без помилок / бездоганний"
+  },
+  {
+    "Wortliste": "instinktiv",
+    "English": "instinctive; instinctively",
+    "Meaning": "Er hat instinktiv die richtige Entscheidung getroffen.",
+    "Hebrew": "אינסטינקטיבי",
+    "Ukrainian": "інстинктивний"
+  },
+  {
+    "Wortliste": "wahrnehmen",
+    "English": "to perceive; to notice",
+    "Meaning": "Sie nimmt leise Geräusche sehr genau wahr.",
+    "Hebrew": "לתפוס / להבחין / לחוש",
+    "Ukrainian": "сприймати / помічати"
+  },
+  {
+    "Wortliste": "deuten",
+    "English": "to interpret; to indicate",
+    "Meaning": "Wie deutest du seine Reaktion?",
+    "Hebrew": "לפרש / לפרש",
+    "Ukrainian": "тлумачити / інтерпретувати"
+  },
+  {
+    "Wortliste": "die Mimik, -en",
+    "English": "the facial expression(s)",
+    "Meaning": "An ihrer Mimik kann man viel ablesen.",
+    "Hebrew": "הבעת פנים",
+    "Ukrainian": "міміка / вираз обличчя"
+  },
+  {
+    "Wortliste": "vorgeben",
+    "English": "to pretend; to set; to prescribe",
+    "Meaning": "Die Lehrerin gibt das Thema für den Aufsatz vor.",
+    "Hebrew": "להעמיד פנים / לטעון",
+    "Ukrainian": "вдавати / стверджувати"
+  },
+  {
+    "Wortliste": "bestimmen",
+    "English": "to determine; to decide",
+    "Meaning": "Du kannst selbst bestimmen, wie viel du lernen willst.",
+    "Hebrew": "לקבוע / לאפיין",
+    "Ukrainian": "визначати / встановлювати"
+  },
+  {
+    "Wortliste": "eindeutig",
+    "English": "clear; unambiguous",
+    "Meaning": "Die Regeln sind eindeutig formuliert.",
+    "Hebrew": "ברור / חד משמעי",
+    "Ukrainian": "однозначний / чіткий"
+  },
+  {
+    "Wortliste": "das Signal, -e",
+    "English": "the signal",
+    "Meaning": "Ein Lächeln kann ein positives Signal sein.",
+    "Hebrew": "אות / סימן",
+    "Ukrainian": "сигнал"
+  },
+  {
+    "Wortliste": "angemessen",
+    "English": "appropriate; adequate",
+    "Meaning": "In einem Bewerbungsgespräch ist formelle Kleidung angemessen.",
+    "Hebrew": "הולם / מתאים",
+    "Ukrainian": "відповідний / доречний"
+  },
+  {
+    "Wortliste": "feststellen",
+    "English": "to determine; to find out",
+    "Meaning": "Der Arzt stellte eine Grippe fest.",
+    "Hebrew": "לקבוע / לזהות / לגלות",
+    "Ukrainian": "встановлювати / виявляти"
+  },
+  {
+    "Wortliste": "führen",
+    "English": "to lead; to conduct",
+    "Meaning": "Sie führt ein sehr persönliches Gespräch mit ihrem Chef.",
+    "Hebrew": "להוביל / לנהל",
+    "Ukrainian": "вести / керувати"
+  },
+  {
+    "Wortliste": "geduldig",
+    "English": "patient",
+    "Meaning": "Die Lehrerin erklärt alles sehr geduldig.",
+    "Hebrew": "סבלני",
+    "Ukrainian": "терплячий"
+  },
+  {
+    "Wortliste": "das Gehirn, -e",
+    "English": "the brain",
+    "Meaning": "Das Gehirn verarbeitet ständig neue Informationen.",
+    "Hebrew": "מוח",
+    "Ukrainian": "мозок"
+  },
+  {
+    "Wortliste": "das Großraumbüro, -s",
+    "English": "the open-plan office",
+    "Meaning": "Im Großraumbüro ist es manchmal laut.",
+    "Hebrew": "משרד פתוח / open space",
+    "Ukrainian": "відкритий офіс / open space"
+  },
+  {
+    "Wortliste": "herumschlagen",
+    "English": "to struggle with; to grapple with",
+    "Meaning": "Viele Eltern schlagen sich mit dem Thema Handyregeln herum.",
+    "Hebrew": "להתמודד / להתעסק עם",
+    "Ukrainian": "боротися / битися / мучитися з"
+  },
+  {
+    "Wortliste": "kinderleicht",
+    "English": "child’s play; very easy",
+    "Meaning": "Mit dieser App ist Vokabellernen kinderleicht.",
+    "Hebrew": "קל כמו לילד / פשוט מאוד",
+    "Ukrainian": "дитячо простий / дуже легкий"
+  },
+  {
+    "Wortliste": "das Kleinkind, -er",
+    "English": "the toddler; small child",
+    "Meaning": "Das Kleinkind lernt gerade seine ersten Wörter.",
+    "Hebrew": "פעוט / ילד קטן",
+    "Ukrainian": "маля / маленька дитина"
+  },
+  {
+    "Wortliste": "die Kompetenz, -en",
+    "English": "the competence; skill",
+    "Meaning": "Sprachliche Kompetenzen sind im Beruf wichtig.",
+    "Hebrew": "כשירות / יכולת",
+    "Ukrainian": "компетенція / здатність"
+  },
+  {
+    "Wortliste": "die Konzentrationsleistung, -en",
+    "English": "the concentration performance; ability to concentrate",
+    "Meaning": "Nachmittags lässt meine Konzentrationsleistung nach.",
+    "Hebrew": "יכולת ריכוז",
+    "Ukrainian": "здатність до концентрації"
+  },
+  {
+    "Wortliste": "monolingual",
+    "English": "monolingual",
+    "Meaning": "Die Studie vergleicht monolinguale und bilinguale Kinder.",
+    "Hebrew": "חד-לשוני",
+    "Ukrainian": "одномовний"
+  },
+  {
+    "Wortliste": "nachweisen",
+    "English": "to prove; to demonstrate",
+    "Meaning": "Sie konnte gute Deutschkenntnisse nachweisen.",
+    "Hebrew": "להוכיח / להראות",
+    "Ukrainian": "доводити / демонструвати"
+  },
+  {
+    "Wortliste": "die Phase, -n",
+    "English": "the phase; the stage",
+    "Meaning": "In der ersten Phase ist alles noch neu und spannend.",
+    "Hebrew": "שלב / פאזה",
+    "Ukrainian": "фаза / етап"
+  },
+  {
+    "Wortliste": "der/die Psychologe/Psychologin, -n/-nen",
+    "English": "the psychologist",
+    "Meaning": "Die Psychologin erklärt die Ergebnisse der Studie.",
+    "Hebrew": "פסיכולוג/ית",
+    "Ukrainian": "психолог / психологиня"
+  },
+  {
+    "Wortliste": "schwerfallen",
+    "English": "to be difficult (for someone)",
+    "Meaning": "Am Anfang fällt mir das Sprechen auf Deutsch noch schwer.",
+    "Hebrew": "להיות קשה / לא לבוא בקלות",
+    "Ukrainian": "даватися важко"
+  },
+  {
+    "Wortliste": "die Sprachenpolitik (Sg.)",
+    "English": "language policy",
+    "Meaning": "Die Sprachenpolitik des Landes fördert Mehrsprachigkeit.",
+    "Hebrew": "מדיניות שפה",
+    "Ukrainian": "мовна політика"
+  },
+  {
+    "Wortliste": "die Sprachentwicklung, -en",
+    "English": "language development",
+    "Meaning": "Eltern können die Sprachentwicklung ihrer Kinder unterstützen.",
+    "Hebrew": "התפתחות שפה",
+    "Ukrainian": "розвиток мови"
+  },
+  {
+    "Wortliste": "der Sprachschatz (Sg.)",
+    "English": "vocabulary; stock of words",
+    "Meaning": "Durch viel Lesen erweitert man seinen Sprachschatz.",
+    "Hebrew": "אוצר מילים",
+    "Ukrainian": "словниковий запас"
+  },
+  {
+    "Wortliste": "der/die Sprachwissenschaftler/in, -/-nen",
+    "English": "the linguist",
+    "Meaning": "Sprachwissenschaftler untersuchen, wie sich Sprachen entwickeln.",
+    "Hebrew": "בלשן / חוקר/ת שפה",
+    "Ukrainian": "лінгвіст / мовознавець"
+  },
+  {
+    "Wortliste": "die Startchance, -n",
+    "English": "the starting opportunity; starting chance",
+    "Meaning": "Gute Bildung erhöht die Startchancen im Berufsleben.",
+    "Hebrew": "הזדמנות התחלתית",
+    "Ukrainian": "стартова можливість"
+  },
+  {
+    "Wortliste": "der/die Trendforscher/in, -/-nen",
+    "English": "the trend researcher",
+    "Meaning": "Trendforscher analysieren, wie sich unsere Gesellschaft verändert.",
+    "Hebrew": "חוקר/ת מגמות",
+    "Ukrainian": "дослідник трендів"
+  },
+  {
+    "Wortliste": "überfordern",
+    "English": "to overstrain; to overwhelm",
+    "Meaning": "Zu viele Hausaufgaben können Schüler leicht überfordern.",
+    "Hebrew": "לדרוש יותר מדי / להעמיס",
+    "Ukrainian": "перевантажувати / вимагати занадто багато"
+  },
+  {
+    "Wortliste": "umgehen",
+    "English": "to deal with; to handle",
+    "Meaning": "Man muss lernen, mit Stress besser umzugehen.",
+    "Hebrew": "להתמודד עם / לעקוף",
+    "Ukrainian": "справлятися / обходити"
+  },
+  {
+    "Wortliste": "unterfordern",
+    "English": "to underchallenge",
+    "Meaning": "Wenn Kinder im Unterricht unterfordert sind, langweilen sie sich.",
+    "Hebrew": "לא לאתגר מספיק",
+    "Ukrainian": "недостатньо завантажувати"
+  },
+  {
+    "Wortliste": "die Verhandlung, -en",
+    "English": "the negotiation; the hearing",
+    "Meaning": "Die Verhandlungen zwischen den Firmen waren erfolgreich.",
+    "Hebrew": "משא ומתן / דיון",
+    "Ukrainian": "переговори / слухання"
+  },
+  {
+    "Wortliste": "vertraut",
+    "English": "familiar",
+    "Meaning": "Die Stadt ist mir inzwischen sehr vertraut.",
+    "Hebrew": "מוכר / קרוב / בטוח",
+    "Ukrainian": "знайомий / близький / довірений"
+  },
+  {
+    "Wortliste": "werben",
+    "English": "to advertise; to recruit",
+    "Meaning": "Die Firma wirbt mit einem neuen Logo im Internet.",
+    "Hebrew": "לפרסם / לגייס",
+    "Ukrainian": "рекламувати / залучати"
+  },
+  {
+    "Wortliste": "der/die Wissenschaftler/in, -/-nen",
+    "English": "the scientist; academic researcher",
+    "Meaning": "Die Wissenschaftlerin präsentiert ihre Ergebnisse auf einer Konferenz.",
+    "Hebrew": "מדען/ית",
+    "Ukrainian": "вчений / науковець"
+  },
+  {
+    "Wortliste": "der Wunsch, \"-e",
+    "English": "the wish; the desire",
+    "Meaning": "Er hat den Wunsch, später im Ausland zu arbeiten.",
+    "Hebrew": "משאלה / רצון / בקשה",
+    "Ukrainian": "бажання / прохання"
+  },
+  {
+    "Wortliste": "zweisprachig",
+    "English": "bilingual",
+    "Meaning": "Sie ist zweisprachig aufgewachsen.",
+    "Hebrew": "דו-לשוני",
+    "Ukrainian": "двомовний"
+  },
+  {
+    "Wortliste": "vorgehen",
+    "English": "to proceed; to act",
+    "Meaning": "Wir müssen bei dem Projekt sehr sorgfältig vorgehen.",
+    "Hebrew": "להתקדם / לנהוג / להיות עדיפות",
+    "Ukrainian": "діяти / виступати / мати пріоритет"
+  },
+  {
+    "Wortliste": "das Defizit, -e",
+    "English": "the deficit",
+    "Meaning": "Viele Schüler haben ein Defizit im Hörverstehen.",
+    "Hebrew": "גירעון / חוסר",
+    "Ukrainian": "дефіцит / нестача"
+  },
+  {
+    "Wortliste": "der/die Gegner/in, -/-nen",
+    "English": "the opponent",
+    "Meaning": "Im Spiel waren unsere Gegner sehr stark.",
+    "Hebrew": "יריב/ה / מתנגד/ת",
+    "Ukrainian": "супротивник / опонент"
+  },
+  {
+    "Wortliste": "das Prinzip, -ien",
+    "English": "the principle",
+    "Meaning": "Aus Prinzip bezahlt er seine Rechnungen immer pünktlich.",
+    "Hebrew": "עיקרון / עקרון",
+    "Ukrainian": "принцип"
+  },
+  {
+    "Wortliste": "der Umgang, \"-e",
+    "English": "the interaction; the handling",
+    "Meaning": "Der Umgang mit Konflikten fällt ihm nicht leicht.",
+    "Hebrew": "התנהלות / קשר / עסקה",
+    "Ukrainian": "поводження / стосунки / спілкування"
+  },
+  {
+    "Wortliste": "die Basis, Basen",
+    "English": "the basis; foundation",
+    "Meaning": "Vertrauen ist die Basis einer guten Beziehung.",
+    "Hebrew": "בסיס",
+    "Ukrainian": "основа / база"
+  },
+  {
+    "Wortliste": "entspannt",
+    "English": "relaxed",
+    "Meaning": "Nach dem Urlaub fühle ich mich wieder ganz entspannt.",
+    "Hebrew": "רגוע / נינוח",
+    "Ukrainian": "розслаблений / спокійний"
+  },
+  {
+    "Wortliste": "das Teilthema, -themen",
+    "English": "the subtopic",
+    "Meaning": "Jede Gruppe bearbeitet ein Teilthema des Projekts.",
+    "Hebrew": "נושא משנה",
+    "Ukrainian": "підтема"
+  },
+  {
+    "Wortliste": "gehen",
+    "English": "to go",
+    "Meaning": "Es geht in diesem Kurs vor allem um Kommunikation.",
+    "Hebrew": "ללכת / להסתדר",
+    "Ukrainian": "іти / працювати"
+  },
+  {
+    "Wortliste": "gründlich",
+    "English": "thorough; thoroughly",
+    "Meaning": "Bitte lesen Sie den Text gründlich durch.",
+    "Hebrew": "יסודי / מעמיק",
+    "Ukrainian": "ґрунтовний / ретельний"
+  },
+  {
+    "Wortliste": "die Lage, -n",
+    "English": "the situation; the location",
+    "Meaning": "Die wirtschaftliche Lage hat sich verbessert.",
+    "Hebrew": "מצב / מיקום",
+    "Ukrainian": "ситуація / становище / розташування"
+  },
+  {
+    "Wortliste": "die Nummer, -n",
+    "English": "the number",
+    "Meaning": "Können Sie mir Ihre Telefonnummer geben?",
+    "Hebrew": "מספר",
+    "Ukrainian": "номер"
+  },
+  {
+    "Wortliste": "das Talent, -e",
+    "English": "the talent",
+    "Meaning": "Er hat ein großes Talent für Sprachen.",
+    "Hebrew": "כישרון",
+    "Ukrainian": "талант"
+  },
+  {
+    "Wortliste": "eilig",
+    "English": "in a hurry; urgent",
+    "Meaning": "Sie hat es eilig und läuft schnell zur U-Bahn.",
+    "Hebrew": "דחוף / ממהר",
+    "Ukrainian": "терміновий / поспішний"
+  },
+  {
+    "Wortliste": "austeilen",
+    "English": "to hand out; to distribute",
+    "Meaning": "Die Lehrerin teilt die Arbeitsblätter aus.",
+    "Hebrew": "לחלק / להעניק",
+    "Ukrainian": "роздавати / розподіляти"
+  },
+  {
+    "Wortliste": "die Berufsschule, -n",
+    "English": "the vocational school",
+    "Meaning": "Die Auszubildenden gehen zweimal pro Woche zur Berufsschule.",
+    "Hebrew": "בית ספר מקצועי",
+    "Ukrainian": "професійна школа"
+  },
+  {
+    "Wortliste": "draufhauen",
+    "English": "to bash; to lash out (coll.)",
+    "Meaning": "In der Diskussion hat er ganz schön draufgehauen.",
+    "Hebrew": "לחבוט / להקים עסק",
+    "Ukrainian": "вдарити / гатити"
+  },
+  {
+    "Wortliste": "einstecken",
+    "English": "to put in (pocket); to take (criticism)",
+    "Meaning": "Er musste viel Kritik einstecken.",
+    "Hebrew": "לקחת / לסבול / לחבר לחשמל",
+    "Ukrainian": "вставляти / брати / терпіти"
+  },
+  {
+    "Wortliste": "der/die Gepäckermittler/in, -/-nen",
+    "English": "the baggage tracer; baggage investigator",
+    "Meaning": "Die Gepäckermittler suchen nach dem verlorenen Koffer.",
+    "Hebrew": "מאתר/ת מזוודות",
+    "Ukrainian": "розшукувач багажу"
+  },
+  {
+    "Wortliste": "der/die Kabarettist/in, -en/-nen",
+    "English": "the cabaret artist; satirist",
+    "Meaning": "Der Kabarettist macht sich über die Politik lustig.",
+    "Hebrew": "קברטיסט/ית",
+    "Ukrainian": "кабаретист / артист кабаре"
+  },
+  {
+    "Wortliste": "die Kritik, -en",
+    "English": "the criticism; the review",
+    "Meaning": "Der Film hat gute Kritiken bekommen.",
+    "Hebrew": "ביקורת",
+    "Ukrainian": "критика"
+  },
+  {
+    "Wortliste": "nehmen",
+    "English": "to take",
+    "Meaning": "Er nimmt die Kritik gelassen.",
+    "Hebrew": "לקחת",
+    "Ukrainian": "брати"
+  },
+  {
+    "Wortliste": "der Respekt (Sg.)",
+    "English": "the respect",
+    "Meaning": "Sie zeigt großen Respekt vor älteren Menschen.",
+    "Hebrew": "כבוד / יחס",
+    "Ukrainian": "повага"
+  },
+  {
+    "Wortliste": "ruhig",
+    "English": "calm; quiet",
+    "Meaning": "Bitte bleiben Sie ruhig und hören Sie zu.",
+    "Hebrew": "שקט / רגוע",
+    "Ukrainian": "спокійний / тихий"
+  },
+  {
+    "Wortliste": "touren",
+    "English": "to be on tour",
+    "Meaning": "Die Band tourt im Sommer durch ganz Europa.",
+    "Hebrew": "לסייר / לצאת לסיבוב",
+    "Ukrainian": "гастролювати / мандрувати"
+  },
+  {
+    "Wortliste": "zusammengehören",
+    "English": "to belong together",
+    "Meaning": "Die beiden Sätze gehören inhaltlich zusammen.",
+    "Hebrew": "להשתייך יחד / להתאים",
+    "Ukrainian": "належати разом / підходити одне одному"
+  },
+  {
+    "Wortliste": "üben",
+    "English": "to practise",
+    "Meaning": "Du musst die neuen Vokabeln regelmäßig üben.",
+    "Hebrew": "לתרגל / להפעיל",
+    "Ukrainian": "практикувати / тренуватися"
+  },
+  {
+    "Wortliste": "aggressiv",
+    "English": "aggressive",
+    "Meaning": "Sein Ton wurde plötzlich sehr aggressiv.",
+    "Hebrew": "אגרסיבי",
+    "Ukrainian": "агресивний"
+  },
+  {
+    "Wortliste": "auffordern",
+    "English": "to request; to urge; to call upon",
+    "Meaning": "Die Lehrerin fordert die Schüler zum Mitmachen auf.",
+    "Hebrew": "לדרוש / לבקש / להזמין",
+    "Ukrainian": "вимагати / закликати / запрошувати"
+  },
+  {
+    "Wortliste": "blamieren (sich)",
+    "English": "to embarrass (oneself)",
+    "Meaning": "Ich will mich bei der Präsentation nicht blamieren.",
+    "Hebrew": "להתבייש / להביך את עצמו",
+    "Ukrainian": "осоромитися / скомпрометувати себе"
+  },
+  {
+    "Wortliste": "das Mitleid (Sg.)",
+    "English": "the pity; compassion",
+    "Meaning": "Ich möchte kein Mitleid, sondern Unterstützung.",
+    "Hebrew": "רחמים / חמלה",
+    "Ukrainian": "жалість / співчуття"
+  },
+  {
+    "Wortliste": "die Verbesserung, -en",
+    "English": "the improvement; correction",
+    "Meaning": "Die Lehrerin hat meine Fehler mit roten Verbesserungen markiert.",
+    "Hebrew": "שיפור / תיקון",
+    "Ukrainian": "покращення / виправлення"
+  },
+  {
+    "Wortliste": "verschuldet",
+    "English": "in debt; at fault",
+    "Meaning": "Viele junge Leute sind nach dem Studium hoch verschuldet.",
+    "Hebrew": "חייב / מסובך בחובות",
+    "Ukrainian": "заборгований / обтяжений боргами"
+  },
+  {
+    "Wortliste": "hinhören",
+    "English": "to listen closely",
+    "Meaning": "Man muss genau hinhören, um alles zu verstehen.",
+    "Hebrew": "להאזין / לשים לב",
+    "Ukrainian": "прислухатися / уважно слухати"
+  },
+  {
+    "Wortliste": "der Konsens (Sg.)",
+    "English": "the consensus",
+    "Meaning": "In der Gruppe herrscht Konsens über das Vorgehen.",
+    "Hebrew": "קונסנזוס / הסכמה",
+    "Ukrainian": "консенсус / згода"
+  },
+  {
+    "Wortliste": "die Sache, -n",
+    "English": "the thing; matter; issue",
+    "Meaning": "Lass uns die Sache in Ruhe besprechen.",
+    "Hebrew": "עניין / דבר",
+    "Ukrainian": "справа / річ / питання"
+  },
+  {
+    "Wortliste": "die Schwäche, -n",
+    "English": "the weakness",
+    "Meaning": "Im Bewerbungsgespräch fragen sie oft nach Stärken und Schwächen.",
+    "Hebrew": "חולשה",
+    "Ukrainian": "слабкість"
+  },
+  {
+    "Wortliste": "die Aufgabenteilung, -en",
+    "English": "the division of tasks",
+    "Meaning": "Zu Hause haben wir eine klare Aufgabenteilung.",
+    "Hebrew": "חלוקת משימות",
+    "Ukrainian": "розподіл завдань"
+  },
+  {
+    "Wortliste": "auslösen",
+    "English": "to trigger; to cause",
+    "Meaning": "Die Nachricht hat große Freude ausgelöst.",
+    "Hebrew": "לגרום / להפעיל",
+    "Ukrainian": "спричиняти / викликати / запускати"
+  },
+  {
+    "Wortliste": "donnern",
+    "English": "to thunder; to boom",
+    "Meaning": "Draußen donnert es, gleich gibt es ein Gewitter.",
+    "Hebrew": "לרעום / להרעים",
+    "Ukrainian": "гриміти / грім"
+  },
+  {
+    "Wortliste": "ernst meinen",
+    "English": "to mean seriously",
+    "Meaning": "Ich glaube, er meint das wirklich ernst.",
+    "Hebrew": "להתכוון ברצינות",
+    "Ukrainian": "мати серйозні наміри"
+  },
+  {
+    "Wortliste": "lexikalisch",
+    "English": "lexical",
+    "Meaning": "Die Übung konzentriert sich auf lexikalische Unterschiede.",
+    "Hebrew": "לקסיקלי / של אוצר מילים",
+    "Ukrainian": "лексичний"
+  },
+  {
+    "Wortliste": "die Naturerscheinung, -en",
+    "English": "the natural phenomenon",
+    "Meaning": "Nordlichter sind eine beeindruckende Naturerscheinung.",
+    "Hebrew": "תופעת טבע",
+    "Ukrainian": "природне явище"
+  },
+  {
+    "Wortliste": "die Zeiterscheinung, -en",
+    "English": "the sign of the times; contemporary phenomenon",
+    "Meaning": "Soziale Medien sind eine typische Zeiterscheinung.",
+    "Hebrew": "תופעה עכשווית",
+    "Ukrainian": "явище нашого часу"
+  },
+  {
+    "Wortliste": "nichtssagend",
+    "English": "meaningless; bland",
+    "Meaning": "Die Antwort war höflich, aber ziemlich nichtssagend.",
+    "Hebrew": "חסר משמעות / לא אומר כלום",
+    "Ukrainian": "беззмістовний / нічого не значущий"
+  },
+  {
+    "Wortliste": "der/die Stellvertreter/in, -/-nen",
+    "English": "the deputy; the representative",
+    "Meaning": "Die Stellvertreterin übernimmt die Leitung bei seiner Abwesenheit.",
+    "Hebrew": "ממלא/ת מקום / סגן/ית",
+    "Ukrainian": "заступник / заступниця"
+  },
+  {
+    "Wortliste": "verwunderlich",
+    "English": "surprising; strange",
+    "Meaning": "Es ist nicht verwunderlich, dass er müde ist.",
+    "Hebrew": "מפתיע / תמוה",
+    "Ukrainian": "дивний / дивовижний"
+  },
+  {
+    "Wortliste": "ratsam",
+    "English": "advisable",
+    "Meaning": "Es ist ratsam, vor der Prüfung früh schlafen zu gehen.",
+    "Hebrew": "מומלץ / חכם",
+    "Ukrainian": "розумно / доцільно"
+  },
+  {
+    "Wortliste": "witzig",
+    "English": "funny",
+    "Meaning": "Der Film war sehr witzig, ich musste viel lachen.",
+    "Hebrew": "מצחיק / שנון",
+    "Ukrainian": "смішний / дотепний"
+  },
+  {
+    "Wortliste": "der Benzinmotor, -en",
+    "English": "the petrol engine",
+    "Meaning": "Der Benzinmotor verbraucht relativ viel Kraftstoff.",
+    "Hebrew": "מנוע בנזין",
+    "Ukrainian": "бензиновий двигун"
+  },
+  {
+    "Wortliste": "die Längeneinheit, -en",
+    "English": "the unit of length",
+    "Meaning": "Meter und Kilometer sind Längeneinheiten.",
+    "Hebrew": "יחידת אורך",
+    "Ukrainian": "одиниця довжини"
+  },
+  {
+    "Wortliste": "das Mittelalter (Sg.)",
+    "English": "the Middle Ages",
+    "Meaning": "Viele Burgen stammen aus dem Mittelalter.",
+    "Hebrew": "ימי הביניים",
+    "Ukrainian": "Середньовіччя"
+  },
+  {
+    "Wortliste": "der Flügel, -",
+    "English": "the wing",
+    "Meaning": "Der Vogel breitet seine Flügel aus.",
+    "Hebrew": "כנף / כנף פסנתר",
+    "Ukrainian": "крило / крило роялю"
+  },
+  {
+    "Wortliste": "die Hieroglyphe, -n",
+    "English": "the hieroglyph",
+    "Meaning": "Ägyptische Hieroglyphen sind sehr komplex.",
+    "Hebrew": "היירוגליף",
+    "Ukrainian": "ієрогліф"
+  },
+  {
+    "Wortliste": "die Kalorie, -n",
+    "English": "the calorie",
+    "Meaning": "Auf der Verpackung steht, wie viele Kalorien das Produkt hat.",
+    "Hebrew": "קלוריה",
+    "Ukrainian": "калорія"
+  },
+  {
+    "Wortliste": "die Keilschrift, -en",
+    "English": "the cuneiform script",
+    "Meaning": "Keilschrift ist eine der ältesten bekannten Schriften.",
+    "Hebrew": "כתב יתדות",
+    "Ukrainian": "клинопис"
+  },
+  {
+    "Wortliste": "die Lebenserwartung, -en",
+    "English": "the life expectancy",
+    "Meaning": "Die Lebenserwartung ist in vielen Ländern gestiegen.",
+    "Hebrew": "תוחלת חיים",
+    "Ukrainian": "тривалість життя"
+  },
+  {
+    "Wortliste": "die Mücke, -n",
+    "English": "the mosquito",
+    "Meaning": "Nachts nerven mich die Mücken im Zimmer.",
+    "Hebrew": "יתוש",
+    "Ukrainian": "комар"
+  },
+  {
+    "Wortliste": "das Olivenöl, -e",
+    "English": "the olive oil",
+    "Meaning": "Zum Salat nehme ich gern Olivenöl.",
+    "Hebrew": "שמן זית",
+    "Ukrainian": "оливкова олія"
+  },
+  {
+    "Wortliste": "schlagen, schlug, hat geschlagen",
+    "English": "to hit; to beat",
+    "Meaning": "Bitte schlag nicht so fest auf den Tisch.",
+    "Hebrew": "להכות / לדפוק",
+    "Ukrainian": "бити / вдаряти"
+  },
+  {
+    "Wortliste": "der Speck (Sg.)",
+    "English": "the bacon",
+    "Meaning": "Zum Frühstück gibt es Eier mit Speck.",
+    "Hebrew": "בייקון / שומן חזיר",
+    "Ukrainian": "бекон / сало"
+  },
+  {
+    "Wortliste": "das Quiz, -",
+    "English": "the quiz",
+    "Meaning": "Im Fernsehen läuft heute ein interessantes Quiz.",
+    "Hebrew": "חידון",
+    "Ukrainian": "вікторина / квіз"
+  },
+  {
+    "Wortliste": "ausgewechselt (sich wie ausgewechselt verhalten)",
+    "English": "changed (to behave like a different person)",
+    "Meaning": "Seit dem Umzug wirkt sie wie ausgewechselt.",
+    "Hebrew": "להתנהג כאילו הוחלפת / שינוי גמור",
+    "Ukrainian": "поводитися як підмінена людина / змінитися до невпізнання"
+  },
+  {
+    "Wortliste": "entfalten (sich)",
+    "English": "to unfold; to develop",
+    "Meaning": "In der neuen Klasse kann er sein Potenzial voll entfalten.",
+    "Hebrew": "להתפתח / לפרוש",
+    "Ukrainian": "розгортатися / розвиватися"
+  },
+  {
+    "Wortliste": "hängen, hing, hat gehangen (an den Lippen hängen)",
+    "English": "to hang (to hang on someone’s lips)",
+    "Meaning": "Die Kinder hingen an den Lippen der Erzählerin.",
+    "Hebrew": "לתלות / להיות תלוי ב / לשים לב לכל מילה",
+    "Ukrainian": "висіти / ловити кожне слово"
+  },
+  {
+    "Wortliste": "lenken (etw./jmd. in eine Richtung lenken)",
+    "English": "to steer; to direct",
+    "Meaning": "Der Moderator lenkte das Gespräch in eine neue Richtung.",
+    "Hebrew": "לכוון / להסיט",
+    "Ukrainian": "спрямовувати / направляти"
+  },
+  {
+    "Wortliste": "die Lippe, -n",
+    "English": "the lip",
+    "Meaning": "Sie hat sich auf die Lippen gebissen.",
+    "Hebrew": "שפה (של הפה)",
+    "Ukrainian": "губа"
+  },
+  {
+    "Wortliste": "die Weiche, -n (die Weichen für etw. stellen)",
+    "English": "the switch (to set the course for sth.)",
+    "Meaning": "Mit dieser Entscheidung werden die Weichen für die Zukunft gestellt.",
+    "Hebrew": "מסלול / לסלול דרך ל",
+    "Ukrainian": "стрілка (залізнична) / прокладати шлях для чогось"
+  },
+  {
+    "Wortliste": "abbauen (Scheu abbauen)",
+    "English": "to reduce; to dismantle",
+    "Meaning": "Spiele im Unterricht helfen, die Scheu vor dem Sprechen abzubauen.",
+    "Hebrew": "להפחית / להסיר (עכבות)",
+    "Ukrainian": "знижувати / долати (сором'язливість)"
+  },
+  {
+    "Wortliste": "absolvieren",
+    "English": "to complete; to graduate",
+    "Meaning": "Sie hat ein Praktikum in einer großen Firma absolviert.",
+    "Hebrew": "לסיים / לבצע",
+    "Ukrainian": "завершувати / проходити"
+  },
+  {
+    "Wortliste": "analytisch",
+    "English": "analytical",
+    "Meaning": "Er hat einen sehr analytischen Denkstil.",
+    "Hebrew": "אנליטי",
+    "Ukrainian": "аналітичний"
+  },
+  {
+    "Wortliste": "außergewöhnlich",
+    "English": "extraordinary; exceptional",
+    "Meaning": "Sie zeigt eine außergewöhnliche Begabung für Musik.",
+    "Hebrew": "יוצא דופן / מיוחד",
+    "Ukrainian": "незвичайний / видатний"
+  },
+  {
+    "Wortliste": "der Becher, -",
+    "English": "the cup; beaker",
+    "Meaning": "Im Labor benutzt man spezielle Becher für die Flüssigkeiten.",
+    "Hebrew": "כוס / ספל",
+    "Ukrainian": "склянка / кухоль"
+  },
+  {
+    "Wortliste": "der Bedarf (an + D.)",
+    "English": "the need; demand (for)",
+    "Meaning": "Der Bedarf an Pflegekräften ist in vielen Ländern hoch.",
+    "Hebrew": "צורך / ביקוש",
+    "Ukrainian": "потреба / попит"
+  },
+  {
+    "Wortliste": "die Berufsentscheidung, -en",
+    "English": "the career choice",
+    "Meaning": "Die Berufsentscheidung fällt vielen Jugendlichen schwer.",
+    "Hebrew": "החלטה מקצועית",
+    "Ukrainian": "професійний вибір"
+  },
+  {
+    "Wortliste": "einstellen (sich)",
+    "English": "to adjust; to adapt",
+    "Meaning": "Man muss sich auf neue Kollegen erst einstellen.",
+    "Hebrew": "להכין / להתכוון",
+    "Ukrainian": "налаштовуватися / готуватися"
+  },
+  {
+    "Wortliste": "das Experiment, -e",
+    "English": "the experiment",
+    "Meaning": "Die Schüler führen im Chemieunterricht ein Experiment durch.",
+    "Hebrew": "ניסוי",
+    "Ukrainian": "експеримент"
+  },
+  {
+    "Wortliste": "experimentieren",
+    "English": "to experiment",
+    "Meaning": "Im Labor können die Kinder frei experimentieren.",
+    "Hebrew": "להתנסות / לעשות ניסויים",
+    "Ukrainian": "експериментувати"
+  },
+  {
+    "Wortliste": "die Forschungseinrichtung, -en",
+    "English": "the research institution",
+    "Meaning": "Die Universität ist eine bekannte Forschungseinrichtung.",
+    "Hebrew": "מוסד מחקר",
+    "Ukrainian": "науково-дослідна установа"
+  },
+  {
+    "Wortliste": "geben, gab, hat gegeben (eine Antwort geben)",
+    "English": "to give (to give an answer)",
+    "Meaning": "Bitte geben Sie eine möglichst genaue Antwort.",
+    "Hebrew": "לתת / להגיב",
+    "Ukrainian": "давати / відповідати"
+  },
+  {
+    "Wortliste": "die Gießkanne, -n",
+    "English": "the watering can",
+    "Meaning": "Mit der Gießkanne gießt sie die Blumen im Garten.",
+    "Hebrew": "כלי השקיה",
+    "Ukrainian": "лійка"
+  },
+  {
+    "Wortliste": "heranführen (an + A.)",
+    "English": "to introduce; to lead towards",
+    "Meaning": "Das Projekt soll Kinder früh an Naturwissenschaften heranführen.",
+    "Hebrew": "להקנות / להתוודע ל",
+    "Ukrainian": "знайомити з / підводити до"
+  },
+  {
+    "Wortliste": "die Ingenieurwissenschaft, -en",
+    "English": "engineering (as a science)",
+    "Meaning": "Er möchte später Ingenieurwissenschaften studieren.",
+    "Hebrew": "הנדסה",
+    "Ukrainian": "інженерні науки"
+  },
+  {
+    "Wortliste": "die Initiative, -n",
+    "English": "the initiative",
+    "Meaning": "Die Initiative unterstützt Kinder aus sozial schwachen Familien.",
+    "Hebrew": "יוזמה",
+    "Ukrainian": "ініціатива"
+  },
+  {
+    "Wortliste": "das Kindergartenalter (Sg.)",
+    "English": "kindergarten age; preschool age",
+    "Meaning": "Im Kindergartenalter lernen Kinder Sprachen besonders schnell.",
+    "Hebrew": "גיל גן ילדים",
+    "Ukrainian": "дошкільний вік"
+  },
+  {
+    "Wortliste": "die Kinderzahl, -en",
+    "English": "the number of children",
+    "Meaning": "Die Kinderzahl in vielen Familien ist gesunken.",
+    "Hebrew": "מספר ילדים",
+    "Ukrainian": "кількість дітей"
+  },
+  {
+    "Wortliste": "klagen (über + A.)",
+    "English": "to complain (about)",
+    "Meaning": "Er klagt oft über zu viel Arbeit.",
+    "Hebrew": "להתלונן על",
+    "Ukrainian": "скаржитися на"
+  },
+  {
+    "Wortliste": "die Konzentration (Sg.)",
+    "English": "the concentration",
+    "Meaning": "Nach einer Pause ist die Konzentration wieder besser.",
+    "Hebrew": "ריכוז / ריכוזיות",
+    "Ukrainian": "концентрація"
+  },
+  {
+    "Wortliste": "konzentriert (auf + A.)",
+    "English": "concentrated; focused (on)",
+    "Meaning": "Die Schüler arbeiten konzentriert an der Aufgabe.",
+    "Hebrew": "מרוכז ב",
+    "Ukrainian": "зосереджений на"
+  },
+  {
+    "Wortliste": "konzipieren",
+    "English": "to design; to plan",
+    "Meaning": "Die Lehrerin konzipiert einen neuen Kurs.",
+    "Hebrew": "לתכנן / לקנן",
+    "Ukrainian": "розробляти концепцію / проектувати"
+  },
+  {
+    "Wortliste": "der Laborkittel, -",
+    "English": "the lab coat",
+    "Meaning": "Im Labor müssen alle einen Laborkittel tragen.",
+    "Hebrew": "חלוק מעבדה",
+    "Ukrainian": "лабораторний халат"
+  },
+  {
+    "Wortliste": "mathematisch",
+    "English": "mathematical",
+    "Meaning": "Sie hat ein gutes mathematisches Verständnis.",
+    "Hebrew": "מתמטי",
+    "Ukrainian": "математичний"
+  },
+  {
+    "Wortliste": "die Nachwuchskraft, \"-e",
+    "English": "the junior staff; young professional",
+    "Meaning": "Die Firma sucht qualifizierte Nachwuchskräfte.",
+    "Hebrew": "כוח עבודה צעיר / מתחיל",
+    "Ukrainian": "молодий спеціаліст / кадровий резерв"
+  },
+  {
+    "Wortliste": "die Naturwissenschaft, -en",
+    "English": "the natural science",
+    "Meaning": "Biologie und Physik sind Naturwissenschaften.",
+    "Hebrew": "מדעי הטבע",
+    "Ukrainian": "природничі науки"
+  },
+  {
+    "Wortliste": "naturwissenschaftlich",
+    "English": "scientific (in the natural sciences)",
+    "Meaning": "Sie hat eine starke naturwissenschaftliche Ausbildung.",
+    "Hebrew": "מדעי (של מדעי הטבע)",
+    "Ukrainian": "природничо-науковий"
+  },
+  {
+    "Wortliste": "der/die Pädagoge/Pädagogin, -n/-nen",
+    "English": "the pedagogue; educator",
+    "Meaning": "Pädagogen beschäftigen sich mit Lernen und Erziehung.",
+    "Hebrew": "פדגוג / מחנך/ת",
+    "Ukrainian": "педагог / вихователь"
+  },
+  {
+    "Wortliste": "das Phänomen, -e",
+    "English": "the phenomenon",
+    "Meaning": "Mehrsprachigkeit ist ein spannendes Phänomen.",
+    "Hebrew": "פנומן / תופעה",
+    "Ukrainian": "феномен / явище"
+  },
+  {
+    "Wortliste": "die Pipette, -n",
+    "English": "the pipette",
+    "Meaning": "Mit der Pipette nimmt man eine kleine Menge Flüssigkeit auf.",
+    "Hebrew": "פיפטה",
+    "Ukrainian": "піпетка"
+  },
+  {
+    "Wortliste": "qualifizieren",
+    "English": "to qualify",
+    "Meaning": "Mit diesem Kurs können Sie sich für den Test qualifizieren.",
+    "Hebrew": "להכשיר / לאמת",
+    "Ukrainian": "кваліфікувати / підтверджувати"
+  },
+  {
+    "Wortliste": "der Rand, \"-er",
+    "English": "the edge; the margin",
+    "Meaning": "Schreiben Sie Ihren Namen oben an den Rand.",
+    "Hebrew": "שפה / קצה / גבול",
+    "Ukrainian": "край / межа / кордон"
+  },
+  {
+    "Wortliste": "die Sache, -n (bei der Sache sein)",
+    "English": "the matter (to stay focused on sth.)",
+    "Meaning": "Bitte bleibt bei der Sache und hört zu.",
+    "Hebrew": "עניין / להיות ממוקד",
+    "Ukrainian": "справа / бути зосередженим"
+  },
+  {
+    "Wortliste": "sanft",
+    "English": "gentle; softly",
+    "Meaning": "Die Lehrerin spricht sanft mit den Kindern.",
+    "Hebrew": "עדין / רך / שקט",
+    "Ukrainian": "ніжний / м'який / тихий"
+  },
+  {
+    "Wortliste": "die Scheu (Sg.)",
+    "English": "the shyness; inhibition",
+    "Meaning": "Viele Teilnehmer haben zuerst Scheu, vor der Gruppe zu sprechen.",
+    "Hebrew": "עכבה / ביישנות",
+    "Ukrainian": "сором'язливість / боязкість"
+  },
+  {
+    "Wortliste": "schrumpfen",
+    "English": "to shrink",
+    "Meaning": "Die Schülerzahl in der Schule ist in den letzten Jahren geschrumpft.",
+    "Hebrew": "להתכווץ / לקטון",
+    "Ukrainian": "зменшуватися / скорочуватися"
+  },
+  {
+    "Wortliste": "spritzen",
+    "English": "to squirt; to spray; to inject",
+    "Meaning": "Die Kinder spritzen mit Wasser im Garten.",
+    "Hebrew": "לרסס / להזריק",
+    "Ukrainian": "бризкати / вприскувати"
+  },
+  {
+    "Wortliste": "stellen (die Weichen für etw. stellen)",
+    "English": "to set; to put (to set the course for sth.)",
+    "Meaning": "Mit dieser Entscheidung stellen wir die Weichen für die Zukunft.",
+    "Hebrew": "לסלול / לקבוע מסלול",
+    "Ukrainian": "ставити / визначати напрямок"
+  },
+  {
+    "Wortliste": "überlebenswichtig (für + A.)",
+    "English": "vital for survival",
+    "Meaning": "Sauberes Wasser ist überlebenswichtig für alle Menschen.",
+    "Hebrew": "חיוני לשרידות",
+    "Ukrainian": "необхідний для виживання"
+  },
+  {
+    "Wortliste": "umfallen, fiel um, ist umgefallen",
+    "English": "to fall over",
+    "Meaning": "Die Vase ist umgefallen und zerbrochen.",
+    "Hebrew": "ליפול / להתהפך",
+    "Ukrainian": "падати / перекидатися"
+  },
+  {
+    "Wortliste": "das Umfeld, -er",
+    "English": "the environment; surroundings",
+    "Meaning": "Das soziale Umfeld beeinflusst die Sprachentwicklung.",
+    "Hebrew": "סביבה / הקשר",
+    "Ukrainian": "середовище / оточення"
+  },
+  {
+    "Wortliste": "verschärfen",
+    "English": "to worsen; to intensify",
+    "Meaning": "Die neuen Regeln verschärfen die Situation noch.",
+    "Hebrew": "להחמיר / לחדד",
+    "Ukrainian": "посилювати / загострювати"
+  },
+  {
+    "Wortliste": "wackeln",
+    "English": "to wobble; to shake",
+    "Meaning": "Der Stuhl wackelt ein bisschen.",
+    "Hebrew": "להתנועע / להתנדנד",
+    "Ukrainian": "хитатися / коливатися"
+  },
+  {
+    "Wortliste": "wacklig",
+    "English": "wobbly; shaky",
+    "Meaning": "Der Tisch ist ziemlich wacklig.",
+    "Hebrew": "לא יציב / רועד",
+    "Ukrainian": "нестійкий / хиткий"
+  },
+  {
+    "Wortliste": "zurückfallen",
+    "English": "to fall back; to relapse",
+    "Meaning": "Ohne Übung kann man schnell in alte Fehler zurückfallen.",
+    "Hebrew": "ליפול אחורה / לפגר",
+    "Ukrainian": "відставати / падати назад"
+  },
+  {
+    "Wortliste": "zurückfallen, fiel zurück, ist zurückgefallen",
+    "English": "to fall back; to regress",
+    "Meaning": "Ohne Übung fällt man schnell in alte Fehler zurück.",
+    "Hebrew": "ליפול אחורה / לפגר",
+    "Ukrainian": "відставати / падати назад"
+  },
+  {
+    "Wortliste": "durchführbar",
+    "English": "feasible; practicable",
+    "Meaning": "Der Plan ist ehrgeizig, aber durchaus durchführbar.",
+    "Hebrew": "בר-ביצוע / ניתן לביצוע",
+    "Ukrainian": "здійсненний / реалізовний"
+  },
+  {
+    "Wortliste": "der/die Erfinder/in, -/-nen",
+    "English": "the inventor",
+    "Meaning": "Der Erfinder hat ein neues Energiesystem entwickelt.",
+    "Hebrew": "ממציא/ת",
+    "Ukrainian": "винахідник / винахідниця"
+  },
+  {
+    "Wortliste": "die Notlüge, -n",
+    "English": "the white lie",
+    "Meaning": "Manchmal benutzt man eine Notlüge, um niemanden zu verletzen.",
+    "Hebrew": "שקר לבן",
+    "Ukrainian": "неправда в крайньому разі / біла брехня"
+  },
+  {
+    "Wortliste": "der Schneeball, \"-e",
+    "English": "the snowball",
+    "Meaning": "Die Kinder werfen sich Schneebälle zu.",
+    "Hebrew": "כדור שלג",
+    "Ukrainian": "сніжок / снігова куля"
+  },
+  {
+    "Wortliste": "wälzen",
+    "English": "to pore over; to roll",
+    "Meaning": "Er wälzt abends stundenlang Fachbücher.",
+    "Hebrew": "להתגלגל / לדפדף",
+    "Ukrainian": "гортати / перекочувати"
+  },
+  {
+    "Wortliste": "das Sprichwort, \"-er",
+    "English": "the proverb; saying",
+    "Meaning": "Kennst du das Sprichwort „Übung macht den Meister“?",
+    "Hebrew": "פתגם / משל",
+    "Ukrainian": "прислів'я"
+  },
+  {
+    "Wortliste": "abstrakt",
+    "English": "abstract",
+    "Meaning": "Das ist mir zu abstrakt, ich brauche ein konkretes Beispiel.",
+    "Hebrew": "מופשט / אבסטרקטי",
+    "Ukrainian": "абстрактний"
+  },
+  {
+    "Wortliste": "akustisch",
+    "English": "acoustic; audibly",
+    "Meaning": "Im Saal ist die Musik akustisch gut zu hören.",
+    "Hebrew": "אקוסטי / של שמע",
+    "Ukrainian": "акустичний"
+  },
+  {
+    "Wortliste": "der/die Artgenosse/Artgenossin, -n/-nen",
+    "English": "the conspecific; member of the same species",
+    "Meaning": "Viele Tiere leben gern mit ihren Artgenossen zusammen.",
+    "Hebrew": "בן/בת מין / חבר/ה מאותו מין",
+    "Ukrainian": "представник того ж виду"
+  },
+  {
+    "Wortliste": "die Bekanntschaft, -en",
+    "English": "the acquaintance",
+    "Meaning": "Im Sprachkurs habe ich viele neue Bekanntschaften gemacht.",
+    "Hebrew": "היכרות / מכר",
+    "Ukrainian": "знайомство / знайомий"
+  },
+  {
+    "Wortliste": "die Bewertung, -en",
+    "English": "the evaluation; rating",
+    "Meaning": "Das Restaurant hat sehr gute Bewertungen im Internet.",
+    "Hebrew": "הערכה / ציון / דירוג",
+    "Ukrainian": "оцінка / відгук"
+  },
+  {
+    "Wortliste": "dermaßen",
+    "English": "so much; to such an extent",
+    "Meaning": "Er war dermaßen müde, dass er sofort eingeschlafen ist.",
+    "Hebrew": "כה / כל כך / עד כדי כך",
+    "Ukrainian": "настільки / таким чином"
+  },
+  {
+    "Wortliste": "ertragen, ertrug, hat ertragen",
+    "English": "to bear; to endure",
+    "Meaning": "Diese Hitze ist kaum zu ertragen.",
+    "Hebrew": "לסבול / לשאת",
+    "Ukrainian": "терпіти / витримувати"
+  },
+  {
+    "Wortliste": "erwecken",
+    "English": "to arouse; to evoke",
+    "Meaning": "Der Film erweckt den Eindruck, eine wahre Geschichte zu sein.",
+    "Hebrew": "לעורר / להקיץ",
+    "Ukrainian": "пробуджувати / викликати"
+  },
+  {
+    "Wortliste": "glaubwürdig",
+    "English": "credible; believable",
+    "Meaning": "Ihre Erklärung klingt sehr glaubwürdig.",
+    "Hebrew": "מהימן / אמין",
+    "Ukrainian": "достовірний / надійний"
+  },
+  {
+    "Wortliste": "greifen, griff, hat gegriffen (nach einer Lüge greifen)",
+    "English": "to grab; to reach for (to resort to a lie)",
+    "Meaning": "In der Situation griff er aus Angst nach einer Lüge.",
+    "Hebrew": "לתפוס / לפנות ל",
+    "Ukrainian": "хапати / вдаватися до брехні"
+  },
+  {
+    "Wortliste": "ignorieren",
+    "English": "to ignore",
+    "Meaning": "Man sollte wichtige Warnsignale nicht ignorieren.",
+    "Hebrew": "להתעלם",
+    "Ukrainian": "ігнорувати"
+  },
+  {
+    "Wortliste": "intellektuell",
+    "English": "intellectual",
+    "Meaning": "Er mag intellektuelle Diskussionen über Politik.",
+    "Hebrew": "אינטלקטואלי",
+    "Ukrainian": "інтелектуальний"
+  },
+  {
+    "Wortliste": "der/die Kandidat/in, -en/-nen",
+    "English": "the candidate",
+    "Meaning": "Für die Stelle gibt es viele gut qualifizierte Kandidaten.",
+    "Hebrew": "מועמד/ת",
+    "Ukrainian": "кандидат / кандидатка"
+  },
+  {
+    "Wortliste": "das Kommunikationsmittel, -",
+    "English": "the means of communication",
+    "Meaning": "E-Mails sind heute ein wichtiges Kommunikationsmittel.",
+    "Hebrew": "אמצעי תקשורת",
+    "Ukrainian": "засіб комунікації"
+  },
+  {
+    "Wortliste": "das Kompliment, -e",
+    "English": "the compliment",
+    "Meaning": "Sie hat ihm ein nettes Kompliment gemacht.",
+    "Hebrew": "מחמאה",
+    "Ukrainian": "комплімент"
+  },
+  {
+    "Wortliste": "kontinuierlich",
+    "English": "continuous; steadily",
+    "Meaning": "Sein Deutsch hat sich kontinuierlich verbessert.",
+    "Hebrew": "רציף / מתמיד",
+    "Ukrainian": "безперервний / постійний"
+  },
+  {
+    "Wortliste": "kurzfristig",
+    "English": "at short notice; short-term",
+    "Meaning": "Der Termin wurde kurzfristig abgesagt.",
+    "Hebrew": "קצר טווח / לטווח קצר",
+    "Ukrainian": "короткостроковий"
+  },
+  {
+    "Wortliste": "längerfristig",
+    "English": "longer-term",
+    "Meaning": "Längerfristig möchte sie im Ausland arbeiten.",
+    "Hebrew": "לטווח ארוך יותר",
+    "Ukrainian": "довгостроковий"
+  },
+  {
+    "Wortliste": "die Lügengeschichte, -n",
+    "English": "the made-up story; pack of lies",
+    "Meaning": "Seine Ausrede war eine reine Lügengeschichte.",
+    "Hebrew": "סיפור שקרים",
+    "Ukrainian": "вигадана історія / брехлива розповідь"
+  },
+  {
+    "Wortliste": "die Nervenzelle, -n",
+    "English": "the nerve cell",
+    "Meaning": "Im Gehirn sind Millionen von Nervenzellen aktiv.",
+    "Hebrew": "תא עצב / נוירון",
+    "Ukrainian": "нервова клітина / нейрон"
+  },
+  {
+    "Wortliste": "oftmals",
+    "English": "often; frequently",
+    "Meaning": "Oftmals hilft schon ein kurzer Spaziergang gegen Stress.",
+    "Hebrew": "לעיתים קרובות",
+    "Ukrainian": "часто / нерідко"
+  },
+  {
+    "Wortliste": "der/die Proband/in, -en/-nen",
+    "English": "the test subject (in a study)",
+    "Meaning": "Die Probanden nahmen freiwillig an dem Experiment teil.",
+    "Hebrew": "נבדק/ת / משתתף/ת בניסוי",
+    "Ukrainian": "учасник / учасниця дослідження"
+  },
+  {
+    "Wortliste": "die Psyche, -n",
+    "English": "the psyche",
+    "Meaning": "Stress kann die menschliche Psyche stark belasten.",
+    "Hebrew": "נפש / פסיכה",
+    "Ukrainian": "психіка / душа"
+  },
+  {
+    "Wortliste": "das Radiofeature, -s",
+    "English": "the radio feature; radio documentary",
+    "Meaning": "Im Radiofeature berichten Experten über das Thema Lügen.",
+    "Hebrew": "תוכנית רדיו / פיצ'ר רדיו",
+    "Ukrainian": "радіопередача / радіонарис"
+  },
+  {
+    "Wortliste": "regulieren",
+    "English": "to regulate",
+    "Meaning": "Das Gesetz reguliert den Umgang mit persönlichen Daten.",
+    "Hebrew": "לווסת / לרגל",
+    "Ukrainian": "регулювати"
+  },
+  {
+    "Wortliste": "schwindeln",
+    "English": "to cheat; to fib",
+    "Meaning": "Bei dem Test hat er ein bisschen geschwindelt.",
+    "Hebrew": "לשקר / לרמות",
+    "Ukrainian": "обманювати / брехати"
+  },
+  {
+    "Wortliste": "die Sympathie, -n",
+    "English": "the liking; sympathy",
+    "Meaning": "Er genießt große Sympathie bei seinen Kollegen.",
+    "Hebrew": "סימפטיה / אהדה",
+    "Ukrainian": "симпатія"
+  },
+  {
+    "Wortliste": "die Täuschung, -en",
+    "English": "the deception",
+    "Meaning": "Die Werbung arbeitet manchmal mit Täuschungen.",
+    "Hebrew": "הטעיה / רמאות",
+    "Ukrainian": "обман / ілюзія"
+  },
+  {
+    "Wortliste": "die Tendenz, -en",
+    "English": "the tendency; trend",
+    "Meaning": "Es gibt eine Tendenz zu immer längeren Arbeitszeiten.",
+    "Hebrew": "מגמה / נטייה",
+    "Ukrainian": "тенденція / схильність"
+  },
+  {
+    "Wortliste": "übersehen, übersah, hat übersehen",
+    "English": "to overlook; to miss",
+    "Meaning": "Ich habe die wichtige Mail leider übersehen.",
+    "Hebrew": "להתעלם / לפספס",
+    "Ukrainian": "не помічати / пропускати"
+  },
+  {
+    "Wortliste": "verarbeiten",
+    "English": "to process; to work through",
+    "Meaning": "Er braucht Zeit, um die Nachricht zu verarbeiten.",
+    "Hebrew": "לעבד / לעכל",
+    "Ukrainian": "обробляти / засвоювати"
+  },
+  {
+    "Wortliste": "verbreitet",
+    "English": "widespread; common",
+    "Meaning": "Dieses Vorurteil ist leider immer noch weit verbreitet.",
+    "Hebrew": "נפוץ / מקובל",
+    "Ukrainian": "поширений"
+  },
+  {
+    "Wortliste": "verfügen (über + A.)",
+    "English": "to have at one’s disposal; to possess",
+    "Meaning": "Sie verfügt über langjährige Berufserfahrung.",
+    "Hebrew": "להחזיק / לדעת",
+    "Ukrainian": "мати у своєму розпорядженні"
+  },
+  {
+    "Wortliste": "verschaffen",
+    "English": "to procure; to provide",
+    "Meaning": "Gute Sprachkenntnisse verschaffen dir Vorteile auf dem Arbeitsmarkt.",
+    "Hebrew": "להשיג / לספק",
+    "Ukrainian": "забезпечувати / здобувати"
+  },
+  {
+    "Wortliste": "die Versuchsgruppe, -n",
+    "English": "the experimental group",
+    "Meaning": "Die Versuchsgruppe bekam andere Aufgaben als die Kontrollgruppe.",
+    "Hebrew": "קבוצת ניסוי",
+    "Ukrainian": "дослідна група"
+  },
+  {
+    "Wortliste": "die Versuchsperson, -en",
+    "English": "the test person; subject",
+    "Meaning": "Die Versuchspersonen wussten nichts vom eigentlichen Ziel der Studie.",
+    "Hebrew": "נבדק/ת / אדם בניסוי",
+    "Ukrainian": "досліджуваний / учасник досліду"
+  },
+  {
+    "Wortliste": "die Versuchsreihe, -n",
+    "English": "the series of experiments",
+    "Meaning": "In einer langen Versuchsreihe wurden die Ergebnisse überprüft.",
+    "Hebrew": "סדרת ניסויים",
+    "Ukrainian": "серія дослідів"
+  },
+  {
+    "Wortliste": "das Warnsignal, -e",
+    "English": "the warning signal",
+    "Meaning": "Starke Müdigkeit kann ein Warnsignal für Stress sein.",
+    "Hebrew": "אות אזהרה",
+    "Ukrainian": "попереджувальний сигнал"
+  },
+  {
+    "Wortliste": "der Weg, -e (etw./jmd. aus dem Weg gehen)",
+    "English": "the way (to avoid sth./sb.)",
+    "Meaning": "Seit dem Streit geht er ihr aus dem Weg.",
+    "Hebrew": "דרך / להתחמק מ",
+    "Ukrainian": "шлях / дорога / ухилятися від когось"
+  },
+  {
+    "Wortliste": "wünschenswert",
+    "English": "desirable",
+    "Meaning": "Gute Deutschkenntnisse sind für diesen Job sehr wünschenswert.",
+    "Hebrew": "רצוי / מבוקש",
+    "Ukrainian": "бажаний"
+  },
+  {
+    "Wortliste": "der Bescheid, -e (Bescheid sagen)",
+    "English": "the information; answer (to let sb. know)",
+    "Meaning": "Sag mir bitte morgen Bescheid, ob du kommen kannst.",
+    "Hebrew": "הודעה / להודיע",
+    "Ukrainian": "офіційне рішення / повідомляти"
+  },
+  {
+    "Wortliste": "die Besprechung, -en",
+    "English": "the meeting; discussion",
+    "Meaning": "Die Besprechung findet im kleinen Konferenzraum statt.",
+    "Hebrew": "פגישה / שיחה",
+    "Ukrainian": "нарада / обговорення"
+  },
+  {
+    "Wortliste": "der Besprechungstermin, -e",
+    "English": "the meeting appointment",
+    "Meaning": "Den Besprechungstermin haben wir auf Dienstag gelegt.",
+    "Hebrew": "מועד פגישה",
+    "Ukrainian": "час наради"
+  },
+  {
+    "Wortliste": "das Kundengespräch, -e",
+    "English": "the customer meeting; client talk",
+    "Meaning": "Im Kundengespräch ist eine klare Sprache wichtig.",
+    "Hebrew": "שיחה עם לקוח",
+    "Ukrainian": "розмова з клієнтом"
+  },
+  {
+    "Wortliste": "der/die Mitbewohner/in, -/-nen",
+    "English": "the flatmate; roommate",
+    "Meaning": "Mein Mitbewohner kommt aus Spanien.",
+    "Hebrew": "שותף/ת לדירה",
+    "Ukrainian": "сусід по кімнаті / співмешканець"
+  },
+  {
+    "Wortliste": "die Schulden (Pl.)",
+    "English": "the debts",
+    "Meaning": "Er möchte seine Schulden so schnell wie möglich zurückzahlen.",
+    "Hebrew": "חובות",
+    "Ukrainian": "борги"
+  },
+  {
+    "Wortliste": "der Strauß, \"-e",
+    "English": "the bouquet; ostrich",
+    "Meaning": "Sie bekam einen schönen Strauß Blumen zum Geburtstag.",
+    "Hebrew": "זר פרחים / יען",
+    "Ukrainian": "букет / страус"
+  },
+  {
+    "Wortliste": "unpassend",
+    "English": "inappropriate; unsuitable",
+    "Meaning": "Sein Kommentar war in dieser Situation unpassend.",
+    "Hebrew": "לא מתאים / לא הולם",
+    "Ukrainian": "недоречний / невідповідний"
+  },
+  {
+    "Wortliste": "der/die Vermieter/in, -/-nen",
+    "English": "the landlord/landlady",
+    "Meaning": "Die Vermieterin wohnt im gleichen Haus.",
+    "Hebrew": "משכיר/ה",
+    "Ukrainian": "орендодавець / господар квартири"
+  },
+  {
+    "Wortliste": "der/die Besitzer/in, -/-nen",
+    "English": "the owner",
+    "Meaning": "Der Besitzer des Autos ist nicht zu Hause.",
+    "Hebrew": "בעלים",
+    "Ukrainian": "власник / власниця"
+  },
+  {
+    "Wortliste": "die Geldbörse, -n",
+    "English": "the wallet; purse",
+    "Meaning": "Ich habe meine Geldbörse im Café vergessen.",
+    "Hebrew": "ארנק",
+    "Ukrainian": "гаманець"
+  },
+  {
+    "Wortliste": "die Kreditkarte, -n",
+    "English": "the credit card",
+    "Meaning": "Kann ich hier mit Kreditkarte bezahlen?",
+    "Hebrew": "כרטיס אשראי",
+    "Ukrainian": "кредитна картка"
+  },
+  {
+    "Wortliste": "ansiedeln (in + D.)",
+    "English": "to settle; to establish (in)",
+    "Meaning": "Viele Firmen siedeln sich in der Region an.",
+    "Hebrew": "להתיישב / לשכן",
+    "Ukrainian": "оселяти / розміщувати"
+  },
+  {
+    "Wortliste": "die Atomenergie, -n",
+    "English": "nuclear energy",
+    "Meaning": "Die Nutzung von Atomenergie ist umstritten.",
+    "Hebrew": "אנרגיה גרעינית",
+    "Ukrainian": "атомна енергія"
+  },
+  {
+    "Wortliste": "das Atomkraftwerk, -e",
+    "English": "the nuclear power plant",
+    "Meaning": "In der Nähe der Stadt steht ein altes Atomkraftwerk.",
+    "Hebrew": "תחנת כוח גרעינית",
+    "Ukrainian": "атомна електростанція"
+  },
+  {
+    "Wortliste": "der Atommeiler, -",
+    "English": "the nuclear reactor",
+    "Meaning": "Der Atommeiler soll in den nächsten Jahren abgeschaltet werden.",
+    "Hebrew": "כור גרעיני",
+    "Ukrainian": "ядерний реактор"
+  },
+  {
+    "Wortliste": "der Aufbau (Sg.)",
+    "English": "the structure; construction",
+    "Meaning": "Der Aufbau des Textes ist klar und logisch.",
+    "Hebrew": "בנייה / מבנה / הקמה",
+    "Ukrainian": "будівництво / структура / побудова"
+  },
+  {
+    "Wortliste": "aufhalten, hielt auf, hat aufgehalten",
+    "English": "to stop; to delay; to stay",
+    "Meaning": "Der Stau hat mich lange aufgehalten.",
+    "Hebrew": "לעצור / לעכב",
+    "Ukrainian": "зупиняти / затримувати"
+  },
+  {
+    "Wortliste": "auftanken",
+    "English": "to refuel; to recharge",
+    "Meaning": "Im Urlaub konnte ich neue Energie auftanken.",
+    "Hebrew": "לתדלק",
+    "Ukrainian": "заправляти / поповнювати запаси"
+  },
+  {
+    "Wortliste": "ausfallen, fiel aus, ist ausgefallen",
+    "English": "to be cancelled; to fail",
+    "Meaning": "Der Kurs fällt heute leider aus.",
+    "Hebrew": "ליפול / לבטל / להיכשל",
+    "Ukrainian": "скасовуватися / виходити з ладу"
+  },
+  {
+    "Wortliste": "auskommen, kam aus, ist ausgekommen",
+    "English": "to get along; to get by",
+    "Meaning": "Mit meinen Kollegen komme ich gut aus.",
+    "Hebrew": "להסתדר / לפרנס את עצמו",
+    "Ukrainian": "обходитися / ладнати"
+  },
+  {
+    "Wortliste": "die Bahn, -en (freie Bahn haben)",
+    "English": "the track; the railway (to have free way)",
+    "Meaning": "Im Flur war niemand, wir hatten freie Bahn.",
+    "Hebrew": "מסלול / רכבת / לקבל חופש פעולה",
+    "Ukrainian": "залізниця / шлях / мати вільний шлях"
+  },
+  {
+    "Wortliste": "die Bakterie, -n",
+    "English": "the bacterium",
+    "Meaning": "Nicht alle Bakterien sind gefährlich.",
+    "Hebrew": "חיידק",
+    "Ukrainian": "бактерія"
+  },
+  {
+    "Wortliste": "das Bauwerk, -e",
+    "English": "the building; structure",
+    "Meaning": "Der Dom ist ein beeindruckendes Bauwerk.",
+    "Hebrew": "מבנה / בניין",
+    "Ukrainian": "споруда / будівля"
+  },
+  {
+    "Wortliste": "bedroht (von + D.)",
+    "English": "threatened (by)",
+    "Meaning": "Viele Tierarten sind vom Aussterben bedroht.",
+    "Hebrew": "מאוים ע\"י",
+    "Ukrainian": "під загрозою"
+  },
+  {
+    "Wortliste": "das Blei (Sg.)",
+    "English": "lead (metal)",
+    "Meaning": "Früher wurden Wasserrohre oft aus Blei hergestellt.",
+    "Hebrew": "עופרת",
+    "Ukrainian": "свинець"
+  },
+  {
+    "Wortliste": "der Damm, \"-e",
+    "English": "the dam; embankment",
+    "Meaning": "Nach dem Sturm war der Damm beschädigt.",
+    "Hebrew": "סכר / גדה",
+    "Ukrainian": "гребля / дамба"
+  },
+  {
+    "Wortliste": "deprimierend",
+    "English": "depressing",
+    "Meaning": "Die Nachrichten waren heute ziemlich deprimierend.",
+    "Hebrew": "מדכא / מדכדך",
+    "Ukrainian": "пригнічуючий / гнітючий"
+  },
+  {
+    "Wortliste": "dramatisch",
+    "English": "dramatic",
+    "Meaning": "Die Lage im Überschwemmungsgebiet ist dramatisch.",
+    "Hebrew": "דרמטי",
+    "Ukrainian": "драматичний"
+  },
+  {
+    "Wortliste": "einstürzen",
+    "English": "to collapse",
+    "Meaning": "Das alte Haus ist nach dem Sturm eingestürzt.",
+    "Hebrew": "לקרוס / לשקוע",
+    "Ukrainian": "обвалюватися / руйнуватися"
+  },
+  {
+    "Wortliste": "der/die Forscher/in, -/-nen",
+    "English": "the researcher; scientist",
+    "Meaning": "Die Forscher arbeiten an einem Impfstoff.",
+    "Hebrew": "חוקר/ת",
+    "Ukrainian": "дослідник / науковець"
+  },
+  {
+    "Wortliste": "gesamt",
+    "English": "entire; total",
+    "Meaning": "Die gesamten Kosten trägt die Firma.",
+    "Hebrew": "כולל / כלל",
+    "Ukrainian": "загальний / весь"
+  },
+  {
+    "Wortliste": "geschützt",
+    "English": "protected",
+    "Meaning": "Dieses Gebiet ist ein geschützter Naturpark.",
+    "Hebrew": "מוגן",
+    "Ukrainian": "захищений"
+  },
+  {
+    "Wortliste": "der/die Gewinner/in, -/-nen",
+    "English": "the winner",
+    "Meaning": "Die Gewinner des Wettbewerbs bekommen ein Stipendium.",
+    "Hebrew": "זוכה / מנצח/ת",
+    "Ukrainian": "переможець / переможниця"
+  },
+  {
+    "Wortliste": "der Griff, -e (etw./jmd. fest im Griff haben)",
+    "English": "the grip; handle (to have sth./sb. under control)",
+    "Meaning": "Die Situation ist jetzt wieder fest im Griff.",
+    "Hebrew": "אחיזה / ידית / שליטה מלאה",
+    "Ukrainian": "рукоятка / тримати щось під контролем"
+  },
+  {
+    "Wortliste": "das Grundwasser (Sg.)",
+    "English": "groundwater",
+    "Meaning": "Das Grundwasser darf nicht verschmutzt werden.",
+    "Hebrew": "מי תהום",
+    "Ukrainian": "ґрунтові води"
+  },
+  {
+    "Wortliste": "hinterlassen, hinterließ, hat hinterlassen",
+    "English": "to leave behind",
+    "Meaning": "Der Unfall hat deutliche Spuren hinterlassen.",
+    "Hebrew": "להשאיר / להוריש",
+    "Ukrainian": "залишати / заповідати"
+  },
+  {
+    "Wortliste": "intakt",
+    "English": "intact",
+    "Meaning": "Die alte Brücke ist trotz des Alters noch intakt.",
+    "Hebrew": "שלם / תקין",
+    "Ukrainian": "цілий / неушкоджений"
+  },
+  {
+    "Wortliste": "die Kakerlake, -n",
+    "English": "the cockroach",
+    "Meaning": "In der Küche fanden sie mehrere Kakerlaken.",
+    "Hebrew": "ג'וק",
+    "Ukrainian": "тарган"
+  },
+  {
+    "Wortliste": "der/die Kämpfer/in, -/-nen",
+    "English": "the fighter",
+    "Meaning": "Trotz aller Probleme bleibt sie eine echte Kämpferin.",
+    "Hebrew": "לוחם/ת",
+    "Ukrainian": "боєць / борець"
+  },
+  {
+    "Wortliste": "das Kraftwerk, -e",
+    "English": "the power plant",
+    "Meaning": "Das Kraftwerk versorgt die ganze Region mit Strom.",
+    "Hebrew": "תחנת כוח",
+    "Ukrainian": "електростанція"
+  },
+  {
+    "Wortliste": "die Notversorgung, -en",
+    "English": "the emergency supply",
+    "Meaning": "Nach dem Stromausfall lief nur noch die Notversorgung.",
+    "Hebrew": "אספקה חירום",
+    "Ukrainian": "аварійне постачання"
+  },
+  {
+    "Wortliste": "der/die Ökologe/Ökologin, -n/-nen",
+    "English": "the ecologist",
+    "Meaning": "Ökologen warnen vor den Folgen des Klimawandels.",
+    "Hebrew": "אקולוג/ית",
+    "Ukrainian": "еколог / екологиня"
+  },
+  {
+    "Wortliste": "die Orientierung, -en",
+    "English": "the orientation; sense of direction",
+    "Meaning": "Im Dunkeln verliert man leicht die Orientierung.",
+    "Hebrew": "התמצאות / כיוון",
+    "Ukrainian": "орієнтування / орієнтація"
+  },
+  {
+    "Wortliste": "der Planet, -en",
+    "English": "the planet",
+    "Meaning": "Wir müssen besser auf unseren Planeten achten.",
+    "Hebrew": "כוכב לכת / פלנטה",
+    "Ukrainian": "планета"
+  },
+  {
+    "Wortliste": "die Plastiktüte, -n",
+    "English": "the plastic bag",
+    "Meaning": "Viele Supermärkte geben keine kostenlosen Plastiktüten mehr aus.",
+    "Hebrew": "שקית פלסטיק",
+    "Ukrainian": "поліетиленовий пакет"
+  },
+  {
+    "Wortliste": "das Plutonium (Sg.)",
+    "English": "plutonium",
+    "Meaning": "Plutonium ist ein hoch radioaktives Material.",
+    "Hebrew": "פלוטוניום",
+    "Ukrainian": "плутоній"
+  },
+  {
+    "Wortliste": "die Prognose, -n",
+    "English": "the forecast; prognosis",
+    "Meaning": "Die Prognosen für das Wetter sind gut.",
+    "Hebrew": "תחזית / פרוגנוזה",
+    "Ukrainian": "прогноз"
+  },
+  {
+    "Wortliste": "die Pumpe, -n",
+    "English": "the pump",
+    "Meaning": "Eine Pumpe befördert das Wasser aus dem Keller.",
+    "Hebrew": "משאבה",
+    "Ukrainian": "насос"
+  },
+  {
+    "Wortliste": "radioaktiv",
+    "English": "radioactive",
+    "Meaning": "Radioaktive Stoffe müssen besonders geschützt werden.",
+    "Hebrew": "רדיואקטיבי",
+    "Ukrainian": "радіоактивний"
+  },
+  {
+    "Wortliste": "die Ratte, -n",
+    "English": "the rat",
+    "Meaning": "Im alten Haus leben viele Ratten.",
+    "Hebrew": "חולדה",
+    "Ukrainian": "щур"
+  },
+  {
+    "Wortliste": "romantisch",
+    "English": "romantic",
+    "Meaning": "Der Sonnenuntergang am See war sehr romantisch.",
+    "Hebrew": "רומנטי",
+    "Ukrainian": "романтичний"
+  },
+  {
+    "Wortliste": "die Schätzung, -en",
+    "English": "the estimate",
+    "Meaning": "Laut Schätzungen leben hier über eine Million Menschen.",
+    "Hebrew": "הערכה / אומדן",
+    "Ukrainian": "оцінка / підрахунок"
+  },
+  {
+    "Wortliste": "sichtbar",
+    "English": "visible",
+    "Meaning": "Die Verbesserung ist deutlich sichtbar.",
+    "Hebrew": "נראה לעין / גלוי",
+    "Ukrainian": "видимий / помітний"
+  },
+  {
+    "Wortliste": "die Spezies, Spezien",
+    "English": "the species",
+    "Meaning": "Viele Spezien sind durch Umweltverschmutzung bedroht.",
+    "Hebrew": "מין / מינים",
+    "Ukrainian": "вид / різновид"
+  },
+  {
+    "Wortliste": "stehen, stand, hat gestanden (unter Wasser stehen)",
+    "English": "to stand (to be under water)",
+    "Meaning": "Nach dem Sturm stand der ganze Keller unter Wasser.",
+    "Hebrew": "לעמוד / להיות מוצף",
+    "Ukrainian": "стояти / бути затопленим"
+  },
+  {
+    "Wortliste": "stimmen (jmd. romantisch stimmen)",
+    "English": "to make someone feel (romantic, etc.)",
+    "Meaning": "Die Musik stimmt mich romantisch.",
+    "Hebrew": "להלך רוח / לגרום למצב רוח",
+    "Ukrainian": "налаштовувати / навіювати настрій"
+  },
+  {
+    "Wortliste": "die Stromleitung, -en",
+    "English": "the power line",
+    "Meaning": "Bei dem Sturm wurden mehrere Stromleitungen beschädigt.",
+    "Hebrew": "קו חשמל / כבל חשמל",
+    "Ukrainian": "лінія електропередачі"
+  },
+  {
+    "Wortliste": "die Struktur, -en",
+    "English": "the structure",
+    "Meaning": "Die soziale Struktur der Stadt hat sich verändert.",
+    "Hebrew": "מבנה / מערכת",
+    "Ukrainian": "структура"
+  },
+  {
+    "Wortliste": "der/die Techniker/in, -/-nen",
+    "English": "the technician",
+    "Meaning": "Der Techniker repariert die kaputte Leitung.",
+    "Hebrew": "טכנאי/ת",
+    "Ukrainian": "технік / технікиня"
+  },
+  {
+    "Wortliste": "der Tunnel, -",
+    "English": "the tunnel",
+    "Meaning": "Der Tunnel ist fast zwei Kilometer lang.",
+    "Hebrew": "מנהרה",
+    "Ukrainian": "тунель"
+  },
+  {
+    "Wortliste": "der Überblick (Sg.)",
+    "English": "the overview",
+    "Meaning": "Die Tabelle gibt einen guten Überblick über die Ergebnisse.",
+    "Hebrew": "סקירה / תמונה כללית",
+    "Ukrainian": "огляд / загальна картина"
+  },
+  {
+    "Wortliste": "überleben",
+    "English": "to survive",
+    "Meaning": "Nur wenige Pflanzen überleben in dieser Wüste.",
+    "Hebrew": "לשרוד",
+    "Ukrainian": "вижити / пережити"
+  },
+  {
+    "Wortliste": "der Überrest, -e",
+    "English": "the remains; remnant",
+    "Meaning": "Die Archäologen untersuchen die Überreste der Stadt.",
+    "Hebrew": "שריד / שארית",
+    "Ukrainian": "залишок / уламок"
+  },
+  {
+    "Wortliste": "vergehen, verging, ist vergangen",
+    "English": "to pass (time)",
+    "Meaning": "Die Zeit vergeht wie im Flug.",
+    "Hebrew": "לחלוף / לעבור",
+    "Ukrainian": "минати / зникати"
+  },
+  {
+    "Wortliste": "der/die Verlierer/in, -/-nen",
+    "English": "the loser",
+    "Meaning": "Auch die Verlierer haben ihr Bestes gegeben.",
+    "Hebrew": "מפסיד/ה",
+    "Ukrainian": "той, хто програв / невдаха"
+  },
+  {
+    "Wortliste": "vermehren (sich)",
+    "English": "to multiply; to reproduce",
+    "Meaning": "Die Bakterien vermehren sich bei Wärme sehr schnell.",
+    "Hebrew": "להתרבות / לגדול",
+    "Ukrainian": "розмножуватися / збільшуватися"
+  },
+  {
+    "Wortliste": "versinken, versank, ist versunken",
+    "English": "to sink; to get lost in",
+    "Meaning": "Er ist ganz in seine Gedanken versunken.",
+    "Hebrew": "לשקוע",
+    "Ukrainian": "тонути / занурюватися"
+  },
+  {
+    "Wortliste": "die Vision, -en",
+    "English": "the vision",
+    "Meaning": "Sie hat eine klare Vision von ihrer Zukunft.",
+    "Hebrew": "חזון / ראייה",
+    "Ukrainian": "бачення / візія"
+  },
+  {
+    "Wortliste": "wegwerfen, warf weg, hat weggeworfen",
+    "English": "to throw away",
+    "Meaning": "Bitte wirf den Müll nicht auf die Straße weg.",
+    "Hebrew": "לזרוק",
+    "Ukrainian": "викидати"
+  },
+  {
+    "Wortliste": "der Zerfall (Sg.)",
+    "English": "the decay; disintegration",
+    "Meaning": "Der Zerfall des alten Gebäudes ist deutlich zu sehen.",
+    "Hebrew": "פירוק / התפרקות",
+    "Ukrainian": "розпад / розкладання"
+  },
+  {
+    "Wortliste": "zerfallen, zerfiel, ist zerfallen",
+    "English": "to fall apart; to decay",
+    "Meaning": "Die Mauer ist mit der Zeit zerfallen.",
+    "Hebrew": "להתפרק / ליפול",
+    "Ukrainian": "розпадатися / руйнуватися"
+  },
+  {
+    "Wortliste": "zurückerobern",
+    "English": "to win back; to recapture",
+    "Meaning": "Die Natur hat sich das Gebiet langsam zurückerobert.",
+    "Hebrew": "לכבוש בחזרה",
+    "Ukrainian": "відвойовувати назад"
+  },
+  {
+    "Wortliste": "übereinstimmen (mit + D.)",
+    "English": "to correspond; to agree (with)",
+    "Meaning": "Seine Meinung stimmt mit meinen Erfahrungen überein.",
+    "Hebrew": "להסכים עם / להתאים ל",
+    "Ukrainian": "збігатися / погоджуватися"
+  },
+  {
+    "Wortliste": "der Charakter (Sg.)",
+    "English": "the character",
+    "Meaning": "An schwierigen Situationen erkennt man den wahren Charakter.",
+    "Hebrew": "אופי / דמות",
+    "Ukrainian": "характер / персонаж"
+  },
+  {
+    "Wortliste": "ausschlafen, schlief aus, hat ausgeschlafen",
+    "English": "to sleep in; to sleep enough",
+    "Meaning": "Am Wochenende kann ich endlich ausschlafen.",
+    "Hebrew": "לישון מספיק / להתרענן בשינה",
+    "Ukrainian": "висипатися"
+  },
+  {
+    "Wortliste": "dösen",
+    "English": "to doze",
+    "Meaning": "Nach dem Essen döste er ein wenig auf dem Sofa.",
+    "Hebrew": "לנמנם / להתנמנם",
+    "Ukrainian": "дрімати / куняти"
+  },
+  {
+    "Wortliste": "das Murmeltier, -e",
+    "English": "the marmot",
+    "Meaning": "Murmeltier sprichwörtlich: ‚Wie ein Murmeltier schlafen‘.",
+    "Hebrew": "מרמוט",
+    "Ukrainian": "бабак"
+  },
+  {
+    "Wortliste": "das Nickerchen, - (ein Nickerchen machen)",
+    "English": "the nap (to take a nap)",
+    "Meaning": "Nachmittags mache ich gern ein kurzes Nickerchen.",
+    "Hebrew": "שינה קצרה / תנומה",
+    "Ukrainian": "короткий сон / подрімати"
+  },
+  {
+    "Wortliste": "der/die Allesfresser/in, -/-nen",
+    "English": "the omnivore",
+    "Meaning": "Der Mensch ist biologisch gesehen ein Allesfresser.",
+    "Hebrew": "אוכל הכל / אומניבור",
+    "Ukrainian": "всеїдна тварина / людина, що їсть все"
+  },
+  {
+    "Wortliste": "arg",
+    "English": "bad(ly); severe(ly)",
+    "Meaning": "Er hat sich beim Sport arg verletzt.",
+    "Hebrew": "חמור / גרוע / מאוד",
+    "Ukrainian": "сильний / тяжкий / дуже"
+  },
+  {
+    "Wortliste": "ausreichend",
+    "English": "sufficient; enough",
+    "Meaning": "Trinkst du ausreichend Wasser am Tag?",
+    "Hebrew": "מספיק / מספק",
+    "Ukrainian": "достатній"
+  },
+  {
+    "Wortliste": "der Ausweis, -e",
+    "English": "the ID card; pass",
+    "Meaning": "Bitte zeigen Sie mir Ihren Ausweis.",
+    "Hebrew": "תעודת זהות",
+    "Ukrainian": "посвідчення особи / документ"
+  },
+  {
+    "Wortliste": "der Beleg, -e",
+    "English": "the receipt; proof",
+    "Meaning": "Heben Sie den Beleg für die Garantie auf.",
+    "Hebrew": "ראיה / הוכחה / קבלה",
+    "Ukrainian": "доказ / квитанція"
+  },
+  {
+    "Wortliste": "der Bettflüchter, -",
+    "English": "person who gets up very early (colloquial)",
+    "Meaning": "Er ist ein echter Bettflüchter und steht schon um fünf Uhr auf.",
+    "Hebrew": "מי שקם מהר מהמיטה",
+    "Ukrainian": "той, хто рано встає з ліжка"
+  },
+  {
+    "Wortliste": "der Bluthochdruck (Sg.)",
+    "English": "high blood pressure",
+    "Meaning": "Stress kann zu Bluthochdruck führen.",
+    "Hebrew": "לחץ דם גבוה",
+    "Ukrainian": "гіпертонія / підвищений тиск"
+  },
+  {
+    "Wortliste": "dauerhaft",
+    "English": "permanent; lasting",
+    "Meaning": "Dauerhafte Müdigkeit sollte man ernst nehmen.",
+    "Hebrew": "קבוע / מתמיד / ארוך טווח",
+    "Ukrainian": "тривалий / постійний"
+  },
+  {
+    "Wortliste": "durcharbeiten",
+    "English": "to work through (without a break)",
+    "Meaning": "Gestern habe ich bis spät in die Nacht durchgearbeitet.",
+    "Hebrew": "לעבוד ללא הפסקה / לסיים",
+    "Ukrainian": "працювати без перерви / опрацьовувати"
+  },
+  {
+    "Wortliste": "der Durchschnitt, -e",
+    "English": "the average",
+    "Meaning": "Im Durchschnitt schlafen Erwachsene sieben bis acht Stunden.",
+    "Hebrew": "ממוצע",
+    "Ukrainian": "середнє значення / середина"
+  },
+  {
+    "Wortliste": "der Eifer (Sg.)",
+    "English": "the eagerness; zeal",
+    "Meaning": "Sie lernt mit großem Eifer für die Prüfung.",
+    "Hebrew": "להיטות / מסירות / התלהבות",
+    "Ukrainian": "завзяття / ентузіазм"
+  },
+  {
+    "Wortliste": "eingerechnet",
+    "English": "included; counted in",
+    "Meaning": "Die Pausen sind in die Arbeitszeit eingerechnet.",
+    "Hebrew": "כלול / מחושב",
+    "Ukrainian": "врахований / включений"
+  },
+  {
+    "Wortliste": "eintauchen (in + A.)",
+    "English": "to immerse oneself (in)",
+    "Meaning": "Beim Lesen tauche ich völlig in die Geschichte ein.",
+    "Hebrew": "לצלול / להשתקע ב",
+    "Ukrainian": "занурюватися в"
+  },
+  {
+    "Wortliste": "der/die Feind/in, -e/-nen",
+    "English": "the enemy",
+    "Meaning": "Früher waren die beiden Länder Feinde.",
+    "Hebrew": "אויב/ת",
+    "Ukrainian": "ворог / ворогиня"
+  },
+  {
+    "Wortliste": "der/die Feuilletonist/in, -en/-nen",
+    "English": "the arts journalist; feuilleton writer",
+    "Meaning": "Die Feuilletonistin schreibt über aktuelle Theaterstücke.",
+    "Hebrew": "כותב/ת פויטון / מסאי/ת",
+    "Ukrainian": "фейлетоніст / автор фейлетонів"
+  },
+  {
+    "Wortliste": "der/die Gealterte, -n",
+    "English": "the aged person",
+    "Meaning": "Viele Gealterte wünschen sich mehr Ruhe.",
+    "Hebrew": "מזדקן/ת / זקן/ה",
+    "Ukrainian": "людина похилого віку"
+  },
+  {
+    "Wortliste": "gehoben",
+    "English": "elevated; upscale",
+    "Meaning": "Sie wohnt in einem eher gehobenen Viertel.",
+    "Hebrew": "מרומם / גבוה / נעלה",
+    "Ukrainian": "піднесений / вишуканий"
+  },
+  {
+    "Wortliste": "gleichermaßen",
+    "English": "equally",
+    "Meaning": "Das Angebot richtet sich gleichermaßen an Jung und Alt.",
+    "Hebrew": "באופן שווה / כשווה",
+    "Ukrainian": "однаково / рівним чином"
+  },
+  {
+    "Wortliste": "global",
+    "English": "global",
+    "Meaning": "Der Klimawandel ist ein globales Problem.",
+    "Hebrew": "גלובלי / עולמי",
+    "Ukrainian": "глобальний / всесвітній"
+  },
+  {
+    "Wortliste": "hemmen",
+    "English": "to inhibit; to hinder",
+    "Meaning": "Angst kann die Leistungsfähigkeit hemmen.",
+    "Hebrew": "לעכב / לבלום",
+    "Ukrainian": "гальмувати / стримувати"
+  },
+  {
+    "Wortliste": "der Herzinfarkt, -e",
+    "English": "the heart attack",
+    "Meaning": "Rauchen erhöht das Risiko für einen Herzinfarkt.",
+    "Hebrew": "התקף לב",
+    "Ukrainian": "серцевий напад / інфаркт"
+  },
+  {
+    "Wortliste": "das Hirn, -e",
+    "English": "the brain",
+    "Meaning": "Im Schlaf erholt sich das Hirn.",
+    "Hebrew": "מוח",
+    "Ukrainian": "мозок"
+  },
+  {
+    "Wortliste": "kahl",
+    "English": "bald; bare",
+    "Meaning": "Im Winter stehen die Bäume kahl im Wind.",
+    "Hebrew": "קרח / חשוף / ערום",
+    "Ukrainian": "лисий / голий / порожній"
+  },
+  {
+    "Wortliste": "die Konkurrenz (Sg.)",
+    "English": "the competition",
+    "Meaning": "Die Konkurrenz auf dem Arbeitsmarkt ist groß.",
+    "Hebrew": "תחרות / יריבות",
+    "Ukrainian": "конкуренція"
+  },
+  {
+    "Wortliste": "die Lebenskunst, \"-e",
+    "English": "the art of living",
+    "Meaning": "Gelassenheit ist ein Teil der Lebenskunst.",
+    "Hebrew": "אמנות החיים",
+    "Ukrainian": "мистецтво жити"
+  },
+  {
+    "Wortliste": "die Leistungsfähigkeit (Sg.)",
+    "English": "performance capacity; efficiency",
+    "Meaning": "Genügend Schlaf steigert die Leistungsfähigkeit.",
+    "Hebrew": "יכולת ביצוע / תפוקה",
+    "Ukrainian": "продуктивність / працездатність"
+  },
+  {
+    "Wortliste": "der Markt, \"-e",
+    "English": "the market",
+    "Meaning": "Auf dem Markt gibt es frisches Obst und Gemüse.",
+    "Hebrew": "שוק",
+    "Ukrainian": "ринок"
+  },
+  {
+    "Wortliste": "die Matratze, -n",
+    "English": "the mattress",
+    "Meaning": "Eine gute Matratze ist wichtig für den Rücken.",
+    "Hebrew": "מזרן",
+    "Ukrainian": "матрац"
+  },
+  {
+    "Wortliste": "der/die Mediziner/in, -/-nen",
+    "English": "the medical doctor; medic",
+    "Meaning": "Mediziner empfehlen einen regelmäßigen Schlafrhythmus.",
+    "Hebrew": "רופא/ה / מי שעוסק ברפואה",
+    "Ukrainian": "лікар / медик"
+  },
+  {
+    "Wortliste": "der/die Ministerpräsident/in, -en/-nen",
+    "English": "the prime minister (of a federal state)",
+    "Meaning": "Der Ministerpräsident spricht im Fernsehen zur aktuellen Lage.",
+    "Hebrew": "ראש ממשלה / ראש מדינה",
+    "Ukrainian": "прем'єр-міністр / голова уряду землі"
+  },
+  {
+    "Wortliste": "das Mittagsschläfchen, -",
+    "English": "the midday nap; siesta",
+    "Meaning": "Ein kurzes Mittagsschläfchen kann sehr erholsam sein.",
+    "Hebrew": "שנת צהרים",
+    "Ukrainian": "денний сон / сієста"
+  },
+  {
+    "Wortliste": "mittelalterlich",
+    "English": "medieval",
+    "Meaning": "Die Altstadt hat viele mittelalterliche Gebäude.",
+    "Hebrew": "מימי הביניים",
+    "Ukrainian": "середньовічний"
+  },
+  {
+    "Wortliste": "die Mitternacht (Sg.)",
+    "English": "midnight",
+    "Meaning": "Um Mitternacht war die Party noch in vollem Gange.",
+    "Hebrew": "חצות",
+    "Ukrainian": "опівніч"
+  },
+  {
+    "Wortliste": "müdegearbeitet",
+    "English": "tired out from work",
+    "Meaning": "Nach der Schicht war er völlig müdegearbeitet.",
+    "Hebrew": "עייף מעבודה",
+    "Ukrainian": "втомлений від роботи"
+  },
+  {
+    "Wortliste": "die Nachteule, -n",
+    "English": "the night owl",
+    "Meaning": "Sie ist eine echte Nachteule und geht spät ins Bett.",
+    "Hebrew": "ינשוף לילה / מי שפעיל בלילה",
+    "Ukrainian": "нічна сова / жайворон нічного типу"
+  },
+  {
+    "Wortliste": "ohnehin",
+    "English": "anyway; in any case",
+    "Meaning": "Ich wollte ohnehin früher nach Hause gehen.",
+    "Hebrew": "ממילא / בלאו הכי",
+    "Ukrainian": "і так / все одно"
+  },
+  {
+    "Wortliste": "das Organ, -e",
+    "English": "the organ",
+    "Meaning": "Das Herz ist ein lebenswichtiges Organ.",
+    "Hebrew": "איבר / אורגן",
+    "Ukrainian": "орган"
+  },
+  {
+    "Wortliste": "der/die Optimierer/in, -/-nen",
+    "English": "the optimizer (person who optimizes everything)",
+    "Meaning": "Als echter Optimierer plant er seinen Tag bis ins Detail.",
+    "Hebrew": "מייעל/ת",
+    "Ukrainian": "оптимізатор"
+  },
+  {
+    "Wortliste": "der/die Power-Napper/in",
+    "English": "the power napper",
+    "Meaning": "Power-Napper schwören auf ein kurzes Schläfchen am Mittag.",
+    "Hebrew": "מי שישן שינות קצרות",
+    "Ukrainian": "той, хто практикує короткий сон"
+  },
+  {
+    "Wortliste": "die Produktivität (Sg.)",
+    "English": "productivity",
+    "Meaning": "Ausreichend Schlaf steigert die Produktivität am Arbeitsplatz.",
+    "Hebrew": "פריון / יצרנות",
+    "Ukrainian": "продуктивність"
+  },
+  {
+    "Wortliste": "rechnen (mit + D.)",
+    "English": "to expect; to count on",
+    "Meaning": "Mit so vielen Teilnehmern hatte niemand gerechnet.",
+    "Hebrew": "לחשב / לצפות / לסמוך על",
+    "Ukrainian": "рахувати / розраховувати на"
+  },
+  {
+    "Wortliste": "die Regenerationsphase, -n",
+    "English": "regeneration phase; recovery phase",
+    "Meaning": "Im Schlaf beginnt für den Körper eine wichtige Regenerationsphase.",
+    "Hebrew": "שלב התאוששות",
+    "Ukrainian": "фаза відновлення"
+  },
+  {
+    "Wortliste": "die Ressource, -n",
+    "English": "resource",
+    "Meaning": "Zeit ist eine knappe Ressource im Berufsleben.",
+    "Hebrew": "משאב",
+    "Ukrainian": "ресурс"
+  },
+  {
+    "Wortliste": "der Rhythmus, Rhythmen",
+    "English": "rhythm",
+    "Meaning": "Ein regelmäßiger Schlafrhythmus ist gesund.",
+    "Hebrew": "ריתמוס / קצב",
+    "Ukrainian": "ритм"
+  },
+  {
+    "Wortliste": "das Schlafforschungszentrum, -zentren",
+    "English": "sleep research center",
+    "Meaning": "Im Schlafforschungszentrum werden neue Therapien getestet.",
+    "Hebrew": "מרכז מחקר שינה",
+    "Ukrainian": "центр дослідження сну"
+  },
+  {
+    "Wortliste": "das Schlafhormon, -e",
+    "English": "sleep hormone",
+    "Meaning": "Melatonin ist ein bekanntes Schlafhormon.",
+    "Hebrew": "הורמון שינה",
+    "Ukrainian": "гормон сну"
+  },
+  {
+    "Wortliste": "die Schlafstörung, -en",
+    "English": "sleep disorder",
+    "Meaning": "Viele Menschen leiden unter Schlafstörungen.",
+    "Hebrew": "הפרעת שינה",
+    "Ukrainian": "розлад сну"
+  },
+  {
+    "Wortliste": "der/die Schlafwandler/in, -/-nen",
+    "English": "sleepwalker",
+    "Meaning": "Schlafwandler erinnern sich oft nicht an die Nacht.",
+    "Hebrew": "סהרורי/ת",
+    "Ukrainian": "сновида / лунатик"
+  },
+  {
+    "Wortliste": "die Schlagzeile, -n",
+    "English": "headline",
+    "Meaning": "Die Schlagzeile auf der Titelseite war sehr dramatisch.",
+    "Hebrew": "כותרת עיתון",
+    "Ukrainian": "заголовок / хедлайн"
+  },
+  {
+    "Wortliste": "die Schreibblockade, -n",
+    "English": "writer’s block",
+    "Meaning": "Vor der Prüfung hatte sie eine totale Schreibblockade.",
+    "Hebrew": "חסימת כתיבה",
+    "Ukrainian": "блокада письма / творчий ступор"
+  },
+  {
+    "Wortliste": "senken",
+    "English": "to lower; to reduce",
+    "Meaning": "Sport kann den Stresspegel deutlich senken.",
+    "Hebrew": "להוריד / להפחית",
+    "Ukrainian": "знижувати / опускати"
+  },
+  {
+    "Wortliste": "die Sperre, -n (eine Sperre im Kopf haben)",
+    "English": "barrier; block (to have a mental block)",
+    "Meaning": "Bei mündlichen Prüfungen habe ich manchmal eine Sperre im Kopf.",
+    "Hebrew": "חסימה / מחסום / חסם נפשי",
+    "Ukrainian": "блокування / психологічний бар'єр"
+  },
+  {
+    "Wortliste": "der Stoffwechsel, -",
+    "English": "metabolism",
+    "Meaning": "Im Schlaf verlangsamt sich der Stoffwechsel.",
+    "Hebrew": "חילוף חומרים / מטבוליזם",
+    "Ukrainian": "обмін речовин / метаболізм"
+  },
+  {
+    "Wortliste": "das Tief, -s (ein Mittagstief haben)",
+    "English": "low; slump (to have an afternoon slump)",
+    "Meaning": "Nach dem Essen habe ich oft ein kleines Mittagstief.",
+    "Hebrew": "שפל / ירידה / שפל של אחר הצהריים",
+    "Ukrainian": "западина / спад / денний спад"
+  },
+  {
+    "Wortliste": "überlebensnotwendig",
+    "English": "vital for survival",
+    "Meaning": "Wasser und Schlaf sind überlebensnotwendig.",
+    "Hebrew": "חיוני לשרידות",
+    "Ukrainian": "необхідний для виживання"
+  },
+  {
+    "Wortliste": "verarbeiten",
+    "English": "to process; to work through",
+    "Meaning": "Im Traum verarbeitet das Gehirn die Eindrücke des Tages.",
+    "Hebrew": "לעבד / לעכל",
+    "Ukrainian": "обробляти / засвоювати"
+  },
+  {
+    "Wortliste": "verpönt",
+    "English": "frowned upon; taboo",
+    "Meaning": "Ein Nickerchen im Büro ist in vielen Firmen noch verpönt.",
+    "Hebrew": "אסור / מגונה",
+    "Ukrainian": "заборонений / осуджуваний"
+  },
+  {
+    "Wortliste": "die Verschwendung, -en",
+    "English": "waste",
+    "Meaning": "Viele halten es für Verschwendung, lange auszuschlafen.",
+    "Hebrew": "בזבוז",
+    "Ukrainian": "марнотратство / марнування"
+  },
+  {
+    "Wortliste": "vorgeschrieben",
+    "English": "prescribed; required",
+    "Meaning": "Für Lkw-Fahrer sind Ruhezeiten gesetzlich vorgeschrieben.",
+    "Hebrew": "קבוע / מחויב",
+    "Ukrainian": "визначений / обов'язковий"
+  },
+  {
+    "Wortliste": "die Wachphase, -n",
+    "English": "wake phase",
+    "Meaning": "Zwischen den Tiefschlafphasen gibt es kurze Wachphasen.",
+    "Hebrew": "שלב ערות",
+    "Ukrainian": "фаза неспання / фаза пильнування"
+  },
+  {
+    "Wortliste": "die Weile (Sg.)",
+    "English": "a while",
+    "Meaning": "Bleib doch noch eine Weile und trink einen Kaffee.",
+    "Hebrew": "זמן מה / רגע",
+    "Ukrainian": "час / деякий час"
+  },
+  {
+    "Wortliste": "der/die Workaholic, -s",
+    "English": "workaholic",
+    "Meaning": "Workaholics haben oft Schwierigkeiten, abzuschalten.",
+    "Hebrew": "ורקוהוליק / עובד/ת כפייתי/ת",
+    "Ukrainian": "трудоголік"
+  },
+  {
+    "Wortliste": "die Zeitnot (Sg.)",
+    "English": "time pressure; lack of time",
+    "Meaning": "Wegen ständiger Zeitnot kommt sie kaum zur Ruhe.",
+    "Hebrew": "לחץ זמן",
+    "Ukrainian": "брак часу"
+  },
+  {
+    "Wortliste": "der Zustand, \"-e",
+    "English": "state; condition",
+    "Meaning": "Nach der Nachtschicht war sein körperlicher Zustand schlecht.",
+    "Hebrew": "מצב / תנאי",
+    "Ukrainian": "стан / умова"
+  },
+  {
+    "Wortliste": "die Erkenntnis, -se",
+    "English": "insight; realization",
+    "Meaning": "Die Studie brachte wichtige neue Erkenntnisse.",
+    "Hebrew": "תובנה / הכרה / גילוי",
+    "Ukrainian": "пізнання / висновок / розуміння"
+  },
+  {
+    "Wortliste": "die Entspannung (Sg.)",
+    "English": "relaxation",
+    "Meaning": "Ein Spaziergang am Abend sorgt für Entspannung.",
+    "Hebrew": "הרפיה / שחרור",
+    "Ukrainian": "розслаблення / відпочинок"
+  },
+  {
+    "Wortliste": "anfällig (für + A.)",
+    "English": "susceptible (to)",
+    "Meaning": "Übermüdete Menschen sind anfälliger für Fehler.",
+    "Hebrew": "רגיש ל / נוטה ל",
+    "Ukrainian": "схильний до / вразливий до"
+  },
+  {
+    "Wortliste": "die Auswirkung, -en (auf + A.)",
+    "English": "effect; impact (on)",
+    "Meaning": "Schlafmangel hat negative Auswirkungen auf die Gesundheit.",
+    "Hebrew": "השפעה על",
+    "Ukrainian": "вплив на"
+  },
+  {
+    "Wortliste": "die Belastbarkeit (Sg.)",
+    "English": "resilience; capacity to cope with stress",
+    "Meaning": "Regelmäßiger Schlaf erhöht die psychische Belastbarkeit.",
+    "Hebrew": "חוסן / סיבולת",
+    "Ukrainian": "витривалість / стресостійкість"
+  },
+  {
+    "Wortliste": "der/die Frühaufsteher/in, -/-nen",
+    "English": "early riser",
+    "Meaning": "Frühaufsteher sind morgens besonders produktiv.",
+    "Hebrew": "מי שקם מוקדם",
+    "Ukrainian": "жайворон / ранній птах"
+  },
+  {
+    "Wortliste": "die Leistungssteigerung, -en",
+    "English": "performance increase",
+    "Meaning": "Schon kleine Pausen können zu einer deutlichen Leistungssteigerung führen.",
+    "Hebrew": "שיפור ביצועים",
+    "Ukrainian": "підвищення продуктивності"
+  },
+  {
+    "Wortliste": "die Merkfähigkeit (Sg.)",
+    "English": "ability to remember",
+    "Meaning": "Im ausgeschlafenen Zustand ist die Merkfähigkeit höher.",
+    "Hebrew": "יכולת זכירה / שינון",
+    "Ukrainian": "здатність до запам'ятовування"
+  },
+  {
+    "Wortliste": "das Schlafbedürfnis (Sg.)",
+    "English": "need for sleep",
+    "Meaning": "Das Schlafbedürfnis ist von Mensch zu Mensch verschieden.",
+    "Hebrew": "צורך בשינה",
+    "Ukrainian": "потреба у сні"
+  },
+  {
+    "Wortliste": "das Wohlbefinden (Sg.)",
+    "English": "well-being",
+    "Meaning": "Genug Ruhe ist wichtig für das allgemeine Wohlbefinden.",
+    "Hebrew": "רווחה / תחושת טוב",
+    "Ukrainian": "самопочуття / добробут"
+  },
+  {
+    "Wortliste": "die Beachtung (Sg.) (Beachtung finden)",
+    "English": "attention (to attract attention)",
+    "Meaning": "Die Studie fand große Beachtung in den Medien.",
+    "Hebrew": "תשומת לב / הכרה",
+    "Ukrainian": "увага / помічати"
+  },
+  {
+    "Wortliste": "der Faktor, -en",
+    "English": "factor",
+    "Meaning": "Stress ist ein wichtiger Faktor bei Schlafstörungen.",
+    "Hebrew": "גורם / פקטור",
+    "Ukrainian": "фактор / чинник"
+  },
+  {
+    "Wortliste": "die Hektik (Sg.)",
+    "English": "hectic rush; hustle",
+    "Meaning": "In der Hektik des Alltags vergisst man leicht Pausen.",
+    "Hebrew": "לחץ / עצבנות / בהלה",
+    "Ukrainian": "метушня / суєта / напруга"
+  },
+  {
+    "Wortliste": "die Intonation, -en",
+    "English": "intonation",
+    "Meaning": "Durch die Intonation kann sich die Bedeutung eines Satzes ändern.",
+    "Hebrew": "אינטונציה / ניגון",
+    "Ukrainian": "інтонація"
+  },
+  {
+    "Wortliste": "die Mimik (Sg.)",
+    "English": "facial expression",
+    "Meaning": "Ihre Mimik verrät mehr als ihre Worte.",
+    "Hebrew": "הבעת פנים / מימיקה",
+    "Ukrainian": "міміка"
+  },
+  {
+    "Wortliste": "die Reue (Sg.)",
+    "English": "remorse",
+    "Meaning": "Er zeigte keine Reue für sein Verhalten.",
+    "Hebrew": "חרטה",
+    "Ukrainian": "каяття / жаль"
+  },
+  {
+    "Wortliste": "das Schamgefühl, -e",
+    "English": "sense of shame",
+    "Meaning": "Ein starkes Schamgefühl kann offene Gespräche verhindern.",
+    "Hebrew": "תחושת בושה",
+    "Ukrainian": "почуття сорому"
+  },
+  {
+    "Wortliste": "das Wohlwollen (Sg.)",
+    "English": "goodwill; benevolence",
+    "Meaning": "Der Chef hörte ihm mit sichtbarem Wohlwollen zu.",
+    "Hebrew": "רצון טוב / ידידותיות",
+    "Ukrainian": "доброзичливість / прихильність"
+  },
+  {
+    "Wortliste": "der Zorn (Sg.)",
+    "English": "anger; rage",
+    "Meaning": "Sie versuchte, ihren Zorn zu kontrollieren.",
+    "Hebrew": "זעם / כעס",
+    "Ukrainian": "гнів / злість"
+  },
+  {
+    "Wortliste": "der Buchstabe, -n",
+    "English": "letter (of the alphabet)",
+    "Meaning": "Bitte schreiben Sie alle Buchstaben gut lesbar.",
+    "Hebrew": "אות",
+    "Ukrainian": "буква"
+  },
+  {
+    "Wortliste": "die Energiequelle, -n",
+    "English": "source of energy",
+    "Meaning": "Schlaf ist eine wichtige Energiequelle für den Körper.",
+    "Hebrew": "מקור אנרגיה",
+    "Ukrainian": "джерело енергії"
+  },
+  {
+    "Wortliste": "das Geisterhaus, \"-er",
+    "English": "haunted house",
+    "Meaning": "Als Kind hatte ich Angst vor Geisterhäusern.",
+    "Hebrew": "בית רוחות",
+    "Ukrainian": "будинок з привидами"
+  },
+  {
+    "Wortliste": "das Grab, \"-er",
+    "English": "grave",
+    "Meaning": "An Allerheiligen schmücken viele Menschen die Gräber.",
+    "Hebrew": "קבר",
+    "Ukrainian": "могила / труна"
+  },
+  {
+    "Wortliste": "der/die Herrscher/in, -/-nen",
+    "English": "ruler",
+    "Meaning": "Die alten Herrscher wurden oft als Götter verehrt.",
+    "Hebrew": "שליט/ה / מושל/ת",
+    "Ukrainian": "правитель / правителька"
+  },
+  {
+    "Wortliste": "der Kaugummi, -s",
+    "English": "chewing gum",
+    "Meaning": "Bitte wirf den Kaugummi nicht auf den Boden.",
+    "Hebrew": "מסטיק",
+    "Ukrainian": "жувальна гумка"
+  },
+  {
+    "Wortliste": "die Lupe, -n",
+    "English": "magnifying glass",
+    "Meaning": "Mit der Lupe kann man die kleinen Buchstaben besser lesen.",
+    "Hebrew": "זכוכית מגדלת",
+    "Ukrainian": "лупа"
+  },
+  {
+    "Wortliste": "der Reißverschluss, \"-e",
+    "English": "zip; zipper",
+    "Meaning": "Der Reißverschluss meiner Jacke ist kaputt.",
+    "Hebrew": "רוכסן",
+    "Ukrainian": "блискавка (застібка)"
+  },
+  {
+    "Wortliste": "der Schutzpatron, -e",
+    "English": "patron saint",
+    "Meaning": "Er glaubt, dass sein Schutzpatron über ihn wacht.",
+    "Hebrew": "פטרון / קדוש מגן",
+    "Ukrainian": "святий покровитель"
+  },
+  {
+    "Wortliste": "der Steinbeißer, -",
+    "English": "stone biter (type of fish, or joke name)",
+    "Meaning": "Im Aquarium schwimmt ein kleiner Steinbeißer.",
+    "Hebrew": "נוחר / דג קטן",
+    "Ukrainian": "кам'яний окунь / риба"
+  },
+  {
+    "Wortliste": "das Versteck, -e",
+    "English": "hiding place",
+    "Meaning": "Die Kinder haben ein geheimes Versteck im Garten.",
+    "Hebrew": "מחבוא",
+    "Ukrainian": "схованка / укриття"
+  },
+  {
+    "Wortliste": "die Verwandlung, -en",
+    "English": "transformation",
+    "Meaning": "Die Verwandlung der Raupe in einen Schmetterling ist faszinierend.",
+    "Hebrew": "שינוי / הפיכה / טרנספורמציה",
+    "Ukrainian": "перетворення / трансформація"
+  },
+  {
+    "Wortliste": "die Wunderlampe, -n",
+    "English": "magic lamp",
+    "Meaning": "In der Geschichte erscheint aus der Wunderlampe ein Geist.",
+    "Hebrew": "מנורת קסמים",
+    "Ukrainian": "чарівна лампа"
+  },
+  {
+    "Wortliste": "der Zauberer, -",
+    "English": "magician; wizard",
+    "Meaning": "Der Zauberer ließ die Münze verschwinden.",
+    "Hebrew": "קוסם / מאגיה",
+    "Ukrainian": "чарівник / маг"
+  },
+  {
+    "Wortliste": "das Abgas, -e",
+    "English": "exhaust gas",
+    "Meaning": "Abgase von Autos verschmutzen die Luft.",
+    "Hebrew": "גז פליטה / עשן",
+    "Ukrainian": "вихлопний газ / відпрацьований газ"
+  },
+  {
+    "Wortliste": "das Atomkraftwerk, -e",
+    "English": "nuclear power plant",
+    "Meaning": "Viele Menschen demonstrieren gegen Atomkraftwerke.",
+    "Hebrew": "תחנת כוח גרעינית",
+    "Ukrainian": "атомна електростанція"
+  },
+  {
+    "Wortliste": "das Ozonloch, \"-er",
+    "English": "ozone hole",
+    "Meaning": "In den 90er-Jahren war das Ozonloch ein großes Thema.",
+    "Hebrew": "חור באוזון",
+    "Ukrainian": "озонова діра"
+  },
+  {
+    "Wortliste": "das Waldsterben (Sg.)",
+    "English": "forest dieback",
+    "Meaning": "Waldsterben ist eine Folge von Luftverschmutzung.",
+    "Hebrew": "מות היערות",
+    "Ukrainian": "загибель лісів"
+  },
+  {
+    "Wortliste": "der Atommüll (Sg.)",
+    "English": "nuclear waste",
+    "Meaning": "Atommüll muss sicher gelagert werden.",
+    "Hebrew": "פסולת גרעינית",
+    "Ukrainian": "ядерні відходи"
+  },
+  {
+    "Wortliste": "die Erderwärmung (Sg.)",
+    "English": "global warming",
+    "Meaning": "Die Erderwärmung führt zu häufigeren Hitzewellen.",
+    "Hebrew": "התחממות כדור הארץ",
+    "Ukrainian": "потепління клімату / глобальне потепління"
+  },
+  {
+    "Wortliste": "das Hochwasser, -",
+    "English": "flood; high water",
+    "Meaning": "Nach dem starken Regen droht Hochwasser.",
+    "Hebrew": "שיטפון / גאות",
+    "Ukrainian": "повінь / паводок"
+  },
+  {
+    "Wortliste": "die Kernenergie (Sg.)",
+    "English": "nuclear energy",
+    "Meaning": "Über die Rolle der Kernenergie wird heftig diskutiert.",
+    "Hebrew": "אנרגיה גרעינית",
+    "Ukrainian": "ядерна енергія"
+  },
+  {
+    "Wortliste": "das Kohlendioxid (Sg.)",
+    "English": "carbon dioxide",
+    "Meaning": "Beim Autofahren entsteht Kohlendioxid.",
+    "Hebrew": "פחמן דו-חמצני",
+    "Ukrainian": "вуглекислий газ"
+  },
+  {
+    "Wortliste": "die Luftverschmutzung (Sg.)",
+    "English": "air pollution",
+    "Meaning": "In Großstädten ist die Luftverschmutzung oft hoch.",
+    "Hebrew": "זיהום אוויר",
+    "Ukrainian": "забруднення повітря"
+  },
+  {
+    "Wortliste": "die Solarenergie (Sg.)",
+    "English": "solar energy",
+    "Meaning": "Viele Häuser nutzen Solarenergie vom eigenen Dach.",
+    "Hebrew": "אנרגיה סולארית",
+    "Ukrainian": "сонячна енергія"
+  },
+  {
+    "Wortliste": "das Trinkwasser (Sg.)",
+    "English": "drinking water",
+    "Meaning": "Sauberes Trinkwasser ist nicht überall selbstverständlich.",
+    "Hebrew": "מי שתייה",
+    "Ukrainian": "питна вода"
+  },
+  {
+    "Wortliste": "die Überschwemmung, -en",
+    "English": "flooding",
+    "Meaning": "Heftige Regenfälle verursachten schwere Überschwemmungen.",
+    "Hebrew": "שיטפון",
+    "Ukrainian": "повінь / підтоплення"
+  },
+  {
+    "Wortliste": "der Umweltschutz (Sg.)",
+    "English": "environmental protection",
+    "Meaning": "Viele Organisationen setzen sich für den Umweltschutz ein.",
+    "Hebrew": "הגנת הסביבה",
+    "Ukrainian": "охорона довкілля"
+  },
+  {
+    "Wortliste": "die Umweltverschmutzung (Sg.)",
+    "English": "environmental pollution",
+    "Meaning": "Plastikmüll im Meer ist ein großes Problem der Umweltverschmutzung.",
+    "Hebrew": "זיהום הסביבה",
+    "Ukrainian": "забруднення навколишнього середовища"
+  },
+  {
+    "Wortliste": "das Windrad, \"-er",
+    "English": "wind turbine",
+    "Meaning": "Auf dem Hügel drehen sich mehrere Windräder.",
+    "Hebrew": "טורבינת רוח",
+    "Ukrainian": "вітряна турбіна / вітряк"
+  },
+  {
+    "Wortliste": "ausstoßen, stieß aus, hat ausgestoßen",
+    "English": "to emit",
+    "Meaning": "Die Fabrik stößt viele Abgase aus.",
+    "Hebrew": "לפלוט / לגרש",
+    "Ukrainian": "викидати / випускати"
+  },
+  {
+    "Wortliste": "die Branche, -n",
+    "English": "industry sector; branch",
+    "Meaning": "Sie arbeitet in der IT-Branche.",
+    "Hebrew": "ענף / תחום / סקטור",
+    "Ukrainian": "галузь / сектор"
+  },
+  {
+    "Wortliste": "die Dürre, -n",
+    "English": "drought",
+    "Meaning": "Die lange Dürre hat die Ernte zerstört.",
+    "Hebrew": "בצורת / יובש",
+    "Ukrainian": "посуха"
+  },
+  {
+    "Wortliste": "einsparen",
+    "English": "to save; to cut",
+    "Meaning": "Durch LED-Lampen kann man viel Energie einsparen.",
+    "Hebrew": "לחסוך",
+    "Ukrainian": "заощаджувати / економити"
+  },
+  {
+    "Wortliste": "die Energieeffizienz (Sg.)",
+    "English": "energy efficiency",
+    "Meaning": "Moderne Geräte haben eine hohe Energieeffizienz.",
+    "Hebrew": "יעילות אנרגטית",
+    "Ukrainian": "енергоефективність"
+  },
+  {
+    "Wortliste": "die Ernteeinbuße, -n",
+    "English": "crop loss",
+    "Meaning": "Dürreperioden führen zu großen Ernteeinbußen.",
+    "Hebrew": "אובדן יבול",
+    "Ukrainian": "втрата врожаю"
+  },
+  {
+    "Wortliste": "die Erzeugung (Sg.)",
+    "English": "production; generation",
+    "Meaning": "Die Erzeugung von Strom aus Wind nimmt zu.",
+    "Hebrew": "ייצור / הפקה",
+    "Ukrainian": "виробництво / генерація"
+  },
+  {
+    "Wortliste": "die Forstwirtschaft (Sg.)",
+    "English": "forestry",
+    "Meaning": "Nachhaltige Forstwirtschaft schützt den Wald.",
+    "Hebrew": "ייעור / כלכלת יערות",
+    "Ukrainian": "лісове господарство"
+  },
+  {
+    "Wortliste": "die Gletscherschmelze (Sg.)",
+    "English": "glacier melt",
+    "Meaning": "Die Gletscherschmelze ist ein Zeichen der Klimaerwärmung.",
+    "Hebrew": "המסת קרחונים",
+    "Ukrainian": "танення льодовиків"
+  },
+  {
+    "Wortliste": "der/die Klimaforscher/in, -/-nen",
+    "English": "climate researcher",
+    "Meaning": "Klimaforscher warnen vor den Folgen der Erderwärmung.",
+    "Hebrew": "חוקר/ת אקלים",
+    "Ukrainian": "кліматолог / дослідник клімату"
+  },
+  {
+    "Wortliste": "die Klimaveränderung, -en",
+    "English": "climate change",
+    "Meaning": "Klimaveränderungen beeinflussen das Wetter weltweit.",
+    "Hebrew": "שינוי אקלים",
+    "Ukrainian": "зміна клімату"
+  },
+  {
+    "Wortliste": "der/die Meteorologe/Meteorologin, -n/-nen",
+    "English": "meteorologist",
+    "Meaning": "Meteorologen erstellen die Wettervorhersagen.",
+    "Hebrew": "מטאורולוג/ית",
+    "Ukrainian": "метеоролог / метеорологиня"
+  },
+  {
+    "Wortliste": "der Schadstoff, -e",
+    "English": "pollutant",
+    "Meaning": "Filteranlagen sollen Schadstoffe aus der Luft entfernen.",
+    "Hebrew": "חומר מזהם",
+    "Ukrainian": "шкідлива речовина / забруднювач"
+  },
+  {
+    "Wortliste": "die Stromerzeugung (Sg.)",
+    "English": "electricity generation",
+    "Meaning": "Die Stromerzeugung aus erneuerbaren Quellen steigt.",
+    "Hebrew": "ייצור חשמל",
+    "Ukrainian": "виробництво електроенергії"
+  },
+  {
+    "Wortliste": "die Treibhausgasemission, -en",
+    "English": "greenhouse gas emission",
+    "Meaning": "Treibhausgasemissionen müssen dringend reduziert werden.",
+    "Hebrew": "פליטת גזי חממה",
+    "Ukrainian": "викид парникових газів"
+  },
+  {
+    "Wortliste": "der Treibhauseffekt (Sg.)",
+    "English": "greenhouse effect",
+    "Meaning": "Der Treibhauseffekt wird durch CO₂ verstärkt.",
+    "Hebrew": "אפקט החממה",
+    "Ukrainian": "парниковий ефект"
+  },
+  {
+    "Wortliste": "die Ursache, -n",
+    "English": "cause",
+    "Meaning": "Die genauen Ursachen des Sturms sind noch unklar.",
+    "Hebrew": "סיבה / גורם",
+    "Ukrainian": "причина"
+  },
+  {
+    "Wortliste": "verbrauchen",
+    "English": "to use; to consume",
+    "Meaning": "Dieses alte Auto verbraucht viel Benzin.",
+    "Hebrew": "לצרוך / להשתמש",
+    "Ukrainian": "споживати / використовувати"
+  },
+  {
+    "Wortliste": "der Verzicht (auf + A.)",
+    "English": "renunciation; giving up",
+    "Meaning": "Ein teilweiser Verzicht auf das Auto ist gut für die Umwelt.",
+    "Hebrew": "ויתור / הימנעות מ",
+    "Ukrainian": "відмова від"
+  },
+  {
+    "Wortliste": "die Wetteraufzeichnung, -en",
+    "English": "weather record",
+    "Meaning": "Lange Wetteraufzeichnungen helfen den Forschern.",
+    "Hebrew": "תיעוד מזג אוויר",
+    "Ukrainian": "запис погоди / метеорологічні дані"
+  },
+  {
+    "Wortliste": "die Wetterbedingung, -en",
+    "English": "weather condition",
+    "Meaning": "Die Wettkämpfe hängen von den Wetterbedingungen ab.",
+    "Hebrew": "תנאי מזג אוויר",
+    "Ukrainian": "погодні умови"
+  },
+  {
+    "Wortliste": "der Zeitraum, \"-e",
+    "English": "period of time",
+    "Meaning": "Im Zeitraum von zehn Jahren hat sich viel verändert.",
+    "Hebrew": "פרק זמן / תקופה",
+    "Ukrainian": "проміжок часу / період"
+  },
+  {
+    "Wortliste": "der Anstieg, -e",
+    "English": "increase; rise",
+    "Meaning": "Ein Anstieg der Temperaturen ist deutlich zu sehen.",
+    "Hebrew": "עלייה / גידול",
+    "Ukrainian": "підйом / зростання"
+  },
+  {
+    "Wortliste": "die Auswirkung, -en",
+    "English": "effect; consequence",
+    "Meaning": "Die Auswirkungen des Klimawandels sind überall spürbar.",
+    "Hebrew": "השפעה / תוצאה",
+    "Ukrainian": "вплив / наслідок"
+  },
+  {
+    "Wortliste": "der Beleg, -e",
+    "English": "proof; evidence",
+    "Meaning": "Die Daten liefern einen klaren Beleg für die Veränderung.",
+    "Hebrew": "ראיה / הוכחה / קבלה",
+    "Ukrainian": "доказ / квитанція"
+  },
+  {
+    "Wortliste": "beweisen, bewies, hat bewiesen",
+    "English": "to prove",
+    "Meaning": "Die Studie beweist den Zusammenhang eindeutig.",
+    "Hebrew": "להוכיח",
+    "Ukrainian": "доводити / демонструвати"
+  },
+  {
+    "Wortliste": "drohen (mit + D.)",
+    "English": "to threaten (with)",
+    "Meaning": "Bei weiterer Erwärmung drohen häufigere Unwetter.",
+    "Hebrew": "לאיים ב",
+    "Ukrainian": "погрожувати чимось"
+  },
+  {
+    "Wortliste": "erheblich",
+    "English": "considerable; significant",
+    "Meaning": "Die Schäden sind erheblich.",
+    "Hebrew": "משמעותי / ניכר / ניכר",
+    "Ukrainian": "значний / суттєвий"
+  },
+  {
+    "Wortliste": "das Ereignis, -se",
+    "English": "event",
+    "Meaning": "Solche Extremereignisse nehmen zu.",
+    "Hebrew": "אירוע / מקרה",
+    "Ukrainian": "подія"
+  },
+  {
+    "Wortliste": "erwärmen (sich)",
+    "English": "to warm (up)",
+    "Meaning": "Die Atmosphäre erwärmt sich weiter.",
+    "Hebrew": "להתחמם",
+    "Ukrainian": "нагріватися / теплішати"
+  },
+  {
+    "Wortliste": "die Hitzewelle, -n",
+    "English": "heatwave",
+    "Meaning": "Im Sommer gab es mehrere lange Hitzewellen.",
+    "Hebrew": "גל חום",
+    "Ukrainian": "хвиля спеки"
+  },
+  {
+    "Wortliste": "die Prognose, -n",
+    "English": "forecast; prediction",
+    "Meaning": "Die Prognosen für die nächsten Jahrzehnte sind besorgniserregend.",
+    "Hebrew": "תחזית / פרוגנוזה",
+    "Ukrainian": "прогноз"
+  },
+  {
+    "Wortliste": "das Unwetter, -",
+    "English": "severe storm; bad weather",
+    "Meaning": "Ein schweres Unwetter zog über die Stadt.",
+    "Hebrew": "סערה / מזג אוויר קיצוני",
+    "Ukrainian": "буря / негода / лихо"
+  },
+  {
+    "Wortliste": "verzeichnen",
+    "English": "to record; to register",
+    "Meaning": "In diesem Jahr verzeichnete man neue Temperaturrekorde.",
+    "Hebrew": "לרשום / לתעד",
+    "Ukrainian": "фіксувати / реєструвати"
+  },
+  {
+    "Wortliste": "zunehmen, nahm zu, hat zugenommen",
+    "English": "to increase",
+    "Meaning": "Die Zahl der Stürme hat in den letzten Jahren zugenommen.",
+    "Hebrew": "לגדול / לעלות / לעלות במשקל",
+    "Ukrainian": "збільшуватися / прибавляти у вазі"
+  },
+  {
+    "Wortliste": "die Drohung, -en",
+    "English": "threat",
+    "Meaning": "Die Klimakrise ist eine reale Drohung für viele Regionen.",
+    "Hebrew": "איום",
+    "Ukrainian": "погроза"
+  },
+  {
+    "Wortliste": "das Kohlendioxid (Sg.)",
+    "English": "carbon dioxide",
+    "Meaning": "Kohlendioxid entsteht bei der Verbrennung von Kohle, Öl und Gas.",
+    "Hebrew": "פחמן דו-חמצני",
+    "Ukrainian": "вуглекислий газ"
+  },
+  {
+    "Wortliste": "der Sauerstoff (Sg.)",
+    "English": "oxygen",
+    "Meaning": "Ohne Sauerstoff können wir nicht leben.",
+    "Hebrew": "חמצן",
+    "Ukrainian": "кисень"
+  },
+  {
+    "Wortliste": "der Smog (Sg.)",
+    "English": "smog",
+    "Meaning": "In einigen Großstädten ist der Smog im Winter besonders stark.",
+    "Hebrew": "ערפיח / סמוג",
+    "Ukrainian": "смог"
+  },
+  {
+    "Wortliste": "die Energie, -n (Energie sparen)",
+    "English": "energy (to save energy)",
+    "Meaning": "Zu Hause kann man leicht Energie sparen.",
+    "Hebrew": "אנרגיה / לחסוך אנרגיה",
+    "Ukrainian": "енергія / економити енергію"
+  },
+  {
+    "Wortliste": "die Solaranlage, -n",
+    "English": "solar system (for energy)",
+    "Meaning": "Auf dem Dach wurde eine große Solaranlage installiert.",
+    "Hebrew": "מערכת סולארית",
+    "Ukrainian": "сонячна установка / сонячні панелі"
+  },
+  {
+    "Wortliste": "der Atomausstieg (Sg.)",
+    "English": "nuclear phase-out",
+    "Meaning": "Der Atomausstieg wird politisch heftig diskutiert.",
+    "Hebrew": "יציאה מאנרגיה גרעינית",
+    "Ukrainian": "відмова від ядерної енергії"
+  },
+  {
+    "Wortliste": "die Laufzeitverlängerung, -en",
+    "English": "extension of operating life",
+    "Meaning": "Die Laufzeitverlängerung alter Kraftwerke ist umstritten.",
+    "Hebrew": "הארכת תקופת פעולה",
+    "Ukrainian": "продовження терміну дії"
+  },
+  {
+    "Wortliste": "der Ökostrom (Sg.)",
+    "English": "green electricity",
+    "Meaning": "Immer mehr Haushalte beziehen Ökostrom.",
+    "Hebrew": "חשמל ירוק",
+    "Ukrainian": "зелена електроенергія"
+  },
+  {
+    "Wortliste": "die Stromquelle, -n",
+    "English": "source of electricity",
+    "Meaning": "Wind und Sonne sind wichtige Stromquellen.",
+    "Hebrew": "מקור חשמל",
+    "Ukrainian": "джерело електроенергії"
+  },
+  {
+    "Wortliste": "die Windkraft (Sg.)",
+    "English": "wind power",
+    "Meaning": "Die Windkraft spielt in Deutschland eine große Rolle.",
+    "Hebrew": "אנרגיית רוח",
+    "Ukrainian": "вітрова енергетика"
+  },
+  {
+    "Wortliste": "der Ausbau (Sg.)",
+    "English": "expansion",
+    "Meaning": "Der Ausbau erneuerbarer Energien wird gefördert.",
+    "Hebrew": "הרחבה / פיתוח",
+    "Ukrainian": "розширення / розвиток"
+  },
+  {
+    "Wortliste": "durchsetzen (sich)",
+    "English": "to prevail; to catch on",
+    "Meaning": "Erneuerbare Energien setzen sich immer mehr durch.",
+    "Hebrew": "לנצח / לדחוף / להתאשר",
+    "Ukrainian": "пробиватися / перемагати"
+  },
+  {
+    "Wortliste": "nachhaltig",
+    "English": "sustainable",
+    "Meaning": "Nachhaltige Lösungen schützen Umwelt und Klima.",
+    "Hebrew": "בר-קיימא / מקיים",
+    "Ukrainian": "сталий / екологічний"
+  },
+  {
+    "Wortliste": "regenerativ",
+    "English": "renewable",
+    "Meaning": "Wind- und Sonnenenergie sind regenerative Energien.",
+    "Hebrew": "מתחדש / רגנרטיבי",
+    "Ukrainian": "відновлюваний"
+  },
+  {
+    "Wortliste": "unerschöpflich",
+    "English": "inexhaustible",
+    "Meaning": "Sonnenlicht ist eine fast unerschöpfliche Energiequelle.",
+    "Hebrew": "בלתי נדלה",
+    "Ukrainian": "невичерпний"
+  },
+  {
+    "Wortliste": "zentral",
+    "English": "central; key",
+    "Meaning": "Energiesparen ist ein zentrales Thema der Klimapolitik.",
+    "Hebrew": "מרכזי",
+    "Ukrainian": "центральний"
+  },
+  {
+    "Wortliste": "die Biomasse (Sg.)",
+    "English": "biomass",
+    "Meaning": "Aus Biomasse kann ebenfalls Energie gewonnen werden.",
+    "Hebrew": "ביומסה",
+    "Ukrainian": "біомаса"
+  },
+  {
+    "Wortliste": "die Erdwärme (Sg.)",
+    "English": "geothermal heat",
+    "Meaning": "Erdwärme wird zur Heizung von Häusern genutzt.",
+    "Hebrew": "חום גאותרמי / חום הארץ",
+    "Ukrainian": "геотермальне тепло"
+  },
+  {
+    "Wortliste": "die Geothermie (Sg.)",
+    "English": "geothermal energy",
+    "Meaning": "Geothermie nutzt die Wärme aus dem Inneren der Erde.",
+    "Hebrew": "גאותרמיה",
+    "Ukrainian": "геотермія"
+  },
+  {
+    "Wortliste": "die Sonnenenergie (Sg.)",
+    "English": "solar energy",
+    "Meaning": "Sonnenenergie steht uns täglich gratis zur Verfügung.",
+    "Hebrew": "אנרגיית שמש",
+    "Ukrainian": "сонячна енергія"
+  },
+  {
+    "Wortliste": "die Wasserkraft (Sg.)",
+    "English": "hydropower",
+    "Meaning": "In den Alpen gibt es viele Wasserkraftwerke.",
+    "Hebrew": "אנרגיית מים",
+    "Ukrainian": "гідроенергія"
+  },
+  {
+    "Wortliste": "die Windenergie (Sg.)",
+    "English": "wind energy",
+    "Meaning": "Die Nutzung von Windenergie nimmt weltweit zu.",
+    "Hebrew": "אנרגיית רוח",
+    "Ukrainian": "вітрова енергія"
+  },
+  {
+    "Wortliste": "die Ansicht, -en (meiner Ansicht nach)",
+    "English": "view; opinion (in my view)",
+    "Meaning": "Meiner Ansicht nach sollte man mehr in Bildung investieren.",
+    "Hebrew": "דעה / לדעתי",
+    "Ukrainian": "думка / погляд / на мою думку"
+  },
+  {
+    "Wortliste": "betonen",
+    "English": "to emphasize",
+    "Meaning": "Er betonte, wie wichtig Teamarbeit ist.",
+    "Hebrew": "להדגיש",
+    "Ukrainian": "підкреслювати / наголошувати"
+  },
+  {
+    "Wortliste": "die Meinung, -en (der Meinung sein)",
+    "English": "opinion (to be of the opinion)",
+    "Meaning": "Ich bin der Meinung, dass das eine gute Idee ist.",
+    "Hebrew": "דעה / לדעתי",
+    "Ukrainian": "думка / бути тієї думки"
+  },
+  {
+    "Wortliste": "überzeugen (von + D.)",
+    "English": "to convince (of)",
+    "Meaning": "Sie konnte ihn von ihrem Vorschlag überzeugen.",
+    "Hebrew": "לשכנע",
+    "Ukrainian": "переконувати"
+  },
+  {
+    "Wortliste": "widersprechen, widersprach, hat widersprochen",
+    "English": "to contradict; to disagree",
+    "Meaning": "Da muss ich dir leider widersprechen.",
+    "Hebrew": "לסתור / להתנגד",
+    "Ukrainian": "суперечити / заперечувати"
+  },
+  {
+    "Wortliste": "die Bestätigung, -en",
+    "English": "confirmation",
+    "Meaning": "Sie bekam eine schriftliche Bestätigung der Anmeldung.",
+    "Hebrew": "אישור / אישוש",
+    "Ukrainian": "підтвердження"
+  },
+  {
+    "Wortliste": "die Vermutung, -en",
+    "English": "assumption; suspicion",
+    "Meaning": "Meine Vermutung war richtig.",
+    "Hebrew": "השערה / ניחוש",
+    "Ukrainian": "припущення / здогадка"
+  },
+  {
+    "Wortliste": "die Zusammenfassung, -en",
+    "English": "summary",
+    "Meaning": "Am Ende des Vortrags gab es eine kurze Zusammenfassung.",
+    "Hebrew": "סיכום",
+    "Ukrainian": "підсумок / резюме"
+  },
+  {
+    "Wortliste": "die App, -s",
+    "English": "app",
+    "Meaning": "Mit dieser App kannst du deinen Schlaf aufzeichnen.",
+    "Hebrew": "אפליקציה",
+    "Ukrainian": "додаток / застосунок"
+  },
+  {
+    "Wortliste": "auffrischen",
+    "English": "to refresh; to brush up",
+    "Meaning": "Ich möchte mein Deutsch ein bisschen auffrischen.",
+    "Hebrew": "לרענן",
+    "Ukrainian": "освіжати / поновлювати"
+  },
+  {
+    "Wortliste": "ausleihen, lieh aus, hat ausgeliehen",
+    "English": "to borrow; to lend",
+    "Meaning": "Ich habe mir ein Buch aus der Bibliothek ausgeliehen.",
+    "Hebrew": "להשאיל / לשאול",
+    "Ukrainian": "позичати / брати напрокат"
+  },
+  {
+    "Wortliste": "bedienen",
+    "English": "to operate; to serve",
+    "Meaning": "Können Sie dieses Gerät bedienen?",
+    "Hebrew": "לשרת / להפעיל",
+    "Ukrainian": "обслуговувати / керувати"
+  },
+  {
+    "Wortliste": "die Funktionsweise, -n",
+    "English": "mode of operation; how something works",
+    "Meaning": "Die Funktionsweise der App wird im Video erklärt.",
+    "Hebrew": "אופן פעולה",
+    "Ukrainian": "принцип роботи"
+  },
+  {
+    "Wortliste": "das Gerät, -e",
+    "English": "device; appliance",
+    "Meaning": "Dieses Gerät misst den Blutdruck.",
+    "Hebrew": "מכשיר / מכשור",
+    "Ukrainian": "пристрій / прилад"
+  },
+  {
+    "Wortliste": "interaktiv",
+    "English": "interactive",
+    "Meaning": "Die Webseite bietet viele interaktive Übungen.",
+    "Hebrew": "אינטראקטיבי",
+    "Ukrainian": "інтерактивний"
+  },
+  {
+    "Wortliste": "die Klimaanlage, -n",
+    "English": "air conditioning system",
+    "Meaning": "Im Sommer läuft im Büro ständig die Klimaanlage.",
+    "Hebrew": "מזגן",
+    "Ukrainian": "кондиціонер"
+  },
+  {
+    "Wortliste": "das Navigationsgerät, -e",
+    "English": "navigation device; satnav",
+    "Meaning": "Im Auto hilft uns das Navigationsgerät, den Weg zu finden.",
+    "Hebrew": "מכשיר ניווט / GPS",
+    "Ukrainian": "навігатор / GPS-пристрій"
+  },
+  {
+    "Wortliste": "per",
+    "English": "by; via",
+    "Meaning": "Die Tickets bekommst du per E-Mail.",
+    "Hebrew": "באמצעות / דרך",
+    "Ukrainian": "через / за допомогою"
+  },
+  {
+    "Wortliste": "der Schalter, -",
+    "English": "switch; counter",
+    "Meaning": "Drück bitte auf den Schalter, um das Licht anzumachen.",
+    "Hebrew": "מתג / כפתור",
+    "Ukrainian": "вимикач / перемикач"
+  },
+  {
+    "Wortliste": "die Steckdose, -n",
+    "English": "socket; power outlet",
+    "Meaning": "Der Stecker passt nicht in diese Steckdose.",
+    "Hebrew": "שקע חשמל",
+    "Ukrainian": "електрична розетка"
+  },
+  {
+    "Wortliste": "steuern",
+    "English": "to control; to steer",
+    "Meaning": "Du kannst die Heizung per App steuern.",
+    "Hebrew": "לכוון / לשלוט / לנווט",
+    "Ukrainian": "керувати / контролювати"
+  },
+  {
+    "Wortliste": "tippen",
+    "English": "to type; to tap",
+    "Meaning": "Bitte tippen Sie Ihren PIN ein.",
+    "Hebrew": "להקליד / לגעת",
+    "Ukrainian": "набирати текст / торкатися"
+  },
+  {
+    "Wortliste": "das Touchscreen, -s",
+    "English": "touchscreen",
+    "Meaning": "Das Handy hat ein großes Touchscreen.",
+    "Hebrew": "מסך מגע",
+    "Ukrainian": "сенсорний екран"
+  },
+  {
+    "Wortliste": "die Fernbedienung, -en",
+    "English": "remote control",
+    "Meaning": "Wo ist die Fernbedienung für den Fernseher?",
+    "Hebrew": "שלט רחוק",
+    "Ukrainian": "пульт дистанційного керування"
+  },
+  {
+    "Wortliste": "das Kabel, -",
+    "English": "cable",
+    "Meaning": "Pass auf, dass du nicht über das Kabel stolperst.",
+    "Hebrew": "כבל",
+    "Ukrainian": "кабель / шнур"
+  },
+  {
+    "Wortliste": "der Akku, -s",
+    "English": "rechargeable battery",
+    "Meaning": "Der Akku meines Handys ist fast leer.",
+    "Hebrew": "סוללה נטענת / בטרייה",
+    "Ukrainian": "акумулятор"
+  },
+  {
+    "Wortliste": "die Alarmanlage, -n",
+    "English": "alarm system",
+    "Meaning": "Nach dem Einbruch haben sie eine Alarmanlage eingebaut.",
+    "Hebrew": "מערכת אזעקה",
+    "Ukrainian": "охоронна сигналізація"
+  },
+  {
+    "Wortliste": "der/die Anwender/in, -/-nen",
+    "English": "user",
+    "Meaning": "Die Software ist für unerfahrene Anwender leicht zu bedienen.",
+    "Hebrew": "משתמש/ת",
+    "Ukrainian": "користувач / користувачка"
+  },
+  {
+    "Wortliste": "das Display, -s",
+    "English": "display; screen",
+    "Meaning": "Auf dem Display werden alle Funktionen angezeigt.",
+    "Hebrew": "מסך / תצוגה",
+    "Ukrainian": "дисплей / екран"
+  },
+  {
+    "Wortliste": "das Ersatzteil, -e",
+    "English": "spare part",
+    "Meaning": "Für alte Geräte gibt es oft keine Ersatzteile mehr.",
+    "Hebrew": "חלק חילוף",
+    "Ukrainian": "запасна частина"
+  },
+  {
+    "Wortliste": "die Fehlfunktion, -en",
+    "English": "malfunction",
+    "Meaning": "Eine Fehlfunktion hat den Computer abstürzen lassen.",
+    "Hebrew": "תקלה / תפקוד לקוי",
+    "Ukrainian": "несправність / збій"
+  },
+  {
+    "Wortliste": "die Garantie, -n",
+    "English": "guarantee; warranty",
+    "Meaning": "Auf das Gerät gibt es zwei Jahre Garantie.",
+    "Hebrew": "אחריות / ערבות",
+    "Ukrainian": "гарантія"
+  },
+  {
+    "Wortliste": "der/die Hersteller/in, -/-nen",
+    "English": "manufacturer",
+    "Meaning": "Der Hersteller empfiehlt eine regelmäßige Wartung.",
+    "Hebrew": "יצרן/ית",
+    "Ukrainian": "виробник / виробниця"
+  },
+  {
+    "Wortliste": "die Komponente, -n",
+    "English": "component",
+    "Meaning": "Alle Komponenten des Systems müssen zusammenpassen.",
+    "Hebrew": "רכיב / חלק",
+    "Ukrainian": "компонент / складова"
+  },
+  {
+    "Wortliste": "der Lautsprecher, -",
+    "English": "loudspeaker",
+    "Meaning": "Die Musik kommt aus kleinen Lautsprechern.",
+    "Hebrew": "רמקול",
+    "Ukrainian": "гучномовець / динамік"
+  },
+  {
+    "Wortliste": "das Mikrofon, -e",
+    "English": "microphone",
+    "Meaning": "Mit dem Mikrofon kann man die Stimme aufnehmen.",
+    "Hebrew": "מיקרופון",
+    "Ukrainian": "мікрофон"
+  },
+  {
+    "Wortliste": "der Monitor, -e",
+    "English": "monitor; screen",
+    "Meaning": "Der neue Monitor hat eine sehr hohe Auflösung.",
+    "Hebrew": "מסך / מוניטור",
+    "Ukrainian": "монітор"
+  },
+  {
+    "Wortliste": "der Sensor, -en",
+    "English": "sensor",
+    "Meaning": "Ein Sensor schaltet das Licht automatisch ein.",
+    "Hebrew": "חיישן",
+    "Ukrainian": "датчик / сенсор"
+  },
+  {
+    "Wortliste": "die Software, -s",
+    "English": "software",
+    "Meaning": "Die Software muss regelmäßig aktualisiert werden.",
+    "Hebrew": "תוכנה",
+    "Ukrainian": "програмне забезпечення"
+  },
+  {
+    "Wortliste": "die Sprachsteuerung, -en",
+    "English": "voice control",
+    "Meaning": "Viele Geräte lassen sich heute per Sprachsteuerung bedienen.",
+    "Hebrew": "בקרה קולית",
+    "Ukrainian": "голосове керування"
+  },
+  {
+    "Wortliste": "der Stecker, -",
+    "English": "plug",
+    "Meaning": "Zieh den Stecker, bevor du das Gerät reparierst.",
+    "Hebrew": "תקע חשמל",
+    "Ukrainian": "штекер / вилка"
+  },
+  {
+    "Wortliste": "das Zubehör (Sg.)",
+    "English": "accessories",
+    "Meaning": "Zum Handy gehört viel Zubehör wie Kopfhörer und Ladegerät.",
+    "Hebrew": "אביזרים / אביזר",
+    "Ukrainian": "аксесуари / приладдя"
+  },
+  {
+    "Wortliste": "anbringen, brachte an, hat angebracht",
+    "English": "to attach; to mount",
+    "Meaning": "Die Kamera wurde an der Wand angebracht.",
+    "Hebrew": "להתקין / לצרף",
+    "Ukrainian": "прикріплювати / встановлювати"
+  },
+  {
+    "Wortliste": "anschließen, schloss an, hat angeschlossen",
+    "English": "to connect; to plug in",
+    "Meaning": "Schließen Sie das Gerät an die Steckdose an.",
+    "Hebrew": "לחבר / לחבר לחשמל",
+    "Ukrainian": "підключати / приєднувати"
+  },
+  {
+    "Wortliste": "ausstatten (mit + D.)",
+    "English": "to equip (with)",
+    "Meaning": "Die Wohnung ist mit einer modernen Küche ausgestattet.",
+    "Hebrew": "לצייד ב / לאייש",
+    "Ukrainian": "обладнувати / оснащувати"
+  },
+  {
+    "Wortliste": "defekt",
+    "English": "defective; broken",
+    "Meaning": "Das Handy ist defekt und geht nicht mehr an.",
+    "Hebrew": "פגום / לא תקין",
+    "Ukrainian": "несправний / зламаний"
+  },
+  {
+    "Wortliste": "einbauen",
+    "English": "to install; to build in",
+    "Meaning": "Der Techniker baut eine neue Festplatte ein.",
+    "Hebrew": "להתקין / לשלב",
+    "Ukrainian": "вбудовувати / встановлювати"
+  },
+  {
+    "Wortliste": "einschalten",
+    "English": "to switch on",
+    "Meaning": "Bitte schalten Sie das Gerät ein.",
+    "Hebrew": "להדליק / להפעיל",
+    "Ukrainian": "вмикати"
+  },
+  {
+    "Wortliste": "ersetzen",
+    "English": "to replace",
+    "Meaning": "Wir müssen die alten Kabel ersetzen.",
+    "Hebrew": "להחליף",
+    "Ukrainian": "замінювати"
+  },
+  {
+    "Wortliste": "justieren",
+    "English": "to adjust; to calibrate",
+    "Meaning": "Die Kamera muss noch genau justiert werden.",
+    "Hebrew": "לכייל / לכוון",
+    "Ukrainian": "регулювати / калібрувати"
+  },
+  {
+    "Wortliste": "reparaturanfällig",
+    "English": "prone to needing repairs",
+    "Meaning": "Das Modell gilt als sehr reparaturanfällig.",
+    "Hebrew": "נוטה להתקלקל",
+    "Ukrainian": "схильний до поломок"
+  },
+  {
+    "Wortliste": "reparieren",
+    "English": "to repair",
+    "Meaning": "Der Fachmann hat den Fernseher schnell repariert.",
+    "Hebrew": "לתקן",
+    "Ukrainian": "ремонтувати"
+  },
+  {
+    "Wortliste": "umrüsten",
+    "English": "to convert; to retrofit",
+    "Meaning": "Die Anlage wurde auf Ökostrom umgerüstet.",
+    "Hebrew": "לשדרג / להמיר",
+    "Ukrainian": "переобладнувати / модернізувати"
+  },
+  {
+    "Wortliste": "verknüpfen (mit + D.)",
+    "English": "to link; to connect (with)",
+    "Meaning": "Die App verknüpft sich mit deinem Kalender.",
+    "Hebrew": "לקשר / לחבר",
+    "Ukrainian": "пов'язувати / з'єднувати"
+  },
+  {
+    "Wortliste": "warten",
+    "English": "to maintain; to service",
+    "Meaning": "Die Heizung sollte einmal im Jahr gewartet werden.",
+    "Hebrew": "לחכות / לתחזק",
+    "Ukrainian": "чекати / обслуговувати"
+  },
+  {
+    "Wortliste": "die Abneigung, -en (gegen + A.)",
+    "English": "aversion (to)",
+    "Meaning": "Er hat eine starke Abneigung gegen laute Musik.",
+    "Hebrew": "סלידה / אנטיפתיה כלפי",
+    "Ukrainian": "антипатія / відраза до"
+  },
+  {
+    "Wortliste": "die Begeisterung (Sg.) (für + A.)",
+    "English": "enthusiasm (for)",
+    "Meaning": "Ihre Begeisterung für Technik ist ansteckend.",
+    "Hebrew": "התלהבות מ",
+    "Ukrainian": "захоплення / ентузіазм щодо"
+  },
+  {
+    "Wortliste": "die Skepsis (Sg.) (gegenüber + D.)",
+    "English": "skepticism (towards)",
+    "Meaning": "Gegenüber neuen Apps zeigt er große Skepsis.",
+    "Hebrew": "ספקנות כלפי",
+    "Ukrainian": "скептицизм щодо"
+  },
+  {
+    "Wortliste": "die Zustimmung (Sg.) (zu + D.)",
+    "English": "approval; consent",
+    "Meaning": "Für die Änderung brauchen wir die Zustimmung aller.",
+    "Hebrew": "הסכמה ל",
+    "Ukrainian": "згода / схвалення"
+  },
+  {
+    "Wortliste": "die Aufzählung, -en",
+    "English": "list; enumeration",
+    "Meaning": "In der Aufzählung fehlen noch ein paar wichtige Punkte.",
+    "Hebrew": "פירוט / רשימה",
+    "Ukrainian": "перелік / нумерація"
+  },
+  {
+    "Wortliste": "die Einschränkung, -en",
+    "English": "limitation; restriction",
+    "Meaning": "Das Angebot gilt mit einigen Einschränkungen.",
+    "Hebrew": "הגבלה / סייג",
+    "Ukrainian": "обмеження / застереження"
+  },
+  {
+    "Wortliste": "der Gegensatz, \"-e",
+    "English": "contrast; opposite",
+    "Meaning": "Zwischen Theorie und Praxis gibt es oft einen Gegensatz.",
+    "Hebrew": "ניגוד / הפך",
+    "Ukrainian": "протилежність / контраст"
+  },
+  {
+    "Wortliste": "der Hai, -e",
+    "English": "shark",
+    "Meaning": "Viele Menschen haben Angst vor Haien.",
+    "Hebrew": "כריש",
+    "Ukrainian": "акула"
+  },
+  {
+    "Wortliste": "das Hauptthema, -themen",
+    "English": "main topic",
+    "Meaning": "Klimaschutz war das Hauptthema der Konferenz.",
+    "Hebrew": "נושא מרכזי",
+    "Ukrainian": "головна тема"
+  },
+  {
+    "Wortliste": "das Immunsystem, -e",
+    "English": "immune system",
+    "Meaning": "Ein starkes Immunsystem schützt vor Krankheiten.",
+    "Hebrew": "מערכת חיסון",
+    "Ukrainian": "імунна система"
+  },
+  {
+    "Wortliste": "kentern",
+    "English": "to capsize",
+    "Meaning": "Das Boot ist bei Sturm gekentert.",
+    "Hebrew": "להתהפך (סירה) / לשקוע",
+    "Ukrainian": "перекидатися (про судно) / тонути"
+  },
+  {
+    "Wortliste": "umbringen, brachte um, hat umgebracht",
+    "English": "to kill",
+    "Meaning": "In dem Krimi wurde ein Zeuge umgebracht.",
+    "Hebrew": "להרוג",
+    "Ukrainian": "вбивати"
+  },
+  {
+    "Wortliste": "das Verbrechen, -",
+    "English": "crime",
+    "Meaning": "Die Polizei untersucht ein schweres Verbrechen.",
+    "Hebrew": "פשע",
+    "Ukrainian": "злочин"
+  },
+  {
+    "Wortliste": "der Zwischenfall, \"-e",
+    "English": "incident",
+    "Meaning": "Der Zwischenfall wurde in den Nachrichten gemeldet.",
+    "Hebrew": "אירוע / תקרית",
+    "Ukrainian": "інцидент / подія"
+  },
+  {
+    "Wortliste": "die Akademie, -n",
+    "English": "academy",
+    "Meaning": "Er studiert an einer Kunstakademie.",
+    "Hebrew": "אקדמיה",
+    "Ukrainian": "академія"
+  },
+  {
+    "Wortliste": "die Begabung, -en",
+    "English": "talent; aptitude",
+    "Meaning": "Sie hat eine besondere Begabung für Physik.",
+    "Hebrew": "כישרון / מתנה",
+    "Ukrainian": "обдарованість / талант"
+  },
+  {
+    "Wortliste": "die Innovation, -en",
+    "English": "innovation",
+    "Meaning": "Die Firma ist bekannt für ihre technischen Innovationen.",
+    "Hebrew": "חדשנות / חידוש",
+    "Ukrainian": "інновація / нововведення"
+  },
+  {
+    "Wortliste": "die Linse, -n",
+    "English": "lens",
+    "Meaning": "Die Kamera verfügt über eine hochwertige Linse.",
+    "Hebrew": "עדשה",
+    "Ukrainian": "лінза / сочевиця"
+  },
+  {
+    "Wortliste": "das Patent, -e",
+    "English": "patent",
+    "Meaning": "Für seine Erfindung hat er ein Patent angemeldet.",
+    "Hebrew": "פטנט",
+    "Ukrainian": "патент"
+  },
+  {
+    "Wortliste": "der Ruhm (Sg.)",
+    "English": "fame",
+    "Meaning": "Mit dieser Erfindung erlangte er großen Ruhm.",
+    "Hebrew": "תהילה / פרסום",
+    "Ukrainian": "слава / почесті"
+  },
+  {
+    "Wortliste": "der/die Spektakelmacher/in, -/-nen",
+    "English": "person who stages spectacles",
+    "Meaning": "Der Spektakelmacher sorgt für große Shows im Fernsehen.",
+    "Hebrew": "מי שיוצר מחזה / מוציא שם",
+    "Ukrainian": "той, хто створює видовище"
+  },
+  {
+    "Wortliste": "der/die Tüftler/in, -/-nen",
+    "English": "tinkerer; person who loves to fiddle with things",
+    "Meaning": "Tüftler verbringen Stunden damit, kleine Details zu verbessern.",
+    "Hebrew": "ממציא/ת חובב/ת / טינקר",
+    "Ukrainian": "винахідник-аматор / умілець"
+  },
+  {
+    "Wortliste": "anmelden (zum Patent anmelden)",
+    "English": "to register; to file (a patent)",
+    "Meaning": "Er will seine Idee zum Patent anmelden.",
+    "Hebrew": "לרשום / להגיש בקשה לפטנט",
+    "Ukrainian": "реєструвати / подавати заявку на патент"
+  },
+  {
+    "Wortliste": "der/die Astronom/in, -en/-nen",
+    "English": "astronomer",
+    "Meaning": "Astronomen beobachten Sterne und Planeten.",
+    "Hebrew": "אסטרונום/ית",
+    "Ukrainian": "астроном / астрономиня"
+  },
+  {
+    "Wortliste": "das Bedürfnis (nach + D.)",
+    "English": "need (for)",
+    "Meaning": "Viele Menschen haben ein großes Bedürfnis nach Sicherheit.",
+    "Hebrew": "צורך / רצון",
+    "Ukrainian": "потреба / необхідність"
+  },
+  {
+    "Wortliste": "benennen, benannte, hat benannt",
+    "English": "to name",
+    "Meaning": "Die Forscher benannten den neuen Stern nach der Entdeckerin.",
+    "Hebrew": "לתת שם / לקרוא בשם",
+    "Ukrainian": "називати / давати назву"
+  },
+  {
+    "Wortliste": "eingehen, ging ein, ist eingegangen (in die Geschichte eingehen)",
+    "English": "to enter; to go down (in history)",
+    "Meaning": "Seine Entdeckung ging in die Geschichte ein.",
+    "Hebrew": "להיכנס / להיחקק בהיסטוריה",
+    "Ukrainian": "входити / увійти в історію"
+  },
+  {
+    "Wortliste": "die Glaserlehre, -n",
+    "English": "apprenticeship as a glazier",
+    "Meaning": "Er machte eine Glaserlehre in einer kleinen Werkstatt.",
+    "Hebrew": "ספר ראייה / מחקר ראייה",
+    "Ukrainian": "вчення про зір / оптика"
+  },
+  {
+    "Wortliste": "kontrollieren",
+    "English": "to control; to check",
+    "Meaning": "Bitte kontrollieren Sie die Angaben noch einmal.",
+    "Hebrew": "לפקח / לבדוק",
+    "Ukrainian": "контролювати / перевіряти"
+  },
+  {
+    "Wortliste": "die Kontrolle (Sg.) (außer Kontrolle geraten)",
+    "English": "control (to get out of control)",
+    "Meaning": "Das Feuer geriet schnell außer Kontrolle.",
+    "Hebrew": "שליטה / לצאת מכלל שליטה",
+    "Ukrainian": "контроль / вийти з-під контролю"
+  },
+  {
+    "Wortliste": "kommen, kam, ist gekommen (ums Leben kommen)",
+    "English": "to come (to lose one’s life)",
+    "Meaning": "Bei dem Unfall sind mehrere Menschen ums Leben gekommen.",
+    "Hebrew": "לבוא / למות",
+    "Ukrainian": "приходити / загинути"
+  },
+  {
+    "Wortliste": "das Leben, - (ums Leben kommen)",
+    "English": "life",
+    "Meaning": "Viele Tiere kommen durch Umweltverschmutzung ums Leben.",
+    "Hebrew": "חיים / לאבד את חייו",
+    "Ukrainian": "життя / втратити життя"
+  },
+  {
+    "Wortliste": "manipulieren",
+    "English": "to manipulate",
+    "Meaning": "Die Daten wurden nachträglich manipuliert.",
+    "Hebrew": "לתמרן / לשלוט",
+    "Ukrainian": "маніпулювати"
+  },
+  {
+    "Wortliste": "die Meerestiefe, -n",
+    "English": "depth of the sea",
+    "Meaning": "In großen Meerestiefen leben besondere Tiere.",
+    "Hebrew": "עומק הים",
+    "Ukrainian": "глибина моря / морське дно"
+  },
+  {
+    "Wortliste": "das Meerestier, -e",
+    "English": "sea animal",
+    "Meaning": "Viele Meerestiere leiden unter Plastikmüll.",
+    "Hebrew": "יצור ים",
+    "Ukrainian": "морська тварина"
+  },
+  {
+    "Wortliste": "die Nation, -en",
+    "English": "nation",
+    "Meaning": "Viele Nationen arbeiten beim Klimaschutz zusammen.",
+    "Hebrew": "אומה / מדינה",
+    "Ukrainian": "нація / держава"
+  },
+  {
+    "Wortliste": "der Oberarm, -e",
+    "English": "upper arm",
+    "Meaning": "Die Impfung wird in den Oberarm gespritzt.",
+    "Hebrew": "זרוע עליונה",
+    "Ukrainian": "плече (верхня частина руки)"
+  },
+  {
+    "Wortliste": "die Qualle, -n",
+    "English": "jellyfish",
+    "Meaning": "Im Meer sollte man vor Quallen aufpassen.",
+    "Hebrew": "מדוזה",
+    "Ukrainian": "медуза"
+  },
+  {
+    "Wortliste": "das Rauchen (Sg.)",
+    "English": "smoking",
+    "Meaning": "Rauchen schadet der Gesundheit.",
+    "Hebrew": "עישון",
+    "Ukrainian": "куріння"
+  },
+  {
+    "Wortliste": "der Schwarm, \"-e",
+    "English": "swarm; shoal",
+    "Meaning": "Ein Schwarm Fische schwamm am Boot vorbei.",
+    "Hebrew": "להקה / נחיל / אהוב/ה",
+    "Ukrainian": "зграя / рій / захоплення"
+  },
+  {
+    "Wortliste": "der/die Schwimmer/in, -/-nen",
+    "English": "swimmer",
+    "Meaning": "Gute Schwimmer dürfen im tiefen Becken schwimmen.",
+    "Hebrew": "שחיין/ית",
+    "Ukrainian": "плавець / плавчиня"
+  },
+  {
+    "Wortliste": "sowieso",
+    "English": "anyway",
+    "Meaning": "Ich muss sowieso in die Stadt, ich nehme dein Paket mit.",
+    "Hebrew": "ממילא / בלאו הכי",
+    "Ukrainian": "і так / в будь-якому разі"
+  },
+  {
+    "Wortliste": "das Sportpensum, -pensen",
+    "English": "amount of exercise",
+    "Meaning": "Sein tägliches Sportpensum ist beeindruckend.",
+    "Hebrew": "מכסת פעילות גופנית",
+    "Ukrainian": "норма фізичних вправ"
+  },
+  {
+    "Wortliste": "vorsprechen, sprach vor, hat vorgesprochen (vor Gericht vorsprechen)",
+    "English": "to appear; to speak in front of (court)",
+    "Meaning": "Der Zeuge musste vor Gericht vorsprechen.",
+    "Hebrew": "להתייצב / לדבר לפני",
+    "Ukrainian": "говорити перед / виступати в суді"
+  },
+  {
+    "Wortliste": "wiedertreffen, traf wieder, hat wiedergetroffen",
+    "English": "to meet again",
+    "Meaning": "Nach vielen Jahren trafen sie sich wieder.",
+    "Hebrew": "להיפגש שוב",
+    "Ukrainian": "зустрічатися знову"
+  },
+  {
+    "Wortliste": "zustande kommen, kam zustande, ist zustande gekommen",
+    "English": "to come about; to materialize",
+    "Meaning": "Der Vertrag kam nach langen Verhandlungen zustande.",
+    "Hebrew": "להתממש / להגיע לידי",
+    "Ukrainian": "здійснюватися / відбуватися"
+  }
+]
