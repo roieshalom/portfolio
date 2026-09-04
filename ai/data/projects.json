@@ -76,5 +76,19 @@
     "category": "AI · Tool",
     "show": false,
     "color": "#f4a259"
+  },
+  {
+    "id": "galisingt",
+    "title_bold": "Gali singt Weihnachten",
+    "title_regular": "",
+    "label": "Family project",
+    "shortdesc": "A little Christmas songs player, built for the kids",
+    "desc": "A simple, cheerful audio player for a handful of Christmas songs sung by Gali. Distraction-free, one song at a time. Made for the family.",
+    "thumbnail": "../content/images/side_projects/gali_gallery.svg",
+    "link": "https://galisingt.de",
+    "page": "ai/gali-singt-weihnachten/",
+    "category": "AI · Music",
+    "show": true,
+    "color": "#2e6b4f"
   }
 ]

@@ -1,0 +1,129 @@
+:root {
+    /* Typography */
+    --font-family-main: 'Henny Penny', serif;
+
+    /* Brand colors */
+    --color-bg-gradient-start: #165B33;
+    --color-bg-gradient-end: #146B3A;
+    --color-accent-border: #F8B229;
+    --color-title: #BB2528;
+    --color-subtitle: #165B33;
+    --color-song-border: #EA4630;
+    --color-song-bg: #f8f8f8;
+    --color-footer-text: #666;
+
+    /* Surfaces */
+    --color-container-bg: #ffffff;
+
+    /* Shadows */
+    --shadow-container: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+    /* Radii */
+    --radius-container: 20px;
+    --radius-song-item: 15px;
+
+    /* Layout spacings */
+    --page-padding: 20px;
+    --container-padding-desktop: 40px;
+    --container-padding-mobile: 25px;
+
+    /* Audio */
+    --audio-height: 40px;
+    --audio-controls-bg: #ffffff;
+}
+
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-main);
+    letter-spacing: .05em;
+    background: linear-gradient(135deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-end) 100%);
+    min-height: 100vh;
+    padding: var(--page-padding);
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--color-container-bg);
+    border-radius: var(--radius-container);
+    padding: var(--container-padding-desktop);
+    box-shadow: var(--shadow-container);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid var(--color-accent-border);
+}
+
+h1 {
+    color: var(--color-title);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--color-subtitle);
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.songs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.song-item {
+    background: var(--color-song-bg);
+    padding: 25px;
+    border-radius: var(--radius-song-item);
+    border-left: 5px solid var(--color-song-border);
+}
+
+.song-item h2 {
+    color: var(--color-subtitle);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+audio {
+    width: 100%;
+    height: var(--audio-height);
+    outline: none;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: var(--audio-controls-bg);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid var(--color-accent-border);
+    color: var(--color-footer-text);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: var(--container-padding-mobile);
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gali singt Weihnachten - Süße Melodien für die Weihnachtszeit. Eine Sammlung wunderschöner Weihnachtslieder gesungen von Gali.">
+  <meta name="keywords" content="Weihnachten, Weihnachtslieder, Gali, Musik, Lieder">
+  
+  <!-- Existing favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- iOS home screen icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <!-- Android / general large icon -->
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/android-chrome.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-51CRT4MWMT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-51CRT4MWMT');
+</script>
+
+  <title>Gali singt Weihnachten</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="container">
+    <header>
+      <h1>🎄 Gali singt Weihnachten 🎵</h1>
+      <p class="subtitle">Süße Melodien für die Weihnachtszeit</p>
+    </header>
+
+    <main class="songs-list">
+      <div class="song-item">
+        <h2>Nikolaus, Nikolaus</h2>
+        <audio controls controlsList="nodownload" preload="metadata" aria-label="Nikolaus, Nikolaus">
+          <source src="audio/nikolausnikolaus.m4a" type="audio/mp4">
+          <source src="audio/1nikolausnikolaus.mp3" type="audio/mpeg">
+          Ihr Browser unterstützt das Audio-Element nicht.
+        </audio>
+      </div>
+      <div class="song-item">
+        <h2>What shall we do?</h2>
+        <audio controls controlsList="nodownload" preload="metadata" aria-label="What shall we do?">
+          <source src="audio/what shall we do.m4a" type="audio/mp4">
+          Ihr Browser unterstützt das Audio-Element nicht.
+        </audio>
+      </div>
+      <div class="song-item">
+        <h2>E. R. Kalter</h2>
+        <audio controls controlsList="nodownload" preload="metadata" aria-label="E. R. Kalter">
+          <source src="audio/e.r.kalter.m4a" type="audio/mp4">
+          Ihr Browser unterstützt das Audio-Element nicht.
+        </audio>
+      </div>
+      <div class="song-item">
+        <h2>Der Willi Wumm</h2>
+        <audio controls controlsList="nodownload" preload="metadata" aria-label="Der Willi Wumm">
+          <source src="audio/derwilliwumm.m4a" type="audio/mp4">
+          Ihr Browser unterstützt das Audio-Element nicht.
+        </audio>
+      </div>
+      <div class="song-item">
+        <h2>Ich schenk' dir einen Regenbogen</h2>
+        <audio controls controlsList="nodownload" preload="metadata" aria-label="Ich schenk' dir einen Regenbogen">
+          <source src="audio/ichschenkdir.m4a" type="audio/mp4">
+          Ihr Browser unterstützt das Audio-Element nicht.
+        </audio>
+      </div>
+      <div class="song-item">
+        <h2>Un poquito cantas</h2>
+        <audio controls controlsList="nodownload" preload="metadata" aria-label="Un poquito cantas">
+          <source src="audio/poquito.m4a" type="audio/mp4">
+          Ihr Browser unterstützt das Audio-Element nicht.
+        </audio>
+      </div>
+      <div class="song-item">
+        <h2>Weihnachtslied aus Ghana</h2>
+        <audio controls controlsList="nodownload" preload="metadata" aria-label="Weihnachtslied aus Ghana">
+          <source src="audio/ausghana.m4a" type="audio/mp4">
+          Ihr Browser unterstützt das Audio-Element nicht.
+        </audio>
+      </div>
+    </main>
+
+    <footer>
+      <p>©2025 Made by Papa ❤️</p>
+    </footer>
+  </div>
+
+  <!-- One‑at‑a‑time audio behaviour -->
+  <script>
+    let currentAudio = null;
+    const audioElements = document.querySelectorAll('audio');
+
+    audioElements.forEach(audio => {
+      audio.addEventListener('play', () => {
+        if (currentAudio && currentAudio !== audio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+        }
+        currentAudio = audio;
+      });
+
+      audio.addEventListener('ended', () => {
+        if (currentAudio === audio) {
+          currentAudio = null;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
