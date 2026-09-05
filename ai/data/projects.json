@@ -88,7 +88,7 @@
     "link": "https://galisingt.de",
     "page": "ai/gali-singt-weihnachten/",
     "category": "AI · Music",
-    "show": true,
+    "show": false,
     "color": "#2e6b4f"
   },
   {
@@ -101,7 +101,7 @@
     "link": "https://b2wortschatz.de",
     "page": "ai/de-b2-wortliste/",
     "category": "AI · Education",
-    "show": true,
+    "show": false,
     "color": "#2a9d8f"
   }
 ]
