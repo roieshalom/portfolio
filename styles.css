@@ -921,33 +921,107 @@ p {
   margin-bottom: 0;
 }
 
-.cv-circle {
+/* Spinning, magnetic "Download CV" badge (homepage hero + sticky corner).
+   .cv-badge is the magnetic layer (JS moves it via --mx / --my);
+   .cv-badge-inner is the pink circle; .cv-badge-ring is the spinning text. */
+@keyframes cv-spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+.cv-badge {
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 120px;
   height: 120px;
+  display: block;
+  text-decoration: none;
+  transform: translate(var(--mx, 0px), var(--my, 0px));
+  /* Default easing so the magnetic pull glides in as the cursor
+     approaches, instead of snapping from 0 on the first mousemove. */
+  transition: transform 0.18s ease-out;
+}
+.cv-badge.is-springing {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cv-badge-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
   border-radius: 50%;
   background: var(--color-link);
   color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
+  transition: transform 0.3s ease, filter 0.2s ease;
+}
+.cv-badge:hover .cv-badge-inner { transform: scale(1.05); }
+
+.cv-badge-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: cv-spin-slow 18s linear infinite;
+  pointer-events: none;
+}
+.cv-badge-ring text {
+  fill: #fff;
+  font-size: 12.5px;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.34em;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.cv-badge-center {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
   text-align: center;
-  line-height: 1.3;
-  box-sizing: border-box;
-  animation: cv-float 5s ease-in-out infinite;
-  transition: filter 0.2s;
+  transition: transform 0.3s ease;
 }
-
-.cv-circle:hover {
-  filter: brightness(0.95);
-  color: #fff;
+.cv-badge-arrow {
+  width: 0.85em;
+  height: 0.85em;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  fill: none;
 }
+.cv-badge:hover .cv-badge-center { transform: scale(1.1); }
 
-@keyframes cv-float {
-  0%, 100% { transform: translateY(0) rotate(8deg); }
-  50%      { transform: translateY(-6px) rotate(8deg); }
+/* Fixed corner variant that fades in once you scroll past the hero */
+.cv-badge--sticky {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  width: 96px;
+  height: 96px;
+  opacity: 0;
+  transform: translate(var(--mx, 0px), var(--my, 0px)) scale(0.6);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.cv-badge--sticky.is-visible {
+  opacity: 1;
+  transform: translate(var(--mx, 0px), var(--my, 0px)) scale(1);
+  pointer-events: auto;
+}
+.cv-badge--sticky.is-springing {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+}
+.cv-badge--sticky .cv-badge-center { font-size: 0.8rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-badge-ring { animation: none; }
 }
 
 @media (max-width: 600px) {
@@ -1044,7 +1118,7 @@ p {
 
 @media (max-width: 767px) {
   .cv-fab { display: flex; }
-  .home-hero .cv-circle { display: none; }
+  .cv-badge { display: none; }
   .home-hero { gap: 0; margin-bottom: 16px; }
 }
 

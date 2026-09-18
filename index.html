@@ -6,8 +6,8 @@
   <title>Roie Shalom · Senior Product Designer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=56">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&family=JetBrains+Mono:wght@200&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=57">
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
 </head>
 
@@ -24,7 +24,17 @@
   <main class="main-content">
     <section class="section home-hero">
       <p class="home-bio"><span class="home-bio-lead">Senior Product Designer based in Berlin.</span> <span class="home-bio-body">I find the angle others didn't try and the answer that wasn't on the table. I lead openly, validate before I commit, and care as much about the small moments of delight as the high-stakes flows.</span></p>
-      <a class="cv-circle" href="content/downloads/Roie Shalom Senior Product Designer.pdf" download>Download<br>my CV</a>
+      <a class="cv-badge" id="cv-hero" href="content/downloads/Roie Shalom Senior Product Designer.pdf" download aria-label="Download my CV">
+        <span class="cv-badge-inner">
+          <svg class="cv-badge-ring" viewBox="0 0 200 200" aria-hidden="true">
+            <defs>
+              <path id="cv-ring-path" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"></path>
+            </defs>
+            <text><textPath href="#cv-ring-path" startOffset="0%">Download my CV · Available for work · </textPath></text>
+          </svg>
+          <span class="cv-badge-center">CV<svg class="cv-badge-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 V19 M6 13 L12 19 L18 13"/></svg></span>
+        </span>
+      </a>
     </section>
 
     <section class="section">
@@ -227,6 +237,59 @@
       a.click();
       a.remove();
     }
+  </script>
+  <!-- Fixed corner CV badge, fades in on scroll past the hero (desktop only) -->
+  <a class="cv-badge cv-badge--sticky" id="cv-sticky" href="content/downloads/Roie Shalom Senior Product Designer.pdf" download aria-label="Download my CV" tabindex="-1" aria-hidden="true">
+    <span class="cv-badge-inner">
+      <svg class="cv-badge-ring" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <path id="cv-ring-path-2" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"></path>
+        </defs>
+        <text><textPath href="#cv-ring-path-2" startOffset="0%">Download my CV · Available for work · </textPath></text>
+      </svg>
+      <span class="cv-badge-center">CV<svg class="cv-badge-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 V19 M6 13 L12 19 L18 13"/></svg></span>
+    </span>
+  </a>
+  <script>
+    (function () {
+      // Magnetic pull toward the cursor (mouse only)
+      function makeMagnetic(el, strength) {
+        if (!el || window.matchMedia('(hover: none)').matches) return;
+        el.addEventListener('mousemove', function (e) {
+          el.classList.remove('is-springing');
+          var r = el.getBoundingClientRect();
+          el.style.setProperty('--mx', (e.clientX - (r.left + r.width / 2)) * strength + 'px');
+          el.style.setProperty('--my', (e.clientY - (r.top + r.height / 2)) * strength + 'px');
+        });
+        el.addEventListener('mouseleave', function () {
+          el.classList.add('is-springing');
+          el.style.setProperty('--mx', '0px');
+          el.style.setProperty('--my', '0px');
+        });
+      }
+
+      var hero = document.getElementById('cv-hero');
+      var sticky = document.getElementById('cv-sticky');
+      makeMagnetic(hero, 0.35);
+      makeMagnetic(sticky, 0.35);
+
+      // Reveal the corner badge once scrolled past the hero
+      var PIN_AFTER = 320;
+      function onScroll() {
+        if (!sticky) return;
+        if (window.scrollY > PIN_AFTER) {
+          sticky.classList.add('is-visible');
+          sticky.setAttribute('aria-hidden', 'false');
+          sticky.removeAttribute('tabindex');
+        } else {
+          sticky.classList.remove('is-visible');
+          sticky.setAttribute('aria-hidden', 'true');
+          sticky.setAttribute('tabindex', '-1');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
   </script>
   <script>
     window.addEventListener('pageshow', function (e) {
