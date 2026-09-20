@@ -328,6 +328,50 @@
         setTimeout(injectCursorRules, 1500);
         setTimeout(fixDragImage, 1500);
       });
+
+      // Start the prototype's one-time drag demo only once the whole prototype
+      // screen has scrolled into view. The prototype ignores repeat start signals,
+      // so we post on view (with a short retry burst to cover a slow iframe mount)
+      // and also start if the iframe announces readiness while already in view.
+      var demoStarted = false, protoInView = false;
+      function sendStart() {
+        try { frame.contentWindow.postMessage({ type: 'atlas:start-demo' }, '*'); } catch (e) {}
+      }
+      function startDemo() {
+        if (demoStarted || !protoInView) return;
+        demoStarted = true;
+        sendStart();
+        setTimeout(sendStart, 300);
+        setTimeout(sendStart, 900);
+        setTimeout(sendStart, 1800);
+      }
+      window.addEventListener('message', function(e) {
+        if (e.source === frame.contentWindow && e.data && e.data.type === 'atlas:demo-ready') {
+          if (protoInView) sendStart();
+        }
+      });
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            var vh = window.innerHeight || document.documentElement.clientHeight;
+            var visH = entry.intersectionRect ? entry.intersectionRect.height : 0;
+            var seenEnough = entry.intersectionRatio >= 0.95 ||
+                             visH >= Math.min(frame.offsetHeight, vh) * 0.9;
+            if (seenEnough) {
+              protoInView = true;
+              startDemo();
+              if (demoStarted) io.disconnect();
+            }
+          });
+        }, { threshold: [0, 0.25, 0.5, 0.75, 0.9, 0.95, 0.99, 1] });
+        io.observe(frame);
+      } else {
+        // No IntersectionObserver: start as soon as possible.
+        protoInView = true;
+        sendStart();
+        setTimeout(sendStart, 600);
+        setTimeout(sendStart, 1600);
+      }
     })();
   </script>
 
