@@ -1,0 +1,66 @@
+{
+  "person": {
+    "name": "Roie Shalom",
+    "title": "Senior Product Designer",
+    "location": "Berlin",
+    "summary": "Senior product designer who finds the angle others didn't try. Leads openly, validates before committing, and cares as much about small moments of delight as high-stakes flows.",
+    "cv": "content/downloads/Roie Shalom Senior Product Designer.pdf"
+  },
+  "topics": [
+    {
+      "id": "who",
+      "tags": ["who", "about", "yourself", "roie", "summary", "bio", "introduce"],
+      "q": "Who is Roie?",
+      "a": "Roie Shalom is a Senior Product Designer based in Berlin. He finds the angle others didn't try, leads openly, and validates before committing. He cares as much about small moments of delight as he does about high-stakes flows."
+    },
+    {
+      "id": "experience",
+      "tags": ["experience", "work", "career", "where", "companies", "history", "worked"],
+      "q": "Where has he worked?",
+      "a": "Roie was Product Design Lead at Wayfair (2022-2025), Senior UX/UI Designer at BuildingMinds by Schindler Group (2019-2021), Senior UX Designer at SAP Signavio (2018-2019), and Creative Director at Safebreach (2015-2017). Earlier he held lead design roles at Sandisk, Stanley Black & Decker, Aran R&D (HP), and Ola Mundo."
+    },
+    {
+      "id": "wayfair",
+      "tags": ["wayfair", "logistics", "inventory", "supplier"],
+      "q": "What did he do at Wayfair?",
+      "a": "At Wayfair he crafted supplier logistics interfaces with a focus on inventory management, folded user insights into product improvements, and strengthened team processes through collaborative design thinking."
+    },
+    {
+      "id": "approach",
+      "tags": ["approach", "process", "how", "design", "philosophy", "method", "research"],
+      "q": "How does he approach design?",
+      "a": "He goes deep before he designs. On a building-survey app he shadowed users in the field, walked the building with them, and felt the cognitive load firsthand, then designed the app to carry the mental work. He believes the best interfaces come from deeply understanding the system behind the screen."
+    },
+    {
+      "id": "delight",
+      "tags": ["delight", "warmth", "joy", "fun", "pleasure", "feel"],
+      "q": "What does he believe about delight?",
+      "a": "He believes even the most serious product can be a pleasure to use, not through gimmicks, but through the right level of warmth for the context. An accounting tool can still surprise you with how good it feels."
+    },
+    {
+      "id": "background",
+      "tags": ["background", "start", "industrial", "carpentry", "father", "study", "hardware"],
+      "q": "What's his background?",
+      "a": "Roie grew up helping his father with construction and carpentry, which sparked his love of design. He studied industrial design and followed the same curiosity from physical products into digital ones, from hardware interfaces to enterprise software to consumer brands."
+    },
+    {
+      "id": "side-projects",
+      "tags": ["side", "projects", "ai", "building", "shipping", "games", "puzzle", "personal"],
+      "q": "What is he building now?",
+      "a": "He ships his own products: a weekly word puzzle game with AI-assisted content, German language learning tools, and an AI-powered fortune teller that doubles as a creative networking experiment. These let him work across the full product cycle, from concept and code to user acquisition and analytics."
+    },
+    {
+      "id": "looking-for",
+      "tags": ["looking", "next", "role", "hiring", "job", "want", "seeking"],
+      "q": "What is he looking for?",
+      "a": "He's looking for his next design role at a company where design has a real seat at the table. He's drawn to products with something physical about them, teams that talk to each other, and work where he can see who it's actually for."
+    },
+    {
+      "id": "contact",
+      "tags": ["contact", "reach", "email", "hire", "talk", "get in touch"],
+      "q": "How can I reach him?",
+      "a": "You can reach Roie through the contact page, which sends him a message directly. He's happy to talk about roles, collaborations, or his side projects."
+    }
+  ],
+  "fallback": "I can answer questions about Roie's experience, how he approaches design, his background, and what he's building. Try asking about where he's worked or what he's looking for next. For anything else, the contact page reaches him directly."
+}
