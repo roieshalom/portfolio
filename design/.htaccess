@@ -1,0 +1,6 @@
+# Keep the entire /design folder out of search engines.
+# X-Robots-Tag applies even when a page is reached by a direct link,
+# and covers non-HTML files (JS, JSON, the PHP endpoint) too.
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>
