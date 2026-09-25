@@ -136,9 +136,9 @@
     <div class="nav-scroll">
       <div class="group">
         <span class="group-label">Design work</span>
-        <a class="item" href="/wayfair.html" onclick="return openPage(this,'wayfair.html')">Unified Order Entry <span class="lock">🔒</span></a>
-        <a class="item" href="/eqcapture.html" onclick="return openPage(this,'eqcapture.html')">EQ Capture <span class="lock">🔒</span></a>
-        <a class="item" href="/search.html" onclick="return openPage(this,'search.html')">Search Redesign <span class="lock">🔒</span></a>
+        <a class="item" href="/wayfair.html" onclick="return openPage(this,'wayfair.html')">Unified Order Entry</a>
+        <a class="item" href="/eqcapture.html" onclick="return openPage(this,'eqcapture.html')">EQ Capture</a>
+        <a class="item" href="/search.html" onclick="return openPage(this,'search.html')">Search Redesign</a>
       </div>
 
       <div class="group">
@@ -219,23 +219,8 @@
   </main>
 
 <script>
-  // ----- Unlock-aware locks (mirrors access.js: 30-day 'portfolio_access') -----
-  function hasPortfolioAccess() {
-    try {
-      const t = localStorage.getItem('portfolio_access');
-      if (!t) return false;
-      if (Date.now() - parseInt(t, 10) > 30 * 24 * 60 * 60 * 1000) { localStorage.removeItem('portfolio_access'); return false; }
-      return true;
-    } catch (e) { return false; }
-  }
-  function refreshLocks() {
-    const unlocked = hasPortfolioAccess();
-    document.querySelectorAll('.lock').forEach(el => { el.style.display = unlocked ? 'none' : ''; });
-  }
-  refreshLocks();
-  window.addEventListener('focus', refreshLocks);
-  window.addEventListener('storage', refreshLocks);
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshLocks(); });
+  // This proposal page shows every project unlocked (grants site access, matches access.js).
+  try { localStorage.setItem('portfolio_access', Date.now().toString()); } catch (e) {}
 
   // ----- Chat thread (same canned answer every time, for now) -----
   const CANNED = "Good question. This chat isn't wired up yet, so for now I give the same answer every time. Once it's live I'll answer properly. Meanwhile, the projects in the left panel are the real work, open any of them to dig in.";
@@ -307,7 +292,6 @@
     pageview.removeAttribute('src');
     thread.innerHTML = '';
     document.querySelectorAll('.item').forEach(n => n.classList.remove('active'));
-    refreshLocks();
     const h = document.getElementById('promptHome'); if (h) h.focus();
   }
 </script>
