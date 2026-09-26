@@ -85,6 +85,20 @@
     .aih-clippy:active { transform: translateY(0) rotate(0); }
     .aih-clippy:focus-visible { outline: 2px dotted #1084d0; outline-offset: 3px; }
 
+    /* Entrance: slide in from off-screen right, then skid to a stop (screeching
+       brakes) with an overshoot + damped rock. */
+    .aih-clippy.aih-enter { animation: aih-enter 0.95s linear both; }
+    @keyframes aih-enter {
+      0%   { transform: translateX(170px) rotate(8deg); }
+      40%  { transform: translateX(-30px) rotate(-12deg); }
+      56%  { transform: translateX(14px)  rotate(7deg); }
+      70%  { transform: translateX(-7px)  rotate(-3.5deg); }
+      84%  { transform: translateX(3px)   rotate(1.5deg); }
+      100% { transform: translateX(0)     rotate(0deg); }
+    }
+    .aih-clippy.aih-exit { animation: aih-exit 0.45s cubic-bezier(0.5,0,0.9,0.4) forwards; }
+    @keyframes aih-exit { to { transform: translateX(185px) rotate(10deg); } }
+
     /* The site has a global button:hover that paints buttons pink. Neutralize
        it for all of the widget's buttons so nothing turns pink on hover. */
     .aih-clippy, .aih-clippy:hover, .aih-clippy:focus {
@@ -119,6 +133,13 @@
       color: #000; background: #ffffe1; border: 1px solid #000;
       box-shadow: 2px 2px 0 rgba(0,0,0,0.25);
     }
+    .aih-tip { padding-right: 22px; }
+    .aih-tip-x {
+      position: absolute; top: 3px; right: 4px; width: 16px; height: 16px; padding: 0;
+      border: none; background: none; cursor: pointer; font-family: inherit; font-size: 12px;
+      line-height: 1; color: #000; opacity: 0.5;
+    }
+    .aih-tip-x:hover { opacity: 1; background: none; }
     .aih-tip[hidden] { display: none; }
     .aih-tip::after {
       content: ""; position: absolute; right: -7px; bottom: 12px; width: 12px; height: 12px;
@@ -291,31 +312,37 @@
         return new THREE.Mesh(geo, bodyMat);
       }
 
-      // Outer stadium centerline (w 1.5, h 3.2, r 0.75)
-      var outer = [];
-      var ox = 0.75, oyt = 0.85, oyb = -0.85, orr = 0.75;
-      arc(0, oyt, orr, 0, Math.PI, 40, outer);          // top semicircle L<-R over top
-      outer.push(new THREE.Vector3(-ox, oyt, 0));
-      outer.push(new THREE.Vector3(-ox, oyb, 0));
-      arc(0, oyb, orr, Math.PI, Math.PI * 2, 40, outer); // bottom semicircle
-      outer.push(new THREE.Vector3(ox, oyb, 0));
-      outer.push(new THREE.Vector3(ox, oyt, 0));
-      clippy.add(tube(outer, true, 0.115));
-
-      // Central U (rounded bottom, legs up)
-      var inner = [];
-      inner.push(new THREE.Vector3(-0.34, 0.95, 0));
-      inner.push(new THREE.Vector3(-0.34, -0.05, 0));
-      arc(0, -0.05, 0.34, Math.PI, Math.PI * 2, 26, inner);
-      inner.push(new THREE.Vector3(0.34, -0.05, 0));
-      inner.push(new THREE.Vector3(0.34, 0.95, 0));
-      clippy.add(tube(inner, false, 0.115));
+      // One continuous wire (real Gem-clip topology), traced as a single open
+      // path: inner-left tip -> down -> inner U -> up the inner-right -> over the
+      // big top arch -> down the outer-left -> outer U -> up the outer-right to a
+      // tip at the top-right. Fine wire, like the reference.
+      var WR = 0.075;
+      var raw = [];
+      function P(x, y) { raw.push(new THREE.Vector3(x, y, 0)); }
+      P(-0.3, 0.5);                                    // inner-left tip
+      P(-0.3, -0.6);
+      arc(0, -0.6, 0.3, Math.PI, Math.PI * 2, 24, raw); // inner bottom U -> (0.3,-0.6)
+      P(0.3, 0.95);                                    // up inner-right
+      arc(-0.15, 0.95, 0.45, 0, Math.PI, 34, raw);      // big top arch -> (-0.6,0.95)
+      P(-0.6, -0.95);                                  // down outer-left
+      arc(0, -0.95, 0.6, Math.PI, Math.PI * 2, 44, raw); // outer bottom U -> (0.6,-0.95)
+      P(0.6, 1.05);                                    // up outer-right to tip
+      // drop consecutive duplicate points so the CatmullRom stays smooth
+      var pts = [];
+      raw.forEach(function (v) { if (!pts.length || pts[pts.length - 1].distanceTo(v) > 1e-4) pts.push(v); });
+      clippy.add(tube(pts, false, WR));
+      // rounded caps on the two wire tips
+      [[-0.3, 0.5], [0.6, 1.05]].forEach(function (p) {
+        var cap = new THREE.Mesh(new THREE.SphereGeometry(WR, 14, 10), bodyMat);
+        cap.position.set(p[0], p[1], 0);
+        clippy.add(cap);
+      });
 
       // Eyes
       var eyeMat = new THREE.MeshPhysicalMaterial({ color: 0xf3f7ff, metalness: 0, roughness: 0.12, clearcoat: 1, clearcoatRoughness: 0.1, envMapIntensity: 0.6 });
       var pupilMat = new THREE.MeshStandardMaterial({ color: 0x0a0a12, roughness: 0.35, metalness: 0.0 });
       var eyesGroup = new THREE.Group();
-      eyesGroup.position.set(0, 1.08, 0);
+      eyesGroup.position.set(0, 1.2, 0);
       clippy.add(eyesGroup);
       function makeEye(sx) {
         var eye = new THREE.Group();
@@ -398,29 +425,32 @@
       }
       updateOrigin();
 
-      function onMove(e) {
-        var dx = e.clientX - eyeOX, dy = e.clientY - eyeOY;
+      // Aim his gaze at a screen point (cursor), measured from his own position.
+      function aimAt(px, py) {
+        var dx = px - eyeOX, dy = py - eyeOY;
         var d = Math.hypot(dx, dy) || 1;
-        var ease = Math.min(1, d / 70); // settle to center only when nearly on him
+        var ease = Math.min(1, d / 70);
         var nx = dx / d, ny = dy / d;
-        // eyes point toward the cursor's actual direction
         eyeYaw = nx * 0.5 * ease; eyePitch = ny * 0.38 * ease;
-        // body leans the same way, subtly
         targetYaw = nx * 0.16 * ease; targetPitch = ny * 0.10 * ease;
-        // cursor parked right between the eyes -> cross-eyed + tongue gag
-        crossTarget = d < rectW * 0.26 ? 1 : 0;
+        crossTarget = d < rectW * 0.26 ? 1 : 0; // between the eyes -> gag
+      }
+      // Look straight out at the viewer.
+      function aimCenter() { eyeYaw = 0; eyePitch = 0; targetYaw = 0; targetPitch = 0; crossTarget = 0; }
+
+      var lastX = window.innerWidth / 2, lastY = 0;
+      var tracking = false; // held off until the intro finishes
+      function onMove(e) {
+        lastX = e.clientX; lastY = e.clientY;
+        if (tracking) aimAt(e.clientX, e.clientY);
       }
       window.addEventListener("mousemove", onMove);
-      // Raised eyebrows while hovering him.
-      canvas.addEventListener("mouseenter", function () { browTarget = 1; });
-      canvas.addEventListener("mouseleave", function () { browTarget = 0; crossTarget = 0; });
 
-      // Raised eyebrows while hovering the gray password card too.
-      var pinCard = document.getElementById("pin-unlock-card");
-      if (pinCard) {
-        pinCard.addEventListener("mouseenter", function () { browTarget = 1; });
-        pinCard.addEventListener("mouseleave", function () { browTarget = 0; });
-      }
+      // Raise eyebrows while hovering any page item (links, text, cards, him).
+      var HOVER_SEL = "a, button, .gallery-tile, .nav-link, .section-title, .home-bio, p, h1, h2, h3, li, .pin-unlock-card, .aih-clippy";
+      function overItem(el) { return !!(el && el.closest && el.closest(HOVER_SEL)); }
+      document.addEventListener("mouseover", function (e) { if (overItem(e.target)) browTarget = 1; });
+      document.addEventListener("mouseout", function (e) { if (!overItem(e.relatedTarget)) browTarget = 0; });
 
       // Privacy mode: while a password digit is focused, Clippy looks away to
       // the outside of the screen and shuts his eyes (not peeking at the code).
@@ -510,6 +540,16 @@
 
       return {
         blink: function () { if (blinkStart < 0) blinkStart = performance.now(); },
+        track: function () { tracking = true; },
+        // Intro on first visit: look at the viewer, then the cursor, then the
+        // viewer again, then reveal the bubble and start live tracking.
+        intro: function (onBubble) {
+          tracking = false;
+          aimCenter();
+          window.setTimeout(function () { aimAt(lastX, lastY || eyeOY - 120); }, 950);
+          window.setTimeout(function () { aimCenter(); }, 1900);
+          window.setTimeout(function () { if (onBubble) onBubble(); tracking = true; }, 2750);
+        },
         destroy: function () {
           disposed = true; cancelAnimationFrame(raf);
           window.removeEventListener("mousemove", onMove);
@@ -630,13 +670,23 @@
     style.textContent = STYLES;
     document.head.appendChild(style);
 
+    var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     var clippy = el("button", "aih-clippy");
     clippy.type = "button";
     clippy.setAttribute("aria-label", "Ask Clippy about Roie");
     // Canvas for the 3D render; the SVG stays as a fallback behind it.
     clippy.innerHTML = '<canvas class="aih-canvas"></canvas>' + CLIPPY_SVG;
+    // Start off-screen right for the entrance (unless reduced motion).
+    if (!prefersReduced) clippy.style.transform = "translateX(170px)";
 
-    var tip = el("div", "aih-tip", "It looks like you're browsing a portfolio. Want to ask me about Roie?");
+    var tip = el("div", "aih-tip");
+    tip.appendChild(el("span", "aih-tip-text", "It looks like you're browsing a portfolio. Want to ask me about Roie?"));
+    var tipX = el("button", "aih-tip-x", "✕");
+    tipX.type = "button";
+    tipX.setAttribute("aria-label", "Dismiss");
+    tip.appendChild(tipX);
+    tip.hidden = true; // revealed after Clippy arrives
 
     var panel = el("div", "aih-panel");
     panel.hidden = true;
@@ -672,19 +722,48 @@
     document.body.appendChild(clippy);
     document.body.appendChild(panel);
 
+    // First visit this tab vs a return (e.g. coming back from a project page).
+    var firstVisit = true;
+    try { firstVisit = !sessionStorage.getItem("aih_seen"); sessionStorage.setItem("aih_seen", "1"); } catch (e) {}
+
     // Prefer the 3D render; fall back to the animated SVG if WebGL is missing.
     // Hide the SVG up front so the flat fallback never flashes before 3D loads;
     // only reveal it if 3D actually fails.
     var svg = clippy.querySelector("svg");
     var canvas = clippy.querySelector(".aih-canvas");
     if (svg) svg.style.display = "none";
+
+    var controller = null, resolved = false, entranceDone = false, introStarted = false;
+    // Start the intro/greeting only once both the entrance and 3D are ready.
+    function maybeStartIntro() {
+      if (introStarted || !entranceDone || !resolved) return;
+      introStarted = true;
+      if (controller && !prefersReduced) {
+        controller.intro(firstVisit ? revealTip : null); // first visit: greet; return: silent
+      } else {
+        if (controller) controller.track();
+        if (firstVisit) revealTip();
+      }
+    }
     init3DClippy(canvas).then(function (ctrl) {
+      controller = ctrl;
       if (!ctrl) {
         if (canvas) canvas.style.display = "none";
         if (svg) svg.style.display = "";
         setupLifeSigns(clippy);
       }
+      resolved = true;
+      maybeStartIntro();
     });
+
+    // Leaving to a project page: slide him out (capture, so it runs even though
+    // the tile has its own click handler). He slides back in on the next load.
+    document.addEventListener("click", function (e) {
+      if (e.target.closest && e.target.closest(".gallery-tile")) {
+        clippy.classList.remove("aih-enter");
+        clippy.classList.add("aih-exit");
+      }
+    }, true);
 
     function addMsg(text, who) {
       var m = el("div", "aih-msg " + who, text);
@@ -753,6 +832,7 @@
 
     clippy.addEventListener("click", function () { isOpen ? closePanel() : open(); });
     tip.addEventListener("click", open);
+    tipX.addEventListener("click", function (e) { e.stopPropagation(); tip.hidden = true; });
     close.addEventListener("click", closePanel);
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -765,8 +845,35 @@
       if (e.key === "Escape" && isOpen) closePanel();
     });
 
-    // auto-hide the invite after a while if ignored
-    window.setTimeout(function () { if (!isOpen) tip.hidden = true; }, 12000);
+    // Reveal the invite once he has arrived, then auto-hide it if ignored.
+    function revealTip() {
+      if (isOpen) return;
+      tip.hidden = false;
+      window.setTimeout(function () { if (!isOpen) tip.hidden = true; }, 12000);
+    }
+
+    // Entrance: after ~1s he slides in from the right and skids to a stop.
+    // Recompute the gaze origin once he is parked (his rect moved during the
+    // slide, so the "between the eyes" hit-point must be re-measured).
+    function settleOrigin() { window.dispatchEvent(new Event("resize")); }
+    function finishEntrance() { settleOrigin(); entranceDone = true; maybeStartIntro(); }
+    if (prefersReduced) {
+      clippy.style.transform = "";
+      finishEntrance();
+    } else {
+      window.setTimeout(function () {
+        clippy.classList.add("aih-enter");
+        var done = false;
+        function onEnd() {
+          if (done) return; done = true;
+          clippy.classList.remove("aih-enter");
+          clippy.style.transform = "";
+          finishEntrance();
+        }
+        clippy.addEventListener("animationend", onEnd, { once: true });
+        window.setTimeout(onEnd, 1200); // fallback if animationend doesn't fire
+      }, 1000);
+    }
   }
 
   function init() {
