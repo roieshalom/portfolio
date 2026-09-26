@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clippy tuner</title>
+  <style>
+    :root { color-scheme: dark; }
+    html, body { margin: 0; height: 100%; background: #0e1420; color: #e6eefc; font-family: system-ui, sans-serif; }
+    #stage { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+    #hint { position: fixed; left: 16px; top: 14px; z-index: 5; font-size: 13px; opacity: 0.7; max-width: 340px; line-height: 1.5; }
+    #out {
+      position: fixed; left: 16px; bottom: 16px; z-index: 5; margin: 0;
+      background: rgba(0,0,0,0.45); border: 1px solid #2a3550; border-radius: 8px;
+      padding: 10px 12px; font: 12px/1.5 ui-monospace, Menlo, monospace; color: #bcd; max-width: 46vw;
+      white-space: pre-wrap; max-height: 40vh; overflow: auto;
+    }
+    #copy { margin-top: 8px; cursor: pointer; background: #1b6; border: none; color: #041; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <canvas id="stage"></canvas>
+  <div id="hint">Clippy tuner. Drag to rotate. Tweak thickness &amp; proportions on the right. Values below update live, copy them and send to me, or just eyeball it and tell me what you like.</div>
+  <pre id="out"></pre>
+
+  <script type="module">
+    import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js";
+    import GUI from "https://cdn.jsdelivr.net/npm/lil-gui@0.19.2/dist/lil-gui.esm.js";
+
+    var P = {
+      sizeAll: 1.0,
+      wireRadius: 0.115,
+      outerHalfW: 0.75, outerTopY: 0.85, outerBotY: -0.85,
+      innerHalfW: 0.34, innerLegTopY: 0.95, innerBottomY: -0.05,
+      eyeR: 0.44, eyeSpacing: 0.52, eyeY: 1.08, eyeZ: 0.26, eyeScaleY: 1.06, eyeScaleZ: 0.9,
+      browY: 1.72, browR: 0.30, browThickness: 0.06, browSpacing: 0.52, browTilt: 0.15, browScaleY: 0.7,
+      color: "#9fb8dd", metalness: 1.0, roughness: 0.16, iridescence: 1.0, clearcoat: 1.0, envIntensity: 1.35,
+      camDist: 7.4, autoRotate: true
+    };
+    var DEFAULTS = JSON.parse(JSON.stringify(P)); // for the reset button
+
+    var canvas = document.getElementById("stage");
+    var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+
+    var scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0e1420);
+    var camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
+
+    // studio env
+    var ec = document.createElement("canvas"); ec.width = 64; ec.height = 128;
+    var g = ec.getContext("2d");
+    var grd = g.createLinearGradient(0, 0, 0, 128);
+    grd.addColorStop(0, "#ffffff"); grd.addColorStop(0.42, "#c3ddff"); grd.addColorStop(0.72, "#43557d"); grd.addColorStop(1, "#0a1020");
+    g.fillStyle = grd; g.fillRect(0, 0, 64, 128);
+    var sp = g.createRadialGradient(18, 22, 2, 18, 22, 46); sp.addColorStop(0, "#fff"); sp.addColorStop(1, "rgba(255,255,255,0)");
+    g.fillStyle = sp; g.fillRect(0, 0, 64, 128);
+    var et = new THREE.CanvasTexture(ec); et.mapping = THREE.EquirectangularReflectionMapping; et.colorSpace = THREE.SRGBColorSpace;
+    var pmrem = new THREE.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromEquirectangular(et).texture; et.dispose();
+
+    scene.add(new THREE.AmbientLight(0x8899bb, 0.35));
+    var key = new THREE.DirectionalLight(0xffffff, 2.4); key.position.set(2, 4, 3); scene.add(key);
+    var fill = new THREE.DirectionalLight(0x4aa0ff, 1.3); fill.position.set(-4, -1, 2); scene.add(fill);
+    var rim = new THREE.DirectionalLight(0xb060ff, 1.1); rim.position.set(2, -3, -4); scene.add(rim);
+
+    var bodyMat = new THREE.MeshPhysicalMaterial({ metalness: 1, roughness: 0.16, iridescence: 1, iridescenceIOR: 1.8, iridescenceThicknessRange: [120, 560], clearcoat: 1, clearcoatRoughness: 0.18, envMapIntensity: 1.35 });
+    var eyeMat = new THREE.MeshPhysicalMaterial({ color: 0xf3f7ff, metalness: 0, roughness: 0.12, clearcoat: 1, clearcoatRoughness: 0.1, envMapIntensity: 0.6 });
+    var pupilMat = new THREE.MeshStandardMaterial({ color: 0x0a0a12, roughness: 0.35 });
+    var browMat = new THREE.MeshStandardMaterial({ color: 0x0b1420, roughness: 0.5, metalness: 0.25 });
+
+    var clip = new THREE.Group(); scene.add(clip);
+
+    function arc(cx, cy, r, a0, a1, n, out) {
+      for (var i = 0; i <= n; i++) { var a = a0 + (a1 - a0) * (i / n); out.push(new THREE.Vector3(cx + r * Math.cos(a), cy + r * Math.sin(a), 0)); }
+    }
+    function tube(points, closed, radius) {
+      var curve = new THREE.CatmullRomCurve3(points, closed, "centripetal");
+      return new THREE.Mesh(new THREE.TubeGeometry(curve, closed ? 260 : 160, radius, 18, closed), bodyMat);
+    }
+
+    function clear(obj) {
+      while (obj.children.length) { var c = obj.children.pop(); if (c.geometry) c.geometry.dispose(); if (c.children) clear(c); }
+    }
+
+    function build() {
+      clear(clip);
+      bodyMat.color.set(P.color); bodyMat.metalness = P.metalness; bodyMat.roughness = P.roughness;
+      bodyMat.iridescence = P.iridescence; bodyMat.clearcoat = P.clearcoat; bodyMat.envMapIntensity = P.envIntensity;
+
+      // outer stadium
+      var o = [], r1 = P.outerHalfW;
+      arc(0, P.outerTopY, r1, 0, Math.PI, 40, o);
+      o.push(new THREE.Vector3(-r1, P.outerTopY, 0)); o.push(new THREE.Vector3(-r1, P.outerBotY, 0));
+      arc(0, P.outerBotY, r1, Math.PI, Math.PI * 2, 40, o);
+      o.push(new THREE.Vector3(r1, P.outerBotY, 0)); o.push(new THREE.Vector3(r1, P.outerTopY, 0));
+      clip.add(tube(o, true, P.wireRadius));
+
+      // inner U
+      var iw = P.innerHalfW, u = [];
+      u.push(new THREE.Vector3(-iw, P.innerLegTopY, 0)); u.push(new THREE.Vector3(-iw, P.innerBottomY, 0));
+      arc(0, P.innerBottomY, iw, Math.PI, Math.PI * 2, 26, u);
+      u.push(new THREE.Vector3(iw, P.innerBottomY, 0)); u.push(new THREE.Vector3(iw, P.innerLegTopY, 0));
+      clip.add(tube(u, false, P.wireRadius));
+
+      // eyes
+      function eye(sx) {
+        var ball = new THREE.Mesh(new THREE.SphereGeometry(P.eyeR, 32, 32), eyeMat);
+        ball.position.set(sx, P.eyeY, P.eyeZ); ball.scale.set(1, P.eyeScaleY, P.eyeScaleZ);
+        clip.add(ball);
+        var pupil = new THREE.Mesh(new THREE.SphereGeometry(P.eyeR * 0.45, 24, 24), pupilMat);
+        pupil.position.set(sx, P.eyeY - 0.02, P.eyeZ + P.eyeR * 0.9); pupil.scale.set(1, 1, 0.6);
+        clip.add(pupil);
+      }
+      eye(-P.eyeSpacing); eye(P.eyeSpacing);
+
+      // eyebrows
+      function brow(sx, tilt) {
+        var b = []; arc(0, 0, P.browR, Math.PI * 0.15, Math.PI * 0.85, 20, b);
+        var m = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(b, false, "centripetal"), 24, P.browThickness, 10), browMat);
+        m.position.set(sx, P.browY, P.eyeZ + 0.06); m.rotation.z = tilt; m.scale.set(1, P.browScaleY, 1);
+        clip.add(m);
+      }
+      brow(-P.browSpacing, -P.browTilt); brow(P.browSpacing, P.browTilt);
+
+      // uniform size only — keeps the wire round and every arch a true semicircle.
+      // Change proportions via the geometry sliders (Outer loop / Inner U), which
+      // rebuild with arc radius = half-width so ends stay tangent half-circles.
+      clip.scale.set(P.sizeAll, P.sizeAll, P.sizeAll);
+
+      out.textContent = JSON.stringify(P, null, 2);
+    }
+
+    var out = document.getElementById("out");
+    build();
+    clip.rotation.x = -0.06;
+
+    // GUI
+    var gui = new GUI({ title: "Clippy" });
+    gui.add({ reset: function () {
+      Object.assign(P, JSON.parse(JSON.stringify(DEFAULTS)));
+      gui.controllersRecursive().forEach(function (c) { c.updateDisplay(); });
+      build();
+    } }, "reset").name("↺ Reset to defaults");
+    var fS = gui.addFolder("Overall size");
+    fS.add(P, "sizeAll", 0.5, 1.8, 0.01).name("size (uniform)").onChange(build);
+    var fW = gui.addFolder("Thickness & wire");
+    fW.add(P, "wireRadius", 0.05, 0.3, 0.005).onChange(build);
+    var fO = gui.addFolder("Outer loop");
+    fO.add(P, "outerHalfW", 0.4, 1.2, 0.01).onChange(build);
+    fO.add(P, "outerTopY", 0.4, 1.4, 0.01).onChange(build);
+    fO.add(P, "outerBotY", -1.4, -0.3, 0.01).onChange(build);
+    var fI = gui.addFolder("Inner U");
+    fI.add(P, "innerHalfW", 0.15, 0.6, 0.01).onChange(build);
+    fI.add(P, "innerLegTopY", 0.4, 1.3, 0.01).onChange(build);
+    fI.add(P, "innerBottomY", -0.6, 0.4, 0.01).onChange(build);
+    var fE = gui.addFolder("Eyes");
+    fE.add(P, "eyeR", 0.2, 0.7, 0.01).onChange(build);
+    fE.add(P, "eyeSpacing", 0.2, 0.9, 0.01).onChange(build);
+    fE.add(P, "eyeY", 0.6, 1.6, 0.01).onChange(build);
+    fE.add(P, "eyeZ", 0.0, 0.6, 0.01).onChange(build);
+    var fB = gui.addFolder("Eyebrows");
+    fB.add(P, "browY", 1.2, 2.2, 0.01).onChange(build);
+    fB.add(P, "browR", 0.15, 0.5, 0.01).onChange(build);
+    fB.add(P, "browThickness", 0.02, 0.14, 0.005).onChange(build);
+    fB.add(P, "browSpacing", 0.2, 0.9, 0.01).onChange(build);
+    var fM = gui.addFolder("Material");
+    fM.addColor(P, "color").onChange(build);
+    fM.add(P, "metalness", 0, 1, 0.01).onChange(build);
+    fM.add(P, "roughness", 0, 1, 0.01).onChange(build);
+    fM.add(P, "iridescence", 0, 1, 0.01).onChange(build);
+    fM.add(P, "envIntensity", 0, 3, 0.05).onChange(build);
+    gui.add(P, "camDist", 4, 12, 0.1);
+    gui.add(P, "autoRotate");
+
+    // copy button in the readout
+    var copy = document.createElement("button"); copy.id = "copy"; copy.textContent = "Copy values";
+    copy.onclick = function () { navigator.clipboard && navigator.clipboard.writeText(out.textContent); copy.textContent = "Copied!"; setTimeout(function () { copy.textContent = "Copy values"; }, 1200); };
+    out.after(copy);
+
+    // drag to rotate
+    var dragging = false, px = 0, py = 0, ry = 0, rx = -0.06;
+    canvas.addEventListener("pointerdown", function (e) { dragging = true; px = e.clientX; py = e.clientY; });
+    window.addEventListener("pointerup", function () { dragging = false; });
+    window.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      ry += (e.clientX - px) * 0.01; rx += (e.clientY - py) * 0.01; px = e.clientX; py = e.clientY;
+    });
+
+    function resize() {
+      var w = window.innerWidth, h = window.innerHeight;
+      renderer.setSize(w, h, false); canvas.width = w * renderer.getPixelRatio(); canvas.height = h * renderer.getPixelRatio();
+      camera.aspect = w / h; camera.updateProjectionMatrix();
+    }
+    window.addEventListener("resize", resize); resize();
+
+    function loop(t) {
+      requestAnimationFrame(loop);
+      camera.position.set(0, 0.15, P.camDist); camera.lookAt(0, 0, 0);
+      if (P.autoRotate && !dragging) ry += 0.004;
+      clip.rotation.y = ry; clip.rotation.x = rx;
+      renderer.render(scene, camera);
+    }
+    requestAnimationFrame(loop);
+  </script>
+</body>
+</html>
