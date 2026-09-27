@@ -84,12 +84,13 @@
 
     /* small X on hover to hide Clippy for the session */
     .aih-dismiss {
-      position: fixed; z-index: 10002; width: 20px; height: 20px; padding: 0;
+      position: fixed; z-index: 10002; right: 15px; bottom: 140px; width: 20px; height: 20px; padding: 0;
       border: 1px solid #000; border-radius: 50%; background: #c0c0c0; color: #000;
       font: 700 11px/1 Tahoma, sans-serif; cursor: pointer; box-shadow: 1px 1px 0 rgba(0,0,0,0.3);
     }
     .aih-dismiss:hover { background: #d21484; color: #fff; }
     .aih-dismiss[hidden] { display: none; }
+    @media (max-width: 767px) { .aih-dismiss { bottom: 212px; } }
     .aih-clippy:hover { transform: translateY(-2px) rotate(-3deg); }
     .aih-clippy:active { transform: translateY(0) rotate(0); }
     .aih-clippy:focus-visible { outline: 2px dotted #1084d0; outline-offset: 3px; }
@@ -743,12 +744,7 @@
     document.body.appendChild(dismiss);
 
     var dismissTimer = null;
-    function placeDismiss() {
-      var r = clippy.getBoundingClientRect();
-      dismiss.style.left = (r.right - 22) + "px";
-      dismiss.style.top = (r.top + 2) + "px";
-    }
-    function showDismiss() { if (dismissTimer) { clearTimeout(dismissTimer); dismissTimer = null; } placeDismiss(); dismiss.hidden = false; }
+    function showDismiss() { if (dismissTimer) { clearTimeout(dismissTimer); dismissTimer = null; } dismiss.hidden = false; }
     function hideDismissSoon() { dismissTimer = setTimeout(function () { dismiss.hidden = true; }, 250); }
     clippy.addEventListener("mouseenter", showDismiss);
     clippy.addEventListener("mouseleave", hideDismissSoon);
