@@ -13,7 +13,7 @@
 header('Content-Type: application/json; charset=utf-8');
 
 // --- config ---
-$MODEL       = getenv('AIH_MODEL') ?: 'claude-opus-4-8'; // top-tier; pricier per message
+$MODEL       = getenv('AIH_MODEL') ?: 'claude-sonnet-5'; // mid-tier: near-Opus quality, ~5x cheaper
 $MAX_TOKENS  = 400;
 $MAX_MSG_LEN = 800;   // per user message
 $MAX_HISTORY = 12;    // messages accepted from the client
