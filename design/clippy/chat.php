@@ -32,6 +32,32 @@ $PRICING = [
 ];
 $P = $PRICING[$MODEL] ?? ['in' => 3.00, 'out' => 15.00];
 
+// Optional Q&A logging to Airtable. Reads a git-ignored config file
+// design/clippy/airtable.json: {"token":"pat...","base":"app...","table":"Conversations"}
+// If token or base is missing, logging is simply skipped.
+$AIRTABLE = ['token' => '', 'base' => '', 'table' => 'Conversations'];
+$acfg = __DIR__ . '/airtable.json';
+if (is_readable($acfg)) {
+  $j = json_decode(file_get_contents($acfg), true);
+  if (is_array($j)) $AIRTABLE = array_merge($AIRTABLE, $j);
+}
+if (getenv('AIRTABLE_TOKEN')) $AIRTABLE['token'] = getenv('AIRTABLE_TOKEN');
+
+function log_airtable($cfg, $fields) {
+  if (empty($cfg['token']) || empty($cfg['base'])) return;
+  $url = 'https://api.airtable.com/v0/' . rawurlencode($cfg['base']) . '/' . rawurlencode($cfg['table']);
+  $ch = curl_init($url);
+  curl_setopt_array($ch, [
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST           => true,
+    CURLOPT_POSTFIELDS     => json_encode(['fields' => $fields, 'typecast' => true]),
+    CURLOPT_TIMEOUT        => 5,
+    CURLOPT_HTTPHEADER     => ['Content-Type: application/json', 'Authorization: Bearer ' . $cfg['token']],
+  ]);
+  curl_exec($ch);
+  curl_close($ch);
+}
+
 function fail($status, $message) {
   http_response_code($status);
   echo json_encode(['error' => $message]);
@@ -217,4 +243,18 @@ $answer = preg_replace('/\s*[\x{2013}\x{2014}]\s*/u', ', ', $answer);           
 $answer = preg_replace('/\s+,/u', ',', $answer);                                  // tidy " ,"
 $answer = preg_replace('/,\s*,/u', ',', $answer);                                 // tidy ",,"
 
+// Send the reply to the visitor first, then do any slow logging afterwards.
 echo json_encode(['answer' => $answer]);
+if (function_exists('fastcgi_finish_request')) { fastcgi_finish_request(); }
+elseif (function_exists('litespeed_finish_request')) { litespeed_finish_request(); }
+
+// --- optional: log this Q&A to Airtable (best-effort, never blocks the reply) ---
+$lastQ = '';
+for ($i = count($messages) - 1; $i >= 0; $i--) {
+  if ($messages[$i]['role'] === 'user') { $lastQ = $messages[$i]['content']; break; }
+}
+log_airtable($AIRTABLE, [
+  'Question' => $lastQ,
+  'Answer'   => $answer,
+  'Model'    => $MODEL,
+]);

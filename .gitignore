@@ -7,3 +7,4 @@ design/ai-helper/.anthropic-key
 design/clippy/.anthropic-key
 design/clippy/apikey.txt
 design/clippy/.usage.json
+design/clippy/airtable.json

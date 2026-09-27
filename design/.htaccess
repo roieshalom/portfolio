@@ -12,3 +12,6 @@
 <Files "apikey.txt">
   Require all denied
 </Files>
+<Files "airtable.json">
+  Require all denied
+</Files>
