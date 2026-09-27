@@ -13,7 +13,7 @@
 header('Content-Type: application/json; charset=utf-8');
 
 // --- config ---
-$MODEL       = getenv('AIH_MODEL') ?: 'claude-haiku-4-5-20251001'; // cheap + plenty for short Q&A
+$MODEL       = getenv('AIH_MODEL') ?: 'claude-opus-4-8'; // top-tier; pricier per message
 $MAX_TOKENS  = 400;
 $MAX_MSG_LEN = 800;   // per user message
 $MAX_HISTORY = 12;    // messages accepted from the client
@@ -28,6 +28,7 @@ $USAGE_FILE    = __DIR__ . '/.usage.json'; // git-ignored, blocked from the web
 $PRICING = [
   'claude-haiku-4-5-20251001' => ['in' => 1.00, 'out' => 5.00],
   'claude-sonnet-5'           => ['in' => 3.00, 'out' => 15.00],
+  'claude-opus-4-8'           => ['in' => 15.00, 'out' => 75.00],
 ];
 $P = $PRICING[$MODEL] ?? ['in' => 3.00, 'out' => 15.00];
 
