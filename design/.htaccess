@@ -5,7 +5,10 @@
   Header set X-Robots-Tag "noindex, nofollow"
 </IfModule>
 
-# Never serve the API key file (or any dotfile) over the web.
+# Never serve the API key file (dotfile or the visible apikey.txt) over the web.
 <FilesMatch "^\.">
   Require all denied
 </FilesMatch>
+<Files "apikey.txt">
+  Require all denied
+</Files>

@@ -5,3 +5,4 @@
 # AI helper: never commit the API key
 design/ai-helper/.anthropic-key
 design/clippy/.anthropic-key
+design/clippy/apikey.txt

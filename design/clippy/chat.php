@@ -29,15 +29,18 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // --- resolve API key ---
+// Order: env var, then a hidden key file, then a plain visible file (easiest to
+// create in hosts like Hostinger). All are git-ignored and blocked from the web.
 $apiKey = getenv('ANTHROPIC_API_KEY');
 if (!$apiKey) {
-  $keyFile = __DIR__ . '/.anthropic-key';
-  if (is_readable($keyFile)) {
-    $apiKey = trim(file_get_contents($keyFile));
+  foreach (['/.anthropic-key', '/apikey.txt'] as $f) {
+    $keyFile = __DIR__ . $f;
+    if (is_readable($keyFile)) { $apiKey = trim(file_get_contents($keyFile)); }
+    if ($apiKey) break;
   }
 }
 if (!$apiKey) {
-  fail(500, 'Server is missing its API key. Set ANTHROPIC_API_KEY or create design/clippy/.anthropic-key.');
+  fail(500, 'Server is missing its API key. Set ANTHROPIC_API_KEY or create design/clippy/apikey.txt.');
 }
 
 // --- parse request ---
