@@ -132,6 +132,39 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   fail(405, 'Method not allowed');
 }
 
+// Read the body once and reuse (php://input can only be read once).
+$RAW_INPUT = file_get_contents('php://input');
+
+// --- diagnostics: POST {"_diag":"airtable"} to see why logging fails ---
+// Does not expose the token; inserts one "diag test" row on success (delete it).
+$diag = json_decode($RAW_INPUT, true);
+if (is_array($diag) && ($diag['_diag'] ?? '') === 'airtable') {
+  $out = ['config' => [
+    'configFileReadable' => is_readable(__DIR__ . '/airtable.json'),
+    'tokenPresent'       => !empty($AIRTABLE['token']),
+    'basePresent'        => !empty($AIRTABLE['base']),
+    'base'               => $AIRTABLE['base'],
+    'table'              => $AIRTABLE['table'],
+  ]];
+  if (!empty($AIRTABLE['token']) && !empty($AIRTABLE['base'])) {
+    $u = 'https://api.airtable.com/v0/' . rawurlencode($AIRTABLE['base']) . '/' . rawurlencode($AIRTABLE['table']);
+    $ch = curl_init($u);
+    curl_setopt_array($ch, [
+      CURLOPT_RETURNTRANSFER => true, CURLOPT_POST => true,
+      CURLOPT_POSTFIELDS => json_encode(['fields' => ['Question' => 'diag test', 'Answer' => 'diag test', 'Model' => 'diag'], 'typecast' => true]),
+      CURLOPT_TIMEOUT => 8,
+      CURLOPT_HTTPHEADER => ['Content-Type: application/json', 'Authorization: Bearer ' . $AIRTABLE['token']],
+    ]);
+    $r = curl_exec($ch);
+    $out['http'] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $out['curlError'] = curl_error($ch);
+    curl_close($ch);
+    $out['response'] = json_decode($r, true);
+  }
+  echo json_encode($out);
+  exit;
+}
+
 // --- resolve API key ---
 // Order: env var, then a hidden key file, then a plain visible file (easiest to
 // create in hosts like Hostinger). All are git-ignored and blocked from the web.
@@ -148,7 +181,7 @@ if (!$apiKey) {
 }
 
 // --- parse request ---
-$raw = file_get_contents('php://input');
+$raw = $RAW_INPUT;
 $body = json_decode($raw, true);
 if (!is_array($body) || empty($body['messages']) || !is_array($body['messages'])) {
   fail(400, 'Expected a JSON body with a "messages" array.');
