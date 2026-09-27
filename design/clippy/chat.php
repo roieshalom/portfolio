@@ -43,19 +43,47 @@ if (is_readable($acfg)) {
 }
 if (getenv('AIRTABLE_TOKEN')) $AIRTABLE['token'] = getenv('AIRTABLE_TOKEN');
 
-function log_airtable($cfg, $fields) {
+// Post a record to Airtable. If the full field set is rejected (e.g. a column
+// does not exist yet), retry with $fallback so the core row still lands.
+function log_airtable($cfg, $fields, $fallback = null) {
   if (empty($cfg['token']) || empty($cfg['base'])) return;
   $url = 'https://api.airtable.com/v0/' . rawurlencode($cfg['base']) . '/' . rawurlencode($cfg['table']);
-  $ch = curl_init($url);
-  curl_setopt_array($ch, [
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_POST           => true,
-    CURLOPT_POSTFIELDS     => json_encode(['fields' => $fields, 'typecast' => true]),
-    CURLOPT_TIMEOUT        => 5,
-    CURLOPT_HTTPHEADER     => ['Content-Type: application/json', 'Authorization: Bearer ' . $cfg['token']],
-  ]);
-  curl_exec($ch);
+  $post = function ($f) use ($url, $cfg) {
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_POST           => true,
+      CURLOPT_POSTFIELDS     => json_encode(['fields' => $f, 'typecast' => true]),
+      CURLOPT_TIMEOUT        => 5,
+      CURLOPT_HTTPHEADER     => ['Content-Type: application/json', 'Authorization: Bearer ' . $cfg['token']],
+    ]);
+    curl_exec($ch);
+    $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    return $code;
+  };
+  $code = $post($fields);
+  if ($code >= 300 && $fallback) { $post($fallback); }
+}
+
+// Rough device class from the user-agent string.
+function device_type($ua) {
+  $ua = strtolower($ua);
+  if (preg_match('/ipad|tablet|playbook|silk/', $ua)) return 'Tablet';
+  if (preg_match('/mobi|android|iphone|ipod|phone/', $ua)) return 'Mobile';
+  return 'Desktop';
+}
+
+// Best-effort city/country from the visitor IP (free ipapi.co, no key).
+function geo_lookup($ip) {
+  if (!$ip || $ip === '0.0.0.0') return [];
+  $ch = curl_init('https://ipapi.co/' . rawurlencode($ip) . '/json/');
+  curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 4, CURLOPT_USERAGENT => 'clippy-portfolio']);
+  $r = curl_exec($ch);
   curl_close($ch);
+  $j = json_decode($r, true);
+  if (!is_array($j)) return [];
+  return ['City' => $j['city'] ?? '', 'Country' => $j['country_name'] ?? ''];
 }
 
 function fail($status, $message) {
@@ -253,8 +281,8 @@ $lastQ = '';
 for ($i = count($messages) - 1; $i >= 0; $i--) {
   if ($messages[$i]['role'] === 'user') { $lastQ = $messages[$i]['content']; break; }
 }
-log_airtable($AIRTABLE, [
-  'Question' => $lastQ,
-  'Answer'   => $answer,
-  'Model'    => $MODEL,
-]);
+$core = ['Question' => $lastQ, 'Answer' => $answer, 'Model' => $MODEL];
+$extra = $core + [
+  'Device'  => device_type($_SERVER['HTTP_USER_AGENT'] ?? ''),
+] + geo_lookup($ip);
+log_airtable($AIRTABLE, $extra, $core); // full row, falling back to core if columns are missing
