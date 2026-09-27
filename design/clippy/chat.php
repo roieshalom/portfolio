@@ -1,12 +1,12 @@
 <?php
 /*
- * AI helper backend for the portfolio.
- * Holds the Claude API key server-side and answers questions about Roie,
- * grounded in ai/data/knowledge.json.
+ * Clippy backend for the portfolio.
+ * Holds the Claude API key server-side and answers questions about Roie using
+ * the system prompt in system-prompt.md.
  *
  * The API key is read from, in order:
  *   1. the ANTHROPIC_API_KEY environment variable
- *   2. a git-ignored file at ai/.anthropic-key (raw key, single line)
+ *   2. a git-ignored file at design/clippy/.anthropic-key (raw key, single line)
  * The key is never sent to the browser.
  */
 
@@ -37,7 +37,7 @@ if (!$apiKey) {
   }
 }
 if (!$apiKey) {
-  fail(500, 'Server is missing its API key. Set ANTHROPIC_API_KEY or create ai/.anthropic-key.');
+  fail(500, 'Server is missing its API key. Set ANTHROPIC_API_KEY or create design/clippy/.anthropic-key.');
 }
 
 // --- parse request ---
@@ -60,30 +60,28 @@ if (empty($messages)) {
   fail(400, 'No usable message content.');
 }
 
-// --- build grounding context from the knowledge base ---
-$kbPath = __DIR__ . '/knowledge.json';
-$kbText = is_readable($kbPath) ? file_get_contents($kbPath) : '{}';
-
-$system = <<<SYS
-You are a friendly helper embedded on Roie Shalom's design portfolio site. Visitors ask you questions about Roie, and you answer on his behalf.
-
-Rules:
-- Answer only from the knowledge base below. If something is not covered, say you are not sure and point them to the contact page, which reaches Roie directly. Do not invent facts, dates, or employers.
-- Refer to Roie in the third person ("Roie", "he").
-- Keep answers short and warm: usually one to three sentences.
-- Never use em-dashes. Use commas, periods, or rephrase.
-- Sound human, not corporate. It is fine to be a little playful.
-- If asked something unrelated to Roie or his work, gently steer back.
-
-Knowledge base (JSON):
-$kbText
-SYS;
+// --- load the system prompt (persona + all of Roie's material) ---
+// Primary source is system-prompt.md; if it is missing, fall back to a minimal
+// wrapper around knowledge.json so the endpoint still works.
+$promptPath = __DIR__ . '/system-prompt.md';
+if (is_readable($promptPath)) {
+  $system = file_get_contents($promptPath);
+} else {
+  $kbPath = __DIR__ . '/knowledge.json';
+  $kbText = is_readable($kbPath) ? file_get_contents($kbPath) : '{}';
+  $system = "You answer questions about Roie Shalom from the knowledge base below. "
+    . "Third person, short, no em-dashes, do not invent facts.\n\n" . $kbText;
+}
 
 // --- call the Claude API ---
+// The system prompt is long and identical on every request, so mark it for
+// prompt caching (cache_control) to cut cost and latency.
 $payload = json_encode([
   'model'      => $MODEL,
   'max_tokens' => $MAX_TOKENS,
-  'system'     => $system,
+  'system'     => [
+    ['type' => 'text', 'text' => $system, 'cache_control' => ['type' => 'ephemeral']],
+  ],
   'messages'   => $messages,
 ]);
 

@@ -4,3 +4,8 @@
 <IfModule mod_headers.c>
   Header set X-Robots-Tag "noindex, nofollow"
 </IfModule>
+
+# Never serve the API key file (or any dotfile) over the web.
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
