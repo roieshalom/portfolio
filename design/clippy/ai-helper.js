@@ -81,6 +81,15 @@
       -webkit-tap-highlight-color: transparent;
     }
     .aih-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+    /* small X on hover to hide Clippy for the session */
+    .aih-dismiss {
+      position: fixed; z-index: 10002; width: 20px; height: 20px; padding: 0;
+      border: 1px solid #000; border-radius: 50%; background: #c0c0c0; color: #000;
+      font: 700 11px/1 Tahoma, sans-serif; cursor: pointer; box-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+    }
+    .aih-dismiss:hover { background: #d21484; color: #fff; }
+    .aih-dismiss[hidden] { display: none; }
     .aih-clippy:hover { transform: translateY(-2px) rotate(-3deg); }
     .aih-clippy:active { transform: translateY(0) rotate(0); }
     .aih-clippy:focus-visible { outline: 2px dotted #1084d0; outline-offset: 3px; }
@@ -163,12 +172,6 @@
     }
     .aih-panel.aih-open { opacity: 1; transform: translateY(0) scale(1); }
     .aih-panel[hidden] { display: none; }
-    /* balloon tail pointing down toward Clippy */
-    .aih-panel::after {
-      content: ""; position: absolute; right: 40px; bottom: -9px; width: 16px; height: 16px;
-      background: #ffffe1; border-right: 1px solid #000; border-bottom: 1px solid #000;
-      transform: rotate(45deg);
-    }
 
     .aih-header {
       display: flex; align-items: center; gap: 8px;
@@ -202,16 +205,20 @@
     .aih-typing span:nth-child(3) { animation-delay: 0.3s; }
     @keyframes aih-bounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-4px); } }
 
-    .aih-chips { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 0 12px 10px; }
+    .aih-chips { display: flex; flex-direction: row; gap: 8px; padding: 0 12px 10px; }
     .aih-chip {
-      padding: 1px 0; border: none; background: none;
-      font-family: inherit; font-size: 12.5px; color: #0000c0; text-align: left; cursor: pointer;
-      text-decoration: underline;
+      flex: 1 1 0; min-width: 0; padding: 4px 8px; cursor: pointer;
+      font-family: inherit; font-size: 12px; color: #0000c0;
+      text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      background: #fffff4; border: 1px solid #cfcfa8; border-radius: 3px;
     }
-    .aih-chip::before { content: "\\25B8  "; color: #000; text-decoration: none; }
-    .aih-chip:hover { color: #d21484; }
+    .aih-chip:hover { color: #d21484; border-color: #d21484; }
 
-    .aih-form { display: flex; gap: 6px; padding: 8px; border-top: 1px solid #d6d6ae; background: #fffff4; }
+    .aih-form { display: flex; gap: 6px; padding: 8px 8px 4px; border-top: 1px solid #d6d6ae; background: #fffff4; }
+    .aih-disclaim {
+      padding: 0 8px 8px; background: #fffff4;
+      font-family: inherit; font-size: 10px; line-height: 1.3; color: #8a8a6a; text-align: center;
+    }
     .aih-input {
       flex: 1; padding: 5px 7px; font-family: inherit; font-size: 12.5px; color: #000; background: #fff;
       border: 2px solid; border-color: #808080 #ffffff #ffffff #808080;
@@ -666,6 +673,9 @@
   }
 
   function build() {
+    // If the visitor hid Clippy earlier this session, stay gone until a new session.
+    try { if (sessionStorage.getItem("aih_dismissed")) return; } catch (e) {}
+
     var style = el("style");
     style.textContent = STYLES;
     document.head.appendChild(style);
@@ -694,7 +704,7 @@
     panel.setAttribute("aria-label", "Ask Clippy about Roie");
 
     var header = el("div", "aih-header");
-    header.appendChild(el("div", "aih-header-title", "Roie Assistant"));
+    header.appendChild(el("div", "aih-header-title", "Clippy"));
     var close = el("button", "aih-close", "✕");
     close.type = "button";
     close.setAttribute("aria-label", "Close");
@@ -713,14 +723,42 @@
     form.appendChild(input);
     form.appendChild(send);
 
+    var disclaim = el("div", "aih-disclaim", "Clippy is an AI paperclip and can make mistakes.");
+
     panel.appendChild(header);
     panel.appendChild(log);
     panel.appendChild(chips);
     panel.appendChild(form);
+    panel.appendChild(disclaim);
+
+    // Small X that appears when hovering Clippy; hides him for the session.
+    var dismiss = el("button", "aih-dismiss", "✕");
+    dismiss.type = "button";
+    dismiss.setAttribute("aria-label", "Hide Clippy");
+    dismiss.hidden = true;
 
     document.body.appendChild(tip);
     document.body.appendChild(clippy);
     document.body.appendChild(panel);
+    document.body.appendChild(dismiss);
+
+    var dismissTimer = null;
+    function placeDismiss() {
+      var r = clippy.getBoundingClientRect();
+      dismiss.style.left = (r.right - 22) + "px";
+      dismiss.style.top = (r.top + 2) + "px";
+    }
+    function showDismiss() { if (dismissTimer) { clearTimeout(dismissTimer); dismissTimer = null; } placeDismiss(); dismiss.hidden = false; }
+    function hideDismissSoon() { dismissTimer = setTimeout(function () { dismiss.hidden = true; }, 250); }
+    clippy.addEventListener("mouseenter", showDismiss);
+    clippy.addEventListener("mouseleave", hideDismissSoon);
+    dismiss.addEventListener("mouseenter", showDismiss);
+    dismiss.addEventListener("mouseleave", hideDismissSoon);
+    dismiss.addEventListener("click", function (e) {
+      e.stopPropagation();
+      try { sessionStorage.setItem("aih_dismissed", "1"); } catch (err) {}
+      dismiss.remove(); tip.remove(); panel.remove(); clippy.remove();
+    });
 
     // First visit this tab vs a return (e.g. coming back from a project page).
     var firstVisit = true;
@@ -801,7 +839,7 @@
     function renderChips() {
       chips.innerHTML = "";
       if (!KB) return;
-      KB.topics.slice(0, 4).forEach(function (t) {
+      KB.topics.slice(0, 2).forEach(function (t) {
         var c = el("button", "aih-chip", t.q);
         c.type = "button";
         c.addEventListener("click", function () { ask(t.q); });
