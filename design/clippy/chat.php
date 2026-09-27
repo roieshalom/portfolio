@@ -43,27 +43,36 @@ if (is_readable($acfg)) {
 }
 if (getenv('AIRTABLE_TOKEN')) $AIRTABLE['token'] = getenv('AIRTABLE_TOKEN');
 
-// Post a record to Airtable. If the full field set is rejected (e.g. a column
-// does not exist yet), retry with $fallback so the core row still lands.
-function log_airtable($cfg, $fields, $fallback = null) {
+// Post a record to Airtable. Self-healing: if Airtable rejects a field that does
+// not exist (or can't be written, e.g. a computed field), that field is dropped
+// and the record is retried, so whatever columns exist still get filled.
+function log_airtable($cfg, $fields) {
   if (empty($cfg['token']) || empty($cfg['base'])) return;
   $url = 'https://api.airtable.com/v0/' . rawurlencode($cfg['base']) . '/' . rawurlencode($cfg['table']);
-  $post = function ($f) use ($url, $cfg) {
+  for ($attempt = 0; $attempt < 6 && !empty($fields); $attempt++) {
     $ch = curl_init($url);
     curl_setopt_array($ch, [
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_POST           => true,
-      CURLOPT_POSTFIELDS     => json_encode(['fields' => $f, 'typecast' => true]),
+      CURLOPT_POSTFIELDS     => json_encode(['fields' => $fields, 'typecast' => true]),
       CURLOPT_TIMEOUT        => 5,
       CURLOPT_HTTPHEADER     => ['Content-Type: application/json', 'Authorization: Bearer ' . $cfg['token']],
     ]);
-    curl_exec($ch);
+    $resp = curl_exec($ch);
     $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
-    return $code;
-  };
-  $code = $post($fields);
-  if ($code >= 300 && $fallback) { $post($fallback); }
+    if ($code < 300) return; // logged
+    // On a field error Airtable names the field in quotes; drop it and retry.
+    $j = json_decode($resp, true);
+    $msg = $j['error']['message'] ?? '';
+    $dropped = false;
+    if (preg_match_all('/"([^"]+)"/', $msg, $mm)) {
+      foreach ($mm[1] as $name) {
+        if (array_key_exists($name, $fields)) { unset($fields[$name]); $dropped = true; }
+      }
+    }
+    if (!$dropped) return; // some other error, give up quietly
+  }
 }
 
 // Rough device class from the user-agent string.
@@ -281,8 +290,11 @@ $lastQ = '';
 for ($i = count($messages) - 1; $i >= 0; $i--) {
   if ($messages[$i]['role'] === 'user') { $lastQ = $messages[$i]['content']; break; }
 }
-$core = ['Question' => $lastQ, 'Answer' => $answer, 'Model' => $MODEL];
-$extra = $core + [
-  'Device'  => device_type($_SERVER['HTTP_USER_AGENT'] ?? ''),
+$fields = [
+  'Question'  => $lastQ,
+  'Answer'    => $answer,
+  'Model'     => $MODEL,
+  'Device'    => device_type($_SERVER['HTTP_USER_AGENT'] ?? ''),
+  'Timestamp' => gmdate('c'), // ISO 8601 UTC; ignored if no such column
 ] + geo_lookup($ip);
-log_airtable($AIRTABLE, $extra, $core); // full row, falling back to core if columns are missing
+log_airtable($AIRTABLE, $fields); // unknown columns are dropped automatically
