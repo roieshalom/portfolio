@@ -209,4 +209,11 @@ if ($answer === '') {
   fail(502, 'The model returned an empty answer.');
 }
 
+// Hard rule: no em/en dashes, ever. Enforce it here so it holds no matter what
+// the model does. Ranges between digits keep a hyphen; other dashes become commas.
+$answer = preg_replace('/(\d)\s*[\x{2013}\x{2014}]\s*(\d)/u', '$1-$2', $answer); // 2019–2021 -> 2019-2021
+$answer = preg_replace('/\s*[\x{2013}\x{2014}]\s*/u', ', ', $answer);            // — / – -> ", "
+$answer = preg_replace('/\s+,/u', ',', $answer);                                  // tidy " ,"
+$answer = preg_replace('/,\s*,/u', ',', $answer);                                 // tidy ",,"
+
 echo json_encode(['answer' => $answer]);
