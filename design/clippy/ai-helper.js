@@ -724,7 +724,7 @@
     form.appendChild(input);
     form.appendChild(send);
 
-    var disclaim = el("div", "aih-disclaim", "Clippy is an AI paperclip and can make mistakes.");
+    var disclaim = el("div", "aih-disclaim", "Clippy is a paperclip and can make mistakes.");
 
     panel.appendChild(header);
     panel.appendChild(log);
