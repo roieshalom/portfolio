@@ -20,7 +20,7 @@ $MAX_HISTORY = 12;    // messages accepted from the client
 
 // Abuse / cost guards
 $DAILY_CAP_USD = getenv('AIH_DAILY_CAP') ? (float)getenv('AIH_DAILY_CAP') : 0.55; // ~ €0.50/day
-$RATE_MAX      = 6;   // max requests per IP...
+$RATE_MAX      = 10;  // max requests per IP...
 $RATE_WINDOW   = 60;  // ...per this many seconds
 $USAGE_FILE    = __DIR__ . '/.usage.json'; // git-ignored, blocked from the web
 
