@@ -12,6 +12,9 @@
   var ENDPOINT = BASE + "chat.php";
   var history = []; // {role, content} sent to the backend for context
 
+  // Fire a Microsoft Clarity custom event (no-op if Clarity isn't loaded, e.g. localhost).
+  function track(name) { try { if (window.clarity) window.clarity("event", name); } catch (e) {} }
+
   // The paperclip himself: Clippy 4.0.
   // Shape: a closed outer pill + an open-bottom inner loop, matching a real
   // Gem clip. Body is filled with a holographic chrome gradient that slowly
@@ -752,6 +755,7 @@
     dismiss.addEventListener("mouseleave", hideDismissSoon);
     dismiss.addEventListener("click", function (e) {
       e.stopPropagation();
+      track("clippy_dismissed");
       try { sessionStorage.setItem("aih_dismissed", "1"); } catch (err) {}
       dismiss.remove(); tip.remove(); panel.remove(); clippy.remove();
     });
@@ -819,6 +823,7 @@
     }
 
     function ask(question) {
+      track("clippy_question");
       addMsg(question, "user");
       input.disabled = true;
       send.disabled = true;
@@ -848,6 +853,7 @@
     function open() {
       if (isOpen) return;
       isOpen = true;
+      track("clippy_opened");
       tip.hidden = true;
       panel.hidden = false;
       requestAnimationFrame(function () { panel.classList.add("aih-open"); });
@@ -890,7 +896,7 @@
     // Recompute the gaze origin once he is parked (his rect moved during the
     // slide, so the "between the eyes" hit-point must be re-measured).
     function settleOrigin() { window.dispatchEvent(new Event("resize")); }
-    function finishEntrance() { settleOrigin(); entranceDone = true; maybeStartIntro(); }
+    function finishEntrance() { settleOrigin(); entranceDone = true; track("clippy_shown"); maybeStartIntro(); }
     if (prefersReduced) {
       clippy.style.transform = "";
       finishEntrance();
