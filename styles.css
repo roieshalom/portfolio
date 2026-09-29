@@ -57,15 +57,16 @@ body {
   padding-right: clamp(20px, 5vw, 32px);
 }
 
-/* Universal page fade-in: every page reveals its content instead of blinking.
-   Gated on reduced-motion so it stays accessible. */
+/* Staggered entrance: content fades up row by row, top to bottom.
+   Content is hidden up front (seq-armed) and seq-reveal.js reveals each row
+   in sequence. Gated on reduced-motion so it stays accessible. */
 @media (prefers-reduced-motion: no-preference) {
-  @keyframes pageFadeIn {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  body {
-    animation: pageFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  html.seq-armed body > *:not(nav):not(script):not(style) { opacity: 0; }
+  .seq-el { opacity: 0; transform: translateY(16px); }
+  .seq-el.seq-vis {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 

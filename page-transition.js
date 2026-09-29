@@ -8,6 +8,9 @@
     var color = sessionStorage.getItem('transitionColor');
     var fromCard = sessionStorage.getItem('fromCard');
     if (fromCard !== '1' || !color) return;
+    // Tell seq-reveal.js (runs after this) to stand down — this entrance is
+    // handled by the overlay transition below, not the staggered reveal.
+    window.__cardEntrance = true;
     sessionStorage.removeItem('fromCard');
     sessionStorage.removeItem('transitionColor');
   } catch (e) {
