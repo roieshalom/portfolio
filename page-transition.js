@@ -24,7 +24,10 @@
   function run() {
     clearTimeout(safetyTimer);
     try {
-      restoreOpacity();
+      // Fade the page content in instead of snapping it visible (avoids the blink)
+      html.style.transition = 'opacity 0.5s ease-out';
+      html.style.opacity = '1';
+      setTimeout(function () { html.style.transition = ''; html.style.opacity = ''; }, 700);
 
       var nav = document.querySelector('.top-nav');
       var navH = nav ? nav.offsetHeight : 56;
