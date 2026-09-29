@@ -45,13 +45,39 @@
     .cs-cta-row { display: flex; align-items: center; justify-content: center; gap: 36px; flex-wrap: wrap; }
     .cs-closing-strip + .cs-back-wrap { padding: 36px 0 40px; }
 
-    /* Section 3 image pair: keep both screenshots the same height side by
-       side, regardless of each source image's own crop. */
-    .op-build-pair img.cs-img {
-      aspect-ratio: 4 / 3;
+    /* ---- The build: laptop with a screen toggle ----
+       One MacBook frame (transparent screen cutout) with two screenshots
+       behind it; the toggle flips the screen, the laptop stays put. Screen
+       rectangle measured from laptop.png. */
+    .op-laptop-demo { margin: 36px auto 0; max-width: 720px; }
+    .op-laptop { position: relative; width: 100%; }
+    .op-laptop-frame { position: relative; z-index: 2; width: 100%; display: block; pointer-events: none; }
+    .op-laptop-shot {
+      position: absolute;
+      left: 12.25%; top: 5.18%; width: 75.55%; height: 76.94%;
+      z-index: 1;
       object-fit: cover;
       object-position: top center;
+      opacity: 0;
+      transition: opacity 0.35s ease;
     }
+    .op-laptop-shot.is-active { opacity: 1; }
+    .op-toggle { display: flex; justify-content: center; margin-top: 22px; }
+    .op-toggle-btn {
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-text);
+      background: transparent;
+      border: 1px solid var(--color-border);
+      padding: 8px 20px;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+    }
+    .op-toggle-btn:first-child { border-radius: 100px 0 0 100px; }
+    .op-toggle-btn:last-child { border-radius: 0 100px 100px 0; border-left: none; }
+    .op-toggle-btn.is-active { background: var(--color-link); color: #fff; border-color: var(--color-link); }
+    .op-toggle-btn:not(.is-active):hover { color: var(--color-text-main); }
 
     /* Bulleted rule list (no equivalent in the shared case-study CSS).
        Sized to match .cs-p, with pink markers to fit the brand. */
@@ -227,15 +253,16 @@
       <span class="cs-eyebrow">The build</span>
       <h2 class="cs-h2">A side tab that grew up</h2>
       <p class="cs-p">OnPaper started as a tab on my personal job triage site. Two text boxes and one button, built for me.</p>
-      <div class="cs-pattern-grid op-build-pair">
-        <figure>
-          <img class="cs-img" src="/content/images/onpaper/mvp.png" alt="The first version of OnPaper, two empty text boxes and a Find gaps button">
-          <figcaption>The first version, built for my own use.</figcaption>
-        </figure>
-        <figure>
-          <img class="cs-img" src="/content/images/onpaper/upload-screen.png" alt="The current OnPaper upload screen with a CV card and a job link card">
-          <figcaption>Today.</figcaption>
-        </figure>
+      <div class="op-laptop-demo">
+        <div class="op-laptop">
+          <img class="op-laptop-shot is-active" data-i="0" src="/content/images/onpaper/build-first.jpg" alt="The first version of OnPaper, a tab on the job triage site with two paste boxes and a Find gaps button">
+          <img class="op-laptop-shot" data-i="1" src="/content/images/onpaper/build-today.jpg" alt="The current OnPaper upload screen with a CV card and a job link card">
+          <img class="op-laptop-frame" src="/content/images/onpaper/laptop.png" alt="" aria-hidden="true">
+        </div>
+        <div class="op-toggle" role="group" aria-label="OnPaper versions">
+          <button type="button" class="op-toggle-btn is-active" data-i="0">The first version</button>
+          <button type="button" class="op-toggle-btn" data-i="1">Today</button>
+        </div>
       </div>
       <p class="cs-p" style="margin-top: 32px; margin-bottom: 0;">It worked well enough to earn its own site. It takes a pasted CV, a PDF or a DOCX, and a job link or the job text.</p>
     </div>
@@ -316,6 +343,22 @@
       lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+  <script>
+    // The build: laptop screen toggle
+    (function() {
+      document.querySelectorAll('.op-laptop-demo').forEach(function(demo) {
+        var shots = demo.querySelectorAll('.op-laptop-shot');
+        var btns  = demo.querySelectorAll('.op-toggle-btn');
+        btns.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var i = btn.dataset.i;
+            shots.forEach(function(s) { s.classList.toggle('is-active', s.dataset.i === i); });
+            btns.forEach(function(b) { b.classList.toggle('is-active', b === btn); });
+          });
+        });
       });
     })();
   </script>
