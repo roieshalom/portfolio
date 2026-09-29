@@ -594,3 +594,85 @@
 .cs-back-link:hover {
   transform: translateX(-3px);
 }
+
+/* ============================================================
+   AI PROJECT CTA + CLOSING STRIP
+   Shared by: esmeralda.html, grooped.html, onpaper.html
+============================================================ */
+
+.cs-cta-btn {
+  display: inline-block;
+  background: var(--color-link);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px 26px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: opacity 0.18s;
+  margin-bottom: 10px;
+  outline: 1px solid rgba(255, 255, 255, 0.4);
+}
+.cs-cta-btn:hover { opacity: 0.88; color: #fff; }
+
+.cs-closing-strip {
+  background: var(--color-grey-light);
+  text-align: center;
+  padding: 72px 24px 64px;
+}
+
+.cs-closing-h {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0 0 20px;
+}
+
+.cs-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.cs-bottom-qr-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cs-bottom-qr-group img {
+  width: 84px;
+  height: 84px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  mix-blend-mode: multiply;
+}
+
+.cs-bottom-qr-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-link);
+  line-height: 1.3;
+  text-align: right;
+  max-width: 120px;
+}
+
+.cs-cta-or {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  opacity: 0.45;
+  font-style: italic;
+}
+
+/* Tighter back link when it follows the closing strip (AI project pages).
+   Scoped so it does not affect eqcapture/wayfair back links. */
+.cs-closing-strip + .cs-back-wrap {
+  padding: 36px 0 40px;
+}
+
+@media (max-width: 768px) {
+  .cs-bottom-qr-group { display: none; }
+  .cs-cta-or { display: none; }
+}
