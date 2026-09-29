@@ -57,6 +57,18 @@ body {
   padding-right: clamp(20px, 5vw, 32px);
 }
 
+/* Universal page fade-in: every page reveals its content instead of blinking.
+   Gated on reduced-motion so it stays accessible. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes pageFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  body {
+    animation: pageFadeIn 0.45s ease-out both;
+  }
+}
+
 @media (min-width: 600px) {
   body {
     padding-left: clamp(32px, 8vw, 64px);
