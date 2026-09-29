@@ -207,6 +207,7 @@
   width: 100%;
   display: block;
   border-radius: 12px;
+  border: 1px solid #d8d8d8;
   cursor: zoom-in;
 }
 
@@ -225,6 +226,7 @@
 
 .cs-img-2col .img-box {
   border-radius: 12px;
+  border: 1px solid #d8d8d8;
   overflow: hidden;
   position: relative;
 }
