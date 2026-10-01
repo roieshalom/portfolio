@@ -1,0 +1,66 @@
+{
+  "person": {
+    "name": "Roie Shalom",
+    "title": "Product Designer",
+    "location": "Berlin",
+    "summary": "Product designer in Berlin who goes deep into the system before he designs for it. He led supplier logistics design at Wayfair and ships his own AI products end to end.",
+    "cv": "content/downloads/Roie Shalom Senior Product Designer.pdf"
+  },
+  "topics": [
+    {
+      "id": "open-to-work",
+      "tags": ["open", "available", "hiring", "job", "role", "looking", "seeking", "next", "work", "position"],
+      "q": "Is he open to work?",
+      "a": "Yes. Roie is looking for a product design role at a company where design has a real seat at the table. He's drawn to products with something physical about them and teams that actually talk to each other. The fastest way to start a conversation is roiesh@gmail.com."
+    },
+    {
+      "id": "location",
+      "tags": ["based", "location", "where", "berlin", "relocate", "remote", "visa", "sponsorship", "eligible", "move"],
+      "q": "Where is he based?",
+      "a": "Berlin. He's eligible to work in Berlin and remotely across Germany or the EU, so there's no sponsorship question to resolve. He can't relocate, since his family is in Berlin, but he's happy to be in an office a few days a week."
+    },
+    {
+      "id": "why-left-wayfair",
+      "tags": ["leave", "left", "why", "gap", "layoff", "redundant", "exit", "since", "available"],
+      "q": "Why did he leave Wayfair?",
+      "a": "Wayfair closed its entire German business. The exit was announced in January 2025 and cut around 730 jobs. Every role went, including his, and his employment ended on 31 October 2025. It was a market exit, not a performance decision, and his reference letter from Wayfair is strong and available on request."
+    },
+    {
+      "id": "experience",
+      "tags": ["experience", "worked", "career", "companies", "history", "wayfair", "buildingminds", "schindler", "sap", "safebreach", "background"],
+      "q": "Where has he worked?",
+      "a": "Most recently Product Design Lead at Wayfair, leading design for supplier logistics tools. Before that, Senior UX/UI Designer at BuildingMinds by Schindler Group, Senior UX Designer at SAP Signavio, and Creative Director at SafeBreach. Earlier roles ran from printer interfaces at HP through packaging and hardware design."
+    },
+    {
+      "id": "wayfair",
+      "tags": ["wayfair", "logistics", "supplier", "partner home", "order", "inventory", "homebase"],
+      "q": "What did he do at Wayfair?",
+      "a": "He led design for core supplier logistics experiences on Partner Home, a surface serving 20,000 suppliers managing 30 million products across 15 fulfillment centers. The headline piece was a unified inbound order creation workflow that consolidated four fragmented flows into one. The case study is password protected, since the work is under NDA."
+    },
+    {
+      "id": "approach",
+      "tags": ["approach", "process", "how", "design", "method", "research", "craft", "philosophy", "think"],
+      "q": "How does he approach design?",
+      "a": "He goes deep into the system before he designs for it. On a building-survey app he shadowed surveyors in Hamburg and Frankfurt, carried the device, and felt the cognitive load himself, then built the app to carry that mental work. He traces the habit back to printer interfaces at HP: understand the machine, then design the screen."
+    },
+    {
+      "id": "best-work",
+      "tags": ["best", "strongest", "proudest", "favourite", "favorite", "eqcapture", "standout", "good"],
+      "q": "What's his best work?",
+      "a": "EQCapture, the field survey app he delivered at BuildingMinds. It's the clearest story of how he works: he shadowed surveyors in the field and redesigned the whole workflow around the load he felt himself. It's also honest evidence, the kind of insight that doesn't come out of a prompt."
+    },
+    {
+      "id": "building-now",
+      "tags": ["building", "now", "side", "projects", "ai", "grooped", "esmeralda", "onpaper", "shipping", "products"],
+      "q": "What is he building now?",
+      "a": "Three live products, all solo builds. Grooped, a weekly word puzzle with a generation pipeline he designed. Ask Esmeralda, an AI fortune teller that's really a networking experiment. And OnPaper, which reads a CV against one job description and names the gaps. He designs them, writes the prompts, writes the code with AI help, and runs the analytics."
+    },
+    {
+      "id": "contact",
+      "tags": ["contact", "reach", "email", "hire", "talk", "touch", "connect"],
+      "q": "How can I reach him?",
+      "a": "Email is best: roiesh@gmail.com. The contact form on the site reaches him too. He's happy to talk about roles, collaborations, or the side projects."
+    }
+  ],
+  "fallback": "I can talk about Roie's experience, how he approaches design, why he left Wayfair, and what he's building now. Ask about where he's worked or what he's looking for next. For anything I don't have, roiesh@gmail.com reaches him directly."
+}
