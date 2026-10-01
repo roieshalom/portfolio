@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Portfolio Home — Concept Directions</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/modernist-57426bf4-1941-4f9b-8356-82975fd3f741/styles.css">
+<style>:root{--color-accent:#e0198a;--color-accent-100:#fff0f6;--color-accent-200:#ffdcec;--color-accent-300:#ffbedc;--color-accent-400:#ff8cc0;--color-accent-500:#f04a9c;--color-accent-600:#d4157e;--color-accent-700:#a8005f;--color-accent-800:#780545;--color-accent-900:#4a0d2d}body{margin:0;background:#dcdada}a{color:inherit}a:hover{color:var(--color-accent-600)}.dv-turn{padding:48px;scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 24px}.dv-tid{font:600 11px ui-monospace,Menlo,monospace;padding:3px 7px;background:#201e1d;color:#fff;text-decoration:none}.dv-tname{font:600 14px/1.2 system-ui,sans-serif;color:#201e1d}.dv-opts{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px}.dv-oid{font:600 11px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.1);color:#201e1d;text-decoration:none}.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 13px/1.4 system-ui,sans-serif;color:rgba(0,0,0,.6);max-width:1280px}.dv-card{max-width:100%;background:var(--color-bg);box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:hidden}.dv-opt:target .dv-oid{background:#e0198a;color:#fff}.dv-next{margin:28px 0 0;font:13px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.55)}</style>
+</helmet>
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">Two concepts without dividing lines · structure from space, scale and color</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="3a">
+<div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a><span><b>Staggered collage.</b> Projects drift across the 12-column grid at different sizes and heights, held together only by alignment and generous white space. Reads like an art-directed magazine spread.</span></div>
+<div class="dv-card" style="width:1280px;font-family:var(--font-body);color:var(--color-text);padding:32px 40px 64px">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <span style="font-weight:800;font-size:17px">Roie Shalom</span>
+    <div style="display:flex;gap:32px;font-size:15px"><span>Work</span><span>About</span><span>Contact</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding:120px 0 140px">
+    <div style="grid-column:span 10;font-weight:800;font-size:104px;line-height:.92;letter-spacing:-0.045em">Senior Product Designer based in <span style="color:var(--color-accent)">Berlin.</span></div>
+    <div style="grid-column:7 / span 5;font-size:20px;line-height:1.45;padding-top:32px;text-wrap:pretty">I find the angle others didn't try and the answer that wasn't on the table. I lead openly, validate before I commit, and care as much about the small moments of delight as the high-stakes flows.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:96px;align-items:start">
+    <sc-for list="{{ collage }}" as="p" hint-placeholder-count="6">
+      <div onMouseEnter="{{ p.onIn }}" onMouseLeave="{{ p.onOut }}" style="grid-column:{{ p.col }};margin-top:{{ p.mt }}px;display:flex;flex-direction:column;gap:16px;cursor:pointer">
+        <img src="{{ p.img }}" alt="{{ p.title }}" style="width:100%;aspect-ratio:{{ p.ar }};object-fit:cover;filter:{{ p.filter }};transition:filter .3s">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase"><span style="color:var(--color-accent-700)">{{ p.n }}</span>  {{ p.client }}</span>
+          <span style="font-weight:800;font-size:32px;line-height:1.05;letter-spacing:-0.02em;color:{{ p.tc }};transition:color .2s">{{ p.title }}</span>
+          <span style="font-size:17px;line-height:1.4;color:var(--color-neutral-800);max-width:440px">{{ p.desc }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding-top:160px;align-items:end">
+    <div style="grid-column:span 7;font-weight:800;font-size:64px;line-height:.95;letter-spacing:-0.04em">Professional projects are under NDA.</div>
+    <div style="grid-column:9 / span 4;display:flex;flex-direction:column;gap:16px">
+      <span style="font-size:17px"><span style="color:var(--color-accent-700);font-weight:600">Contact me</span> for the password.</span>
+      <span style="font-size:13px;color:var(--color-neutral-700)">Hand coded with a dash of AI. HTML, CSS, JS. No templates.</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="3b">
+<div class="dv-olabel"><a class="dv-oid" href="#3b">3b</a><span><b>Type wall + cursor preview.</b> The six project names are set as one huge stacked headline. Hovering a name turns it magenta and a color image follows the cursor. Move over the list to try it.</span></div>
+<div class="dv-card" style="width:1280px;font-family:var(--font-body);color:var(--color-text);padding:32px 40px 48px">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <span style="font-weight:800;font-size:17px">Roie Shalom</span>
+    <div style="display:flex;gap:32px;font-size:15px"><span>Work</span><span>About</span><span>Contact</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding:96px 0 80px">
+    <div style="grid-column:span 4;font-weight:800;font-size:22px;line-height:1.25">Senior Product Designer based in Berlin.</div>
+    <div style="grid-column:6 / span 6;font-size:22px;line-height:1.45;text-wrap:pretty">I find the angle others didn't try and the answer that wasn't on the table. I lead openly, validate before I commit, and care as much about the small moments of delight as the high-stakes flows.</div>
+  </div>
+  <div ref="{{ wallRef }}" onMouseMove="{{ onWallMove }}" onMouseLeave="{{ onWallLeave }}" style="position:relative;display:flex;flex-direction:column;gap:4px;cursor:pointer">
+    <sc-for list="{{ wall }}" as="p" hint-placeholder-count="6">
+      <div onMouseEnter="{{ p.onIn }}" style="display:flex;align-items:flex-start;gap:20px;color:{{ p.tc }};opacity:{{ p.op }};transition:color .2s,opacity .2s">
+        <span style="font-weight:800;font-size:18px;padding-top:18px;width:32px;flex:none">{{ p.n }}</span>
+        <span style="font-weight:800;font-size:124px;line-height:.92;letter-spacing:-0.05em;white-space:nowrap">{{ p.title }}</span>
+        <span style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding-top:22px;white-space:nowrap">{{ p.client }}</span>
+      </div>
+    </sc-for>
+    <sc-if value="{{ wallShow }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;left:{{ wallX }}px;top:{{ wallY }}px;width:380px;pointer-events:none;display:flex;flex-direction:column;gap:10px;z-index:2">
+        <img src="{{ wallP.img }}" alt="{{ wallP.title }}" style="width:100%;aspect-ratio:4/3;object-fit:cover;filter:{{ wallP.filter }};box-shadow:var(--shadow-lg)">
+        <span style="background:var(--color-text);color:var(--color-bg);font-size:15px;line-height:1.35;padding:10px 14px">{{ wallP.desc }}</span>
+      </div>
+    </sc-if>
+  </div>
+  <div style="display:flex;justify-content:space-between;gap:24px;padding-top:96px;font-size:14px">
+    <span><b>Professional projects are under NDA.</b> <span style="color:var(--color-accent-700);font-weight:600">Contact me</span> for the password.</span>
+    <span>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</span>
+  </div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: "<a class="dv-oid" href="#3b">3b</a> on a dark ground" · "<a class="dv-oid" href="#3a">3a</a> with scroll parallax" · "combine <a class="dv-oid" href="#3b">3b</a> type wall with <a class="dv-oid" href="#2a">2a</a> sidebar"</p>
+</section>
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Three more concepts · same rules: lines, black and white, one accent</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a><span><b>Sidebar + contact sheet.</b> Identity, bio and NDA unlock live in a fixed left column. The work sits in a strict, equal 2×3 sheet, like a photographer's proof print.</span></div>
+<div class="dv-card" style="width:1280px;font-family:var(--font-body);color:var(--color-text);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr)">
+  <div style="border-right:2px solid var(--color-text);padding:32px;display:flex;flex-direction:column;gap:40px">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="font-weight:800;font-size:64px;line-height:.9;letter-spacing:-0.04em">Roie<br>Shalom</div>
+      <div style="font-weight:800;font-size:20px;line-height:1.25">Senior Product Designer based in Berlin.</div>
+      <div style="font-size:17px;line-height:1.5;text-wrap:pretty">I find the angle others didn't try and the answer that wasn't on the table. I lead openly, validate before I commit, and care as much about the small moments of delight as the high-stakes flows.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;border-top:2px solid var(--color-text)">
+      <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:2px solid var(--color-divider);font-weight:800;font-size:18px;color:var(--color-accent-600)"><span>Work</span><span>06</span></div>
+      <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:2px solid var(--color-divider);font-weight:800;font-size:18px"><span>About</span><span>→</span></div>
+      <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:2px solid var(--color-divider);font-weight:800;font-size:18px"><span>Contact</span><span>→</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;padding:20px;border:2px solid var(--color-text)">
+      <div style="font-size:15px;line-height:1.4"><b>Professional projects are under NDA.</b> <span style="text-decoration:underline;text-underline-offset:3px">Contact me</span> for the password.</div>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">
+        <input maxlength="1" inputmode="numeric" style="width:100%;min-width:0;height:52px;border:2px solid var(--color-text);background:transparent;font:800 22px var(--font-body);padding:0 12px">
+        <input maxlength="1" inputmode="numeric" style="width:100%;min-width:0;height:52px;border:2px solid var(--color-text);background:transparent;font:800 22px var(--font-body);padding:0 12px">
+        <input maxlength="1" inputmode="numeric" style="width:100%;min-width:0;height:52px;border:2px solid var(--color-text);background:transparent;font:800 22px var(--font-body);padding:0 12px">
+        <input maxlength="1" inputmode="numeric" style="width:100%;min-width:0;height:52px;border:2px solid var(--color-text);background:transparent;font:800 22px var(--font-body);padding:0 12px">
+      </div>
+    </div>
+    <div style="margin-top:auto;font-size:13px;color:var(--color-neutral-700)">Hand coded with a dash of AI. HTML, CSS, JS. No templates.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--color-divider)">
+    <sc-for list="{{ sheet }}" as="p" hint-placeholder-count="6">
+      <div onMouseEnter="{{ p.onIn }}" onMouseLeave="{{ p.onOut }}" style="background:var(--color-bg);display:flex;flex-direction:column;cursor:pointer" style-hover="background:var(--color-accent-100)">
+        <div style="position:relative">
+          <img src="{{ p.img }}" alt="{{ p.title }}" style="width:100%;aspect-ratio:4/3;object-fit:cover;filter:{{ p.filter }};transition:filter .3s">
+          <span style="position:absolute;top:0;left:0;background:var(--color-text);color:var(--color-bg);font-weight:800;font-size:14px;padding:8px 12px">{{ p.n }}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:16px 20px 20px;border-top:2px solid var(--color-text)">
+          <span style="font-weight:800;font-size:24px;letter-spacing:-0.02em">{{ p.title }}</span>
+          <span style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;align-self:center">{{ p.client }}</span>
+          <span style="font-size:16px;line-height:1.4;color:var(--color-neutral-800);grid-column:span 2">{{ p.desc }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="2b">
+<div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a><span><b>Accordion columns.</b> All six projects stand side by side as tall columns. Hovering one opens it to full width while the others fold to a spine with a vertical title.</span></div>
+<div class="dv-card" style="width:1280px;font-family:var(--font-body);color:var(--color-text)">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:24px 40px;border-bottom:2px solid var(--color-divider)">
+    <span style="font-weight:800;font-size:17px">Roie Shalom</span>
+    <div style="display:flex;gap:32px;font-size:15px"><span>Work</span><span>About</span><span>Contact</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding:56px 40px 48px">
+    <div style="grid-column:span 7;font-weight:800;font-size:72px;line-height:.95;letter-spacing:-0.04em">Senior Product Designer based in Berlin.</div>
+    <div style="grid-column:9 / span 4;font-size:18px;line-height:1.45;align-self:end;text-wrap:pretty">I find the angle others didn't try and the answer that wasn't on the table. I lead openly, validate before I commit, and care as much about the small moments of delight as the high-stakes flows.</div>
+  </div>
+  <div style="display:flex;height:620px;border-top:2px solid var(--color-text);border-bottom:2px solid var(--color-text)">
+    <sc-for list="{{ cols }}" as="p" hint-placeholder-count="6">
+      <div onMouseEnter="{{ p.onIn }}" style="flex:{{ p.flex }};min-width:0;border-right:2px solid var(--color-divider);transition:flex .45s cubic-bezier(.7,0,.3,1);overflow:hidden;cursor:pointer;display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:20px 20px 16px;gap:12px">
+          <span style="font-weight:800;font-size:40px;line-height:1;letter-spacing:-0.03em;color:{{ p.numColor }}">{{ p.n }}</span>
+          <sc-if value="{{ p.open }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap">{{ p.client }} · {{ p.status }}</span></sc-if>
+        </div>
+        <sc-if value="{{ p.open }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;flex:1;min-height:0">
+            <img src="{{ p.img }}" alt="{{ p.title }}" style="width:100%;flex:1;min-height:0;object-fit:cover;filter:{{ p.filter }};transition:filter .3s">
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;padding:20px;border-top:2px solid var(--color-text)">
+              <span style="font-weight:800;font-size:40px;line-height:1;letter-spacing:-0.03em">{{ p.title }}</span>
+              <span style="font-size:18px;line-height:1.4">{{ p.desc }}</span>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ p.closed }}" hint-placeholder-val="{{ true }}">
+          <div style="flex:1;display:flex;align-items:flex-end;padding:20px" style-hover="background:var(--color-accent-100)">
+            <span style="writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;font-size:30px;letter-spacing:-0.02em;white-space:nowrap">{{ p.title }}</span>
+          </div>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:flex;justify-content:space-between;padding:24px 40px;font-size:14px"><span>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</span><span style="font-weight:600">Professional projects are under NDA. Contact me for the password.</span></div>
+</div>
+</div>
+
+<div class="dv-opt" id="2c">
+<div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a><span><b>Stage + filmstrip.</b> One project at a time, presented large with a counter and arrows. A six-cell filmstrip below acts as the table of contents, and the active cell is marked in the accent.</span></div>
+<div class="dv-card" style="width:1280px;font-family:var(--font-body);color:var(--color-text)">
+  <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:baseline;padding:24px 40px;border-bottom:2px solid var(--color-text)">
+    <span style="grid-column:span 3;font-weight:800;font-size:17px">Roie Shalom</span>
+    <span style="grid-column:span 6;font-size:15px;line-height:1.45"><b>Senior Product Designer based in Berlin.</b> I find the angle others didn't try and the answer that wasn't on the table.</span>
+    <div style="grid-column:span 3;display:flex;gap:24px;justify-content:flex-end;font-size:15px"><span>Work</span><span>About</span><span>Contact</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr)">
+    <div onMouseEnter="{{ cur.onIn }}" onMouseLeave="{{ cur.onOut }}" style="border-right:2px solid var(--color-text)">
+      <img src="{{ cur.img }}" alt="{{ cur.title }}" style="width:100%;aspect-ratio:16/11;object-fit:cover;filter:{{ cur.filter }};transition:filter .3s">
+    </div>
+    <div style="padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:32px">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;align-items:baseline;gap:8px"><span style="font-weight:800;font-size:120px;line-height:.8;letter-spacing:-0.06em;color:var(--color-accent)">{{ cur.n }}</span><span style="font-weight:800;font-size:24px;color:var(--color-neutral-600)">/ 06</span></div>
+        <span style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding-top:16px;border-top:2px solid var(--color-divider)">{{ cur.client }} · {{ cur.kind }}</span>
+        <span style="font-weight:800;font-size:48px;line-height:1;letter-spacing:-0.03em">{{ cur.title }}</span>
+        <span style="font-size:20px;line-height:1.4;text-wrap:pretty">{{ cur.desc }}</span>
+      </div>
+      <div style="display:grid;grid-template-columns:56px 56px minmax(0,1fr);gap:8px">
+        <button onClick="{{ prevSlide }}" aria-label="Previous" style="height:56px;border:2px solid var(--color-text);background:transparent;color:var(--color-text);cursor:pointer;display:flex;align-items:center;padding:0 14px" style-hover="background:var(--color-accent-100)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg></button>
+        <button onClick="{{ nextSlide }}" aria-label="Next" style="height:56px;border:2px solid var(--color-text);background:transparent;color:var(--color-text);cursor:pointer;display:flex;align-items:center;padding:0 14px" style-hover="background:var(--color-accent-100)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></button>
+        <button class="btn btn-primary" style="height:56px;justify-content:space-between;padding:0 20px;font-size:16px"><span>{{ cur.cta }}</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"></path></svg></button>
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:2px solid var(--color-text)">
+    <sc-for list="{{ strip }}" as="p" hint-placeholder-count="6">
+      <div onClick="{{ p.onPick }}" style="border-right:2px solid var(--color-divider);border-top:6px solid {{ p.bar }};padding:14px 16px 18px;display:flex;flex-direction:column;gap:10px;cursor:pointer;background:{{ p.bg }}" style-hover="background:var(--color-accent-100)">
+        <img src="{{ p.img }}" alt="{{ p.title }}" style="width:100%;aspect-ratio:3/2;object-fit:cover;filter:grayscale(1) contrast(1.08);opacity:{{ p.op }}">
+        <span style="display:flex;gap:8px;font-size:14px"><b>{{ p.n }}</b><span>{{ p.title }}</span></span>
+      </div>
+    </sc-for>
+  </div>
+  <div style="padding:20px 40px;border-top:2px solid var(--color-text);font-size:14px">Hand coded with a dash of AI. HTML, CSS, JS. No templates.</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: "merge the sidebar of <a class="dv-oid" href="#2a">2a</a> with the index of <a class="dv-oid" href="#1a">1a</a>" · "make <a class="dv-oid" href="#2b">2b</a> work on mobile" · "autoplay <a class="dv-oid" href="#2c">2c</a>"</p>
+</section>
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Home page directions · all 6 projects in one flow</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a><span><b>Index.</b> Type-led. Oversized name, projects as a numbered list with filter and a live hover preview. Craft is shown through typography and interaction.</span></div>
+<div class="dv-card" style="width:1280px;font-family:var(--font-body);color:var(--color-text)">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:24px 40px;border-bottom:2px solid var(--color-divider)">
+    <span style="font-weight:800;font-size:17px">Roie Shalom</span>
+    <div style="display:flex;gap:32px;font-size:15px"><span>Work</span><span>About</span><span>Contact</span></div>
+  </div>
+  <div style="padding:64px 40px 48px">
+    <div style="font-weight:800;font-size:184px;line-height:.86;letter-spacing:-0.045em;margin:0 0 48px">Roie Shalom</div>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px">
+      <div style="grid-column:span 4;font-weight:800;font-size:24px;line-height:1.2">Senior Product Designer based in Berlin.</div>
+      <div style="grid-column:6 / span 7;font-size:22px;line-height:1.4;text-wrap:pretty">I find the angle others didn't try and the answer that wasn't on the table. I lead openly, validate before I commit, and care as much about the small moments of delight as the high-stakes flows.</div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 40px;border-top:2px solid var(--color-text);border-bottom:2px solid var(--color-divider)">
+    <span style="font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase">Selected work ({{ countA }})</span>
+    <div style="display:flex;gap:0;border:2px solid var(--color-text)">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+        <button onClick="{{ f.onClick }}" style="font:600 14px var(--font-body);padding:8px 16px;border:0;cursor:pointer;background:{{ f.bg }};color:{{ f.fg }};text-align:left">{{ f.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)">
+    <div onMouseLeave="{{ leaveA }}" style="padding:0 40px 40px">
+      <sc-for list="{{ listA }}" as="p" hint-placeholder-count="6">
+        <div onMouseEnter="{{ p.onEnter }}" style="display:grid;grid-template-columns:56px minmax(0,1fr) 150px 24px;align-items:baseline;gap:16px;padding:22px 0;border-bottom:2px solid var(--color-divider);cursor:pointer;color:{{ p.color }}">
+          <span style="font-size:14px;font-weight:600">{{ p.n }}</span>
+          <span style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:800;font-size:38px;line-height:1.05;letter-spacing:-0.02em">{{ p.title }}</span><span style="font-size:15px;color:var(--color-neutral-700)">{{ p.kind }}</span></span>
+          <span style="font-size:15px;font-weight:600">{{ p.client }}</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"></path></svg>
+        </div>
+      </sc-for>
+    </div>
+    <div style="border-left:2px solid var(--color-divider);padding:32px 40px 40px">
+      <div style="position:sticky;top:24px;display:flex;flex-direction:column;gap:16px">
+        <img src="{{ prev.img }}" alt="{{ prev.title }}" style="width:100%;aspect-ratio:4/3;object-fit:cover;filter:{{ prev.filter }};transition:filter .3s">
+        <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase"><span>{{ prev.n }} / {{ prev.client }}</span><span style="color:var(--color-accent-700)">{{ prev.status }}</span></div>
+        <div style="font-size:22px;line-height:1.35;text-wrap:pretty">{{ prev.desc }}</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;padding:24px 40px;border-top:2px solid var(--color-text);font-size:14px"><span>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</span><span style="font-weight:600">Berlin · 2026</span></div>
+</div>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a><span><b>Bento grid.</b> A modular board where every cell is visible structure. Client and side work mix by weight; the NDA unlock becomes a red signal cell.</span></div>
+<div class="dv-card" style="width:1280px;font-family:var(--font-body);color:var(--color-text)">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:24px 32px">
+    <span style="font-weight:800;font-size:17px">Roie Shalom</span>
+    <div style="display:flex;gap:32px;font-size:15px"><span>Work</span><span>About</span><span>Contact</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2px;background:var(--color-divider);border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider)">
+    <div style="grid-column:span 8;background:var(--color-bg);padding:48px 32px 32px;display:flex;flex-direction:column;justify-content:space-between;gap:48px;min-height:440px">
+      <div style="font-weight:800;font-size:76px;line-height:.95;letter-spacing:-0.035em;text-wrap:balance">Senior Product Designer based in Berlin.</div>
+      <div style="font-size:20px;line-height:1.45;max-width:620px;text-wrap:pretty">I find the angle others didn't try and the answer that wasn't on the table. I lead openly, validate before I commit, and care as much about the small moments of delight as the high-stakes flows.</div>
+    </div>
+    <div style="grid-column:span 4;background:var(--color-accent-600);color:#fff;padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="font-weight:800;font-size:30px;line-height:1.1">Professional projects are under NDA.</div>
+        <div style="font-size:18px;font-weight:600"><span style="text-decoration:underline;text-underline-offset:3px">Contact me</span> for the password.</div>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">
+          <input maxlength="1" inputmode="numeric" style="width:100%;min-width:0;height:64px;border:2px solid #fff;background:transparent;color:#fff;font:800 28px var(--font-body);padding:0 16px">
+          <input maxlength="1" inputmode="numeric" style="width:100%;min-width:0;height:64px;border:2px solid #fff;background:transparent;color:#fff;font:800 28px var(--font-body);padding:0 16px">
+          <input maxlength="1" inputmode="numeric" style="width:100%;min-width:0;height:64px;border:2px solid #fff;background:transparent;color:#fff;font:800 28px var(--font-body);padding:0 16px">
+          <input maxlength="1" inputmode="numeric" style="width:100%;min-width:0;height:64px;border:2px solid #fff;background:transparent;color:#fff;font:800 28px var(--font-body);padding:0 16px">
+        </div>
+      </div>
+    </div>
+    <sc-for list="{{ bento }}" as="p" hint-placeholder-count="6">
+      <div onMouseEnter="{{ p.onIn }}" onMouseLeave="{{ p.onOut }}" style="grid-column:span {{ p.span }};background:var(--color-bg);padding:24px;display:flex;flex-direction:column;gap:20px;cursor:pointer" style-hover="background:var(--color-accent-100)">
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase"><span>{{ p.n }} · {{ p.client }}</span><span style="color:var(--color-accent-700)">{{ p.status }}</span></div>
+        <img src="{{ p.img }}" alt="{{ p.title }}" style="width:100%;height:{{ p.h }}px;object-fit:cover;filter:{{ p.filter }};transition:filter .3s">
+        <div style="display:flex;justify-content:space-between;gap:16px;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;gap:6px"><span style="font-weight:800;font-size:30px;line-height:1.05;letter-spacing:-0.02em">{{ p.title }}</span><span style="font-size:17px;line-height:1.4;color:var(--color-neutral-800);text-wrap:pretty">{{ p.desc }}</span></div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex:none"><path d="M7 17 17 7M7 7h10v10"></path></svg>
+        </div>
+      </div>
+    </sc-for>
+    <div style="grid-column:span 12;background:var(--color-bg);padding:32px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+      <span style="font-weight:800;font-size:40px;letter-spacing:-0.02em">Let's talk.</span>
+      <span style="font-size:14px">Hand coded with a dash of AI. HTML, CSS, JS. No templates.</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a><span><b>Poster + features.</b> A red statement opens the page, then each project gets a full-width chapter with a large number. Side builds close as a quick three-up strip.</span></div>
+<div class="dv-card" style="width:1280px;font-family:var(--font-body);color:var(--color-text)">
+  <div style="background:var(--color-accent-600);color:#fff;padding:24px 40px 40px;display:flex;flex-direction:column;gap:120px;min-height:700px">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;border-bottom:2px solid #fff">
+      <span style="font-weight:800;font-size:17px">Roie Shalom</span>
+      <div style="display:flex;gap:32px;font-size:15px;font-weight:600"><span>Work</span><span>About</span><span>Contact</span></div>
+    </div>
+    <div style="font-weight:800;font-size:128px;line-height:.9;letter-spacing:-0.045em;max-width:1120px">Senior Product Designer based in Berlin.</div>
+    <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end">
+      <div style="grid-column:span 3;font-weight:800;font-size:16px;letter-spacing:.08em;text-transform:uppercase">06 projects ↓</div>
+      <div style="grid-column:6 / span 7;font-size:24px;line-height:1.4;font-weight:600;text-wrap:pretty">I find the angle others didn't try and the answer that wasn't on the table. I lead openly, validate before I commit, and care as much about the small moments of delight as the high-stakes flows.</div>
+    </div>
+  </div>
+  <sc-for list="{{ client }}" as="p" hint-placeholder-count="3">
+    <div onMouseEnter="{{ p.onIn }}" onMouseLeave="{{ p.onOut }}" style="display:grid;grid-template-columns:180px minmax(0,6fr) minmax(0,5fr);gap:40px;padding:40px;border-bottom:2px solid var(--color-divider);cursor:pointer" style-hover="background:var(--color-surface)">
+      <span style="font-weight:800;font-size:104px;line-height:.85;letter-spacing:-0.05em;color:var(--color-accent)">{{ p.n }}</span>
+      <img src="{{ p.img }}" alt="{{ p.title }}" style="width:100%;aspect-ratio:16/10;object-fit:cover;filter:{{ p.filter }};transition:filter .3s">
+      <div style="display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">{{ p.client }} · {{ p.kind }}</span>
+          <span style="font-weight:800;font-size:52px;line-height:1;letter-spacing:-0.03em">{{ p.title }}</span>
+          <span style="font-size:22px;line-height:1.4;text-wrap:pretty">{{ p.desc }}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;color:var(--color-accent-700)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span>Under NDA · Enter code to view</span></div>
+      </div>
+    </div>
+  </sc-for>
+  <div style="padding:56px 40px 32px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;border-bottom:2px solid var(--color-text)">
+    <div style="grid-column:span 5;font-weight:800;font-size:44px;line-height:1;letter-spacing:-0.03em">AI Projects</div>
+    <div style="grid-column:6 / span 7;font-size:19px;line-height:1.45;text-wrap:pretty">These projects grew out of personal interests, needs, and occasionally just the urge to build something fun. The ideas, the decisions, and the direction are mine. AI is part of how I develop and think things through.</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr))">
+    <sc-for list="{{ side }}" as="p" hint-placeholder-count="3">
+      <div onMouseEnter="{{ p.onIn }}" onMouseLeave="{{ p.onOut }}" style="padding:32px 40px 40px;border-right:2px solid var(--color-divider);display:flex;flex-direction:column;gap:16px;cursor:pointer" style-hover="background:var(--color-surface)">
+        <span style="font-weight:800;font-size:40px;line-height:.9;color:var(--color-accent)">{{ p.n }}</span>
+        <img src="{{ p.img }}" alt="{{ p.title }}" style="width:100%;aspect-ratio:4/3;object-fit:cover;filter:{{ p.filter }};transition:filter .3s">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-weight:800;font-size:28px;letter-spacing:-0.02em">{{ p.title }}</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"></path></svg></div>
+        <span style="font-size:17px;line-height:1.4">{{ p.desc }}</span>
+      </div>
+    </sc-for>
+  </div>
+  <div style="padding:24px 40px;border-top:2px solid var(--color-text);font-size:14px">Hand coded with a dash of AI. HTML, CSS, JS. No templates.</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: "push <a class="dv-oid" href="#1a">1a</a> further with motion" · "combine the red NDA cell from <a class="dv-oid" href="#1b">1b</a> with <a class="dv-oid" href="#1c">1c</a>" · "show <a class="dv-oid" href="#1b">1b</a> on mobile"</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;imageHover&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Color on hover&quot;,&quot;Always grayscale&quot;],&quot;default&quot;:&quot;Color on hover&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { hover: 0, filter: 'all', ex: 0, slide: 0, wi: -1, wx: 0, wy: 0 };
+  wallRef = React.createRef();
+  projects = [
+    { n: '01', title: 'Unified Order Entry', client: 'Wayfair', kind: 'Product design', side: false, desc: 'Consolidating four supplier tools into one', img: '/content/images/wayfair/uoethumb-2.jpeg' },
+    { n: '02', title: 'EQ Capture', client: 'BuildingMinds', kind: 'Mobile app', side: false, desc: 'Taking building equipment audits from clipboards to a mobile app', img: '/content/images/eqc/eqcthumb.jpeg' },
+    { n: '03', title: 'Search Redesign', client: 'SAP Signavio', kind: 'Enterprise UX', side: false, desc: 'Rethinking neglected search on a million-user enterprise platform', img: '/content/images/search/searcthumb.png' },
+    { n: '04', title: 'Ask Esmeralda', client: 'AI Project', kind: 'AI · Web App', side: true, desc: 'An AI fortune teller', img: '/content/images/esmeralda/esmeraldathumb.jpeg' },
+    { n: '05', title: 'Grooped', client: 'AI Project', kind: 'AI · Game', side: true, desc: 'A weekly word puzzle, built and curated with AI', img: '/content/images/grooped/groopedtile.png' },
+    { n: '06', title: 'On Paper', client: 'AI Project', kind: 'AI · Web App', side: true, desc: 'Compare your CV and match the job description', img: '/content/images/side_projects/op_gallery.jpg' },
+  ];
+  renderVals() {
+    const P = this.projects.map(p => ({ ...p, status: p.side ? 'Live' : 'NDA' }));
+    const { hover, filter } = this.state;
+    const listA = P.map((p, i) => ({ ...p, i })).filter(p => filter === 'all' || (filter === 'side') === p.side)
+      .map(p => ({ ...p, color: p.i === hover ? 'var(--color-accent-600)' : 'var(--color-text)', onEnter: () => this.setState({ hover: p.i, hk: 'a' }) }));
+    const filters = [['all', 'All'], ['client', 'Client work'], ['side', 'AI builds']].map(([k, label]) => ({
+      label, bg: filter === k ? 'var(--color-text)' : 'transparent', fg: filter === k ? 'var(--color-bg)' : 'var(--color-text)',
+      onClick: () => this.setState({ filter: k, hover: P.findIndex(p => k === 'all' || (k === 'side') === p.side) }),
+    }));
+    const spans = [[7, 340], [5, 340], [4, 260], [8, 260], [6, 300], [6, 300]];
+    const order = [0, 1, 3, 2, 4, 5];
+    const colorHover = (this.props.imageHover ?? 'Color on hover') === 'Color on hover';
+    const G = 'grayscale(1) contrast(1.08)';
+    const hv = (p, sec) => { const k = sec + p.n; return { ...p, filter: colorHover && this.state.hk === k ? 'none' : G, onIn: () => this.setState({ hk: k }), onOut: () => this.setState({ hk: null }) }; };
+    const bento = order.map((idx, j) => hv({ ...P[idx], span: spans[j][0], h: spans[j][1] }, 'b'));
+    const { ex, slide } = this.state;
+    const cols = P.map((p, i) => ({ ...p, open: i === ex, closed: i !== ex, flex: i === ex ? '6 1 0' : '1 1 0', numColor: i === ex ? 'var(--color-accent)' : 'var(--color-text)', filter: colorHover && i === ex ? 'none' : G, onIn: () => this.setState({ ex: i }) }));
+    const go = d => () => this.setState(s => ({ slide: (s.slide + d + 6) % 6 }));
+    const cur = { ...hv(P[slide], 'g'), cta: P[slide].side ? 'Open project' : 'Enter code to view' };
+    const strip = P.map((p, i) => ({ ...p, bar: i === slide ? 'var(--color-accent)' : 'transparent', bg: i === slide ? 'var(--color-surface)' : 'transparent', op: i === slide ? 1 : 0.7, onPick: () => this.setState({ slide: i }) }));
+    const lay = [['1 / span 7', 0, '4/3'], ['9 / span 4', 200, '3/4'], ['2 / span 5', 0, '1/1'], ['8 / span 5', 120, '4/3'], ['1 / span 4', 40, '3/4'], ['6 / span 6', 0, '16/10']];
+    const collage = P.map((p, i) => { const h = hv(p, 'k'); return { ...h, col: lay[i][0], mt: lay[i][1], ar: lay[i][2], tc: this.state.hk === 'k' + p.n ? 'var(--color-accent-600)' : 'var(--color-text)' }; });
+    const { wi, wx, wy } = this.state;
+    const wall = P.map((p, i) => ({ ...p, tc: i === wi ? 'var(--color-accent)' : 'var(--color-text)', op: wi < 0 || i === wi ? 1 : 0.35, onIn: () => this.setState({ wi: i }) }));
+    const onWallMove = e => { const r = this.wallRef.current && this.wallRef.current.getBoundingClientRect(); if (!r) return; const s = r.width / this.wallRef.current.offsetWidth || 1; this.setState({ wx: (e.clientX - r.left) / s + 24, wy: (e.clientY - r.top) / s - 140 }); };
+    return {
+      collage, wall, wallRef: this.wallRef, onWallMove, onWallLeave: () => this.setState({ wi: -1 }),
+      wallShow: wi >= 0, wallX: Math.min(wx, 820), wallY: wy, wallP: wi >= 0 ? { ...P[wi], filter: colorHover ? 'none' : G } : P[0],
+      sheet: P.map(p => hv(p, 'd')), cols, cur, strip, prevSlide: go(-1), nextSlide: go(1),
+      listA, filters, countA: String(listA.length).padStart(2, '0'), prev: { ...P[hover], filter: colorHover && this.state.hk === 'a' ? 'none' : G }, bento, leaveA: () => this.setState({ hk: null }),
+      client: P.filter(p => !p.side).map(p => hv(p, 'c')), side: P.filter(p => p.side).map(p => hv(p, 's')),
+      hoverFilter: colorHover ? 'none' : 'grayscale(1) contrast(1.08)',
+    };
+  }
+}
+</script>
+</body>
+</html>
