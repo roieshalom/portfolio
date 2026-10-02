@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Roie Shalom · Senior Product Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page-local accent: magenta ramp overrides the design system's red.
+       Used on this concept only. */
+    :root {
+      --color-accent: #e0198a;
+      --color-accent-100: #fff0f6;
+      --color-accent-200: #ffdcec;
+      --color-accent-300: #ffbedc;
+      --color-accent-400: #ff8cc0;
+      --color-accent-500: #f04a9c;
+      --color-accent-600: #d4157e;
+      --color-accent-700: #a8005f;
+      --color-accent-800: #780545;
+      --color-accent-900: #4a0d2d;
+    }
+    body { margin: 0; background: var(--color-bg); }
+    a { color: inherit; text-decoration: none; }
+
+    .page { max-width: 1280px; margin: 0 auto; background: var(--color-bg); color: var(--color-text); }
+
+    /* Nav */
+    .nav {
+      position: sticky; top: 0; z-index: 5; height: 66px; box-sizing: border-box;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 40px; background: var(--color-bg); border: 0;
+    }
+    .nav-brand { font-weight: 800; font-size: 17px; white-space: nowrap; opacity: 0; transition: opacity .15s; margin: 0; font-family: var(--font-body); }
+    .nav-links { display: flex; gap: 32px; font-size: 15px; }
+    .nav-underline { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--color-divider); opacity: 0; transition: opacity .15s; }
+
+    /* Hero */
+    .hero-name {
+      margin: 64px 40px 48px; font-weight: 800; font-size: min(184px, 14.4vw);
+      line-height: .86; letter-spacing: -0.045em; white-space: nowrap;
+    }
+    .hero-bio { padding: 0 40px 48px; }
+    .hero-bio-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; }
+    .hero-bio-lead { grid-column: span 4; font-weight: 800; font-size: 24px; line-height: 1.2; }
+    .hero-bio-body { grid-column: 6 / span 7; font-size: 22px; line-height: 1.4; text-wrap: pretty; }
+
+    /* Section header bar */
+    .section-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 40px; border-top: 2px solid var(--color-text);
+      border-bottom: 2px solid var(--color-divider);
+    }
+    .section-label { font-weight: 800; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
+    .section-link { font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+    .section-link:hover { color: var(--color-accent-600); }
+
+    /* Filter segmented control */
+    .filter { display: flex; gap: 0; border: 2px solid var(--color-text); }
+    .filter button {
+      font: 600 14px var(--font-body); padding: 8px 16px; border: 0; cursor: pointer;
+      background: transparent; color: var(--color-text); text-align: left;
+    }
+    .filter button[aria-pressed="true"] { background: var(--color-text); color: var(--color-bg); }
+
+    /* Work */
+    .work-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+    .work-list { padding: 0 40px 40px; }
+    .work-row {
+      display: grid; grid-template-columns: 56px minmax(0, 1fr) 150px 24px;
+      align-items: baseline; gap: 16px; padding: 22px 0;
+      border-bottom: 2px solid var(--color-divider); cursor: pointer; color: var(--color-text);
+    }
+    .work-row.is-active { color: var(--color-accent-600); }
+    .work-row-n { font-size: 14px; font-weight: 600; }
+    .work-row-title-wrap { display: flex; flex-direction: column; gap: 4px; }
+    .work-row-title { font-weight: 800; font-size: 38px; line-height: 1.05; letter-spacing: -0.02em; }
+    .work-row-kind { font-size: 15px; color: var(--color-neutral-700); }
+    .work-row-client { font-size: 15px; font-weight: 600; }
+    .work-row svg { display: block; }
+
+    .work-preview { border-left: 2px solid var(--color-divider); padding: 32px 40px 40px; }
+    .work-preview-inner { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .work-preview-img { width: 100%; aspect-ratio: 4 / 3; background: var(--color-surface); }
+    .work-preview-img img {
+      display: block; width: 100%; height: 100%; object-fit: cover;
+      filter: grayscale(1) contrast(1.08); transition: filter .3s;
+    }
+    .work-preview.is-color .work-preview-img img { filter: none; }
+    .work-preview-meta {
+      display: flex; justify-content: space-between; font-size: 13px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+    .work-preview-status { color: var(--color-accent-700); }
+    .work-preview-desc { font-size: 22px; line-height: 1.35; text-wrap: pretty; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+    .about-photo { padding: 32px 40px 40px; border-right: 2px solid var(--color-divider); }
+    .about-photo img {
+      width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+      filter: grayscale(1) contrast(1.08); transition: filter .3s;
+    }
+    .about-photo:hover img { filter: none; }
+    .about-body { padding: 32px 40px 40px; display: flex; flex-direction: column; gap: 24px; }
+    .about-heading { font-weight: 800; font-size: 52px; line-height: 1; letter-spacing: -0.03em; text-wrap: balance; }
+    .about-intro { font-size: 20px; line-height: 1.5; text-wrap: pretty; }
+
+    .exp { display: flex; flex-direction: column; border-top: 2px solid var(--color-text); margin-top: 16px; }
+    .exp-head {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 0; border-bottom: 2px solid var(--color-divider);
+    }
+    .exp-row { padding: 16px 0; border-bottom: 2px solid var(--color-divider); cursor: pointer; }
+    .exp-row:hover { background: var(--color-accent-100); }
+    .exp-row-top { display: grid; grid-template-columns: 110px minmax(0, 1fr) minmax(0, 1fr) 20px; gap: 16px; align-items: baseline; }
+    .exp-years { font-size: 14px; font-weight: 600; color: var(--color-neutral-700); }
+    .exp-position { font-weight: 800; font-size: 19px; }
+    .exp-row.is-open .exp-position { color: var(--color-accent-600); }
+    .exp-company { font-size: 15px; font-weight: 600; }
+    .exp-sign { font-weight: 800; font-size: 18px; line-height: 1; }
+    .exp-desc { padding: 10px 36px 0 126px; font-size: 16px; line-height: 1.5; color: var(--color-neutral-800); text-wrap: pretty; }
+
+    /* Footer */
+    .footer { display: flex; justify-content: space-between; padding: 24px 40px; border-top: 2px solid var(--color-text); font-size: 14px; }
+    .footer-right { font-weight: 600; }
+
+    /* Responsive: stack two-column grids below 900px */
+    @media (max-width: 900px) {
+      .hero-bio-lead { grid-column: 1 / -1; }
+      .hero-bio-body { grid-column: 1 / -1; font-size: 20px; }
+      .work-grid, .about-grid { grid-template-columns: 1fr; }
+      .work-preview { border-left: 0; border-top: 2px solid var(--color-divider); }
+      .about-photo { border-right: 0; border-bottom: 2px solid var(--color-divider); }
+      .work-row-title { font-size: 30px; }
+      .about-heading { font-size: 38px; }
+      .section-bar { flex-wrap: wrap; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <span class="nav-brand" id="navBrand">Roie Shalom</span>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+      </div>
+      <div class="nav-underline" id="navUnderline"></div>
+    </nav>
+
+    <h1 class="hero-name" id="heroName">Roie Shalom</h1>
+    <div class="hero-bio">
+      <div class="hero-bio-grid">
+        <div class="hero-bio-lead">Senior Product Designer based in Berlin.</div>
+        <div class="hero-bio-body">I find the angle others didn't try and the answer that wasn't on the table. I lead openly, validate before I commit, and care as much about the small moments of delight as the high-stakes flows.</div>
+      </div>
+    </div>
+
+    <!-- Selected work -->
+    <section id="work">
+      <div class="section-bar">
+        <span class="section-label">Selected work (<span id="workCount">06</span>)</span>
+        <div class="filter" id="workFilter">
+          <button data-filter="all" aria-pressed="true">All</button>
+          <button data-filter="client" aria-pressed="false">Client work</button>
+          <button data-filter="side" aria-pressed="false">AI builds</button>
+        </div>
+      </div>
+      <div class="work-grid">
+        <div class="work-list" id="workList"></div>
+        <div class="work-preview" id="workPreview">
+          <div class="work-preview-inner">
+            <div class="work-preview-img"><img id="previewImg" src="" alt=""></div>
+            <div class="work-preview-meta">
+              <span id="previewMeta"></span>
+              <span class="work-preview-status" id="previewStatus"></span>
+            </div>
+            <div class="work-preview-desc" id="previewDesc"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-bar">
+        <span class="section-label">About</span>
+        <a class="section-link" href="../../about.html">Full story
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="../../content/images/about/about.png" alt="Roie Shalom">
+        </div>
+        <div class="about-body">
+          <div class="about-heading">I've been watching how people use things since I was a kid</div>
+          <div class="about-intro">That instinct led me to study industrial design, where I learned to think about objects: what role they fill in our lives, what we keep, what we reach for without thinking. Over time, I followed the same curiosity from physical products into digital ones, from hardware interfaces to enterprise software to consumer brands. The medium kept changing. The question never did.</div>
+          <div class="exp">
+            <div class="exp-head">
+              <span class="section-label">Where I've been</span>
+              <a class="btn btn-secondary" href="../../content/downloads/Roie Shalom Senior Product Designer.pdf" download style="height:40px;gap:10px;font-size:14px;padding:0 16px">Download CV
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"></path></svg>
+              </a>
+            </div>
+            <div id="expList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Writing (hidden until there is real content) -->
+
+    <div class="footer">
+      <span>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</span>
+      <span class="footer-right">Berlin · 2026</span>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    // Which projects are featured, in order. Everything else (title, client,
+    // description, thumbnail, case-study link, protected status) is read from
+    // the site's own JSON so this page stays in sync when that data changes.
+    // `kind` overrides the generic "UX" category label for the client work;
+    // AI builds already carry a descriptive category in their JSON.
+    var FEATURED = [
+      { id: 'wayfair',      src: 'ux', kind: 'Product design' },
+      { id: 'EQCapture',    src: 'ux', kind: 'Mobile app' },
+      { id: 'search',       src: 'ux', kind: 'Enterprise UX' },
+      { id: 'askesmeralda', src: 'ai' },
+      { id: 'grooped',      src: 'ai' },
+      { id: 'onpaper',      src: 'ai' }
+    ];
+
+    var ARROW = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"></path></svg>';
+
+    // This page lives at /design/paper/, so the repo root is two levels up.
+    var ROOT = '../../';
+
+    function normThumb(t) {
+      // Thumbnails are stored relative to various pages ("content/…" or
+      // "../content/…"). Re-anchor them to the repo root.
+      if (!t) return '';
+      var i = t.indexOf('content/');
+      return i === -1 ? t : ROOT + t.slice(i);
+    }
+    function cleanTitle(t) {
+      // Drop a leading lock emoji / non-letter marks from the stored title.
+      return (t || '').replace(/^[^\p{L}]+/u, '').trim();
+    }
+
+    var state = { active: 0, filter: 'all', pointerInList: false, openExp: -1 };
+    var projects = []; // resolved display objects, in FEATURED order
+
+    var els = {
+      list: document.getElementById('workList'),
+      count: document.getElementById('workCount'),
+      preview: document.getElementById('workPreview'),
+      previewImg: document.getElementById('previewImg'),
+      previewMeta: document.getElementById('previewMeta'),
+      previewStatus: document.getElementById('previewStatus'),
+      previewDesc: document.getElementById('previewDesc'),
+      filter: document.getElementById('workFilter'),
+      expList: document.getElementById('expList')
+    };
+
+    function visibleProjects() {
+      return projects.filter(function (p) {
+        return state.filter === 'all' || (state.filter === 'side') === p.side;
+      });
+    }
+
+    function renderWork() {
+      var visible = visibleProjects();
+      els.count.textContent = String(visible.length).padStart(2, '0');
+
+      els.list.innerHTML = '';
+      visible.forEach(function (p) {
+        var a = document.createElement('a');
+        a.className = 'work-row' + (p.index === state.active ? ' is-active' : '');
+        a.href = p.page;
+        a.innerHTML =
+          '<span class="work-row-n">' + p.n + '</span>' +
+          '<span class="work-row-title-wrap">' +
+            '<span class="work-row-title">' + p.title + '</span>' +
+            '<span class="work-row-kind">' + p.kind + '</span>' +
+          '</span>' +
+          '<span class="work-row-client">' + p.client + '</span>' +
+          ARROW;
+        a.addEventListener('mouseenter', function () {
+          state.active = p.index;
+          state.pointerInList = true;
+          renderWork();
+          renderPreview();
+        });
+        els.list.appendChild(a);
+      });
+    }
+
+    function renderPreview() {
+      var p = projects[state.active];
+      if (!p) return;
+      els.previewImg.src = p.img;
+      els.previewImg.alt = p.title;
+      els.previewMeta.textContent = p.n + ' / ' + p.client;
+      els.previewStatus.textContent = p.status;
+      els.previewDesc.textContent = p.desc;
+      els.preview.classList.toggle('is-color', state.pointerInList);
+    }
+
+    function renderExperience(exp) {
+      els.expList.innerHTML = '';
+      exp.forEach(function (e, i) {
+        var open = i === state.openExp;
+        var row = document.createElement('div');
+        row.className = 'exp-row' + (open ? ' is-open' : '');
+        row.innerHTML =
+          '<div class="exp-row-top">' +
+            '<span class="exp-years">' + e.years + '</span>' +
+            '<span class="exp-position">' + e.position + '</span>' +
+            '<span class="exp-company">' + e.company + '</span>' +
+            '<span class="exp-sign">' + (open ? '−' : '+') + '</span>' +
+          '</div>' +
+          (open ? '<div class="exp-desc">' + e.description + '</div>' : '');
+        row.addEventListener('click', function () {
+          state.openExp = state.openExp === i ? -1 : i;
+          renderExperience(exp);
+        });
+        els.expList.appendChild(row);
+      });
+    }
+
+    // Filter buttons
+    els.filter.addEventListener('click', function (ev) {
+      var btn = ev.target.closest('button');
+      if (!btn) return;
+      state.filter = btn.getAttribute('data-filter');
+      Array.prototype.forEach.call(els.filter.children, function (b) {
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+      var first = visibleProjects()[0];
+      state.active = first ? first.index : 0;
+      renderWork();
+      renderPreview();
+    });
+
+    // Preview goes gray when the pointer leaves the list
+    els.list.addEventListener('mouseleave', function () {
+      state.pointerInList = false;
+      renderPreview();
+    });
+
+    // Nav fade: the brand and the nav underline fade in over the last 60px
+    // before the big hero name slides fully under the sticky nav.
+    var heroName = document.getElementById('heroName');
+    var navBrand = document.getElementById('navBrand');
+    var navUnderline = document.getElementById('navUnderline');
+    function onScroll() {
+      var end = heroName.offsetTop + heroName.offsetHeight - 66;
+      var o = Math.min(Math.max((window.scrollY - (end - 60)) / 60, 0), 1).toFixed(3);
+      navBrand.style.opacity = o;
+      navUnderline.style.opacity = o;
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    // Load data
+    Promise.all([
+      fetch(ROOT + 'data/projects.json').then(function (r) { return r.json(); }),
+      fetch(ROOT + 'ai/data/projects.json').then(function (r) { return r.json(); }),
+      fetch(ROOT + 'data/experience.json').then(function (r) { return r.json(); })
+    ]).then(function (res) {
+      var ux = res[0], ai = res[1], experience = res[2];
+      function find(src, id) {
+        var arr = src === 'ux' ? ux : ai;
+        return arr.filter(function (x) { return x.id === id; })[0];
+      }
+
+      projects = FEATURED.map(function (cfg, i) {
+        var e = find(cfg.src, cfg.id) || {};
+        var side = cfg.src === 'ai';
+        return {
+          index: i,
+          n: String(i + 1).padStart(2, '0'),
+          title: cleanTitle(e.title_bold),
+          client: e.label || '',
+          kind: cfg.kind || e.category || '',
+          side: side,
+          status: side ? 'Live' : 'NDA',
+          desc: e.gallery_desc || e.shortdesc || '',
+          img: normThumb(e.thumbnail),
+          page: e.page ? ROOT + e.page.replace(/^\//, '') : '#'
+        };
+      });
+
+      var exp = experience.map(function (e) {
+        return {
+          years: (e.years || '').replace(/-/g, '–'),
+          position: e.position || '',
+          company: (e.companies || []).map(function (c) { return c.name; }).join(', '),
+          description: e.description || ''
+        };
+      });
+
+      renderWork();
+      renderPreview();
+      renderExperience(exp);
+      onScroll();
+    });
+  })();
+  </script>
+</body>
+</html>
