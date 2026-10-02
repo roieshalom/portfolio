@@ -1,0 +1,140 @@
+/* casestudy.css — Project page template (option 6b).
+   Restyles the existing cs-* markup used by all six case-study pages.
+   Most of the layout comes from CSS alone: display:contents on .cs-text lets the
+   eyebrow / h2 / body join the .cs-section grid. Only the hero, the meta row
+   and the next-project block need markup changes (see README). */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap');
+
+:root {
+  --cs-bg: #f3f2f2;
+  --cs-ink: #201e1d;
+  --cs-rule: color-mix(in srgb, #201e1d 40%, transparent);
+  --cs-muted: #605d5d;
+  --cs-body2: #444141;
+  --cs-accent: #e0198a;
+  --cs-accent-100: #fff0f6;
+  --cs-accent-600: #d4157e;
+  --cs-accent-700: #a8005f;
+  --cs-pad: 40px;
+  --cs-max: 1280px;
+  --cs-nav-h: 66px;
+  --cs-gray: grayscale(1) contrast(1.08);
+}
+
+body { margin: 0; background: var(--cs-bg); color: var(--cs-ink); font-family: "Archivo", system-ui, sans-serif; counter-reset: ch; }
+body > * { max-width: var(--cs-max); margin-left: auto; margin-right: auto; box-sizing: border-box; }
+a { color: inherit; } a:hover { color: var(--cs-accent-600); }
+:focus-visible { outline: 2px solid var(--cs-accent); outline-offset: 2px; }
+
+/* ---------- Nav ---------- */
+.top-nav { position: sticky; top: 0; z-index: 5; height: var(--cs-nav-h); display: flex; justify-content: space-between; align-items: center; padding: 0 var(--cs-pad); background: var(--cs-bg); border-bottom: 2px solid var(--cs-rule); }
+.top-nav .brand { font-weight: 800; font-size: 17px; white-space: nowrap; text-decoration: none; }
+.top-nav-links { display: flex; gap: 32px; font-size: 15px; }
+.top-nav-links .nav-link { text-decoration: none; }
+.top-nav-links .nav-link.active { color: var(--cs-accent-600); }
+
+/* ---------- Hero: 7:5 split ---------- */
+.cs-hero { display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); background: none !important; position: relative; }
+.cs-hero .cs-inner { grid-column: 1; grid-row: 1; padding: 56px var(--cs-pad) 40px; display: flex; flex-direction: column; justify-content: space-between; gap: 48px; }
+.cs-hero-content { display: contents; }
+.cs-hero-img-wrap { grid-column: 2; grid-row: 1; position: relative !important; inset: auto !important; width: auto !important; border-left: 2px solid var(--cs-rule); min-height: 640px; }
+.cs-hero-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1 !important; filter: var(--cs-gray); transition: filter .3s; }
+.cs-hero-img-wrap:hover img { filter: none; }
+.cs-hero-fade { display: none !important; }
+.cs-hero-eyebrow { font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.cs-hero-eyebrow .cs-hero-index { color: var(--cs-accent-700); margin-right: 16px; }
+.cs-hero-h { margin: 28px 0 0; font-weight: 800; font-size: 68px; line-height: .96; letter-spacing: -0.035em; text-wrap: balance; }
+
+/* Meta: one row per item (markup: <dl class="cs-meta"><div><dt>Role</dt><dd>Sole Designer</dd></div>…</dl>) */
+.cs-meta { margin: 0; border-top: 2px solid var(--cs-ink); }
+.cs-meta > div { display: grid; grid-template-columns: 140px minmax(0,1fr); gap: 16px; padding: 12px 0; border-bottom: 2px solid var(--cs-rule); font-size: 16px; }
+.cs-meta dt { font-weight: 600; color: var(--cs-muted); }
+.cs-meta dd { margin: 0; font-weight: 800; }
+
+/* ---------- Role bar: 3 equal cells ---------- */
+.cs-role-bar { border-top: 2px solid var(--cs-ink); background: none; }
+.cs-role-bar .cs-inner { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); }
+.cs-role-bar .cs-inner > div { padding: 24px var(--cs-pad) 28px; border-right: 2px solid var(--cs-rule); display: flex; flex-direction: column; gap: 8px; }
+.cs-role-bar .cs-inner > div:last-child { border-right: 0; }
+.cs-role-col-label { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.cs-role-col-val { font-size: 18px; line-height: 1.45; }
+
+/* ---------- Chapters ---------- */
+/* row-gap is 0 on purpose: the sticky .cs-h2 spans many rows (grid-row: 2 / span 60)
+   so it can stay pinned, and a non-zero row-gap would add a gap to every one of the
+   empty spanned rows, leaving a huge blank tail under each chapter. Vertical rhythm
+   in the right column comes from the bottom margins below instead. */
+.cs-section, .cs-reflection { display: grid; grid-template-columns: minmax(0,4fr) minmax(0,8fr); column-gap: 40px; row-gap: 0; padding: 0 var(--cs-pad) 64px; border-top: 2px solid var(--cs-ink); background: none; align-items: start; }
+.cs-reflection .cs-inner, .cs-text, .cs-decision-card { display: contents; }
+.cs-section > *, .cs-reflection > *, .cs-text > *, .cs-reflection .cs-inner > * { grid-column: 2; }
+/* sections without an eyebrow (e.g. the intro context) */
+.cs-section:not(:has(.cs-eyebrow)) { padding-top: 40px; }
+
+/* Header bar: full width, auto-numbered */
+.cs-eyebrow { grid-column: 1 / -1 !important; grid-row: 1; display: block; margin: 0 calc(var(--cs-pad) * -1) 16px; padding: 16px var(--cs-pad); border-bottom: 2px solid var(--cs-rule); font-weight: 800; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; counter-increment: ch; }
+.cs-eyebrow::before { content: counter(ch, decimal-leading-zero) "\00a0\00a0"; color: var(--cs-accent-700); }
+
+/* Chapter title: pinned in the left 4 columns */
+.cs-h2 { grid-column: 1 !important; grid-row: 2 / span 60; position: sticky; top: calc(var(--cs-nav-h) + 24px); margin: 0; font-weight: 800; font-size: 40px; line-height: 1.02; letter-spacing: -0.025em; text-wrap: balance; }
+
+.cs-p { margin: 0 0 24px; max-width: 700px; font-size: 19px; line-height: 1.6; text-wrap: pretty; }
+.cs-pullquote { margin: 0 0 24px; padding: 20px 0; border-top: 2px solid var(--cs-ink); border-bottom: 2px solid var(--cs-ink); font-weight: 800; font-size: 34px; line-height: 1.1; letter-spacing: -0.02em; font-style: normal; max-width: none !important; }
+.cs-caption { margin: 10px 0 24px; font-size: 14px; line-height: 1.45; color: var(--cs-muted); font-style: normal; text-align: left !important; }
+
+/* Images */
+.cs-img-wrap { margin: 8px 0 24px; }
+.cs-img { display: block; width: 100%; border-radius: 0; }
+.cs-img-2col { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin: 8px 0 24px; }
+.cs-img-2col .img-box { position: relative; height: 380px; }
+.cs-img-2col .img-box img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* Photographs print black and white, color on hover. UI shots / wireframes / diagrams stay in color.
+   Tag photo <img>s with class="cs-photo" (and the 2-col field shots via .cs-img-2col). */
+.cs-photo, .cs-img-2col img { filter: var(--cs-gray); transition: filter .3s; }
+.cs-photo:hover, .cs-img-2col img:hover { filter: none; }
+
+/* Key decisions */
+.cs-decision-block { grid-column: 2; display: flex; flex-direction: column; gap: 18px; padding: 24px 0 8px; border-top: 2px solid var(--cs-rule); }
+.cs-decision-block .cs-decision-card { display: flex; flex-direction: column; gap: 18px; }
+.cs-decision-card > * { grid-column: auto; }
+.cs-decision-num { display: inline; font-weight: 800; font-size: 22px; color: var(--cs-accent); }
+.cs-decision-title { margin: -8px 0 0; font-weight: 800; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em; }
+
+/* ---------- Impact: the one magenta band ---------- */
+.cs-impact { counter-increment: ch; background: var(--cs-accent-600) !important; color: #fff; padding: 56px var(--cs-pad) 64px; border-top: 2px solid var(--cs-ink); }
+.cs-impact .cs-inner { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)) !important; gap: 40px; }
+.cs-impact .cs-inner > div { padding-top: 20px; border-top: 2px solid #fff; display: flex; flex-direction: column; gap: 14px; }
+.cs-impact-num { font-weight: 800; font-size: 96px; line-height: .85; letter-spacing: -0.05em; color: #fff !important; }
+.cs-impact-label { font-size: 17px; line-height: 1.45; }
+.cs-impact-label strong { display: block; font-size: 19px; font-weight: 800; margin-bottom: 8px; }
+
+/* ---------- Next project + back ---------- */
+.cs-next { display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); border-top: 2px solid var(--cs-ink); text-decoration: none; }
+.cs-next:hover { background: var(--cs-accent-100); color: inherit; }
+.cs-next-text { padding: var(--cs-pad); display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+.cs-next-kicker { font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.cs-next-title { font-weight: 800; font-size: 72px; line-height: .95; letter-spacing: -0.035em; }
+.cs-next-img { border-left: 2px solid var(--cs-rule); padding: 32px var(--cs-pad); }
+.cs-next-img img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; filter: var(--cs-gray); transition: filter .3s; }
+.cs-next:hover .cs-next-img img { filter: none; }
+.cs-back-wrap { padding: 24px var(--cs-pad); border-top: 2px solid var(--cs-rule); }
+.cs-back-link { font-size: 15px; font-weight: 600; text-decoration: none; }
+
+footer { display: flex; justify-content: space-between; padding: 24px var(--cs-pad); border-top: 2px solid var(--cs-ink); font-size: 14px; }
+
+/* ---------- Mobile (not designed yet; sensible stack) ---------- */
+@media (max-width: 900px) {
+  :root { --cs-pad: 20px; }
+  .cs-hero, .cs-next { grid-template-columns: 1fr; }
+  .cs-hero-img-wrap { grid-column: 1; grid-row: 2; min-height: 320px; border-left: 0; border-top: 2px solid var(--cs-rule); }
+  .cs-hero-h { font-size: 40px; }
+  .cs-role-bar .cs-inner, .cs-impact .cs-inner { grid-template-columns: 1fr !important; }
+  .cs-role-bar .cs-inner > div { border-right: 0; border-bottom: 2px solid var(--cs-rule); }
+  .cs-section, .cs-reflection { grid-template-columns: 1fr; }
+  .cs-section > *, .cs-reflection > *, .cs-text > *, .cs-reflection .cs-inner > *, .cs-decision-block { grid-column: 1; }
+  .cs-h2 { grid-column: 1 !important; grid-row: auto; position: static; font-size: 30px; }
+  .cs-img-2col { grid-template-columns: 1fr; }
+  .cs-impact-num { font-size: 64px; }
+  .cs-next-title { font-size: 44px; }
+  .cs-next-img { border-left: 0; border-top: 2px solid var(--cs-rule); }
+}
