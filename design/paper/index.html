@@ -287,15 +287,19 @@
       });
     }
 
-    function renderWork() {
+    // Build the rows for the current filter. Only called on load and when the
+    // filter changes, never on hover: rebuilding the DOM under a stationary
+    // cursor re-fires mouseenter and fights the preview crossfade.
+    function buildWork() {
       var visible = visibleProjects();
       els.count.textContent = String(visible.length).padStart(2, '0');
 
       els.list.innerHTML = '';
       visible.forEach(function (p) {
         var a = document.createElement('a');
-        a.className = 'work-row' + (p.index === state.active ? ' is-active' : '');
+        a.className = 'work-row';
         a.href = p.page;
+        a.dataset.index = p.index;
         a.innerHTML =
           '<span class="work-row-n">' + p.n + '</span>' +
           '<span class="work-row-title-wrap">' +
@@ -307,10 +311,18 @@
         a.addEventListener('mouseenter', function () {
           state.active = p.index;
           state.pointerInList = true;
-          renderWork();
+          setActiveRow();
           renderPreview(true);
         });
         els.list.appendChild(a);
+      });
+      setActiveRow();
+    }
+
+    // Flip the active highlight without touching the rest of the DOM.
+    function setActiveRow() {
+      Array.prototype.forEach.call(els.list.children, function (a) {
+        a.classList.toggle('is-active', Number(a.dataset.index) === state.active);
       });
     }
 
@@ -346,11 +358,11 @@
       pre.onload = pre.onerror = function () {
         if (my !== previewToken) return;
         apply();
-        requestAnimationFrame(function () {
-          if (my !== previewToken) return;
-          els.previewImg.style.opacity = 1;
-          els.previewText.style.opacity = 1;
-        });
+        // Force a reflow so the opacity transition runs from 0 -> 1. (A
+        // requestAnimationFrame here would stall while the tab is hidden.)
+        void els.previewImg.offsetWidth;
+        els.previewImg.style.opacity = 1;
+        els.previewText.style.opacity = 1;
       };
       pre.src = p.img;
     }
@@ -390,7 +402,7 @@
       });
       var first = visibleProjects()[0];
       state.active = first ? first.index : 0;
-      renderWork();
+      buildWork();
       renderPreview(true);
     });
 
@@ -452,7 +464,7 @@
         };
       });
 
-      renderWork();
+      buildWork();
       renderPreview(false);
       buildExperience(exp);
       onScroll();
