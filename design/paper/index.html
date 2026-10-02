@@ -22,8 +22,11 @@
       --color-accent-800: #780545;
       --color-accent-900: #4a0d2d;
     }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body { margin: 0; background: var(--color-bg); }
     a { color: inherit; text-decoration: none; }
+    #work, #about { scroll-margin-top: 66px; }
 
     .page { max-width: 1280px; margin: 0 auto; background: var(--color-bg); color: var(--color-text); }
 
@@ -86,9 +89,10 @@
     .work-preview-img { width: 100%; aspect-ratio: 4 / 3; background: var(--color-surface); }
     .work-preview-img img {
       display: block; width: 100%; height: 100%; object-fit: cover;
-      filter: grayscale(1) contrast(1.08); transition: filter .3s;
+      filter: grayscale(1) contrast(1.08); transition: filter .3s, opacity .3s ease;
     }
     .work-preview.is-color .work-preview-img img { filter: none; }
+    .work-preview-text { transition: opacity .3s ease; }
     .work-preview-meta {
       display: flex; justify-content: space-between; font-size: 13px; font-weight: 600;
       letter-spacing: .08em; text-transform: uppercase;
@@ -121,7 +125,13 @@
     .exp-row.is-open .exp-position { color: var(--color-accent-600); }
     .exp-company { font-size: 15px; font-weight: 600; }
     .exp-sign { font-weight: 800; font-size: 18px; line-height: 1; }
-    .exp-desc { padding: 10px 36px 0 126px; font-size: 16px; line-height: 1.5; color: var(--color-neutral-800); text-wrap: pretty; }
+    .exp-sign::before { content: '+'; }
+    .exp-row.is-open .exp-sign::before { content: '\2212'; }
+    .exp-collapse { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
+    .exp-row.is-open .exp-collapse { grid-template-rows: 1fr; }
+    .exp-collapse > div { overflow: hidden; }
+    .exp-desc { padding: 10px 36px 0 126px; font-size: 16px; line-height: 1.5; color: var(--color-neutral-800); text-wrap: pretty; opacity: 0; transition: opacity .35s ease; }
+    .exp-row.is-open .exp-desc { opacity: 1; }
 
     /* Footer */
     .footer { display: flex; justify-content: space-between; padding: 24px 40px; border-top: 2px solid var(--color-text); font-size: 14px; }
@@ -174,11 +184,13 @@
         <div class="work-preview" id="workPreview">
           <div class="work-preview-inner">
             <div class="work-preview-img"><img id="previewImg" src="" alt=""></div>
-            <div class="work-preview-meta">
-              <span id="previewMeta"></span>
-              <span class="work-preview-status" id="previewStatus"></span>
+            <div class="work-preview-text" id="previewText">
+              <div class="work-preview-meta">
+                <span id="previewMeta"></span>
+                <span class="work-preview-status" id="previewStatus"></span>
+              </div>
+              <div class="work-preview-desc" id="previewDesc"></div>
             </div>
-            <div class="work-preview-desc" id="previewDesc"></div>
           </div>
         </div>
       </div>
@@ -261,6 +273,7 @@
       count: document.getElementById('workCount'),
       preview: document.getElementById('workPreview'),
       previewImg: document.getElementById('previewImg'),
+      previewText: document.getElementById('previewText'),
       previewMeta: document.getElementById('previewMeta'),
       previewStatus: document.getElementById('previewStatus'),
       previewDesc: document.getElementById('previewDesc'),
@@ -295,40 +308,73 @@
           state.active = p.index;
           state.pointerInList = true;
           renderWork();
-          renderPreview();
+          renderPreview(true);
         });
         els.list.appendChild(a);
       });
     }
 
-    function renderPreview() {
+    var previewToken = 0;
+    function renderPreview(animate) {
       var p = projects[state.active];
       if (!p) return;
-      els.previewImg.src = p.img;
-      els.previewImg.alt = p.title;
-      els.previewMeta.textContent = p.n + ' / ' + p.client;
-      els.previewStatus.textContent = p.status;
-      els.previewDesc.textContent = p.desc;
       els.preview.classList.toggle('is-color', state.pointerInList);
+
+      function apply() {
+        els.previewImg.src = p.img;
+        els.previewImg.alt = p.title;
+        els.previewMeta.textContent = p.n + ' / ' + p.client;
+        els.previewStatus.textContent = p.status;
+        els.previewDesc.textContent = p.desc;
+      }
+
+      // No crossfade on first paint or when only the grayscale state changes.
+      if (!animate) {
+        apply();
+        els.previewImg.style.opacity = 1;
+        els.previewText.style.opacity = 1;
+        return;
+      }
+
+      // Crossfade: fade out, preload the next image so it paints with no empty
+      // flash, then swap content and fade back in. A token keeps a fast sweep
+      // across rows from flickering, only the last change settles.
+      var my = ++previewToken;
+      els.previewImg.style.opacity = 0;
+      els.previewText.style.opacity = 0;
+      var pre = new Image();
+      pre.onload = pre.onerror = function () {
+        if (my !== previewToken) return;
+        apply();
+        requestAnimationFrame(function () {
+          if (my !== previewToken) return;
+          els.previewImg.style.opacity = 1;
+          els.previewText.style.opacity = 1;
+        });
+      };
+      pre.src = p.img;
     }
 
-    function renderExperience(exp) {
+    // Built once. Toggling a row only flips classes, so the height and the
+    // description opacity can animate via CSS instead of popping in and out.
+    function buildExperience(exp) {
       els.expList.innerHTML = '';
       exp.forEach(function (e, i) {
-        var open = i === state.openExp;
         var row = document.createElement('div');
-        row.className = 'exp-row' + (open ? ' is-open' : '');
+        row.className = 'exp-row';
         row.innerHTML =
           '<div class="exp-row-top">' +
             '<span class="exp-years">' + e.years + '</span>' +
             '<span class="exp-position">' + e.position + '</span>' +
             '<span class="exp-company">' + e.company + '</span>' +
-            '<span class="exp-sign">' + (open ? '−' : '+') + '</span>' +
+            '<span class="exp-sign"></span>' +
           '</div>' +
-          (open ? '<div class="exp-desc">' + e.description + '</div>' : '');
+          '<div class="exp-collapse"><div><div class="exp-desc">' + e.description + '</div></div></div>';
         row.addEventListener('click', function () {
           state.openExp = state.openExp === i ? -1 : i;
-          renderExperience(exp);
+          Array.prototype.forEach.call(els.expList.children, function (r, idx) {
+            r.classList.toggle('is-open', idx === state.openExp);
+          });
         });
         els.expList.appendChild(row);
       });
@@ -345,13 +391,13 @@
       var first = visibleProjects()[0];
       state.active = first ? first.index : 0;
       renderWork();
-      renderPreview();
+      renderPreview(true);
     });
 
     // Preview goes gray when the pointer leaves the list
     els.list.addEventListener('mouseleave', function () {
       state.pointerInList = false;
-      renderPreview();
+      renderPreview(false);
     });
 
     // Nav fade: the brand and the nav underline fade in over the last 60px
@@ -407,8 +453,8 @@
       });
 
       renderWork();
-      renderPreview();
-      renderExperience(exp);
+      renderPreview(false);
+      buildExperience(exp);
       onScroll();
     });
   })();
