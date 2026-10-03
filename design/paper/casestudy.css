@@ -42,8 +42,7 @@ html { scroll-behavior: smooth; }
 .cs-hero .cs-inner { grid-column: 1; grid-row: 1; padding: 56px var(--cs-pad) 40px; display: flex; flex-direction: column; justify-content: space-between; gap: 48px; }
 .cs-hero-content { display: contents; }
 .cs-hero-img-wrap { grid-column: 2; grid-row: 1; position: relative !important; inset: auto !important; width: auto !important; border-left: 2px solid var(--cs-rule); min-height: 640px; }
-.cs-hero-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1 !important; filter: var(--cs-gray); transition: filter .3s; }
-.cs-hero-img-wrap:hover img { filter: none; }
+.cs-hero-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1 !important; }
 .cs-hero-fade { display: none !important; }
 .cs-hero-eyebrow { font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
 .cs-hero-eyebrow .cs-hero-index { color: var(--cs-accent-700); margin-right: 16px; }
@@ -103,10 +102,9 @@ html { scroll-behavior: smooth; }
 .cs-img-2col { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin: 8px 0 24px; }
 .cs-img-2col .img-box { position: relative; height: 380px; }
 .cs-img-2col .img-box img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-/* Photographs print black and white, color on hover. UI shots / wireframes / diagrams stay in color.
-   Tag photo <img>s with class="cs-photo" (and the 2-col field shots via .cs-img-2col). */
-.cs-photo, .cs-img-2col img { filter: var(--cs-gray); transition: filter .3s; }
-.cs-photo:hover, .cs-img-2col img:hover { filter: none; }
+/* All images keep their original color on case-study pages (no grayscale,
+   no hover-to-color). The .cs-photo class is now a no-op, kept so markup
+   doesn't need changing. */
 
 /* Key decisions */
 .cs-decision-block { grid-column: 2; display: flex; flex-direction: column; gap: 18px; padding: 24px 0 8px; border-top: 2px solid var(--cs-rule); }
@@ -129,24 +127,27 @@ html { scroll-behavior: smooth; }
 .cs-impact-note { font-size: 16px; line-height: 1.45; }
 .cs-impact-measure { margin: 0; padding-top: 16px; border-top: 2px solid rgba(255,255,255,.5); font-size: 14px; line-height: 1.45; }
 
-/* ---------- Next project + back ---------- */
-.cs-next { display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); border-top: 2px solid var(--cs-ink); text-decoration: none; }
-.cs-next:hover { background: var(--cs-accent-100); color: inherit; }
-.cs-next-text { padding: var(--cs-pad); display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
-.cs-next-kicker { font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-.cs-next-title { font-weight: 800; font-size: 72px; line-height: .95; letter-spacing: -0.035em; }
-.cs-next-img { border-left: 2px solid var(--cs-rule); padding: 32px var(--cs-pad); }
-.cs-next-img img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; filter: var(--cs-gray); transition: filter .3s; }
-.cs-next:hover .cs-next-img img { filter: none; }
-.cs-back-wrap { padding: 24px var(--cs-pad); border-top: 2px solid var(--cs-rule); }
-.cs-back-link { font-size: 15px; font-weight: 600; text-decoration: none; }
+/* ---------- Page end: All work (left) + next project (right) ---------- */
+.cs-end { display: grid; grid-template-columns: minmax(0,4fr) minmax(0,8fr); min-height: 200px; border-top: 2px solid var(--cs-ink); }
+.cs-end-back { display: flex; align-items: center; gap: 8px; padding: 0 var(--cs-pad); border-right: 2px solid var(--cs-rule); font-size: 15px; font-weight: 600; text-decoration: none; }
+.cs-end-back svg { display: block; }
 
-footer { display: flex; justify-content: space-between; padding: 24px var(--cs-pad); border-top: 2px solid var(--cs-ink); font-size: 14px; }
+.cs-next { display: grid; grid-template-columns: minmax(0,1fr) auto; text-decoration: none; }
+.cs-next:hover { background: var(--cs-accent-100); color: inherit; }
+.cs-next-text { padding: 28px var(--cs-pad); display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.cs-next-head { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: -0.02em; }
+.cs-next-head svg { display: block; width: 30px; height: 30px; }
+.cs-next-name { font-weight: 800; font-size: 22px; line-height: 1.1; letter-spacing: -0.01em; }
+.cs-next-co { font-size: 14px; font-weight: 600; color: var(--cs-muted); }
+.cs-next-img { width: 260px; border-left: 2px solid var(--cs-rule); }
+.cs-next-img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+footer { display: flex; justify-content: flex-end; padding: 24px var(--cs-pad); border-top: 2px solid var(--cs-ink); font-size: 14px; }
 
 /* ---------- Mobile (not designed yet; sensible stack) ---------- */
 @media (max-width: 900px) {
   :root { --cs-pad: 20px; }
-  .cs-hero, .cs-next { grid-template-columns: 1fr; }
+  .cs-hero { grid-template-columns: 1fr; }
   .cs-hero-img-wrap { grid-column: 1; grid-row: 2; min-height: 320px; border-left: 0; border-top: 2px solid var(--cs-rule); }
   .cs-hero-h { font-size: 40px; }
   .cs-short-cols, .cs-impact-cols { grid-template-columns: 1fr; }
@@ -158,6 +159,8 @@ footer { display: flex; justify-content: space-between; padding: 24px var(--cs-p
   .cs-h2 { font-size: 30px; }
   .cs-img-2col { grid-template-columns: 1fr; }
   .cs-impact-to { font-size: 56px; }
-  .cs-next-title { font-size: 44px; }
-  .cs-next-img { border-left: 0; border-top: 2px solid var(--cs-rule); }
+  .cs-end { grid-template-columns: 1fr; }
+  .cs-end-back { border-right: 0; border-bottom: 2px solid var(--cs-rule); padding: 20px var(--cs-pad); }
+  .cs-next-head { font-size: 26px; }
+  .cs-next-img { width: 120px; }
 }
