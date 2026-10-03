@@ -118,14 +118,14 @@ html { scroll-behavior: smooth; }
 .cs-result > span:last-child { font-weight: 800; font-size: 19px; line-height: 1.35; }
 
 /* ---------- The outcome: magenta band inside the In short block ---------- */
-.cs-outcome { background: var(--cs-accent-600); color: #fff; padding: 48px var(--cs-pad) 40px; border-top: 2px solid var(--cs-ink); display: flex; flex-direction: column; gap: 32px; }
-.cs-outcome-cols { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 40px; }
-.cs-outcome-cols > div { padding-top: 20px; border-top: 2px solid #fff; display: flex; flex-direction: column; gap: 14px; }
-.cs-outcome-from { font-weight: 600; font-size: 20px; text-decoration: line-through; text-decoration-thickness: 2px; }
-.cs-outcome-to { font-weight: 800; font-size: 80px; line-height: .85; letter-spacing: -0.05em; }
-.cs-outcome-lbl { font-weight: 800; font-size: 19px; }
-.cs-outcome-note { font-size: 16px; line-height: 1.45; }
-.cs-outcome-measure { margin: 0; padding-top: 16px; border-top: 2px solid rgba(255,255,255,.5); font-size: 14px; line-height: 1.45; }
+.cs-metrics { background: var(--cs-accent-600); color: #fff; padding: 48px var(--cs-pad) 40px; border-top: 2px solid var(--cs-ink); display: flex; flex-direction: column; gap: 32px; }
+.cs-metrics-cols { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 40px; }
+.cs-metrics-cols > div { padding-top: 20px; border-top: 2px solid #fff; display: flex; flex-direction: column; gap: 14px; }
+.cs-metrics-from { font-weight: 600; font-size: 20px; text-decoration: line-through; text-decoration-thickness: 2px; }
+.cs-metrics-to { font-weight: 800; font-size: 80px; line-height: .85; letter-spacing: -0.05em; }
+.cs-metrics-lbl { font-weight: 800; font-size: 19px; }
+.cs-metrics-note { font-size: 16px; line-height: 1.45; }
+.cs-metrics-measure { margin: 0; padding-top: 16px; border-top: 2px solid rgba(255,255,255,.5); font-size: 14px; line-height: 1.45; }
 
 /* ---------- Page end: All work (left) + next project (right) ---------- */
 .cs-end { display: grid; grid-template-columns: minmax(0,4fr) minmax(0,8fr); min-height: 200px; border-top: 2px solid var(--cs-ink); }
@@ -150,7 +150,7 @@ footer { display: flex; justify-content: flex-end; padding: 24px var(--cs-pad); 
   .cs-hero { grid-template-columns: 1fr; }
   .cs-hero-img-wrap { grid-column: 1; grid-row: 2; min-height: 320px; border-left: 0; border-top: 2px solid var(--cs-rule); }
   .cs-hero-h { font-size: 40px; }
-  .cs-short-cols, .cs-outcome-cols { grid-template-columns: 1fr; }
+  .cs-short-cols, .cs-metrics-cols { grid-template-columns: 1fr; }
   .cs-short-col { border-right: 0; border-bottom: 2px solid var(--cs-rule); }
   .cs-short-col:last-child { border-bottom: 0; }
   .cs-section, .cs-reflection { grid-template-columns: 1fr; }
@@ -158,7 +158,7 @@ footer { display: flex; justify-content: flex-end; padding: 24px var(--cs-pad); 
   .cs-pin { grid-column: 1 !important; grid-row: auto; position: static; }
   .cs-h2 { font-size: 30px; }
   .cs-img-2col { grid-template-columns: 1fr; }
-  .cs-outcome-to { font-size: 56px; }
+  .cs-metrics-to { font-size: 56px; }
   .cs-end { grid-template-columns: 1fr; }
   .cs-end-back { border-right: 0; border-bottom: 2px solid var(--cs-rule); padding: 20px var(--cs-pad); }
   .cs-next-head { font-size: 26px; }
@@ -175,7 +175,7 @@ footer { display: flex; justify-content: flex-end; padding: 24px var(--cs-pad); 
 .cs-role-col-val { font-size: 18px; line-height: 1.45; }
 
 /* Impact chapter band (full-width magenta) — used by wayfair */
-.cs-impact { counter-increment: ch; background: var(--cs-accent-600); color: #fff; padding: 56px var(--cs-pad) 64px; border-top: 2px solid var(--cs-ink); }
+.cs-impact { background: var(--cs-accent-600); color: #fff; padding: 56px var(--cs-pad) 64px; border-top: 2px solid var(--cs-ink); }
 .cs-impact .cs-inner { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 40px; }
 .cs-impact .cs-inner > div { padding-top: 20px; border-top: 2px solid #fff; display: flex; flex-direction: column; gap: 14px; }
 .cs-impact-num { font-weight: 800; font-size: 72px; line-height: .85; letter-spacing: -0.04em; color: #fff; }
@@ -191,3 +191,10 @@ footer { display: flex; justify-content: flex-end; padding: 24px var(--cs-pad); 
   .cs-role-bar .cs-inner > div { border-right: 0; border-bottom: 2px solid var(--cs-rule); }
   .cs-impact-num { font-size: 56px; }
 }
+
+/* Multi-image galleries (e.g. .cs-pattern-grid) stay compact so a cluster of
+   images never exceeds the screen. */
+.cs-pattern-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin: 8px 0 24px; }
+.cs-pattern-grid figure { margin: 0; }
+.cs-pattern-grid img { display: block; width: 100%; height: auto; }
+.cs-pattern-grid figcaption { margin-top: 6px; font-size: 13px; line-height: 1.4; color: var(--cs-muted); }
