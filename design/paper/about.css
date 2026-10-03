@@ -1,0 +1,71 @@
+/* about.css — About page styles, layered on top of casestudy.css (template 6b).
+   Reuses the case-study tokens (--cs-*) and classes; everything here is the
+   About-only additions. */
+
+/* Hero eyebrow ("ABOUT") */
+.about-eyebrow { font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--cs-accent-700); }
+
+/* The portrait keeps the grayscale-to-color hover (case-study photos are now
+   color-always, so re-enable it here for the About page only). */
+.cs-hero-img-wrap img { filter: var(--cs-gray); transition: filter .3s; }
+.cs-hero-img-wrap:hover img { filter: none; }
+
+/* CV row (hero + end of experience): line of text + primary button */
+.about-cv { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.about-cv p { margin: 0; font-size: 16px; }
+.about-btn { display: inline-flex; align-items: center; justify-content: flex-start; gap: 10px; height: 44px; padding: 0 18px; background: var(--cs-accent); color: #fff; font-weight: 800; font-size: 14px; text-decoration: none; border: 0; border-radius: 0; white-space: nowrap; }
+.about-btn:hover { background: var(--cs-accent-600); color: #fff; }
+.about-btn svg { display: block; }
+
+/* Pull quote reads in accent on the About page */
+.cs-pullquote { color: var(--cs-accent-700); }
+
+/* Case-study link row (chapter 02) */
+.about-caselink { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 700px; padding: 16px 0; border-top: 2px solid var(--cs-ink); border-bottom: 2px solid var(--cs-rule); font-size: 19px; text-decoration: none; }
+.about-caselink strong { font-weight: 800; }
+.about-caselink:hover { color: var(--cs-accent-600); }
+.about-caselink svg { display: block; flex: none; }
+
+/* Experience header bar: year range pinned to the right of the counter label */
+.cs-eyebrow { position: relative; }
+.about-years { position: absolute; right: var(--cs-pad); top: 16px; font-weight: 600; font-size: 14px; color: var(--cs-muted); letter-spacing: 0; text-transform: none; }
+
+/* Experience accordion (right column of chapter 05) */
+.about-exp { grid-column: 2; border-top: 2px solid var(--cs-ink); }
+.about-exp-row { border-bottom: 2px solid var(--cs-rule); }
+.about-exp-row:hover { background: var(--cs-accent-100); }
+.about-exp-btn { display: block; width: 100%; padding: 20px 0; margin: 0; background: none; border: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+.about-exp-top { display: grid; grid-template-columns: 120px 1fr 24px; gap: 16px; align-items: baseline; }
+.about-exp-years { font-size: 14px; font-weight: 600; color: var(--cs-muted); }
+.about-exp-mid { display: flex; flex-direction: column; }
+.about-exp-pos { font-weight: 800; font-size: 26px; line-height: 1.1; letter-spacing: -0.015em; }
+.about-exp-co { font-weight: 600; font-size: 16px; margin-top: 4px; }
+.about-exp-sign { font-weight: 800; font-size: 22px; line-height: 1; justify-self: end; }
+.about-exp-row.is-open .about-exp-pos { color: var(--cs-accent-600); }
+.about-exp-detail { display: none; padding: 0 var(--cs-pad) 20px 136px; flex-direction: column; gap: 14px; }
+.about-exp-row.is-open .about-exp-detail { display: flex; }
+.about-exp-desc { margin: 0; font-size: 17px; line-height: 1.55; color: var(--cs-body2); }
+.about-exp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.about-tag { border: 1.5px solid var(--cs-ink); font-weight: 600; font-size: 12px; padding: 4px 10px; white-space: nowrap; }
+
+.about-exp-cv { grid-column: 2; padding-top: 24px; }
+
+/* Selected work link row (7:5, old next-project pattern) */
+.about-work { display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); border-top: 2px solid var(--cs-ink); text-decoration: none; }
+.about-work:hover { background: var(--cs-accent-100); color: inherit; }
+.about-work-text { padding: var(--cs-pad); display: flex; flex-direction: column; gap: 24px; }
+.about-work-kicker { font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.about-work-title { font-weight: 800; font-size: 72px; line-height: .95; letter-spacing: -0.035em; }
+.about-work-desc { border-left: 2px solid var(--cs-rule); padding: var(--cs-pad); display: flex; align-items: flex-end; font-size: 17px; line-height: 1.5; }
+
+/* Mobile */
+@media (max-width: 900px) {
+  .cs-hero-img-wrap { min-height: 360px; }
+  .about-cv { flex-direction: column; align-items: stretch; }
+  .about-btn { width: 100%; justify-content: center; }
+  .about-years { position: static; display: block; margin-top: 6px; }
+  .about-exp-detail { padding-left: 0; padding-right: 0; }
+  .about-work { grid-template-columns: 1fr; }
+  .about-work-title { font-size: 44px; }
+  .about-work-desc { border-left: 0; border-top: 2px solid var(--cs-rule); }
+}
