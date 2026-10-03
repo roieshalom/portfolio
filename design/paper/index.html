@@ -239,9 +239,11 @@
     // the site's own JSON so this page stays in sync when that data changes.
     // `kind` overrides the generic "UX" category label for the client work;
     // AI builds already carry a descriptive category in their JSON.
+    // `staged` points a row at its redesigned page here under /design/paper/
+    // instead of the live root page (added per page as they're built).
     var FEATURED = [
       { id: 'wayfair',      src: 'ux', kind: 'Product design' },
-      { id: 'EQCapture',    src: 'ux', kind: 'Mobile app' },
+      { id: 'EQCapture',    src: 'ux', kind: 'Mobile app', staged: 'eqcapture' },
       { id: 'search',       src: 'ux', kind: 'Enterprise UX' },
       { id: 'askesmeralda', src: 'ai' },
       { id: 'grooped',      src: 'ai' },
@@ -451,7 +453,7 @@
           status: side ? 'Live' : 'NDA',
           desc: e.gallery_desc || e.shortdesc || '',
           img: normThumb(e.thumbnail),
-          page: e.page ? ROOT + e.page.replace(/^\//, '') : '#'
+          page: cfg.staged ? cfg.staged : (e.page ? ROOT + e.page.replace(/^\//, '') : '#')
         };
       });
 
