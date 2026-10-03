@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Redesign · Roie Shalom</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
+  <script>
+    /* Force light mode — never apply dark theme on this page */
+    document.documentElement.removeAttribute('data-theme');
+    document.documentElement.style.colorScheme = 'light';
+  </script>
+  <style>
+    /* Lock light-mode tokens regardless of OS preference */
+    :root {
+      --color-bg: #fafafa !important;
+      --color-text-main: #404040 !important;
+      --color-text: #555 !important;
+      --color-card: #fff !important;
+      --color-grey-light: #f2f2f2 !important;
+      --color-border: #e6e6e6 !important;
+    }
+
+    /* ---- Search: hero (no image, radial gradient overlay) ---- */
+    
+    
+
+    /* ---- Assumption cards ---- */
+    .cs-card {
+      background: var(--color-grey-light);
+      border-radius: var(--radius-card);
+      padding: 24px 28px 28px;
+    }
+    .cs-card-title {
+      font-size: 1.0rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin: 0 0 10px;
+    }
+    .cs-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 28px 0;
+    }
+    @media (max-width: 600px) {
+      .cs-cards-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---- Pattern grid: search adds shadow + zoom ---- */
+    .cs-pattern-grid img {
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      cursor: zoom-in;
+    }
+
+    /* ---- Outcome section ---- */
+    .cs-outcome {
+      background: var(--color-grey-light);
+      padding: 56px 0 64px;
+      margin-top: 72px;
+    }
+  </style>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="casestudy.css?v=3">
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html" class="brand">Roie Shalom</a>
+    <div class="top-nav-links">
+      <a href="index.html#work" class="nav-link active">Work</a>
+      <a href="about" class="nav-link">About</a>
+    </div>
+  </nav>
+
+  <!-- 1. HERO -->
+  <section class="cs-hero cs-bleed">
+    <div class="cs-hero-img-wrap">
+      <!-- hero image: <img src="..."> + -->
+    </div>
+    <div class="cs-inner">
+      <div class="cs-hero-content">
+        <div>
+          <span class="cs-hero-eyebrow"><span class="cs-hero-index">03 / 06</span>Product Story</span>
+          <h1 class="cs-hero-h">Fixing Search for a million users<br>who couldn't find what they needed</h1>
+        </div>
+        <dl class="cs-meta"><div><dt>Role</dt><dd>Senior UX Designer</dd></div><div><dt>Company</dt><dd>Signavio (SAP)</dd></div><div><dt>Team</dt><dd>Product</dd></div><div><dt>Duration</dt><dd>~3 months</dd></div><div><dt>Platform</dt><dd>Web (SaaS)</dd></div></dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. ROLE BAR -->
+  <div class="cs-role-bar cs-bleed">
+    <div class="cs-inner">
+      <div>
+        <div class="cs-role-col-label">What I did</div>
+        <div class="cs-role-col-val">Data Analysis, UX Research, Interaction Design, Prototyping, Stakeholder Advocacy</div>
+      </div>
+      <div>
+        <div class="cs-role-col-label">The team</div>
+        <div class="cs-role-col-val">1 PM, Engineering team, and me as the sole designer on this initiative</div>
+      </div>
+      <div>
+        <div class="cs-role-col-label">Outcome</div>
+        <div class="cs-role-col-val">Research-backed redesign proposal for the Hub's search and filtering system</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CONTEXT -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <p class="cs-p">Signavio (now SAP Signavio) makes process management software used by over 1,500 companies and more than a million users worldwide. The Collaboration Hub is where employees find, view, and work with business process documentation: a company's single source of truth for how things get done. I joined as Senior UX Designer and quickly noticed that a critical piece of the product had been left behind as the platform grew.</p>
+    </div>
+  </section>
+
+  <!-- 4. THE PROBLEM -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">The Problem</span>
+      <div class="cs-pin"><h2 class="cs-h2">Tens of thousands of searches, almost nobody finding what they need</h2></div>
+      <p class="cs-p">The Hub's search was used heavily but hadn't evolved with the product. Simple search matched titles only. No autocomplete, no suggestions, no recent searches. Users expected Google; they got a blank text field.</p>
+      <div class="cs-img-wrap">
+        <video src="../../content/images/search/old_simple_search.mp4" class="cs-img" autoplay loop muted playsinline></video>
+        <p class="cs-caption">The existing simple search: a blank field with title-only matching.</p>
+      </div>
+      <p class="cs-p" style="margin-top: 32px;">Advanced search was worse. A confusing form with hidden dropdowns, unclear labels, no error feedback, and filter lists running to over a thousand items for some customers. About 80% of users never touched it. They stuck with simple search and scrolled through unstructured results, hoping to spot what they needed.</p>
+      <div class="cs-img-wrap">
+        <img src="../../content/images/search/old_advanced_search.jpg" alt="The confusing advanced search form" class="cs-img">
+        <p class="cs-caption">The confusing advanced search form.</p>
+      </div>
+      <div class="cs-img-wrap" style="text-align: center;">
+        <img src="../../content/images/search/old_results.jpg" alt="Unstructured results" class="cs-img" style="width: auto; max-width: 100%; margin: 0 auto;">
+        <p class="cs-caption">Unstructured results with no way to filter further.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. MAKING THE CASE -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Making the Case</span>
+      <div class="cs-pin"><h2 class="cs-h2">No analytics team? Go find the data yourself</h2></div>
+      <p class="cs-p">Nobody asked me to look at search. I spotted the problem while ramping up on the product as a new team member. Fresh eyes helped: I was experiencing the same friction that real users faced every day.</p>
+      <p class="cs-p">Signavio had no analytics function, so I partnered with a backend engineer to pull raw usage data. The numbers confirmed the hunch: the vast majority used simple search, almost nobody used advanced filtering, and engagement dropped off a cliff after the first page of results.</p>
+      <p class="cs-p">A conversation with a Customer Success representative shaped my design direction. She told me that many Hub users aren't tech-savvy. They're process owners, compliance officers, HR leads. People who use web browsers and office tools. Not power users. That insight changed everything.</p>
+      <blockquote class="cs-pullquote">One customer hid pictures inside process folders, challenging employees to find them as a way to encourage product adoption. Creative, but also a sign that finding things in the Hub was genuinely hard.</blockquote>
+    </div>
+  </section>
+
+  <!-- 6. FOCUS -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Focus</span>
+      <div class="cs-pin"><h2 class="cs-h2">Where to start: refining results</h2></div>
+      <p class="cs-p">I mapped the search journey into five stages: the need, the search, advanced filtering, finding the model in results, and spotting it on the page. Each had problems, but result refinement was the biggest gap. Advanced search was so broken most users skipped it entirely, leaving them stranded in long, unfiltered lists.</p>
+      <div class="cs-img-wrap">
+        <img src="../../content/images/search/discover_flow.jpg" alt="Five-stage search journey" class="cs-img">
+        <p class="cs-caption">The search journey in five stages. Advanced filtering was the critical gap.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. DESIGN DIRECTION -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Design Direction</span>
+      <div class="cs-pin"><h2 class="cs-h2">Making filtering feel physical</h2></div>
+      <p class="cs-p">Knowing our users weren't power users, I wanted filtering that felt tangible. Something closer to sorting papers on a desk than writing database queries.</p>
+
+      <div class="cs-cards-grid">
+        <div class="cs-card">
+          <div class="cs-card-title">Assumption 1</div>
+          <p class="cs-p" style="margin: 0;">Laying out the criteria visually will simplify the interface. The current form is confusing, unpredictable, and hides information.</p>
+        </div>
+        <div class="cs-card">
+          <div class="cs-card-title">Assumption 2</div>
+          <p class="cs-p" style="margin: 0;">Preventing use of unfilled criteria will reduce errors. Users are currently making mistakes without knowing it.</p>
+        </div>
+      </div>
+
+      <p class="cs-p">I explored four established filtering patterns before committing to a direction: a two-column sidebar, JIRA-style toolbar dropdowns, a lightbox with faceted columns, and a megadrop panel.</p>
+      <div class="cs-pattern-grid">
+        <figure>
+          <img src="../../content/images/search/pat1.png" alt="JIRA-style filter pattern">
+          <figcaption>JIRA-style</figcaption>
+        </figure>
+        <figure>
+          <img src="../../content/images/search/pat2.png" alt="2 Columns filter pattern">
+          <figcaption>2 Columns</figcaption>
+        </figure>
+        <figure>
+          <img src="../../content/images/search/pat3.png" alt="Megadrop filter pattern">
+          <figcaption>Megadrop</figcaption>
+        </figure>
+        <figure>
+          <img src="../../content/images/search/pat4.png" alt="Lightbox filter pattern">
+          <figcaption>Lightbox</figcaption>
+        </figure>
+      </div>
+      <p class="cs-p" style="margin-top: 32px;">For our user base, drag-and-drop won. Criteria appear as visible tags. Users drag what they need into a refinement area, pick a value, and results update. Every active filter is visible and removable. The rationale: recognition over recall, continuous visibility, and error prevention built into the interaction itself.</p>
+    </div>
+  </section>
+
+  <!-- 8. THE SOLUTION -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">The Solution</span>
+      <div class="cs-pin"><h2 class="cs-h2">A smarter search, start to finish</h2></div>
+      <p class="cs-p">The redesign improved the full journey: an autocomplete dropdown at entry, and a drag-and-drop criteria system for refinement.</p>
+      <div class="cs-img-wrap">
+        <img src="../../content/images/search/proto_autocomplete.jpg" alt="New autocomplete search dropdown" class="cs-img">
+        <p class="cs-caption">New search entry: recent items, suggestions, and matching files before hitting enter.</p>
+      </div>
+      <div class="cs-img-wrap">
+        <img src="../../content/images/search/proto_refine_empty.jpg" alt="The refine panel" class="cs-img">
+        <p class="cs-caption">The refine panel: frequently used criteria at the top, all attributes below. Drag to filter.</p>
+      </div>
+      <div class="cs-img-wrap">
+        <img src="../../content/images/search/proto_multi_criteria.jpg" alt="Multiple active criteria" class="cs-img">
+        <p class="cs-caption">Three active criteria. Results narrowed from 948 to 17 items.</p>
+      </div>
+      <p class="cs-p" style="margin-top: 32px;">I tested the prototype with Signavio employees. Even the engineers said it felt "too easy." For our actual users, that meant it would be just right.</p>
+    </div>
+  </section>
+
+  <!-- 9. OUTCOME -->
+  <section class="cs-outcome cs-bleed">
+    <div class="cs-inner">
+      <div class="cs-text">
+        <span class="cs-eyebrow">Outcome</span>
+        <div class="cs-pin"><h2 class="cs-h2">The work that shapes how you think</h2></div>
+        <p class="cs-p">The project was deprioritized before development. I know it can happen in enterprise work. Good research can't always beat the next thing that lands on the roadmap.</p>
+        <p class="cs-p" style="margin-bottom: 0;">The work wasn't wasted. The research influenced how the team thought about search and discoverability. And for me, it reminded me that good design work doesn't survive on merit alone. The data was clear, the prototype tested well, but I hadn't pulled enough people inside the company onto my side to keep it alive. Next time, I'd pull more people in earlier so the work feels like everyone's, not just mine.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PROTOTYPE -->
+  <section class="cs-prototype-section cs-bleed">
+    <div class="cs-inner">
+      <div class="cs-text">
+        <span class="cs-eyebrow">Epilogue</span>
+        <div class="cs-pin"><h2 class="cs-h2">Interactive prototype</h2></div>
+        <p class="cs-p">Some projects don't fully leave you. The research and design held up, so I went back and built the interactive prototype this one always deserved, with AI on the code. Type a query, or drag a criterion into the filter bar.</p>
+      </div>
+      <div class="cs-prototype-narrow-note">
+        <span class="cs-prototype-narrow-icon">🖥</span>
+        Showing a static preview. Open this page on a wider screen to try the interactive version.
+      </div>
+      <div class="cs-prototype-frame">
+        <iframe id="atlas-frame" src="../../content/images/search/atlas-search.html" title="Atlas search prototype" loading="lazy"></iframe>
+        <img class="cs-prototype-image" src="../../content/images/search/search_prototype.png" alt="Static preview of the Atlas search prototype">
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function() {
+      var frame = document.getElementById('atlas-frame');
+      if (!frame) return;
+      function injectCursorRules() {
+        try {
+          var doc = frame.contentDocument;
+          if (!doc) return;
+          var style = doc.createElement('style');
+          style.textContent = [
+            '*, *::before, *::after { cursor: default !important; }',
+            'a, button, [role="button"], [role="link"], [role="tab"], [role="checkbox"], [role="radio"], [role="menuitem"], [role="option"], [tabindex]:not([tabindex="-1"]), summary, label[for], [draggable="true"] { cursor: pointer !important; }',
+            'input[type="text"], input[type="search"], input[type="email"], input[type="password"], input[type="url"], input[type="number"], input:not([type]), textarea { cursor: text !important; }',
+            'input[type="checkbox"], input[type="radio"] { cursor: pointer !important; }',
+            'input[disabled], button[disabled], [aria-disabled="true"] { cursor: not-allowed !important; }',
+            /* Disable pointer on top decorative chrome (nav/header) and everything inside */
+            'header, header *, nav, nav *, [role="banner"], [role="banner"] *, [role="navigation"], [role="navigation"] * { cursor: default !important; }',
+            /* But keep inputs inside nav/header usable */
+            'header input, header textarea, nav input, nav textarea { cursor: text !important; }'
+          ].join('\n');
+          doc.head.appendChild(style);
+        } catch (e) {}
+      }
+      function fixDragImage() {
+        try {
+          var doc = frame.contentDocument;
+          var win = frame.contentWindow;
+          if (!doc || !win || doc.__atlasDragFixed) return;
+          doc.__atlasDragFixed = true;
+
+          // Create an empty transparent element inside the iframe document.
+          // Using a real DOM element (vs an Image) is the most reliable cross-browser way.
+          var ghostEl = doc.createElement('div');
+          ghostEl.style.cssText = 'position:fixed;top:-9999px;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;';
+          doc.body.appendChild(ghostEl);
+
+          // Use BOTH capture and bubble phases so we override any handler order
+          function suppressGlobe(e) {
+            try {
+              if (e.dataTransfer && e.dataTransfer.setDragImage) {
+                e.dataTransfer.setDragImage(ghostEl, 0, 0);
+                // Also clear any "URL" data the browser might use for the globe preview
+                if (e.dataTransfer.types && e.dataTransfer.setData) {
+                  try { e.dataTransfer.clearData(); } catch (err2) {}
+                }
+              }
+            } catch (err) {}
+          }
+          doc.addEventListener('dragstart', suppressGlobe, true);  // capture
+          doc.addEventListener('dragstart', suppressGlobe, false); // bubble
+        } catch (e) {}
+      }
+      frame.addEventListener('load', function() {
+        injectCursorRules();
+        fixDragImage();
+        setTimeout(injectCursorRules, 500);
+        setTimeout(fixDragImage, 500);
+        setTimeout(injectCursorRules, 1500);
+        setTimeout(fixDragImage, 1500);
+      });
+
+      // Start the prototype's one-time drag demo only once the whole prototype
+      // screen has scrolled into view. The prototype ignores repeat start signals,
+      // so we post on view (with a short retry burst to cover a slow iframe mount)
+      // and also start if the iframe announces readiness while already in view.
+      var demoStarted = false, protoInView = false;
+      function sendStart() {
+        try { frame.contentWindow.postMessage({ type: 'atlas:start-demo' }, '*'); } catch (e) {}
+      }
+      function startDemo() {
+        if (demoStarted || !protoInView) return;
+        demoStarted = true;
+        sendStart();
+        setTimeout(sendStart, 300);
+        setTimeout(sendStart, 900);
+        setTimeout(sendStart, 1800);
+      }
+      window.addEventListener('message', function(e) {
+        if (e.source === frame.contentWindow && e.data && e.data.type === 'atlas:demo-ready') {
+          if (protoInView) sendStart();
+        }
+      });
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            var vh = window.innerHeight || document.documentElement.clientHeight;
+            var visH = entry.intersectionRect ? entry.intersectionRect.height : 0;
+            var seenEnough = entry.intersectionRatio >= 0.95 ||
+                             visH >= Math.min(frame.offsetHeight, vh) * 0.9;
+            if (seenEnough) {
+              protoInView = true;
+              startDemo();
+              if (demoStarted) io.disconnect();
+            }
+          });
+        }, { threshold: [0, 0.25, 0.5, 0.75, 0.9, 0.95, 0.99, 1] });
+        io.observe(frame);
+      } else {
+        // No IntersectionObserver: start as soon as possible.
+        protoInView = true;
+        sendStart();
+        setTimeout(sendStart, 600);
+        setTimeout(sendStart, 1600);
+      }
+    })();
+  </script>
+
+  <style>
+    .cs-prototype-section {
+      margin-top: 72px;
+      padding: 0;
+    }
+    .cs-prototype-frame {
+      position: relative;
+      margin: 24px auto 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      background: #fafbfc;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .cs-prototype-frame iframe {
+      display: block;
+      width: 100%;
+      height: 760px;
+      border: 0;
+    }
+    .cs-prototype-image {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+    .cs-prototype-narrow-note {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      max-width: 720px;
+      margin: 24px auto 0;
+      padding: 14px 18px;
+      background: var(--color-grey-light);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+    .cs-prototype-narrow-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    @media (max-width: 1023px) {
+      .cs-prototype-frame iframe { display: none; }
+      .cs-prototype-image { display: block; }
+      .cs-prototype-narrow-note { display: flex; }
+    }
+  </style>
+
+  <!-- BACK LINK -->
+  <!-- LIGHTBOX -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
+    <img id="lb-img" src="" alt="">
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg = document.getElementById('lb-img');
+
+      function openLightbox(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Bind all .cs-img images and pattern grid images
+      document.querySelectorAll('img.cs-img, .cs-pattern-grid img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          openLightbox(img.src, img.alt);
+        });
+      });
+
+      overlay.addEventListener('click', closeLightbox);
+      lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+  <div class="cs-end">
+    <a class="cs-end-back" href="index.html#work"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg> All work</a>
+    <a class="cs-next" href="esmeralda">
+      <div class="cs-next-text">
+        <span class="cs-next-head">Next project <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+        <span class="cs-next-name">Ask Esmeralda</span>
+        <span class="cs-next-co">AI Project</span>
+      </div>
+      <div class="cs-next-img"><img src="../../content/images/esmeralda/esmeraldathumb.jpeg" alt="Ask Esmeralda"></div>
+    </a>
+  </div>
+
+  <footer><span>Berlin · 2026</span></footer>
+</body>
+</html>

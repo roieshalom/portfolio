@@ -118,14 +118,14 @@ html { scroll-behavior: smooth; }
 .cs-result > span:last-child { font-weight: 800; font-size: 19px; line-height: 1.35; }
 
 /* ---------- The outcome: magenta band inside the In short block ---------- */
-.cs-impact { background: var(--cs-accent-600); color: #fff; padding: 48px var(--cs-pad) 40px; border-top: 2px solid var(--cs-ink); display: flex; flex-direction: column; gap: 32px; }
-.cs-impact-cols { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 40px; }
-.cs-impact-cols > div { padding-top: 20px; border-top: 2px solid #fff; display: flex; flex-direction: column; gap: 14px; }
-.cs-impact-from { font-weight: 600; font-size: 20px; text-decoration: line-through; text-decoration-thickness: 2px; }
-.cs-impact-to { font-weight: 800; font-size: 80px; line-height: .85; letter-spacing: -0.05em; }
-.cs-impact-lbl { font-weight: 800; font-size: 19px; }
-.cs-impact-note { font-size: 16px; line-height: 1.45; }
-.cs-impact-measure { margin: 0; padding-top: 16px; border-top: 2px solid rgba(255,255,255,.5); font-size: 14px; line-height: 1.45; }
+.cs-outcome { background: var(--cs-accent-600); color: #fff; padding: 48px var(--cs-pad) 40px; border-top: 2px solid var(--cs-ink); display: flex; flex-direction: column; gap: 32px; }
+.cs-outcome-cols { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 40px; }
+.cs-outcome-cols > div { padding-top: 20px; border-top: 2px solid #fff; display: flex; flex-direction: column; gap: 14px; }
+.cs-outcome-from { font-weight: 600; font-size: 20px; text-decoration: line-through; text-decoration-thickness: 2px; }
+.cs-outcome-to { font-weight: 800; font-size: 80px; line-height: .85; letter-spacing: -0.05em; }
+.cs-outcome-lbl { font-weight: 800; font-size: 19px; }
+.cs-outcome-note { font-size: 16px; line-height: 1.45; }
+.cs-outcome-measure { margin: 0; padding-top: 16px; border-top: 2px solid rgba(255,255,255,.5); font-size: 14px; line-height: 1.45; }
 
 /* ---------- Page end: All work (left) + next project (right) ---------- */
 .cs-end { display: grid; grid-template-columns: minmax(0,4fr) minmax(0,8fr); min-height: 200px; border-top: 2px solid var(--cs-ink); }
@@ -150,7 +150,7 @@ footer { display: flex; justify-content: flex-end; padding: 24px var(--cs-pad); 
   .cs-hero { grid-template-columns: 1fr; }
   .cs-hero-img-wrap { grid-column: 1; grid-row: 2; min-height: 320px; border-left: 0; border-top: 2px solid var(--cs-rule); }
   .cs-hero-h { font-size: 40px; }
-  .cs-short-cols, .cs-impact-cols { grid-template-columns: 1fr; }
+  .cs-short-cols, .cs-outcome-cols { grid-template-columns: 1fr; }
   .cs-short-col { border-right: 0; border-bottom: 2px solid var(--cs-rule); }
   .cs-short-col:last-child { border-bottom: 0; }
   .cs-section, .cs-reflection { grid-template-columns: 1fr; }
@@ -158,9 +158,36 @@ footer { display: flex; justify-content: flex-end; padding: 24px var(--cs-pad); 
   .cs-pin { grid-column: 1 !important; grid-row: auto; position: static; }
   .cs-h2 { font-size: 30px; }
   .cs-img-2col { grid-template-columns: 1fr; }
-  .cs-impact-to { font-size: 56px; }
+  .cs-outcome-to { font-size: 56px; }
   .cs-end { grid-template-columns: 1fr; }
   .cs-end-back { border-right: 0; border-bottom: 2px solid var(--cs-rule); padding: 20px var(--cs-pad); }
   .cs-next-head { font-size: 26px; }
   .cs-next-img { width: 120px; }
+}
+
+/* ---------- Legacy pieces reused by the other case studies ---------- */
+/* Role bar (3 equal cells) — used by wayfair / search */
+.cs-role-bar { border-top: 2px solid var(--cs-ink); background: none; }
+.cs-role-bar .cs-inner { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); }
+.cs-role-bar .cs-inner > div { padding: 24px var(--cs-pad) 28px; border-right: 2px solid var(--cs-rule); display: flex; flex-direction: column; gap: 8px; }
+.cs-role-bar .cs-inner > div:last-child { border-right: 0; }
+.cs-role-col-label { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.cs-role-col-val { font-size: 18px; line-height: 1.45; }
+
+/* Impact chapter band (full-width magenta) — used by wayfair */
+.cs-impact { counter-increment: ch; background: var(--cs-accent-600); color: #fff; padding: 56px var(--cs-pad) 64px; border-top: 2px solid var(--cs-ink); }
+.cs-impact .cs-inner { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 40px; }
+.cs-impact .cs-inner > div { padding-top: 20px; border-top: 2px solid #fff; display: flex; flex-direction: column; gap: 14px; }
+.cs-impact-num { font-weight: 800; font-size: 72px; line-height: .85; letter-spacing: -0.04em; color: #fff; }
+.cs-impact-label { font-size: 17px; line-height: 1.45; }
+.cs-impact-label strong { display: block; font-size: 19px; font-weight: 800; margin-bottom: 8px; }
+
+/* CTA button in AI-project heroes */
+.cs-cta-btn { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; height: 44px; padding: 0 18px; background: var(--cs-accent); color: #fff; font-weight: 800; font-size: 14px; text-decoration: none; border: 0; }
+.cs-cta-btn:hover { background: var(--cs-accent-600); color: #fff; }
+
+@media (max-width: 900px) {
+  .cs-role-bar .cs-inner, .cs-impact .cs-inner { grid-template-columns: 1fr; }
+  .cs-role-bar .cs-inner > div { border-right: 0; border-bottom: 2px solid var(--cs-rule); }
+  .cs-impact-num { font-size: 56px; }
 }

@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grooped · Roie Shalom</title>
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <style>
+    /* ---- Grooped hero ---- */
+    
+    .cs-hero-img-wrap {
+      width: auto;
+      height: 100%;
+      bottom: 0;
+    }
+    .cs-hero-img-wrap img {
+      opacity: 0.72;
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+      object-position: right bottom;
+    }
+    
+    @media (max-width: 600px) {
+      .cs-hero-img-wrap { width: 100%; opacity: 0.3; }
+      
+    }
+
+    /* Hero subline */
+    .cs-hero-sub {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.72);
+      margin: -16px 0 28px;
+      line-height: 1.55;
+    }
+
+    /* CTA button */
+    .cs-cta-btn {
+      display: inline-block;
+      background: var(--color-link);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 13px 26px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.18s;
+      margin-bottom: 10px;
+      outline: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .cs-cta-btn:hover { opacity: 0.88; color: #fff; }
+
+    /* Small muted hint below CTA */
+    .cs-cta-hint {
+      display: block;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 2px;
+    }
+
+    /* Bottom CTA hint (on white/card bg) */
+    .cs-bottom-cta .cs-cta-hint {
+      color: var(--color-text);
+      opacity: 0.6;
+    }
+
+    /* ---- Gameplay stepper ---- */
+    .gs-stepper {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      margin: 40px auto 0;
+      align-items: center;
+      max-width: 640px;
+      padding: 0 clamp(20px, 5vw, 32px);
+    }
+
+    .gs-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .gs-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 13px 14px;
+      border-left: 3px solid transparent;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      opacity: 0.38;
+      background: #00000014;
+      transition: border-color 0.2s, background 0.2s, opacity 0.2s;
+    }
+
+    .gs-step:hover { opacity: 0.65; }
+
+    .gs-step.is-active {
+      border-left-color: var(--color-link);
+      background: rgba(242, 23, 131, 0.05);
+      opacity: 1;
+    }
+
+    .gs-step.is-active:hover { opacity: 1; }
+
+    .gs-step-num {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--color-text);
+      line-height: 1.3;
+      min-width: 18px;
+    }
+
+    .gs-step.is-active .gs-step-num { color: var(--color-link); }
+
+    .gs-step-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 3px;
+      line-height: 1.3;
+    }
+
+    .gs-step-desc {
+      font-size: 0.78rem;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+
+    .gs-phone-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .gs-phone-frame {
+      width: 100%;
+      max-width: 240px;
+    }
+
+    .gs-phone-inner {
+      display: grid;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px #ec725744;
+      outline: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .gs-slide {
+      grid-column: 1;
+      grid-row: 1;
+      width: 100%;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gs-slide.is-active { opacity: 1; }
+
+    @media (max-width: 768px) {
+      .gs-stepper {
+        display: block;
+      }
+      .gs-phone-wrap {
+        margin-bottom: 24px;
+      }
+      .gs-phone-frame { max-width: 280px; }
+
+      /* Hide the vertical steps list on mobile */
+      .gs-steps { display: none; }
+
+      /* Horizontal swipeable strip */
+      .gs-steps-mobile {
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 12px;
+        padding: 16px 0 4px;
+      }
+      .gs-steps-mobile::-webkit-scrollbar { display: none; }
+      .gs-steps-mobile::before,
+      .gs-steps-mobile::after {
+        content: '';
+        flex-shrink: 0;
+        width: calc(50vw - 140px);
+      }
+
+      .gs-step-mobile {
+        flex: 0 0 min(280px, 75vw);
+        scroll-snap-align: center;
+        border-left: 3px solid transparent;
+        border-radius: 0 8px 8px 0;
+        padding: 12px 14px;
+        background: #00000014;
+        opacity: 0.38;
+        transition: opacity 0.2s, border-color 0.2s, background 0.2s;
+      }
+
+      .gs-step-mobile.is-active {
+        border-left-color: var(--color-link);
+        background: rgba(242, 23, 131, 0.05);
+        opacity: 1;
+      }
+
+      .gs-step-mobile .gs-step-num {
+        font-size: 0.85rem;
+        font-weight: 800;
+        color: var(--color-text);
+        margin-bottom: 4px;
+      }
+
+      .gs-step-mobile.is-active .gs-step-num { color: var(--color-link); }
+
+      .gs-step-mobile .gs-step-title {
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: var(--color-text-main);
+        margin-bottom: 3px;
+        line-height: 1.3;
+      }
+
+      .gs-step-mobile .gs-step-desc {
+        font-size: 0.78rem;
+        color: var(--color-text);
+        line-height: 1.5;
+      }
+
+      /* Dots indicator */
+      .gs-dots {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 12px;
+      }
+
+      .gs-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--color-border);
+        transition: background 0.2s, transform 0.2s;
+      }
+
+      .gs-dot.is-active {
+        background: var(--color-link);
+        transform: scale(1.3);
+      }
+    }
+
+    /* Hide mobile strip on desktop */
+    @media (min-width: 769px) {
+      .gs-steps-mobile, .gs-dots { display: none; }
+    }
+
+    /* ---- Bottom CTA strip ---- */
+    .cs-closing-strip {
+      background: var(--color-grey-light);
+      text-align: center;
+      padding: 72px 24px 64px;
+    }
+
+    .cs-closing-h {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin: 0 0 20px;
+    }
+
+    .cs-cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .cs-bottom-qr-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cs-bottom-qr-group img {
+      width: 84px;
+      height: 84px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      mix-blend-mode: multiply;
+    }
+
+    .cs-bottom-qr-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-link);
+      line-height: 1.3;
+      text-align: right;
+      max-width: 120px;
+    }
+
+    .cs-cta-or {
+      font-size: 0.85rem;
+      color: var(--color-text);
+      opacity: 0.45;
+      font-style: italic;
+    }
+
+    .cs-back-wrap {
+      text-align: center;
+      padding: 36px 0 40px;
+    }
+
+    /* Prompt styles moved to casestudy.css */
+
+    /* ── Collapsible pipeline block ─────────────────────────────────────────── */
+    .gp-collapsible-wrap {
+      margin: 28px auto 0;
+      max-width: 660px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .gp-collapsible {
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+    }
+    .gp-collapsible summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 13px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-link);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    .gp-collapsible summary::-webkit-details-marker { display: none; }
+    .gp-collapsible summary:hover { background: rgba(0,0,0,0.03); }
+    .gp-collapsible[open] summary { border-bottom: 1px solid var(--color-border); }
+    .gp-collapsible-chevron {
+      font-style: normal;
+      font-size: 0.7rem;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .gp-collapsible[open] .gp-collapsible-chevron { transform: rotate(180deg); }
+    .gp-collapsible-body {
+      padding: 28px 0 20px;
+      overflow: hidden;
+    }
+    .gp-collapsible-body .gp-tiers-section {
+      margin-top: 0;
+      padding: 0 18px;
+    }
+    .gp-collapsible-body .gp-flow-section {
+      margin-top: 0;
+      padding: 0 18px;
+    }
+
+    /* ── Pipeline flowchart ────────────────────────────────────────────────── */
+    .gp-flow-section {
+      margin: 44px auto 0;
+      max-width: 840px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 clamp(20px, 5vw, 32px);
+    }
+    .gp-section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-link);
+      margin-bottom: 14px;
+    }
+
+    /* ── Swimlane flowchart ─────────────────────────────────────────────────── */
+    /* Scrollable wrapper with border */
+    .gp-swim-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-border) transparent;
+    }
+    .gp-swim-scroll::-webkit-scrollbar { height: 4px; }
+    .gp-swim-scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
+
+    /* Grid: col 1 = sticky lane label, cols 2–28 = steps + connectors */
+    /* Rows: 1 = Roie lane | 2 = 1px divider | 3 = AI lane */
+    .gp-swim-grid {
+      display: grid;
+      grid-template-columns: 32px repeat(27, auto);
+      grid-template-rows: auto 1px auto;
+      width: max-content;
+    }
+    /* Full-width lane backgrounds (listed first → behind content) */
+    .gp-swim-you-bg { grid-column: 1 / -1; grid-row: 1; background: rgba(236,115,87,0.07); }
+    .gp-swim-ai-bg  { grid-column: 1 / -1; grid-row: 3; background: rgba(0,0,0,0.025); }
+    .gp-swim-div    { grid-column: 1 / -1; grid-row: 2; background: var(--color-border); }
+    /* Lane labels — sticky so they stay visible on scroll */
+    .gp-swim-lbl {
+      position: sticky;
+      left: 0;
+      z-index: 4;
+      grid-column: 1;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 0.58rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 0;
+    }
+    .gp-swim-lbl.gp-you { grid-row: 1; background: rgba(236,115,87,0.07); color: #ec7357; }
+    .gp-swim-lbl.gp-ai  { grid-row: 3; background: rgba(0,0,0,0.025); color: var(--color-text); }
+    /* Step nodes */
+    .gp-swim-node {
+      white-space: normal;
+      width: 112px;
+      min-height: 52px;
+      padding: 8px 12px;
+      border-radius: 7px;
+      font-size: 0.74rem;
+      font-weight: 500;
+      color: var(--color-text-main);
+      margin: 14px 0;
+      display: flex;
+      align-items: center;
+      line-height: 1.35;
+    }
+    /* First node in each lane gets a small left gap away from the label */
+    .gp-swim-node[style*="grid-column:2"] { margin-left: 8px; }
+    .gp-swim-node.gp-auto  { background: rgba(0,0,0,0.06); }
+    .gp-swim-node.gp-human {
+      background: rgba(236,115,87,0.14);
+      border: 1px solid rgba(236,115,87,0.32);
+      font-weight: 600;
+    }
+    .gp-swim-node.gp-end   { background: #ec7357; color: #fff; font-weight: 700; }
+    /* In-lane connectors — horizontal line with arrow */
+    .gp-swim-arr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      position: relative;
+    }
+    .gp-swim-arr::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      right: 7px;
+      height: 1.5px;
+      background: #999;
+    }
+    .gp-swim-arr::after {
+      content: '';
+      position: absolute;
+      right: 2px;
+      width: 0;
+      height: 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 6px solid #999;
+    }
+    /* Cross-lane handoff arrows — span all 3 rows */
+    .gp-swim-off {
+      grid-row: 1 / 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      position: relative;
+    }
+    /* vertical line — only bridges the gap between the two lane nodes */
+    .gp-swim-off::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 33%; bottom: 33%;
+      width: 1.5px;
+      background: #999;
+    }
+    /* arrowhead pointing down */
+    .gp-swim-off.gp-down::after {
+      content: '';
+      position: absolute;
+      bottom: calc(33% - 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 6px solid #999;
+    }
+    /* arrowhead pointing up */
+    .gp-swim-off.gp-up::after {
+      content: '';
+      position: absolute;
+      top: calc(33% - 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 6px solid #999;
+    }
+
+    /* ── Mechanic tier map ─────────────────────────────────────────────────── */
+    .gp-tiers-section {
+      margin: 52px auto 0;
+      max-width: 840px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 clamp(20px, 5vw, 32px);
+    }
+    .gp-tiers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .gp-tier {
+      background: var(--color-grey-light);
+      border-radius: 10px;
+      padding: 14px 14px 18px;
+      border-top: 3px solid transparent;
+    }
+    .gp-tier-1 { border-top-color: var(--color-border); }
+    .gp-tier-2 { border-top-color: rgba(236,115,87,0.55); }
+    .gp-tier-3 { border-top-color: #ec7357; }
+    .gp-tier-4 { border-top-color: var(--color-link); }
+    .gp-tier-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--color-text);
+      margin-bottom: 1px;
+    }
+    .gp-tier-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 2px;
+    }
+    .gp-tier-cd {
+      font-size: 0.78rem;
+      color: var(--color-text);
+      margin-bottom: 12px;
+    }
+    .gp-tier-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .gp-tier-list li {
+      font-size: 0.88rem;
+      color: var(--color-text);
+      line-height: 1.4;
+      cursor: default;
+    }
+    .gp-tier-list li[data-example]:hover {
+      color: var(--color-link);
+    }
+
+    /* ── Mechanic tooltip ───────────────────────────────────────────── */
+    #gp-mechanic-tip {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      background: var(--color-text);
+      color: var(--color-surface, #fff);
+      font-size: 0.78rem;
+      line-height: 1.45;
+      padding: 7px 11px;
+      border-radius: 7px;
+      max-width: 240px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      opacity: 0;
+      transition: opacity 0.12s ease;
+      white-space: normal;
+    }
+    #gp-mechanic-tip.visible { opacity: 1; }
+
+    @media (max-width: 460px) {
+      .gp-tiers { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .cs-bottom-qr-group { display: none; }
+      .cs-cta-or { display: none; }
+      
+      html, body { overflow-x: clip; }
+      .gs-stepper { overflow-x: clip; }
+    }
+  </style>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="casestudy.css?v=3">
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html" class="brand">Roie Shalom</a>
+    <div class="top-nav-links">
+      <a href="index.html#work" class="nav-link active">Work</a>
+      <a href="about" class="nav-link">About</a>
+    </div>
+  </nav>
+
+  <!-- 1. HERO -->
+  <section class="cs-hero cs-bleed">
+    <div class="cs-hero-img-wrap">
+      <img src="../../content/images/grooped/grooped-hero.jpg" alt="Playing Grooped on a phone">
+      </div>
+    <div class="cs-inner">
+      <div class="cs-hero-content">
+        <div>
+          <span class="cs-hero-eyebrow"><span class="cs-hero-index">05 / 06</span>Solo Project</span>
+          <h1 class="cs-hero-h">A word puzzle,<br>built and curated with AI</h1>
+        </div>
+        <a href="https://grooped.de?utm_source=portfolio&utm_medium=web" target="_blank" rel="noopener" class="cs-cta-btn">Play this week's puzzle ➜</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. THE DESIGN PROBLEM -->
+  <section class="cs-section" style="margin-top: 72px;">
+    <div class="cs-text">
+      <span class="cs-eyebrow">The design problem</span>
+      <div class="cs-pin"><h2 class="cs-h2">The hardest part isn't the tech</h2></div>
+      <p class="cs-p">Word puzzles sound simple. Four groups of four words. But the design space is deceptively deep.</p>
+      <p class="cs-p">The real challenge is intentional misdirection. Take IRON, PRESS, CURL, BENCH, all things you do at the gym. But PRESS also fits a medieval weapons category. IRON fits things you can flip. CURL fits hair styling. That web of almost-right answers is what makes a puzzle feel clever instead of arbitrary. Designing it is the closest thing I've found to level design.</p>
+      <p class="cs-p" style="margin-bottom: 0;">Every word on the board has to earn its place. Not just as a correct answer, but as a convincing wrong one.</p>
+    </div>
+  </section>
+
+  <!-- 3. HOW IT'S MADE -->
+  <section class="cs-section" style="margin-top: 72px;">
+    <div class="cs-text">
+      <span class="cs-eyebrow">How it's made</span>
+      <div class="cs-pin"><h2 class="cs-h2">An AI pipeline with a human editor at the center</h2></div>
+      <p class="cs-p">Every puzzle starts with a prompt. I built an internal tool called Puzzle Editor 3000 that generates a full puzzle: four categories, four words each, plus intentional decoys designed to blur the lines between groups.</p>
+      <p class="cs-p">The generator doesn't just make puzzles. It tracks 28 connection mechanics across four tiers, each with a cooldown period so the same trick never runs in back-to-back puzzles. A fill-in-blank category can appear weekly. A first-letter acrostic gets saved for once every six weeks. The system reads the last 60 published puzzles before generating a new one, checks which mechanics are underused, and steers toward variety automatically.</p>
+      <p class="cs-p">When I export a puzzle, it's appended to the live file on GitHub. The next generation reads that file first. The system has memory.</p>
+      <p class="cs-p" style="margin-bottom: 0;">AI generates, and I review every puzzle before it ships and regenerate the parts that don't work for me. The system learns from what I keep.</p>
+    </div>
+
+    <!-- Collapsible 1: mechanic tier map -->
+    <div class="gp-collapsible-wrap">
+      <details class="gp-collapsible">
+        <summary>Connection mechanic tiers <span class="gp-collapsible-chevron" aria-hidden="true">▼</span></summary>
+        <div class="gp-collapsible-body">
+
+          <div class="gp-tiers-section">
+            <div class="gp-tiers">
+
+              <div class="gp-tier gp-tier-1">
+                <div class="gp-tier-num">Tier 1</div>
+                <div class="gp-tier-name">Workhorses</div>
+                <div class="gp-tier-cd">cooldown: 4 puzzles</div>
+                <ul class="gp-tier-list">
+                  <li data-example="Types of cloud: cirrus, cumulus, stratus, nimbus">Taxonomy</li>
+                  <li data-example="Found in a kitchen: fork, apron, ladle, colander">Found in scene</li>
+                  <li data-example="___ ball: base, basket, snow, fire">Prefix blank</li>
+                  <li data-example="book___: shelf, worm, case, mark">Suffix blank</li>
+                  <li data-example="Happy: glad, jolly, elated, content">Synonyms</li>
+                </ul>
+              </div>
+
+              <div class="gp-tier gp-tier-2">
+                <div class="gp-tier-num">Tier 2</div>
+                <div class="gp-tier-name">Regulars</div>
+                <div class="gp-tier-cd">cooldown: 7 puzzles</div>
+                <ul class="gp-tier-list">
+                  <li data-example="Things that buzz: bee, phone, saw, crowd">Things that verb</li>
+                  <li data-example="Can be pressed: shirt, button, case, flower">Can be verbed</li>
+                  <li data-example="All contain a planet: martial, mercury, saturnine, jovial">Shared hidden property</li>
+                  <li data-example="Storm metaphors for anger: thunder, lightning, boil, surge">Metaphor substitutes</li>
+                  <li data-example="Ways to walk quietly: tiptoe, creep, slink, pad">Ways to verb</li>
+                  <li data-example="___ of the storm: eye, calm, center, heart">Idiom completion</li>
+                  <li data-example="Planets: mars, venus, saturn, jupiter">Ordered set member</li>
+                  <li data-example="Kubrick films: clockwork, shining, spartacus, paths">Works by one maker</li>
+                  <li data-example="Friends characters: ross, rachel, joey, phoebe">Characters in one work</li>
+                  <li data-example="Trump: businessman, president, TV host, beauty pageant">Facets of a named subject</li>
+                </ul>
+              </div>
+
+              <div class="gp-tier gp-tier-3">
+                <div class="gp-tier-num">Tier 3</div>
+                <div class="gp-tier-name">Specials</div>
+                <div class="gp-tier-cd">cooldown: 21 puzzles</div>
+                <ul class="gp-tier-list">
+                  <li data-example="Hide 'ear': heart, learn, heard, pearl">Hidden word</li>
+                  <li data-example="Sound like letters, numbers, or other words: jay, won, knight, bare">Homophones</li>
+                  <li data-example="Compound both ways: sun+flower, door+step, fire+place, rain+coat">Compound</li>
+                  <li data-example="Add or drop a letter to make a new word: laughter, brave, plant, three">Add/Drop letter</li>
+                  <li data-example="Named after people: sandwich, wellington, cardigan, boycott">Eponyms</li>
+                  <li data-example="French in English: café, ballet, cliché, genre">Cross language</li>
+                  <li data-example="What they stand for: RAM, NASA, RSVP, ASAP">Abbreviation expansion</li>
+                </ul>
+              </div>
+
+              <div class="gp-tier gp-tier-4">
+                <div class="gp-tier-num">Tier 4</div>
+                <div class="gp-tier-name">Treats</div>
+                <div class="gp-tier-cd">cooldown: 45 puzzles</div>
+                <ul class="gp-tier-list">
+                  <li data-example="Anagrams of LISTEN: silent, enlist, tinsel, inlets">Anagram of one source</li>
+                  <li data-example="First letters spell CATS: cream, apple, toast, sage">Acrostic first letters</li>
+                  <li data-example="All connect to DARK: horse, room, ages, matter">Chain through hub</li>
+                  <li data-example="Blended words: brunch, smog, blog, motel">Portmanteau</li>
+                  <li data-example="Sound words: buzz, crash, sizzle, thud">Onomatopoeia</li>
+                </ul>
+              </div>
+
+            </div>
+          </div><!-- /.gp-tiers-section -->
+
+        </div><!-- /.gp-collapsible-body -->
+      </details>
+    </div><!-- /.gp-collapsible-wrap -->
+
+    <div class="cs-text gs-prompt-section">
+      <div class="gs-prompt-label" style="margin-top: 80px;">
+        <span class="gs-prompt-eyebrow">System prompt</span>
+        <a class="gs-prompt-source" href="https://github.com/roieshalom/grooped-puzzle-generator/blob/main/puzzle_generator.py" target="_blank" rel="noopener">View source on GitHub ↗</a>
+      </div>
+      <p class="cs-p" style="margin-top: 18px;">The quality of the output lives or dies on the prompt. Writing it was a design problem: precise enough to produce consistent results, flexible enough to surprise me. This is the actual system prompt the generator uses, loaded live from the source code.</p>
+    </div>
+
+    <!-- Collapsible 2: generation pipeline flowchart -->
+    <div class="gp-collapsible-wrap">
+      <details class="gp-collapsible">
+        <summary>Generation pipeline <span class="gp-collapsible-chevron" aria-hidden="true">▼</span></summary>
+        <div class="gp-collapsible-body">
+
+          <div class="gp-flow-section">
+            <div class="gp-swim-scroll">
+              <div class="gp-swim-grid">
+
+                <!-- Lane backgrounds (first in DOM = behind content) -->
+                <div class="gp-swim-you-bg"></div>
+                <div class="gp-swim-div"></div>
+                <div class="gp-swim-ai-bg"></div>
+
+                <!-- Sticky lane labels -->
+                <div class="gp-swim-lbl gp-you">Roie</div>
+                <div class="gp-swim-lbl gp-ai">AI</div>
+
+                <!-- Step 1: You trigger generation -->
+                <div class="gp-swim-node gp-human" style="grid-column:2;grid-row:1">Generate triggered</div>
+
+                <!-- Handoff: You → AI -->
+                <div class="gp-swim-off gp-down" style="grid-column:3"></div>
+
+                <!-- Steps 2–10: AI works autonomously -->
+                <div class="gp-swim-node gp-auto" style="grid-column:4;grid-row:3">Fetch live puzzle history from GitHub</div>
+                <div class="gp-swim-arr" style="grid-column:5;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:6;grid-row:3">Scan last 21 puzzles, compute mechanic cooldowns</div>
+                <div class="gp-swim-arr" style="grid-column:7;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:8;grid-row:3">Identify underused Tier 2 and Tier 3 mechanics</div>
+                <div class="gp-swim-arr" style="grid-column:9;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:10;grid-row:3">Pick spine mechanic, prefer underused, respect cooldowns</div>
+                <div class="gp-swim-arr" style="grid-column:11;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:12;grid-row:3">Generate puzzle with cross-pull decoys</div>
+                <div class="gp-swim-arr" style="grid-column:13;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:14;grid-row:3">Verify hidden words letter-by-letter</div>
+                <div class="gp-swim-arr" style="grid-column:15;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:16;grid-row:3">Check all 16 words, duplicates and 60-day repeat rule</div>
+                <div class="gp-swim-arr" style="grid-column:17;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:18;grid-row:3">Inject mechanic + tier into each category</div>
+                <div class="gp-swim-arr" style="grid-column:19;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-auto" style="grid-column:20;grid-row:3">Strip scratchpad fields, save clean draft</div>
+
+                <!-- Handoff: AI → You -->
+                <div class="gp-swim-off gp-up" style="grid-column:21"></div>
+
+                <!-- Steps 11–12: You review and export -->
+                <div class="gp-swim-node gp-human" style="grid-column:22;grid-row:1">Editor review, regenerate weak categories, edit words</div>
+                <div class="gp-swim-arr" style="grid-column:23;grid-row:1"></div>
+
+                <div class="gp-swim-node gp-human" style="grid-column:24;grid-row:1">Export triggered</div>
+
+                <!-- Handoff: You → AI -->
+                <div class="gp-swim-off gp-down" style="grid-column:25"></div>
+
+                <!-- Steps 13–14: AI publishes -->
+                <div class="gp-swim-node gp-auto" style="grid-column:26;grid-row:3">Append to puzzle history, push to GitHub</div>
+                <div class="gp-swim-arr" style="grid-column:27;grid-row:3"></div>
+
+                <div class="gp-swim-node gp-end" style="grid-column:28;grid-row:3">Puzzle is live</div>
+
+              </div><!-- /.gp-swim-grid -->
+            </div><!-- /.gp-swim-scroll -->
+          </div><!-- /.gp-flow-section -->
+
+        </div><!-- /.gp-collapsible-body -->
+      </details>
+    </div><!-- /.gp-collapsible-wrap -->
+
+    <div class="cs-text gs-prompt-section">
+      <div class="gs-prompt-box-label">puzzle_generator.py</div>
+      <div class="gs-prompt-box" id="gs-prompt-box">
+        <p class="gs-prompt-loading" id="gs-prompt-loading">Loading prompt...</p>
+        <div id="gs-prompt-text" style="display:none;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THE TOOL -->
+  <section class="cs-section" style="margin-top: 72px;">
+    <div class="cs-text">
+      <span class="cs-eyebrow">The tool</span>
+      <div class="cs-pin"><h2 class="cs-h2">Puzzle Editor 3000</h2></div>
+      <p class="cs-p">The editor is the interface between AI output and human judgment. Generate a full puzzle, regenerate individual categories, swap words, rename groups, or type your own category and let the AI fill in the words. Every category shows which connection mechanic the model used and which tier it belongs to, so I can see at a glance if the puzzle is mechanically varied or just four versions of the same trick.</p>
+      <p class="cs-p" style="margin-bottom: 0;">The dashboard at the top tracks mechanic usage across the last 21 puzzles. If Tier 2 is dominating, the next generation will steer toward Tier 3 automatically. I can see what's been overused and nudge the system before it gets repetitive.</p>
+    </div>
+    <div class="cs-img-wrap" style="margin-top: 40px;">
+      <img class="cs-img" src="../../content/images/grooped/editor.png" alt="Puzzle Editor 3000 showing four categories with refresh and ban controls" style="width: 75%; margin: 0 auto; display: block;">
+      <p class="cs-caption">Puzzle Editor 3000: generate, curate, and track puzzle mechanics in one place.</p>
+    </div>
+  </section>
+
+  <!-- 5. THE GAME -->
+  <section class="cs-section" style="max-width: none; padding: 0; margin-left: 0; margin-right: 0;">
+    <div class="cs-text" style="padding: 0 clamp(20px,5vw,32px); margin-bottom: 40px;">
+      <span class="cs-eyebrow">The game</span>
+      <div class="cs-pin"><h2 class="cs-h2">What the player sees</h2></div>
+      <p class="cs-p" style="margin-bottom:0;">None of the pipeline is visible to the player. They get 16 words and four attempts. The mechanic, the tier, the cooldowns. All invisible. The only thing that matters is whether the puzzle feels satisfying to solve.</p>
+    </div>
+    <div class="gs-stepper" id="gs-stepper">
+      <div class="gs-steps">
+        <div class="gs-step is-active" data-index="0">
+          <div class="gs-step-num">1</div>
+          <div class="gs-step-body">
+            <div class="gs-step-title">16 words, 4 groups</div>
+            <div class="gs-step-desc">A fresh puzzle. The grid shows 16 words with no hints about what connects them.</div>
+          </div>
+        </div>
+        <div class="gs-step" data-index="1">
+          <div class="gs-step-num">2</div>
+          <div class="gs-step-body">
+            <div class="gs-step-title">Spot a pattern</div>
+            <div class="gs-step-desc">Four words selected, ready to submit. Is it the right group?</div>
+          </div>
+        </div>
+        <div class="gs-step" data-index="2">
+          <div class="gs-step-num">3</div>
+          <div class="gs-step-body">
+            <div class="gs-step-title">First group found</div>
+            <div class="gs-step-desc">A correct guess collapses into a color block. Twelve words remain.</div>
+          </div>
+        </div>
+        <div class="gs-step" data-index="3">
+          <div class="gs-step-num">4</div>
+          <div class="gs-step-body">
+            <div class="gs-step-title">Puzzle complete</div>
+            <div class="gs-step-desc">All four groups revealed. Come back tomorrow for a new one.</div>
+          </div>
+        </div>
+      </div>
+      <div class="gs-phone-wrap">
+        <div class="gs-phone-frame">
+          <div class="gs-phone-inner">
+            <img class="gs-slide is-active" src="../../content/images/grooped/groopped gameplay/gp-1.PNG" alt="16 words, 4 groups">
+            <img class="gs-slide" src="../../content/images/grooped/groopped gameplay/gp-3.PNG" alt="Spot a pattern">
+            <img class="gs-slide" src="../../content/images/grooped/groopped gameplay/gp-5.PNG" alt="First group found">
+            <img class="gs-slide" src="../../content/images/grooped/groopped gameplay/gp-7.PNG" alt="Puzzle complete">
+          </div>
+        </div>
+      </div>
+      <!-- Mobile horizontal steps strip -->
+      <div class="gs-steps-mobile" id="gs-steps-mobile">
+        <div class="gs-step-mobile is-active" data-index="0">
+          <div class="gs-step-num">1</div>
+          <div class="gs-step-title">16 words, 4 groups</div>
+          <div class="gs-step-desc">A fresh puzzle. The grid shows 16 words with no hints about what connects them.</div>
+        </div>
+        <div class="gs-step-mobile" data-index="1">
+          <div class="gs-step-num">2</div>
+          <div class="gs-step-title">Spot a pattern</div>
+          <div class="gs-step-desc">Four words selected, ready to submit. Is it the right group?</div>
+        </div>
+        <div class="gs-step-mobile" data-index="2">
+          <div class="gs-step-num">3</div>
+          <div class="gs-step-title">First group found</div>
+          <div class="gs-step-desc">A correct guess collapses into a color block. Twelve words remain.</div>
+        </div>
+        <div class="gs-step-mobile" data-index="3">
+          <div class="gs-step-num">4</div>
+          <div class="gs-step-title">Puzzle complete</div>
+          <div class="gs-step-desc">All four groups revealed. Come back tomorrow for a new one.</div>
+        </div>
+      </div>
+      <div class="gs-dots" id="gs-dots">
+        <div class="gs-dot is-active"></div>
+        <div class="gs-dot"></div>
+        <div class="gs-dot"></div>
+        <div class="gs-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. ITERATION WITH DATA -->
+  <section class="cs-section" style="margin-top: 79px;">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Iteration with data</span>
+      <div class="cs-pin"><h2 class="cs-h2">Session recordings over surveys</h2></div>
+      <p class="cs-p">I connected Microsoft Clarity to track how people actually play. People play fast and lose patience faster. A couple of wrong guesses and some players just leave. That insight pushed me to make puzzles more solvable.</p>
+    </div>
+
+    <blockquote class="cs-pullquote" style="max-width: 660px; margin-left: auto; margin-right: auto;">
+      "I believe in seeing what people do, not asking what they would do."
+    </blockquote>
+
+    <div class="cs-img-wrap">
+      <video class="cs-img cs-video no-lightbox" src="../../content/images/grooped/grooped-clarity-session.mp4" autoplay loop muted playsinline></video>
+      <p class="cs-caption">Microsoft Clarity session recording: tracking real player behavior.</p>
+    </div>
+
+  </section>
+
+  <section class="cs-section" style="margin-top: 79px;">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Knowing when to scale back</span>
+      <div class="cs-pin"><h2 class="cs-h2">From daily to weekly, on purpose</h2></div>
+      <p class="cs-p">I ran Grooped daily for nearly 200 puzzles. Every one started with me: prompting, curating, checking the board, publishing. The pipeline did the heavy lifting, but the judgment call on each puzzle was still mine.</p>
+      <p class="cs-p">Around puzzle 200, with summer coming, I did the math on my own time and made a call. A daily puzzle I have to force out is worse than a weekly one I actually want to make. So I moved Grooped to weekly.</p>
+      <p class="cs-p" style="margin-bottom: 0;">A daily streak is a vanity metric. Sustaining the quality bar is the real one. Scaling the cadence back kept the project alive and kept every puzzle worth playing, instead of quietly letting it slip or shipping worse puzzles to protect a number.</p>
+    </div>
+  </section>
+
+  <div style="height: 60px;"></div>
+
+  <!-- 6. BOTTOM CTA STRIP -->
+  <div class="cs-closing-strip cs-bleed">
+    <p class="cs-closing-h">Curious? Give it a try.</p>
+    <div class="cs-cta-row">
+      <div class="cs-bottom-qr-group">
+        <span class="cs-bottom-qr-label">Scan to play on your phone</span>
+        <img src="../../content/images/grooped/qr-grooped.png" alt="QR code linking to grooped.de">
+      </div>
+      <span class="cs-cta-or">or</span>
+      <a href="https://grooped.de?utm_source=portfolio&utm_medium=web" target="_blank" rel="noopener" class="cs-cta-btn">Play this week's puzzle ➜</a>
+    </div>
+  </div>
+
+  <!-- BACK LINK -->
+  <!-- LIGHTBOX -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
+    <div class="lb-media-wrap">
+      <button class="lb-arrow lb-arrow-prev" id="lb-prev" aria-label="Previous">&#8249;</button>
+      <img id="lb-img" src="" alt="">
+      <video id="lb-video" src="" autoplay loop muted playsinline style="display:none;"></video>
+      <button class="lb-arrow lb-arrow-next" id="lb-next" aria-label="Next">&#8250;</button>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var overlay  = document.getElementById('lb-overlay');
+      var lbImg    = document.getElementById('lb-img');
+      var lbVideo  = document.getElementById('lb-video');
+      var btnPrev  = document.getElementById('lb-prev');
+      var btnNext  = document.getElementById('lb-next');
+
+      var navSlides = null; // array of slide elements when in stepper mode
+      var navIndex  = 0;
+
+      function showSlide(el) {
+        if (el.tagName === 'VIDEO') {
+          lbVideo.src = el.src; lbVideo.style.display = ''; lbImg.style.display = 'none'; lbImg.src = '';
+        } else {
+          lbImg.src = el.src; lbImg.alt = el.alt || ''; lbImg.style.display = ''; lbVideo.style.display = 'none'; lbVideo.src = '';
+        }
+      }
+
+      function openSingle(src, alt) {
+        navSlides = null;
+        overlay.classList.remove('has-nav');
+        lbImg.src = src; lbImg.alt = alt || ''; lbImg.style.display = '';
+        lbVideo.style.display = 'none'; lbVideo.src = '';
+        overlay.classList.add('is-open'); document.body.style.overflow = 'hidden';
+      }
+
+      function openStepper(slides, index) {
+        navSlides = slides; navIndex = index;
+        overlay.classList.add('has-nav');
+        showSlide(navSlides[navIndex]);
+        overlay.classList.add('is-open'); document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        overlay.classList.remove('is-open', 'has-nav');
+        document.body.style.overflow = '';
+        lbImg.src = ''; lbVideo.src = ''; lbVideo.style.display = 'none'; lbImg.style.display = '';
+        navSlides = null;
+      }
+
+      function navigate(dir) {
+        if (!navSlides) return;
+        navIndex = (navIndex + dir + navSlides.length) % navSlides.length;
+        showSlide(navSlides[navIndex]);
+      }
+
+      document.querySelectorAll('img.cs-img').forEach(function(img) {
+        img.addEventListener('click', function() { openSingle(img.src, img.alt); });
+      });
+      document.querySelectorAll('video.cs-video:not(.no-lightbox)').forEach(function(vid) {
+        vid.addEventListener('click', function() { openSingle(vid.src, ''); });
+      });
+
+      // Stepper phone frame click
+      var phoneFrame = document.querySelector('#gs-stepper .gs-phone-inner');
+      if (phoneFrame) {
+        phoneFrame.style.cursor = 'zoom-in';
+        phoneFrame.addEventListener('click', function(e) {
+          var slides = Array.from(phoneFrame.querySelectorAll('.gs-slide'));
+          var active = slides.findIndex(function(s) { return s.classList.contains('is-active'); });
+          openStepper(slides, active >= 0 ? active : 0);
+          e.stopPropagation();
+        });
+      }
+
+      btnPrev.addEventListener('click', function(e) { e.stopPropagation(); navigate(-1); });
+      btnNext.addEventListener('click', function(e) { e.stopPropagation(); navigate(1); });
+
+      overlay.addEventListener('click', closeLightbox);
+      lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
+      lbVideo.addEventListener('click', function(e) { e.stopPropagation(); });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft')  navigate(-1);
+        if (e.key === 'ArrowRight') navigate(1);
+      });
+    })();
+  </script>
+  <script>
+    (function() {
+      var stepper      = document.getElementById('gs-stepper');
+      var steps        = stepper.querySelectorAll('.gs-step');
+      var slides       = stepper.querySelectorAll('.gs-slide');
+      var mobileStrip  = document.getElementById('gs-steps-mobile');
+      var mobileSteps  = mobileStrip ? mobileStrip.querySelectorAll('.gs-step-mobile') : [];
+      var dotsWrap     = document.getElementById('gs-dots');
+      var dots         = dotsWrap ? dotsWrap.querySelectorAll('.gs-dot') : [];
+      var current      = 0;
+      var timer        = null;
+      var isMobile     = function() { return window.innerWidth <= 768; };
+
+      function scrollMobileTo(i) {
+        if (!mobileStrip || !mobileSteps[i]) return;
+        var strip = mobileStrip;
+        var card  = mobileSteps[i];
+        var stripW = strip.offsetWidth;
+        var cardW  = card.offsetWidth;
+        var cardLeft = card.offsetLeft;
+        strip.scrollTo({ left: cardLeft - (stripW - cardW) / 2, behavior: 'smooth' });
+      }
+
+      function goTo(i, fromSwipe) {
+        steps[current].classList.remove('is-active');
+        slides[current].classList.remove('is-active');
+        if (mobileSteps[current]) mobileSteps[current].classList.remove('is-active');
+        if (dots[current]) dots[current].classList.remove('is-active');
+        current = i;
+        steps[current].classList.add('is-active');
+        slides[current].classList.add('is-active');
+        if (mobileSteps[current]) mobileSteps[current].classList.add('is-active');
+        if (dots[current]) dots[current].classList.add('is-active');
+        if (!fromSwipe && isMobile()) scrollMobileTo(i);
+      }
+
+      function stopTimer() { clearInterval(timer); timer = null; }
+
+      function startTimer() {
+        stopTimer();
+        timer = setInterval(function() { goTo((current + 1) % steps.length); }, 4000);
+      }
+
+      // Desktop: click steps
+      steps.forEach(function(step, i) {
+        step.addEventListener('click', function() { stopTimer(); goTo(i); startTimer(); });
+      });
+
+      // Mobile: click cards
+      mobileSteps.forEach(function(step, i) {
+        step.addEventListener('click', function() { stopTimer(); goTo(i); startTimer(); });
+      });
+
+      // Mobile swipe: detect which card is snapped after scroll ends
+      if (mobileStrip) {
+        var scrollEndTimer = null;
+        mobileStrip.addEventListener('scroll', function() {
+          stopTimer();
+          clearTimeout(scrollEndTimer);
+          scrollEndTimer = setTimeout(function() {
+            // Find which card is closest to center
+            var stripCenter = mobileStrip.scrollLeft + mobileStrip.offsetWidth / 2;
+            var closest = 0;
+            var minDist = Infinity;
+            mobileSteps.forEach(function(card, i) {
+              var cardCenter = card.offsetLeft + card.offsetWidth / 2;
+              var dist = Math.abs(cardCenter - stripCenter);
+              if (dist < minDist) { minDist = dist; closest = i; }
+            });
+            goTo(closest, true);
+            startTimer();
+          }, 120);
+        });
+      }
+
+      stepper.addEventListener('mouseenter', stopTimer);
+      stepper.addEventListener('mouseleave', startTimer);
+
+      startTimer();
+    })();
+  </script>
+  <script>
+    (function() {
+      var RAW_URL = 'https://raw.githubusercontent.com/roieshalom/grooped-puzzle-generator/main/puzzle_generator.py';
+      fetch(RAW_URL)
+        .then(function(r) { return r.text(); })
+        .then(function(text) {
+          var startMarker = '# PORTFOLIO_START';
+          var endMarker = '# PORTFOLIO_END';
+          var markerStart = text.indexOf(startMarker);
+          var markerEnd = text.indexOf(endMarker);
+          if (markerStart === -1 || markerEnd === -1) throw new Error('markers not found');
+          var contentStart = text.indexOf('"""\n', markerStart) + '"""\n'.length;
+          var contentEnd = text.lastIndexOf('\n"""', markerEnd);
+          var promptText = text.slice(contentStart, contentEnd).trim();
+          var el = document.getElementById('gs-prompt-text');
+          var loading = document.getElementById('gs-prompt-loading');
+
+          // Parse prompt into styled HTML (v5 format: box headers, step headers, bullets, JSON)
+          var lines = promptText.split('\n');
+          var html = '';
+
+          function escHtml(s) {
+            return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+          }
+
+          function isSeparator(s) {
+            return /^={6,}$/.test(s.trim());
+          }
+
+          function isAllCaps(s) {
+            var t = s.trim();
+            return t.length > 0 && t === t.toUpperCase() && /[A-Z]{2,}/.test(t);
+          }
+
+          // Two-pass: classify each line
+          // Supports two header styles:
+          //   box:      ====\nTITLE\n====  (separator before AND after)
+          //   underline: TITLE\n====        (separator only after, RST style)
+          var types = lines.map(function(line, i) {
+            var t = line.trim();
+            if (!t) return 'blank';
+            if (isSeparator(t)) return 'sep';
+            var prevSep = i > 0 && isSeparator(lines[i-1].trim());
+            var nextSep = i < lines.length-1 && isSeparator(lines[i+1].trim());
+            if ((prevSep && nextSep) || nextSep) return 'box-header'; // box or underline
+            if (/^STEP\s+\d/.test(t)) return 'step';
+            if (/^-\s/.test(t)) return 'bullet';
+            if (isAllCaps(t)) return 'step'; // sub-headers like AVOID:, HARD RULES:
+            return 'text';
+          });
+
+          var idx = 0;
+          while (idx < lines.length) {
+            var t = lines[idx].trim();
+            var type = types[idx];
+
+            if (type === 'sep' || type === 'blank') { idx++; continue; }
+
+            if (type === 'box-header') {
+              html += '<div class="gsp-header">' + escHtml(t) + '</div>';
+            } else if (type === 'step') {
+              html += '<div class="gsp-step">' + escHtml(t) + '</div>';
+            } else if (type === 'bullet') {
+              html += '<div class="gsp-bullet">' + escHtml(t.slice(2)) + '</div>';
+            } else if (t === '{') {
+              // Collect JSON block by tracking brace depth
+              var depth = 0, jLines = [];
+              while (idx < lines.length) {
+                var jl = lines[idx];
+                jLines.push(jl);
+                for (var ci = 0; ci < jl.length; ci++) {
+                  if (jl[ci] === '{') depth++;
+                  else if (jl[ci] === '}') depth--;
+                }
+                idx++;
+                if (depth === 0) break;
+              }
+              html += '<pre class="gsp-code">' + escHtml(jLines.join('\n')) + '</pre>';
+              continue;
+            } else {
+              html += '<div class="gsp-line">' + escHtml(t) + '</div>';
+            }
+            idx++;
+          }
+
+          el.innerHTML = html;
+          el.style.display = '';
+          loading.style.display = 'none';
+        })
+        .catch(function() {
+          document.getElementById('gs-prompt-loading').textContent = 'Prompt unavailable right now.';
+        });
+    })();
+  </script>
+  <div class="cs-end">
+    <a class="cs-end-back" href="index.html#work"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg> All work</a>
+    <a class="cs-next" href="onpaper">
+      <div class="cs-next-text">
+        <span class="cs-next-head">Next project <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+        <span class="cs-next-name">On Paper</span>
+        <span class="cs-next-co">AI Project</span>
+      </div>
+      <div class="cs-next-img"><img src="../../content/images/side_projects/op_gallery.jpg" alt="On Paper"></div>
+    </a>
+  </div>
+
+  <footer><span>Berlin · 2026</span></footer>
+
+  <!-- Mechanic tooltip -->
+  <div id="gp-mechanic-tip"></div>
+  <script>
+    (function () {
+      var tip = document.getElementById('gp-mechanic-tip');
+      var offset = { x: 14, y: 14 };
+
+      document.querySelectorAll('.gp-tier-list li[data-example]').forEach(function (li) {
+        li.addEventListener('mouseenter', function (e) {
+          tip.textContent = li.dataset.example;
+          tip.classList.add('visible');
+          position(e);
+        });
+        li.addEventListener('mousemove', position);
+        li.addEventListener('mouseleave', function () {
+          tip.classList.remove('visible');
+        });
+      });
+
+      function position(e) {
+        var x = e.clientX + offset.x;
+        var y = e.clientY + offset.y;
+        var w = tip.offsetWidth;
+        var h = tip.offsetHeight;
+        if (x + w > window.innerWidth - 8)  x = e.clientX - w - offset.x;
+        if (y + h > window.innerHeight - 8) y = e.clientY - h - offset.y;
+        tip.style.left = x + 'px';
+        tip.style.top  = y + 'px';
+      }
+    })();
+  </script>
+
+  <script>
+    // Animate open/close of .gp-collapsible <details> elements
+    (function() {
+      document.querySelectorAll('.gp-collapsible').forEach(function(details) {
+        var body = details.querySelector('.gp-collapsible-body');
+        if (!body) return;
+        var isAnimating = false;
+
+        details.addEventListener('click', function(e) {
+          // Only intercept clicks on the summary
+          if (!e.target.closest('summary')) return;
+          e.preventDefault();
+          if (isAnimating) return;
+
+          if (details.open) {
+            // Closing
+            isAnimating = true;
+            var startH = body.scrollHeight;
+            body.style.height = startH + 'px';
+            body.style.transition = 'height 0.32s cubic-bezier(0.4, 0, 0.2, 1)';
+            requestAnimationFrame(function() {
+              requestAnimationFrame(function() {
+                body.style.height = '0px';
+              });
+            });
+            body.addEventListener('transitionend', function onEnd() {
+              body.removeEventListener('transitionend', onEnd);
+              details.removeAttribute('open');
+              body.style.height = '';
+              body.style.transition = '';
+              isAnimating = false;
+            });
+          } else {
+            // Opening
+            isAnimating = true;
+            details.setAttribute('open', '');
+            var targetH = body.scrollHeight;
+            body.style.height = '0px';
+            body.style.transition = 'height 0.32s cubic-bezier(0.4, 0, 0.2, 1)';
+            requestAnimationFrame(function() {
+              requestAnimationFrame(function() {
+                body.style.height = targetH + 'px';
+              });
+            });
+            body.addEventListener('transitionend', function onEnd() {
+              body.removeEventListener('transitionend', onEnd);
+              body.style.height = '';
+              body.style.transition = '';
+              isAnimating = false;
+            });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

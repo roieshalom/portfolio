@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnPaper | Roie Shalom</title>
+  <meta name="description" content="A CV checker that names the gaps between your CV and a job, each with one concrete fix. A solo AI project.">
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <!-- OnPaper report fonts (used only inside the embedded .op-report) -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ---- OnPaper hero ---- */
+    /* Solid ink navy, no photo. Sampled from OnPaper's own ink in
+       upload-screen.png. White headline passes contrast (~14:1).
+       Everything else (CTA button, closing strip, QR group) is shared and
+       lives in casestudy.css. */
+    
+
+    @media (max-width: 768px) {
+      html, body { overflow-x: clip; }
+    }
+
+    /* ---- The build: laptop with a screen toggle ----
+       All three images are the same size and stacked on the z-axis: the two
+       screenshots fill the frame, the laptop (with its transparent screen
+       cutout) sits on top. The toggle hides/shows the top screen so the base
+       screen shows through. */
+    .op-laptop-demo { margin: 36px auto 0; max-width: 720px; }
+    .op-laptop { position: relative; width: 100%; }
+    .op-laptop-frame { position: relative; z-index: 3; width: 100%; display: block; pointer-events: none; }
+    .op-laptop-shot { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .op-shot-base { z-index: 1; }
+    .op-shot-top { z-index: 2; transition: opacity 0.25s ease; }
+    .op-shot-top.is-hidden { opacity: 0; }
+    .op-toggle { display: flex; justify-content: center; margin-top: 22px; }
+    .op-toggle-btn {
+      margin: 0;
+      display: inline-block;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-text);
+      background: transparent;
+      border: 1px solid var(--color-border);
+      box-shadow: none;
+      padding: 8px 20px;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+    }
+    .op-toggle-btn:first-child { border-radius: 100px 0 0 100px; }
+    .op-toggle-btn:last-child { border-radius: 0 100px 100px 0; border-left: none; }
+    .op-toggle-btn.is-active { background: var(--color-link); color: #fff; border-color: var(--color-link); }
+    .op-toggle-btn:not(.is-active):hover { background: transparent; color: var(--color-text-main); filter: none; box-shadow: none; }
+
+    /* Bulleted rule list (no equivalent in the shared case-study CSS).
+       Sized to match .cs-p, with pink markers to fit the brand. */
+    .cs-list {
+      margin: 0 0 14px;
+      padding-left: 1.4em;
+    }
+    .cs-list li {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--color-text-main);
+      margin-bottom: 6px;
+    }
+    .cs-list li::marker { color: var(--color-link); }
+
+    /* ---- Embedded OnPaper gap report ----
+       Real report CSS lifted from onpaper.fit, scoped under .op-report so it
+       can't touch the portfolio's styles. OnPaper is a light-only app, so the
+       report keeps its own light palette in both site themes (it reads as a
+       pasted document). Report fonts are loaded in <head>. */
+    .op-report {
+      --paper-bg: #F0F4F7;
+      --paper: #FFFFFF;
+      --ink: #111A28;
+      --ink-2: #111A28;
+      --ink-3: #384A66;
+      --ink-4: #4E6180;
+      --mono-muted: #5E7089;
+      --red: #ed2c0a;
+      --amber: #b5670c;
+      --card-line: rgba(17, 26, 40, 0.10);
+      --line-in: rgba(17, 26, 40, 0.14);
+      --dash: rgba(17, 26, 40, 0.22);
+      --tag-border: rgba(224, 112, 92, 0.55);
+      --serif-d: 'Libre Caslon Display', Georgia, 'Times New Roman', serif;
+      --serif-b: 'Newsreader', Georgia, 'Times New Roman', serif;
+      --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+      font-family: var(--serif-b);
+      color: var(--ink);
+      background: var(--paper-bg);
+      border-radius: 8px;
+      padding: clamp(22px, 4vw, 40px);
+    }
+    .op-report .op-kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+    .op-report .op-rtitle { font-family: var(--serif-d); font-weight: 400; font-size: clamp(28px, 5vw, 40px); margin: 0 0 10px; letter-spacing: -0.01em; line-height: 1.1; }
+    .op-report .op-rsource { font-family: var(--mono); font-size: 12px; line-height: 1.5; color: var(--ink-4); margin: 0 0 20px; }
+    .op-report .op-rsource .op-rsource-label { color: var(--mono-muted); }
+    .op-report .op-intro { font-size: 16px; color: var(--ink-4); margin: 0 0 34px; line-height: 1.55; text-wrap: pretty; }
+    .op-report .op-gap { position: relative; background: var(--paper); border: 1px solid var(--card-line); border-radius: 3px; padding: 28px 30px 30px; margin-bottom: 20px; box-shadow: rgba(0, 0, 0, 0.22) 3px 4px 0; }
+    .op-report .op-gap:last-child { margin-bottom: 0; }
+    .op-report .op-gap-tags { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+    .op-report .op-gap-num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; color: var(--paper-bg); background: var(--red); display: inline-block; padding: 3px 9px; border-radius: 2px; }
+    .op-report .op-gap-kind { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; border: 1px solid var(--tag-border); }
+    .op-report .op-gap-kind--hard { color: var(--red); border-color: var(--tag-border); }
+    .op-report .op-gap-kind--stretch { color: var(--amber); border-color: var(--tag-border); }
+    .op-report .op-gap-kind--closable { color: var(--mono-muted); border-color: var(--line-in); }
+    .op-report .op-gap-title { font-family: var(--serif-b); font-weight: 500; font-size: 23px; margin: 0 0 11px; line-height: 1.3; }
+    .op-report .op-gap-detail { font-size: 16px; line-height: 1.62; color: var(--ink-3); margin: 0 0 20px; text-wrap: pretty; }
+    .op-report .op-fix { display: flex; gap: 14px; align-items: flex-start; border-top: 1px dashed var(--dash); padding-top: 16px; }
+    .op-report .op-fix-caret { font-family: var(--serif-d); font-size: 24px; color: var(--red); line-height: 0.9; margin-top: -2px; }
+    .op-report .op-fix-kicker { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 5px; }
+    .op-report .op-fix-text { font-size: 15px; line-height: 1.6; color: var(--ink-2); margin: 0; text-wrap: pretty; }
+
+    /* Report sits ~90px narrower than the text column, centered. */
+    .op-report-wrap { max-width: calc(100% - 90px); margin: 32px auto 0; }
+    @media (max-width: 600px) { .op-report-wrap { max-width: 100%; } }
+  </style>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="casestudy.css?v=3">
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html" class="brand">Roie Shalom</a>
+    <div class="top-nav-links">
+      <a href="index.html#work" class="nav-link active">Work</a>
+      <a href="about" class="nav-link">About</a>
+    </div>
+  </nav>
+
+  <!-- 1. HERO -->
+  <section class="cs-hero cs-bleed">
+    <div class="cs-inner">
+      <div class="cs-hero-content">
+        <div>
+          <span class="cs-hero-eyebrow"><span class="cs-hero-index">06 / 06</span>AI Project</span>
+          <h1 class="cs-hero-h">Matching your CV to the job description before you apply</h1>
+        </div>
+        <a href="https://onpaper.fit" target="_blank" rel="noopener" class="cs-cta-btn">Try OnPaper ➜</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. INTRO -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <p class="cs-p">More than once, candidates send a CV and get a rejection right after, not knowing why. I know ATS systems sit at that gate, and a weak match between a CV and what the filter wants can end things before a human reads a word.</p>
+      <p class="cs-p">Talking with friends in HR and talent acquisition showed me their side: plenty of candidates never really read the job description or consider their own fit, and if they get that interview, it shows.</p>
+      <p class="cs-p">If a machine screens your CV, a machine can also check it first. OnPaper reads your CV against one specific job and names the top gaps, each with one concrete fix.</p>
+      <p class="cs-p" style="margin-bottom: 0;">It will never tell you to write anything that isn't true. Sometimes the fix is a better emphasis, and sometimes the honest answer is that the match isn't there, and that's useful to know even if you still want to apply.</p>
+    </div>
+  </section>
+
+  <!-- 3. PRIVACY -->
+  <section class="cs-section" style="margin-top: 79px;">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Privacy</span>
+      <div class="cs-pin"><h2 class="cs-h2">The data I chose not to see</h2></div>
+      <p class="cs-p">Unlike my other projects, when someone hands OnPaper their CV, it's about as personal as a document gets, so I set the limits before I built anything.</p>
+      <p class="cs-p">Anthropic runs the analysis anonymously, and nothing is saved. Both OnPaper's site and its backend are secured, so nothing leaks in transit and no human ever sees the submission. At this point there's no account and no sign-up.</p>
+      <p class="cs-p">PostHog records raw clicks, timing and where people drop off in the flow. It never sees the CV, the job description or the result. I don't collect session recordings, even though I know how much they'd teach me. If recordings are what stops someone from pasting their CV, they cost more than they give.</p>
+      <p class="cs-p" style="margin-bottom: 0;">After each report there's a "Useful / Not useful" button, and I ask people for feedback.</p>
+    </div>
+  </section>
+
+  <!-- 4. THE PROMPT -->
+  <section class="cs-section" style="margin-top: 79px;">
+    <div class="cs-text">
+      <span class="cs-eyebrow">The prompt</span>
+      <div class="cs-pin"><h2 class="cs-h2">Honesty is the whole product</h2></div>
+      <p class="cs-p">OnPaper runs on a prompt built to force honest answers. Here are some of the rules it lives by:</p>
+      <ul class="cs-list">
+        <li>Obvious deal-breakers, like language or location, go into a first short line.</li>
+        <li>It will never tell you whether to apply.</li>
+        <li>It only names a gap when the job description explicitly asks for something the CV doesn't clearly show.</li>
+        <li>It points at the exact requirement in the job description.</li>
+        <li>It can't invent requirements or qualifications.</li>
+      </ul>
+      <p class="cs-p">That leaves the gaps for what a quick eyeball would miss. Every fix has to be something you can do with what you already have: rephrase it, surface it, put a number on it. Each gap is tagged by how hard it is to close: Closable, Stretch or Hard.</p>
+      <h3 class="cs-h2" style="margin-top: 44px;">The gap report</h3>
+      <p class="cs-p">In this example, the first gap came back Hard: forecasting sits at the center of the job, and nothing in the CV shows any forecasting work, so the fix doesn't soften it, it says the gap stands as is if there's nothing real to add. The second, Python for statistical modeling, was Stretch, since the CV lists Python only for cleanup, not analysis. The third was Closable: the candidate ran A/B tests but described it as reading out results rather than designing them, so the fix is a single reframe of work already done.</p>
+      <figure class="cs-img-wrap op-report-wrap">
+        <div class="op-report" role="img" aria-label="An OnPaper gap report for an invented candidate applying to a Senior Data Analyst role, showing three gaps with evidence and a fix for each">
+          <div class="op-kicker">Gap report</div>
+          <div class="op-rtitle">Routewise — Senior Data Analyst</div>
+          <p class="op-rsource"><span class="op-rsource-label">CV: </span>Pasted CV</p>
+          <p class="op-intro">What the role asks for that your CV doesn’t yet show, with one concrete fix each.</p>
+          <div class="op-gaplist">
+            <div class="op-gap">
+              <div class="op-gap-tags"><span class="op-gap-num">GAP 01</span><span class="op-gap-kind op-gap-kind--hard">Hard</span></div>
+              <div class="op-gap-title">No production time series forecasting</div>
+              <p class="op-gap-detail">JD's core requirement is "building and running time series forecasting models in production" and this is the central duty ("from day one you will own the models that predict shipment volume and capacity"). The CV shows dashboards, A/B test readouts and SQL analysis but no forecasting work of any kind.</p>
+              <div class="op-fix"><span class="op-fix-caret" aria-hidden="true">∧</span><div><div class="op-fix-kicker">Recommended</div><p class="op-fix-text">If you have any forecasting or predictive work not on the CV (even demand/returns prediction at Kestrel), add it with the method and where it ran in production; if you have none, this gap stands as-is.</p></div></div>
+            </div>
+            <div class="op-gap">
+              <div class="op-gap-tags"><span class="op-gap-num">GAP 02</span><span class="op-gap-kind op-gap-kind--stretch">Stretch</span></div>
+              <div class="op-gap-title">Python depth for statistical modeling</div>
+              <p class="op-gap-detail">JD asks for "Python for statistical analysis and modeling." CV lists "Basic Python (pandas) for one-off data cleanups" — cleanup only, not modeling.</p>
+              <div class="op-fix"><span class="op-fix-caret" aria-hidden="true">∧</span><div><div class="op-fix-kicker">Recommended</div><p class="op-fix-text">If you've used Python for any statistical/modeling task beyond cleanups, name the library and the analysis; otherwise state honestly where your Python level sits against the modeling requirement.</p></div></div>
+            </div>
+            <div class="op-gap">
+              <div class="op-gap-tags"><span class="op-gap-num">GAP 03</span><span class="op-gap-kind op-gap-kind--closable">Closable</span></div>
+              <div class="op-gap-title">Experiment design (not just readout)</div>
+              <p class="op-gap-detail">JD wants "designing and analyzing experiments... including sample size and significance." CV says you "read out the results of about 15 A/B tests" with the growth team — reporting results, with no mention of designing them or handling sample size/significance.</p>
+              <div class="op-fix"><span class="op-fix-caret" aria-hidden="true">∧</span><div><div class="op-fix-kicker">Recommended</div><p class="op-fix-text">If you contributed to setting up those A/B tests (sizing, significance thresholds, metric choice), rephrase the line to show that involvement instead of just "read out the results."</p></div></div>
+            </div>
+          </div>
+        </div>
+        <figcaption class="cs-caption">A run on mock CV and job. Unedited output.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 5. TESTING -->
+  <section class="cs-section" style="margin-top: 79px;">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Testing</span>
+      <div class="cs-pin"><h2 class="cs-h2">Testing against people I know</h2></div>
+      <p class="cs-p">I ran my own CV through OnPaper dozens of times with suitable jobs, but also clearly not suitable ones, in seniority or field. I also ran CVs from close friends, because I knew what was on them and which jobs they were going for or had landed. That gave me something to check the results against. All three gaps in a report have to be spot on.</p>
+      <p class="cs-p" style="margin-bottom: 0;">Early on, it flagged small, trivial topics as gaps. So I taught it to read job titles, work out seniority, and compare that level to the role. To test it, I applied on purpose to levels far above and below mine, like a VP of Design, to see how it reacted.</p>
+    </div>
+  </section>
+
+  <!-- 6. THE BUILD -->
+  <section class="cs-section" style="margin-top: 79px;">
+    <div class="cs-text">
+      <span class="cs-eyebrow">The build</span>
+      <div class="cs-pin"><h2 class="cs-h2">A side tab that grew up</h2></div>
+      <p class="cs-p">OnPaper started as a tab on my personal job triage site. Two text boxes and one button, built for me.</p>
+      <p class="cs-p">It worked well enough to earn its own site. It takes a pasted CV, a PDF or a DOCX, and a job link or the job text.</p>
+      <div class="op-laptop-demo">
+        <div class="op-laptop">
+          <img class="op-laptop-shot op-shot-base" src="../../content/images/onpaper/build-today.png" alt="The current OnPaper upload screen with a CV card and a job link card">
+          <img class="op-laptop-shot op-shot-top" src="../../content/images/onpaper/build-first.png" alt="The first version of OnPaper, a tab on the job triage site with two paste boxes and a Find gaps button">
+          <img class="op-laptop-frame" src="../../content/images/onpaper/laptop.png" alt="" aria-hidden="true">
+        </div>
+        <div class="op-toggle" role="group" aria-label="OnPaper versions">
+          <button type="button" class="op-toggle-btn is-active" data-show="1">The first version</button>
+          <button type="button" class="op-toggle-btn" data-show="0">Today</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. COPY -->
+  <section class="cs-section" style="margin-top: 79px;">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Copy</span>
+      <div class="cs-pin"><h2 class="cs-h2">Every message in one table</h2></div>
+      <p class="cs-p">Almost every word a user sees lives in one page I built to review it: errors, buttons, hints, placeholders, the About text. Over 130 messages. I can read them all in one place, rewrite them, and copy them back into the app.</p>
+      <div class="cs-img-wrap">
+        <img class="cs-img" src="../../content/images/onpaper/messaging-catalog.png" alt="OnPaper's internal messaging catalog, a table of user-facing messages with where and when each one appears">
+        <p class="cs-caption">The messaging catalog: every user-facing string, with where and when it appears.</p>
+      </div>
+      <p class="cs-p" style="margin-top: 32px;">Errors got the most attention. When a CV is too long, OnPaper doesn't say "invalid input". It says the CV is too long for us and probably for talent acquisition too, gives the range it accepts, and shows the length of yours. Two pages is roughly what a recruiter will digest, so the limit belongs to their side, not to my system. When a job link is blocked, it says why, asks you to paste the text, and confirms no run was used.</p>
+      <p class="cs-p" style="margin-bottom: 0;">After a report, "Not useful" opens four quick reasons: wrong gaps, missed something, too harsh, too generic.</p>
+    </div>
+  </section>
+
+  <!-- 8. WHERE IT STANDS -->
+  <section class="cs-section" style="margin-top: 79px;">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Where it stands</span>
+      <div class="cs-pin"><h2 class="cs-h2">Live, still in beta</h2></div>
+      <p class="cs-p" style="margin-bottom: 0;">OnPaper is live at onpaper.fit and still marked beta. Everyone gets a free run, and free runs reset through the day. Paid runs aren't live yet, and there's a waitlist for when they are. Testers got coupon codes named after superheroes.</p>
+    </div>
+  </section>
+
+  <div style="height: 60px;"></div>
+
+  <!-- BOTTOM CTA STRIP -->
+  <div class="cs-closing-strip cs-bleed">
+    <p class="cs-closing-h">Curious? Check your own CV.</p>
+    <div class="cs-cta-row">
+      <a href="https://onpaper.fit" target="_blank" rel="noopener" class="cs-cta-btn">Try OnPaper ➜</a>
+    </div>
+  </div>
+
+  <!-- BACK LINK -->
+  <!-- LIGHTBOX -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
+    <div class="lb-media-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+
+      function openSingle(src, alt) {
+        lbImg.src = src; lbImg.alt = alt || '';
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      document.querySelectorAll('img.cs-img').forEach(function(img) {
+        img.addEventListener('click', function() { openSingle(img.src, img.alt); });
+      });
+
+      overlay.addEventListener('click', closeLightbox);
+      lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+  <script>
+    // The build: laptop screen toggle
+    (function() {
+      document.querySelectorAll('.op-laptop-demo').forEach(function(demo) {
+        var top  = demo.querySelector('.op-shot-top');
+        var btns = demo.querySelectorAll('.op-toggle-btn');
+        btns.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            top.classList.toggle('is-hidden', btn.dataset.show !== '1');
+            btns.forEach(function(b) { b.classList.toggle('is-active', b === btn); });
+          });
+        });
+      });
+    })();
+  </script>
+  <div class="cs-end">
+    <a class="cs-end-back" href="index.html#work"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg> All work</a>
+    <a class="cs-next" href="wayfair">
+      <div class="cs-next-text">
+        <span class="cs-next-head">Next project <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+        <span class="cs-next-name">Unified Order Entry</span>
+        <span class="cs-next-co">Wayfair</span>
+      </div>
+      <div class="cs-next-img"><img src="../../content/images/wayfair/uoethumb-2.jpeg" alt="Unified Order Entry"></div>
+    </a>
+  </div>
+
+  <footer><span>Berlin · 2026</span></footer>
+</body>
+</html>
