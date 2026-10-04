@@ -26,7 +26,7 @@
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body { margin: 0; background: var(--color-bg); }
     a { color: inherit; text-decoration: none; }
-    #work, #about { scroll-margin-top: 66px; }
+    #work, #contact { scroll-margin-top: 66px; }
 
     .page { max-width: 1280px; margin: 0 auto; background: var(--color-bg); color: var(--color-text); }
 
@@ -57,14 +57,12 @@
       border-bottom: 2px solid var(--color-divider);
     }
     .section-label { font-weight: 800; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
-    .section-link { font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
-    .section-link:hover { color: var(--color-accent-600); }
 
     /* Work */
     .work-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
     .work-list { padding: 0 40px 40px; }
     .work-row {
-      display: grid; grid-template-columns: 56px minmax(0, 1fr) 150px 24px;
+      display: grid; grid-template-columns: 56px minmax(0, 1fr) 150px;
       align-items: baseline; gap: 16px; padding: 22px 0;
       border-bottom: 2px solid var(--color-divider); cursor: pointer; color: var(--color-text);
       transition: color .3s ease;
@@ -80,7 +78,6 @@
     .work-row-title { font-weight: 800; font-size: 38px; line-height: 1.05; letter-spacing: -0.02em; }
     .work-row-kind { font-size: 15px; color: var(--color-neutral-700); }
     .work-row-client { font-size: 15px; font-weight: 600; }
-    .work-row svg { display: block; }
 
     .work-preview { border-left: 2px solid var(--color-divider); padding: 32px 40px 40px; cursor: pointer; }
     .work-preview-inner { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 16px; }
@@ -100,53 +97,51 @@
     .work-preview-status { color: var(--color-accent-700); }
     .work-preview-desc { font-size: 22px; line-height: 1.35; text-wrap: pretty; }
 
-    /* About */
-    .about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
-    .about-photo { padding: 32px 40px 40px; border-right: 2px solid var(--color-divider); }
-    .about-photo img {
-      width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
-      filter: grayscale(1) contrast(1.08); transition: filter .3s;
-    }
-    .about-photo:hover img { filter: none; }
-    .about-body { padding: 32px 40px 40px; display: flex; flex-direction: column; gap: 24px; }
-    .about-heading { font-weight: 800; font-size: 52px; line-height: 1; letter-spacing: -0.03em; text-wrap: balance; }
-    .about-intro { font-size: 20px; line-height: 1.5; text-wrap: pretty; }
+    /* Reusable text-link hover: magenta + a slight rise (matches the work rows) */
+    .rise-link { transition: color .3s ease, transform .2s ease; }
+    .rise-link:hover { color: #d4157e; transform: translateY(-2px); }
 
-    .exp { display: flex; flex-direction: column; border-top: 2px solid var(--color-text); margin-top: 16px; }
-    .exp-head {
+    /* Footer / Contact (shared site footer) */
+    .site-footer { border-top: 2px solid #201e1d; scroll-margin-top: 66px; }
+    .site-footer-top {
+      display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      gap: 40px; align-items: end; padding: 40px 40px 32px;
+    }
+    .site-footer-lead { display: flex; flex-direction: column; gap: 8px; }
+    .site-footer-lead-sm { font-size: 22px; line-height: 1.3; }
+    .site-footer-lead-lg { font-weight: 800; font-size: 72px; line-height: .95; letter-spacing: -0.035em; }
+    .site-footer-contact { display: flex; flex-direction: column; gap: 20px; }
+    .site-footer-email {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 14px 0; border-bottom: 2px solid var(--color-divider);
+      padding: 14px 0; border-top: 2px solid #201e1d; border-bottom: 2px solid #201e1d;
+      font-weight: 800; font-size: clamp(22px, 2.6vw, 32px); letter-spacing: -0.02em;
+      overflow-wrap: anywhere; text-decoration: none;
     }
-    .exp-row { padding: 16px 0; border-bottom: 2px solid var(--color-divider); cursor: pointer; }
-    .exp-row:hover { background: var(--color-accent-100); }
-    .exp-row-top { display: grid; grid-template-columns: 110px minmax(0, 1fr) minmax(0, 1fr) 20px; gap: 16px; align-items: baseline; }
-    .exp-years { font-size: 14px; font-weight: 600; color: var(--color-neutral-700); }
-    .exp-position { font-weight: 800; font-size: 19px; }
-    .exp-row.is-open .exp-position { color: var(--color-accent-600); }
-    .exp-company { font-size: 15px; font-weight: 600; }
-    .exp-sign { font-weight: 800; font-size: 18px; line-height: 1; }
-    .exp-sign::before { content: '+'; }
-    .exp-row.is-open .exp-sign::before { content: '\2212'; }
-    .exp-collapse { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
-    .exp-row.is-open .exp-collapse { grid-template-rows: 1fr; }
-    .exp-collapse > div { overflow: hidden; }
-    .exp-desc { padding: 10px 36px 0 126px; font-size: 16px; line-height: 1.5; color: var(--color-neutral-800); text-wrap: pretty; opacity: 0; transition: opacity .35s ease; }
-    .exp-row.is-open .exp-desc { opacity: 1; }
-
-    /* Footer */
-    .footer { display: flex; justify-content: space-between; padding: 24px 40px; border-top: 2px solid var(--color-text); font-size: 14px; }
-    .footer-right { font-weight: 600; }
+    .site-footer-email:hover { color: #d4157e; }
+    .site-footer-email svg { flex: none; }
+    .site-footer-social { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .site-footer-social a {
+      display: flex; justify-content: flex-start; align-items: center; gap: 6px;
+      font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: .08em;
+      text-decoration: none;
+    }
+    .site-footer-social a:hover { color: #d4157e; }
+    .site-footer-social svg { flex: none; }
+    .site-footer-bottom {
+      padding: 20px 40px; border-top: 2px solid var(--color-divider); font-size: 14px;
+    }
+    .site-footer-bottom span { font-weight: 600; }
 
     /* Responsive: stack two-column grids below 900px */
     @media (max-width: 900px) {
       .hero-bio-lead { grid-column: 1 / -1; }
       .hero-bio-body { grid-column: 1 / -1; font-size: 20px; }
-      .work-grid, .about-grid { grid-template-columns: 1fr; }
+      .work-grid { grid-template-columns: 1fr; }
       .work-preview { border-left: 0; border-top: 2px solid var(--color-divider); }
-      .about-photo { border-right: 0; border-bottom: 2px solid var(--color-divider); }
       .work-row-title { font-size: 30px; }
-      .about-heading { font-size: 38px; }
       .section-bar { flex-wrap: wrap; gap: 12px; }
+      .site-footer-top { grid-template-columns: 1fr; }
+      .site-footer-lead-lg { font-size: 48px; }
     }
   </style>
 </head>
@@ -156,7 +151,8 @@
       <span class="nav-brand" id="navBrand">Roie Shalom</span>
       <div class="nav-links">
         <a href="#work">Work</a>
-        <a href="#about">About</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
       </div>
       <div class="nav-underline" id="navUnderline"></div>
     </nav>
@@ -170,8 +166,8 @@
     </div>
 
     <!-- Selected work -->
-    <section id="work">
-      <div class="section-bar">
+    <section>
+      <div class="section-bar" id="work" style="scroll-margin-top:66px">
         <span class="section-label">Selected work (<span id="workCount">06</span>)</span>
       </div>
       <div class="work-grid">
@@ -194,40 +190,32 @@
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about">
-      <div class="section-bar">
-        <span class="section-label">About</span>
-        <a class="section-link" href="about">Full story
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-        </a>
-      </div>
-      <div class="about-grid">
-        <div class="about-photo">
-          <img src="../../content/images/about/profile-paper.jpg" alt="Roie Shalom">
+    <!-- Contact -->
+    <footer class="site-footer" id="contact">
+      <div class="site-footer-top">
+        <div class="site-footer-lead">
+          <span class="site-footer-lead-sm">Whatever brought you here,</span>
+          <span class="site-footer-lead-lg">let's talk.</span>
         </div>
-        <div class="about-body">
-          <div class="about-heading">I've been watching how people use things since I was a kid</div>
-          <div class="about-intro">That instinct led me to study industrial design, where I learned to think about objects: what role they fill in our lives, what we keep, what we reach for without thinking. Over time, I followed the same curiosity from physical products into digital ones, from hardware interfaces to enterprise software to consumer brands. The medium kept changing. The question never did.</div>
-          <div class="exp">
-            <div class="exp-head">
-              <span class="section-label">Where I've been</span>
-              <a class="btn btn-secondary" href="../../content/downloads/Roie Shalom Senior Product Designer.pdf" download style="height:40px;gap:10px;font-size:14px;padding:0 16px">Download CV
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"></path></svg>
-              </a>
-            </div>
-            <div id="expList"></div>
+        <div class="site-footer-contact">
+          <a class="site-footer-email rise-link" href="mailto:roiesh@gmail.com">
+            <span>roiesh@gmail.com</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <div class="site-footer-social">
+            <a class="rise-link" href="https://www.linkedin.com/in/roiesh/" target="_blank" rel="noopener">LinkedIn
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+            <a class="rise-link" href="https://github.com/roieshalom" target="_blank" rel="noopener">GitHub
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Writing (hidden until there is real content) -->
-
-    <div class="footer">
-      <span>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</span>
-      <span class="footer-right">Berlin · 2026</span>
-    </div>
+      <div class="site-footer-bottom">
+        <span>Berlin · 2026</span>
+      </div>
+    </footer>
   </div>
 
   <script>
@@ -248,8 +236,6 @@
       { id: 'onpaper',      src: 'ai', staged: 'onpaper' }
     ];
 
-    var ARROW = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"></path></svg>';
-
     // This page lives at /design/paper/, so the repo root is two levels up.
     var ROOT = '../../';
 
@@ -265,7 +251,7 @@
       return (t || '').replace(/^[^\p{L}]+/u, '').trim();
     }
 
-    var state = { active: 0, pointerInList: false, openExp: -1 };
+    var state = { active: 0, pointerInList: false };
     var projects = []; // resolved display objects, in FEATURED order
 
     var els = {
@@ -277,8 +263,7 @@
       previewText: document.getElementById('previewText'),
       previewMeta: document.getElementById('previewMeta'),
       previewStatus: document.getElementById('previewStatus'),
-      previewDesc: document.getElementById('previewDesc'),
-      expList: document.getElementById('expList')
+      previewDesc: document.getElementById('previewDesc')
     };
 
     // Build the rows. Only called on load, never on hover: rebuilding the DOM
@@ -298,8 +283,7 @@
             '<span class="work-row-title">' + p.title + '</span>' +
             '<span class="work-row-kind">' + p.kind + '</span>' +
           '</span>' +
-          '<span class="work-row-client">' + p.client + '</span>' +
-          ARROW;
+          '<span class="work-row-client">' + p.client + '</span>';
         a.addEventListener('mouseenter', function () {
           state.active = p.index;
           state.pointerInList = true;
@@ -373,31 +357,6 @@
       pre.src = p.img;
     }
 
-    // Built once. Toggling a row only flips classes, so the height and the
-    // description opacity can animate via CSS instead of popping in and out.
-    function buildExperience(exp) {
-      els.expList.innerHTML = '';
-      exp.forEach(function (e, i) {
-        var row = document.createElement('div');
-        row.className = 'exp-row';
-        row.innerHTML =
-          '<div class="exp-row-top">' +
-            '<span class="exp-years">' + e.years + '</span>' +
-            '<span class="exp-position">' + e.position + '</span>' +
-            '<span class="exp-company">' + e.company + '</span>' +
-            '<span class="exp-sign"></span>' +
-          '</div>' +
-          '<div class="exp-collapse"><div><div class="exp-desc">' + e.description + '</div></div></div>';
-        row.addEventListener('click', function () {
-          state.openExp = state.openExp === i ? -1 : i;
-          Array.prototype.forEach.call(els.expList.children, function (r, idx) {
-            r.classList.toggle('is-open', idx === state.openExp);
-          });
-        });
-        els.expList.appendChild(row);
-      });
-    }
-
     // Keep the preview in color while the pointer is anywhere in the work area
     // (list or the preview itself), and go gray only when it leaves both. The
     // right side is clickable: it opens the currently active project's page.
@@ -432,10 +391,9 @@
     // Load data
     Promise.all([
       fetch(ROOT + 'data/projects.json').then(function (r) { return r.json(); }),
-      fetch(ROOT + 'ai/data/projects.json').then(function (r) { return r.json(); }),
-      fetch(ROOT + 'data/experience.json').then(function (r) { return r.json(); })
+      fetch(ROOT + 'ai/data/projects.json').then(function (r) { return r.json(); })
     ]).then(function (res) {
-      var ux = res[0], ai = res[1], experience = res[2];
+      var ux = res[0], ai = res[1];
       function find(src, id) {
         var arr = src === 'ux' ? ux : ai;
         return arr.filter(function (x) { return x.id === id; })[0];
@@ -458,18 +416,8 @@
         };
       });
 
-      var exp = experience.map(function (e) {
-        return {
-          years: (e.years || '').replace(/-/g, '–'),
-          position: e.position || '',
-          company: (e.companies || []).map(function (c) { return c.name; }).join(', '),
-          description: e.description || ''
-        };
-      });
-
       buildWork();
       renderPreview(false);
-      buildExperience(exp);
       onScroll();
     });
   })();

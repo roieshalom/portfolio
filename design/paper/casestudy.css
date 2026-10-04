@@ -99,6 +99,11 @@ html { scroll-behavior: smooth; }
 /* Images */
 .cs-img-wrap { margin: 8px 0 24px; }
 .cs-img { display: block; width: 100%; border-radius: 0; }
+/* Crop a pillarboxed video (baked-in black side bars) to its real content:
+   wrapper takes the content aspect ratio and clips the centered, full-height
+   video, so the side bars fall outside. */
+.cs-video-crop { position: relative; width: 100%; aspect-ratio: 1638 / 1080; overflow: hidden; }
+.cs-video-crop video { position: absolute; top: 0; left: 50%; transform: translateX(-50%); height: 100%; width: auto; max-width: none; display: block; }
 .cs-img-2col { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin: 8px 0 24px; }
 .cs-img-2col .img-box { position: relative; height: 380px; }
 .cs-img-2col .img-box img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -142,7 +147,26 @@ html { scroll-behavior: smooth; }
 .cs-next-img { width: 260px; border-left: 2px solid var(--cs-rule); }
 .cs-next-img img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-footer { display: flex; justify-content: flex-end; padding: 24px var(--cs-pad); border-top: 2px solid var(--cs-ink); font-size: 14px; }
+/* Reusable text-link hover: magenta + a slight rise (matches the work rows) */
+.rise-link { transition: color .3s ease, transform .2s ease; }
+.rise-link:hover { color: var(--cs-accent-600); transform: translateY(-2px); }
+
+/* ---------- Footer / Contact (shared site footer) ---------- */
+.site-footer { border-top: 2px solid var(--cs-ink); scroll-margin-top: var(--cs-nav-h); }
+.site-footer-top { display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); gap: 40px; align-items: end; padding: 40px var(--cs-pad) 32px; }
+.site-footer-lead { display: flex; flex-direction: column; gap: 8px; }
+.site-footer-lead-sm { font-size: 22px; line-height: 1.3; }
+.site-footer-lead-lg { font-weight: 800; font-size: 72px; line-height: .95; letter-spacing: -0.035em; }
+.site-footer-contact { display: flex; flex-direction: column; gap: 20px; }
+.site-footer-email { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-top: 2px solid var(--cs-ink); border-bottom: 2px solid var(--cs-ink); font-weight: 800; font-size: clamp(22px, 2.6vw, 32px); letter-spacing: -0.02em; overflow-wrap: anywhere; text-decoration: none; }
+.site-footer-email:hover { color: var(--cs-accent-600); }
+.site-footer-email svg { flex: none; }
+.site-footer-social { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
+.site-footer-social a { display: flex; justify-content: flex-start; align-items: center; gap: 6px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: .08em; text-decoration: none; }
+.site-footer-social a:hover { color: var(--cs-accent-600); }
+.site-footer-social svg { flex: none; }
+.site-footer-bottom { padding: 20px var(--cs-pad); border-top: 2px solid var(--cs-rule); font-size: 14px; }
+.site-footer-bottom span { font-weight: 600; }
 
 /* ---------- Mobile (not designed yet; sensible stack) ---------- */
 @media (max-width: 900px) {
@@ -163,6 +187,8 @@ footer { display: flex; justify-content: flex-end; padding: 24px var(--cs-pad); 
   .cs-end-back { border-right: 0; border-bottom: 2px solid var(--cs-rule); padding: 20px var(--cs-pad); }
   .cs-next-head { font-size: 26px; }
   .cs-next-img { width: 120px; }
+  .site-footer-top { grid-template-columns: 1fr; }
+  .site-footer-lead-lg { font-size: 48px; }
 }
 
 /* ---------- Legacy pieces reused by the other case studies ---------- */
