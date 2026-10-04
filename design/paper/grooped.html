@@ -37,7 +37,7 @@
     /* CTA button */
     .cs-cta-btn {
       display: inline-block;
-      background: var(--color-link);
+      background: var(--cs-accent-600);
       color: #fff;
       font-weight: 600;
       font-size: 0.95rem;
@@ -60,7 +60,7 @@
 
     /* Bottom CTA hint (on white/card bg) */
     .cs-bottom-cta .cs-cta-hint {
-      color: var(--color-text);
+      color: var(--cs-ink);
       opacity: 0.6;
     }
 
@@ -97,7 +97,7 @@
     .gs-step:hover { opacity: 0.65; }
 
     .gs-step.is-active {
-      border-left-color: var(--color-link);
+      border-left-color: var(--cs-accent-600);
       background: rgba(242, 23, 131, 0.05);
       opacity: 1;
     }
@@ -107,24 +107,24 @@
     .gs-step-num {
       font-size: 1rem;
       font-weight: 800;
-      color: var(--color-text);
+      color: var(--cs-ink);
       line-height: 1.3;
       min-width: 18px;
     }
 
-    .gs-step.is-active .gs-step-num { color: var(--color-link); }
+    .gs-step.is-active .gs-step-num { color: var(--cs-accent-600); }
 
     .gs-step-title {
       font-size: 0.88rem;
       font-weight: 700;
-      color: var(--color-text-main);
+      color: var(--cs-ink);
       margin-bottom: 3px;
       line-height: 1.3;
     }
 
     .gs-step-desc {
       font-size: 0.78rem;
-      color: var(--color-text);
+      color: var(--cs-ink);
       line-height: 1.5;
     }
 
@@ -199,7 +199,7 @@
       }
 
       .gs-step-mobile.is-active {
-        border-left-color: var(--color-link);
+        border-left-color: var(--cs-accent-600);
         background: rgba(242, 23, 131, 0.05);
         opacity: 1;
       }
@@ -207,23 +207,23 @@
       .gs-step-mobile .gs-step-num {
         font-size: 0.85rem;
         font-weight: 800;
-        color: var(--color-text);
+        color: var(--cs-ink);
         margin-bottom: 4px;
       }
 
-      .gs-step-mobile.is-active .gs-step-num { color: var(--color-link); }
+      .gs-step-mobile.is-active .gs-step-num { color: var(--cs-accent-600); }
 
       .gs-step-mobile .gs-step-title {
         font-size: 0.88rem;
         font-weight: 700;
-        color: var(--color-text-main);
+        color: var(--cs-ink);
         margin-bottom: 3px;
         line-height: 1.3;
       }
 
       .gs-step-mobile .gs-step-desc {
         font-size: 0.78rem;
-        color: var(--color-text);
+        color: var(--cs-ink);
         line-height: 1.5;
       }
 
@@ -239,12 +239,12 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background: var(--color-border);
+        background: var(--cs-rule);
         transition: background 0.2s, transform 0.2s;
       }
 
       .gs-dot.is-active {
-        background: var(--color-link);
+        background: var(--cs-accent-600);
         transform: scale(1.3);
       }
     }
@@ -256,7 +256,7 @@
 
     /* ---- Bottom CTA strip ---- */
     .cs-closing-strip {
-      background: var(--color-grey-light);
+      background: #eae9e9;
       text-align: center;
       padding: 72px 24px 64px;
     }
@@ -264,7 +264,7 @@
     .cs-closing-h {
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--color-text-main);
+      color: var(--cs-ink);
       margin: 0 0 20px;
     }
 
@@ -293,7 +293,7 @@
     .cs-bottom-qr-label {
       font-size: 1rem;
       font-weight: 600;
-      color: var(--color-link);
+      color: var(--cs-accent-600);
       line-height: 1.3;
       text-align: right;
       max-width: 120px;
@@ -301,7 +301,7 @@
 
     .cs-cta-or {
       font-size: 0.85rem;
-      color: var(--color-text);
+      color: var(--cs-ink);
       opacity: 0.45;
       font-style: italic;
     }
@@ -315,14 +315,14 @@
 
     /* ── Collapsible pipeline block ─────────────────────────────────────────── */
     .gp-collapsible-wrap {
-      margin: 28px auto 0;
-      max-width: 660px;
+      margin: 28px 0 0;
+      max-width: 700px;
       width: 100%;
       box-sizing: border-box;
     }
     .gp-collapsible {
-      border: 1px solid var(--color-border);
-      border-radius: 10px;
+      border: 1px solid var(--cs-rule);
+      border-radius: 0;
     }
     .gp-collapsible summary {
       list-style: none;
@@ -330,7 +330,7 @@
       padding: 13px 18px;
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--color-link);
+      color: var(--cs-accent-600);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -339,7 +339,7 @@
     }
     .gp-collapsible summary::-webkit-details-marker { display: none; }
     .gp-collapsible summary:hover { background: rgba(0,0,0,0.03); }
-    .gp-collapsible[open] summary { border-bottom: 1px solid var(--color-border); }
+    .gp-collapsible[open] summary { border-bottom: 1px solid var(--cs-rule); }
     .gp-collapsible-chevron {
       font-style: normal;
       font-size: 0.7rem;
@@ -372,7 +372,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--color-link);
+      color: var(--cs-accent-600);
       margin-bottom: 14px;
     }
 
@@ -382,13 +382,13 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       padding-bottom: 8px;
-      border: 1px solid var(--color-border);
-      border-radius: 10px;
+      border: 1px solid var(--cs-rule);
+      border-radius: 0;
       scrollbar-width: thin;
-      scrollbar-color: var(--color-border) transparent;
+      scrollbar-color: var(--cs-rule) transparent;
     }
     .gp-swim-scroll::-webkit-scrollbar { height: 4px; }
-    .gp-swim-scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
+    .gp-swim-scroll::-webkit-scrollbar-thumb { background: var(--cs-rule); border-radius: 0; }
 
     /* Grid: col 1 = sticky lane label, cols 2–28 = steps + connectors */
     /* Rows: 1 = Roie lane | 2 = 1px divider | 3 = AI lane */
@@ -399,9 +399,9 @@
       width: max-content;
     }
     /* Full-width lane backgrounds (listed first → behind content) */
-    .gp-swim-you-bg { grid-column: 1 / -1; grid-row: 1; background: rgba(236,115,87,0.07); }
+    .gp-swim-you-bg { grid-column: 1 / -1; grid-row: 1; background: rgba(224,25,138,0.07); }
     .gp-swim-ai-bg  { grid-column: 1 / -1; grid-row: 3; background: rgba(0,0,0,0.025); }
-    .gp-swim-div    { grid-column: 1 / -1; grid-row: 2; background: var(--color-border); }
+    .gp-swim-div    { grid-column: 1 / -1; grid-row: 2; background: var(--cs-rule); }
     /* Lane labels — sticky so they stay visible on scroll */
     .gp-swim-lbl {
       position: sticky;
@@ -419,18 +419,18 @@
       justify-content: center;
       padding: 14px 0;
     }
-    .gp-swim-lbl.gp-you { grid-row: 1; background: rgba(236,115,87,0.07); color: #ec7357; }
-    .gp-swim-lbl.gp-ai  { grid-row: 3; background: rgba(0,0,0,0.025); color: var(--color-text); }
+    .gp-swim-lbl.gp-you { grid-row: 1; background: rgba(224,25,138,0.07); color: #d4157e; }
+    .gp-swim-lbl.gp-ai  { grid-row: 3; background: rgba(0,0,0,0.025); color: var(--cs-ink); }
     /* Step nodes */
     .gp-swim-node {
       white-space: normal;
       width: 112px;
       min-height: 52px;
       padding: 8px 12px;
-      border-radius: 7px;
+      border-radius: 0;
       font-size: 0.74rem;
       font-weight: 500;
-      color: var(--color-text-main);
+      color: var(--cs-ink);
       margin: 14px 0;
       display: flex;
       align-items: center;
@@ -440,11 +440,11 @@
     .gp-swim-node[style*="grid-column:2"] { margin-left: 8px; }
     .gp-swim-node.gp-auto  { background: rgba(0,0,0,0.06); }
     .gp-swim-node.gp-human {
-      background: rgba(236,115,87,0.14);
-      border: 1px solid rgba(236,115,87,0.32);
+      background: rgba(224,25,138,0.14);
+      border: 1px solid rgba(224,25,138,0.32);
       font-weight: 600;
     }
-    .gp-swim-node.gp-end   { background: #ec7357; color: #fff; font-weight: 700; }
+    .gp-swim-node.gp-end   { background: #d4157e; color: #fff; font-weight: 700; }
     /* In-lane connectors — horizontal line with arrow */
     .gp-swim-arr {
       display: flex;
@@ -459,7 +459,7 @@
       left: 2px;
       right: 7px;
       height: 1.5px;
-      background: #999;
+      background: var(--cs-muted);
     }
     .gp-swim-arr::after {
       content: '';
@@ -469,7 +469,7 @@
       height: 0;
       border-top: 4px solid transparent;
       border-bottom: 4px solid transparent;
-      border-left: 6px solid #999;
+      border-left: 6px solid var(--cs-muted);
     }
     /* Cross-lane handoff arrows — span all 3 rows */
     .gp-swim-off {
@@ -488,7 +488,7 @@
       transform: translateX(-50%);
       top: 33%; bottom: 33%;
       width: 1.5px;
-      background: #999;
+      background: var(--cs-muted);
     }
     /* arrowhead pointing down */
     .gp-swim-off.gp-down::after {
@@ -500,7 +500,7 @@
       width: 0; height: 0;
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
-      border-top: 6px solid #999;
+      border-top: 6px solid var(--cs-muted);
     }
     /* arrowhead pointing up */
     .gp-swim-off.gp-up::after {
@@ -512,7 +512,7 @@
       width: 0; height: 0;
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
-      border-bottom: 6px solid #999;
+      border-bottom: 6px solid var(--cs-muted);
     }
 
     /* ── Mechanic tier map ─────────────────────────────────────────────────── */
@@ -529,32 +529,32 @@
       gap: 10px;
     }
     .gp-tier {
-      background: var(--color-grey-light);
-      border-radius: 10px;
+      background: #eae9e9;
+      border-radius: 0;
       padding: 14px 14px 18px;
       border-top: 3px solid transparent;
     }
-    .gp-tier-1 { border-top-color: var(--color-border); }
-    .gp-tier-2 { border-top-color: rgba(236,115,87,0.55); }
-    .gp-tier-3 { border-top-color: #ec7357; }
-    .gp-tier-4 { border-top-color: var(--color-link); }
+    .gp-tier-1 { border-top-color: var(--cs-rule); }
+    .gp-tier-2 { border-top-color: rgba(224,25,138,0.55); }
+    .gp-tier-3 { border-top-color: #d4157e; }
+    .gp-tier-4 { border-top-color: var(--cs-accent-600); }
     .gp-tier-num {
       font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.09em;
-      color: var(--color-text);
+      color: var(--cs-ink);
       margin-bottom: 1px;
     }
     .gp-tier-name {
       font-size: 1rem;
       font-weight: 700;
-      color: var(--color-text-main);
+      color: var(--cs-ink);
       margin-bottom: 2px;
     }
     .gp-tier-cd {
       font-size: 0.78rem;
-      color: var(--color-text);
+      color: var(--cs-ink);
       margin-bottom: 12px;
     }
     .gp-tier-list {
@@ -567,12 +567,12 @@
     }
     .gp-tier-list li {
       font-size: 0.88rem;
-      color: var(--color-text);
+      color: var(--cs-ink);
       line-height: 1.4;
       cursor: default;
     }
     .gp-tier-list li[data-example]:hover {
-      color: var(--color-link);
+      color: var(--cs-accent-600);
     }
 
     /* ── Mechanic tooltip ───────────────────────────────────────────── */
@@ -580,12 +580,12 @@
       position: fixed;
       z-index: 9999;
       pointer-events: none;
-      background: var(--color-text);
-      color: var(--color-surface, #fff);
+      background: var(--cs-ink);
+      color: #fff;
       font-size: 0.78rem;
       line-height: 1.45;
       padding: 7px 11px;
-      border-radius: 7px;
+      border-radius: 0;
       max-width: 240px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.18);
       opacity: 0;
@@ -607,7 +607,7 @@
     }
   </style>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="casestudy.css?v=5">
+  <link rel="stylesheet" href="casestudy.css?v=7">
 </head>
 <body>
   <nav class="top-nav">

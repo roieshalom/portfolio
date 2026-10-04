@@ -201,12 +201,12 @@ footer { display: flex; justify-content: flex-end; padding: 24px var(--cs-pad); 
 
 /* ---------- Live system-prompt box (esmeralda / grooped) ---------- */
 .gs-prompt-section { margin-top: 40px; margin-bottom: 8px; }
-.gs-prompt-label { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.gs-prompt-label { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; max-width: 700px; margin-bottom: 12px; }
 .gs-prompt-eyebrow { font-size: 14px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--cs-accent-700); }
 .gs-prompt-source { font-size: 14px; font-weight: 600; color: var(--cs-muted); text-decoration: none; transition: color .15s; }
 .gs-prompt-source:hover { color: var(--cs-accent-600); }
-.gs-prompt-box-label { justify-self: start; display: inline-block; margin: 0; padding: 6px 12px; background: var(--cs-ink); color: var(--cs-bg); font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; }
-.gs-prompt-box { max-width: 700px; max-height: 440px; overflow-y: auto; margin: 0 0 24px; padding: 20px 24px; border: 2px solid var(--cs-ink); background: #eae9e9; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; line-height: 1.65; color: var(--cs-body2); -webkit-overflow-scrolling: touch; }
+.gs-prompt-box-label { justify-self: start; display: inline-block; margin: 32px 0 0; padding: 6px 12px; background: var(--cs-ink); color: var(--cs-bg); font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; }
+.gs-prompt-box { box-sizing: border-box; max-width: 700px; max-height: 440px; overflow-y: auto; margin: 0 0 24px; padding: 20px 24px; border: 2px solid var(--cs-ink); background: #eae9e9; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; line-height: 1.65; color: var(--cs-body2); -webkit-overflow-scrolling: touch; }
 .gs-prompt-box::-webkit-scrollbar { width: 10px; }
 .gs-prompt-box::-webkit-scrollbar-track { background: transparent; }
 .gs-prompt-box::-webkit-scrollbar-thumb { background: var(--cs-rule); }
