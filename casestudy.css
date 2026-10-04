@@ -215,6 +215,31 @@
   margin: 32px 0 0;
 }
 
+/* Crop a pillarboxed video (baked-in black side bars) to its real content.
+   The wrapper takes the content's aspect ratio and clips; the video fills the
+   full height and is centered, so the side bars fall outside and get hidden. */
+.cs-video-crop {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1638 / 1080;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #d8d8d8;
+}
+.cs-video-crop video {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  max-width: none;
+  display: block;
+  border: 0;
+  border-radius: 0;
+  cursor: default;
+}
+
 /* ---- 2-COLUMN IMAGE GRID ---- */
 .cs-img-2col {
   display: grid;
