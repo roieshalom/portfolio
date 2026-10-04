@@ -198,3 +198,24 @@ footer { display: flex; justify-content: flex-end; padding: 24px var(--cs-pad); 
 .cs-pattern-grid figure { margin: 0; }
 .cs-pattern-grid img { display: block; width: 100%; height: auto; }
 .cs-pattern-grid figcaption { margin-top: 6px; font-size: 13px; line-height: 1.4; color: var(--cs-muted); }
+
+/* ---------- Live system-prompt box (esmeralda / grooped) ---------- */
+.gs-prompt-section { margin-top: 40px; margin-bottom: 8px; }
+.gs-prompt-label { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.gs-prompt-eyebrow { font-size: 14px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--cs-accent-700); }
+.gs-prompt-source { font-size: 14px; font-weight: 600; color: var(--cs-muted); text-decoration: none; transition: color .15s; }
+.gs-prompt-source:hover { color: var(--cs-accent-600); }
+.gs-prompt-box-label { justify-self: start; display: inline-block; margin: 0; padding: 6px 12px; background: var(--cs-ink); color: var(--cs-bg); font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; }
+.gs-prompt-box { max-width: 700px; max-height: 440px; overflow-y: auto; margin: 0 0 24px; padding: 20px 24px; border: 2px solid var(--cs-ink); background: #eae9e9; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; line-height: 1.65; color: var(--cs-body2); -webkit-overflow-scrolling: touch; }
+.gs-prompt-box::-webkit-scrollbar { width: 10px; }
+.gs-prompt-box::-webkit-scrollbar-track { background: transparent; }
+.gs-prompt-box::-webkit-scrollbar-thumb { background: var(--cs-rule); }
+.gs-prompt-loading { margin: 0; font-size: 13px; color: var(--cs-muted); }
+.gsp-header { font-family: "Archivo", system-ui, sans-serif; font-weight: 800; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--cs-accent-700); margin: 22px 0 8px; }
+.gsp-header:first-child { margin-top: 0; }
+.gsp-step { font-family: "Archivo", system-ui, sans-serif; font-weight: 800; font-size: 12px; color: var(--cs-ink); margin: 16px 0 6px; }
+.gsp-bullet { position: relative; margin: 0; padding-left: 16px; white-space: pre-wrap; word-break: break-word; }
+.gsp-bullet::before { content: "\2013"; position: absolute; left: 0; color: var(--cs-accent-700); }
+.gsp-code { margin: 8px 0; padding: 12px 14px; background: #e1dfdf; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12px; line-height: 1.5; overflow-x: auto; white-space: pre; }
+.gsp-line { margin: 0; white-space: pre-wrap; word-break: break-word; }
+.gsp-line.gsp-first { margin-top: 10px; }
