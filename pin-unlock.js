@@ -1,5 +1,5 @@
 (function () {
-  var CORRECT = '2026';
+  var CORRECT = ['2026', '7816'];
 
   function init() {
     var card = document.getElementById('pin-unlock-card');
@@ -42,7 +42,7 @@
 
     function submit() {
       var code = digits.map(function (d) { return d.value; }).join('');
-      if (code === CORRECT) {
+      if (CORRECT.indexOf(code) !== -1) {
         grantPortfolioAccess();
         // Stagger the pop animation across digits
         digits.forEach(function (d, i) {
