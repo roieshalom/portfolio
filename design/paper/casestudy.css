@@ -138,7 +138,7 @@ html { scroll-behavior: smooth; }
 .cs-end-back svg { display: block; }
 
 .cs-next { display: grid; grid-template-columns: minmax(0,1fr) auto; text-decoration: none; }
-.cs-next:hover { background: var(--cs-accent-100); color: inherit; }
+@media (hover: hover) { .cs-next:hover { background: var(--cs-accent-100); color: inherit; } }
 .cs-next-text { padding: 28px var(--cs-pad); display: flex; flex-direction: column; justify-content: center; gap: 10px; }
 .cs-next-head { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: -0.02em; }
 .cs-next-head svg { display: block; width: 30px; height: 30px; }
@@ -149,7 +149,7 @@ html { scroll-behavior: smooth; }
 
 /* Reusable text-link hover: magenta + a slight rise (matches the work rows) */
 .rise-link { transition: color .3s ease, transform .2s ease; }
-.rise-link:hover { color: var(--cs-accent-600); transform: translateY(-2px); }
+@media (hover: hover) { .rise-link:hover { color: var(--cs-accent-600); transform: translateY(-2px); } }
 
 /* ---------- Footer / Contact (shared site footer) ---------- */
 .site-footer { border-top: 2px solid var(--cs-ink); scroll-margin-top: var(--cs-nav-h); }
@@ -191,6 +191,11 @@ html { scroll-behavior: smooth; }
   .site-footer-lead-lg { font-size: 48px; }
 }
 
+/* Phone: drop the hero header image, keep the headline + meta block */
+@media (max-width: 600px) {
+  .cs-hero-img-wrap { display: none !important; }
+}
+
 /* ---------- Legacy pieces reused by the other case studies ---------- */
 /* Role bar (3 equal cells) — used by wayfair / search */
 .cs-role-bar { border-top: 2px solid var(--cs-ink); background: none; }
@@ -210,7 +215,7 @@ html { scroll-behavior: smooth; }
 
 /* CTA button in AI-project heroes */
 .cs-cta-btn { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; height: 44px; padding: 0 18px; background: var(--cs-accent); color: #fff; font-weight: 800; font-size: 14px; text-decoration: none; border: 0; }
-.cs-cta-btn:hover { background: var(--cs-accent-600); color: #fff; }
+@media (hover: hover) { .cs-cta-btn:hover { background: var(--cs-accent-600); color: #fff; } }
 
 @media (max-width: 900px) {
   .cs-role-bar .cs-inner, .cs-impact .cs-inner { grid-template-columns: 1fr; }

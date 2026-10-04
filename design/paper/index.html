@@ -71,9 +71,11 @@
     .work-row-n { font-size: 14px; font-weight: 600; }
     /* Lift the row's text a touch on hover (the border stays put). */
     .work-row-n, .work-row-title-wrap, .work-row-client { transition: transform .2s ease; }
-    .work-row:hover .work-row-n,
-    .work-row:hover .work-row-title-wrap,
-    .work-row:hover .work-row-client { transform: translateY(-2px); }
+    @media (hover: hover) {
+      .work-row:hover .work-row-n,
+      .work-row:hover .work-row-title-wrap,
+      .work-row:hover .work-row-client { transform: translateY(-2px); }
+    }
     .work-row-title-wrap { display: flex; flex-direction: column; gap: 4px; }
     .work-row-title { font-weight: 800; font-size: 38px; line-height: 1.05; letter-spacing: -0.02em; }
     .work-row-kind { font-size: 15px; color: var(--color-neutral-700); }
@@ -99,7 +101,7 @@
 
     /* Reusable text-link hover: magenta + a slight rise (matches the work rows) */
     .rise-link { transition: color .3s ease, transform .2s ease; }
-    .rise-link:hover { color: #d4157e; transform: translateY(-2px); }
+    @media (hover: hover) { .rise-link:hover { color: #d4157e; transform: translateY(-2px); } }
 
     /* Footer / Contact (shared site footer) */
     .site-footer { border-top: 2px solid #201e1d; scroll-margin-top: 66px; }
@@ -142,6 +144,24 @@
       .section-bar { flex-wrap: wrap; gap: 12px; }
       .site-footer-top { grid-template-columns: 1fr; }
       .site-footer-lead-lg { font-size: 48px; }
+    }
+
+    /* Phone: drop the preview image panel, keep the work list */
+    @media (max-width: 600px) {
+      .work-preview { display: none; }
+      /* The 3-column row (number · title · client) can't fit a big title and a
+         fixed client column side by side on a phone, so the title overflowed
+         into the client. Stack to two columns and drop the client below. */
+      .work-row {
+        grid-template-columns: 28px minmax(0, 1fr);
+        align-items: start;
+        column-gap: 12px;
+        row-gap: 6px;
+      }
+      .work-row-n { grid-column: 1; grid-row: 1; }
+      .work-row-title-wrap { grid-column: 2; grid-row: 1; }
+      .work-row-client { grid-column: 2; grid-row: 2; color: var(--color-neutral-700); }
+      .work-row-title { font-size: 28px; line-height: 1.1; }
     }
   </style>
 </head>
