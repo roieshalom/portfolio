@@ -1,0 +1,17 @@
+# Archived previous version of the site. Shared assets (images, data, the ai/
+# sub-apps and the design/ folder) live at the site root, not inside /old/, so
+# re-point those requests back to the root.
+RewriteEngine On
+RewriteRule ^(content|data|ai|design)/(.*)$ /$1/$2 [L]
+
+# Serve extensionless URLs within the archive too (e.g. /old/wayfair).
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# --- Password protection ---
+# Add this in hPanel: Files -> "Password Protect Directories" (or "Directory
+# Privacy") -> pick the /old folder -> set a username and password. hPanel writes
+# the AuthType/AuthUserFile lines below with the correct absolute path to its
+# .htpasswd. (Doing it in hPanel avoids hardcoding a server-specific path here.)

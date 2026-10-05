@@ -1,119 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>(function(){try{var s;try{localStorage.setItem('_t','1');localStorage.removeItem('_t');s=localStorage;}catch(e){s=sessionStorage;}var t=s.getItem('portfolio_access');if(!t||Date.now()-parseInt(t,10)>2592000000){window.location.replace('index.html');}}catch(e){window.location.replace('index.html');}})();</script>
-  <script src="page-transition.js?v=2"></script>
-  <script src="clarity.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EQCapture · Roie Shalom</title>
+  <title>EQ Capture · Roie Shalom</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=61">
-  <script src="seq-reveal.js?v=2"></script>
-  <link rel="stylesheet" href="casestudy.css?v=8">
-  <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
-  <style>
-    /* ---- EQCapture: hero ---- */
-    .cs-hero {
-      background: #ffb60a;
-      overflow: hidden;
-    }
-    .cs-hero-img-wrap img { opacity: 0.55; }
-    .cs-hero-fade {
-      background: linear-gradient(to right, #ffb60a 28%, rgba(255,182,10,0.7) 50%, rgba(255,182,10,0.1) 100%);
-    }
-    @media (max-width: 600px) {
-      .cs-hero-img-wrap { width: 100%; opacity: 0.4; }
-      .cs-hero-fade { background: linear-gradient(to bottom, rgba(255,182,10,0.5) 0%, #ffb60a 65%); }
-    }
-
-    /* ---- 2-column field test images: fixed equal height ---- */
-    .cs-img-2col .img-box {
-      height: 420px;
-      position: relative;
-    }
-    .cs-img-2col .img-box img {
-      position: absolute;
-      inset: 0;
-      height: 100%;
-      object-fit: cover;
-    }
-    @media (max-width: 600px) {
-      .cs-img-2col .img-box { height: 280px; }
-    }
-
-    /* ---- Impact strip ---- */
-    .cs-impact { background: #ffb60a; }
-    .cs-impact .cs-inner { grid-template-columns: repeat(3, 1fr); }
-    .cs-impact-num { color: #fff; }
-    @media (max-width: 600px) {
-      .cs-impact .cs-inner { grid-template-columns: 1fr; gap: 36px; }
-    }
-  </style>
+  <link rel="stylesheet" href="casestudy.css?v=11">
 </head>
 <body>
   <nav class="top-nav">
-    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
-    <button class="nav-menu-toggle" aria-label="Open menu" aria-expanded="false"><span class="nav-icon">☰</span></button>
+    <a href="index.html" class="brand">Roie Shalom</a>
     <div class="top-nav-links">
-      <a href="index.html" class="nav-link active">Hello</a>
+      <a href="index.html#work" class="nav-link active">Work</a>
       <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </nav>
 
-  <!-- 1. HERO -->
+  <!-- HERO -->
   <section class="cs-hero cs-bleed">
     <div class="cs-hero-img-wrap">
       <img src="content/images/eqc/hero_surveyor.jpg" alt="">
-      <div class="cs-hero-fade"></div>
     </div>
     <div class="cs-inner">
       <div class="cs-hero-content">
-        <span class="cs-hero-eyebrow">Product Story</span>
-        <h1 class="cs-hero-h">Cutting building survey time in half by replacing clipboards with a mobile app</h1>
-        <div class="cs-meta-row">
-          <span><strong>Role:</strong> Sole Designer</span>
-          <span><strong>Company:</strong> BuildingMinds</span>
-          <span><strong>Team:</strong> 7 people</span>
-          <span><strong>Duration:</strong> ~1.5 years</span>
-          <span><strong>Platform:</strong> iOS</span>
+        <div>
+          <span class="cs-hero-eyebrow"><span class="cs-hero-index">02 / 06</span>Product Story · BuildingMinds</span>
+          <h1 class="cs-hero-h">Cutting building survey time in half by replacing clipboards with a mobile app</h1>
         </div>
+        <dl class="cs-meta">
+          <div><dt>Role</dt><dd>Sole Designer</dd></div>
+          <div><dt>Company</dt><dd>BuildingMinds</dd></div>
+          <div><dt>Team</dt><dd>7 people</dd></div>
+          <div><dt>Duration</dt><dd>~1.5 years</dd></div>
+          <div><dt>Platform</dt><dd>iOS</dd></div>
+          <div><dt>Read time</dt><dd>8 min</dd></div>
+        </dl>
       </div>
     </div>
   </section>
 
-  <!-- 2. ROLE BAR -->
-  <div class="cs-role-bar cs-bleed">
-    <div class="cs-inner">
-      <div>
-        <div class="cs-role-col-label">What I did</div>
-        <div class="cs-role-col-val">Field Research, UX/UI Design, Usability Testing, Design System, Product Strategy</div>
+  <!-- IN SHORT -->
+  <section class="cs-short cs-bleed">
+    <div class="cs-short-bar">
+      <span class="cs-short-bar-label">In short</span>
+      <a class="cs-short-jump" href="#story">Read the full story
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"></path></svg>
+      </a>
+    </div>
+    <div class="cs-short-cols">
+      <div class="cs-short-col">
+        <span class="cs-col-label">The problem</span>
+        <p class="cs-short-problem">Surveying one building took 4–5 days of paper maps, camera photos and manual sorting, and ended in an Excel file.</p>
       </div>
-      <div>
-        <div class="cs-role-col-label">The team</div>
-        <div class="cs-role-col-val">1 Product Manager, 1 Tech Lead, 4 Developers, and me as the sole designer</div>
+      <div class="cs-short-col">
+        <span class="cs-col-label">What I did</span>
+        <ul class="cs-did">
+          <li><span class="cs-did-mark">→</span><span>Shadowed surveyors across ~10 building scans</span></li>
+          <li><span class="cs-did-mark">→</span><span>Designed the iOS app end to end as the sole designer</span></li>
+          <li><span class="cs-did-mark">→</span><span>Ran usability tests, including a building staged in a meeting room</span></li>
+          <li><span class="cs-did-mark">→</span><span>Built a mobile component library on the BuildingMinds design language</span></li>
+        </ul>
       </div>
-      <div>
-        <div class="cs-role-col-label">Outcome</div>
-        <div class="cs-role-col-val">Shipped to iOS App Store. Survey time cut by ~50%</div>
+      <div class="cs-short-col">
+        <span class="cs-col-label">The team</span>
+        <p class="cs-short-team">1 Product Manager, 1 Tech Lead, 4 Developers, and me as the sole designer</p>
       </div>
     </div>
-  </div>
 
-  <!-- 3. CONTEXT -->
-  <section class="cs-section">
+    <!-- OUTCOME BAND -->
+    <div class="cs-metrics">
+      <span class="cs-col-label">The outcome</span>
+      <div class="cs-metrics-cols">
+        <div>
+          <div class="cs-metrics-from">4–5 days</div>
+          <div class="cs-metrics-to">2–3 days</div>
+          <div class="cs-metrics-lbl">Survey time per building</div>
+          <div class="cs-metrics-note">About a 50% reduction.</div>
+        </div>
+        <div>
+          <div class="cs-metrics-from">2 days</div>
+          <div class="cs-metrics-to">0 days</div>
+          <div class="cs-metrics-lbl">Post-survey photo sorting</div>
+          <div class="cs-metrics-note">Images assigned to rooms the moment they're taken.</div>
+        </div>
+        <div>
+          <div class="cs-metrics-from">Excel</div>
+          <div class="cs-metrics-to">Direct</div>
+          <div class="cs-metrics-lbl">Data flow into the platform</div>
+          <div class="cs-metrics-note">Replacing manual Excel entry entirely.</div>
+        </div>
+      </div>
+      <p class="cs-metrics-measure">[How these were measured]</p>
+    </div>
+  </section>
+
+  <!-- 01 CONTEXT -->
+  <section class="cs-section" id="story">
     <div class="cs-text">
+      <span class="cs-eyebrow">Context</span>
+      <div class="cs-pin">
+        <h2 class="cs-h2">A small team building mobile products inside a proptech company</h2>
+        <p class="cs-sum">EQ Capture was the App Factory's first product: an iOS app for building surveyors.</p>
+      </div>
       <p class="cs-p">BuildingMinds is a Berlin-based proptech company digitizing property management. I co-founded their internal "App Factory," a small team tasked with building complementary mobile products. EQ Capture was our first: an iOS app that lets building surveyors digitize equipment data on the spot, instead of relying on paper, cameras, and spreadsheets.</p>
     </div>
   </section>
 
-  <!-- 4. THE PROBLEM -->
+  <!-- 02 THE PROBLEM -->
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">The Problem</span>
-      <h2 class="cs-h2">Paper maps, digital cameras, and two backup batteries</h2>
+      <div class="cs-pin">
+        <h2 class="cs-h2">A digital photo of a paper map was the system</h2>
+        <p class="cs-sum">Surveys took 4–5 days per building and ended in a spreadsheet.</p>
+      </div>
       <p class="cs-p">To survey a building's equipment, a professional surveyor spends 3 to 4 days walking every floor carrying a paper map, a pen, a digital camera, and two backup batteries. For each item they find, they scribble on the map, photograph the equipment, and stick on a barcode label.</p>
       <p class="cs-p">To remember which room they're in, they take a photo of the paper map with the camera. A digital photo of an analog map. That's the system.</p>
     </div>
@@ -139,16 +139,19 @@
     </div>
   </section>
 
-  <!-- 5. DISCOVERY -->
+  <!-- 03 DISCOVERY -->
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Discovery</span>
-      <h2 class="cs-h2">Learning through the feet</h2>
+      <div class="cs-pin">
+        <h2 class="cs-h2">I learned the job by doing it alongside the surveyors</h2>
+        <p class="cs-sum">About 10 building scans on site, which also showed my team what design brings.</p>
+      </div>
       <p class="cs-p">I could have run this project from a desk in Berlin. Instead, I showed up at buildings with the surveyors. Over roughly 10 building scans, I carried the same floor plans, climbed the same stairs, and built direct relationships with the Westbridge team so they'd trust us with honest feedback.</p>
     </div>
 
     <div class="cs-img-wrap">
-      <img class="cs-img" src="content/images/eqc/shadowing.jpg" alt="Job shadowing collage">
+      <img class="cs-img cs-photo" src="content/images/eqc/shadowing.jpg" alt="Job shadowing collage">
       <p class="cs-caption">Job shadowing: crawling through hatches, reviewing floor plans, observing the full capture workflow firsthand.</p>
     </div>
 
@@ -162,11 +165,14 @@
     </div>
   </section>
 
-  <!-- 6. KEY DECISIONS -->
+  <!-- 04 KEY DECISIONS -->
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Key Decisions</span>
-      <h2 class="cs-h2">Three decisions that shaped the product</h2>
+      <div class="cs-pin">
+        <h2 class="cs-h2">Three decisions, each reshaped by testing</h2>
+        <p class="cs-sum">Where location lives, how the form is ordered, and how to test without a building.</p>
+      </div>
     </div>
 
     <div style="margin-top: 40px;">
@@ -176,7 +182,8 @@
           <div class="cs-decision-num">01</div>
           <h3 class="cs-decision-title">Killing my own assumption about location</h3>
           <p class="cs-p">I assumed surveyors needed to see their current room on screen at all times. I explored persistent breadcrumbs, sidebars, and overlays. Testing revealed the opposite: surveyors always know where they are. They needed the app to keep up, not remind them.</p>
-          <p class="cs-p" style="margin-bottom:0;">Location became a smart default inside the form. The app auto-populated the current room and carried it forward. Less clutter, fewer taps, and a product that felt aware of the workflow.</p>
+          <p class="cs-p">Location became a smart default inside the form. The app auto-populated the current room and carried it forward. Less clutter, fewer taps, and a product that felt aware of the workflow.</p>
+          <div class="cs-result"><span>Result</span><span>Location became a smart default in the form. Less clutter, fewer taps.</span></div>
         </div>
         <div class="cs-img-wrap">
           <img class="cs-img" src="content/images/eqc/wireframes_location.jpg" alt="Three wireframe approaches for location">
@@ -189,7 +196,8 @@
           <div class="cs-decision-num">02</div>
           <h3 class="cs-decision-title">Calming down the keyboard</h3>
           <p class="cs-p">The first form copied the field order from the surveyors' Excel sheets. On mobile, this meant constant switching between camera, keyboard, and date picker.</p>
-          <p class="cs-p" style="margin-bottom:0;">I regrouped fields by input method instead of data hierarchy. Camera fields together, pickers together, text together. The keyboard stopped bouncing. A small change that smoothed out the entire capture rhythm.</p>
+          <p class="cs-p">I regrouped fields by input method instead of data hierarchy. Camera fields together, pickers together, text together. The keyboard stopped bouncing. A small change that smoothed out the entire capture rhythm.</p>
+          <div class="cs-result"><span>Result</span><span>The keyboard stopped bouncing between inputs, and capture got a steady rhythm.</span></div>
         </div>
         <div class="cs-img-wrap">
           <img class="cs-img" src="content/images/eqc/form_reorder.jpg" alt="Before and after form field reorder">
@@ -202,9 +210,10 @@
           <div class="cs-decision-num">03</div>
           <h3 class="cs-decision-title">Turning a meeting room into a building</h3>
           <p class="cs-p">When budget blocked access to real sites, I printed 15 fake equipment sheets, taped them around a meeting room, and ran the capture flow. This scrappy simulation surfaced the keyboard problem and let us test with untrained colleagues, since the app needed to work beyond expert surveyors.</p>
+          <div class="cs-result"><span>Result</span><span>Found the keyboard problem and proved the app worked for untrained colleagues, with no building needed.</span></div>
         </div>
         <div class="cs-img-wrap">
-          <img class="cs-img" src="content/images/eqc/usability_printouts.jpg" alt="Printed equipment cards for usability testing">
+          <img class="cs-img cs-photo" src="content/images/eqc/usability_printouts.jpg" alt="Printed equipment cards for usability testing">
           <p class="cs-caption">Printed equipment cards used for in-office usability testing. No building required.</p>
         </div>
       </div>
@@ -212,80 +221,94 @@
     </div>
   </section>
 
-  <!-- 7. THE PRODUCT -->
+  <!-- 05 THE PRODUCT -->
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">The Product</span>
-      <h2 class="cs-h2">EQ Capture</h2>
+      <div class="cs-pin">
+        <h2 class="cs-h2">Pick a building, pick a room, start capturing</h2>
+        <p class="cs-sum">Shipped to the iOS App Store with its own mobile component library.</p>
+      </div>
       <p class="cs-p">The app shipped to the iOS App Store. I built a mobile component library adapting BuildingMinds' design language, and kept the core flow simple: pick your building, select a room, and start capturing. Photos, barcodes, and structured data all sync directly to the platform.</p>
     </div>
 
     <div class="cs-img-wrap">
       <img class="cs-img" src="content/images/eqc/classification_filter.jpg" alt="Four approaches to equipment classification filtering">
-      <p class="cs-caption" style="text-align: center;">Four explored approaches to filtering 600+ equipment classifications.</p>
+      <p class="cs-caption">Four explored approaches to filtering 600+ equipment classifications.</p>
     </div>
 
     <div class="cs-img-wrap">
       <img class="cs-img" src="content/images/eqc/app_ui.jpg" alt="Final app UI screens">
       <p class="cs-caption">Final UI: project selection, building navigation, capture form, and BuildingMinds-themed variant.</p>
     </div>
-  </section>
 
-  <!-- APP STORE -->
-  <div style="text-align: center; padding: 48px 24px;">
-    <img src="content/images/eqc/appstore.jpg" alt="EQ Capture on the iOS App Store" style="max-width: 300px; width: 100%; border-radius: 24px;">
-    <p style="font-size: 13px; color: var(--color-muted); font-style: italic; margin-top: 12px;">EQ Capture live on the iOS App Store, rated 4.0.</p>
-  </div>
-
-  <!-- 8. IMPACT STRIP -->
-  <section class="cs-impact cs-bleed">
-    <div class="cs-inner">
-      <div>
-        <div class="cs-impact-num">~50%</div>
-        <div class="cs-impact-label">
-          <strong>Reduction in survey time</strong>
-          From 4-5 days down to 2-3 days per building.
-        </div>
-      </div>
-      <div>
-        <div class="cs-impact-num">0 days</div>
-        <div class="cs-impact-label">
-          <strong>Of post-survey photo sorting</strong>
-          Images assigned to rooms the moment they're taken.
-        </div>
-      </div>
-      <div>
-        <div class="cs-impact-num">Direct</div>
-        <div class="cs-impact-label">
-          <strong>Data flow into the platform</strong>
-          Replacing manual Excel entry entirely.
-        </div>
-      </div>
+    <div class="cs-img-wrap" style="max-width:300px;">
+      <img class="cs-img" src="content/images/eqc/appstore.jpg" alt="EQ Capture on the iOS App Store">
+      <p class="cs-caption">EQ Capture live on the iOS App Store, rated 4.0.</p>
     </div>
   </section>
 
-  <!-- 9. REFLECTION -->
+  <!-- 06 REFLECTION -->
   <section class="cs-reflection cs-bleed">
     <div class="cs-inner">
       <div class="cs-text">
         <span class="cs-eyebrow">Looking Back</span>
-        <h2 class="cs-h2">What I'd carry forward, and what I'd change</h2>
+        <div class="cs-pin">
+          <h2 class="cs-h2">Make design visible to leadership earlier</h2>
+          <p class="cs-sum">The product was sunset for business reasons. The lesson stayed with me.</p>
+        </div>
         <p class="cs-p">The product was sunset due to a partnership change, a business decision outside our team's control. It's still one of the projects I'm proudest of.</p>
         <p class="cs-p">By the end, Robert and Eddie told me this was the first time they understood the value of having a designer on the team. That meant more to me than any metric.</p>
-        <p class="cs-p" style="margin-bottom:0;">What I'd do differently: make the design work more visible to leadership earlier. Inside the team it was obvious what design was contributing, but higher up, less so. And those are the people who decide which projects keep going.</p>
+        <p class="cs-p">What I'd do differently: make the design work more visible to leadership earlier. Inside the team it was obvious what design was contributing, but higher up, less so. And those are the people who decide which projects keep going.</p>
       </div>
     </div>
   </section>
 
-  <!-- 10. BACK LINK -->
-  <div class="cs-back-wrap">
-    <a href="index.html" class="cs-back-link">← Hello</a>
+  <!-- PAGE END: ALL WORK (left) + NEXT PROJECT (right) -->
+  <div class="cs-end">
+    <a class="cs-end-back" href="index.html#work">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
+      All work
+    </a>
+    <a class="cs-next" href="search">
+      <div class="cs-next-text">
+        <span class="cs-next-head">Next project
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </span>
+        <span class="cs-next-name">Search Redesign</span>
+        <span class="cs-next-co">SAP Signavio</span>
+      </div>
+      <div class="cs-next-img"><img src="content/images/search/searcthumb.png" alt="Search Redesign"></div>
+    </a>
   </div>
 
-  <script src="access.js"></script>
-  <script src="nav.js"></script>
-  <script src="theme.js"></script>
-  <script src="name-animator.js"></script>
-  <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
+  <footer class="site-footer" id="contact">
+    <div class="site-footer-top">
+      <div class="site-footer-lead">
+        <span class="site-footer-lead-sm">Whatever brought you here,</span>
+        <span class="site-footer-lead-lg">let's talk.</span>
+      </div>
+      <div class="site-footer-contact">
+        <a class="site-footer-cv rise-link" href="content/downloads/Roie Shalom Senior Product Designer.pdf" download>
+          <span>Download CV</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </a>
+        <div class="site-footer-social">
+          <a class="rise-link" href="mailto:roiesh@gmail.com">Email
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <a class="rise-link" href="https://www.linkedin.com/in/roiesh/" target="_blank" rel="noopener">LinkedIn
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <a class="rise-link" href="https://github.com/roieshalom" target="_blank" rel="noopener">GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <span>Berlin · 2026</span>
+    </div>
+  </footer>
 </body>
 </html>

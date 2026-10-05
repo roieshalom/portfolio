@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>(function(){try{var s;try{localStorage.setItem('_t','1');localStorage.removeItem('_t');s=localStorage;}catch(e){s=sessionStorage;}var t=s.getItem('portfolio_access');if(!t||Date.now()-parseInt(t,10)>2592000000){window.location.replace('index.html');}}catch(e){window.location.replace('index.html');}})();</script>
-  <script src="page-transition.js?v=2"></script>
-  <script src="clarity.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Redesign · Roie Shalom</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=61">
-  <script src="seq-reveal.js?v=2"></script>
-  <link rel="stylesheet" href="casestudy.css?v=8">
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
   <script>
     /* Force light mode — never apply dark theme on this page */
@@ -30,11 +23,8 @@
     }
 
     /* ---- Search: hero (no image, radial gradient overlay) ---- */
-    .cs-hero {
-      background: #3b68d8;
-      overflow: hidden;
-    }
-    .cs-hero-eyebrow { color: rgba(255,255,255,0.55); }
+    
+    
 
     /* ---- Assumption cards ---- */
     .cs-card {
@@ -71,34 +61,29 @@
       margin-top: 72px;
     }
   </style>
+  <link rel="stylesheet" href="casestudy.css?v=11">
 </head>
 <body>
   <nav class="top-nav">
-    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
-    <button class="nav-menu-toggle" aria-label="Open menu" aria-expanded="false"><span class="nav-icon">☰</span></button>
+    <a href="index.html" class="brand">Roie Shalom</a>
     <div class="top-nav-links">
-      <a href="index.html" class="nav-link active">Hello</a>
+      <a href="index.html#work" class="nav-link active">Work</a>
       <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </nav>
 
   <!-- 1. HERO -->
   <section class="cs-hero cs-bleed">
     <div class="cs-hero-img-wrap">
-      <!-- hero image: <img src="..."> + <div class="cs-hero-fade"></div> -->
+      <img src="content/images/search/searcthumb.png" alt="">
     </div>
     <div class="cs-inner">
       <div class="cs-hero-content">
-        <span class="cs-hero-eyebrow">Product Story</span>
-        <h1 class="cs-hero-h">Fixing Search for a million users<br>who couldn't find what they needed</h1>
-        <div class="cs-meta-row">
-          <span><strong>Role:</strong> Senior UX Designer</span>
-          <span><strong>Company:</strong> Signavio (SAP)</span>
-          <span><strong>Team:</strong> Product</span>
-          <span><strong>Duration:</strong> ~3 months</span>
-          <span><strong>Platform:</strong> Web (SaaS)</span>
+        <div>
+          <span class="cs-hero-eyebrow"><span class="cs-hero-index">03 / 06</span>Product Story</span>
+          <h1 class="cs-hero-h">Fixing Search for a million users<br>who couldn't find what they needed</h1>
         </div>
+        <dl class="cs-meta"><div><dt>Role</dt><dd>Senior UX Designer</dd></div><div><dt>Company</dt><dd>Signavio (SAP)</dd></div><div><dt>Team</dt><dd>Product</dd></div><div><dt>Duration</dt><dd>~3 months</dd></div><div><dt>Platform</dt><dd>Web (SaaS)</dd></div></dl>
       </div>
     </div>
   </section>
@@ -132,7 +117,7 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">The Problem</span>
-      <h2 class="cs-h2">Tens of thousands of searches, almost nobody finding what they need</h2>
+      <div class="cs-pin"><h2 class="cs-h2">Tens of thousands of searches, almost nobody finding what they need</h2></div>
       <p class="cs-p">The Hub's search was used heavily but hadn't evolved with the product. Simple search matched titles only. No autocomplete, no suggestions, no recent searches. Users expected Google; they got a blank text field.</p>
       <div class="cs-img-wrap">
         <video src="content/images/search/old_simple_search.mp4" class="cs-img" autoplay loop muted playsinline></video>
@@ -154,7 +139,7 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Making the Case</span>
-      <h2 class="cs-h2">No analytics team? Go find the data yourself</h2>
+      <div class="cs-pin"><h2 class="cs-h2">No analytics team? Go find the data yourself</h2></div>
       <p class="cs-p">Nobody asked me to look at search. I spotted the problem while ramping up on the product as a new team member. Fresh eyes helped: I was experiencing the same friction that real users faced every day.</p>
       <p class="cs-p">Signavio had no analytics function, so I partnered with a backend engineer to pull raw usage data. The numbers confirmed the hunch: the vast majority used simple search, almost nobody used advanced filtering, and engagement dropped off a cliff after the first page of results.</p>
       <p class="cs-p">A conversation with a Customer Success representative shaped my design direction. She told me that many Hub users aren't tech-savvy. They're process owners, compliance officers, HR leads. People who use web browsers and office tools. Not power users. That insight changed everything.</p>
@@ -166,7 +151,7 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Focus</span>
-      <h2 class="cs-h2">Where to start: refining results</h2>
+      <div class="cs-pin"><h2 class="cs-h2">Where to start: refining results</h2></div>
       <p class="cs-p">I mapped the search journey into five stages: the need, the search, advanced filtering, finding the model in results, and spotting it on the page. Each had problems, but result refinement was the biggest gap. Advanced search was so broken most users skipped it entirely, leaving them stranded in long, unfiltered lists.</p>
       <div class="cs-img-wrap">
         <img src="content/images/search/discover_flow.jpg" alt="Five-stage search journey" class="cs-img">
@@ -179,7 +164,7 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Design Direction</span>
-      <h2 class="cs-h2">Making filtering feel physical</h2>
+      <div class="cs-pin"><h2 class="cs-h2">Making filtering feel physical</h2></div>
       <p class="cs-p">Knowing our users weren't power users, I wanted filtering that felt tangible. Something closer to sorting papers on a desk than writing database queries.</p>
 
       <div class="cs-cards-grid">
@@ -220,7 +205,7 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">The Solution</span>
-      <h2 class="cs-h2">A smarter search, start to finish</h2>
+      <div class="cs-pin"><h2 class="cs-h2">A smarter search, start to finish</h2></div>
       <p class="cs-p">The redesign improved the full journey: an autocomplete dropdown at entry, and a drag-and-drop criteria system for refinement.</p>
       <div class="cs-img-wrap">
         <img src="content/images/search/proto_autocomplete.jpg" alt="New autocomplete search dropdown" class="cs-img">
@@ -239,11 +224,11 @@
   </section>
 
   <!-- 9. OUTCOME -->
-  <section class="cs-outcome cs-bleed">
+  <section class="cs-reflection cs-bleed">
     <div class="cs-inner">
       <div class="cs-text">
         <span class="cs-eyebrow">Outcome</span>
-        <h2 class="cs-h2">The work that shapes how you think</h2>
+        <div class="cs-pin"><h2 class="cs-h2">The work that shapes how you think</h2></div>
         <p class="cs-p">The project was deprioritized before development. I know it can happen in enterprise work. Good research can't always beat the next thing that lands on the roadmap.</p>
         <p class="cs-p" style="margin-bottom: 0;">The work wasn't wasted. The research influenced how the team thought about search and discoverability. And for me, it reminded me that good design work doesn't survive on merit alone. The data was clear, the prototype tested well, but I hadn't pulled enough people inside the company onto my side to keep it alive. Next time, I'd pull more people in earlier so the work feels like everyone's, not just mine.</p>
       </div>
@@ -255,7 +240,7 @@
     <div class="cs-inner">
       <div class="cs-text">
         <span class="cs-eyebrow">Epilogue</span>
-        <h2 class="cs-h2">Interactive prototype</h2>
+        <div class="cs-pin"><h2 class="cs-h2">Interactive prototype</h2></div>
         <p class="cs-p">Some projects don't fully leave you. The research and design held up, so I went back and built the interactive prototype this one always deserved, with AI on the code. Type a query, or drag a criterion into the filter bar.</p>
       </div>
       <div class="cs-prototype-narrow-note">
@@ -426,18 +411,11 @@
   </style>
 
   <!-- BACK LINK -->
-  <div class="cs-back-wrap">
-    <a href="index.html" class="cs-back-link">← Hello</a>
-  </div>
-
   <!-- LIGHTBOX -->
   <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
     <img id="lb-img" src="" alt="">
   </div>
 
-  <script src="access.js"></script>
-  <script src="nav.js"></script>
-  <script src="name-animator.js"></script>
   <script>
     (function() {
       var overlay = document.getElementById('lb-overlay');
@@ -471,6 +449,45 @@
       });
     })();
   </script>
-  <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
+  <div class="cs-end">
+    <a class="cs-end-back" href="index.html#work"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg> All work</a>
+    <a class="cs-next" href="esmeralda">
+      <div class="cs-next-text">
+        <span class="cs-next-head">Next project <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+        <span class="cs-next-name">Ask Esmeralda</span>
+        <span class="cs-next-co">AI Project</span>
+      </div>
+      <div class="cs-next-img"><img src="content/images/esmeralda/esmeraldathumb.jpeg" alt="Ask Esmeralda"></div>
+    </a>
+  </div>
+
+  <footer class="site-footer" id="contact">
+    <div class="site-footer-top">
+      <div class="site-footer-lead">
+        <span class="site-footer-lead-sm">Whatever brought you here,</span>
+        <span class="site-footer-lead-lg">let's talk.</span>
+      </div>
+      <div class="site-footer-contact">
+        <a class="site-footer-cv rise-link" href="content/downloads/Roie Shalom Senior Product Designer.pdf" download>
+          <span>Download CV</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </a>
+        <div class="site-footer-social">
+          <a class="rise-link" href="mailto:roiesh@gmail.com">Email
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <a class="rise-link" href="https://www.linkedin.com/in/roiesh/" target="_blank" rel="noopener">LinkedIn
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <a class="rise-link" href="https://github.com/roieshalom" target="_blank" rel="noopener">GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <span>Berlin · 2026</span>
+    </div>
+  </footer>
 </body>
 </html>

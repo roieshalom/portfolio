@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="page-transition.js?v=2"></script>
+  <script src="clarity.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grooped · Roie Shalom</title>
-  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=61">
+  <script src="seq-reveal.js?v=2"></script>
+  <link rel="stylesheet" href="casestudy.css?v=8">
   <style>
     /* ---- Grooped hero ---- */
-    
+    .cs-hero {
+      background: #ec7357;
+      overflow: hidden;
+      height: 380px;
+    }
     .cs-hero-img-wrap {
       width: auto;
       height: 100%;
@@ -20,10 +30,12 @@
       object-fit: contain;
       object-position: right bottom;
     }
-    
+    .cs-hero-fade {
+      background: linear-gradient(to right, #ec7357 28%, rgba(236,115,87,0.7) 50%, rgba(236,115,87,0.1) 100%);
+    }
     @media (max-width: 600px) {
       .cs-hero-img-wrap { width: 100%; opacity: 0.3; }
-      
+      .cs-hero-fade { background: linear-gradient(to bottom, rgba(236,115,87,0.5) 0%, #ec7357 65%); }
     }
 
     /* Hero subline */
@@ -46,7 +58,7 @@
 
     /* Bottom CTA hint (on white/card bg) */
     .cs-bottom-cta .cs-cta-hint {
-      color: var(--cs-ink);
+      color: var(--color-text);
       opacity: 0.6;
     }
 
@@ -83,7 +95,7 @@
     .gs-step:hover { opacity: 0.65; }
 
     .gs-step.is-active {
-      border-left-color: var(--cs-accent-600);
+      border-left-color: var(--color-link);
       background: rgba(242, 23, 131, 0.05);
       opacity: 1;
     }
@@ -93,24 +105,24 @@
     .gs-step-num {
       font-size: 1rem;
       font-weight: 800;
-      color: var(--cs-ink);
+      color: var(--color-text);
       line-height: 1.3;
       min-width: 18px;
     }
 
-    .gs-step.is-active .gs-step-num { color: var(--cs-accent-600); }
+    .gs-step.is-active .gs-step-num { color: var(--color-link); }
 
     .gs-step-title {
       font-size: 0.88rem;
       font-weight: 700;
-      color: var(--cs-ink);
+      color: var(--color-text-main);
       margin-bottom: 3px;
       line-height: 1.3;
     }
 
     .gs-step-desc {
       font-size: 0.78rem;
-      color: var(--cs-ink);
+      color: var(--color-text);
       line-height: 1.5;
     }
 
@@ -185,7 +197,7 @@
       }
 
       .gs-step-mobile.is-active {
-        border-left-color: var(--cs-accent-600);
+        border-left-color: var(--color-link);
         background: rgba(242, 23, 131, 0.05);
         opacity: 1;
       }
@@ -193,23 +205,23 @@
       .gs-step-mobile .gs-step-num {
         font-size: 0.85rem;
         font-weight: 800;
-        color: var(--cs-ink);
+        color: var(--color-text);
         margin-bottom: 4px;
       }
 
-      .gs-step-mobile.is-active .gs-step-num { color: var(--cs-accent-600); }
+      .gs-step-mobile.is-active .gs-step-num { color: var(--color-link); }
 
       .gs-step-mobile .gs-step-title {
         font-size: 0.88rem;
         font-weight: 700;
-        color: var(--cs-ink);
+        color: var(--color-text-main);
         margin-bottom: 3px;
         line-height: 1.3;
       }
 
       .gs-step-mobile .gs-step-desc {
         font-size: 0.78rem;
-        color: var(--cs-ink);
+        color: var(--color-text);
         line-height: 1.5;
       }
 
@@ -225,12 +237,12 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background: var(--cs-rule);
+        background: var(--color-border);
         transition: background 0.2s, transform 0.2s;
       }
 
       .gs-dot.is-active {
-        background: var(--cs-accent-600);
+        background: var(--color-link);
         transform: scale(1.3);
       }
     }
@@ -240,7 +252,58 @@
       .gs-steps-mobile, .gs-dots { display: none; }
     }
 
-    /* Bottom CTA strip styles are shared — see casestudy.css */
+    /* ---- Bottom CTA strip ---- */
+    .cs-closing-strip {
+      background: var(--color-grey-light);
+      text-align: center;
+      padding: 72px 24px 64px;
+    }
+
+    .cs-closing-h {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin: 0 0 20px;
+    }
+
+    .cs-cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .cs-bottom-qr-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cs-bottom-qr-group img {
+      width: 84px;
+      height: 84px;
+      border-radius: 8px;
+      flex-shrink: 0;
+      mix-blend-mode: multiply;
+    }
+
+    .cs-bottom-qr-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-link);
+      line-height: 1.3;
+      text-align: right;
+      max-width: 120px;
+    }
+
+    .cs-cta-or {
+      font-size: 0.85rem;
+      color: var(--color-text);
+      opacity: 0.45;
+      font-style: italic;
+    }
+
     .cs-back-wrap {
       text-align: center;
       padding: 36px 0 40px;
@@ -250,14 +313,14 @@
 
     /* ── Collapsible pipeline block ─────────────────────────────────────────── */
     .gp-collapsible-wrap {
-      margin: 28px 0 0;
-      max-width: 700px;
+      margin: 28px auto 0;
+      max-width: 660px;
       width: 100%;
       box-sizing: border-box;
     }
     .gp-collapsible {
-      border: 1px solid var(--cs-rule);
-      border-radius: 0;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
     }
     .gp-collapsible summary {
       list-style: none;
@@ -265,7 +328,7 @@
       padding: 13px 18px;
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--cs-accent-600);
+      color: var(--color-link);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -274,7 +337,7 @@
     }
     .gp-collapsible summary::-webkit-details-marker { display: none; }
     .gp-collapsible summary:hover { background: rgba(0,0,0,0.03); }
-    .gp-collapsible[open] summary { border-bottom: 1px solid var(--cs-rule); }
+    .gp-collapsible[open] summary { border-bottom: 1px solid var(--color-border); }
     .gp-collapsible-chevron {
       font-style: normal;
       font-size: 0.7rem;
@@ -307,7 +370,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--cs-accent-600);
+      color: var(--color-link);
       margin-bottom: 14px;
     }
 
@@ -317,13 +380,13 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       padding-bottom: 8px;
-      border: 1px solid var(--cs-rule);
-      border-radius: 0;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
       scrollbar-width: thin;
-      scrollbar-color: var(--cs-rule) transparent;
+      scrollbar-color: var(--color-border) transparent;
     }
     .gp-swim-scroll::-webkit-scrollbar { height: 4px; }
-    .gp-swim-scroll::-webkit-scrollbar-thumb { background: var(--cs-rule); border-radius: 0; }
+    .gp-swim-scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
 
     /* Grid: col 1 = sticky lane label, cols 2–28 = steps + connectors */
     /* Rows: 1 = Roie lane | 2 = 1px divider | 3 = AI lane */
@@ -334,9 +397,9 @@
       width: max-content;
     }
     /* Full-width lane backgrounds (listed first → behind content) */
-    .gp-swim-you-bg { grid-column: 1 / -1; grid-row: 1; background: rgba(224,25,138,0.07); }
+    .gp-swim-you-bg { grid-column: 1 / -1; grid-row: 1; background: rgba(236,115,87,0.07); }
     .gp-swim-ai-bg  { grid-column: 1 / -1; grid-row: 3; background: rgba(0,0,0,0.025); }
-    .gp-swim-div    { grid-column: 1 / -1; grid-row: 2; background: var(--cs-rule); }
+    .gp-swim-div    { grid-column: 1 / -1; grid-row: 2; background: var(--color-border); }
     /* Lane labels — sticky so they stay visible on scroll */
     .gp-swim-lbl {
       position: sticky;
@@ -354,18 +417,18 @@
       justify-content: center;
       padding: 14px 0;
     }
-    .gp-swim-lbl.gp-you { grid-row: 1; background: rgba(224,25,138,0.07); color: #d4157e; }
-    .gp-swim-lbl.gp-ai  { grid-row: 3; background: rgba(0,0,0,0.025); color: var(--cs-ink); }
+    .gp-swim-lbl.gp-you { grid-row: 1; background: rgba(236,115,87,0.07); color: #ec7357; }
+    .gp-swim-lbl.gp-ai  { grid-row: 3; background: rgba(0,0,0,0.025); color: var(--color-text); }
     /* Step nodes */
     .gp-swim-node {
       white-space: normal;
       width: 112px;
       min-height: 52px;
       padding: 8px 12px;
-      border-radius: 0;
+      border-radius: 7px;
       font-size: 0.74rem;
       font-weight: 500;
-      color: var(--cs-ink);
+      color: var(--color-text-main);
       margin: 14px 0;
       display: flex;
       align-items: center;
@@ -375,11 +438,11 @@
     .gp-swim-node[style*="grid-column:2"] { margin-left: 8px; }
     .gp-swim-node.gp-auto  { background: rgba(0,0,0,0.06); }
     .gp-swim-node.gp-human {
-      background: rgba(224,25,138,0.14);
-      border: 1px solid rgba(224,25,138,0.32);
+      background: rgba(236,115,87,0.14);
+      border: 1px solid rgba(236,115,87,0.32);
       font-weight: 600;
     }
-    .gp-swim-node.gp-end   { background: #d4157e; color: #fff; font-weight: 700; }
+    .gp-swim-node.gp-end   { background: #ec7357; color: #fff; font-weight: 700; }
     /* In-lane connectors — horizontal line with arrow */
     .gp-swim-arr {
       display: flex;
@@ -394,7 +457,7 @@
       left: 2px;
       right: 7px;
       height: 1.5px;
-      background: var(--cs-muted);
+      background: #999;
     }
     .gp-swim-arr::after {
       content: '';
@@ -404,7 +467,7 @@
       height: 0;
       border-top: 4px solid transparent;
       border-bottom: 4px solid transparent;
-      border-left: 6px solid var(--cs-muted);
+      border-left: 6px solid #999;
     }
     /* Cross-lane handoff arrows — span all 3 rows */
     .gp-swim-off {
@@ -423,7 +486,7 @@
       transform: translateX(-50%);
       top: 33%; bottom: 33%;
       width: 1.5px;
-      background: var(--cs-muted);
+      background: #999;
     }
     /* arrowhead pointing down */
     .gp-swim-off.gp-down::after {
@@ -435,7 +498,7 @@
       width: 0; height: 0;
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
-      border-top: 6px solid var(--cs-muted);
+      border-top: 6px solid #999;
     }
     /* arrowhead pointing up */
     .gp-swim-off.gp-up::after {
@@ -447,7 +510,7 @@
       width: 0; height: 0;
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
-      border-bottom: 6px solid var(--cs-muted);
+      border-bottom: 6px solid #999;
     }
 
     /* ── Mechanic tier map ─────────────────────────────────────────────────── */
@@ -464,32 +527,32 @@
       gap: 10px;
     }
     .gp-tier {
-      background: #eae9e9;
-      border-radius: 0;
+      background: var(--color-grey-light);
+      border-radius: 10px;
       padding: 14px 14px 18px;
       border-top: 3px solid transparent;
     }
-    .gp-tier-1 { border-top-color: var(--cs-rule); }
-    .gp-tier-2 { border-top-color: rgba(224,25,138,0.55); }
-    .gp-tier-3 { border-top-color: #d4157e; }
-    .gp-tier-4 { border-top-color: var(--cs-accent-600); }
+    .gp-tier-1 { border-top-color: var(--color-border); }
+    .gp-tier-2 { border-top-color: rgba(236,115,87,0.55); }
+    .gp-tier-3 { border-top-color: #ec7357; }
+    .gp-tier-4 { border-top-color: var(--color-link); }
     .gp-tier-num {
       font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.09em;
-      color: var(--cs-ink);
+      color: var(--color-text);
       margin-bottom: 1px;
     }
     .gp-tier-name {
       font-size: 1rem;
       font-weight: 700;
-      color: var(--cs-ink);
+      color: var(--color-text-main);
       margin-bottom: 2px;
     }
     .gp-tier-cd {
       font-size: 0.78rem;
-      color: var(--cs-ink);
+      color: var(--color-text);
       margin-bottom: 12px;
     }
     .gp-tier-list {
@@ -502,12 +565,12 @@
     }
     .gp-tier-list li {
       font-size: 0.88rem;
-      color: var(--cs-ink);
+      color: var(--color-text);
       line-height: 1.4;
       cursor: default;
     }
     .gp-tier-list li[data-example]:hover {
-      color: var(--cs-accent-600);
+      color: var(--color-link);
     }
 
     /* ── Mechanic tooltip ───────────────────────────────────────────── */
@@ -515,12 +578,12 @@
       position: fixed;
       z-index: 9999;
       pointer-events: none;
-      background: var(--cs-ink);
-      color: #fff;
+      background: var(--color-text);
+      color: var(--color-surface, #fff);
       font-size: 0.78rem;
       line-height: 1.45;
       padding: 7px 11px;
-      border-radius: 0;
+      border-radius: 7px;
       max-width: 240px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.18);
       opacity: 0;
@@ -534,43 +597,48 @@
     }
 
     @media (max-width: 768px) {
+      .cs-bottom-qr-group { display: none; }
+      .cs-cta-or { display: none; }
+      .cs-hero {
+        height: auto;
+        padding: 60px 0 56px;
+      }
       html, body { overflow-x: clip; }
       .gs-stepper { overflow-x: clip; }
     }
   </style>
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="casestudy.css?v=11">
 </head>
 <body>
   <nav class="top-nav">
-    <a href="index.html" class="brand">Roie Shalom</a>
+    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
+    <button class="nav-menu-toggle" aria-label="Open menu" aria-expanded="false"><span class="nav-icon">☰</span></button>
     <div class="top-nav-links">
-      <a href="index.html#work" class="nav-link active">Work</a>
+      <a href="index.html" class="nav-link active">Hello</a>
       <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </nav>
 
   <!-- 1. HERO -->
   <section class="cs-hero cs-bleed">
     <div class="cs-hero-img-wrap">
-      <img src="../../content/images/grooped/grooped-hero.jpg" alt="Playing Grooped on a phone">
-      </div>
+      <img src="content/images/grooped/grooped-hero.jpg" alt="Playing Grooped on a phone">
+      <div class="cs-hero-fade"></div>
+    </div>
     <div class="cs-inner">
       <div class="cs-hero-content">
-        <div>
-          <span class="cs-hero-eyebrow"><span class="cs-hero-index">05 / 06</span>Solo Project</span>
-          <h1 class="cs-hero-h">A word puzzle,<br>built and curated with AI</h1>
-        </div>
+        <span class="cs-hero-eyebrow">Solo Project</span>
+        <h1 class="cs-hero-h">A word puzzle,<br>built and curated with AI</h1>
         <a href="https://grooped.de?utm_source=portfolio&utm_medium=web" target="_blank" rel="noopener" class="cs-cta-btn">Play this week's puzzle ↗</a>
       </div>
     </div>
   </section>
 
   <!-- 2. THE DESIGN PROBLEM -->
-  <section class="cs-section">
+  <section class="cs-section" style="margin-top: 72px;">
     <div class="cs-text">
       <span class="cs-eyebrow">The design problem</span>
-      <div class="cs-pin"><h2 class="cs-h2">The hardest part isn't the tech</h2></div>
+      <h2 class="cs-h2">The hardest part isn't the tech</h2>
       <p class="cs-p">Word puzzles sound simple. Four groups of four words. But the design space is deceptively deep.</p>
       <p class="cs-p">The real challenge is intentional misdirection. Take IRON, PRESS, CURL, BENCH, all things you do at the gym. But PRESS also fits a medieval weapons category. IRON fits things you can flip. CURL fits hair styling. That web of almost-right answers is what makes a puzzle feel clever instead of arbitrary. Designing it is the closest thing I've found to level design.</p>
       <p class="cs-p" style="margin-bottom: 0;">Every word on the board has to earn its place. Not just as a correct answer, but as a convincing wrong one.</p>
@@ -581,7 +649,7 @@
   <section class="cs-section" style="margin-top: 72px;">
     <div class="cs-text">
       <span class="cs-eyebrow">How it's made</span>
-      <div class="cs-pin"><h2 class="cs-h2">An AI pipeline with a human editor at the center</h2></div>
+      <h2 class="cs-h2">An AI pipeline with a human editor at the center</h2>
       <p class="cs-p">Every puzzle starts with a prompt. I built an internal tool called Puzzle Editor 3000 that generates a full puzzle: four categories, four words each, plus intentional decoys designed to blur the lines between groups.</p>
       <p class="cs-p">The generator doesn't just make puzzles. It tracks 28 connection mechanics across four tiers, each with a cooldown period so the same trick never runs in back-to-back puzzles. A fill-in-blank category can appear weekly. A first-letter acrostic gets saved for once every six weeks. The system reads the last 60 published puzzles before generating a new one, checks which mechanics are underused, and steers toward variety automatically.</p>
       <p class="cs-p">When I export a puzzle, it's appended to the live file on GitHub. The next generation reads that file first. The system has memory.</p>
@@ -762,12 +830,12 @@
   <section class="cs-section" style="margin-top: 72px;">
     <div class="cs-text">
       <span class="cs-eyebrow">The tool</span>
-      <div class="cs-pin"><h2 class="cs-h2">Puzzle Editor 3000</h2></div>
+      <h2 class="cs-h2">Puzzle Editor 3000</h2>
       <p class="cs-p">The editor is the interface between AI output and human judgment. Generate a full puzzle, regenerate individual categories, swap words, rename groups, or type your own category and let the AI fill in the words. Every category shows which connection mechanic the model used and which tier it belongs to, so I can see at a glance if the puzzle is mechanically varied or just four versions of the same trick.</p>
       <p class="cs-p" style="margin-bottom: 0;">The dashboard at the top tracks mechanic usage across the last 21 puzzles. If Tier 2 is dominating, the next generation will steer toward Tier 3 automatically. I can see what's been overused and nudge the system before it gets repetitive.</p>
     </div>
     <div class="cs-img-wrap" style="margin-top: 40px;">
-      <img class="cs-img" src="../../content/images/grooped/editor.png" alt="Puzzle Editor 3000 showing four categories with refresh and ban controls" style="width: 75%; margin: 0 auto; display: block;">
+      <img class="cs-img" src="content/images/grooped/editor.png" alt="Puzzle Editor 3000 showing four categories with refresh and ban controls" style="width: 75%; margin: 0 auto; display: block;">
       <p class="cs-caption">Puzzle Editor 3000: generate, curate, and track puzzle mechanics in one place.</p>
     </div>
   </section>
@@ -776,7 +844,7 @@
   <section class="cs-section" style="max-width: none; padding: 0; margin-left: 0; margin-right: 0;">
     <div class="cs-text" style="padding: 0 clamp(20px,5vw,32px); margin-bottom: 40px;">
       <span class="cs-eyebrow">The game</span>
-      <div class="cs-pin"><h2 class="cs-h2">What the player sees</h2></div>
+      <h2 class="cs-h2">What the player sees</h2>
       <p class="cs-p" style="margin-bottom:0;">None of the pipeline is visible to the player. They get 16 words and four attempts. The mechanic, the tier, the cooldowns. All invisible. The only thing that matters is whether the puzzle feels satisfying to solve.</p>
     </div>
     <div class="gs-stepper" id="gs-stepper">
@@ -813,10 +881,10 @@
       <div class="gs-phone-wrap">
         <div class="gs-phone-frame">
           <div class="gs-phone-inner">
-            <img class="gs-slide is-active" src="../../content/images/grooped/groopped gameplay/gp-1.PNG" alt="16 words, 4 groups">
-            <img class="gs-slide" src="../../content/images/grooped/groopped gameplay/gp-3.PNG" alt="Spot a pattern">
-            <img class="gs-slide" src="../../content/images/grooped/groopped gameplay/gp-5.PNG" alt="First group found">
-            <img class="gs-slide" src="../../content/images/grooped/groopped gameplay/gp-7.PNG" alt="Puzzle complete">
+            <img class="gs-slide is-active" src="content/images/grooped/groopped gameplay/gp-1.PNG" alt="16 words, 4 groups">
+            <img class="gs-slide" src="content/images/grooped/groopped gameplay/gp-3.PNG" alt="Spot a pattern">
+            <img class="gs-slide" src="content/images/grooped/groopped gameplay/gp-5.PNG" alt="First group found">
+            <img class="gs-slide" src="content/images/grooped/groopped gameplay/gp-7.PNG" alt="Puzzle complete">
           </div>
         </div>
       </div>
@@ -856,7 +924,7 @@
   <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
       <span class="cs-eyebrow">Iteration with data</span>
-      <div class="cs-pin"><h2 class="cs-h2">Session recordings over surveys</h2></div>
+      <h2 class="cs-h2">Session recordings over surveys</h2>
       <p class="cs-p">I connected Microsoft Clarity to track how people actually play. People play fast and lose patience faster. A couple of wrong guesses and some players just leave. That insight pushed me to make puzzles more solvable.</p>
     </div>
 
@@ -865,7 +933,7 @@
     </blockquote>
 
     <div class="cs-img-wrap">
-      <div class="cs-video-crop"><video class="cs-video no-lightbox" src="../../content/images/grooped/grooped-clarity-session.mp4" autoplay loop muted playsinline></video></div>
+      <div class="cs-video-crop"><video class="cs-video no-lightbox" src="content/images/grooped/grooped-clarity-session.mp4" autoplay loop muted playsinline></video></div>
       <p class="cs-caption">Microsoft Clarity session recording: tracking real player behavior.</p>
     </div>
 
@@ -874,7 +942,7 @@
   <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
       <span class="cs-eyebrow">Knowing when to scale back</span>
-      <div class="cs-pin"><h2 class="cs-h2">From daily to weekly, on purpose</h2></div>
+      <h2 class="cs-h2">From daily to weekly, on purpose</h2>
       <p class="cs-p">I ran Grooped daily for nearly 200 puzzles. Every one started with me: prompting, curating, checking the board, publishing. The pipeline did the heavy lifting, but the judgment call on each puzzle was still mine.</p>
       <p class="cs-p">Around puzzle 200, with summer coming, I did the math on my own time and made a call. A daily puzzle I have to force out is worse than a weekly one I actually want to make. So I moved Grooped to weekly.</p>
       <p class="cs-p" style="margin-bottom: 0;">A daily streak is a vanity metric. Sustaining the quality bar is the real one. Scaling the cadence back kept the project alive and kept every puzzle worth playing, instead of quietly letting it slip or shipping worse puzzles to protect a number.</p>
@@ -889,7 +957,7 @@
     <div class="cs-cta-row">
       <div class="cs-bottom-qr-group">
         <span class="cs-bottom-qr-label">Scan to play on your phone</span>
-        <img src="../../content/images/grooped/qr-grooped.png" alt="QR code linking to grooped.de">
+        <img src="content/images/grooped/qr-grooped.png" alt="QR code linking to grooped.de">
       </div>
       <span class="cs-cta-or">or</span>
       <a href="https://grooped.de?utm_source=portfolio&utm_medium=web" target="_blank" rel="noopener" class="cs-cta-btn">Play this week's puzzle ↗</a>
@@ -897,6 +965,10 @@
   </div>
 
   <!-- BACK LINK -->
+  <div class="cs-back-wrap">
+    <a href="index.html" class="cs-back-link"><span style="display:inline-block;transform:scaleX(-1);">➜</span> Hello</a>
+  </div>
+
   <!-- LIGHTBOX -->
   <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
     <div class="lb-media-wrap">
@@ -907,6 +979,10 @@
     </div>
   </div>
 
+  <script src="access.js"></script>
+  <script src="nav.js"></script>
+  <script src="theme.js"></script>
+  <script src="name-animator.js"></script>
   <script>
     (function() {
       var overlay  = document.getElementById('lb-overlay');
@@ -1162,46 +1238,7 @@
         });
     })();
   </script>
-  <div class="cs-end">
-    <a class="cs-end-back" href="index.html#work"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg> All work</a>
-    <a class="cs-next" href="onpaper">
-      <div class="cs-next-text">
-        <span class="cs-next-head">Next project <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
-        <span class="cs-next-name">On Paper</span>
-        <span class="cs-next-co">AI Project</span>
-      </div>
-      <div class="cs-next-img"><img src="../../content/images/side_projects/op_gallery.jpg" alt="On Paper"></div>
-    </a>
-  </div>
-
-  <footer class="site-footer" id="contact">
-    <div class="site-footer-top">
-      <div class="site-footer-lead">
-        <span class="site-footer-lead-sm">Whatever brought you here,</span>
-        <span class="site-footer-lead-lg">let's talk.</span>
-      </div>
-      <div class="site-footer-contact">
-        <a class="site-footer-cv rise-link" href="../../content/downloads/Roie Shalom Senior Product Designer.pdf" download>
-          <span>Download CV</span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-        </a>
-        <div class="site-footer-social">
-          <a class="rise-link" href="mailto:roiesh@gmail.com">Email
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </a>
-          <a class="rise-link" href="https://www.linkedin.com/in/roiesh/" target="_blank" rel="noopener">LinkedIn
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </a>
-          <a class="rise-link" href="https://github.com/roieshalom" target="_blank" rel="noopener">GitHub
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="site-footer-bottom">
-      <span>Berlin · 2026</span>
-    </div>
-  </footer>
+  <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
 
   <!-- Mechanic tooltip -->
   <div id="gp-mechanic-tip"></div>

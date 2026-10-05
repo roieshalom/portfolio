@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="page-transition.js?v=2"></script>
-  <script src="clarity.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OnPaper | Roie Shalom</title>
   <meta name="description" content="A CV checker that names the gaps between your CV and a job, each with one concrete fix. A solo AI project.">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
   <!-- OnPaper report fonts (used only inside the embedded .op-report) -->
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=61">
-  <script src="seq-reveal.js?v=2"></script>
-  <link rel="stylesheet" href="casestudy.css?v=9">
   <style>
     /* ---- OnPaper hero ---- */
     /* Solid ink navy, no photo. Sampled from OnPaper's own ink in
        upload-screen.png. White headline passes contrast (~14:1).
        Everything else (CTA button, closing strip, QR group) is shared and
        lives in casestudy.css. */
-    .cs-hero { background: #212937; overflow: hidden; }
+    
 
     @media (max-width: 768px) {
       html, body { overflow-x: clip; }
@@ -124,25 +118,29 @@
     .op-report-wrap { max-width: calc(100% - 90px); margin: 32px auto 0; }
     @media (max-width: 600px) { .op-report-wrap { max-width: 100%; } }
   </style>
+  <link rel="stylesheet" href="casestudy.css?v=11">
 </head>
 <body>
   <nav class="top-nav">
-    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
-    <button class="nav-menu-toggle" aria-label="Open menu" aria-expanded="false"><span class="nav-icon">☰</span></button>
+    <a href="index.html" class="brand">Roie Shalom</a>
     <div class="top-nav-links">
-      <a href="index.html" class="nav-link active">Hello</a>
+      <a href="index.html#work" class="nav-link active">Work</a>
       <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </nav>
 
   <!-- 1. HERO -->
   <section class="cs-hero cs-bleed">
+    <div class="cs-hero-img-wrap">
+      <img src="content/images/side_projects/op_gallery.jpg" alt="">
+    </div>
     <div class="cs-inner">
       <div class="cs-hero-content">
-        <span class="cs-hero-eyebrow">AI Project</span>
-        <h1 class="cs-hero-h">Matching your CV to the job description before you apply</h1>
-        <a href="https://onpaper.fit" target="_blank" rel="noopener" class="cs-cta-btn">Try OnPaper ➜</a>
+        <div>
+          <span class="cs-hero-eyebrow"><span class="cs-hero-index">06 / 06</span>Solo Project</span>
+          <h1 class="cs-hero-h">Matching your CV to the job description before you apply</h1>
+        </div>
+        <a href="https://onpaper.fit" target="_blank" rel="noopener" class="cs-cta-btn">Try OnPaper ↗</a>
       </div>
     </div>
   </section>
@@ -161,7 +159,7 @@
   <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
       <span class="cs-eyebrow">Privacy</span>
-      <h2 class="cs-h2">The data I chose not to see</h2>
+      <div class="cs-pin"><h2 class="cs-h2">The data I chose not to see</h2></div>
       <p class="cs-p">Unlike my other projects, when someone hands OnPaper their CV, it's about as personal as a document gets, so I set the limits before I built anything.</p>
       <p class="cs-p">Anthropic runs the analysis anonymously, and nothing is saved. Both OnPaper's site and its backend are secured, so nothing leaks in transit and no human ever sees the submission. At this point there's no account and no sign-up.</p>
       <p class="cs-p">PostHog records raw clicks, timing and where people drop off in the flow. It never sees the CV, the job description or the result. I don't collect session recordings, even though I know how much they'd teach me. If recordings are what stops someone from pasting their CV, they cost more than they give.</p>
@@ -173,7 +171,7 @@
   <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
       <span class="cs-eyebrow">The prompt</span>
-      <h2 class="cs-h2">Honesty is the whole product</h2>
+      <div class="cs-pin"><h2 class="cs-h2">Honesty is the whole product</h2></div>
       <p class="cs-p">OnPaper runs on a prompt built to force honest answers. Here are some of the rules it lives by:</p>
       <ul class="cs-list">
         <li>Obvious deal-breakers, like language or location, go into a first short line.</li>
@@ -221,7 +219,7 @@
   <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
       <span class="cs-eyebrow">Testing</span>
-      <h2 class="cs-h2">Testing against people I know</h2>
+      <div class="cs-pin"><h2 class="cs-h2">Testing against people I know</h2></div>
       <p class="cs-p">I ran my own CV through OnPaper dozens of times with suitable jobs, but also clearly not suitable ones, in seniority or field. I also ran CVs from close friends, because I knew what was on them and which jobs they were going for or had landed. That gave me something to check the results against. All three gaps in a report have to be spot on.</p>
       <p class="cs-p" style="margin-bottom: 0;">Early on, it flagged small, trivial topics as gaps. So I taught it to read job titles, work out seniority, and compare that level to the role. To test it, I applied on purpose to levels far above and below mine, like a VP of Design, to see how it reacted.</p>
     </div>
@@ -231,7 +229,7 @@
   <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
       <span class="cs-eyebrow">The build</span>
-      <h2 class="cs-h2">A side tab that grew up</h2>
+      <div class="cs-pin"><h2 class="cs-h2">A side tab that grew up</h2></div>
       <p class="cs-p">OnPaper started as a tab on my personal job triage site. Two text boxes and one button, built for me.</p>
       <p class="cs-p">It worked well enough to earn its own site. It takes a pasted CV, a PDF or a DOCX, and a job link or the job text.</p>
       <div class="op-laptop-demo">
@@ -252,7 +250,7 @@
   <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
       <span class="cs-eyebrow">Copy</span>
-      <h2 class="cs-h2">Every message in one table</h2>
+      <div class="cs-pin"><h2 class="cs-h2">Every message in one table</h2></div>
       <p class="cs-p">Almost every word a user sees lives in one page I built to review it: errors, buttons, hints, placeholders, the About text. Over 130 messages. I can read them all in one place, rewrite them, and copy them back into the app.</p>
       <div class="cs-img-wrap">
         <img class="cs-img" src="content/images/onpaper/messaging-catalog.png" alt="OnPaper's internal messaging catalog, a table of user-facing messages with where and when each one appears">
@@ -267,7 +265,7 @@
   <section class="cs-section" style="margin-top: 79px;">
     <div class="cs-text">
       <span class="cs-eyebrow">Where it stands</span>
-      <h2 class="cs-h2">Live, still in beta</h2>
+      <div class="cs-pin"><h2 class="cs-h2">Live, still in beta</h2></div>
       <p class="cs-p" style="margin-bottom: 0;">OnPaper is live at onpaper.fit and still marked beta. Everyone gets a free run, and free runs reset through the day. Paid runs aren't live yet, and there's a waitlist for when they are. Testers got coupon codes named after superheroes.</p>
     </div>
   </section>
@@ -278,15 +276,11 @@
   <div class="cs-closing-strip cs-bleed">
     <p class="cs-closing-h">Curious? Check your own CV.</p>
     <div class="cs-cta-row">
-      <a href="https://onpaper.fit" target="_blank" rel="noopener" class="cs-cta-btn">Try OnPaper ➜</a>
+      <a href="https://onpaper.fit" target="_blank" rel="noopener" class="cs-cta-btn">Try OnPaper ↗</a>
     </div>
   </div>
 
   <!-- BACK LINK -->
-  <div class="cs-back-wrap">
-    <a href="index.html" class="cs-back-link"><span style="display:inline-block;transform:scaleX(-1);">➜</span> Hello</a>
-  </div>
-
   <!-- LIGHTBOX -->
   <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
     <div class="lb-media-wrap">
@@ -294,10 +288,6 @@
     </div>
   </div>
 
-  <script src="access.js"></script>
-  <script src="nav.js"></script>
-  <script src="theme.js"></script>
-  <script src="name-animator.js"></script>
   <script>
     (function() {
       var overlay = document.getElementById('lb-overlay');
@@ -341,6 +331,45 @@
       });
     })();
   </script>
-  <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
+  <div class="cs-end">
+    <a class="cs-end-back" href="index.html#work"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg> All work</a>
+    <a class="cs-next" href="wayfair">
+      <div class="cs-next-text">
+        <span class="cs-next-head">Next project <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+        <span class="cs-next-name">Unified Order Entry</span>
+        <span class="cs-next-co">Wayfair</span>
+      </div>
+      <div class="cs-next-img"><img src="content/images/wayfair/uoethumb-2.jpeg" alt="Unified Order Entry"></div>
+    </a>
+  </div>
+
+  <footer class="site-footer" id="contact">
+    <div class="site-footer-top">
+      <div class="site-footer-lead">
+        <span class="site-footer-lead-sm">Whatever brought you here,</span>
+        <span class="site-footer-lead-lg">let's talk.</span>
+      </div>
+      <div class="site-footer-contact">
+        <a class="site-footer-cv rise-link" href="content/downloads/Roie Shalom Senior Product Designer.pdf" download>
+          <span>Download CV</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </a>
+        <div class="site-footer-social">
+          <a class="rise-link" href="mailto:roiesh@gmail.com">Email
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <a class="rise-link" href="https://www.linkedin.com/in/roiesh/" target="_blank" rel="noopener">LinkedIn
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <a class="rise-link" href="https://github.com/roieshalom" target="_blank" rel="noopener">GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <span>Berlin · 2026</span>
+    </div>
+  </footer>
 </body>
 </html>

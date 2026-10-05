@@ -1,48 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>(function(){try{var s;try{localStorage.setItem('_t','1');localStorage.removeItem('_t');s=localStorage;}catch(e){s=sessionStorage;}var t=s.getItem('portfolio_access');if(!t||Date.now()-parseInt(t,10)>2592000000){window.location.replace('index.html');}}catch(e){window.location.replace('index.html');}})();</script>
-  <script src="page-transition.js?v=2"></script>
-  <script src="clarity.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wayfair · Roie Shalom</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=61">
-  <script src="seq-reveal.js?v=2"></script>
-  <link rel="stylesheet" href="casestudy.css?v=8">
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
   <style>
     /* ---- Wayfair: hero ---- */
-    .cs-hero { background: #801566; }
+    
     .cs-hero-content { max-width: 850px; }
     .cs-hero-img-wrap img { opacity: 0.45; }
-    .cs-hero-fade {
-      background: linear-gradient(to right, #801566 28%, rgba(128,21,102,0.7) 50%, rgba(128,21,102,0.1) 100%);
-    }
+    
     @media (max-width: 600px) {
       .cs-hero-img-wrap { width: 100%; opacity: 0.3; }
-      .cs-hero-fade { background: linear-gradient(to bottom, rgba(128,21,102,0.5) 0%, #801566 65%); }
+      
     }
 
     /* ---- Impact strip ---- */
     .cs-impact { background: #4a0d3c; }
-    .cs-impact .cs-inner { grid-template-columns: repeat(4, 1fr); }
+    .cs-impact .cs-inner { grid-template-columns: repeat(3, 1fr); }
     .cs-impact-num { color: #e070b8; }
     @media (max-width: 700px) {
       .cs-impact .cs-inner { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
     }
   </style>
+  <link rel="stylesheet" href="casestudy.css?v=11">
 </head>
 <body>
   <nav class="top-nav">
-    <a href="index.html" class="brand" id="desktop-brand">Roie Shalom</a>
-    <button class="nav-menu-toggle" aria-label="Open menu" aria-expanded="false"><span class="nav-icon">☰</span></button>
+    <a href="index.html" class="brand">Roie Shalom</a>
     <div class="top-nav-links">
-      <a href="index.html" class="nav-link active">Hello</a>
+      <a href="index.html#work" class="nav-link active">Work</a>
       <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </nav>
 
@@ -50,19 +40,14 @@
   <section class="cs-hero cs-bleed">
     <div class="cs-hero-img-wrap">
       <img src="content/images/wayfair/hero.png" alt="">
-      <div class="cs-hero-fade"></div>
-    </div>
+      </div>
     <div class="cs-inner">
       <div class="cs-hero-content">
-        <span class="cs-hero-eyebrow">Product Story</span>
-        <h1 class="cs-hero-h">Replacing four supplier tools with one,<br>for 3,200 suppliers across three continents</h1>
-        <div class="cs-meta-row">
-          <span><strong>Role:</strong> Product Design Lead</span>
-          <span><strong>Company:</strong> Wayfair</span>
-          <span><strong>Team:</strong> 1 PM, ~6 engineers</span>
-          <span><strong>Duration:</strong> ~2 years</span>
-          <span><strong>Platform:</strong> Web (B2B supplier portal)</span>
+        <div>
+          <span class="cs-hero-eyebrow"><span class="cs-hero-index">01 / 06</span>Product Story</span>
+          <h1 class="cs-hero-h">Replacing four supplier tools with one,<br>for 3,200 suppliers across three continents</h1>
         </div>
+        <dl class="cs-meta"><div><dt>Role</dt><dd>Product Design Lead</dd></div><div><dt>Company</dt><dd>Wayfair</dd></div><div><dt>Team</dt><dd>1 PM, ~6 engineers</dd></div><div><dt>Duration</dt><dd>~2 years</dd></div><div><dt>Platform</dt><dd>Web (B2B supplier portal)</dd></div></dl>
       </div>
     </div>
   </section>
@@ -85,11 +70,39 @@
     </div>
   </div>
 
+
+  <!-- OUTCOME (moved to top) -->
+  <section class="cs-impact cs-bleed">
+    <div class="cs-inner">
+      <div>
+        <div class="cs-impact-num">5%</div>
+        <div class="cs-impact-label">
+          <strong>Reversion rate</strong>
+          Target was 15%. Suppliers stayed.
+        </div>
+      </div>
+      <div>
+        <div class="cs-impact-num">~2%</div>
+        <div class="cs-impact-label">
+          <strong>Order volume dip</strong>
+          Target was under 10%. Near-seamless transition.
+        </div>
+      </div>
+      <div>
+        <div class="cs-impact-num">3,200+</div>
+        <div class="cs-impact-label">
+          <strong>Suppliers migrated</strong>
+          Across the US, Canada, and Europe.
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 3. CONTEXT -->
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Context</span>
-      <h2 class="cs-h2">The supplier tool that grew into four</h2>
+      <div class="cs-pin"><h2 class="cs-h2">The supplier tool that grew into four</h2></div>
       <p class="cs-p">Wayfair's Partner Home is the portal where thousands of suppliers manage their business with the company. One critical workflow is creating inbound orders to ship products to Wayfair's CastleGate warehouses, positioned closer to customers for faster delivery.</p>
       <p class="cs-p">Over time, this workflow had splintered. Four separate teams had built four separate order entry tools: one for large managed suppliers, one for self-service, one for stocking orders, and one for port-to-door shipping. Same core task, four different interfaces, each with its own quirks and limitations.</p>
     </div>
@@ -120,7 +133,7 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">The Problem</span>
-      <h2 class="cs-h2">Fragmented tools, frustrated suppliers</h2>
+      <div class="cs-pin"><h2 class="cs-h2">Fragmented tools, frustrated suppliers</h2></div>
       <p class="cs-p">Suppliers were missing replenishment opportunities because the tools weren't fully self-service, couldn't handle account nuances across regions, and were spread across multiple screens. Internally, Wayfair was maintaining four codebases for what was essentially one workflow.</p>
       <p class="cs-p">The strategy: create a single, unified experience that worked for every supplier type, every service level, and every geography. Flexible enough for power users who think in spreadsheets, and guided enough for smaller suppliers seeing this for the first time.</p>
     </div>
@@ -135,7 +148,7 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Starting From Behind</span>
-      <h2 class="cs-h2">No designer, no PM, no handoff</h2>
+      <div class="cs-pin"><h2 class="cs-h2">No designer, no PM, no handoff</h2></div>
       <p class="cs-p">I joined Wayfair to work with a Berlin team but was quickly reassigned to this project in Boston. The previous designer had left abruptly. There was no overlap, no handoff, and the project was about 25% complete. The PM seat was empty too: first filled by the Head of Product, then the Engineering Manager doubling in both roles, before a dedicated PM finally joined months later.</p>
       <p class="cs-p">The dev team was demoralized. Remote, post-COVID, dealing with leadership churn and a tool migration from Sketch to Figma happening simultaneously. I needed to earn trust before I could push the design forward.</p>
       <p class="cs-p">My first move wasn't a design review or a stakeholder interview. It was the validation building blocks: a comprehensive document mapping every form field, every error state, every edge case into structured components the engineering team could assemble like puzzle pieces. I asked no questions. I just delivered the file.</p>
@@ -152,7 +165,7 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Two Flows, One Tool</span>
-      <h2 class="cs-h2">Tables for power users, a wizard for everyone else</h2>
+      <div class="cs-pin"><h2 class="cs-h2">Tables for power users, a wizard for everyone else</h2></div>
       <p class="cs-p">The experience split into two paths based on supplier proficiency.</p>
       <p class="cs-p">Experienced suppliers got what they already knew: data-rich tables with inline editing, bulk actions, search and filters. These users understood the replenishment process, knew the required details and timelines, and were comfortable working with spreadsheet-like interfaces.</p>
       <p class="cs-p">Newer or less technical suppliers got a guided flow: a step-by-step wizard using expanded radio buttons with titles and subtitles explaining each choice. Not just "Truckload" but "Move products from your warehouses to Wayfair's facilities."</p>
@@ -176,7 +189,7 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Testing With Real Suppliers</span>
-      <h2 class="cs-h2">100% task completion, but a discoverability problem hiding underneath</h2>
+      <div class="cs-pin"><h2 class="cs-h2">100% task completion, but a discoverability problem hiding underneath</h2></div>
       <p class="cs-p">When we introduced a new way for suppliers to add products through the UI (instead of uploading Excel files), I ran research across three waves. We reached out to 123 suppliers and conducted 11 interviews spanning EU and North America, across self-service, managed, and forwarding supplier types.</p>
       <p class="cs-p">Every participant completed the task without help. Average time was about four minutes.</p>
       <p class="cs-p">But the secondary finding was more revealing. Every single user tried the table's search box first, assuming it would search their full product catalog. The actual "Manage Products" button took much longer to find, with some users spending up to 70% of their session time looking for it.</p>
@@ -189,46 +202,12 @@
     </div>
   </section>
 
-  <!-- 8. IMPACT STRIP -->
-  <section class="cs-impact cs-bleed">
-    <div class="cs-inner">
-      <div>
-        <div class="cs-impact-num">5%</div>
-        <div class="cs-impact-label">
-          <strong>Reversion rate</strong>
-          Target was 15%. Suppliers stayed.
-        </div>
-      </div>
-      <div>
-        <div class="cs-impact-num">~2%</div>
-        <div class="cs-impact-label">
-          <strong>Order volume dip</strong>
-          Target was under 10%. Near-seamless transition.
-        </div>
-      </div>
-      <div>
-        <div class="cs-impact-num">3,200+</div>
-        <div class="cs-impact-label">
-          <strong>Suppliers migrated</strong>
-          Across the US, Canada, and Europe.
-        </div>
-      </div>
-      <div>
-        <div class="cs-impact-num">4</div>
-        <div class="cs-impact-label">
-          <strong>Legacy tools retired</strong>
-          One experience replaced them all.
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- 9. REFLECTION -->
   <section class="cs-reflection cs-bleed">
     <div class="cs-inner">
       <div class="cs-text">
         <span class="cs-eyebrow">Looking Back</span>
-        <h2 class="cs-h2">Shipping is not the finish line</h2>
+        <div class="cs-pin"><h2 class="cs-h2">Shipping is not the finish line</h2></div>
         <p class="cs-p">The rollout covered five supplier segments across the US, Canada, and Europe over the course of the project. Each phase was monitored to ensure order volume held steady and reversion stayed low. By the end, all legacy tools were retired.</p>
         <p class="cs-p">If I could change one thing, I'd fight harder for time to follow through. The migration went well, but I was pulled to the next project before I could sit with the data and push the experience further.</p>
         <p class="cs-p" style="margin-bottom:0;">Cross-team alignment was the other miss. I saw the fragmentation across Wayfair's 50+ person design org from day one. I made small attempts to bridge it, but never had the runway to drive real change. Both reminded me that shipping isn't really the end of a project. The interesting work usually starts once real people are using it.</p>
@@ -237,19 +216,11 @@
   </section>
 
   <!-- 10. BACK LINK -->
-  <div class="cs-back-wrap">
-    <a href="index.html" class="cs-back-link">← Hello</a>
-  </div>
-
   <!-- LIGHTBOX -->
   <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
     <img id="lb-img" src="" alt="">
   </div>
 
-  <script src="access.js"></script>
-  <script src="nav.js"></script>
-  <script src="theme.js"></script>
-  <script src="name-animator.js"></script>
   <script>
     (function() {
       var overlay = document.getElementById('lb-overlay');
@@ -282,6 +253,45 @@
       });
     })();
   </script>
-  <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
+  <div class="cs-end">
+    <a class="cs-end-back" href="index.html#work"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg> All work</a>
+    <a class="cs-next" href="eqcapture">
+      <div class="cs-next-text">
+        <span class="cs-next-head">Next project <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+        <span class="cs-next-name">EQ Capture</span>
+        <span class="cs-next-co">BuildingMinds</span>
+      </div>
+      <div class="cs-next-img"><img src="content/images/eqc/eqcthumb.jpeg" alt="EQ Capture"></div>
+    </a>
+  </div>
+
+  <footer class="site-footer" id="contact">
+    <div class="site-footer-top">
+      <div class="site-footer-lead">
+        <span class="site-footer-lead-sm">Whatever brought you here,</span>
+        <span class="site-footer-lead-lg">let's talk.</span>
+      </div>
+      <div class="site-footer-contact">
+        <a class="site-footer-cv rise-link" href="content/downloads/Roie Shalom Senior Product Designer.pdf" download>
+          <span>Download CV</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </a>
+        <div class="site-footer-social">
+          <a class="rise-link" href="mailto:roiesh@gmail.com">Email
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <a class="rise-link" href="https://www.linkedin.com/in/roiesh/" target="_blank" rel="noopener">LinkedIn
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <a class="rise-link" href="https://github.com/roieshalom" target="_blank" rel="noopener">GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <span>Berlin · 2026</span>
+    </div>
+  </footer>
 </body>
 </html>
