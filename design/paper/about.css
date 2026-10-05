@@ -42,8 +42,11 @@
 .about-exp-co { font-weight: 600; font-size: 16px; margin-top: 4px; }
 .about-exp-sign { font-weight: 800; font-size: 22px; line-height: 1; justify-self: end; }
 .about-exp-row.is-open .about-exp-pos { color: var(--cs-accent-600); }
-.about-exp-detail { display: none; padding: 0 var(--cs-pad) 20px 136px; flex-direction: column; gap: 14px; }
-.about-exp-row.is-open .about-exp-detail { display: flex; }
+/* Animate open/close: collapse the row height via grid-template-rows. */
+.about-exp-detail { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
+.about-exp-row.is-open .about-exp-detail { grid-template-rows: 1fr; }
+.about-exp-detail-inner { overflow: hidden; min-height: 0; display: flex; flex-direction: column; gap: 14px; padding: 0 var(--cs-pad) 0 136px; opacity: 0; transition: opacity .35s ease; }
+.about-exp-row.is-open .about-exp-detail-inner { opacity: 1; padding-bottom: 20px; }
 .about-exp-desc { margin: 0; font-size: 17px; line-height: 1.55; color: var(--cs-body2); }
 .about-exp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .about-tag { border: 1.5px solid var(--cs-ink); font-weight: 600; font-size: 12px; padding: 4px 10px; white-space: nowrap; }
@@ -64,7 +67,7 @@
   .about-cv { flex-direction: column; align-items: stretch; }
   .about-btn { width: 100%; justify-content: center; }
   .about-years { position: static; display: block; margin-top: 6px; }
-  .about-exp-detail { padding-left: 0; padding-right: 0; }
+  .about-exp-detail-inner { padding-left: 0; padding-right: 0; }
   .about-work { grid-template-columns: 1fr; }
   .about-work-title { font-size: 44px; }
   .about-work-desc { border-left: 0; border-top: 2px solid var(--cs-rule); }

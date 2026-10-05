@@ -7,7 +7,7 @@
   <title>About · Roie Shalom</title>
   <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="casestudy.css?v=9">
-  <link rel="stylesheet" href="about.css?v=1">
+  <link rel="stylesheet" href="about.css?v=2">
 </head>
 <body>
   <nav class="top-nav">
@@ -21,7 +21,9 @@
   <!-- HERO -->
   <section class="cs-hero cs-bleed">
     <div class="cs-hero-img-wrap">
+      <!-- image hidden for now; area left empty
       <img src="../../content/images/about/profile-paper.jpeg" alt="Roie Shalom">
+      -->
     </div>
     <div class="cs-inner">
       <div class="cs-hero-content">
@@ -34,10 +36,8 @@
             <div><dt>Role</dt><dd>Senior Product Designer</dd></div>
             <div><dt>Based in</dt><dd>Berlin</dd></div>
             <div><dt>Background</dt><dd>Industrial design</dd></div>
-            <div><dt>Designing since</dt><dd>2005</dd></div>
           </dl>
           <div class="about-cv" style="margin-top:24px;">
-            <p>If you'd like the full picture, here's my CV.</p>
             <a class="about-btn" href="../../content/downloads/Roie Shalom Senior Product Designer.pdf" download>Download my CV
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"></path></svg>
             </a>
@@ -78,8 +78,8 @@
       <span class="cs-eyebrow">What I believe</span>
       <div class="cs-pin"><h2 class="cs-h2">Delight with intent</h2></div>
       <p class="cs-p">I believe even the most serious product can be a <strong>pleasure to use</strong>. Not through gimmicks or unnecessary flair, but through the <strong>right level of warmth</strong> for the context. An accounting tool can still surprise you with how good it feels. A complex dashboard can still be something people want to open.</p>
-      <blockquote class="cs-pullquote">A designer's job is to fight for the people using the product.</blockquote>
-      <p class="cs-p">I also believe a designer's job is to <strong>fight for the people using the product</strong>, even when that means extra development time or pushing back against the loudest voice in the room. The best decisions I've made came from <strong>being close to users</strong>, watching them work, and designing for what I actually saw.</p>
+      <blockquote class="cs-pullquote">A designer's job is to represent the people using the product.</blockquote>
+      <p class="cs-p">I also believe a designer's job is to <strong>represent the people using the product</strong>, even when that means extra development time or pushing back against the loudest voice in the room. The best decisions I've made came from <strong>being close to users</strong>, watching them work, and designing for what I actually saw.</p>
     </div>
   </section>
 
@@ -101,7 +101,6 @@
       <div class="about-exp" id="aboutExp"></div>
       <div class="about-exp-cv">
         <div class="about-cv">
-          <p>If you'd like the full picture, here's my CV.</p>
           <a class="about-btn" href="../../content/downloads/Roie Shalom Senior Product Designer.pdf" download>Download my CV
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"></path></svg>
           </a>
@@ -109,15 +108,6 @@
       </div>
     </div>
   </section>
-
-  <!-- SELECTED WORK -->
-  <a class="about-work" href="index.html#work">
-    <div class="about-work-text">
-      <span class="about-work-kicker">See the work</span>
-      <span class="about-work-title">Selected work →</span>
-    </div>
-    <div class="about-work-desc">Six projects: three client case studies under NDA and three AI products I built and shipped.</div>
-  </a>
 
   <footer class="site-footer" id="contact">
     <div class="site-footer-top">
@@ -177,10 +167,10 @@
               '<span class="about-exp-sign">' + (open ? '−' : '+') + '</span>' +
             '</div>' +
           '</button>' +
-          '<div class="about-exp-detail">' +
+          '<div class="about-exp-detail"><div class="about-exp-detail-inner">' +
             '<p class="about-exp-desc">' + (e.description || '') + '</p>' +
             '<div class="about-exp-tags">' + tags + '</div>' +
-          '</div>';
+          '</div></div>';
         list.appendChild(row);
       });
 
