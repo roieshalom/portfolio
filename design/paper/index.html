@@ -38,6 +38,10 @@
     }
     .nav-brand { font-weight: 800; font-size: 17px; white-space: nowrap; opacity: 0; transition: opacity .15s; margin: 0; font-family: var(--font-body); }
     .nav-links { display: flex; gap: 32px; font-size: 15px; }
+    .nav-links a { display: inline-block; transition: color .3s ease, transform .2s ease; }
+    @media (hover: hover) {
+      .nav-links a:hover { color: var(--color-accent-600); transform: translateY(-1px); }
+    }
     .nav-underline { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--color-divider); opacity: 0; transition: opacity .15s; }
 
     /* Hero */
@@ -74,7 +78,7 @@
     @media (hover: hover) {
       .work-row:hover .work-row-n,
       .work-row:hover .work-row-title-wrap,
-      .work-row:hover .work-row-client { transform: translateY(-2px); }
+      .work-row:hover .work-row-client { transform: translateY(-1px); }
     }
     .work-row-title-wrap { display: flex; flex-direction: column; gap: 4px; }
     .work-row-title { font-weight: 800; font-size: 38px; line-height: 1.05; letter-spacing: -0.02em; }

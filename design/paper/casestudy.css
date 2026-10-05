@@ -34,8 +34,11 @@ html { scroll-behavior: smooth; }
 .top-nav { position: sticky; top: 0; z-index: 5; height: var(--cs-nav-h); display: flex; justify-content: space-between; align-items: center; padding: 0 var(--cs-pad); background: var(--cs-bg); border-bottom: 2px solid var(--cs-rule); }
 .top-nav .brand { font-weight: 800; font-size: 17px; white-space: nowrap; text-decoration: none; }
 .top-nav-links { display: flex; gap: 32px; font-size: 15px; }
-.top-nav-links .nav-link { text-decoration: none; }
+.top-nav-links .nav-link { text-decoration: none; display: inline-block; transition: color .3s ease, transform .2s ease; }
 .top-nav-links .nav-link.active { color: var(--cs-accent-600); }
+@media (hover: hover) {
+  .top-nav-links .nav-link:hover { color: var(--cs-accent-600); transform: translateY(-1px); }
+}
 
 /* ---------- Hero: 7:5 split ---------- */
 .cs-hero { display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); background: none !important; position: relative; }
