@@ -103,6 +103,75 @@
     .rise-link { transition: color .3s ease, transform .2s ease; }
     @media (hover: hover) { .rise-link:hover { color: #d4157e; transform: translateY(-2px); } }
 
+    /* PIN reference row: a short header above the work list that unlocks the
+       NDA (protected) rows. Same storage + passwords as the live site
+       (access.js). Resting state keeps everything black; the input fields read
+       as plain underlines and grow into boxes when the section is hovered
+       (mouse) or any field is focused (touch / keyboard). */
+    .pin-ref {
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      padding: 14px 0; border-bottom: 2px solid var(--color-text);
+      transition: opacity .55s ease, max-height .6s ease, padding .6s ease,
+                  margin .6s ease, border-width .6s ease;
+    }
+    .pin-ref-copy {
+      display: flex; flex-direction: column; gap: 2px;
+      font-size: 16px; line-height: 1.35; color: var(--color-text);
+    }
+    .pin-ref-link {
+      color: var(--color-text); text-decoration: underline; text-underline-offset: 3px;
+      transition: opacity .2s ease;
+    }
+    @media (hover: hover) { .pin-ref-link:hover { opacity: .6; } }
+    .pin-ref-inputs { display: flex; gap: 12px; flex: none; }
+
+    /* One digit per space. Line state = bottom border only; the box grows in. */
+    .pin-digit {
+      width: 34px; height: 12px; box-sizing: border-box; padding: 0;
+      text-align: center; font-family: inherit; font-weight: 800; font-size: 18px;
+      color: var(--color-text); background: transparent;
+      border: 0; border-bottom: 2px solid var(--color-text); border-radius: 0;
+      outline: none; caret-color: transparent;
+      transition: height .25s ease, background-color .25s ease,
+                  border-color .25s ease, border-radius .25s ease, box-shadow .25s ease;
+    }
+    .pin-ref:hover .pin-digit,
+    .pin-ref:focus-within .pin-digit {
+      height: 44px; background: var(--color-bg);
+      border: 2px solid var(--color-text); border-radius: 8px;
+    }
+    .pin-digit:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent) 25%, transparent);
+    }
+    @keyframes paperPinSuccess {
+      0% { transform: scale(1); } 40% { transform: scale(1.14); }
+      70% { transform: scale(.97); } 100% { transform: scale(1); }
+    }
+    .pin-digit.is-success {
+      border-color: #3cb85a !important; color: #3cb85a;
+      background: rgba(60, 184, 90, .14) !important;
+      animation: paperPinSuccess .9s cubic-bezier(.34, 1.56, .64, 1) forwards;
+    }
+    @keyframes paperPinShake {
+      0%, 100% { transform: translateX(0); } 20% { transform: translateX(-6px); }
+      40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); }
+    }
+    .pin-ref-inputs.is-shaking { animation: paperPinShake .35s ease; }
+    @keyframes paperPinPulse {
+      0%, 100% { border-color: var(--color-text); } 50% { border-color: var(--color-accent); }
+    }
+    .pin-digit.is-pulsing { animation: paperPinPulse .4s ease 2; }
+
+    /* Lock marker on NDA rows. Inherits the row color (magenta when active). */
+    .work-row.is-locked { cursor: default; }
+    .work-row-client { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .work-row-lock {
+      display: inline-flex; align-items: center; overflow: hidden;
+      max-width: 2em; opacity: 1;
+      transition: max-width .6s ease, opacity .5s ease;
+    }
+
     /* Footer / Contact (shared site footer) */
     .site-footer { border-top: 2px solid #201e1d; scroll-margin-top: 66px; }
     .site-footer-top {
@@ -149,6 +218,9 @@
     /* Phone: drop the preview image panel, keep the work list */
     @media (max-width: 600px) {
       .work-preview { display: none; }
+      /* Stack the PIN copy above its input fields on narrow screens. */
+      .pin-ref { flex-wrap: wrap; gap: 14px; }
+      .pin-ref-copy { font-size: 15px; }
       /* The 3-column row (number · title · client) can't fit a big title and a
          fixed client column side by side on a phone, so the title overflowed
          into the client. Stack to two columns and drop the client below. */
@@ -190,7 +262,20 @@
         <span class="section-label">Selected work (<span id="workCount">06</span>)</span>
       </div>
       <div class="work-grid">
-        <div class="work-list" id="workList"></div>
+        <div class="work-list" id="workList">
+          <div class="pin-ref" id="pinRef">
+            <div class="pin-ref-copy">
+              <span>Professional projects are under NDA.</span>
+              <span><a class="pin-ref-link" href="mailto:roiesh@gmail.com">Email me</a> for the code.</span>
+            </div>
+            <div class="pin-ref-inputs" id="pinInputs">
+              <input class="pin-digit" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off" aria-label="PIN digit 1">
+              <input class="pin-digit" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off" aria-label="PIN digit 2">
+              <input class="pin-digit" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off" aria-label="PIN digit 3">
+              <input class="pin-digit" type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" autocomplete="off" aria-label="PIN digit 4">
+            </div>
+          </div>
+        </div>
         <div class="work-preview" id="workPreview">
           <div class="work-preview-inner">
             <div class="work-preview-img">
@@ -240,6 +325,8 @@
   </footer>
   </div>
 
+  <!-- Shared unlock storage (30-day persistence, same as the live site). -->
+  <script src="../../access.js"></script>
   <script>
   (function () {
     // Which projects are featured, in order. Everything else (title, client,
@@ -260,6 +347,17 @@
 
     // This page lives at /design/paper/, so the repo root is two levels up.
     var ROOT = '../../';
+
+    // Lock marker appended to NDA (protected) rows until the PIN is entered.
+    var LOCK_SVG =
+      '<span class="work-row-lock" aria-label="Protected (NDA)">' +
+        '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+        'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' +
+        '<rect x="3" y="11" width="18" height="11" rx="2"></rect>' +
+        '<path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>';
+
+    // Passwords mirror the live site's pin-unlock.js.
+    var CORRECT = ['2026', '7816'];
 
     function normThumb(t) {
       // Thumbnails are stored relative to various pages ("content/…" or
@@ -293,19 +391,27 @@
     function buildWork() {
       els.count.textContent = String(projects.length).padStart(2, '0');
 
-      els.list.innerHTML = '';
+      // Clear only the generated rows; the PIN reference row (#pinRef) is
+      // static markup and must survive a rebuild.
+      Array.prototype.slice.call(els.list.querySelectorAll('.work-row'))
+        .forEach(function (r) { r.remove(); });
+
       projects.forEach(function (p) {
         var a = document.createElement('a');
         a.className = 'work-row';
         a.href = p.page;
         a.dataset.index = p.index;
+        if (p.locked) a.classList.add('is-locked');
         a.innerHTML =
           '<span class="work-row-n">' + p.n + '</span>' +
           '<span class="work-row-title-wrap">' +
             '<span class="work-row-title">' + p.title + '</span>' +
             '<span class="work-row-kind">' + p.kind + '</span>' +
           '</span>' +
-          '<span class="work-row-client">' + p.client + '</span>';
+          '<span class="work-row-client">' +
+            '<span>' + p.client + '</span>' +
+            (p.locked ? LOCK_SVG : '') +
+          '</span>';
         a.addEventListener('mouseenter', function () {
           state.active = p.index;
           state.pointerInList = true;
@@ -393,8 +499,113 @@
     });
     els.preview.addEventListener('click', function () {
       var p = projects[state.active];
-      if (p && p.page && p.page !== '#') window.location.href = p.page;
+      if (!p) return;
+      var row = els.list.querySelector('.work-row[data-index="' + state.active + '"]');
+      if (row && row.classList.contains('is-locked')) { pulsePin(); return; }
+      if (p.page && p.page !== '#') window.location.href = p.page;
     });
+
+    // Block navigation from a locked row; nudge the PIN fields instead. Capture
+    // phase so this runs before the anchor's default navigation.
+    els.list.addEventListener('click', function (e) {
+      var row = e.target.closest('.work-row.is-locked');
+      if (!row) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      pulsePin();
+    }, true);
+
+    // ---- PIN unlock (reuses access.js storage + the shared passwords) ----
+    var pinCard = document.getElementById('pinRef');
+    var pinInputs = document.getElementById('pinInputs');
+    var digits = pinInputs
+      ? Array.prototype.slice.call(pinInputs.querySelectorAll('.pin-digit'))
+      : [];
+
+    function pulsePin() {
+      if (!pinCard || pinCard.style.display === 'none') return;
+      digits.forEach(function (d) {
+        d.classList.remove('is-pulsing');
+        void d.offsetWidth;
+        d.classList.add('is-pulsing');
+      });
+      if (digits[0]) setTimeout(function () { digits[0].focus(); }, 120);
+    }
+
+    function unlockRows() {
+      Array.prototype.slice.call(els.list.querySelectorAll('.work-row.is-locked'))
+        .forEach(function (row) {
+          row.classList.remove('is-locked');
+          var ic = row.querySelector('.work-row-lock');
+          if (ic) {
+            ic.style.maxWidth = '0';
+            ic.style.opacity = '0';
+            setTimeout(function () { ic.remove(); }, 650);
+          }
+        });
+    }
+
+    function collapsePin() {
+      if (!pinCard) return;
+      var h = pinCard.offsetHeight;
+      pinCard.style.maxHeight = h + 'px';
+      pinCard.style.overflow = 'hidden';
+      void pinCard.offsetWidth;
+      pinCard.style.opacity = '0';
+      pinCard.style.maxHeight = '0';
+      pinCard.style.paddingTop = '0';
+      pinCard.style.paddingBottom = '0';
+      pinCard.style.borderBottomWidth = '0';
+      setTimeout(function () { pinCard.style.display = 'none'; }, 650);
+    }
+
+    function pinSubmit() {
+      var code = digits.map(function (d) { return d.value; }).join('');
+      if (CORRECT.indexOf(code) !== -1) {
+        grantPortfolioAccess();
+        // Stagger the success pop across the digits, then unlock + collapse.
+        digits.forEach(function (d, i) {
+          setTimeout(function () { d.classList.add('is-success'); }, i * 110);
+        });
+        setTimeout(function () { unlockRows(); collapsePin(); }, 750);
+      } else {
+        pinInputs.classList.add('is-shaking');
+        setTimeout(function () {
+          pinInputs.classList.remove('is-shaking');
+          digits.forEach(function (d) { d.value = ''; });
+          if (digits[0]) digits[0].focus();
+        }, 400);
+      }
+    }
+
+    function initPin() {
+      if (!pinCard) return;
+      if (hasPortfolioAccess()) { pinCard.style.display = 'none'; return; }
+      digits.forEach(function (input, i) {
+        input.addEventListener('input', function () {
+          var v = input.value.replace(/\D/g, '');
+          input.value = v.slice(-1);
+          if (v && i < digits.length - 1) digits[i + 1].focus();
+          if (digits.every(function (d) { return d.value !== ''; })) pinSubmit();
+        });
+        input.addEventListener('keydown', function (e) {
+          if (e.key === 'Backspace' && !input.value && i > 0) {
+            digits[i - 1].value = '';
+            digits[i - 1].focus();
+          }
+        });
+        input.addEventListener('paste', function (e) {
+          e.preventDefault();
+          var pasted = (e.clipboardData || window.clipboardData).getData('text').replace(/\D/g, '');
+          pasted.slice(0, 4).split('').forEach(function (ch, j) {
+            if (digits[j]) digits[j].value = ch;
+          });
+          var next = Math.min(pasted.length, digits.length - 1);
+          if (digits[next]) digits[next].focus();
+          if (digits.every(function (d) { return d.value !== ''; })) pinSubmit();
+        });
+      });
+    }
 
     // Nav fade: the brand and the nav underline fade in over the last 60px
     // before the big hero name slides fully under the sticky nav.
@@ -432,6 +643,7 @@
           kind: cfg.kind || e.category || '',
           side: side,
           status: side ? 'Live' : 'NDA',
+          locked: !!e.protected && !hasPortfolioAccess(),
           desc: e.gallery_desc || e.shortdesc || '',
           img: normThumb(e.thumbnail),
           page: cfg.staged ? cfg.staged : (e.page ? ROOT + e.page.replace(/^\//, '') : '#')
@@ -439,6 +651,7 @@
       });
 
       buildWork();
+      initPin();
       renderPreview(false);
       onScroll();
     });
