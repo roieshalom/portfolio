@@ -30,6 +30,17 @@
 
     .page { max-width: 1280px; margin: 0 auto; background: var(--color-bg); color: var(--color-text); }
 
+    /* On load, the main blocks fade up in sequence, top to bottom. */
+    @media (prefers-reduced-motion: no-preference) {
+      @keyframes pageFadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+      .page > * { animation: pageFadeUp .9s cubic-bezier(.22,.61,.36,1) both; }
+      .page > *:nth-child(1) { animation-delay: .05s; }
+      .page > *:nth-child(2) { animation-delay: .20s; }
+      .page > *:nth-child(3) { animation-delay: .35s; }
+      .page > *:nth-child(4) { animation-delay: .50s; }
+      .page > *:nth-child(n+5) { animation-delay: .62s; }
+    }
+
     /* Nav */
     .nav {
       position: sticky; top: 0; z-index: 5; height: 66px; box-sizing: border-box;

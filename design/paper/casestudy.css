@@ -30,6 +30,18 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 .cs-section, .cs-reflection { scroll-margin-top: var(--cs-nav-h); }
 
+/* On load, the page's top-level blocks fade up in sequence, top to bottom. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes csPageFadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  body > * { animation: csPageFadeUp .9s cubic-bezier(.22,.61,.36,1) both; }
+  body > *:nth-child(1) { animation-delay: .05s; }
+  body > *:nth-child(2) { animation-delay: .20s; }
+  body > *:nth-child(3) { animation-delay: .35s; }
+  body > *:nth-child(4) { animation-delay: .50s; }
+  body > *:nth-child(5) { animation-delay: .65s; }
+  body > *:nth-child(n+6) { animation-delay: .78s; }
+}
+
 /* ---------- Nav ---------- */
 .top-nav { position: sticky; top: 0; z-index: 5; height: var(--cs-nav-h); display: flex; justify-content: space-between; align-items: center; padding: 0 var(--cs-pad); background: var(--cs-bg); border-bottom: 2px solid var(--cs-rule); }
 .top-nav .brand { font-weight: 800; font-size: 17px; white-space: nowrap; text-decoration: none; }
