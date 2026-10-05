@@ -109,7 +109,7 @@ html { scroll-behavior: smooth; }
 
 .cs-p { margin: 0 0 24px; max-width: 700px; font-size: 19px; line-height: 1.6; text-wrap: pretty; }
 .cs-pullquote { margin: 0 0 24px; padding: 20px 0; border-top: 2px solid var(--cs-ink); border-bottom: 2px solid var(--cs-ink); font-weight: 800; font-size: 34px; line-height: 1.1; letter-spacing: -0.02em; font-style: normal; max-width: none !important; }
-.cs-caption { margin: 10px 0 24px; font-size: 14px; line-height: 1.45; color: var(--cs-muted); font-style: normal; text-align: left !important; }
+.cs-caption { margin: 10px 0 24px; font-size: 14px; line-height: 1.45; color: var(--cs-muted); font-style: normal; text-align: center !important; }
 
 /* Images */
 .cs-img-wrap { margin: 8px 0 24px; }
