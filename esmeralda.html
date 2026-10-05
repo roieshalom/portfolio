@@ -20,13 +20,14 @@
 
     /* ---- Experience stepper ---- */
     .gs-stepper {
+      grid-column: 1 / -1 !important;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 24px;
       margin: 0 auto;
       align-items: center;
-      max-width: 640px;
-      padding: 0 clamp(20px, 5vw, 32px);
+      max-width: 760px;
+      padding: 0;
     }
 
     .gs-steps {
@@ -294,7 +295,7 @@
   </section>
 
   <!-- 4b. EXPERIENCE STEPPER -->
-  <section class="cs-section" style="max-width: none; padding: 56px 0; margin-left: 0; margin-right: 0;">
+  <section class="cs-section" style="padding: 56px var(--cs-pad);">
     <div class="gs-stepper" id="es-stepper">
       <div class="gs-steps">
         <div class="gs-step is-active" data-index="0">
