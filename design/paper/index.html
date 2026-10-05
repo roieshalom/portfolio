@@ -223,16 +223,15 @@
       .hero-bio-lead { grid-column: 1 / -1; }
       .hero-bio-body { grid-column: 1 / -1; font-size: 20px; }
       .work-grid { grid-template-columns: 1fr; }
-      .work-preview { border-left: 0; border-top: 2px solid var(--color-divider); }
+      /* No room for the preview beside the list: hide it rather than stack it. */
+      .work-preview { display: none; }
       .work-row-title { font-size: 30px; }
       .section-bar { flex-wrap: wrap; gap: 12px; }
       .site-footer-top { grid-template-columns: 1fr; }
       .site-footer-lead-lg { font-size: 48px; }
     }
 
-    /* Phone: drop the preview image panel, keep the work list */
     @media (max-width: 600px) {
-      .work-preview { display: none; }
       /* Stack the PIN copy above its input fields on narrow screens. */
       .pin-ref { flex-wrap: wrap; gap: 14px; }
       .pin-ref-copy { font-size: 15px; }
