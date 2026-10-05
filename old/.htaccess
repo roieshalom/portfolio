@@ -10,8 +10,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L]
 
-# --- Password protection ---
-# Add this in hPanel: Files -> "Password Protect Directories" (or "Directory
-# Privacy") -> pick the /old folder -> set a username and password. hPanel writes
-# the AuthType/AuthUserFile lines below with the correct absolute path to its
-# .htpasswd. (Doing it in hPanel avoids hardcoding a server-specific path here.)
+# Not linked anywhere and blocked in robots.txt, so it stays out of search
+# results. Left intentionally without a password.
