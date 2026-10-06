@@ -6,6 +6,15 @@
   <title>EQ Capture · Roie Shalom</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="casestudy.css?v=14">
+  <style>
+    /* Two phones side by side: left auto-crossfades a few screens, right is static. */
+    .eqc-duo { display: flex; gap: 20px; justify-content: center; align-items: flex-start; max-width: 680px; margin: 0 auto; }
+    .eqc-phone { position: relative; flex: 1 1 0; aspect-ratio: 668 / 1300; }
+    .eqc-phone > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+    .eqc-slide { opacity: 0; transition: opacity .6s ease; }
+    .eqc-slide.is-active { opacity: 1; }
+    @media (max-width: 480px) { .eqc-duo { gap: 12px; } }
+  </style>
 </head>
 <body>
   <nav class="top-nav">
@@ -235,12 +244,21 @@
     </div>
 
     <div class="cs-img-wrap">
-      <img class="cs-img" src="content/images/eqc/app_ui.jpg" alt="Final app UI screens">
-      <p class="cs-caption">Final UI: project selection, building navigation, capture form, and BuildingMinds-themed variant.</p>
+      <div class="eqc-duo">
+        <div class="eqc-phone eqc-phone-slideshow" id="eqcSlideshow">
+          <img class="eqc-slide is-active" src="content/images/eqc/eqc-home.png" alt="Project selection screen">
+          <img class="eqc-slide" src="content/images/eqc/eqc-menu.png" alt="Building navigation screen">
+          <img class="eqc-slide" src="content/images/eqc/eqc-equipment-bm.png" alt="Capture form, BuildingMinds-themed variant">
+        </div>
+        <div class="eqc-phone">
+          <img src="content/images/eqc/eqc-equipment.png" alt="Equipment capture form">
+        </div>
+      </div>
+      <p class="cs-caption">Final UI: project selection, building navigation, and the capture form (BuildingMinds-themed variant cross-faded on the left).</p>
     </div>
 
     <div class="cs-img-wrap" style="max-width:300px;">
-      <img class="cs-img" src="content/images/eqc/appstore.jpg" alt="EQ Capture on the iOS App Store">
+      <img class="cs-img" src="content/images/eqc/screen-appstore.png" alt="EQ Capture on the iOS App Store">
       <p class="cs-caption">EQ Capture live on the iOS App Store, rated 4.0.</p>
     </div>
   </section>
@@ -307,5 +325,22 @@
       <span>Berlin · 2026</span>
     </div>
   </footer>
+
+  <script>
+    // Left phone: auto cross-fade through its screens as a slideshow.
+    (function () {
+      var box = document.getElementById('eqcSlideshow');
+      if (!box) return;
+      var slides = box.querySelectorAll('.eqc-slide');
+      if (slides.length < 2) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var i = 0;
+      setInterval(function () {
+        slides[i].classList.remove('is-active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('is-active');
+      }, 2800);
+    })();
+  </script>
 </body>
 </html>
