@@ -56,7 +56,7 @@ html { scroll-behavior: smooth; }
 .cs-hero { display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); background: none !important; position: relative; }
 .cs-hero .cs-inner { grid-column: 1; grid-row: 1; padding: 56px var(--cs-pad) 40px; display: flex; flex-direction: column; justify-content: space-between; gap: 48px; }
 .cs-hero-content { display: contents; }
-.cs-hero-img-wrap { grid-column: 2; grid-row: 1; position: relative !important; inset: auto !important; width: auto !important; border-left: 2px solid var(--cs-rule); min-height: 640px; }
+.cs-hero-img-wrap { grid-column: 2; grid-row: 1; position: relative !important; inset: auto !important; width: auto !important; border-left: 2px solid var(--cs-rule); min-height: 720px; }
 .cs-hero-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1 !important; }
 .cs-hero-fade { display: none !important; }
 .cs-hero-eyebrow { font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
