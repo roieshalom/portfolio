@@ -30,25 +30,8 @@
     .op-laptop-frame { position: relative; z-index: 3; width: 100%; display: block; pointer-events: none; }
     .op-laptop-shot { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
     .op-shot-base { z-index: 1; }
-    .op-shot-top { z-index: 2; transition: opacity 0.25s ease; }
-    .op-shot-top.is-hidden { opacity: 0; }
-    /* Segmented toggle in the design-system style: 2px ink border, square
-       corners, Archivo. Active segment fills ink with the page bg as text. */
-    .op-toggle { display: flex; justify-content: center; margin-top: 24px; }
-    .op-toggle-btn {
-      margin: 0;
-      font: 600 14px/1 "Archivo", system-ui, sans-serif;
-      color: var(--cs-ink);
-      background: transparent;
-      border: 2px solid var(--cs-ink);
-      border-radius: 0;
-      padding: 11px 20px;
-      cursor: pointer;
-      transition: background .18s ease, color .18s ease;
-    }
-    .op-toggle-btn + .op-toggle-btn { border-left: 0; }
-    .op-toggle-btn.is-active { background: var(--cs-ink); color: var(--cs-bg); }
-    .op-toggle-btn:not(.is-active):hover { color: var(--cs-accent-600); }
+    .op-shot-top { z-index: 2; }
+    /* Toggle buttons + crossfade come from the shared design system (casestudy.css). */
 
     /* Bulleted rule list (no equivalent in the shared case-study CSS).
        Sized to match .cs-p, with pink markers to fit the brand. */
@@ -116,7 +99,7 @@
     .op-report-wrap { max-width: calc(100% - 90px); margin: 32px auto 0; }
     @media (max-width: 600px) { .op-report-wrap { max-width: 100%; } }
   </style>
-  <link rel="stylesheet" href="casestudy.css?v=13">
+  <link rel="stylesheet" href="casestudy.css?v=14">
 </head>
 <body>
   <nav class="top-nav">
@@ -233,12 +216,12 @@
       <div class="op-laptop-demo">
         <div class="op-laptop">
           <img class="op-laptop-shot op-shot-base" src="content/images/onpaper/build-today.png" alt="The current OnPaper upload screen with a CV card and a job link card">
-          <img class="op-laptop-shot op-shot-top" src="content/images/onpaper/build-first.png" alt="The first version of OnPaper, a tab on the job triage site with two paste boxes and a Find gaps button">
+          <img class="op-laptop-shot op-shot-top cs-toggle-fade" src="content/images/onpaper/build-first.png" alt="The first version of OnPaper, a tab on the job triage site with two paste boxes and a Find gaps button">
           <img class="op-laptop-frame" src="content/images/onpaper/laptop.png" alt="" aria-hidden="true">
         </div>
-        <div class="op-toggle" role="group" aria-label="OnPaper versions">
-          <button type="button" class="op-toggle-btn is-active" data-show="1">The first version</button>
-          <button type="button" class="op-toggle-btn" data-show="0">Today</button>
+        <div class="cs-toggle" role="group" aria-label="OnPaper versions">
+          <button type="button" class="cs-toggle-btn is-active" data-show="1">The first version</button>
+          <button type="button" class="cs-toggle-btn" data-show="0">Today</button>
         </div>
       </div>
     </div>
@@ -319,7 +302,7 @@
     (function() {
       document.querySelectorAll('.op-laptop-demo').forEach(function(demo) {
         var top  = demo.querySelector('.op-shot-top');
-        var btns = demo.querySelectorAll('.op-toggle-btn');
+        var btns = demo.querySelectorAll('.cs-toggle-btn');
         btns.forEach(function(btn) {
           btn.addEventListener('click', function() {
             top.classList.toggle('is-hidden', btn.dataset.show !== '1');

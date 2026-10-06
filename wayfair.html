@@ -24,8 +24,13 @@
     @media (max-width: 700px) {
       .cs-impact .cs-inner { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
     }
+
+    /* ---- Two-flow mockup layout (toggle + crossfade come from casestudy.css) ---- */
+    .wf-demo { margin: 0; }
+    .wf-shots { position: relative; width: 100%; aspect-ratio: 2000 / 1201; }
+    .wf-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
   </style>
-  <link rel="stylesheet" href="casestudy.css?v=13">
+  <link rel="stylesheet" href="casestudy.css?v=14">
 </head>
 <body>
   <nav class="top-nav">
@@ -172,12 +177,16 @@
     </div>
 
     <div class="cs-img-wrap" style="margin-top: 32px;">
-      <p style="font-size:0.95rem; color:var(--color-text); margin:0 0 8px;">Experienced suppliers got data-rich tables with inline editing</p>
-      <img class="cs-img" src="content/images/wayfair/4-1 proposal.png" alt="Proposal table view for power users">
-    </div>
-    <div class="cs-img-wrap" style="margin-top: 24px;">
-      <p style="font-size:0.95rem; color:var(--color-text); margin:0 0 8px;">Newer suppliers got a step-by-step guided flow</p>
-      <img class="cs-img" src="content/images/wayfair/4-2 guided flow.png" alt="Guided step-by-step flow for newer suppliers">
+      <div class="wf-demo">
+        <div class="wf-shots">
+          <img class="wf-shot cs-toggle-fade" src="content/images/wayfair/flow-table.webp" alt="Data-rich table view with inline editing for experienced suppliers" data-show="table">
+          <img class="wf-shot cs-toggle-fade is-hidden" src="content/images/wayfair/flow-wizard.webp" alt="Step-by-step guided wizard for newer suppliers" data-show="wizard">
+        </div>
+        <div class="cs-toggle" role="group" aria-label="Two flows">
+          <button type="button" class="cs-toggle-btn is-active" data-show="table">Tables for power users</button>
+          <button type="button" class="cs-toggle-btn" data-show="wizard">A wizard for everyone else</button>
+        </div>
+      </div>
     </div>
 
     <div class="cs-text" style="margin-top: 32px;">
@@ -250,6 +259,19 @@
 
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeLightbox();
+      });
+
+      // Two-flow toggle: swap between the table and wizard mockups.
+      document.querySelectorAll('.wf-demo').forEach(function(demo) {
+        var shots = demo.querySelectorAll('.wf-shot');
+        var btns = demo.querySelectorAll('.cs-toggle-btn');
+        btns.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var show = btn.getAttribute('data-show');
+            btns.forEach(function(b) { b.classList.toggle('is-active', b === btn); });
+            shots.forEach(function(s) { s.classList.toggle('is-hidden', s.getAttribute('data-show') !== show); });
+          });
+        });
       });
     })();
   </script>
