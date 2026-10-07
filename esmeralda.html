@@ -339,7 +339,7 @@
           <div class="gs-phone-inner">
             <img class="gs-slide" data-step="1" src="content/images/esmeralda/esmeralda-2.png" alt="Ask your question">
             <img class="gs-slide" data-step="2" src="content/images/esmeralda/esmeralda-3.png" alt="Esmeralda speaks">
-            <video class="gs-slide gs-slide--video is-active" data-step="0" src="content/images/esmeralda/device-clouds.webm" autoplay loop muted playsinline></video>
+            <video class="gs-slide gs-slide--video is-active" data-step="0" src="content/images/esmeralda/device-clouds.webm" data-fallback="content/images/esmeralda/clouds-still.png" autoplay loop muted playsinline></video>
           </div>
         </div>
       </div>
@@ -560,6 +560,25 @@
   <script>
     (function() {
       var stepper      = document.getElementById('es-stepper');
+
+      // Safari / iOS (all iOS browsers are WebKit) decode the clouds webm but
+      // ignore its alpha channel, so the transparent surround renders opaque.
+      // Swap the video for a transparent PNG still on those browsers.
+      (function() {
+        var vid = stepper.querySelector('video.gs-slide--video');
+        if (!vid) return;
+        var ua = navigator.userAgent;
+        var isWebKit = /iP(hone|ad|od)/.test(ua) ||
+          (/Safari/.test(ua) && !/Chrome|Chromium|CriOS|Android/.test(ua));
+        if (!isWebKit || !vid.dataset.fallback) return;
+        var img = document.createElement('img');
+        img.className = vid.className;
+        img.setAttribute('data-step', vid.dataset.step);
+        img.src = vid.dataset.fallback;
+        img.alt = '';
+        vid.replaceWith(img);
+      })();
+
       var steps        = stepper.querySelectorAll('.gs-step');
       var allSlides    = stepper.querySelectorAll('.gs-slide');
       // Map step index → slide element via data-step attribute
