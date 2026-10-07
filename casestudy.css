@@ -294,3 +294,67 @@ html { scroll-behavior: smooth; }
 .gsp-code { margin: 8px 0; padding: 12px 14px; background: #e1dfdf; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12px; line-height: 1.5; overflow-x: auto; white-space: pre; }
 .gsp-line { margin: 0; white-space: pre-wrap; word-break: break-word; }
 .gsp-line.gsp-first { margin-top: 10px; }
+
+/* ---------- Scroll nav collapse (project pages) ---------- */
+/* On pages whose <nav class="top-nav nav-collapse"> wraps its contents in a
+   .top-nav-inner, the nav stays the centered content box while the inner bar
+   collapses, across ~one screen of scroll, to the sections' grid-column 1
+   (4fr of 4+8 = 33.333% of the content box), anchored to the content's left
+   edge. The name then morphs "Roie Shalom" -> "Roiesh", and the pink
+   scroll-progress divider only starts once that sequence is finished.
+   Driven by nav-collapse.js. Variables on the nav:
+     --bar-shrink      (0->1) bar width, happens first
+     --name-morph      (0->1) name contraction, happens last
+     --scroll-progress (0->1) pink divider, after the sequence */
+.top-nav.nav-collapse {
+  display: block;
+  padding: 0;
+  background: none;
+  border-bottom: 0;
+}
+.top-nav.nav-collapse .top-nav-inner {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--cs-pad);
+  background: var(--cs-bg);
+  border-bottom: 2px solid var(--cs-rule);
+  /* 1 - shrink * (8/12): full content width down to the 4/12 left column */
+  width: calc(100% * (1 - var(--bar-shrink, 0) * 0.666667));
+  margin-right: auto;
+  will-change: width;
+}
+.top-nav.nav-collapse .top-nav-inner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* sit on top of the existing 2px border */
+  width: calc(var(--scroll-progress, 0) * 100%);
+  height: 3px;
+  background: var(--cs-accent);
+  pointer-events: none;
+}
+/* Brand morph: " Shalom" leaves over the first half of the morph, "sh"
+   arrives over the second half, so the name never reads as a blend.
+   Natural widths are measured by nav-collapse.js into --brand-full-w/-sh-w. */
+.top-nav.nav-collapse .brand { display: inline-flex; align-items: baseline; overflow: hidden; }
+.top-nav.nav-collapse .brand-full,
+.top-nav.nav-collapse .brand-sh { display: inline-block; white-space: pre; overflow: hidden; }
+.top-nav.nav-collapse .brand-full {
+  max-width: calc(var(--brand-full-w, 6em) * max(0, 1 - var(--name-morph, 0) * 2));
+  opacity: max(0, 1 - var(--name-morph, 0) * 2);
+}
+.top-nav.nav-collapse .brand-sh {
+  max-width: calc(var(--brand-sh-w, 1.5em) * max(0, (var(--name-morph, 0) - 0.5) * 2));
+  opacity: max(0, (var(--name-morph, 0) - 0.5) * 2);
+}
+/* Below the two-column breakpoint the left column doesn't exist, so keep the
+   bar full width and the name intact. */
+@media (max-width: 900px) {
+  .top-nav.nav-collapse .top-nav-inner { width: 100% !important; }
+  .top-nav.nav-collapse .brand-full { max-width: none !important; opacity: 1 !important; }
+  .top-nav.nav-collapse .brand-sh { max-width: 0 !important; opacity: 0 !important; }
+}

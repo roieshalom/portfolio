@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EQ Capture · Roie Shalom</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="casestudy.css?v=14">
+  <link rel="stylesheet" href="casestudy.css?v=15">
   <style>
     /* Two phones side by side: left auto-crossfades a few screens, right is static. */
     .eqc-duo { display: flex; gap: 20px; justify-content: center; align-items: flex-start; max-width: 680px; margin: 0 auto; }
@@ -17,11 +17,13 @@
   </style>
 </head>
 <body>
-  <nav class="top-nav">
-    <a href="index.html" class="brand">Roie Shalom</a>
-    <div class="top-nav-links">
-      <a href="index.html#work" class="nav-link active">Work</a>
-      <a href="about.html" class="nav-link">About</a>
+  <nav class="top-nav nav-collapse">
+    <div class="top-nav-inner">
+      <a href="index.html" class="brand"><span class="brand-roie">Roie</span><span class="brand-full">&nbsp;Shalom</span><span class="brand-sh">sh</span></a>
+      <div class="top-nav-links">
+        <a href="index.html#work" class="nav-link active">Work</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
     </div>
   </nav>
 
@@ -342,5 +344,6 @@
       }, 2800);
     })();
   </script>
+  <script src="nav-collapse.js"></script>
 </body>
 </html>
