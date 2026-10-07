@@ -19,29 +19,18 @@
     /* CTA button styling is shared — see casestudy.css (.cs-cta-btn) */
 
     /* ---- Experience stepper ---- */
-    /* Chapter grid: left title column stays empty; both the tags and the
-       device live in the right (content) column. */
+    /* Lives in the right (content) column. Steps in a 1fr column, phone in an
+       auto column; the pair is a single block, capped and centered within the
+       content column so it never exceeds it. Collapses to a stack on mobile. */
     .gs-stepper {
-      grid-column: 1 / -1 !important;
+      grid-column: 2 !important;
       display: grid;
-      grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
-      column-gap: 40px;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
       align-items: center;
-      min-width: 0;
+      max-width: 640px;
+      margin: 0 auto;
       padding: 0;
-    }
-
-    /* The device keeps its spot, centered in the content column. The tags
-       share the same cell and fill the gap to the device's left, capped to
-       that gap (half the column minus the 240px phone) so they never
-       overlap it at any width. */
-    .gs-stepper > .gs-phone-wrap { grid-column: 2; grid-row: 1; }
-    .gs-stepper > .gs-steps {
-      grid-column: 2;
-      grid-row: 1;
-      align-self: center;
-      justify-self: start;
-      width: calc((100% - 240px) / 2 - 24px);
     }
 
     .gs-steps {
@@ -107,33 +96,35 @@
       max-width: 100%;
     }
 
-    /* Full-device mockups on transparent backgrounds. Each asset frames
-       the phone differently (the stills carry a soft shadow margin, the
-       webm sits tighter), so every slide is scaled + offset to map its
-       own phone onto the stage. The stage takes the phone's real aspect
-       so nothing distorts, and all three phones end up identical. */
+    /* Slides stack in one grid cell and crossfade via .is-active. Each asset
+       frames the phone differently (the stills carry a soft shadow margin,
+       the webm sits tighter), so every slide is scaled to map its own phone
+       onto the stage. The stage takes the phone's real aspect so nothing
+       distorts, and all three phones end up identical in size. */
     .gs-phone-inner {
-      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: minmax(0, 1fr);
       width: 100%;
       aspect-ratio: 1194 / 2411;
+      overflow: hidden;
     }
 
     .gs-slide {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: center;
+      align-self: center;
       display: block;
       opacity: 0;
       transition: opacity 0.4s ease;
       object-fit: fill;
-      /* Stills (esmeralda-2/3.png): phone = 89.4% x 92.7% of the asset
-         and sits centered, so enlarge to fill the stage. */
+      /* Stills (esmeralda-2/3.png): phone = 89.4% x 92.7% of the asset. */
       width: 111.88%;
       height: 107.84%;
     }
 
-    /* Clouds webm: phone = 84.0% x 99.6% of the asset, also centered. */
+    /* Clouds webm: phone = 84.0% x 99.6% of the asset. */
     .gs-slide--video {
       width: 119.03%;
       height: 100.45%;
@@ -142,7 +133,7 @@
     .gs-slide.is-active { opacity: 1; }
 
     @media (max-width: 768px) {
-      .gs-stepper { display: block; min-width: 0; }
+      .gs-stepper { grid-column: 1 / -1 !important; display: block; min-width: 0; max-width: 100%; margin: 0; padding: 0; }
       .gs-phone-wrap { margin-bottom: 24px; }
       .gs-phone-frame { width: 280px; max-width: 100%; }
       .gs-steps { display: none; }
