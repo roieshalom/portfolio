@@ -126,10 +126,6 @@
 
     .gs-phone-inner {
       display: grid;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 32px #ec725744;
-      outline: 1px solid rgba(0,0,0,0.08);
     }
 
     .gs-slide {
@@ -146,6 +142,15 @@
     @media (max-width: 768px) {
       .gs-stepper {
         display: block;
+        /* Fit the single-column section track and stay centered in the viewport.
+           Without min-width:0 the grid item's content forces the track wider than
+           the screen, shifting the stacked device off to the right. */
+        min-width: 0;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
       }
       .gs-phone-wrap {
         margin-bottom: 24px;
@@ -812,10 +817,10 @@
       <div class="gs-phone-wrap">
         <div class="gs-phone-frame">
           <div class="gs-phone-inner">
-            <img class="gs-slide is-active" src="content/images/grooped/groopped gameplay/gp-1.PNG" alt="16 words, 4 groups">
-            <img class="gs-slide" src="content/images/grooped/groopped gameplay/gp-3.PNG" alt="Spot a pattern">
-            <img class="gs-slide" src="content/images/grooped/groopped gameplay/gp-5.PNG" alt="First group found">
-            <img class="gs-slide" src="content/images/grooped/groopped gameplay/gp-7.PNG" alt="Puzzle complete">
+            <img class="gs-slide is-active" src="content/images/grooped/groopped gameplay/device-1.png" alt="16 words, 4 groups">
+            <img class="gs-slide" src="content/images/grooped/groopped gameplay/device-2.png" alt="Spot a pattern">
+            <img class="gs-slide" src="content/images/grooped/groopped gameplay/device-3.png" alt="First group found">
+            <img class="gs-slide" src="content/images/grooped/groopped gameplay/device-4.png" alt="Puzzle complete">
           </div>
         </div>
       </div>
