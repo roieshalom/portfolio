@@ -71,12 +71,14 @@ EDITOR = r"""
     // Drop nodes injected at runtime by third-party scripts (Font Awesome kit
     // styles, Clarity tags, etc.) so only authored markup is saved.
     clone.querySelectorAll('style[id^="fa-"], script[src*="clarity.ms"], script[src*="fontawesome.com/releases"]').forEach(function (n) { n.remove(); });
+    // Drop inline styles written at runtime (nav scroll state, emptied styles).
+    clone.querySelectorAll('nav.nav-collapse, nav.nav-collapse [style], [style=""]').forEach(function (n) { n.removeAttribute('style'); });
     clone.querySelectorAll('[data-wfedit]').forEach(function (n) {
       n.removeAttribute('contenteditable');
       n.removeAttribute('spellcheck');
       n.removeAttribute('data-wfedit');
     });
-    var html = '<!DOCTYPE html>\n' + clone.outerHTML + '\n';
+    var html = ('<!DOCTYPE html>\n' + clone.outerHTML + '\n').replace(/\n(?:[ \t]*\n){2,}/g, '\n\n');
     fetch('/__save', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
