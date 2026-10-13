@@ -12,3 +12,4 @@ design/collin/.anthropic-key
 design/collin/apikey.txt
 design/collin/.usage.json
 design/collin/airtable.json
+*.conflict-*.html
