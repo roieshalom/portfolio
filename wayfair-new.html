@@ -251,8 +251,14 @@
   <section class="cs-section">
     <div class="cs-text">
       <span class="cs-eyebrow">Development</span>
-      <div class="cs-pin"><h2 class="cs-h2">Turning the spec into building blocks</h2></div>
-      <p class="cs-p">Before pushing new screens, I documented every field, error state and edge case as reusable validation blocks. Engineers built both flows from that one source, and it earned me the team's trust after a rough handoff.</p>
+      <div class="cs-pin"><h2 class="cs-h2">Building one source of truth</h2></div>
+      <p class="cs-p">Before designing screens, I fixed what made the old tools inconsistent.</p>
+      <ul class="wf-list">
+        <li><strong>The problem:</strong> every engineer wrote their own error states, so five people made five reasonable decisions that didn't match.</li>
+        <li><strong>The fix:</strong> one spec with every field, error state and edge case, covering five message types across three placements (inline, modal, toast).</li>
+        <li><strong>Beyond the spec:</strong> there was no shared table component in Homebase either, so I partnered with a senior engineer to build one.</li>
+        <li><strong>The result:</strong> both flows were built from the same source, and other teams adopted the components and the method.</li>
+      </ul>
     </div>
 
     <div class="cs-text">
