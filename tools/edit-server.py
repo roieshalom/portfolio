@@ -75,6 +75,10 @@ EDITOR = r"""
     clone.querySelectorAll('style[id^="fa-"], script[src*="clarity.ms"], script[src*="fontawesome.com/releases"]').forEach(function (n) { n.remove(); });
     // Drop inline styles written at runtime (nav scroll state, emptied styles).
     clone.querySelectorAll('nav.nav-collapse, nav.nav-collapse [style], [style=""]').forEach(function (n) { n.removeAttribute('style'); });
+    // Runtime state that must never be saved: scroll locks and an open lightbox.
+    ['html', 'body'].forEach(function (t) { var n = clone.querySelector(t); if (n) n.removeAttribute('style'); });
+    var lb = clone.querySelector('#lb-overlay'); if (lb) lb.classList.remove('is-open');
+    var lbi = clone.querySelector('#lb-img'); if (lbi) { lbi.setAttribute('src', ''); lbi.setAttribute('alt', ''); }
     clone.querySelectorAll('[data-wfedit]').forEach(function (n) {
       n.removeAttribute('contenteditable');
       n.removeAttribute('spellcheck');

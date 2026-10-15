@@ -409,6 +409,8 @@
       var lbImg = document.getElementById('lb-img');
 
       function openLightbox(src, alt) {
+        // casestudy.css hides the overlay; don't lock scrolling for nothing.
+        if (getComputedStyle(overlay).display === 'none') return;
         lbImg.src = src;
         lbImg.alt = alt || '';
         overlay.classList.add('is-open');
