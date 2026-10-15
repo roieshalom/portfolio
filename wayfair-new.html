@@ -73,6 +73,11 @@
     }
     .wf-list li strong { font-weight: 800; color: var(--cs-ink); }
 
+    /* Two-flow mockup toggle (toggle + crossfade styles come from casestudy.css) */
+    .wf-demo { margin: 0; }
+    .wf-shots { position: relative; width: 100%; aspect-ratio: 2000 / 1201; }
+    .wf-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+
     /* Two mockups side by side */
     .wf-figrow { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin: 8px 0 24px; }
     .wf-figrow figure { margin: 0; }
@@ -282,21 +287,19 @@
     </div>
 
     <div class="cs-text">
-      <div class="wf-figrow">
-        <figure>
-          <img class="cs-img" src="content/images/wayfair/flow-table.webp" alt="Data-rich table view with inline editing for experienced suppliers">
-          <figcaption>Tables for power users</figcaption>
-        </figure>
-        <figure>
-          <img class="cs-img" src="content/images/wayfair/flow-wizard.webp" alt="Step-by-step guided wizard for newer suppliers">
-          <figcaption>A wizard for everyone else</figcaption>
-        </figure>
+      <div class="cs-img-wrap">
+        <div class="wf-demo">
+          <div class="wf-shots">
+            <img class="wf-shot cs-toggle-fade" src="content/images/wayfair/flow-table.webp" alt="Data-rich table view with inline editing for experienced suppliers" data-show="table">
+            <img class="wf-shot cs-toggle-fade is-hidden" src="content/images/wayfair/flow-wizard.webp" alt="Step-by-step guided wizard for newer suppliers" data-show="wizard">
+          </div>
+          <div class="cs-toggle" role="group" aria-label="Two flows">
+            <button type="button" class="cs-toggle-btn is-active" data-show="table">Tables for power users</button>
+            <button type="button" class="cs-toggle-btn" data-show="wizard">A wizard for everyone else</button>
+          </div>
+        </div>
       </div>
       <p class="cs-p">In the wizard, every option explains itself. Not just "Truckload" but "Move products from your warehouses to Wayfair's facilities." Guiding users means explaining their non-selections too.</p>
-      <div class="cs-img-wrap">
-        <img class="cs-img" src="content/images/wayfair/uoe-guided flow-laptop.png" alt="The wizard's first step: shipment types, each with a one-line explanation">
-        <p class="cs-caption">The wizard's first step. Each shipment type says what it actually does.</p>
-      </div>
     </div>
   </section>
 
@@ -434,6 +437,19 @@
 
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeLightbox();
+      });
+
+      // Two-flow toggle: swap between the table and wizard mockups.
+      document.querySelectorAll('.wf-demo').forEach(function(demo) {
+        var shots = demo.querySelectorAll('.wf-shot');
+        var btns = demo.querySelectorAll('.cs-toggle-btn');
+        btns.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var show = btn.getAttribute('data-show');
+            btns.forEach(function(b) { b.classList.toggle('is-active', b === btn); });
+            shots.forEach(function(s) { s.classList.toggle('is-hidden', s.getAttribute('data-show') !== show); });
+          });
+        });
       });
     })();
   </script>

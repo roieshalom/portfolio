@@ -76,9 +76,15 @@ EDITOR = r"""
     // Drop inline styles written at runtime (nav scroll state, emptied styles).
     clone.querySelectorAll('nav.nav-collapse, nav.nav-collapse [style], [style=""]').forEach(function (n) { n.removeAttribute('style'); });
     // Runtime state that must never be saved: scroll locks and an open lightbox.
-    ['html', 'body'].forEach(function (t) { var n = clone.querySelector(t); if (n) n.removeAttribute('style'); });
+    clone.removeAttribute('style');  // clone IS <html>, so querySelector can't reach it
+    var cb = clone.querySelector('body'); if (cb) cb.removeAttribute('style');
     var lb = clone.querySelector('#lb-overlay'); if (lb) lb.classList.remove('is-open');
     var lbi = clone.querySelector('#lb-img'); if (lbi) { lbi.setAttribute('src', ''); lbi.setAttribute('alt', ''); }
+    // Reset mockup toggles to their first state so a viewed tab isn't saved.
+    clone.querySelectorAll('.wf-demo').forEach(function (demo) {
+      demo.querySelectorAll('.cs-toggle-btn').forEach(function (b, i) { b.classList.toggle('is-active', i === 0); });
+      demo.querySelectorAll('.wf-shot').forEach(function (s, i) { s.classList.toggle('is-hidden', i !== 0); });
+    });
     clone.querySelectorAll('[data-wfedit]').forEach(function (n) {
       n.removeAttribute('contenteditable');
       n.removeAttribute('spellcheck');
