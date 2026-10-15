@@ -60,16 +60,15 @@
     .wf-block-h + .cs-p, .wf-block-h + .wf-list { margin-top: 0; }
 
     /* Bullet lists, used only where a list reads better than sentences */
-    .wf-list { list-style: none; margin: 0 0 24px; padding: 0; max-width: 700px; }
-    .wf-list li {
-      position: relative; padding: 11px 0 11px 22px;
-      border-bottom: 2px solid var(--cs-rule);
-      font-size: 19px; line-height: 1.5;
+    .wf-list {
+      list-style: none; margin: 4px 0 28px; padding: 0; max-width: 700px;
+      display: flex; flex-direction: column; gap: 14px;
     }
-    .wf-list li:first-child { border-top: 2px solid var(--cs-rule); }
+    .wf-list li { position: relative; padding-left: 26px; font-size: 19px; line-height: 1.55; text-wrap: pretty; }
+    /* Dot sits on the first line's x-height, whatever the line count */
     .wf-list li::before {
-      content: ""; position: absolute; left: 2px; top: 20px;
-      width: 7px; height: 7px; border-radius: 50%; background: #801566;
+      content: ""; position: absolute; left: 4px; top: 0.62em;
+      width: 8px; height: 8px; border-radius: 50%; background: #801566;
     }
     .wf-list li strong { font-weight: 800; color: var(--cs-ink); }
 
