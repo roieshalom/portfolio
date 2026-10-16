@@ -934,6 +934,7 @@
       }
 
       function openSingle(src, alt) {
+        if (getComputedStyle(overlay).display === 'none') return;  // overlay hidden by casestudy.css: don't lock scrolling
         navSlides = null;
         overlay.classList.remove('has-nav');
         lbImg.src = src; lbImg.alt = alt || ''; lbImg.style.display = '';
@@ -942,6 +943,7 @@
       }
 
       function openStepper(slides, index) {
+        if (getComputedStyle(overlay).display === 'none') return;  // overlay hidden by casestudy.css: don't lock scrolling
         navSlides = slides; navIndex = index;
         overlay.classList.add('has-nav');
         showSlide(navSlides[navIndex]);
