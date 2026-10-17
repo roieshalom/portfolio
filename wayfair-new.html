@@ -155,27 +155,27 @@
       <span class="cs-eyebrow">Overview</span>
       <div class="cs-pin"><h2 class="cs-h2">The brief</h2></div>
 
-      <h3 class="wf-block-h">Context</h3>
-      <p class="cs-p">Suppliers use Partner Home to ship stock into Wayfair's CastleGate warehouses, closer to customers for faster delivery. Over time, four teams had built four separate tools for that one job.</p>
+      <h3 class="wf-block-h">Context &amp; Problem</h3>
+      <p class="cs-p">Four separate teams built four redundant tools for inventory replenishment. Suppliers struggled with inconsistent UI rules, missing regional features, and fragmented order tracking, while Wayfair burned engineering resources maintaining four codebases for one workflow.</p>
 
-      <h3 class="wf-block-h">Problem</h3>
-      <p class="cs-p">Suppliers dealt with inconsistent legacy experiences, missing regional rules and missed replenishment windows. Wayfair had to maintain four codebases for what was essentially one workflow.</p>
+      <h3 class="wf-block-h">Goals &amp; Safety Guardrails</h3>
+      <p class="cs-p">Replace all four legacy tools with a single unified platform and retire their codebases, maintaining business continuity with a target of <b data-path-to-node="3,1,0" data-index-in-node="164">less than 15% reversion rate</b> and <b data-path-to-node="3,1,0" data-index-in-node="197">less than 5% order volume dip</b> during rollout.</p>
 
-      <h3 class="wf-block-h">Goals</h3>
+      <h3 class="wf-block-h"><span class="hljs-strong">The Core Tension</span></h3>
       <ul class="wf-list">
-        <li>Replace four separate tools with a single order-entry experience for every supplier type and region.</li>
-        <li>Retire the four legacy codebases.</li>
-        <li>Bring the interface in line with the design system Wayfair was rolling out at the time.</li>
+        <li><h3 class="wf-block-h" style="grid-column: 2; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; outline: rgb(128, 21, 102) solid 2px !important;"><br></h3></li>
+        <li>Designing one tool for two opposite user types: high volume power users who demand spreadsheet speed tables, and small self service suppliers who need step by step guidance.</li>
+        <li><br></li>
       </ul>
 
-      <h3 class="wf-block-h">Success criteria</h3>
-      <p class="cs-p">At least 10% of pilot suppliers creating orders in the new tool, reversion under 15%, and an order volume dip under 5%.</p>
+      <h3 class="wf-block-h">The Solution</h3>
+      <p class="cs-p">A dual-path architecture—dense data tables for power users and a guided wizard for beginners—built from a single, shared validation spec.</p>
 
-      <h3 class="wf-block-h">Challenges</h3>
-      <p class="cs-p">One tool for two opposite users: power users working at spreadsheet speed, and first-timers who need guidance.</p>
+      <h3 class="wf-block-h"><br></h3>
+      <p class="cs-p"><br></p>
 
-      <h3 class="wf-block-h">Solution</h3>
-      <p class="cs-p">One order-entry tool with two paths: dense tables for power users and a guided wizard for everyone else, both built from a shared validation spec.</p>
+      <h3 class="wf-block-h"><br></h3>
+      <p class="cs-p"><response-element class="no-md md-has-block-component" ng-version="0.0.0-PLACEHOLDER"><code-block _nghost-ng-c639535026="" class="ng-tns-c639535026-199 enable-luminous-code-block ng-star-inserted"><div _ngcontent-ng-c639535026="" class="code-block ng-tns-c639535026-199 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation" jslog="223238;track:impression,attention;BardVeMetadataKey:W1sicl9iMmFkNWUwMDI1MTA0MGZkIiwiY185MWZkOGU3M2MzMDQwODMwIixudWxsLCJyY180MGFkOGJiMzVmMDBlNjJkIixudWxsLG51bGwsImVuIixudWxsLDEsbnVsbCxudWxsLDEsMF1d" data-hveid="0" decode-data-ved="1" data-ved="0CAAQhtANahgKEwjctdC76L6XAxUAAAAAHQAAAAAQ-wM"><div _ngcontent-ng-c639535026="" class="formatted-code-block-internal-container ng-tns-c639535026-199"><div _ngcontent-ng-c639535026="" class="animated-opacity ng-tns-c639535026-199"><pre _ngcontent-ng-c639535026="" class="ng-tns-c639535026-199"><code _ngcontent-ng-c639535026="" role="text" data-test-id="code-content" class="code-container formatted ng-tns-c639535026-199"><pre _ngcontent-ng-c639535026="" class="ng-tns-c639535026-199"><br></pre></code></pre><!----></div></div></div><!----><!----><!----></code-block><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></response-element><h3 data-path-to-node="6"></h3></p>
     </div>
   </section>
 
@@ -313,7 +313,7 @@
         <li><strong>It worked:</strong> 100% completed the task unassisted, in about 4 minutes on average.</li>
         <li><strong>One blind spot:</strong> almost every participant first tried the table search, expecting a catalog search. In the 12 timed sessions, finding "Manage Products" took 35% to 70% of the session, close to half on average.</li>
       </ul>
-      <p class="cs-p">A local fix for "Manage Products" would have broken design-system consistency, and the system rollout was about to solve it. I escalated, explored alternatives, and we kept the design.</p>
+      <p class="cs-p"><div><li><ul data-path-to-node="7,0,1"><li><p data-path-to-node="7,0,1,0,0"><b data-path-to-node="7,0,1,0,0" data-index-in-node="0"></b></p><h3 class="wf-block-h" style="grid-column: 2; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; outline: rgb(128, 21, 102) solid 2px !important;">Same destination, different suppliers</h3></li><li><p data-path-to-node="7,0,1,0,0"><b data-path-to-node="7,0,1,0,0" data-index-in-node="0">Option A (Quick Local Patch):</b> Move or redesign the button specifically for this tool to solve the immediate research finding.</p></li><li><p data-path-to-node="7,0,1,1,0"><b data-path-to-node="7,0,1,1,0" data-index-in-node="0">Option B (Design System Consistency):</b> Keep the design as-is and rely on the upcoming enterprise-wide design system rollout to establish global consistency.</p></li></ul></li><li><p data-path-to-node="7,1,0"><b data-path-to-node="7,1,0" data-index-in-node="0">The Strategic Rationale:</b> We chose Option B. Patching the UI locally would create immediate inconsistency across Partner Home. Maintaining design system integrity was worth the short-term learning curve.</p></li></div><div><div><br></div></div></p>
     </div>
 
     <div class="cs-text">
@@ -354,7 +354,7 @@
       <div class="cs-pin"><h2 class="cs-h2">Fully migrated, legacy retired</h2></div>
       <div class="wf-stats">
         <div>
-          <div class="wf-stat-num">3,261</div>
+          <div class="wf-stat-num">3,400</div>
           <div class="wf-stat-lbl">Suppliers migrated</div>
           <div class="wf-stat-sub">Across 5 releases</div>
         </div>
