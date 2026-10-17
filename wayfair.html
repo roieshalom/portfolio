@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <script src="clarity.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,27 +8,101 @@
   <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
   <style>
     /* ---- Wayfair: hero ---- */
-    
     .cs-hero-content { max-width: 850px; }
     .cs-hero-img-wrap img { opacity: 0.45; }
-    
+
     @media (max-width: 600px) {
       .cs-hero-img-wrap { width: 100%; opacity: 0.3; }
-      
     }
 
-    /* ---- Impact strip ---- */
-    .cs-impact { background: #4a0d3c; }
-    .cs-impact .cs-inner { grid-template-columns: repeat(3, 1fr); }
-    .cs-impact-num { color: #e070b8; }
-    @media (max-width: 700px) {
-      .cs-impact .cs-inner { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
+    /* =========================================================
+       Wayfair scan-first
+       Page-local styles. Built on the existing --cs-* variables
+       from casestudy.css; nothing here edits a shared rule.
+       Page accent is the Wayfair brand colour #801566.
+       ========================================================= */
+
+    /* Intro paragraph under the hero title */
+    .wf-hero-desc { margin: 24px 0 0; max-width: 620px; font-size: 20px; line-height: 1.5; color: var(--cs-body2); text-wrap: pretty; }
+
+    /* Hero tag chips */
+    .wf-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .wf-tag {
+      display: inline-block; line-height: 1;
+      padding: 6px 11px; border-radius: 999px;
+      font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      color: #801566;
+      border: 1px solid color-mix(in srgb, #801566 32%, transparent);
+      background: color-mix(in srgb, #801566 7%, transparent);
     }
 
-    /* ---- Two-flow mockup layout (toggle + crossfade come from casestudy.css) ---- */
+    /* Framing, variant B: compact table strip (label + 1-2 sentences) */
+    .wf-tldr {
+      border-top: 2px solid var(--cs-ink);
+      border-bottom: 2px solid var(--cs-rule);
+      background: color-mix(in srgb, #801566 5%, var(--cs-bg));
+      padding: 24px var(--cs-pad) 28px;
+    }
+    .wf-tldr-label {
+      font-weight: 800; font-size: 14px; letter-spacing: .08em; text-transform: uppercase;
+      color: #801566; margin-bottom: 16px;
+    }
+    .wf-tldr-grid { margin: 0; border-top: 2px solid var(--cs-rule); }
+    .wf-tldr-grid > div {
+      display: grid; grid-template-columns: 160px minmax(0,1fr); gap: 16px;
+      padding: 14px 0; border-bottom: 2px solid var(--cs-rule);
+    }
+    .wf-tldr-grid dt { font-weight: 800; font-size: 16px; }
+    .wf-tldr-grid dd { margin: 0; max-width: 760px; font-size: 18px; line-height: 1.5; color: var(--cs-body2); }
+
+    /* Framing, variant A: headed blocks (and sub-headings inside stages) */
+    .wf-block-h { margin: 8px 0 8px; font-weight: 800; font-size: 20px; line-height: 1.2; letter-spacing: -0.01em; color: #801566; }
+    .wf-block-h + .cs-p, .wf-block-h + .wf-list { margin-top: 0; }
+
+    /* Bullet lists, used only where a list reads better than sentences */
+    .wf-list {
+      list-style: none; margin: 4px 0 28px; padding: 0; max-width: 700px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .wf-list li { position: relative; padding-left: 26px; font-size: 19px; line-height: 1.55; text-wrap: pretty; }
+    /* Dot sits on the first line's x-height, whatever the line count */
+    .wf-list li::before {
+      content: ""; position: absolute; left: 4px; top: 0.62em;
+      width: 8px; height: 8px; border-radius: 50%; background: #801566;
+    }
+    .wf-list li strong { font-weight: 800; color: var(--cs-ink); }
+
+    /* Two-flow mockup toggle (toggle + crossfade styles come from casestudy.css) */
     .wf-demo { margin: 0; }
     .wf-shots { position: relative; width: 100%; aspect-ratio: 2000 / 1201; }
     .wf-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+
+    /* Two mockups side by side */
+    .wf-figrow { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin: 8px 0 24px; }
+    .wf-figrow figure { margin: 0; }
+    .wf-figrow figcaption { margin-top: 10px; font-size: 14px; line-height: 1.45; color: var(--cs-muted); text-align: center; }
+
+    /* Results: big numbers inside the chapter column */
+    .wf-stats { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; margin: 0 0 32px; }
+    .wf-stats > div { padding-top: 16px; border-top: 2px solid #801566; display: flex; flex-direction: column; gap: 8px; }
+    .wf-stat-num { font-weight: 800; font-size: 64px; line-height: .9; letter-spacing: -0.04em; color: #801566; }
+    .wf-stat-lbl { font-weight: 800; font-size: 18px; }
+    .wf-stat-sub { font-size: 15px; color: var(--cs-muted); }
+
+    /* Takeaways: light grey band, two groups side by side */
+    .wf-takeaways { background: #eae9e9; }
+    .wf-twocol { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 32px; max-width: 700px; }
+    .wf-group-h { margin: 0 0 12px; font-weight: 800; font-size: 20px; letter-spacing: -0.01em; }
+    .wf-group .wf-list { margin-bottom: 0; }
+
+    @media (max-width: 900px) {
+      .wf-hero-desc { font-size: 18px; }
+      .wf-tldr-grid > div { grid-template-columns: 1fr; gap: 4px; }
+      .wf-figrow { grid-template-columns: 1fr; }
+      .wf-stats { grid-template-columns: 1fr; gap: 20px; }
+      .wf-stat-num { font-size: 52px; }
+      .wf-twocol { grid-template-columns: 1fr; gap: 28px; }
+    }
   </style>
   <link rel="stylesheet" href="casestudy.css?v=15">
 </head>
@@ -44,190 +117,285 @@
     </div>
   </nav>
 
-  <!-- 1. HERO -->
+  <!-- HERO: company, action title, intro, tags -->
   <section class="cs-hero cs-bleed">
     <div class="cs-hero-img-wrap">
       <img src="content/images/wayfair/hero.png" alt="">
-      </div>
+    </div>
     <div class="cs-inner">
       <div class="cs-hero-content">
         <div>
-          <span class="cs-hero-eyebrow"><span class="cs-hero-index">01 / 06</span>Product Story</span>
-          <h1 class="cs-hero-h">Replacing four supplier tools with one,<br>for 3,200 suppliers across three continents</h1>
+          <span class="cs-hero-eyebrow"><span class="cs-hero-index">01 / 06</span>Wayfair</span>
+          <h1 class="cs-hero-h">Helping suppliers restock Wayfair through one unified order tool</h1>
+          <p class="wf-hero-desc">As Product Design Lead on Wayfair’s Partner Home, I designed the single order-entry tool that replaced four legacy ones, for all Wayfair's suppliers</p>
         </div>
-        <dl class="cs-meta"><div><dt>Company</dt><dd>Wayfair</dd></div><div><dt>Role</dt><dd>Product Design Lead</dd></div><div><dt>Platform</dt><dd>Web</dd></div></dl>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. ROLE BAR -->
-  <div class="cs-role-bar cs-bleed">
-    <div class="cs-inner">
-      <div>
-        <div class="cs-role-col-label">What I did</div>
-        <div class="cs-role-col-val">Led all design work across both order entry flows, built a validation component system for engineering, ran supplier research, and guided the product through five phased releases.</div>
-      </div>
-      <div>
-        <div class="cs-role-col-label">The team</div>
-        <div class="cs-role-col-val">One PM (rotated three times before stabilizing), ~6 engineers in Boston. I worked from Berlin across a 6-hour time zone gap. Content strategy support was later removed in a restructuring.</div>
-      </div>
-      <div>
-        <div class="cs-role-col-label">Outcome</div>
-        <div class="cs-role-col-val">All supplier segments migrated. 5% reversion rate (target was 15%). Order volume dipped just ~2% at launch.</div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- OUTCOME (moved to top) -->
-  <section class="cs-impact cs-bleed">
-    <div class="cs-inner">
-      <div>
-        <div class="cs-impact-num">5%</div>
-        <div class="cs-impact-label">
-          <strong>Reversion rate</strong>
-          Target was 15%. Suppliers stayed.
-        </div>
-      </div>
-      <div>
-        <div class="cs-impact-num">~2%</div>
-        <div class="cs-impact-label">
-          <strong>Order volume dip</strong>
-          Target was under 10%. Near-seamless transition.
-        </div>
-      </div>
-      <div>
-        <div class="cs-impact-num">3,200+</div>
-        <div class="cs-impact-label">
-          <strong>Suppliers migrated</strong>
-          Across the US, Canada, and Europe.
+        <div>
+          <dl class="cs-meta">
+            <div><dt>Role</dt><dd>Product Design Lead</dd></div>
+            <div><dt>Platform</dt><dd>Web, B2B</dd></div>
+            <div><dt>Team</dt><dd>PM, ~6 engineers</dd></div>
+            <div><dt>Scale</dt><dd>5 phased releases, 3 regions</dd></div>
+          </dl>
+          <div class="wf-tags">
+            <span class="wf-tag">#DesignLead</span>
+            <span class="wf-tag">#B2B</span>
+            <span class="wf-tag">#Enterprise</span>
+            <span class="wf-tag">#UserResearch</span>
+            <span class="wf-tag">#Migration</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. CONTEXT -->
+  <!-- FRAMING (variant A: headed blocks) -->
   <section class="cs-section">
     <div class="cs-text">
-      <span class="cs-eyebrow">Context</span>
-      <div class="cs-pin"><h2 class="cs-h2">The supplier tool that grew into four</h2></div>
-      <p class="cs-p">Wayfair's Partner Home is the portal where thousands of suppliers manage their business with the company. One critical workflow is creating inbound orders to ship products to Wayfair's CastleGate warehouses, positioned closer to customers for faster delivery.</p>
-      <p class="cs-p">Over time, this workflow had splintered. Four separate teams had built four separate order entry tools: one for large managed suppliers, one for self-service, one for stocking orders, and one for port-to-door shipping. Same core task, four different interfaces, each with its own quirks and limitations.</p>
+      <span class="cs-eyebrow">Overview</span>
+      <div class="cs-pin"><h2 class="cs-h2">The brief</h2></div>
+
+      <h3 class="wf-block-h">Context &amp; Problem</h3>
+      <p class="cs-p">Four separate teams built four redundant tools for inventory replenishment. Suppliers struggled with inconsistent UI rules, missing regional features, and fragmented order tracking, while Wayfair burned engineering resources maintaining four codebases for one workflow.</p>
+
+      <h3 class="wf-block-h">Goals &amp; Safety Guardrails</h3>
+      <p class="cs-p">Replace all four legacy tools with a single unified platform and retire their codebases, maintaining business continuity with a target of <b data-path-to-node="3,1,0" data-index-in-node="164">less than 15% reversion rate</b> and <b data-path-to-node="3,1,0" data-index-in-node="197">less than 5% order volume dip</b> during rollout.</p>
+
+      <h3 class="wf-block-h">The Core Tension</h3>
+      <p class="cs-p">Designing one tool for two opposite user types: high volume power users who demand spreadsheet speed tables, and small self service suppliers who need step by step guidance.</p>
+
+      <h3 class="wf-block-h">The Solution</h3>
+      <p class="cs-p">A dual-path architecture—dense data tables for power users and a guided wizard for beginners—built from a single, shared validation spec.</p>
+
+    </div>
+  </section>
+
+  <!-- STAGE: DISCOVERY -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Discovery and insights</span>
+      <div class="cs-pin"><h2 class="cs-h2">Four tools, one job, a lot of friction</h2></div>
+      <p class="cs-p">Built at different times by different teams, the four tools ignored each other while serving ~3,400 suppliers. A side-by-side audit, journey mapping and a supplier survey showed where it hurt.</p>
+
+      <h3 class="wf-block-h">Pain points: suppliers</h3>
+      <ul class="wf-list">
+        <li><strong>Inconsistent and unreliable.</strong> Different terms, design and flows for the same task, and inputs that sometimes didn't save.</li>
+        <li><strong>No overview.</strong> Suppliers using more than one tool had no single view of their in-progress orders.</li>
+      </ul>
+
+      <h3 class="wf-block-h">Pain points: Wayfair</h3>
+      <ul class="wf-list">
+        <li><strong>No feature parity.</strong> Four codebases, each with different capabilities.</li>
+        <li><strong>Nobody owned the journey.</strong> Each team owned a tool, and order data was split across four systems.</li>
+      </ul>
     </div>
 
     <div class="cs-text">
       <div class="cs-pattern-grid">
         <figure>
-          <img src="content/images/wayfair/old-1-Vertical.png" alt="Vertical tool">
+          <img class="cs-img" src="content/images/wayfair/old-1-Vertical.png" alt="Vertical tool">
           <figcaption>Vertical-Managed CastleGate</figcaption>
         </figure>
         <figure>
-          <img src="content/images/wayfair/old-2-US-self-Service.png" alt="US CastleGate Self-Service tool">
+          <img class="cs-img" src="content/images/wayfair/old-2-US-self-Service.png" alt="US CastleGate Self-Service tool">
           <figcaption>US CastleGate Self-Service</figcaption>
         </figure>
         <figure>
-          <img src="content/images/wayfair/old-3-Port-to-Door.png" alt="Port-to-Door-as-a-Service tool">
+          <img class="cs-img" src="content/images/wayfair/old-3-Port-to-Door.png" alt="Port-to-Door-as-a-Service tool">
           <figcaption>Port-to-Door-as-a-Service</figcaption>
         </figure>
         <figure>
-          <img src="content/images/wayfair/old-4-Stocking.png" alt="Stocking tool">
+          <img class="cs-img" src="content/images/wayfair/old-4-Stocking.png" alt="Stocking tool">
           <figcaption>Stocking</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- 4. THE PROBLEM -->
+  <!-- STAGE: DISCOVERY -->
   <section class="cs-section">
     <div class="cs-text">
-      <span class="cs-eyebrow">The Problem</span>
-      <div class="cs-pin"><h2 class="cs-h2">Fragmented tools, frustrated suppliers</h2></div>
-      <p class="cs-p">Suppliers were missing replenishment opportunities because the tools weren't fully self-service, couldn't handle account nuances across regions, and were spread across multiple screens. Internally, Wayfair was maintaining four codebases for what was essentially one workflow.</p>
-      <p class="cs-p">The strategy: create a single, unified experience that worked for every supplier type, every service level, and every geography. Flexible enough for power users who think in spreadsheets, and guided enough for smaller suppliers seeing this for the first time.</p>
-    </div>
+      <span class="cs-eyebrow">Discovery</span>
+      <div class="cs-pin"><h2 class="cs-h2">Mapping the replenishment journey</h2></div>
+      <p class="cs-p">Mapping how each segment restocked CastleGate showed what really differed, and what didn't.</p>
+      <ul class="wf-list">
+        <li><strong>Different routes:</strong> each segment went through different Wayfair teams, tools and handoffs.</li>
+        <li><strong>Self-imposed differences:</strong> most came from the tools each team built, not from the suppliers.</li>
+        <li><strong>Same destination:</strong> every route ended in an inbound order.</li>
+        <li><strong>Same inputs:</strong> a survey showed suppliers of every size decide by forecast, past sales and inventory.</li>
+      </ul>
+      <p class="cs-p"><strong>The goal for Wayfair:</strong> receive every order the same way, whatever its type, location or size.</p>
 
-    <div class="cs-img-wrap">
-      <img class="cs-img" src="content/images/wayfair/journey-map.png" alt="The replenishment journey map showing how similar the process was across segments">
-      <p class="cs-caption">Mapping the journey across supplier segments revealed the needs were overwhelmingly similar.</p>
-    </div>
-  </section>
-
-  <!-- 5. STARTING FROM BEHIND -->
-  <section class="cs-section">
-    <div class="cs-text">
-      <span class="cs-eyebrow">Starting From Behind</span>
-      <div class="cs-pin"><h2 class="cs-h2">No designer, no PM, no handoff</h2></div>
-      <p class="cs-p">I joined Wayfair to work with a Berlin team but was quickly reassigned to this project in Boston. The previous designer had left abruptly. There was no overlap, no handoff, and the project was about 25% complete. The PM seat was empty too: first filled by the Head of Product, then the Engineering Manager doubling in both roles, before a dedicated PM finally joined months later.</p>
-      <p class="cs-p">The dev team was demoralized. Remote, post-COVID, dealing with leadership churn and a tool migration from Sketch to Figma happening simultaneously. I needed to earn trust before I could push the design forward.</p>
-      <p class="cs-p">My first move wasn't a design review or a stakeholder interview. It was the validation building blocks: a comprehensive document mapping every form field, every error state, every edge case into structured components the engineering team could assemble like puzzle pieces. I asked no questions. I just delivered the file.</p>
-      <p class="cs-p" style="margin-bottom:0;">It worked. The team saw someone willing to do extra work to make their job easier. That file became the foundation I built trust on.</p>
-    </div>
-
-    <div class="cs-img-wrap">
-      <img class="cs-img" src="content/images/wayfair/3 validations.png" alt="A section of the Validation Building Blocks document showing the field-by-field breakdown">
-      <p class="cs-caption">Every field, every error state, every edge case. One structured file for the team to build from.</p>
-    </div>
-  </section>
-
-  <!-- 6. THE DESIGN -->
-  <section class="cs-section">
-    <div class="cs-text">
-      <span class="cs-eyebrow">Two Flows, One Tool</span>
-      <div class="cs-pin"><h2 class="cs-h2">Tables for power users, a wizard for everyone else</h2></div>
-      <p class="cs-p">The experience split into two paths based on supplier proficiency.</p>
-      <p class="cs-p">Experienced suppliers got what they already knew: data-rich tables with inline editing, bulk actions, search and filters. These users understood the replenishment process, knew the required details and timelines, and were comfortable working with spreadsheet-like interfaces.</p>
-      <p class="cs-p">Newer or less technical suppliers got a guided flow: a step-by-step wizard using expanded radio buttons with titles and subtitles explaining each choice. Not just "Truckload" but "Move products from your warehouses to Wayfair's facilities."</p>
-    </div>
-
-    <div class="cs-img-wrap" style="margin-top: 32px;">
-      <div class="wf-demo">
-        <div class="wf-shots">
-          <img class="wf-shot cs-toggle-fade" src="content/images/wayfair/flow-table.webp" alt="Data-rich table view with inline editing for experienced suppliers" data-show="table">
-          <img class="wf-shot cs-toggle-fade is-hidden" src="content/images/wayfair/flow-wizard.webp" alt="Step-by-step guided wizard for newer suppliers" data-show="wizard">
-        </div>
-        <div class="cs-toggle" role="group" aria-label="Two flows">
-          <button type="button" class="cs-toggle-btn is-active" data-show="table">Tables for power users</button>
-          <button type="button" class="cs-toggle-btn" data-show="wizard">A wizard for everyone else</button>
-        </div>
+      <div class="cs-img-wrap">
+        <img class="cs-img" src="content/images/wayfair/journey-map.png" alt="The replenishment journey map: three Wayfair teams and their suppliers, from replenishment strategy to order creation">
+        <p class="cs-caption">Different routes, same destination: every segment ends in the same order-creation steps.</p>
       </div>
-    </div>
 
-    <div class="cs-text" style="margin-top: 32px;">
-      <blockquote class="cs-pullquote">Guiding users means explaining their non-selections too.</blockquote>
+      <h3 class="wf-block-h">Same destination, different suppliers</h3>
+      <ul class="wf-list">
+        <li><strong>Tail:</strong> many small, less technical businesses that need guidance.</li>
+        <li><strong>Head:</strong> a few large, professional teams with most of the volume, who want speed and every function.</li>
+        <li><strong>Integrated:</strong> large partners ordering from their own systems. Out of scope.</li>
+      </ul>
+
+      <h3 class="wf-block-h">The price of one tool</h3>
+      <p class="cs-p">Merging meant some suppliers would lose features they relied on. One flow for everyone would be too slow for head suppliers and too heavy for tail suppliers, so we built two flows in one tool.</p>
     </div>
   </section>
 
-  <!-- 7. RESEARCH -->
+  <!-- STAGE: DEVELOPMENT -->
   <section class="cs-section">
     <div class="cs-text">
-      <span class="cs-eyebrow">Testing With Real Suppliers</span>
-      <div class="cs-pin"><h2 class="cs-h2">100% task completion, but a discoverability problem hiding underneath</h2></div>
-      <p class="cs-p">When we introduced a new way for suppliers to add products through the UI (instead of uploading Excel files), I ran research across three waves. We reached out to 123 suppliers and conducted 11 interviews spanning EU and North America, across self-service, managed, and forwarding supplier types.</p>
-      <p class="cs-p">Every participant completed the task without help. Average time was about four minutes.</p>
-      <p class="cs-p">But the secondary finding was more revealing. Every single user tried the table's search box first, assuming it would search their full product catalog. The actual "Manage Products" button took much longer to find, with some users spending up to 70% of their session time looking for it.</p>
-      <p class="cs-p" style="margin-bottom:0;">I escalated the issue to the design system team and explored alternative placements. We agreed the new design system was still rolling out across Partner Home. Once the button pattern became consistent across all screens, familiarity would solve the problem. We kept the design. The fix was already coming through the design system rollout. Patching it locally would have just created another inconsistency.</p>
+      <span class="cs-eyebrow">Development</span>
+      <div class="cs-pin"><h2 class="cs-h2">Building one source of truth</h2></div>
+      <p class="cs-p">Before designing screens, I fixed what made the old tools inconsistent.</p>
+      <ul class="wf-list">
+        <li><strong>The problem:</strong> every engineer wrote their own error states, so five people made five reasonable decisions that didn't match.</li>
+        <li><strong>The fix:</strong> one spec with every field, error state and edge case, covering five message types across three placements (inline, modal, toast).</li>
+        <li><strong>Beyond the spec:</strong> there was no shared table component in Homebase either, so I partnered with a senior engineer to build one.</li>
+        <li><strong>The result:</strong> both flows were built from the same source, and other teams adopted the components and the method.</li>
+      </ul>
     </div>
 
-    <div class="cs-img-wrap">
-      <img class="cs-img" src="content/images/wayfair/6 research 1.png" alt="Research results showing 100% success rate, time-to-complete data, and the Manage Products discoverability finding">
-      <p class="cs-caption">All users completed the task. But all users also stumbled on the same thing first.</p>
-    </div>
-  </section>
-
-  <!-- 9. REFLECTION -->
-  <section class="cs-reflection cs-bleed">
-    <div class="cs-inner">
-      <div class="cs-text">
-        <span class="cs-eyebrow">Looking Back</span>
-        <div class="cs-pin"><h2 class="cs-h2">Shipping is not the finish line</h2></div>
-        <p class="cs-p">The rollout covered five supplier segments across the US, Canada, and Europe over the course of the project. Each phase was monitored to ensure order volume held steady and reversion stayed low. By the end, all legacy tools were retired.</p>
-        <p class="cs-p">If I could change one thing, I'd fight harder for time to follow through. The migration went well, but I was pulled to the next project before I could sit with the data and push the experience further.</p>
-        <p class="cs-p" style="margin-bottom:0;">Cross-team alignment was the other miss. I saw the fragmentation across Wayfair's 50+ person design org from day one. I made small attempts to bridge it, but never had the runway to drive real change. Both reminded me that shipping isn't really the end of a project. The interesting work usually starts once real people are using it.</p>
+    <div class="cs-text">
+      <div class="cs-img-wrap">
+        <img class="cs-img" src="content/images/wayfair/3 validations.png" alt="A section of the validation blocks document showing the field-by-field breakdown">
+        <p class="cs-caption">Validation blocks: every field, error state and edge case in one spec.</p>
       </div>
     </div>
   </section>
 
-  <!-- 10. BACK LINK -->
+  <!-- STAGE: DEVELOPMENT -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Development</span>
+      <div class="cs-pin"><h2 class="cs-h2">Designing two paths in one tool</h2></div>
+      <ul class="wf-list">
+        <li><strong>Tables for power users:</strong> dense, spreadsheet-like views with inline editing, bulk actions, search and filters.</li>
+        <li><strong>A wizard for everyone else:</strong> step-by-step choices that say what they do.</li>
+      </ul>
+      <p class="cs-p">Both paths run on one codebase.</p>
+    </div>
+
+    <div class="cs-text">
+      <div class="cs-img-wrap">
+        <div class="wf-demo">
+          <div class="wf-shots">
+            <img class="wf-shot cs-toggle-fade" src="content/images/wayfair/flow-table.webp" alt="Data-rich table view with inline editing for experienced suppliers" data-show="table">
+            <img class="wf-shot cs-toggle-fade is-hidden" src="content/images/wayfair/flow-wizard.webp" alt="Step-by-step guided wizard for newer suppliers" data-show="wizard">
+          </div>
+          <div class="cs-toggle" role="group" aria-label="Two flows">
+            <button type="button" class="cs-toggle-btn is-active" data-show="table">Tables for power users</button>
+            <button type="button" class="cs-toggle-btn" data-show="wizard">A wizard for everyone else</button>
+          </div>
+        </div>
+      </div>
+      <p class="cs-p">In the wizard, every option explains itself. Not just "Truckload" but "Move products from your warehouses to Wayfair's facilities." Guiding users means explaining their non-selections too.</p>
+    </div>
+  </section>
+
+  <!-- STAGE: VALIDATION -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Validation</span>
+      <div class="cs-pin"><h2 class="cs-h2">Testing with suppliers</h2></div>
+      <p class="cs-p">I ran 3 research waves, contacting 123 suppliers and interviewing 11 across the EU and North America.</p>
+      <ul class="wf-list">
+        <li><strong>It worked:</strong> 100% completed the task unassisted, in about 4 minutes on average.</li>
+        <li><strong>One blind spot:</strong> almost every participant first tried the table search, expecting a catalog search. In the 12 timed sessions, finding "Manage Products" took 35% to 70% of the session, close to half on average.</li>
+      </ul>
+      <h3 class="wf-block-h">The Decision Framework</h3>
+      <ul class="wf-list">
+        <li><strong>Option A (Quick Local Patch):</strong> Move or redesign the button specifically for this tool to solve the immediate research finding.</li>
+        <li><strong>Option B (Design System Consistency):</strong> Keep the design as-is and rely on the upcoming enterprise-wide design system rollout to establish global consistency.</li>
+      </ul>
+      <p class="cs-p"><strong>The Strategic Rationale:</strong> We chose Option B. Patching the UI locally would create immediate inconsistency across Partner Home. Maintaining design system integrity was worth the short-term learning curve.</p>
+    </div>
+
+    <div class="cs-text">
+      <div class="cs-img-wrap">
+        <img class="cs-img" src="content/images/wayfair/6 research 1.png" alt="Research results showing 100% success rate, time-to-complete data, and the Manage Products discoverability finding">
+        <p class="cs-caption">Every participant finished the task. Almost all of them hit the same blind spot first.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGE: DELIVERY -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Delivery</span>
+      <div class="cs-pin"><h2 class="cs-h2">Rolling out in five phases</h2></div>
+      <p class="cs-p">We released in 5 phases across the US, Canada and Europe, one supplier segment at a time. Each phase was monitored so order volume held steady and reversion stayed low.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES: who I worked with -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Outcomes</span>
+      <div class="cs-pin"><h2 class="cs-h2">Who I worked with</h2></div>
+      <ul class="wf-list">
+        <li><strong>Product management:</strong> daily alignment with one PM across a 6-hour gap, for ~2 years and 5 releases.</li>
+        <li><strong>Engineering:</strong> ~6 engineers in Boston built both flows from my validation blocks, across a 6-hour time gap.</li>
+        <li><strong>Design system team:</strong> escalated the "Manage Products" finding and explored alternative placements together.</li>
+        <li><strong>Suppliers:</strong> 11 interviews over 3 research waves shaped and validated the flows.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="cs-section">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Results</span>
+      <div class="cs-pin"><h2 class="cs-h2">Fully migrated, legacy retired</h2></div>
+      <div class="wf-stats">
+        <div>
+          <div class="wf-stat-num">3,400</div>
+          <div class="wf-stat-lbl">Suppliers migrated</div>
+          <div class="wf-stat-sub">Across 5 releases</div>
+        </div>
+        <div>
+          <div class="wf-stat-num">5%</div>
+          <div class="wf-stat-lbl">Reversion</div>
+          <div class="wf-stat-sub">Ceiling was 15%</div>
+        </div>
+        <div>
+          <div class="wf-stat-num">~2%</div>
+          <div class="wf-stat-lbl">Order volume dip</div>
+          <div class="wf-stat-sub">Ceiling was 5%</div>
+        </div>
+      </div>
+      <ul class="wf-list">
+        <li>Every supplier segment moved to the new tool.</li>
+        <li>4 legacy tools and codebases retired.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- KEY TAKEAWAYS -->
+  <section class="cs-section wf-takeaways">
+    <div class="cs-text">
+      <span class="cs-eyebrow">Key takeaways</span>
+      <div class="cs-pin"><h2 class="cs-h2">What I'd keep, what I'd change</h2></div>
+      <div class="wf-twocol">
+        <div class="wf-group">
+          <h3 class="wf-group-h">What worked</h3>
+          <ul class="wf-list">
+            <li>A shared validation system as the single spec.</li>
+            <li>Guardrail metrics on every release.</li>
+          </ul>
+        </div>
+        <div class="wf-group">
+          <h3 class="wf-group-h">What I'd do differently</h3>
+          <ul class="wf-list">
+            <li>Secure time for post-launch iteration.</li>
+            <li>Align earlier with parallel design teams.</li>
+            <li>Push harder for one adaptive interface, instead of accepting head and tail as a given.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- LIGHTBOX -->
   <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
     <img id="lb-img" src="" alt="">
@@ -239,7 +407,8 @@
       var lbImg = document.getElementById('lb-img');
 
       function openLightbox(src, alt) {
-        if (getComputedStyle(overlay).display === 'none') return;  // overlay hidden by casestudy.css: don't lock scrolling
+        // casestudy.css hides the overlay; don't lock scrolling for nothing.
+        if (getComputedStyle(overlay).display === 'none') return;
         lbImg.src = src;
         lbImg.alt = alt || '';
         overlay.classList.add('is-open');
@@ -279,6 +448,7 @@
       });
     })();
   </script>
+
   <div class="cs-end">
     <a class="cs-end-back" href="index.html#work"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg> All work</a>
     <a class="cs-next" href="eqcapture">
@@ -298,7 +468,7 @@
         <span class="site-footer-lead-lg">let's talk.</span>
       </div>
       <div class="site-footer-contact">
-        <a class="site-footer-cv rise-link" href="content/downloads/Roie Shalom Senior Product Designer.pdf" download>
+        <a class="site-footer-cv rise-link" href="content/downloads/Roie Shalom Senior Product Designer.pdf" download="">
           <span>Download CV</span>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
         </a>
@@ -320,5 +490,5 @@
     </div>
   </footer>
   <script src="nav-collapse.js"></script>
-</body>
-</html>
+
+</body></html>
