@@ -6,17 +6,14 @@ nothing gets lost across branches.
 
 ## Now / in progress
 
-- [ ] **Wayfair case study redraft** (`wayfair-new.html`, branch
-  `feature/wayfair-case-study-format`). New long-form format, 17 commits in.
-  Still a draft: not yet wired to the live `/wayfair` link, carries `noindex`.
-  Next: finish review, then swap the live link from `wayfair.html` to the new
-  page when it's ready.
-
-  In-browser review (Oct 24). Copy fixes done (em-dash removed, missing full
-  stop added, hyphenation tidied). Still open:
-  - [ ] **Privacy in the usability-session image.** It shows a participant's
-    face and full name plus a live meeting code. On NDA work, confirm consent
-    or blur the face, name and meeting ID.
+- **Wayfair case study** is live at roiesh.com/wayfair (rebuilt directly into
+  `wayfair.html` on `main`). The old `wayfair-new.html` draft on branch
+  `feature/wayfair-case-study-format` is superseded. Copy fixes (em-dash,
+  missing full stop, hyphenation) are done and live. Remaining, from the
+  Oct 24 in-browser review:
+  - [ ] **Privacy in the usability-session image** (live on the page now). It
+    shows a participant's face and full name plus a live meeting code. Confirm
+    consent or blur the face, name and meeting ID.
   - [ ] **Remove the "placeholder only" text** baked into the validation-spec
     image ("Text here is a placeholder only. All types and correct copy are
     elaborated here"). 51% of reviewers notice placeholder copy (UXfolio 2026,
@@ -78,9 +75,9 @@ nothing gets lost across branches.
 
 ## Loose ends noticed in the repo (decide what to do)
 
-- [ ] `data/projects.json` has an uncommitted EQ Capture fix ("Head of Design"
-  changed to "I led design"). Looks intentional and correct. Decide whether to
-  commit it.
 - [ ] "Collin" conversational-agent files are untracked (`collin.md`,
-  `design/collin/replace-clippy-prompt.md`). Separate workstream from this
-  branch. Decide where they belong.
+  `design/collin/replace-clippy-prompt.md`). Separate workstream. Decide where
+  they belong.
+- [ ] Stale branch `feature/wayfair-case-study-format` still holds files not on
+  `main`: `tools/edit-server.py`, the Esmeralda images and the `.af` design
+  sources. Port anything worth keeping before deleting the branch.
