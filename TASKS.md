@@ -12,6 +12,23 @@ nothing gets lost across branches.
   Next: finish review, then swap the live link from `wayfair.html` to the new
   page when it's ready.
 
+  In-browser review (Oct 24). Copy fixes done (em-dash removed, missing full
+  stop added, hyphenation tidied). Still open:
+  - [ ] **Privacy in the usability-session image.** It shows a participant's
+    face and name ("Gillian Lane") plus a live meeting code ("vpb-tuhy-gjn").
+    On NDA work, confirm consent or blur the face, name and meeting ID.
+  - [ ] **Remove the "placeholder only" text** baked into the validation-spec
+    image ("Text here is a placeholder only. All types and correct copy are
+    elaborated here"). 51% of reviewers notice placeholder copy (UXfolio 2026,
+    ch. 2.4).
+  - [ ] **Make the dense images readable.** The journey map, the validation
+    spec and the four legacy-tool screenshots are plain figures with no zoom,
+    so they're unreadable at page width. Add click-to-zoom, enlarge them, or
+    show a readable crop.
+  - [ ] (Optional) Differentiate repeated section eyebrows (two "Discovery",
+    two "Development"), and give the text-only Delivery section a small rollout
+    visual.
+
 ## Later (agreed, not started)
 
 - [ ] **Trim the main "Selected work" list to 5.**
