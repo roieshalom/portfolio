@@ -3,6 +3,11 @@ AddHandler application/x-httpd-php .phtml
 RewriteEngine On
 RewriteRule ^in$ in.php [L]
 
+# Keep internal notes (TASKS.md and any other Markdown) from being served.
+<FilesMatch "\.md$">
+  Require all denied
+</FilesMatch>
+
 # Serve extensionless URLs (e.g. /wayfair -> wayfair.html) so case-study links
 # can drop the .html. Only rewrites when the request isn't a real file/dir and
 # <name>.html exists, so real files, directories (like /old) and PHP are untouched.
