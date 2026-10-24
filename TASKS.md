@@ -11,9 +11,9 @@ nothing gets lost across branches.
   `feature/wayfair-case-study-format` is superseded. Copy fixes (em-dash,
   missing full stop, hyphenation) are done and live. Remaining, from the
   Oct 24 in-browser review:
-  - [ ] **Privacy in the usability-session image** (live on the page now). It
-    shows a participant's face and full name plus a live meeting code. Confirm
-    consent or blur the face, name and meeting ID.
+  - [x] **Privacy in the usability-session image** — done. The other
+    participant's face is blurred on the live page. Name and meeting code left
+    visible, accepted as-is (per Roie, Oct 24).
   - [ ] **Remove the "placeholder only" text** baked into the validation-spec
     image ("Text here is a placeholder only. All types and correct copy are
     elaborated here"). 51% of reviewers notice placeholder copy (UXfolio 2026,
