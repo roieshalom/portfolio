@@ -15,6 +15,22 @@
       .cs-hero-img-wrap { width: 100%; opacity: 0.3; }
     }
 
+    /* ---- Lightbox (page-local, Wayfair only): click a cs-img to view it
+       full size. Styles hang off .is-open and the #lb-img id so they win by
+       specificity over the shared `.lb-overlay { display: none }`, without
+       touching other case-study pages. ---- */
+    .lb-overlay.is-open {
+      position: fixed; inset: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px; box-sizing: border-box;
+      background: rgba(20, 18, 17, 0.9); cursor: zoom-out;
+    }
+    #lb-img {
+      max-width: 95vw; max-height: 95vh; width: auto; height: auto;
+      object-fit: contain; cursor: default;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    }
+
     /* =========================================================
        Wayfair scan-first
        Page-local styles. Built on the existing --cs-* variables
@@ -407,8 +423,6 @@
       var lbImg = document.getElementById('lb-img');
 
       function openLightbox(src, alt) {
-        // casestudy.css hides the overlay; don't lock scrolling for nothing.
-        if (getComputedStyle(overlay).display === 'none') return;
         lbImg.src = src;
         lbImg.alt = alt || '';
         overlay.classList.add('is-open');
@@ -422,6 +436,7 @@
       }
 
       document.querySelectorAll('img.cs-img').forEach(function(img) {
+        img.style.cursor = 'zoom-in';
         img.addEventListener('click', function() {
           openLightbox(img.src, img.alt);
         });
