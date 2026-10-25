@@ -17,12 +17,12 @@ nothing gets lost across branches.
   - [x] **"Placeholder only" text** — it's baked into the image
     `content/images/wayfair/3 validations.png`, not the HTML, so it's an image
     re-export, not a code change. Marked done; handled as an image edit.
-  - [ ] **Make the dense images readable.** The journey map, the validation
-    spec and the four legacy-tool screenshots are too small to read at page
-    width. A lightbox IS wired (every `cs-img` -> `#lb-overlay`) but it's
-    switched off: `.lb-overlay { display: none }` with no `.is-open` override,
-    disabled by the stuck-scroll fix (commit 6a2bd76). Options: re-enable a
-    working lightbox (without the scroll bug), or enlarge/crop the key images.
+  - [x] **Make the dense images readable** — done on Wayfair. Re-enabled the
+    click-to-zoom lightbox, page-scoped (styles on `.is-open` + `#lb-img`, the
+    bail-out guard removed only in `wayfair.html`). Verified live: opens
+    full-screen, closes on Escape/backdrop, no scroll-lock regression. The
+    other case-study pages (esmeralda, grooped, search, onpaper) still have
+    their lightbox off; enable them the same way if wanted.
   - [ ] (Optional) Differentiate repeated section eyebrows (two "Discovery",
     two "Development"), and give the text-only Delivery section a small rollout
     visual.
