@@ -69,8 +69,9 @@ nothing gets lost across branches.
   UX/UI 2019-2021, SAP Signavio Senior UX 2018-2019, SafeBreach Creative
   Director 2015-2017, early career 2005-2015. LinkedIn's public view masks
   titles/dates behind login; visible parts (Wayfair, Berlin, Esmeralda/Grooped,
-  a SafeBreach recommendation) are consistent. Nit: About uses "Sandisk" and
-  "Safebreach"; the CV and the brands use "SanDisk" and "SafeBreach".
+  a SafeBreach recommendation) are consistent. Brand-casing nit fixed (Oct 26):
+  About now uses "SanDisk" and "SafeBreach" (data/experience.json), matching the
+  CV and the brands.
 - [x] Hero fade-in confirmed (Oct 26): on a fast connection the page is ready in
   ~0.25s and fully loaded ~0.5s; the hero is blank ~0.2s then fades in by
   ~1.1s (deeper sections to ~1.5s). A short flash, not a long hang. Only slow
