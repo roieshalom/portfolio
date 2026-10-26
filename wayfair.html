@@ -111,6 +111,10 @@
     .wf-group-h { margin: 0 0 12px; font-weight: 800; font-size: 20px; letter-spacing: -0.01em; }
     .wf-group .wf-list { margin-bottom: 0; }
 
+    /* Continuation sections (no eyebrow): no top divider, title aligns to paragraph top */
+    .cs-section:not(:has(.cs-eyebrow)) { border-top: none; padding-top: 0; }
+    .cs-section:not(:has(.cs-eyebrow)) .cs-pin { grid-row: 1 / span 60; }
+
     @media (max-width: 900px) {
       .wf-hero-desc { font-size: 18px; }
       .wf-tldr-grid > div { grid-template-columns: 1fr; gap: 4px; }
@@ -231,7 +235,7 @@
   <!-- STAGE: DISCOVERY -->
   <section class="cs-section">
     <div class="cs-text">
-      <span class="cs-eyebrow">Discovery</span>
+
       <div class="cs-pin"><h2 class="cs-h2">Mapping the replenishment journey</h2></div>
       <p class="cs-p">Mapping how each segment restocked CastleGate showed what really differed, and what didn't.</p>
       <ul class="wf-list">
@@ -284,7 +288,7 @@
   <!-- STAGE: DEVELOPMENT -->
   <section class="cs-section">
     <div class="cs-text">
-      <span class="cs-eyebrow">Development</span>
+
       <div class="cs-pin"><h2 class="cs-h2">Designing two paths in one tool</h2></div>
       <ul class="wf-list">
         <li><strong>Tables for power users:</strong> dense, spreadsheet-like views with inline editing, bulk actions, search and filters.</li>
