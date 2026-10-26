@@ -51,10 +51,11 @@ nothing gets lost across branches.
   Why: a leaking "NDA" gate undercuts trust; missing/failing passwords stop 61%
   of reviews (UXfolio 2026, ch. 2.2).
 
-- [ ] **Project status labels.** Add a Status field to each project page header,
-  and update the homepage preview (it currently shows "NDA" / "Live").
-  Values: Wayfair = Shipped; EQ Capture = Shipped, later sunset; Search =
-  Proposal. Bundle this with the gate/header work above.
+- [x] **Project status labels** — done (Oct 26). Added a Status row to each
+  project header (Wayfair: Shipped; EQ Capture: Shipped, later sunset; Search:
+  Proposal), and switched the homepage preview from "NDA"/"Live" to real
+  statuses (Shipped / Proposal / Live). Homepage card shows "Shipped" for EQ
+  Capture; the "later sunset" nuance lives on the page header.
   Why: not showing outcome is a weakness for 43%; honesty beats inflation
   (UXfolio 2026, ch. 4.2).
 

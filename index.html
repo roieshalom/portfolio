@@ -358,12 +358,12 @@
     // `staged` points a row at its redesigned page here under /design/paper/
     // instead of the live root page (added per page as they're built).
     var FEATURED = [
-      { id: 'wayfair',      src: 'ux', kind: 'Product design', staged: 'wayfair' },
-      { id: 'EQCapture',    src: 'ux', kind: 'Mobile app', staged: 'eqcapture' },
-      { id: 'search',       src: 'ux', kind: 'Enterprise UX', staged: 'search' },
-      { id: 'askesmeralda', src: 'ai', staged: 'esmeralda' },
-      { id: 'grooped',      src: 'ai', staged: 'grooped' },
-      { id: 'onpaper',      src: 'ai', staged: 'onpaper' }
+      { id: 'wayfair',      src: 'ux', kind: 'Product design', staged: 'wayfair', status: 'Shipped' },
+      { id: 'EQCapture',    src: 'ux', kind: 'Mobile app', staged: 'eqcapture', status: 'Shipped' },
+      { id: 'search',       src: 'ux', kind: 'Enterprise UX', staged: 'search', status: 'Proposal' },
+      { id: 'askesmeralda', src: 'ai', staged: 'esmeralda', status: 'Live' },
+      { id: 'grooped',      src: 'ai', staged: 'grooped', status: 'Live' },
+      { id: 'onpaper',      src: 'ai', staged: 'onpaper', status: 'Live' }
     ];
 
     // This page lives at /design/paper/, so the repo root is two levels up.
@@ -663,7 +663,7 @@
           client: e.label || '',
           kind: cfg.kind || e.category || '',
           side: side,
-          status: side ? 'Live' : 'NDA',
+          status: cfg.status || (side ? 'Live' : 'NDA'),
           locked: !!e.protected && !hasPortfolioAccess(),
           desc: e.gallery_desc || e.shortdesc || '',
           img: normThumb(e.thumbnail),
