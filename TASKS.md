@@ -29,7 +29,8 @@ nothing gets lost across branches.
 
 ## Later (agreed, not started)
 
-- [ ] **Trim the main "Selected work" list to 5.**
+- [ ] **Trim the main "Selected work" list to 5.** Parked until the
+  AI-projects treatment is decided (ties to the dedicated AI area below).
   Keep: Unified Order Entry (Wayfair), EQ Capture, Search Redesign, Grooped,
   OnPaper. Remove Ask Esmeralda from the main list (it moves to the AI area
   below). Edit the `FEATURED` array in `index.html` and the `workCount`.
@@ -63,10 +64,17 @@ nothing gets lost across branches.
 
 ## Open checks (from the review, low effort to confirm)
 
-- [ ] Confirm the CV (downloadable PDF) and LinkedIn match the About-page
-  experience timeline (roles, titles, dates). UXfolio 2026, ch. 1.6.
-- [ ] Confirm the hero fade-in is a sub-second flash on a normal connection,
-  not a longer hang on slow ones.
+- [x] CV vs About timeline: match confirmed (Oct 26). Every role, company and
+  date lines up: Wayfair Product Design Lead 2022-2025, BuildingMinds Senior
+  UX/UI 2019-2021, SAP Signavio Senior UX 2018-2019, SafeBreach Creative
+  Director 2015-2017, early career 2005-2015. LinkedIn's public view masks
+  titles/dates behind login; visible parts (Wayfair, Berlin, Esmeralda/Grooped,
+  a SafeBreach recommendation) are consistent. Nit: About uses "Sandisk" and
+  "Safebreach"; the CV and the brands use "SanDisk" and "SafeBreach".
+- [x] Hero fade-in confirmed (Oct 26): on a fast connection the page is ready in
+  ~0.25s and fully loaded ~0.5s; the hero is blank ~0.2s then fades in by
+  ~1.1s (deeper sections to ~1.5s). A short flash, not a long hang. Only slow
+  connections would stretch it.
 
 ## Facts to nail down (for interviews / to stand behind)
 
