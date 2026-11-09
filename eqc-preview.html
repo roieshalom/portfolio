@@ -52,12 +52,12 @@
       .eqc-page .eqc-class-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
     }
 
-    /* The three new product screens: largest images on the page, near full bleed */
-    .eqc-page .eqc-screens { padding: 8px var(--cs-pad) 8px; border-top: 2px solid var(--cs-rule); }
-    .eqc-page .eqc-screens-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; align-items: start; }
-    .eqc-page .eqc-screens-grid img { display: block; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 12px 44px rgba(9,35,31,.14); }
-    @media (max-width: 800px) {
-      .eqc-page .eqc-screens-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; gap: 32px; }
+    /* The three new product screens: 3-up inside the right column (reads
+       left-to-right as Your buildings / Spaces / Capture). Clickable for detail. */
+    .eqc-page .eqc-screens-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; align-items: start; margin: 8px 0 0; }
+    .eqc-page .eqc-screens-grid img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 10px 36px rgba(9,35,31,.14); }
+    @media (max-width: 700px) {
+      .eqc-page .eqc-screens-grid { grid-template-columns: 1fr; max-width: 420px; margin: 8px auto 0; gap: 28px; }
     }
 
     /* Lightbox: re-enable on this page (casestudy.css hides .lb-overlay site-wide).
@@ -159,7 +159,7 @@
     </div>
     <p class="cs-caption">Surveyors at work: capturing equipment data on rooftops and in technical rooms across Hamburg and Frankfurt.</p>
 
-    <div class="cs-img-wrap" style="max-width:420px; margin-top:28px;">
+    <div class="cs-img-wrap" style="margin-top:28px;">
       <img class="cs-img" src="content/images/eqc/spreadsheet_to_platform.jpg" alt="Excel spreadsheet versus BuildingMinds platform">
       <p class="cs-caption">The old workflow ended in a spreadsheet. The new one feeds directly into BuildingMinds' platform.</p>
     </div>
@@ -251,17 +251,14 @@
       <p class="cs-p"><strong>Spaces.</strong> Floors and rooms as the building is actually organised, with the equipment count sitting on each one. This is the screen that replaced photographing the paper map.</p>
       <p class="cs-p"><strong>Capture.</strong> One equipment record, grouped by what you are doing rather than by what the database wants: identify it, classify it, photograph it, note anything odd. Required and optional are visible. The save state tells you where you are before you walk to the next room.</p>
     </div>
-  </section>
 
-  <!-- 05 THE PRODUCT — screens, near full bleed (largest images on the page) -->
-  <div class="eqc-screens cs-bleed">
     <div class="eqc-screens-grid">
       <img src="content/images/eqc/eqc-new-buildings.png" alt="Your buildings: assigned buildings with survey progress">
       <img src="content/images/eqc/eqc-new-spaces.png" alt="Spaces: floor and room hierarchy with equipment counts">
       <img src="content/images/eqc/eqc-new-capture.png" alt="Capture: a single equipment record grouped by task">
     </div>
     <p class="cs-caption">Screens rebuilt from the shipped product.</p>
-  </div>
+  </section>
 
   <!-- IMPACT -->
   <section class="cs-impact cs-bleed">
