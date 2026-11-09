@@ -60,6 +60,19 @@
       .eqc-page .eqc-screens-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; gap: 32px; }
     }
 
+    /* Lightbox: re-enable on this page (casestudy.css hides .lb-overlay site-wide).
+       Images set cursor + zoom only when the overlay can actually open. */
+    .eqc-page .lb-overlay.is-open {
+      display: flex; align-items: center; justify-content: center;
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(9,35,31,.92); padding: 24px;
+    }
+    .eqc-page .lb-overlay.is-open img {
+      max-width: 100%; max-height: 100%; width: auto; height: auto;
+      border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+    .eqc-page .cs-img, .eqc-page .eqc-class-grid img, .eqc-page .eqc-screens-grid img { cursor: zoom-in; }
+
     /* Impact band: dark strip, amber numbers (reusing .cs-impact markup) */
     .eqc-page .cs-impact { background: var(--eqc-green) !important; }
     .eqc-page .cs-impact .cs-inner > div { border-top-color: rgba(255,255,255,.4); }
@@ -329,9 +342,9 @@
   </footer>
 
   <!-- LIGHTBOX (site convention: markup + script from search.html).
-       Note: casestudy.css hides .lb-overlay site-wide (`.lb-overlay{display:none}`),
-       so image click-to-zoom is inert here, consistent with every other case study.
-       Enable only if we decide this page should zoom. -->
+       Enabled on this page: the scoped .eqc-page .lb-overlay.is-open rule above
+       overrides casestudy.css's site-wide `.lb-overlay{display:none}`, so click-to-zoom
+       works and body scroll is only locked while the overlay is actually visible. -->
   <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true">
     <img id="lb-img" src="" alt="">
   </div>
