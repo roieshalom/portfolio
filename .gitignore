@@ -12,3 +12,7 @@ design/collin/.anthropic-key
 design/collin/apikey.txt
 design/collin/.usage.json
 design/collin/airtable.json
+
+# Local-only prototypes / previews: never deploy to roiesh.com
+prototypes/
+wayfair-full-preview.html
