@@ -113,7 +113,7 @@ html { scroll-behavior: smooth; }
 
 /* Images */
 .cs-img-wrap { margin: 8px 0 24px; }
-.cs-img { display: block; width: 100%; border-radius: 0; }
+.cs-img { display: block; width: 100%; height: auto; border-radius: 0; }
 /* Crop a pillarboxed video (baked-in black side bars) to its real content:
    wrapper takes the content aspect ratio and clips the centered, full-height
    video, so the side bars fall outside. */
