@@ -42,6 +42,19 @@
     "show": true
   },
   {
+    "id": "capimathe",
+    "title_bold": "Capimathe",
+    "title_regular": "",
+    "label": "Family project",
+    "color": "#e05d9e",
+    "shortdesc": "A playful maths app for primary school kids",
+    "desc": "A colourful, pressure-free maths app for primary school kids (years 1 to 4), with a cute capybara companion. Curriculum-aligned, ad-free, and built to make practice feel like play.",
+    "thumbnail": "../content/images/side_projects/capimathe_gallery.jpg",
+    "link": "https://capimathe.de",
+    "category": "AI · Education",
+    "show": true
+  },
+  {
     "id": "fragenkatalog",
     "title_bold": "Fragen Katalog",
     "title_regular": "Einbürgerung Test Practice",
