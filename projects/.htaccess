@@ -1,0 +1,33 @@
+# ---------------------------------------------------------------------------
+# Password protection for projects.roiesh.com (HTTP Basic Auth)
+# ---------------------------------------------------------------------------
+# Shipped INERT on purpose: the auth block below is commented out so a push
+# can never 500 the live page before setup is finished. Turn it on in 3 steps.
+#
+# STEP 1 - Create the password file on the server (not in git).
+#   SSH into Hostinger, cd into this projects/ directory, then run:
+#     htpasswd -c .htpasswd roie
+#   (enter a password when prompted). Drop the -c for any extra users.
+#   No SSH? In hPanel -> File Manager, create .htpasswd and paste a line
+#   generated at https://hostingcanada.org/htpasswd-generator/ (bcrypt).
+#
+# STEP 2 - Find this folder's ABSOLUTE server path and put it in AuthUserFile
+#   below. In SSH:  realpath .htpasswd
+#   On Hostinger it usually looks like:
+#     /home/uXXXXXXXXX/domains/roiesh.com/public_html/projects/.htpasswd
+#
+# STEP 3 - Uncomment the four Auth lines below (remove the leading "# ").
+#   Then load projects.roiesh.com: you should get a login prompt.
+#
+# .htpasswd is gitignored, so it never reaches GitHub. Keep it that way.
+# ---------------------------------------------------------------------------
+
+# AuthType Basic
+# AuthName "Roie's Projects"
+# AuthUserFile "/REPLACE/WITH/ABSOLUTE/PATH/TO/projects/.htpasswd"
+# Require valid-user
+
+# Never serve the password file itself, whatever the server default is.
+<FilesMatch "^\.ht">
+  Require all denied
+</FilesMatch>

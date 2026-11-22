@@ -13,6 +13,10 @@ design/collin/apikey.txt
 design/collin/.usage.json
 design/collin/airtable.json
 
+# Basic Auth password file: never commit the password hash
+projects/.htpasswd
+**/.htpasswd
+
 # Local-only prototypes / previews: never deploy to roiesh.com
 prototypes/
 wayfair-full-preview.html
