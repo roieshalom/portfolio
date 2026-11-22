@@ -1,41 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://roiesh.com/clarity.js"></script>
   <meta charset="UTF-8">
+  <script src="https://roiesh.com/clarity.js"></script>
   <title>Projects · Roie Shalom</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Projects, side projects and experiments built by Roie Shalom.">
-  <!-- Deliberately kept out of search. This page stays live so it can be shared
-       on request, but it should not act as a second front door to the portfolio. -->
+  <!-- Kept out of search: shareable on request, not a second front door. -->
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://projects.roiesh.com/">
   <link rel="icon" type="image/x-icon" href="https://roiesh.com/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap" rel="stylesheet">
-  <!-- Assets are pulled from the main site with absolute URLs so this page works
-       both at projects.roiesh.com (its own document root) and at roiesh.com/projects/. -->
-  <link rel="stylesheet" href="https://roiesh.com/styles.css?v=58">
-  <script src="https://kit.fontawesome.com/3ff078e01b.js" crossorigin="anonymous"></script>
+  <!-- Absolute URL so this works at projects.roiesh.com AND roiesh.com/projects/. -->
+  <link rel="stylesheet" href="https://roiesh.com/styles.css">
+  <style>
+    /* Page-local accent: magenta ramp overrides the design system's red,
+       matching the homepage. */
+    :root {
+      --color-accent: #e0198a;
+      --color-accent-100: #fff0f6;
+      --color-accent-600: #d4157e;
+      --color-accent-700: #a8005f;
+      --color-accent-800: #780545;
+    }
+    body { margin: 0; background: var(--color-bg); }
+    a { color: inherit; text-decoration: none; }
+    .page { max-width: 1280px; margin: 0 auto; background: var(--color-bg); color: var(--color-text); }
+
+    /* Nav (matches the homepage) */
+    .nav {
+      position: sticky; top: 0; z-index: 5; height: 66px; box-sizing: border-box;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 40px; background: var(--color-bg); border: 0;
+    }
+    .nav-brand { font-weight: 800; font-size: 17px; white-space: nowrap; margin: 0; }
+    .nav-links { display: flex; gap: 32px; font-size: 15px; }
+    .nav-links a { display: inline-block; transition: color .3s ease, transform .2s ease; }
+    @media (hover: hover) { .nav-links a:hover { color: var(--color-accent-600); transform: translateY(-1px); } }
+
+    /* Hero */
+    .hero { padding: 40px 40px 32px; }
+    .hero h1 { font-weight: 800; font-size: min(120px, 16vw); line-height: .9; letter-spacing: -0.04em; margin: 0 0 20px; }
+    .hero-lead { font-size: 22px; line-height: 1.4; max-width: 620px; text-wrap: pretty; }
+
+    /* Section bar */
+    .section-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 40px; border-top: 2px solid var(--color-text);
+      border-bottom: 2px solid var(--color-divider);
+    }
+    .section-label { font-weight: 800; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
+
+    /* Tile grid */
+    .tiles {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px; padding: 32px 40px 64px;
+    }
+    .tile { display: flex; flex-direction: column; background: var(--color-surface); color: var(--color-text); }
+    .tile-img-wrap { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--color-neutral-200); }
+    .tile-img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: grayscale(1) contrast(1.08); transition: filter .35s ease, transform .5s ease;
+    }
+    @media (hover: hover) {
+      .tile:hover .tile-img { filter: none; transform: scale(1.03); }
+    }
+    .tile-badge {
+      position: absolute; top: 10px; left: 10px; font-size: 11px; font-weight: 600;
+      letter-spacing: .02em; padding: 3px 10px; background: var(--color-bg); color: var(--color-text);
+    }
+    .tile-body { padding: 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .tile-cat { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--color-accent); font-weight: 600; }
+    .tile-title { font-weight: 800; font-size: 21px; line-height: 1.15; letter-spacing: -0.01em; }
+    .tile-title span { font-weight: 400; color: var(--color-neutral-700); }
+    .tile-desc { font-size: 14px; line-height: 1.45; opacity: .78; margin: 0; }
+    .tile-arrow { margin-top: 4px; font-size: 13px; font-weight: 600; color: var(--color-accent); opacity: 0; transition: opacity .25s ease; }
+    @media (hover: hover) { .tile:hover .tile-arrow { opacity: 1; } }
+
+    /* Footer */
+    .site-footer-bottom { padding: 20px 40px; border-top: 2px solid var(--color-divider); font-size: 14px; }
+    .site-footer-bottom span { font-weight: 600; }
+
+    @media (max-width: 700px) {
+      .nav, .hero, .section-bar, .tiles, .site-footer-bottom { padding-left: 20px; padding-right: 20px; }
+      .hero h1 { font-size: 64px; }
+      .hero-lead { font-size: 19px; }
+      .tiles { grid-template-columns: 1fr; gap: 16px; }
+    }
+  </style>
 </head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <span class="nav-brand">Roie Shalom</span>
+      <div class="nav-links">
+        <a href="https://roiesh.com/#work">Work</a>
+        <a href="https://roiesh.com/about.html">About</a>
+      </div>
+    </nav>
 
-<body class="page-home">
-  <nav class="top-nav">
-    <a href="https://roiesh.com/" class="brand" id="desktop-brand">Roie Shalom</a>
-    <!-- One link, so no burger menu. nav-single keeps it inline on mobile too. -->
-    <div class="top-nav-links nav-single">
-      <a href="https://roiesh.com/" class="nav-link">Back to portfolio</a>
+    <header class="hero">
+      <h1>Projects</h1>
+      <p class="hero-lead">Side projects, experiments, and a few websites that started as a personal itch. The ideas and the decisions are mine. Everything here is live, so go poke at it.</p>
+    </header>
+
+    <div class="section-bar">
+      <span class="section-label">All projects (<span id="count">00</span>)</span>
     </div>
-  </nav>
 
-  <main class="main-content">
-    <section class="section home-hero">
-      <p class="home-bio"><span class="home-bio-lead">Things I build on the side.</span> <span class="home-bio-body">Side projects, experiments, and a few websites that started as a personal itch. The ideas and the decisions are mine. AI is part of how I develop and think things through. Everything here is live, so go poke at it.</span></p>
-    </section>
+    <main class="tiles" id="tiles"></main>
 
-    <section class="section">
-      <div class="gallery-grid" id="projects-gallery"></div>
-    </section>
-  </main>
+    <footer class="site-footer-bottom">
+      <span>Berlin · 2026</span>
+    </footer>
+  </div>
 
   <script>
     const SITE = 'https://roiesh.com/';
@@ -43,66 +120,30 @@
     fetch('data/projects.json')
       .then(res => res.json())
       .then(projects => {
-        const gallery = document.getElementById('projects-gallery');
-        const tiles = projects.map(proj => {
-          // Thumbnails in the JSON are written relative to the main site root.
+        const grid = document.getElementById('tiles');
+        document.getElementById('count').textContent = String(projects.length).padStart(2, '0');
+
+        grid.innerHTML = projects.map(proj => {
+          // Thumbnails in the JSON are relative to the main site root.
           const thumb = SITE + proj.thumbnail.replace('../', '');
           const href = proj.page ? SITE + proj.page : proj.link;
           const isExternal = !proj.page;
           return `
-          <a href="${href}" class="gallery-tile" ${proj.color ? `data-color="${proj.color}"` : ''}${isExternal ? ' target="_blank" rel="noopener noreferrer"' : ''}>
+          <a class="tile" href="${href}"${isExternal ? ' target="_blank" rel="noopener noreferrer"' : ''}>
             <div class="tile-img-wrap">
-              <img src="${thumb}" alt="${proj.title_bold}" />
-              ${proj.label ? `<div class="tile-company">${proj.label}</div>` : ''}
+              <img class="tile-img" src="${thumb}" alt="${proj.title_bold}" loading="lazy" />
+              ${proj.label ? `<span class="tile-badge">${proj.label}</span>` : ''}
             </div>
-            <div class="tile-overlay">
-              <div class="tile-label"><strong>${proj.title_bold}</strong> ${proj.title_regular || ''}</div>
-              <div class="tile-desc">${proj.shortdesc}</div>
+            <div class="tile-body">
+              ${proj.category ? `<span class="tile-cat">${proj.category}</span>` : ''}
+              <span class="tile-title"><strong>${proj.title_bold}</strong>${proj.title_regular ? ` <span>${proj.title_regular}</span>` : ''}</span>
+              <p class="tile-desc">${proj.shortdesc}</p>
+              <span class="tile-arrow">${isExternal ? 'Visit ↗' : 'View →'}</span>
             </div>
-          </a>
-        `;
+          </a>`;
         }).join('');
-        gallery.innerHTML = tiles;
       })
       .catch(err => console.error(err));
   </script>
-
-  <script src="https://roiesh.com/nav.js"></script>
-  <script src="https://roiesh.com/theme.js"></script>
-  <script src="https://roiesh.com/tilt.js?v=2"></script>
-  <script>
-    (function () {
-      if (!window.matchMedia('(hover: hover)').matches) return;
-      const root = document.documentElement;
-
-      function tintBg(hex, strength) {
-        const r = parseInt(hex.slice(1, 3), 16);
-        const g = parseInt(hex.slice(3, 5), 16);
-        const b = parseInt(hex.slice(5, 7), 16);
-        const base = 250;
-        return `rgb(${Math.round(base + (r - base) * strength)}, ${Math.round(base + (g - base) * strength)}, ${Math.round(base + (b - base) * strength)})`;
-      }
-
-      document.addEventListener('mouseover', function (e) {
-        const tile = e.target.closest('.gallery-tile[data-color]');
-        if (tile) root.style.setProperty('--color-bg', tintBg(tile.dataset.color, 0.25));
-      });
-
-      document.addEventListener('mouseout', function (e) {
-        const tile = e.target.closest('.gallery-tile[data-color]');
-        if (tile && !tile.contains(e.relatedTarget)) root.style.removeProperty('--color-bg');
-      });
-    })();
-  </script>
-  <script>
-    (function () {
-      const fonts = ["Playfair Display", "Righteous", "Pacifico", "Bebas Neue", "Oswald", "Lobster", "Permanent Marker", "Caveat", "Albert Sans"];
-      const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
-      const brand = document.getElementById('desktop-brand');
-      if (brand) brand.style.fontFamily = `'${randomFont}', sans-serif`;
-    })();
-  </script>
-
-  <footer>Hand coded with a dash of AI. HTML, CSS, JS. No templates.</footer>
 </body>
 </html>
