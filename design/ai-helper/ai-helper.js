@@ -16,7 +16,7 @@
       position: fixed; right: 20px; bottom: 20px; z-index: 10000;
       display: flex; align-items: center; gap: 8px;
       padding: 12px 18px; border: none; border-radius: 999px;
-      background: var(--color-link, #f21783); color: #fff;
+      background: var(--color-link, #e0198a); color: #fff;
       font-family: inherit; font-size: 15px; font-weight: 600;
       cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,0.18);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -52,7 +52,7 @@
     .aih-log { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
     .aih-msg { max-width: 85%; padding: 10px 13px; border-radius: 14px; font-size: 14px; line-height: 1.45; }
     .aih-msg.bot { align-self: flex-start; background: rgba(0,0,0,0.05); border-bottom-left-radius: 4px; }
-    .aih-msg.user { align-self: flex-end; background: var(--color-link, #f21783); color: #fff; border-bottom-right-radius: 4px; }
+    .aih-msg.user { align-self: flex-end; background: var(--color-link, #e0198a); color: #fff; border-bottom-right-radius: 4px; }
     html[data-theme="dark"] .aih-msg.bot { background: rgba(255,255,255,0.08); }
 
     .aih-typing { display: inline-flex; gap: 4px; align-items: center; }
@@ -70,7 +70,7 @@
       border-radius: 999px; background: transparent; color: var(--color-text-main, #1a1a1a);
       font-family: inherit; font-size: 13px; cursor: pointer;
     }
-    .aih-chip:hover { border-color: var(--color-link, #f21783); color: var(--color-link, #f21783); }
+    .aih-chip:hover { border-color: var(--color-link, #e0198a); color: var(--color-link, #e0198a); }
 
     .aih-form { display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--color-border, #e6e6e6); }
     .aih-input {
@@ -78,10 +78,10 @@
       border-radius: 10px; font-family: inherit; font-size: 14px;
       background: var(--color-bg, #fff); color: var(--color-text-main, #1a1a1a);
     }
-    .aih-input:focus { outline: none; border-color: var(--color-link, #f21783); }
+    .aih-input:focus { outline: none; border-color: var(--color-link, #e0198a); }
     .aih-send {
       border: none; border-radius: 10px; padding: 0 16px;
-      background: var(--color-link, #f21783); color: #fff; font-weight: 600; cursor: pointer;
+      background: var(--color-link, #e0198a); color: #fff; font-weight: 600; cursor: pointer;
     }
 
     /* On mobile the round CV button sits bottom-right, so lift the launcher above it. */

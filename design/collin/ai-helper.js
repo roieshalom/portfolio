@@ -19,9 +19,9 @@
   var BUBBLE_SVG = `
     <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
       <path d="M21 11.3a8.2 8.2 0 0 1-8.3 8.2 8.4 8.4 0 0 1-3.7-.85L3 20.5l1.85-5.6A8.2 8.2 0 0 1 4 11.3 8.3 8.3 0 0 1 12.3 3h.4A8.2 8.2 0 0 1 21 11.1z" fill="#fff"/>
-      <circle cx="9" cy="12" r="1.15" fill="var(--color-link, #f21783)"/>
-      <circle cx="12.5" cy="12" r="1.15" fill="var(--color-link, #f21783)"/>
-      <circle cx="16" cy="12" r="1.15" fill="var(--color-link, #f21783)"/>
+      <circle cx="9" cy="12" r="1.15" fill="var(--color-link, #e0198a)"/>
+      <circle cx="12.5" cy="12" r="1.15" fill="var(--color-link, #e0198a)"/>
+      <circle cx="16" cy="12" r="1.15" fill="var(--color-link, #e0198a)"/>
     </svg>
   `;
 
@@ -30,14 +30,14 @@
       position: fixed; right: 18px; bottom: 18px; z-index: 10000;
       width: 56px; height: 56px; padding: 0; border: none; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      background: var(--color-link, #f21783); color: #fff; cursor: pointer;
+      background: var(--color-link, #e0198a); color: #fff; cursor: pointer;
       box-shadow: 0 6px 18px rgba(20, 30, 60, 0.28);
       transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.3s ease;
       -webkit-tap-highlight-color: transparent;
     }
     .aih-launcher:hover { transform: translateY(-2px); box-shadow: 0 9px 22px rgba(20, 30, 60, 0.34); }
     .aih-launcher:active { transform: translateY(0); }
-    .aih-launcher:focus-visible { outline: 2px solid var(--color-link, #f21783); outline-offset: 3px; }
+    .aih-launcher:focus-visible { outline: 2px solid var(--color-link, #e0198a); outline-offset: 3px; }
     .aih-launcher svg { display: block; }
 
     /* Entrance: fade and rise in once, unless reduced motion is requested. */
@@ -106,7 +106,7 @@
     .aih-header {
       display: flex; align-items: center; gap: 10px;
       padding: 12px 12px 12px 15px;
-      background: var(--color-link, #f21783); color: #fff;
+      background: var(--color-link, #e0198a); color: #fff;
     }
     .aih-header-text { flex: 1; min-width: 0; }
     .aih-header-title { font-weight: 700; font-size: 14px; line-height: 1.1; }
@@ -122,7 +122,7 @@
     .aih-msg { max-width: 88%; font-size: 13.5px; line-height: 1.5; }
     .aih-msg.bot { align-self: flex-start; color: var(--color-text-main, #222); }
     .aih-msg.user {
-      align-self: flex-end; background: var(--color-link, #f21783); color: #fff;
+      align-self: flex-end; background: var(--color-link, #e0198a); color: #fff;
       padding: 7px 11px; border-radius: 14px 14px 3px 14px;
     }
 
@@ -138,10 +138,10 @@
     .aih-chips { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 14px 12px; }
     .aih-chip {
       flex: 0 1 auto; padding: 6px 11px; cursor: pointer;
-      font-family: inherit; font-size: 12.5px; color: var(--color-link, #f21783);
+      font-family: inherit; font-size: 12.5px; color: var(--color-link, #e0198a);
       background: transparent; border: 1px solid var(--color-border, #e3e3e3); border-radius: 999px;
     }
-    .aih-chip:hover { border-color: var(--color-link, #f21783); }
+    .aih-chip:hover { border-color: var(--color-link, #e0198a); }
 
     .aih-form { display: flex; gap: 8px; padding: 10px 12px 4px; border-top: 1px solid var(--color-border, #eee); }
     .aih-disclaim {
@@ -153,11 +153,11 @@
       color: var(--color-text-main, #222); background: var(--color-bg, #fff);
       border: 1px solid var(--color-border, #d9d9d9); border-radius: 10px;
     }
-    .aih-input:focus { outline: none; border-color: var(--color-link, #f21783); }
+    .aih-input:focus { outline: none; border-color: var(--color-link, #e0198a); }
     .aih-send {
       padding: 8px 16px; border: none; border-radius: 10px;
       font-family: inherit; font-size: 13px; font-weight: 700; color: #fff; cursor: pointer;
-      background: var(--color-link, #f21783);
+      background: var(--color-link, #e0198a);
     }
     .aih-send:hover { filter: brightness(0.96); }
     .aih-send:disabled { opacity: 0.5; cursor: default; }

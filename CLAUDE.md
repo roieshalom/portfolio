@@ -30,7 +30,7 @@ Per-project case study pages are top-level: `wayfair.html`, `eqcapture.html`, `e
 - `--max-width: 840px`
 - `--spacing-section: 36px`
 - `--radius-card: 16px`
-- Colors: `--color-bg`, `--color-text-main`, `--color-text`, `--color-link` (`#f21783`), `--color-border`, `--color-card`
+- Colors: `--color-bg`, `--color-text-main`, `--color-text`, `--color-link` (`#e0198a`), `--color-border`, `--color-card`
 - Dark theme defined under `html[data-theme="dark"]`
 
 ## Conventions
